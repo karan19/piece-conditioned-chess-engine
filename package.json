@@ -1,0 +1,19 @@
+{
+  "name": "piece-conditioned-chess-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev --workspace @pcce/api\" \"npm run dev --workspace @pcce/web\"",
+    "build": "npm run build --workspace @pcce/api && npm run build --workspace @pcce/web",
+    "test": "npm run test --workspace @pcce/api && npm run test --workspace @pcce/web",
+    "lint": "npm run lint --workspace @pcce/api && npm run lint --workspace @pcce/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.3"
+  }
+}
