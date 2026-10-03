@@ -18,6 +18,7 @@ export type PieceAnalysisCandidate = {
   move: {
     uci: string;
     san: string;
+    piece: PieceSymbol;
     from: Square;
     to: Square;
     promotion?: string;
@@ -36,6 +37,7 @@ export type OpponentReply = {
   move: {
     uci: string;
     san: string;
+    piece: PieceSymbol;
     from: Square;
     to: Square;
     promotion?: string;
@@ -82,6 +84,10 @@ const pieceValues: Record<PieceSymbol, number> = {
   q: 9,
   k: 0
 };
+const colorLabels: Record<Color, string> = {
+  b: "Black",
+  w: "White"
+};
 
 function getOpponent(color: Color): Color {
   return color === "w" ? "b" : "w";
@@ -109,6 +115,14 @@ function formatMaterialDelta(materialDelta: number) {
     : `gives up about ${Math.abs(materialDelta)} point${materialDelta === -1 ? "" : "s"} of material`;
 }
 
+function describePiece(color: Color, piece: PieceSymbol) {
+  return `${colorLabels[color]}'s ${pieceLabels[piece]}`;
+}
+
+function describeMoveSubject(move: Move) {
+  return `${describePiece(move.color, move.piece)} from ${move.from} to ${move.to}`;
+}
+
 function buildMoveEvidence({
   after,
   move,
@@ -133,7 +147,7 @@ function buildMoveEvidence({
   const facts: string[] = [];
 
   if (capturedPiece) {
-    facts.push(`captures a ${pieceLabels[capturedPiece]}`);
+    facts.push(`captures ${describePiece(opponentColor, capturedPiece)}`);
   }
 
   if (move.isPromotion()) {
@@ -147,21 +161,21 @@ function buildMoveEvidence({
   }
 
   if (movedPieceAttacked) {
-    facts.push(`the moved ${pieceLabels[move.piece]} can be captured`);
+    facts.push(`${describePiece(moverColor, move.piece)} on ${move.to} can be captured`);
   } else {
-    facts.push(`the moved ${pieceLabels[move.piece]} is not directly attacked`);
+    facts.push(`${describePiece(moverColor, move.piece)} on ${move.to} is not directly attacked`);
   }
 
   if (movedPieceDefended && move.piece !== "k") {
-    facts.push(`the moved ${pieceLabels[move.piece]} is defended`);
+    facts.push(`${describePiece(moverColor, move.piece)} on ${move.to} is defended`);
   }
 
   facts.push(formatMaterialDelta(materialDelta));
 
-  const summaryParts = [`${move.san} moves the ${pieceLabels[move.piece]} from ${move.from} to ${move.to}`];
+  const summaryParts = [`${move.san}: ${describeMoveSubject(move)}`];
 
   if (capturedPiece) {
-    summaryParts.push(`It captures a ${pieceLabels[capturedPiece]}`);
+    summaryParts.push(`It captures ${describePiece(opponentColor, capturedPiece)} on ${move.to}`);
   }
 
   if (givesCheckmate) {
@@ -176,8 +190,8 @@ function buildMoveEvidence({
 
   summaryParts.push(
     movedPieceAttacked
-      ? `The moved ${pieceLabels[move.piece]} is attacked in the resulting position`
-      : `The moved ${pieceLabels[move.piece]} is not directly attacked in the resulting position`
+      ? `${describePiece(moverColor, move.piece)} on ${move.to} is attacked in the resulting position`
+      : `${describePiece(moverColor, move.piece)} on ${move.to} is not directly attacked in the resulting position`
   );
 
   return {
@@ -351,6 +365,7 @@ export async function analyzeSelectedPiece({
         move: {
           uci: toUciMove(move),
           san: move.san,
+          piece: move.piece,
           from: move.from,
           to: move.to,
           promotion: move.promotion
@@ -425,6 +440,7 @@ export async function analyzeSelectedPiece({
             move: {
               uci: toUciMove(replyMove),
               san: replyMove.san,
+              piece: replyMove.piece,
               from: replyMove.from,
               to: replyMove.to,
               promotion: replyMove.promotion

@@ -10,7 +10,7 @@ import {
   RotateCcw,
   ShieldCheck
 } from "lucide-react";
-import type { Color, Square } from "chess.js";
+import type { Color, PieceSymbol, Square } from "chess.js";
 import {
   getCallEngineState,
   getSelectedPieceSummary,
@@ -147,6 +147,22 @@ function createLearningEventExportHref(gameRecord: SavedGame, event: LearningEve
       2
     )
   )}`;
+}
+
+function formatMovePieceLabel({
+  color,
+  from,
+  piece,
+  to
+}: {
+  color: Color;
+  from: string;
+  piece?: PieceSymbol;
+  to: string;
+}) {
+  const pieceName = piece ? pieceNames[piece].toLowerCase() : "piece";
+
+  return `${getColorName(color)} ${pieceName} · ${from} -> ${to}`;
 }
 
 export function App() {
@@ -1070,6 +1086,14 @@ export function App() {
                                 onClick={() => previewReply(candidate, reply)}
                               >
                                 <span className="reply-main">
+                                  <small className="reply-piece-label">
+                                    {formatMovePieceLabel({
+                                      color: getOpponentColor(callEngineResult.selectedPiece.color),
+                                      from: reply.move.from,
+                                      piece: reply.move.piece,
+                                      to: reply.move.to
+                                    })}
+                                  </small>
                                   <strong>
                                     {reply.rank}. {reply.move.san}
                                   </strong>
@@ -1425,6 +1449,14 @@ export function App() {
                               onClick={() => previewReviewReply(reviewEvent, candidate, reply)}
                             >
                               <span className="reply-main">
+                                <small className="reply-piece-label">
+                                  {formatMovePieceLabel({
+                                    color: getOpponentColor(reviewEvent.analysis.selectedPiece.color),
+                                    from: reply.move.from,
+                                    piece: reply.move.piece,
+                                    to: reply.move.to
+                                  })}
+                                </small>
                                 <strong>
                                   {reply.rank}. {reply.move.san}
                                 </strong>
