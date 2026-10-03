@@ -544,10 +544,10 @@ li {
 }
 
 .board-frame {
-  --board-light: #e9cf9d;
-  --board-dark: #9b6843;
-  --coordinate-light: rgba(49, 31, 20, 0.48);
-  --coordinate-dark: rgba(255, 244, 224, 0.76);
+  --board-light: #e9cf98;
+  --board-dark: #a2683f;
+  --coordinate-light: rgba(82, 69, 47, 0.64);
+  --coordinate-dark: rgba(255, 238, 205, 0.78);
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
   grid-template-rows: repeat(8, minmax(0, 1fr));
@@ -555,7 +555,7 @@ li {
   aspect-ratio: 1;
   overflow: hidden;
   background: #f7f1e7;
-  border: 1px solid #263431;
+  border: 2px solid #1d2a28;
   border-radius: 8px;
   box-shadow: 0 24px 48px rgba(18, 37, 33, 0.14);
 }
@@ -629,12 +629,12 @@ li {
 
 .square-coordinate {
   position: absolute;
-  top: 4px;
-  left: 5px;
+  top: 5px;
+  left: 8px;
   z-index: 1;
   color: var(--coordinate-light);
-  font-size: clamp(0.45rem, 8cqw, 0.6rem);
-  font-weight: 700;
+  font-size: clamp(0.52rem, 8cqw, 0.74rem);
+  font-weight: 850;
   pointer-events: none;
 }
 
@@ -686,38 +686,33 @@ li {
 }
 
 .piece-style-classic .piece {
-  width: 86%;
-  color: #f7efe2;
-  font-size: clamp(2.15rem, 70cqw, 5rem);
-  background:
-    radial-gradient(circle at 38% 25%, rgba(255, 255, 255, 0.72), transparent 24%),
-    linear-gradient(145deg, #fff9ea 0%, #ead9b6 48%, #b59a6b 100%);
-  border: 2px solid rgba(58, 36, 20, 0.7);
-  border-radius: 999px;
-  -webkit-text-stroke: 1px rgba(58, 36, 20, 0.74);
+  width: 80%;
+  color: #fffef4;
+  font-size: clamp(2.65rem, 80cqw, 5.8rem);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  -webkit-text-stroke: 1.35px rgba(30, 38, 39, 0.82);
   text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.58),
-    0 4px 9px rgba(59, 38, 21, 0.34);
-  box-shadow:
-    inset 0 2px 4px rgba(255, 255, 255, 0.62),
-    inset 0 -7px 12px rgba(82, 44, 22, 0.18),
-    0 5px 10px rgba(47, 29, 16, 0.25);
+    0 1px 0 rgba(255, 255, 255, 0.86),
+    1px 0 0 rgba(30, 38, 39, 0.72),
+    -1px 0 0 rgba(30, 38, 39, 0.72),
+    0 -1px 0 rgba(30, 38, 39, 0.72),
+    0 5px 8px rgba(40, 30, 18, 0.32);
+  box-shadow: none;
 }
 
 .piece-style-classic .piece-b {
-  color: #111416;
-  background:
-    radial-gradient(circle at 38% 25%, rgba(255, 255, 255, 0.3), transparent 22%),
-    linear-gradient(145deg, #5a6165 0%, #22292d 50%, #07090a 100%);
-  border-color: rgba(255, 255, 255, 0.28);
-  -webkit-text-stroke: 0.75px rgba(255, 255, 255, 0.52);
+  color: #172127;
+  background: transparent;
+  border: 0;
+  -webkit-text-stroke: 1.25px rgba(248, 246, 238, 0.86);
   text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.34),
-    0 7px 14px rgba(0, 0, 0, 0.34);
-  box-shadow:
-    inset 0 2px 4px rgba(255, 255, 255, 0.24),
-    inset 0 -7px 12px rgba(0, 0, 0, 0.42),
-    0 5px 10px rgba(0, 0, 0, 0.24);
+    0 1px 0 rgba(248, 246, 238, 0.72),
+    1px 0 0 rgba(248, 246, 238, 0.58),
+    -1px 0 0 rgba(248, 246, 238, 0.58),
+    0 -1px 0 rgba(248, 246, 238, 0.58),
+    0 5px 8px rgba(0, 0, 0, 0.28);
 }
 
 .board-help {

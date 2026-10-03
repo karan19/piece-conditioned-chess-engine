@@ -32,12 +32,12 @@ export const ranks = [8, 7, 6, 5, 4, 3, 2, 1] as const;
 
 export const pieceGlyphs: Record<Color, Record<PieceSymbol, string>> = {
   w: {
-    p: "♙",
-    n: "♘",
-    b: "♗",
-    r: "♖",
-    q: "♕",
-    k: "♔"
+    p: "♟",
+    n: "♞",
+    b: "♝",
+    r: "♜",
+    q: "♛",
+    k: "♚"
   },
   b: {
     p: "♟",
