@@ -65,8 +65,14 @@ export type PieceAnalysisResponse = {
   candidates: PieceAnalysisCandidate[];
 };
 
+const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL ?? "").replace(/\/$/, "");
+
+export function buildApiUrl(path: string) {
+  return `${apiBaseUrl}${path}`;
+}
+
 export async function requestBestMove(fen: string, difficulty: Difficulty) {
-  const response = await fetch("/api/engine/best-move", {
+  const response = await fetch(buildApiUrl("/api/engine/best-move"), {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -110,7 +116,7 @@ export async function requestPieceAnalysis({
   candidateCount?: number;
   replyCount?: number;
 }) {
-  const response = await fetch("/api/analysis/piece", {
+  const response = await fetch(buildApiUrl("/api/analysis/piece"), {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

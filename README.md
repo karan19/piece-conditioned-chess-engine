@@ -76,3 +76,12 @@ locally through the `stockfish` npm package. A deployed demo needs both:
 
 For a public demo, keep analysis request limits conservative and monitor server
 CPU usage, because deep reply analysis can be expensive.
+
+The planned V1 beta AWS target is:
+
+```text
+App: https://chess.karankan19.com
+API: https://api.chess.karankan19.com
+```
+
+See [docs/aws-deployment.md](docs/aws-deployment.md) for the deployment runbook.
