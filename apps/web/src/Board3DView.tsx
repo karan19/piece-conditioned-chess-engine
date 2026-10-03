@@ -10,6 +10,18 @@ import {
   type BoardPiece,
   type createGame
 } from "./chessGame";
+import bishopDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/06_bishop_dark.glb?url";
+import bishopLightUrl from "./assets/chess-pieces/polyy-low-poly/models/05_bishop_light.glb?url";
+import kingDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/02_king_dark.glb?url";
+import kingLightUrl from "./assets/chess-pieces/polyy-low-poly/models/01_king_light.glb?url";
+import knightDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/08_knight_dark.glb?url";
+import knightLightUrl from "./assets/chess-pieces/polyy-low-poly/models/07_knight_light.glb?url";
+import pawnDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/12_pawn_dark.glb?url";
+import pawnLightUrl from "./assets/chess-pieces/polyy-low-poly/models/11_pawn_light.glb?url";
+import queenDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/04_queen_dark.glb?url";
+import queenLightUrl from "./assets/chess-pieces/polyy-low-poly/models/03_queen_light.glb?url";
+import rookDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/10_rook_dark.glb?url";
+import rookLightUrl from "./assets/chess-pieces/polyy-low-poly/models/09_rook_light.glb?url";
 
 type Board3DViewProps = {
   game: ReturnType<typeof createGame>;
@@ -25,14 +37,13 @@ const squareSize = 1;
 const boardOffset = (boardSize * squareSize) / 2 - squareSize / 2;
 const lightSquare = 0xe9e1d2;
 const darkSquare = 0x9c5637;
-const royalPieceBasePath = "/assets/chess-pieces/polyy-low-poly/models";
 const pieceModelFiles: Record<BoardPiece["type"], { w: string; b: string }> = {
-  k: { w: "01_king_light.glb", b: "02_king_dark.glb" },
-  q: { w: "03_queen_light.glb", b: "04_queen_dark.glb" },
-  b: { w: "05_bishop_light.glb", b: "06_bishop_dark.glb" },
-  n: { w: "07_knight_light.glb", b: "08_knight_dark.glb" },
-  r: { w: "09_rook_light.glb", b: "10_rook_dark.glb" },
-  p: { w: "11_pawn_light.glb", b: "12_pawn_dark.glb" }
+  k: { w: kingLightUrl, b: kingDarkUrl },
+  q: { w: queenLightUrl, b: queenDarkUrl },
+  b: { w: bishopLightUrl, b: bishopDarkUrl },
+  n: { w: knightLightUrl, b: knightDarkUrl },
+  r: { w: rookLightUrl, b: rookDarkUrl },
+  p: { w: pawnLightUrl, b: pawnDarkUrl }
 };
 const pieceScales: Record<BoardPiece["type"], number> = {
   k: 1.68,
@@ -101,7 +112,7 @@ function getMoveAnimations(previousPieces: BoardPiece[] | null, currentPieces: B
 }
 
 function getPieceModelUrl(piece: BoardPiece) {
-  return `${royalPieceBasePath}/${pieceModelFiles[piece.type][piece.color]}`;
+  return pieceModelFiles[piece.type][piece.color];
 }
 
 function loadPieceModel(url: string) {
