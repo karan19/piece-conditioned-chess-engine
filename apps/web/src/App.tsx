@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
-  BrainCircuit,
+  Cpu,
   History,
   Play,
   Reply,
@@ -64,6 +64,11 @@ const actionIcons = {
   "previous-games": History
 };
 
+const Board3DView = lazy(() =>
+  import("./Board3DView").then((module) => ({ default: module.Board3DView }))
+);
+const opponentMoveDelayMs = 1000;
+
 function BoardView({
   game,
   selectedSquare,
@@ -84,7 +89,7 @@ function BoardView({
   const attackerSquares = new Set(checkThreat?.attackers.map((attacker) => attacker.square) ?? []);
 
   return (
-    <div className="board-frame" aria-label="Chessboard">
+    <div className="board-frame piece-style-classic" aria-label="Chessboard">
       {ranks.map((rank) =>
         files.map((file) => {
           const square = `${file}${rank}` as Square;
@@ -185,6 +190,7 @@ export function App() {
   }>({
     status: "idle"
   });
+  const [boardMode, setBoardMode] = useState<"3d" | "2d">("3d");
   const [engineRetryKey, setEngineRetryKey] = useState(0);
   const [promotionMove, setPromotionMove] = useState<{
     from: Square;
@@ -324,46 +330,53 @@ export function App() {
       message: `${getColorName(opponentColor)} is thinking at ${difficultyOptions.find((option) => option.id === settings.difficulty)?.label ?? settings.difficulty} difficulty.`
     });
 
-    requestBestMove(requestFen, settings.difficulty)
-      .then((result) => {
-        if (wasCancelled || fenRef.current !== requestFen) {
-          return;
-        }
+    const opponentMoveTimer = window.setTimeout(() => {
+      if (wasCancelled || fenRef.current !== requestFen) {
+        return;
+      }
 
-        const parsedMove = parseUciMove(result.bestMove);
-        const nextGame = cloneGameWithMove(createGame(requestFen), {
-          from: parsedMove.from as Square,
-          to: parsedMove.to as Square,
-          promotion: parsedMove.promotion as "q" | "r" | "b" | "n" | undefined
+      requestBestMove(requestFen, settings.difficulty)
+        .then((result) => {
+          if (wasCancelled || fenRef.current !== requestFen) {
+            return;
+          }
+
+          const parsedMove = parseUciMove(result.bestMove);
+          const nextGame = cloneGameWithMove(createGame(requestFen), {
+            from: parsedMove.from as Square,
+            to: parsedMove.to as Square,
+            promotion: parsedMove.promotion as "q" | "r" | "b" | "n" | undefined
+          });
+
+          if (!nextGame) {
+            throw new Error(`Stockfish returned illegal move ${result.bestMove}.`);
+          }
+
+          const moveRecord = toMoveRecords(nextGame).at(-1);
+
+          setFen(nextGame.fen());
+          if (moveRecord) {
+            setHistory((currentHistory) => [...currentHistory, moveRecord]);
+          }
+          setCallEngineResult(null);
+          setCallEngineAnalysisState({ status: "idle" });
+          setEngineState({ status: "idle" });
+        })
+        .catch((error) => {
+          if (wasCancelled || fenRef.current !== requestFen) {
+            return;
+          }
+
+          setEngineState({
+            status: "error",
+            message: error instanceof Error ? error.message : "Engine failed."
+          });
         });
-
-        if (!nextGame) {
-          throw new Error(`Stockfish returned illegal move ${result.bestMove}.`);
-        }
-
-        const moveRecord = toMoveRecords(nextGame).at(-1);
-
-        setFen(nextGame.fen());
-        if (moveRecord) {
-          setHistory((currentHistory) => [...currentHistory, moveRecord]);
-        }
-        setCallEngineResult(null);
-        setCallEngineAnalysisState({ status: "idle" });
-        setEngineState({ status: "idle" });
-      })
-      .catch((error) => {
-        if (wasCancelled || fenRef.current !== requestFen) {
-          return;
-        }
-
-        setEngineState({
-          status: "error",
-          message: error instanceof Error ? error.message : "Engine failed."
-        });
-      });
+    }, opponentMoveDelayMs);
 
     return () => {
       wasCancelled = true;
+      window.clearTimeout(opponentMoveTimer);
     };
   }, [
     engineRetryKey,
@@ -822,14 +835,43 @@ export function App() {
 
         <section className="game-layout">
           <div className="board-zone">
-            <BoardView
-              game={displayGame}
-              selectedSquare={selectedSquare}
-              legalDestinationSet={legalDestinationSet}
-              checkThreat={previewLine ? null : checkThreat}
-              isPreview={Boolean(previewLine)}
-              onSquareClick={handleSquareClick}
-            />
+            <div className="board-toolbar" aria-label="Board view">
+              <button
+                className={boardMode === "3d" ? "active-board-mode" : ""}
+                type="button"
+                onClick={() => setBoardMode("3d")}
+              >
+                3D
+              </button>
+              <button
+                className={boardMode === "2d" ? "active-board-mode" : ""}
+                type="button"
+                onClick={() => setBoardMode("2d")}
+              >
+                2D
+              </button>
+            </div>
+            {boardMode === "3d" ? (
+              <Suspense fallback={<div className="board-3d-frame board-3d-loading">Loading 3D board</div>}>
+                <Board3DView
+                  game={displayGame}
+                  selectedSquare={selectedSquare}
+                  legalDestinationSet={legalDestinationSet}
+                  checkThreat={previewLine ? null : checkThreat}
+                  isPreview={Boolean(previewLine)}
+                  onSquareClick={handleSquareClick}
+                />
+              </Suspense>
+            ) : (
+              <BoardView
+                game={displayGame}
+                selectedSquare={selectedSquare}
+                legalDestinationSet={legalDestinationSet}
+                checkThreat={previewLine ? null : checkThreat}
+                isPreview={Boolean(previewLine)}
+                onSquareClick={handleSquareClick}
+              />
+            )}
             {checkThreat && !previewLine ? (
               <div
                 className={`check-alert ${checkThreat.isCheckmate ? "checkmate-alert" : ""}`}
@@ -939,7 +981,7 @@ export function App() {
                 disabled={!callEngineState.available || callEngineAnalysisState.status === "analyzing"}
                 onClick={handleCallEngine}
               >
-                <BrainCircuit size={18} aria-hidden="true" />
+                <Cpu size={18} aria-hidden="true" />
                 {callEngineAnalysisState.status === "analyzing" ? "Analyzing" : "Call Engine"}
               </button>
 
@@ -1239,7 +1281,10 @@ export function App() {
         {reviewGame && reviewEvent ? (
           <section className="review-layout">
             <div className="board-zone">
-              <BoardView game={reviewDisplayGame} isPreview />
+              <BoardView
+                game={reviewDisplayGame}
+                isPreview
+              />
               <p className="board-help">
                 Review mode is read-only. Choose a saved candidate or reply to replay that line from
                 the original Call Engine position.
