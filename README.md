@@ -92,3 +92,13 @@ API: https://api.chess.karankan19.com
 ```
 
 See [docs/aws-deployment.md](docs/aws-deployment.md) for the deployment runbook.
+
+Useful API environment variables:
+
+```text
+ALLOWED_ORIGINS=https://your-app.example.com
+ENGINE_RATE_LIMIT_MAX=20
+ENGINE_RATE_LIMIT_WINDOW_MS=60000
+JSON_BODY_LIMIT=16kb
+TRUST_PROXY=true
+```
