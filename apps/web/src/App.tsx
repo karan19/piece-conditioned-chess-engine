@@ -19,8 +19,10 @@ import {
 import {
   cloneGameWithMove,
   createGame,
+  describeCheckThreat,
   files,
   getBoardPieces,
+  getCheckThreat,
   getGameStatus,
   getLegalDestinations,
   getMoveHistoryRows,
@@ -66,17 +68,20 @@ function BoardView({
   game,
   selectedSquare,
   legalDestinationSet,
+  checkThreat,
   isPreview,
   onSquareClick
 }: {
   game: ReturnType<typeof createGame>;
   selectedSquare?: Square | null;
   legalDestinationSet?: Set<Square>;
+  checkThreat?: ReturnType<typeof getCheckThreat>;
   isPreview?: boolean;
   onSquareClick?: (square: Square) => void;
 }) {
   const boardPieces = getBoardPieces(game);
   const boardPiecesBySquare = new Map(boardPieces.map((piece) => [piece.square, piece]));
+  const attackerSquares = new Set(checkThreat?.attackers.map((attacker) => attacker.square) ?? []);
 
   return (
     <div className="board-frame" aria-label="Chessboard">
@@ -101,6 +106,8 @@ function BoardView({
                 isLight ? "light-square" : "dark-square",
                 isSelected ? "selected-square" : "",
                 isLegalDestination ? "legal-destination" : "",
+                checkThreat?.kingSquare === square ? "check-king-square" : "",
+                attackerSquares.has(square) ? "check-attacker-square" : "",
                 isPreview ? "preview-square" : ""
               ].join(" ")}
               key={square}
@@ -205,6 +212,7 @@ export function App() {
     [legalDestinations]
   );
   const status = useMemo(() => getGameStatus(game), [game]);
+  const checkThreat = useMemo(() => getCheckThreat(game), [game]);
   const historyRows = useMemo(() => getMoveHistoryRows(history), [history]);
   const reviewGame = useMemo(
     () => savedGames.find((gameRecord) => gameRecord.id === reviewGameId) ?? null,
@@ -818,9 +826,19 @@ export function App() {
               game={displayGame}
               selectedSquare={selectedSquare}
               legalDestinationSet={legalDestinationSet}
+              checkThreat={previewLine ? null : checkThreat}
               isPreview={Boolean(previewLine)}
               onSquareClick={handleSquareClick}
             />
+            {checkThreat && !previewLine ? (
+              <div
+                className={`check-alert ${checkThreat.isCheckmate ? "checkmate-alert" : ""}`}
+                role="alert"
+              >
+                <strong>{checkThreat.isCheckmate ? "Checkmate" : "Check"}</strong>
+                <span>{describeCheckThreat(checkThreat)}</span>
+              </div>
+            ) : null}
             <p className="board-help">
               {previewLine
                 ? "Preview mode is read-only. Return to the game before making your move."
@@ -1039,8 +1057,12 @@ export function App() {
                   {historyRows.map((row) => (
                     <li key={row.moveNumber}>
                       <span className="move-number">{row.moveNumber}.</span>
-                      <span>{row.white ?? ""}</span>
-                      <span>{row.black ?? ""}</span>
+                      <span className={row.white ? "move-pill white-move-pill" : "move-pill empty-move-pill"}>
+                        {row.white ?? ""}
+                      </span>
+                      <span className={row.black ? "move-pill black-move-pill" : "move-pill empty-move-pill"}>
+                        {row.black ?? ""}
+                      </span>
                     </li>
                   ))}
                 </ol>

@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import {
   cloneGameWithMove,
   createGame,
+  describeCheckThreat,
+  getCheckThreat,
   getGameStatus,
   getLegalDestinations,
   getMoveHistoryRows,
@@ -44,6 +46,29 @@ describe("chess game helpers", () => {
       label: "Checkmate",
       isGameOver: true
     });
+  });
+
+  it("describes the king and attacker during checkmate", () => {
+    const game = createGame();
+    game.move("f3");
+    game.move("e5");
+    game.move("g4");
+    game.move("Qh4#");
+    const threat = getCheckThreat(game);
+
+    expect(threat).toMatchObject({
+      checkedColor: "w",
+      kingSquare: "e1",
+      isCheckmate: true
+    });
+    expect(threat?.attackers).toEqual([
+      {
+        color: "b",
+        square: "h4",
+        type: "q"
+      }
+    ]);
+    expect(threat ? describeCheckThreat(threat) : "").toContain("Black queen on h4");
   });
 
   it("detects promotion candidates", () => {

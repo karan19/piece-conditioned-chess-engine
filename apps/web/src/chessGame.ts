@@ -12,6 +12,13 @@ export type GameStatus = {
   isGameOver: boolean;
 };
 
+export type CheckThreat = {
+  checkedColor: Color;
+  kingSquare: Square;
+  attackers: BoardPiece[];
+  isCheckmate: boolean;
+};
+
 export type MoveRecord = {
   color: Color;
   san: string;
@@ -25,12 +32,12 @@ export const ranks = [8, 7, 6, 5, 4, 3, 2, 1] as const;
 
 export const pieceGlyphs: Record<Color, Record<PieceSymbol, string>> = {
   w: {
-    p: "♟",
-    n: "♞",
-    b: "♝",
-    r: "♜",
-    q: "♛",
-    k: "♚"
+    p: "♙",
+    n: "♘",
+    b: "♗",
+    r: "♖",
+    q: "♕",
+    k: "♔"
   },
   b: {
     p: "♟",
@@ -40,6 +47,15 @@ export const pieceGlyphs: Record<Color, Record<PieceSymbol, string>> = {
     q: "♛",
     k: "♚"
   }
+};
+
+const pieceLabels: Record<PieceSymbol, string> = {
+  p: "pawn",
+  n: "knight",
+  b: "bishop",
+  r: "rook",
+  q: "queen",
+  k: "king"
 };
 
 export function createGame(fen?: string): Chess {
@@ -103,6 +119,115 @@ export function getMoveHistoryRows(history: MoveRecord[]) {
   });
 
   return rows;
+}
+
+function squareToCoordinates(square: Square) {
+  return {
+    file: files.indexOf(square[0] as (typeof files)[number]),
+    rank: Number(square[1])
+  };
+}
+
+function coordinatesToSquare(file: number, rank: number): Square | null {
+  if (file < 0 || file > 7 || rank < 1 || rank > 8) {
+    return null;
+  }
+
+  return `${files[file]}${rank}` as Square;
+}
+
+function isClearLine(game: Chess, from: Square, to: Square, fileStep: number, rankStep: number) {
+  const fromCoordinates = squareToCoordinates(from);
+  const toCoordinates = squareToCoordinates(to);
+  let file = fromCoordinates.file + fileStep;
+  let rank = fromCoordinates.rank + rankStep;
+
+  while (file !== toCoordinates.file || rank !== toCoordinates.rank) {
+    const square = coordinatesToSquare(file, rank);
+
+    if (!square || game.get(square)) {
+      return false;
+    }
+
+    file += fileStep;
+    rank += rankStep;
+  }
+
+  return true;
+}
+
+function pieceAttacksSquare(game: Chess, piece: BoardPiece, target: Square) {
+  const from = squareToCoordinates(piece.square);
+  const to = squareToCoordinates(target);
+  const fileDelta = to.file - from.file;
+  const rankDelta = to.rank - from.rank;
+  const absoluteFileDelta = Math.abs(fileDelta);
+  const absoluteRankDelta = Math.abs(rankDelta);
+
+  if (piece.type === "p") {
+    const pawnDirection = piece.color === "w" ? 1 : -1;
+    return absoluteFileDelta === 1 && rankDelta === pawnDirection;
+  }
+
+  if (piece.type === "n") {
+    return (
+      (absoluteFileDelta === 1 && absoluteRankDelta === 2) ||
+      (absoluteFileDelta === 2 && absoluteRankDelta === 1)
+    );
+  }
+
+  if (piece.type === "k") {
+    return Math.max(absoluteFileDelta, absoluteRankDelta) === 1;
+  }
+
+  if (piece.type === "b" || piece.type === "q") {
+    if (absoluteFileDelta === absoluteRankDelta && absoluteFileDelta > 0) {
+      return isClearLine(game, piece.square, target, Math.sign(fileDelta), Math.sign(rankDelta));
+    }
+  }
+
+  if (piece.type === "r" || piece.type === "q") {
+    if ((absoluteFileDelta === 0) !== (absoluteRankDelta === 0)) {
+      return isClearLine(game, piece.square, target, Math.sign(fileDelta), Math.sign(rankDelta));
+    }
+  }
+
+  return false;
+}
+
+export function getCheckThreat(game: Chess): CheckThreat | null {
+  if (!game.isCheck() && !game.isCheckmate()) {
+    return null;
+  }
+
+  const checkedColor = game.turn();
+  const king = getBoardPieces(game).find((piece) => piece.color === checkedColor && piece.type === "k");
+
+  if (!king) {
+    return null;
+  }
+
+  const attackers = getBoardPieces(game).filter(
+    (piece) => piece.color !== checkedColor && pieceAttacksSquare(game, piece, king.square)
+  );
+
+  return {
+    checkedColor,
+    kingSquare: king.square,
+    attackers,
+    isCheckmate: game.isCheckmate()
+  };
+}
+
+export function describeCheckThreat(threat: CheckThreat) {
+  const checkedSide = threat.checkedColor === "w" ? "White" : "Black";
+  const attackers = threat.attackers
+    .map((piece) => `${piece.color === "w" ? "White" : "Black"} ${pieceLabels[piece.type]} on ${piece.square}`)
+    .join(", ");
+
+  return `${checkedSide} king on ${threat.kingSquare} is ${
+    threat.isCheckmate ? "checkmated" : "in check"
+  }${attackers ? ` by ${attackers}` : ""}.`;
 }
 
 export function getGameStatus(game: Chess): GameStatus {
