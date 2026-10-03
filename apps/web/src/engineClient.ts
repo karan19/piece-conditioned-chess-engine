@@ -1,3 +1,4 @@
+import type { PieceSymbol } from "chess.js";
 import type { Difficulty } from "./gameSettings";
 
 export type BestMoveResponse = {
@@ -12,6 +13,7 @@ export type PieceAnalysisCandidate = {
   move: {
     uci: string;
     san: string;
+    piece?: PieceSymbol;
     from: string;
     to: string;
     promotion?: string;
@@ -42,6 +44,7 @@ export type PieceAnalysisReply = {
   move: {
     uci: string;
     san: string;
+    piece?: PieceSymbol;
     from: string;
     to: string;
     promotion?: string;

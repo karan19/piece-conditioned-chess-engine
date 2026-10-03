@@ -1079,15 +1079,25 @@ li {
 
 .reply-main {
   display: grid;
-  gap: 2px;
+  gap: 4px;
 }
 
 .reply-main strong {
   display: block;
 }
 
+.reply-main .reply-piece-label {
+  max-width: none;
+  color: #164238;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .reply-main small {
-  max-width: 36ch;
+  max-width: 48ch;
   margin-top: 0;
   color: #627073;
   line-height: 1.35;

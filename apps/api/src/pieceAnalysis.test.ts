@@ -43,7 +43,8 @@ describe("analyzeSelectedPiece", () => {
       capturedPiece: "r",
       materialDelta: 5
     });
-    expect(capture?.evidence.summary).toContain("captures a rook");
+    expect(capture?.move.piece).toBe("r");
+    expect(capture?.evidence.summary).toContain("captures Black's rook");
     expect(capture?.opponentReplies).toHaveLength(0);
   });
 
