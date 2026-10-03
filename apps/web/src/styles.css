@@ -850,6 +850,47 @@ li {
   font-weight: 800;
 }
 
+.sound-toggle {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  width: fit-content;
+  margin-top: 14px;
+  color: #314144;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.sound-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: #164238;
+}
+
+.castle-panel {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 12px;
+  background: #f5f8f7;
+  border: 1px solid #dbe3e4;
+  border-radius: 8px;
+}
+
+.castle-panel > span {
+  color: #627073;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.castle-panel > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .retry-button {
   margin-top: 14px;
 }
@@ -982,6 +1023,7 @@ li {
   align-items: center;
 }
 
+.candidate-toggle-button,
 .candidate-preview-button,
 .reply-row {
   width: 100%;
@@ -992,11 +1034,38 @@ li {
   cursor: pointer;
 }
 
-.candidate-preview-button {
+.candidate-toggle-button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
   padding: 0;
   color: inherit;
 }
 
+.candidate-toggle-button svg {
+  flex: 0 0 auto;
+}
+
+.candidate-card-header {
+  align-items: start;
+}
+
+.candidate-detail {
+  display: grid;
+  gap: 10px;
+}
+
+.candidate-preview-button {
+  width: fit-content;
+  padding: 6px 9px;
+  color: #164238;
+  background: #edf4f2;
+  border: 1px solid #dbe7e5;
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.candidate-toggle-button:hover,
 .candidate-preview-button:hover,
 .reply-row:hover {
   background: #edf4f2;
