@@ -3,6 +3,8 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
+  ChevronDown,
+  ChevronRight,
   Cpu,
   History,
   Play,
@@ -68,6 +70,16 @@ const Board3DView = lazy(() =>
   import("./Board3DView").then((module) => ({ default: module.Board3DView }))
 );
 const opponentMoveDelayMs = 1000;
+const castleTargets: Record<Color, { kingSide: Square; queenSide: Square }> = {
+  b: {
+    kingSide: "g8",
+    queenSide: "c8"
+  },
+  w: {
+    kingSide: "g1",
+    queenSide: "c1"
+  }
+};
 
 function BoardView({
   game,
@@ -165,6 +177,72 @@ function formatMovePieceLabel({
   return `${getColorName(color)} ${pieceName} · ${from} -> ${to}`;
 }
 
+function getCastleOptions(game: ReturnType<typeof createGame>, playerColor: Color) {
+  if (game.turn() !== playerColor) {
+    return [];
+  }
+
+  const kingSquare = playerColor === "w" ? "e1" : "e8";
+  const legalKingMoves = game.moves({ square: kingSquare, verbose: true });
+
+  return [
+    {
+      id: "kingSide" as const,
+      label: "Castle king side",
+      move: legalKingMoves.find((move) => move.to === castleTargets[playerColor].kingSide)
+    },
+    {
+      id: "queenSide" as const,
+      label: "Castle queen side",
+      move: legalKingMoves.find((move) => move.to === castleTargets[playerColor].queenSide)
+    }
+  ].filter((option): option is typeof option & { move: NonNullable<typeof option.move> } => Boolean(option.move));
+}
+
+function playMoveSound(kind: "move" | "capture" | "castle") {
+  const AudioContextConstructor =
+    window.AudioContext ??
+    (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+
+  if (!AudioContextConstructor) {
+    return;
+  }
+
+  const context = new AudioContextConstructor();
+  const now = context.currentTime;
+  const output = context.createGain();
+  const tone = context.createOscillator();
+  const accent = context.createOscillator();
+  const toneGain = context.createGain();
+  const accentGain = context.createGain();
+  const baseFrequency = kind === "castle" ? 392 : kind === "capture" ? 220 : 294;
+  const accentFrequency = kind === "castle" ? 523 : kind === "capture" ? 330 : 392;
+  const duration = kind === "castle" ? 0.22 : kind === "capture" ? 0.16 : 0.11;
+
+  output.gain.setValueAtTime(0.0001, now);
+  output.gain.exponentialRampToValueAtTime(0.13, now + 0.012);
+  output.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+  tone.type = "triangle";
+  tone.frequency.setValueAtTime(baseFrequency, now);
+  tone.frequency.exponentialRampToValueAtTime(baseFrequency * 0.84, now + duration);
+  toneGain.gain.setValueAtTime(0.7, now);
+
+  accent.type = "sine";
+  accent.frequency.setValueAtTime(accentFrequency, now + 0.018);
+  accentGain.gain.setValueAtTime(kind === "move" ? 0.18 : 0.32, now);
+
+  tone.connect(toneGain).connect(output);
+  accent.connect(accentGain).connect(output);
+  output.connect(context.destination);
+
+  tone.start(now);
+  accent.start(now + 0.018);
+  tone.stop(now + duration);
+  accent.stop(now + duration);
+  window.setTimeout(() => void context.close(), Math.ceil((duration + 0.04) * 1000));
+}
+
 export function App() {
   const [screen, setScreen] = useState<"home" | "new-game" | "game" | "previous-games" | "review-game">("home");
   const [fen, setFen] = useState(() => createGame().fen());
@@ -207,6 +285,9 @@ export function App() {
     status: "idle"
   });
   const [boardMode, setBoardMode] = useState<"3d" | "2d">("3d");
+  const [moveSoundsEnabled, setMoveSoundsEnabled] = useState(true);
+  const [collapsedCandidateIds, setCollapsedCandidateIds] = useState<Set<string>>(() => new Set());
+  const [collapsedReviewCandidateIds, setCollapsedReviewCandidateIds] = useState<Set<string>>(() => new Set());
   const [engineRetryKey, setEngineRetryKey] = useState(0);
   const [promotionMove, setPromotionMove] = useState<{
     from: Square;
@@ -288,6 +369,10 @@ export function App() {
       status.isGameOver
     ]
   );
+  const castleOptions = useMemo(
+    () => getCastleOptions(game, settings.playerColor),
+    [game, settings.playerColor]
+  );
 
   useEffect(() => {
     fenRef.current = fen;
@@ -340,6 +425,8 @@ export function App() {
 
     setSelectedSquare(null);
     setCallEngineResult(null);
+    setCollapsedCandidateIds(new Set());
+    setCollapsedReviewCandidateIds(new Set());
     setCallEngineAnalysisState({ status: "idle" });
     setEngineState({
       status: "thinking",
@@ -373,6 +460,9 @@ export function App() {
           setFen(nextGame.fen());
           if (moveRecord) {
             setHistory((currentHistory) => [...currentHistory, moveRecord]);
+            if (moveSoundsEnabled) {
+              playMoveSound(moveRecord.san.includes("O-O") ? "castle" : moveRecord.san.includes("x") ? "capture" : "move");
+            }
           }
           setCallEngineResult(null);
           setCallEngineAnalysisState({ status: "idle" });
@@ -401,7 +491,8 @@ export function App() {
     opponentColor,
     screen,
     settings.difficulty,
-    status.isGameOver
+    status.isGameOver,
+    moveSoundsEnabled
   ]);
 
   function startNewGame(nextSettings: GameSettings) {
@@ -420,6 +511,8 @@ export function App() {
     setPreviewLine(null);
     setCallEngineConsumedPly(null);
     setCallEngineResult(null);
+    setCollapsedCandidateIds(new Set());
+    setCollapsedReviewCandidateIds(new Set());
     setCallEngineAnalysisState({ status: "idle" });
     setEngineState({ status: "idle" });
     setEngineRetryKey(0);
@@ -440,6 +533,8 @@ export function App() {
     setPreviewLine(null);
     setCallEngineConsumedPly(null);
     setCallEngineResult(null);
+    setCollapsedCandidateIds(new Set());
+    setCollapsedReviewCandidateIds(new Set());
     setCallEngineAnalysisState({ status: "idle" });
     setEngineState({ status: "idle" });
     setEngineRetryKey((current) => current + 1);
@@ -474,7 +569,11 @@ export function App() {
     setPromotionMove(null);
     setPreviewLine(null);
     setCallEngineResult(null);
+    setCollapsedCandidateIds(new Set());
     setCallEngineAnalysisState({ status: "idle" });
+    if (moveSoundsEnabled && moveRecord) {
+      playMoveSound(moveRecord.san.includes("O-O") ? "castle" : moveRecord.san.includes("x") ? "capture" : "move");
+    }
     return true;
   }
 
@@ -521,6 +620,39 @@ export function App() {
     commitMove({ from: selectedSquare, to: square });
   }
 
+  function handleCastle(to: Square) {
+    const from = settings.playerColor === "w" ? "e1" : "e8";
+    commitMove({ from, to });
+  }
+
+  function toggleCandidateCollapse(moveUci: string) {
+    setCollapsedCandidateIds((current) => {
+      const next = new Set(current);
+
+      if (next.has(moveUci)) {
+        next.delete(moveUci);
+      } else {
+        next.add(moveUci);
+      }
+
+      return next;
+    });
+  }
+
+  function toggleReviewCandidateCollapse(moveUci: string) {
+    setCollapsedReviewCandidateIds((current) => {
+      const next = new Set(current);
+
+      if (next.has(moveUci)) {
+        next.delete(moveUci);
+      } else {
+        next.add(moveUci);
+      }
+
+      return next;
+    });
+  }
+
   function resetGame() {
     const nextGame = createGame();
     setFen(nextGame.fen());
@@ -532,6 +664,8 @@ export function App() {
     setPreviewLine(null);
     setCallEngineConsumedPly(null);
     setCallEngineResult(null);
+    setCollapsedCandidateIds(new Set());
+    setCollapsedReviewCandidateIds(new Set());
     setCallEngineAnalysisState({ status: "idle" });
     setEngineState({ status: "idle" });
     setEngineRetryKey((current) => current + 1);
@@ -565,6 +699,7 @@ export function App() {
 
       setCallEngineConsumedPly(history.length);
       setCallEngineResult(result);
+      setCollapsedCandidateIds(new Set(result.candidates.slice(1).map((candidate) => candidate.move.uci)));
       setLearningEvents((currentEvents) => [
         {
           id: createLearningEventId(),
@@ -942,6 +1077,31 @@ export function App() {
                   </dd>
                 </div>
               </dl>
+              <label className="sound-toggle">
+                <input
+                  checked={moveSoundsEnabled}
+                  type="checkbox"
+                  onChange={(event) => setMoveSoundsEnabled(event.target.checked)}
+                />
+                Move sounds
+              </label>
+              {castleOptions.length > 0 && !previewLine ? (
+                <div className="castle-panel">
+                  <span>Castle</span>
+                  <div>
+                    {castleOptions.map((option) => (
+                      <button
+                        className="retry-button"
+                        key={option.id}
+                        type="button"
+                        onClick={() => handleCastle(option.move.to as Square)}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
               {engineState.status === "error" ? (
                 <button
                   className="retry-button"
@@ -1039,75 +1199,98 @@ export function App() {
                     {callEngineResult.selectedPiece.square}
                   </strong>
                   <ol className="candidate-list">
-                    {callEngineResult.candidates.map((candidate) => (
-                      <li
-                        className={previewLine?.candidateMove === candidate.move.uci && !previewLine.replyMove ? "active-preview-line" : ""}
-                        key={candidate.move.uci}
-                      >
-                        <button
-                          className="candidate-row candidate-preview-button"
-                          type="button"
-                          onClick={() => previewCandidate(candidate)}
+                    {callEngineResult.candidates.map((candidate) => {
+                      const isCollapsed = collapsedCandidateIds.has(candidate.move.uci);
+
+                      return (
+                        <li
+                          className={previewLine?.candidateMove === candidate.move.uci && !previewLine.replyMove ? "active-preview-line" : ""}
+                          key={candidate.move.uci}
                         >
-                          <span>
-                            <strong>
-                              {candidate.rank}. {candidate.move.san}
-                            </strong>
-                            <small>
-                              Depth {candidate.evaluation.depth ?? "?"} · {candidate.move.uci}
-                            </small>
-                          </span>
-                          <span className="candidate-eval">{formatEvaluation(candidate)}</span>
-                        </button>
-                        {candidate.evidence ? (
-                          <div className="move-explanation">
-                            <p>{candidate.evidence.summary}</p>
-                            <div className="evidence-chip-row">
-                              {candidate.evidence.facts.slice(0, 3).map((fact) => (
-                                <span key={`${candidate.move.uci}-${fact}`}>{fact}</span>
-                              ))}
-                            </div>
-                          </div>
-                        ) : null}
-                        {(candidate.opponentReplies ?? []).length > 0 ? (
-                          <div className="reply-list">
-                            <span>Opponent replies</span>
-                            {(candidate.opponentReplies ?? []).map((reply) => (
-                              <button
-                                className={[
-                                  "reply-row",
-                                  previewLine?.candidateMove === candidate.move.uci &&
-                                  previewLine.replyMove === reply.move.uci
-                                    ? "active-preview-line"
-                                    : ""
-                                ].join(" ")}
-                                key={`${candidate.move.uci}-${reply.move.uci}`}
-                                type="button"
-                                onClick={() => previewReply(candidate, reply)}
-                              >
-                                <span className="reply-main">
-                                  <small className="reply-piece-label">
-                                    {formatMovePieceLabel({
-                                      color: getOpponentColor(callEngineResult.selectedPiece.color),
-                                      from: reply.move.from,
-                                      piece: reply.move.piece,
-                                      to: reply.move.to
-                                    })}
-                                  </small>
-                                  <strong>
-                                    {reply.rank}. {reply.move.san}
-                                  </strong>
-                                  {reply.evidence ? <small>{reply.evidence.summary}</small> : null}
-                                </span>
+                          <div className="candidate-row candidate-card-header">
+                            <button
+                              className="candidate-toggle-button"
+                              type="button"
+                              aria-expanded={!isCollapsed}
+                              onClick={() => toggleCandidateCollapse(candidate.move.uci)}
+                            >
+                              {isCollapsed ? (
+                                <ChevronRight size={16} aria-hidden="true" />
+                              ) : (
+                                <ChevronDown size={16} aria-hidden="true" />
+                              )}
+                              <span>
+                                <strong>
+                                  {candidate.rank}. {candidate.move.san}
+                                </strong>
                                 <small>
-                                  {formatEvaluation(reply)} · depth {reply.evaluation.depth ?? "?"}
+                                  Depth {candidate.evaluation.depth ?? "?"} · {candidate.move.uci}
                                 </small>
-                              </button>
-                            ))}
+                              </span>
+                            </button>
+                            <span className="candidate-eval">{formatEvaluation(candidate)}</span>
                           </div>
-                        ) : null}
-                      </li>
-                    ))}
+                          {!isCollapsed ? (
+                            <div className="candidate-detail">
+                              <button
+                                className="candidate-preview-button"
+                                type="button"
+                                onClick={() => previewCandidate(candidate)}
+                              >
+                                Preview this line
+                              </button>
+                              {candidate.evidence ? (
+                                <div className="move-explanation">
+                                  <p>{candidate.evidence.summary}</p>
+                                  <div className="evidence-chip-row">
+                                    {candidate.evidence.facts.slice(0, 3).map((fact) => (
+                                      <span key={`${candidate.move.uci}-${fact}`}>{fact}</span>
+                                    ))}
+                                  </div>
+                                </div>
+                              ) : null}
+                              {(candidate.opponentReplies ?? []).length > 0 ? (
+                                <div className="reply-list">
+                                  <span>Opponent replies</span>
+                                  {(candidate.opponentReplies ?? []).map((reply) => (
+                                    <button
+                                      className={[
+                                        "reply-row",
+                                        previewLine?.candidateMove === candidate.move.uci &&
+                                        previewLine.replyMove === reply.move.uci
+                                          ? "active-preview-line"
+                                          : ""
+                                      ].join(" ")}
+                                      key={`${candidate.move.uci}-${reply.move.uci}`}
+                                      type="button"
+                                      onClick={() => previewReply(candidate, reply)}
+                                    >
+                                      <span className="reply-main">
+                                        <small className="reply-piece-label">
+                                          {formatMovePieceLabel({
+                                            color: getOpponentColor(callEngineResult.selectedPiece.color),
+                                            from: reply.move.from,
+                                            piece: reply.move.piece,
+                                            to: reply.move.to
+                                          })}
+                                        </small>
+                                        <strong>
+                                          {reply.rank}. {reply.move.san}
+                                        </strong>
+                                        {reply.evidence ? <small>{reply.evidence.summary}</small> : null}
+                                      </span>
+                                      <small>
+                                        {formatEvaluation(reply)} · depth {reply.evaluation.depth ?? "?"}
+                                      </small>
+                                    </button>
+                                  ))}
+                                </div>
+                              ) : null}
+                            </div>
+                          ) : null}
+                        </li>
+                      );
+                    })}
                   </ol>
                 </div>
               ) : null}
@@ -1402,75 +1585,98 @@ export function App() {
               <section className="call-engine-result">
                 <strong>Saved analysis</strong>
                 <ol className="candidate-list">
-                  {reviewEvent.analysis.candidates.map((candidate) => (
-                    <li
-                      className={
-                        reviewPreviewLine?.candidateMove === candidate.move.uci &&
-                        !reviewPreviewLine.replyMove
-                          ? "active-preview-line"
-                          : ""
-                      }
-                      key={candidate.move.uci}
-                    >
-                      <button
-                        className="candidate-row candidate-preview-button"
-                        type="button"
-                        onClick={() => previewReviewCandidate(reviewEvent, candidate)}
+                  {reviewEvent.analysis.candidates.map((candidate) => {
+                    const isCollapsed = collapsedReviewCandidateIds.has(candidate.move.uci);
+
+                    return (
+                      <li
+                        className={
+                          reviewPreviewLine?.candidateMove === candidate.move.uci &&
+                          !reviewPreviewLine.replyMove
+                            ? "active-preview-line"
+                            : ""
+                        }
+                        key={candidate.move.uci}
                       >
-                        <span>
-                          <strong>
-                            {candidate.rank}. {candidate.move.san}
-                          </strong>
-                          <small>
-                            Depth {candidate.evaluation.depth ?? "?"} · {candidate.move.uci}
-                          </small>
-                        </span>
-                        <span className="candidate-eval">{formatEvaluation(candidate)}</span>
-                      </button>
-                      {candidate.evidence ? (
-                        <div className="move-explanation">
-                          <p>{candidate.evidence.summary}</p>
-                        </div>
-                      ) : null}
-                      {(candidate.opponentReplies ?? []).length > 0 ? (
-                        <div className="reply-list">
-                          <span>Opponent replies</span>
-                          {(candidate.opponentReplies ?? []).map((reply) => (
-                            <button
-                              className={[
-                                "reply-row",
-                                reviewPreviewLine?.candidateMove === candidate.move.uci &&
-                                reviewPreviewLine.replyMove === reply.move.uci
-                                  ? "active-preview-line"
-                                  : ""
-                              ].join(" ")}
-                              key={`${candidate.move.uci}-${reply.move.uci}`}
-                              type="button"
-                              onClick={() => previewReviewReply(reviewEvent, candidate, reply)}
-                            >
-                              <span className="reply-main">
-                                <small className="reply-piece-label">
-                                  {formatMovePieceLabel({
-                                    color: getOpponentColor(reviewEvent.analysis.selectedPiece.color),
-                                    from: reply.move.from,
-                                    piece: reply.move.piece,
-                                    to: reply.move.to
-                                  })}
-                                </small>
-                                <strong>
-                                  {reply.rank}. {reply.move.san}
-                                </strong>
-                                {reply.evidence ? <small>{reply.evidence.summary}</small> : null}
-                              </span>
+                        <div className="candidate-row candidate-card-header">
+                          <button
+                            className="candidate-toggle-button"
+                            type="button"
+                            aria-expanded={!isCollapsed}
+                            onClick={() => toggleReviewCandidateCollapse(candidate.move.uci)}
+                          >
+                            {isCollapsed ? (
+                              <ChevronRight size={16} aria-hidden="true" />
+                            ) : (
+                              <ChevronDown size={16} aria-hidden="true" />
+                            )}
+                            <span>
+                              <strong>
+                                {candidate.rank}. {candidate.move.san}
+                              </strong>
                               <small>
-                                {formatEvaluation(reply)} · depth {reply.evaluation.depth ?? "?"}
+                                Depth {candidate.evaluation.depth ?? "?"} · {candidate.move.uci}
                               </small>
-                            </button>
-                          ))}
+                            </span>
+                          </button>
+                          <span className="candidate-eval">{formatEvaluation(candidate)}</span>
                         </div>
-                      ) : null}
-                    </li>
-                  ))}
+                        {!isCollapsed ? (
+                          <div className="candidate-detail">
+                            <button
+                              className="candidate-preview-button"
+                              type="button"
+                              onClick={() => previewReviewCandidate(reviewEvent, candidate)}
+                            >
+                              Preview this line
+                            </button>
+                            {candidate.evidence ? (
+                              <div className="move-explanation">
+                                <p>{candidate.evidence.summary}</p>
+                              </div>
+                            ) : null}
+                            {(candidate.opponentReplies ?? []).length > 0 ? (
+                              <div className="reply-list">
+                                <span>Opponent replies</span>
+                                {(candidate.opponentReplies ?? []).map((reply) => (
+                                  <button
+                                    className={[
+                                      "reply-row",
+                                      reviewPreviewLine?.candidateMove === candidate.move.uci &&
+                                      reviewPreviewLine.replyMove === reply.move.uci
+                                        ? "active-preview-line"
+                                        : ""
+                                    ].join(" ")}
+                                    key={`${candidate.move.uci}-${reply.move.uci}`}
+                                    type="button"
+                                    onClick={() => previewReviewReply(reviewEvent, candidate, reply)}
+                                  >
+                                    <span className="reply-main">
+                                      <small className="reply-piece-label">
+                                        {formatMovePieceLabel({
+                                          color: getOpponentColor(reviewEvent.analysis.selectedPiece.color),
+                                          from: reply.move.from,
+                                          piece: reply.move.piece,
+                                          to: reply.move.to
+                                        })}
+                                      </small>
+                                      <strong>
+                                        {reply.rank}. {reply.move.san}
+                                      </strong>
+                                      {reply.evidence ? <small>{reply.evidence.summary}</small> : null}
+                                    </span>
+                                    <small>
+                                      {formatEvaluation(reply)} · depth {reply.evaluation.depth ?? "?"}
+                                    </small>
+                                  </button>
+                                ))}
+                              </div>
+                            ) : null}
+                          </div>
+                        ) : null}
+                      </li>
+                    );
+                  })}
                 </ol>
               </section>
             </aside>
