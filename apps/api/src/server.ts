@@ -7,7 +7,7 @@ import { analyzeSelectedPiece } from "./pieceAnalysis.js";
 import { createRateLimiter, getEngineRateLimitConfig } from "./rateLimit.js";
 import { getBestMove } from "./stockfishEngine.js";
 
-const app = express();
+export const app = express();
 const port = Number(process.env.PORT ?? 3001);
 const jsonBodyLimit = process.env.JSON_BODY_LIMIT ?? "16kb";
 const allowedOrigins = (process.env.ALLOWED_ORIGINS ?? "")
@@ -19,6 +19,7 @@ const engineRateLimiter = createRateLimiter({
   ...getEngineRateLimitConfig(),
   keyPrefix: "engine"
 });
+const apiRouter = express.Router();
 
 if (trustProxy) {
   app.set("trust proxy", 1);
@@ -38,11 +39,11 @@ app.use(
 );
 app.use(express.json({ limit: jsonBodyLimit }));
 
-app.get("/health", (_request, response) => {
+apiRouter.get("/health", (_request, response) => {
   response.json(getHealthStatus());
 });
 
-app.post("/engine/best-move", engineRateLimiter, async (request, response) => {
+apiRouter.post("/engine/best-move", engineRateLimiter, async (request, response) => {
   const { fen, difficulty } = request.body as {
     fen?: unknown;
     difficulty?: unknown;
@@ -64,7 +65,7 @@ app.post("/engine/best-move", engineRateLimiter, async (request, response) => {
   }
 });
 
-app.post("/analysis/piece", engineRateLimiter, async (request, response) => {
+apiRouter.post("/analysis/piece", engineRateLimiter, async (request, response) => {
   const { fen, selectedSquare, candidateCount, replyCount } = request.body as {
     fen?: unknown;
     selectedSquare?: unknown;
@@ -99,6 +100,11 @@ app.post("/analysis/piece", engineRateLimiter, async (request, response) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`API listening on http://localhost:${port}`);
-});
+app.use(apiRouter);
+app.use("/api", apiRouter);
+
+if (process.env.NODE_ENV !== "test") {
+  app.listen(port, () => {
+    console.log(`API listening on http://localhost:${port}`);
+  });
+}
