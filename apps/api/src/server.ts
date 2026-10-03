@@ -4,14 +4,25 @@ import type { Square } from "chess.js";
 import { isDifficulty } from "./difficulty.js";
 import { getHealthStatus } from "./health.js";
 import { analyzeSelectedPiece } from "./pieceAnalysis.js";
+import { createRateLimiter, getEngineRateLimitConfig } from "./rateLimit.js";
 import { getBestMove } from "./stockfishEngine.js";
 
 const app = express();
 const port = Number(process.env.PORT ?? 3001);
+const jsonBodyLimit = process.env.JSON_BODY_LIMIT ?? "16kb";
 const allowedOrigins = (process.env.ALLOWED_ORIGINS ?? "")
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
+const trustProxy = process.env.TRUST_PROXY === "true";
+const engineRateLimiter = createRateLimiter({
+  ...getEngineRateLimitConfig(),
+  keyPrefix: "engine"
+});
+
+if (trustProxy) {
+  app.set("trust proxy", 1);
+}
 
 app.use(
   cors({
@@ -25,13 +36,13 @@ app.use(
     }
   })
 );
-app.use(express.json());
+app.use(express.json({ limit: jsonBodyLimit }));
 
 app.get("/health", (_request, response) => {
   response.json(getHealthStatus());
 });
 
-app.post("/engine/best-move", async (request, response) => {
+app.post("/engine/best-move", engineRateLimiter, async (request, response) => {
   const { fen, difficulty } = request.body as {
     fen?: unknown;
     difficulty?: unknown;
@@ -53,7 +64,7 @@ app.post("/engine/best-move", async (request, response) => {
   }
 });
 
-app.post("/analysis/piece", async (request, response) => {
+app.post("/analysis/piece", engineRateLimiter, async (request, response) => {
   const { fen, selectedSquare, candidateCount, replyCount } = request.body as {
     fen?: unknown;
     selectedSquare?: unknown;
