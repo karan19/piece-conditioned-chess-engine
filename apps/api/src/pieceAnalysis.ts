@@ -63,8 +63,9 @@ const defaultCandidateCount = 4;
 const defaultReplyCount = 3;
 const maxCandidateCount = 6;
 const maxReplyCount = 3;
-const analysisMoveTimeMs = 1200;
-const replyMoveTimeMs = 700;
+const maxReplySearchCount = 8;
+const analysisMoveTimeMs = 900;
+const replyMoveTimeMs = 450;
 const pieceLabels: Record<PieceSymbol, string> = {
   p: "pawn",
   n: "knight",
@@ -214,6 +215,60 @@ function scoreEvaluation({
   return userCp ?? Number.NEGATIVE_INFINITY;
 }
 
+function scoreReplyForSearch({
+  after,
+  move
+}: {
+  after: Chess;
+  move: Move;
+}) {
+  let score = 0;
+
+  if (after.isCheckmate()) {
+    score += 10_000;
+  } else if (after.isCheck()) {
+    score += 2_000;
+  }
+
+  if (move.captured) {
+    score += pieceValues[move.captured] * 100;
+  }
+
+  if (move.promotion) {
+    score += pieceValues[move.promotion] * 80;
+  }
+
+  if (move.san.includes("+") || move.san.includes("#")) {
+    score += 500;
+  }
+
+  return score;
+}
+
+function selectReplySearchMoves(candidateFen: string, replyMoves: Move[]) {
+  return replyMoves
+    .map((replyMove, index) => {
+      const replyGame = new Chess(candidateFen);
+      const appliedReplyMove = replyGame.move({
+        from: replyMove.from,
+        to: replyMove.to,
+        promotion: replyMove.promotion
+      });
+
+      return {
+        move: replyMove,
+        score: scoreReplyForSearch({
+          after: replyGame,
+          move: appliedReplyMove
+        }),
+        index
+      };
+    })
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .slice(0, maxReplySearchCount)
+    .map((reply) => reply.move);
+}
+
 function normalizeEvaluation({
   evaluationCp,
   evaluationMate,
@@ -335,8 +390,13 @@ export async function analyzeSelectedPiece({
         promotion: candidate.move.promotion
       });
 
+      const repliesToEvaluate = selectReplySearchMoves(
+        candidateGame.fen(),
+        candidateGame.moves({ verbose: true })
+      );
+
       const replies = await Promise.all(
-        candidateGame.moves({ verbose: true }).map(async (replyMove) => {
+        repliesToEvaluate.map(async (replyMove) => {
           const replyGame = new Chess(candidateGame.fen());
           const appliedReplyMove = replyGame.move({
             from: replyMove.from,
