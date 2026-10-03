@@ -10,18 +10,18 @@ import {
   type BoardPiece,
   type createGame
 } from "./chessGame";
-import bishopDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/06_bishop_dark.glb?url";
-import bishopLightUrl from "./assets/chess-pieces/polyy-low-poly/models/05_bishop_light.glb?url";
-import kingDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/02_king_dark.glb?url";
-import kingLightUrl from "./assets/chess-pieces/polyy-low-poly/models/01_king_light.glb?url";
-import knightDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/08_knight_dark.glb?url";
-import knightLightUrl from "./assets/chess-pieces/polyy-low-poly/models/07_knight_light.glb?url";
-import pawnDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/12_pawn_dark.glb?url";
-import pawnLightUrl from "./assets/chess-pieces/polyy-low-poly/models/11_pawn_light.glb?url";
-import queenDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/04_queen_dark.glb?url";
-import queenLightUrl from "./assets/chess-pieces/polyy-low-poly/models/03_queen_light.glb?url";
-import rookDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/10_rook_dark.glb?url";
-import rookLightUrl from "./assets/chess-pieces/polyy-low-poly/models/09_rook_light.glb?url";
+import bishopDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/06_bishop_dark_v2.glb?url";
+import bishopLightUrl from "./assets/chess-pieces/polyy-low-poly/models/05_bishop_light_v2.glb?url";
+import kingDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/02_king_dark_v2.glb?url";
+import kingLightUrl from "./assets/chess-pieces/polyy-low-poly/models/01_king_light_v2.glb?url";
+import knightDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/08_knight_dark_v2.glb?url";
+import knightLightUrl from "./assets/chess-pieces/polyy-low-poly/models/07_knight_light_v2.glb?url";
+import pawnDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/12_pawn_dark_v2.glb?url";
+import pawnLightUrl from "./assets/chess-pieces/polyy-low-poly/models/11_pawn_light_v2.glb?url";
+import queenDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/04_queen_dark_v2.glb?url";
+import queenLightUrl from "./assets/chess-pieces/polyy-low-poly/models/03_queen_light_v2.glb?url";
+import rookDarkUrl from "./assets/chess-pieces/polyy-low-poly/models/10_rook_dark_v2.glb?url";
+import rookLightUrl from "./assets/chess-pieces/polyy-low-poly/models/09_rook_light_v2.glb?url";
 
 type Board3DViewProps = {
   game: ReturnType<typeof createGame>;
