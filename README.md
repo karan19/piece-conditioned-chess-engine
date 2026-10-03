@@ -83,3 +83,13 @@ locally through the `stockfish` npm package. A deployed demo needs both:
 
 For a public demo, keep analysis request limits conservative and monitor server
 CPU usage, because deep reply analysis can be expensive.
+
+Useful API environment variables:
+
+```text
+ALLOWED_ORIGINS=https://your-app.example.com
+ENGINE_RATE_LIMIT_MAX=20
+ENGINE_RATE_LIMIT_WINDOW_MS=60000
+JSON_BODY_LIMIT=16kb
+TRUST_PROXY=true
+```
