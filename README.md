@@ -24,6 +24,10 @@ grounded explanations, preview mode, and a local learning journal.
 V1 is usable locally. See [docs/v1-ready.md](docs/v1-ready.md) for the current
 readiness notes, known limitations, and deployment guidance.
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
 ## Project Structure
 
 ```text
