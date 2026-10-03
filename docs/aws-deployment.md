@@ -34,7 +34,11 @@ API, in App Runner:
 
 ```text
 ALLOWED_ORIGINS=https://chess.karankan19.com
+ENGINE_RATE_LIMIT_MAX=20
+ENGINE_RATE_LIMIT_WINDOW_MS=60000
+JSON_BODY_LIMIT=16kb
 PORT=3001
+TRUST_PROXY=true
 ```
 
 ## Deployment Order
@@ -65,7 +69,8 @@ PORT=3001
 
 - Start with one small App Runner service.
 - Keep candidate and reply caps conservative.
+- Keep the engine endpoint rate limit enabled.
 - Watch App Runner CPU usage during analysis calls.
-- Add request throttling before a wider public launch.
+- Tighten `ENGINE_RATE_LIMIT_MAX` if public traffic is noisy.
 - Leave V2 intelligence experiments out of the public beta until V1 hosting is
   stable.
