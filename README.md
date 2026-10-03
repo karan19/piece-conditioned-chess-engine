@@ -24,6 +24,13 @@ grounded explanations, preview mode, and a local learning journal.
 V1 is usable locally. See [docs/v1-ready.md](docs/v1-ready.md) for the current
 readiness notes, known limitations, and deployment guidance.
 
+Branch policy:
+
+- `main` is the open-source development branch.
+- `aws-production` is the branch AWS should deploy from.
+
+See [docs/branch-strategy.md](docs/branch-strategy.md) for details.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
