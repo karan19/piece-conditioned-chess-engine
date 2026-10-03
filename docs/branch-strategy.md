@@ -34,13 +34,16 @@ AWS Amplify and App Runner should be configured to deploy from
 
 ## Promotion Flow
 
+`aws-production` is protected. Do not push to it directly.
+
 When `main` has a version we want to deploy:
 
-```bash
-git checkout aws-production
-git merge main
-git push origin aws-production
-```
+1. Create a release branch from `aws-production`.
+2. Cherry-pick or carefully merge the wanted commits from `main`.
+3. Preserve AWS-only files such as `amplify.yml`, `Dockerfile.api`, and
+   `docs/aws-deployment.md`.
+4. Open a pull request into `aws-production`.
+5. Merge the pull request after reviewing the diff.
 
 For production-only fixes, commit them to `aws-production` first. If the fix is
 also useful for the open-source project, merge or cherry-pick it back to `main`.
