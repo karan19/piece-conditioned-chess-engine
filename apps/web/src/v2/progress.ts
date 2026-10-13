@@ -7,6 +7,8 @@ export type RecordState = {
   last: number;
   continuation: string[];
   result: string | null;
+  bookMoves?: string[];
+  bookComplete?: boolean;
 };
 export type Progress = {
   version: 3;
@@ -70,6 +72,9 @@ export function decodeProgress(value: unknown): Progress {
             ? (r.continuation as string[])
             : [],
         result: null,
+        ...(Array.isArray(r.bookMoves) && r.bookMoves.length > 0 && r.bookMoves.length <= 1000 && r.bookMoves.every(m => typeof m === "string")
+          ? { bookMoves: r.bookMoves as string[], bookComplete: r.bookComplete === true }
+          : {}),
       };
   }
   const custom: Opening[] = [];
@@ -87,17 +92,25 @@ export function decodeProgress(value: unknown): Progress {
     const opening = known.find((o) => id.slice(2) === o.id);
     if (!opening) continue;
     try {
-      const game = replayGame(opening, record.continuation);
+      if (record.bookMoves) replayGame({ ...opening, moves: record.bookMoves });
+    } catch {
+      delete record.bookMoves;
+      delete record.bookComplete;
+      record.continuation = [];
+    }
+    const effective = savedOpening(opening, record);
+    try {
+      replayGame(effective, record.continuation);
       record.lastPly = Math.min(
         record.lastPly,
-        opening.moves.length + record.continuation.length,
+        effective.moves.length + record.continuation.length,
       );
       record.result =
-        gameResult(replayGame(opening, record.continuation, record.lastPly))
+        gameResult(replayGame(effective, record.continuation, record.lastPly))
           ?.title ?? null;
     } catch {
       record.continuation = [];
-      record.lastPly = Math.min(record.lastPly, opening.moves.length);
+      record.lastPly = Math.min(record.lastPly, effective.moves.length);
     }
   }
   return {
@@ -135,6 +148,9 @@ export function saveProgress(progress: Progress) {
     return false;
   }
 }
+export function savedOpening(opening: Opening, record?: RecordState): Opening {
+  return record?.bookMoves ? { ...opening, moves: record.bookMoves } : opening;
+}
 export function rememberStep(
   progress: Progress,
   opening: Opening,
@@ -142,22 +158,25 @@ export function rememberStep(
   ply: number,
   now = Date.now(),
   continuation?: string[],
+  learning?: { bookMoves: string[]; bookComplete: boolean },
 ): Progress {
   const id = recordKey(opening, side),
     old = progress.records[id];
   const savedMoves = continuation ?? old?.continuation ?? [];
-  const game = replayGame(opening, savedMoves, ply);
+  const effective = learning ? { ...opening, moves: learning.bookMoves } : savedOpening(opening, old);
+  const game = replayGame(effective, savedMoves, ply);
   return {
     ...progress,
     records: {
       ...progress.records,
       [id]: {
         lastPly: ply,
-        completed: Boolean(old?.completed) || ply === opening.moves.length,
-        visits: (old?.visits ?? 0) + (ply === opening.moves.length ? 1 : 0),
+        completed: Boolean(old?.completed) || ply === effective.moves.length,
+        visits: (old?.visits ?? 0) + (ply === effective.moves.length ? 1 : 0),
         last: now,
         continuation: savedMoves,
         result: gameResult(game)?.title ?? null,
+        ...(learning ?? (old?.bookMoves ? { bookMoves: old.bookMoves, bookComplete: old.bookComplete } : {})),
       },
     },
   };

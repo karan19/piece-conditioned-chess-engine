@@ -31,6 +31,7 @@ import {
   loadProgress,
   recordKey,
   rememberStep,
+  savedOpening,
   removeFromLearning,
   saveProgress,
   type Progress,
@@ -194,10 +195,10 @@ export function OpeningStudio() {
     window.scrollTo(0, 0);
   };
   const onStep = useCallback(
-    (ply: number, continuation: string[]) => {
+    (ply: number, continuation: string[], learning?: { bookMoves: string[]; bookComplete: boolean }) => {
       if (session)
         setProgress((p) =>
-          rememberStep(p, session, side, ply, Date.now(), continuation),
+          rememberStep(p, session, side, ply, Date.now(), continuation, learning),
         );
     },
     [session, side],
@@ -394,6 +395,8 @@ export function OpeningStudio() {
               initialContinuation={
                 progress.records[recordKey(session, side)]?.continuation ?? []
               }
+              initialBookMoves={progress.records[recordKey(session, side)]?.bookMoves}
+              initialBookComplete={progress.records[recordKey(session, side)]?.bookComplete}
               continuations={(family?.lines ?? [])
                 .filter(
                   (o) =>
@@ -522,7 +525,7 @@ export function OpeningStudio() {
                           onClick={() =>
                             download(
                               exportGuidedGame(
-                                selected,
+                                savedOpening(selected, progress.records[recordKey(selected, side)]),
                                 progress.records[recordKey(selected, side)]
                                   ?.continuation ?? [],
                                 progress.records[recordKey(selected, side)]

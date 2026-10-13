@@ -43,9 +43,12 @@ export function movePurpose(before: Chess, after: Chess, move: Move): string {
       ? `The rook moves to the open ${move.to[0]}-file, where no pawns block that file. Other pieces can still obstruct it; look for entry squares before invading.`
       : `The rook moves to the ${move.to[0]}-file. Pawns still occupy this file, so its usefulness depends on supporting them or opening the file later.`);
   } else clauses.push(`${actor} moves the ${names[move.piece]} to ${move.to}. Compare its new attacks and defenders before committing to the next exchange.`);
+  const centralReach = centers.filter(square => after.attackers(square, move.color).includes(move.to));
+  if (move.piece !== "p" && centralReach.length)
+    clauses.push(`From ${move.to}, the ${names[move.piece]} controls ${centralReach.join(" and ")} in the center. This affects the opponent's central pawn advances and the squares their pieces can use.`);
   const targets = after.board().flat().filter(p => p && p.color !== move.color && p.type !== "k" && after.attackers(p.square, move.color).includes(move.to));
   if (targets.length) clauses.push(`From ${move.to} it attacks ${targets.slice(0, 3).map(p => `${names[p!.type]} on ${p!.square}`).join(" and ")}. An attack creates a decision for the opponent, but a defended target is not necessarily free to capture.`);
-  const defended = after.board().flat().filter(p => p && p.color === move.color && p.square !== move.to && after.attackers(p.square, move.color).includes(move.to));
+  const defended = after.board().flat().filter(p => p && p.color === move.color && p.type !== "k" && p.square !== move.to && after.attackers(p.square, move.color).includes(move.to));
   if (defended.length) clauses.push(`It also supports the ${move.color === "w" ? "White" : "Black"} ${defended.slice(0, 2).map(p => `${names[p!.type]} on ${p!.square}`).join(" and ")}.`);
   if (after.isCheck() && !after.isCheckmate()) clauses.push(`The opposing king is in check. The reply must remove the check by moving the king, capturing the checking piece, or blocking its line when legal.`);
   return clauses.join(" ");
@@ -60,6 +63,12 @@ export function themedPurpose(opening: Opening, before: Chess, move: Move, ply: 
     if (move.san === "c3") return "c3 supports d4 and gives the center a solid base. The cost is occupying the c3 square that a knight might otherwise use, so London setups often develop that knight to d2. Watch Black's pressure on d4 and on the queenside instead of automatically starting a kingside attack.";
     if (move.san === "Nbd2") return "Nbd2 develops the b1 knight behind the central pawns, supports e4 and c4, and leaves the c-pawn free to support d4. The knight also helps reinforce the other knight if it comes to f3. Coordinate the bishops and castle before choosing a pawn break.";
   }
+  if (/London/.test(family) && move.color === "b" && move.san === "c5" && before.get("d4")?.color === "w" && before.get("d4")?.type === "p")
+    return "...c5 challenges the pawn on d4, so White cannot build the London setup without attending to the center. White can support d4, exchange, or sometimes advance; each choice changes the pawn structure and bishop diagonals. Black should coordinate the pieces behind this pressure instead of attacking with the pawn alone.";
+  if (/London/.test(family) && move.color === "b" && move.san === "Bd6" && before.get("f4")?.color === "w" && before.get("f4")?.type === "b" && !before.get("e5"))
+    return "...Bd6 develops the bishop while directly challenging White's bishop on f4 along d6–e5–f4. White must decide whether to exchange, retreat, or maintain the tension with support. An exchange can change which bishop remains active and how the center is defended; check legal captures and recaptures before committing.";
+  if (/Englund/.test(family) && move.color === "b" && move.san === "e5")
+    return "...e5 offers Black's e-pawn to the pawn on d4. If White accepts with dxe5, Black can seek development and pressure on that pawn, often beginning with ...Nc6. White should keep developing and check concrete threats rather than trying to hold extra material at any cost. The gambit offers practical complications; its popularity does not establish that Black has enough compensation.";
   if (/Caro-Kann/.test(family)) {
     if (move.color === "b" && move.san === "d5" && move.from === "d7" && before.get("c6")?.type === "p" && before.get("c6")?.color === "b") return "...d5 is the central challenge prepared by ...c6: the c6 pawn supports d5, and the new d5 pawn attacks e4. White can advance e5, exchange on d5, or defend the center with a developing move. Each choice creates a different pawn structure, so Black's bishop placement and pawn breaks must adapt.";
     if (move.color === "b" && move.san === "Bf5" && move.from === "c8") return "...Bf5 develops the light-squared bishop toward e4 before a later ...e6 can shut its original diagonal. White may challenge this bishop with a knight or pawn, so keep a retreat available. Develop the remaining pieces and prepare a central break suited to White's actual pawn chain.";
