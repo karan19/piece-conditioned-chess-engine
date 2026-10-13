@@ -23,7 +23,7 @@ export type OpeningCourse = {
   full: OpeningLine[];
 };
 
-export type TrainerMode = "learn" | "practice";
+export type TrainerMode = "learn" | "practice" | "drill" | "time" | "puzzles" | "arena";
 
 export type LineProgress = {
   discovered: boolean;
