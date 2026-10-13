@@ -35,6 +35,25 @@ export function movePurpose(before: Chess, after: Chess, move: Move): string {
       return available(after).filter(s => !old.includes(s) && centers.includes(s)).map(s => `${names[p.type]} on ${p.square} now reaches ${s}`);
     });
     if (opened.length) clauses.push(`It also opens a line: the ${opened.slice(0, 2).join("; the ")}.`);
+  } else if (move.piece === "b" && ["b2", "g2", "b7", "g7"].includes(move.to)) {
+    const queenside = move.to[0] === "b";
+    const diagonal = ["b2", "g7"].includes(move.to) ? "h8–a1" : "a8–h1";
+    const fileStep = queenside ? 1 : -1;
+    const rankStep = move.to[1] === "2" ? 1 : -1;
+    let file = "abcdefgh".indexOf(move.to[0]) + fileStep;
+    let rank = Number(move.to[1]) + rankStep;
+    let blocker = "";
+    while (file >= 0 && file < 8 && rank >= 1 && rank <= 8) {
+      const square = `${"abcdefgh"[file]}${rank}` as Square;
+      const piece = after.get(square);
+      if (piece) {
+        blocker = `Its inward diagonal currently meets ${piece.color === move.color ? actor + "'s" : "the opposing"} ${names[piece.type]} on ${square}. ${piece.color === move.color ? "That piece limits the bishop's current range; moving it or exchanging central pawns may open the line." : "That is the first target along the diagonal; intervening pieces limit pressure beyond it."}`;
+        break;
+      }
+      file += fileStep;
+      rank += rankStep;
+    }
+    clauses.push(`The bishop takes a fianchetto square on ${move.to}, joining the long ${diagonal} diagonal. This setup aims for influence from the flank rather than placing the bishop directly in the center. ${blocker || "The inward diagonal is currently clear, so watch the central squares and targets along its path."} Coordinate a suitable central pawn break with this bishop, and bring the king to safety when castling is legal.`);
   } else if ((move.piece === "n" || move.piece === "b") && move.from[1] === (move.color === "w" ? "1" : "8"))
     clauses.push(`The ${names[move.piece]} comes off its starting rank. Development gives it a job beyond defending the back rank and helps the pieces coordinate before a central break.`);
   else if (move.piece === "r") {
