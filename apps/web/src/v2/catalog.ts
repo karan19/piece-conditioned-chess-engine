@@ -138,6 +138,6 @@ export const familyNotes: Record<string, string> = {
 export function description(family: Family) {
   return (
     familyNotes[family.name] ??
-    `Explore ${family.lines.length.toLocaleString()} named ${family.lines.length === 1 ? "line" : "variations"} of the ${family.name}. Follow each move on the board, then build recall with practice.`
+    `Explore ${family.lines.length.toLocaleString()} named ${family.lines.length === 1 ? "line" : "variations"} of the ${family.name}. Follow each move on the board, understand why each move is played.`
   );
 }

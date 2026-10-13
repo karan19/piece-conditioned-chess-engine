@@ -1,146 +1,60 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
+  BookOpen,
   Check,
-  Flag,
-  Lightbulb,
+  ChevronLeft,
+  ChevronRight,
   RotateCcw,
-  SkipForward,
-  Timer,
-  Volume2,
-  VolumeX,
 } from "lucide-react";
-import type { Square, PieceSymbol } from "chess.js";
+import type { PieceSymbol, Square } from "chess.js";
 import { gameAt, type Opening, type Side } from "./catalog";
+import { explainStep, openingPlan } from "./lessons";
 import { Board, Piece } from "./Board";
-export type Mode = "learn" | "practice" | "drill" | "time";
-export const modeLabels: Record<Mode, string> = {
-  learn: "Learn",
-  practice: "Spaced review",
-  drill: "Drill",
-  time: "Time challenge",
-};
-let audioContext: AudioContext | undefined;
-function playSound() {
-  try {
-    audioContext ??= new AudioContext();
-    void audioContext.resume();
-    const oscillator = audioContext.createOscillator();
-    const gain = audioContext.createGain();
-    oscillator.type = "sine";
-    oscillator.frequency.setValueAtTime(420, audioContext.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(
-      220,
-      audioContext.currentTime + 0.07,
-    );
-    gain.gain.setValueAtTime(0.04, audioContext.currentTime);
-    gain.gain.exponentialRampToValueAtTime(
-      0.001,
-      audioContext.currentTime + 0.09,
-    );
-    oscillator.connect(gain);
-    gain.connect(audioContext.destination);
-    oscillator.start();
-    oscillator.stop(audioContext.currentTime + 0.1);
-  } catch {
-    /* Audio is optional. */
-  }
-}
 export function Training({
   opening,
   side,
-  mode,
-  index,
-  total,
+  initialPly = 0,
+  continuations = [],
+  onContinue,
   onExit,
-  onNext,
-  onComplete,
+  onStep,
 }: {
   opening: Opening;
   side: Side;
-  mode: Mode;
-  index: number;
-  total: number;
+  initialPly?: number;
+  continuations?: Opening[];
+  onContinue: (opening: Opening) => void;
   onExit: () => void;
-  onNext: () => void;
-  onComplete: (clean: boolean, review: boolean) => void;
+  onStep: (ply: number) => void;
 }) {
-  const [ply, setPly] = useState(0);
+  const [ply, setPly] = useState(Math.min(initialPly, opening.moves.length));
   const [selected, setSelected] = useState<Square | null>(null);
-  const [showHint, setShowHint] = useState(false);
-  const [errors, setErrors] = useState(0);
-  const [assists, setAssists] = useState(0);
-  const [seconds, setSeconds] = useState(60);
-  const [sound, setSound] = useState(false);
+  const [feedback, setFeedback] = useState("");
   const [promotion, setPromotion] = useState<{
     from: Square;
     to: Square;
   } | null>(null);
-  const [feedback, setFeedback] = useState<{ kind: string; text: string }>({
-    kind: "info",
-    text:
-      mode === "learn"
-        ? "Follow the line. Your opponent replies automatically."
-        : "Find each move from memory. Take your time.",
-  });
-  const deadline = useRef(Date.now() + 60000);
-  const recorded = useRef(false);
-  const [attempt, setAttempt] = useState(0);
   const game = useMemo(() => gameAt(opening, ply), [opening, ply]);
-  const finished = ply >= opening.moves.length;
-  const expired = mode === "time" && seconds === 0 && !finished;
-  const userTurn = game.turn() === side && !finished && !expired;
-  const expected = useMemo(
-    () =>
-      !finished
-        ? gameAt(opening, ply + 1)
-            .history({ verbose: true })
-            .at(-1)
-        : undefined,
-    [opening, ply, finished],
+  const next = useMemo(
+    () => explainStep(opening, ply, side),
+    [opening, ply, side],
   );
+  const explained = useMemo(
+    () => explainStep(opening, Math.max(0, ply - 1), side),
+    [opening, ply, side],
+  );
+  const guide = openingPlan(opening, side);
+  const finished = ply === opening.moves.length;
+  const userTurn = !finished && game.turn() === side;
   const last = game.history({ verbose: true }).at(-1);
-  useEffect(() => {
-    if (!finished && !expired && game.turn() !== side) {
-      const timer = window.setTimeout(() => {
-        if (sound) playSound();
-        setPly((p) => p + 1);
-        setSelected(null);
-        setShowHint(false);
-      }, 450);
-      return () => clearTimeout(timer);
-    }
-  }, [ply, side, finished, expired, game, sound]);
-  useEffect(() => {
-    if (mode !== "time" || finished || expired) return;
-    const timer = window.setInterval(
-      () =>
-        setSeconds(
-          Math.max(0, Math.ceil((deadline.current - Date.now()) / 1000)),
-        ),
-      250,
-    );
-    return () => clearInterval(timer);
-  }, [mode, finished, expired, attempt]);
-  useEffect(() => {
-    if (finished && !recorded.current) {
-      recorded.current = true;
-      onComplete(errors === 0 && assists === 0, mode !== "learn");
-    }
-  }, [finished, errors, assists, mode, onComplete]);
-  const restart = () => {
-    deadline.current = Date.now() + 60000;
-    recorded.current = false;
-    setPly(0);
+  const go = (target: number) => {
+    setPly(target);
     setSelected(null);
-    setShowHint(false);
-    setErrors(0);
-    setAssists(0);
-    setSeconds(60);
     setPromotion(null);
-    setAttempt((a) => a + 1);
-    setFeedback({ kind: "info", text: "Fresh start. Find the next move." });
+    setFeedback("");
+    onStep(target);
   };
   const submit = (from: Square, to: Square, promote?: PieceSymbol) => {
     if (!userTurn) return;
@@ -152,22 +66,13 @@ export function Training({
       return;
     }
     if (move.san !== opening.moves[ply]) {
-      setErrors((n) => n + 1);
       setSelected(null);
-      setFeedback({
-        kind: "error",
-        text: `${move.san} is legal, but this line follows a different move. Try again${mode === "learn" ? `: ${opening.moves[ply]}.` : "."}`,
-      });
+      setFeedback(
+        `${move.san} is legal, but this walkthrough shows ${opening.moves[ply]}. Follow the highlighted move, or use the button to see it played.`,
+      );
       return;
     }
-    if (sound) playSound();
-    setPly((p) => p + 1);
-    setSelected(null);
-    setShowHint(false);
-    setFeedback({
-      kind: "success",
-      text: `Correct. ${move.san}${game.isCheck() ? " gets you out of check." : " is the move in this line."}`,
-    });
+    go(ply + 1);
   };
   const choose = (square: Square) => {
     if (!userTurn || promotion) return;
@@ -188,52 +93,26 @@ export function Training({
       setPromotion({ from: selected, to: square });
     else submit(selected, square);
   };
-  const hint = () => {
-    if (!showHint) {
-      setAssists((n) => n + 1);
-      setShowHint(true);
-    }
-  };
-  const yourMoves = opening.moves.filter(
-    (_, i) => i % 2 === (side === "w" ? 0 : 1),
-  ).length;
-  const doneMoves = opening.moves
-    .slice(0, ply)
-    .filter((_, i) => i % 2 === (side === "w" ? 0 : 1)).length;
   return (
     <div className="os-training">
       <div className="os-session-top">
         <button className="os-link" onClick={onExit}>
-          <ArrowLeft size={17} /> Back to course
+          <ArrowLeft size={17} /> Back to opening
         </button>
         <span>
-          {modeLabels[mode]} <span className="os-muted">/</span> Line{" "}
-          {index + 1} of {total}
+          Guided walkthrough · You play {side === "w" ? "White" : "Black"}
         </span>
-        <button
-          className="os-icon-button"
-          aria-label={sound ? "Mute move sounds" : "Enable move sounds"}
-          onClick={() => setSound((s) => !s)}
-        >
-          {sound ? <Volume2 size={18} /> : <VolumeX size={18} />}
-        </button>
       </div>
       <div className="os-training-layout">
         <section className="os-board-zone">
           <div className="os-board-heading">
             <span className="os-label">
-              YOU PLAY {side === "w" ? "WHITE" : "BLACK"}
+              {finished
+                ? "END OF THIS LINE"
+                : `${game.turn() === "w" ? "WHITE" : "BLACK"} TO MOVE`}
             </span>
             <span>
-              {mode === "time" ? (
-                <>
-                  <Timer size={16} /> {seconds}s
-                </>
-              ) : (
-                <>
-                  {doneMoves}/{yourMoves} moves
-                </>
-              )}
+              {ply}/{opening.moves.length} plies
             </span>
           </div>
           <Board
@@ -242,7 +121,7 @@ export function Training({
             selected={selected}
             onSelect={choose}
             interactive={userTurn}
-            hint={(showHint || mode === "learn") && userTurn ? expected : null}
+            hint={next?.move}
             last={last}
           />
           {promotion && (
@@ -252,12 +131,11 @@ export function Training({
               aria-modal="true"
               aria-label="Choose promotion piece"
             >
-              <span>Promote to</span>
               {(["q", "r", "b", "n"] as PieceSymbol[]).map((type) => (
                 <button
-                  className="os-icon-button"
                   key={type}
-                  aria-label={`Promote to ${type === "q" ? "queen" : type === "r" ? "rook" : type === "b" ? "bishop" : "knight"}`}
+                  className="os-icon-button"
+                  aria-label={`Promote to ${type}`}
                   onClick={() => {
                     submit(promotion.from, promotion.to, type);
                     setPromotion(null);
@@ -271,139 +149,128 @@ export function Training({
               </button>
             </div>
           )}
-          <div
-            className={`os-feedback ${finished ? "success" : expired ? "error" : feedback.kind}`}
-            role="status"
-          >
-            {finished ? (
-              <>
-                <Check size={19} /> Line complete.{" "}
-                {errors || assists
-                  ? "Keep practicing to build recall."
-                  : "Nicely played."}
-              </>
-            ) : expired ? (
-              <>
-                <Timer size={19} /> Time is up. Restart to try again.
-              </>
-            ) : !userTurn ? (
-              <>
-                <span className="os-thinking" /> Opponent is replying…
-              </>
-            ) : (
-              <>
-                {feedback.kind === "success" ? (
-                  <Check size={19} />
-                ) : (
-                  <Flag size={19} />
-                )}{" "}
-                {feedback.text}
-              </>
-            )}
+          <div className="os-feedback" role="status">
+            {feedback ||
+              (finished
+                ? "You've walked through this line. It stays in My openings until you remove it."
+                : next?.instruction)}
           </div>
           <div className="os-board-tools">
-            <button className="os-secondary" onClick={restart}>
-              <RotateCcw size={16} /> Restart
+            <button
+              className="os-secondary"
+              onClick={() => go(0)}
+              disabled={ply === 0}
+            >
+              <RotateCcw size={16} /> Start again
             </button>
             <button
               className="os-secondary"
-              onClick={hint}
-              disabled={!userTurn || showHint}
+              onClick={() => go(ply - 1)}
+              disabled={ply === 0}
             >
-              <Lightbulb size={16} /> Hint
+              <ChevronLeft size={16} /> Previous
             </button>
-            <button className="os-secondary" onClick={onNext}>
-              <SkipForward size={16} />{" "}
-              {index + 1 === total ? "Finish session" : "Skip line"}
+            <button
+              className="os-primary"
+              onClick={() => go(ply + 1)}
+              disabled={finished}
+            >
+              <ChevronRight size={16} />{" "}
+              {userTurn ? "Show my move" : "Show opponent's move"}
             </button>
           </div>
+          <section className="os-lesson-timeline">
+            <span className="os-label">FOLLOW THE WHOLE SEQUENCE</span>
+            <div>
+              {opening.moves.map((san, i) => (
+                <button
+                  key={i}
+                  className={i === ply - 1 ? "active" : i < ply ? "seen" : ""}
+                  onClick={() => go(i + 1)}
+                  aria-label={`View move ${Math.floor(i / 2) + 1}${i % 2 === 0 ? "." : "..."} ${san}`}
+                >
+                  <small>
+                    {Math.floor(i / 2) + 1}
+                    {i % 2 === 0 ? "." : "..."}
+                  </small>{" "}
+                  {san}
+                </button>
+              ))}
+            </div>
+          </section>
         </section>
         <aside className="os-session-panel">
-          <span className="os-eyebrow">
-            {opening.eco} · {modeLabels[mode]}
-          </span>
+          <span className="os-eyebrow">{opening.eco} · GUIDED LESSON</span>
           <h1>{opening.family}</h1>
           <p className="os-session-variation">
             {opening.name.includes(":")
               ? opening.name.split(":").slice(1).join(":")
               : "Main position"}
           </p>
-          <div className="os-progress-track">
-            <div style={{ width: `${(ply / opening.moves.length) * 100}%` }} />
+          <div className="os-lesson-idea">
+            <BookOpen size={19} />
+            <p>{guide.idea}</p>
           </div>
-          <p className="os-muted">
-            {Math.round((ply / opening.moves.length) * 100)}% of this line
-          </p>
-          <div className="os-next-move">
-            <span className="os-label">
-              {finished
-                ? "SESSION RESULT"
-                : expired
-                  ? "TRY AGAIN"
-                  : userTurn
-                    ? "YOUR NEXT MOVE"
-                    : "OPPONENT'S TURN"}
-            </span>
-            <strong>
-              {finished
-                ? `${doneMoves} moves played`
-                : expired
-                  ? "Time ran out"
-                  : userTurn && (mode === "learn" || showHint)
-                    ? opening.moves[ply]
-                    : userTurn
-                      ? "What would you play?"
-                      : "Watch the board"}
-            </strong>
-            <p>
-              {finished
-                ? mode === "learn"
-                  ? "This line is now ready for spaced review."
-                  : errors || assists
-                    ? "This line stays due. Review it without hints to move up a box."
-                    : "Your next review is scheduled automatically."
-                : "Click a piece, then its destination. You can also drag a piece."}
-            </p>
-          </div>
-          <div className="os-mini-stats">
-            <div>
-              <strong>{errors}</strong>
-              <span>Mistakes</span>
-            </div>
-            <div>
-              <strong>{assists}</strong>
-              <span>Hints used</span>
-            </div>
-            <div>
-              <strong>{errors === 0 && assists === 0 ? "✓" : "↻"}</strong>
-              <span>Recall</span>
-            </div>
-          </div>
-          {(mode === "learn" || finished) && (
-            <div className="os-move-list">
-              <span className="os-label">THE LINE</span>
-              <p>
-                {opening.moves.map((move, i) => (
-                  <span
-                    key={i}
-                    className={i === ply ? "current" : i < ply ? "played" : ""}
-                  >
-                    {i % 2 === 0 ? <small>{i / 2 + 1}.</small> : null}
-                    {move}{" "}
-                  </span>
+          {explained && (
+            <section className="os-why-panel" aria-live="polite">
+              <span className="os-label">
+                {ply === 0 ? "FIRST MOVE EXPLAINED" : "LAST MOVE EXPLAINED"}
+              </span>
+              <h2>{explained.label}</h2>
+              <h3>Why this move?</h3>
+              <p>{explained.why}</p>
+              <h3>What changes on the board</h3>
+              <ul>
+                {explained.facts.map((f) => (
+                  <li key={f}>{f}</li>
                 ))}
-              </p>
-            </div>
+              </ul>
+            </section>
+          )}
+          {next && (
+            <section className="os-next-move">
+              <span className="os-label">
+                UP NEXT · {userTurn ? "YOUR MOVE" : "OPPONENT'S REPLY"}
+              </span>
+              <strong>{next.label}</strong>
+              <p>{next.instruction}</p>
+              {ply > 0 && (
+                <details>
+                  <summary>Why is this the next move?</summary>
+                  <p>{next.why}</p>
+                </details>
+              )}
+            </section>
+          )}
+          <section className="os-plan-panel">
+            <span className="os-label">
+              YOUR PLAN AS {side === "w" ? "WHITE" : "BLACK"}
+            </span>
+            <p>{side === "w" ? guide.white : guide.black}</p>
+          </section>
+          {finished && continuations.length > 0 && (
+            <section className="os-continuations">
+              <h3>Where this line goes next</h3>
+              {continuations.map((o) => (
+                <button
+                  className="os-secondary wide"
+                  key={o.id}
+                  onClick={() => onContinue(o)}
+                >
+                  {o.name.split(":").slice(1).join(":") || o.name}
+                  <ArrowRight size={16} />
+                </button>
+              ))}
+            </section>
           )}
           {finished && (
-            <button className="os-primary wide" onClick={onNext}>
-              {index + 1 === total ? "Finish session" : "Next line"}
-              <ArrowRight size={18} />
+            <button className="os-primary wide" onClick={onExit}>
+              Choose another variation <ArrowRight size={17} />
             </button>
           )}
           <p className="os-training-note">
-            Training the recorded opening line. Other legal moves may also be
-            good chess moves.
+            Use the move list to revisit any step. Your opening stays in My
+            openings until you remove it.
           </p>
         </aside>
       </div>

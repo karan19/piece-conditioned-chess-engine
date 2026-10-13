@@ -1,85 +1,103 @@
-import { parseImportedPgn, type Opening, type Side } from "./catalog";
+import { openings, parseImportedPgn, type Opening, type Side } from "./catalog";
 export type RecordState = {
-  attempts: number;
-  box: number;
-  due: number;
-  learned: number;
+  lastPly: number;
+  completed: boolean;
+  visits: number;
   last: number;
 };
 export type Progress = {
-  version: 1;
+  version: 2;
   records: Record<string, RecordState>;
   saved: string[];
   custom: Opening[];
-  activity: Record<string, number>;
 };
 const key = "pcce-opening-studio-v2";
 export const emptyProgress = (): Progress => ({
-  version: 1,
+  version: 2,
   records: {},
   saved: [],
   custom: [],
-  activity: {},
 });
 export const recordKey = (opening: Opening, side: Side) =>
   `${side}|${opening.id}`;
+export function decodeProgress(value: unknown): Progress {
+  if (!value || typeof value !== "object")
+    throw new Error("Choose an Opening Studio backup.");
+  const p = value as Record<string, unknown>;
+  if (
+    ![1, 2].includes(Number(p.version)) ||
+    !p.records ||
+    typeof p.records !== "object" ||
+    Array.isArray(p.records) ||
+    !Array.isArray(p.saved) ||
+    !Array.isArray(p.custom)
+  )
+    throw new Error("This backup has an unsupported format.");
+  const records: Progress["records"] = {};
+  for (const [id, value] of Object.entries(p.records)) {
+    const r = value as Record<string, unknown>;
+    if (!r || typeof r !== "object") continue;
+    if (p.version === 1) {
+      if (Number.isFinite(r.last) && Number.isFinite(r.attempts))
+        records[id] = {
+          lastPly: 0,
+          completed: Boolean(r.learned),
+          visits: Number(r.attempts),
+          last: Number(r.last),
+        };
+    } else if (
+      Number.isInteger(r.lastPly) &&
+      Number(r.lastPly) >= 0 &&
+      Number(r.lastPly) <= 160 &&
+      typeof r.completed === "boolean" &&
+      Number.isFinite(r.visits) &&
+      Number.isFinite(r.last)
+    )
+      records[id] = {
+        lastPly: Number(r.lastPly),
+        completed: r.completed,
+        visits: Number(r.visits),
+        last: Number(r.last),
+      };
+  }
+  const custom: Opening[] = [];
+  for (const value of p.custom) {
+    try {
+      const o = value as Opening;
+      if (typeof o.name === "string" && typeof o.pgn === "string")
+        custom.push(parseImportedPgn(o.pgn, o.name));
+    } catch {
+      /* Ignore damaged imported lines. */
+    }
+  }
+  return {
+    version: 2,
+    records,
+    saved: Array.from(
+      new Set([
+        ...p.saved.filter((s): s is string => typeof s === "string"),
+        ...(p.version === 1
+          ? Object.keys(records).flatMap((id) => {
+              const side = id.startsWith("b|") ? "b" : "w";
+              const opening = [...openings, ...custom].find(
+                (o) => recordKey(o, side) === id,
+              );
+              return opening ? [`${side}:${opening.family}`] : [];
+            })
+          : []),
+      ]),
+    ),
+    custom,
+  };
+}
 export function loadProgress(): Progress {
   try {
-    const value: unknown = JSON.parse(localStorage.getItem(key) ?? "null");
-    if (!value || typeof value !== "object") return emptyProgress();
-    const p = value as Partial<Progress>;
-    if (
-      p.version !== 1 ||
-      !p.records ||
-      typeof p.records !== "object" ||
-      Array.isArray(p.records) ||
-      !Array.isArray(p.saved) ||
-      !Array.isArray(p.custom) ||
-      !p.activity ||
-      typeof p.activity !== "object"
-    )
-      return emptyProgress();
-    const records: Progress["records"] = {};
-    for (const [id, r] of Object.entries(p.records)) {
-      if (
-        r &&
-        [r.attempts, r.box, r.due, r.learned, r.last].every(Number.isFinite) &&
-        r.box >= 0 &&
-        r.box <= 5
-      )
-        records[id] = r;
-    }
-    const custom: Opening[] = [];
-    for (const o of p.custom) {
-      try {
-        if (o && typeof o.name === "string" && typeof o.pgn === "string")
-          custom.push(parseImportedPgn(o.pgn, o.name));
-      } catch {
-        /* Ignore invalid saved custom lines. */
-      }
-    }
-    const activity: Record<string, number> = {};
-    for (const [day, n] of Object.entries(p.activity)) {
-      if (
-        /^\d{4}-\d{2}-\d{2}$/.test(day) &&
-        typeof n === "number" &&
-        Number.isFinite(n) &&
-        n >= 0
-      )
-        activity[day] = n;
-    }
-    return {
-      version: 1,
-      records,
-      saved: p.saved.filter((s) => typeof s === "string"),
-      custom,
-      activity,
-    };
+    return decodeProgress(JSON.parse(localStorage.getItem(key) ?? "null"));
   } catch {
     return emptyProgress();
   }
 }
-export function saveProgress(progress: Progress): boolean {
+export function saveProgress(progress: Progress) {
   try {
     localStorage.setItem(key, JSON.stringify(progress));
     return true;
@@ -87,66 +105,50 @@ export function saveProgress(progress: Progress): boolean {
     return false;
   }
 }
-export function completeLine(
+export function rememberStep(
   progress: Progress,
   opening: Opening,
   side: Side,
-  clean: boolean,
-  review: boolean,
+  ply: number,
   now = Date.now(),
 ): Progress {
-  const id = recordKey(opening, side);
-  const old = progress.records[id];
-  const box = review
-    ? clean
-      ? Math.min((old?.box ?? 0) + 1, 5)
-      : 0
-    : (old?.box ?? 0);
-  const intervals = [0, 1, 3, 7, 14, 30];
-  const day = new Date(now).toLocaleDateString("en-CA");
+  const id = recordKey(opening, side),
+    old = progress.records[id];
   return {
     ...progress,
     records: {
       ...progress.records,
       [id]: {
-        attempts: (old?.attempts ?? 0) + 1,
-        box,
-        due: now + intervals[box] * 86400000,
-        learned: old?.learned || now,
+        lastPly: ply,
+        completed: Boolean(old?.completed) || ply === opening.moves.length,
+        visits: (old?.visits ?? 0) + (ply === opening.moves.length ? 1 : 0),
         last: now,
       },
     },
-    activity: {
-      ...progress.activity,
-      [day]: (progress.activity[day] ?? 0) + 1,
-    },
   };
 }
-export function dueLines(
+export function removeFromLearning(
   progress: Progress,
+  name: string,
   lines: Opening[],
   side: Side,
-  now = Date.now(),
-): Opening[] {
-  return lines
-    .filter((o) => {
-      const r = progress.records[recordKey(o, side)];
-      return r && r.due <= now;
-    })
-    .sort(
-      (a, b) =>
-        progress.records[recordKey(a, side)].due -
-        progress.records[recordKey(b, side)].due,
-    );
-}
-export function streak(progress: Progress, now = new Date()): number {
-  const day = new Date(now);
-  let count = 0;
-  if (!progress.activity[day.toLocaleDateString("en-CA")])
-    day.setDate(day.getDate() - 1);
-  while (progress.activity[day.toLocaleDateString("en-CA")]) {
-    count++;
-    day.setDate(day.getDate() - 1);
-  }
-  return count;
+  custom = false,
+): Progress {
+  const keys = new Set(
+    lines.flatMap((o) =>
+      custom ? [recordKey(o, "w"), recordKey(o, "b")] : [recordKey(o, side)],
+    ),
+  );
+  return {
+    ...progress,
+    saved: progress.saved.filter(
+      (s) => s !== `${side}:${name}` && !(custom && s.endsWith(`:${name}`)),
+    ),
+    records: Object.fromEntries(
+      Object.entries(progress.records).filter(([id]) => !keys.has(id)),
+    ),
+    custom: custom
+      ? progress.custom.filter((o) => !lines.some((l) => l.id === o.id))
+      : progress.custom,
+  };
 }
