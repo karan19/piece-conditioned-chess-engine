@@ -2315,3 +2315,21 @@ button {
   .os-learn-panel { position: sticky; top: 24px; max-height: calc(100vh - 180px); overflow-y: auto; padding-right: 10px; scrollbar-gutter: stable; }
   .os-learn-heading { position: sticky; top: 0; z-index: 2; }
 }
+
+.os-real-replies { background: #f1f5eb; border: 1px solid var(--line); border-radius: 9px; padding: 20px; margin: 20px 0; }
+.os-real-replies h2 { font-family: Georgia, serif; font-size: 23px; margin: 10px 0; }
+.os-real-replies p { font-size: 13px; line-height: 1.75; color: #465944; margin: 10px 0; }
+.os-real-reply { border-top: 1px solid #d6dfcd; padding: 14px 0; }
+.os-reply-stat { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
+.os-reply-stat strong { color: #294b3d; font-size: 17px; }
+.os-reply-stat span { margin-left: auto; font-size: 12px; }
+.os-reply-stat small { font-size: 10px; color: #557142; width: 100%; }
+.os-real-reply details, .os-sample-source { font-size: 12px; line-height: 1.7; margin: 10px 0; }
+.os-real-replies summary { cursor: pointer; color: #294b3d; font-weight: 600; }
+.os-real-replies .os-link { margin-top: 14px; font-size: 12px; }
+.os-sample-source a { text-decoration: underline; }
+
+.os-replies-jump { display: flex; align-items: center; gap: 9px; width: 100%; padding: 13px; margin: 0 0 18px; text-align: left; color: #294b3d; background: #e4eddb; border: 1px solid #cad7bf; border-radius: 7px; font-size: 12px; line-height: 1.7; }
+.os-replies-jump svg { flex-shrink: 0; margin-left: auto; }
+
+.os-branch-context { font-size: 13px; line-height: 1.7; padding: 12px; border-left: 3px solid #9aab77; color: #465944; }
