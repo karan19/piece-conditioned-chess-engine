@@ -63,7 +63,26 @@ import "./styles.css";
 
 const actionIcons = {
   "start-game": Play,
-  "previous-games": History
+  "previous-games": History,
+  "opening-trainer": BookOpen
+};
+
+const Board3DView = lazy(() =>
+  import("./Board3DView").then((module) => ({ default: module.Board3DView }))
+);
+const TrainerApp = lazy(() =>
+  import("./trainer/TrainerApp").then((module) => ({ default: module.TrainerApp }))
+);
+const opponentMoveDelayMs = 1000;
+const castleTargets: Record<Color, { kingSide: Square; queenSide: Square }> = {
+  b: {
+    kingSide: "g8",
+    queenSide: "c8"
+  },
+  w: {
+    kingSide: "g1",
+    queenSide: "c1"
+  }
 };
 
 const Board3DView = lazy(() =>
@@ -244,7 +263,7 @@ function playMoveSound(kind: "move" | "capture" | "castle") {
 }
 
 export function App() {
-  const [screen, setScreen] = useState<"home" | "new-game" | "game" | "previous-games" | "review-game">("home");
+  const [screen, setScreen] = useState<"home" | "new-game" | "game" | "previous-games" | "review-game" | "trainer">("home");
   const [fen, setFen] = useState(() => createGame().fen());
   const [selectedSquare, setSelectedSquare] = useState<Square | null>(null);
   const [history, setHistory] = useState<MoveRecord[]>([]);
@@ -1465,6 +1484,14 @@ export function App() {
     );
   }
 
+  if (screen === "trainer") {
+    return (
+      <Suspense fallback={null}>
+        <TrainerApp onBack={() => setScreen("home")} />
+      </Suspense>
+    );
+  }
+
   if (screen === "review-game") {
     return (
       <main className="game-shell">
@@ -1714,7 +1741,7 @@ export function App() {
               className="home-action"
               key={action.id}
               type="button"
-              onClick={() => (action.id === "start-game" ? setScreen("new-game") : openPreviousGames())}
+              onClick={() => { if (action.id === "start-game") setScreen("new-game"); else if (action.id === "opening-trainer") setScreen("trainer"); else openPreviousGames(); }}
             >
               <span className="action-icon" aria-hidden="true">
                 <Icon size={22} strokeWidth={2.2} />

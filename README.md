@@ -18,11 +18,15 @@ grounded explanations, preview mode, and a local learning journal.
 - Save learning moments locally in the browser.
 - Reopen saved games and review past learning moments.
 - Export learning-event JSON for debugging or research.
+- Train openings step by step in the V2 Opening Trainer.
+- Review lines with Leitner-box spaced repetition (Practice mode).
+- Track per-course line discovery and SRS box progress.
 
 ## Status
 
-V1 is usable locally. See [docs/v1-ready.md](docs/v1-ready.md) for the current
-readiness notes, known limitations, and deployment guidance.
+V1 (game, piece-conditioned analysis, learning journal) is usable locally.
+V2 adds an Opening Trainer with guided Learn and Practice modes.
+See [docs/v1-ready.md](docs/v1-ready.md) for current readiness notes.
 
 Branch policy:
 
