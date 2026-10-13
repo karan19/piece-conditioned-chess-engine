@@ -533,7 +533,7 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
           <span>Misfires: <strong>{misfires}</strong></span>
           <span>Box: <strong>{currentLine ? getLineProgress(courseProgress, currentLine).box : "?"}</strong></span>
           {mode === "arena" ? <span>Score: <strong>{arenaScore}</strong></span> : null}
-          {mode !== "practice" && mode !== "puzzles" ? <span>Time: <strong>{secondsLeft}s</strong></span> : null}
+          {mode === "time" || mode === "arena" || mode === "puzzles" ? <span>Time: <strong>{secondsLeft}s</strong></span> : null}
         </div>
       ) : null}
 
@@ -554,13 +554,18 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
               </div>
             </div>
           ) : null}
+          {feedback ? (
+            <div className={`trainer-feedback-banner trainer-feedback-${feedback.kind}`}>
+              {feedback.message}
+            </div>
+          ) : null}
           <TrainerBoard
             pieces={pieces}
             flipped={flipped}
             selectedSquare={selectedSquare}
             legalDestinations={selectedSquare ? getLegalDestinations(currentGame!, selectedSquare) : []}
             onSquareClick={handleSquareClick}
-            statusLabel={feedback?.message ?? ""}
+            statusLabel=""
           />
           <div className="trainer-under-board">
             <button className="icon-button" type="button" onClick={() => setShowHint(!showHint)}>
