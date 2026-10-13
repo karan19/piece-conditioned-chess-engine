@@ -5,7 +5,7 @@ import { isDifficulty } from "./difficulty.js";
 import { getHealthStatus } from "./health.js";
 import { analyzeSelectedPiece } from "./pieceAnalysis.js";
 import { createRateLimiter, getEngineRateLimitConfig } from "./rateLimit.js";
-import { getBestMove } from "./stockfishEngine.js";
+import { evaluatePosition, getBestMove } from "./stockfishEngine.js";
 
 export const app = express();
 const port = Number(process.env.PORT ?? 3001);
@@ -65,6 +65,27 @@ apiRouter.post("/engine/best-move", engineRateLimiter, async (request, response)
   }
 });
 
+apiRouter.post("/engine/eval", engineRateLimiter, async (request, response) => {
+  const { fen, moveTimeMs } = request.body as {
+    fen?: unknown;
+    moveTimeMs?: unknown;
+  };
+
+  if (typeof fen !== "string") {
+    response.status(400).json({ error: "Expected body with fen string." });
+    return;
+  }
+
+  const clampedMoveTime = Math.min(Math.max(Number(moveTimeMs ?? 350), 60), 2000);
+
+  try {
+    response.json(await evaluatePosition({ fen, moveTimeMs: clampedMoveTime }));
+  } catch (error) {
+    response.status(500).json({
+      error: error instanceof Error ? error.message : "Evaluation failed."
+    });
+  }
+});
 apiRouter.post("/analysis/piece", engineRateLimiter, async (request, response) => {
   const { fen, selectedSquare, candidateCount, replyCount } = request.body as {
     fen?: unknown;
