@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Chess, type Move, type PieceSymbol, type Square } from "chess.js";
 import { ArrowLeft, Download, Lightbulb, RotateCcw, Undo2 } from "lucide-react";
 import { Board, Piece } from "./Board";
+import { MoveChecklist } from "../MoveChecklist";
 import { positionGuidance } from "./coaching";
 import { EngineBusyError, gameResult } from "./fullGame";
 import { chooseEndgameMove, endgamePlans, explainEndgameMove, probeTablebase, puzzleHint, replayEndgame, tablebaseEligible, tablebaseLabel, type EndgamePosition, type TablebasePosition } from "./endgames";
@@ -130,6 +131,7 @@ export function EndgameSession({ position, initialMoves, onSave, onExit }: {
         <Board game={game} side={position.side} selected={selected} onSelect={select} interactive={yourTurn} hint={hint?.move} last={last} />
         {promotion && <div className="os-promotion" role="dialog" aria-label="Choose promotion piece">{(["q", "r", "b", "n"] as PieceSymbol[]).map(type => <button key={type} className="os-icon-button" aria-label={`Promote to ${type}`} onClick={() => submit(promotion.from, promotion.to, type)}><Piece type={type} color={position.side} /></button>)}<button className="os-link" onClick={() => setPromotion(null)}>Cancel</button></div>}
         <div className="os-feedback" role="status">{result ? result.detail : busy ? "Choosing an opponent reply…" : yourTurn ? "Play any legal move. The opponent replies automatically." : error || "Waiting for an opponent reply."}</div>
+        <MoveChecklist positionKey={game.fen()} />
         <div className="os-board-tools"><button className="os-secondary" onClick={showHint} disabled={!yourTurn || hintBusy}><Lightbulb size={16} /> {hintBusy ? "Choosing hint…" : hint ? "Hide hint" : "Show hint"}</button><button className="os-secondary" onClick={undo} disabled={!moves.length}><Undo2 size={16} /> Undo my move</button><button className="os-secondary" onClick={() => update([])} disabled={!moves.length}><RotateCcw size={16} /> Restart position</button><button className="os-secondary" onClick={exportGame}><Download size={16} /> Export PGN</button></div>
         {error && <div className="os-notice warning" role="alert"><p>{error}</p>{retryAt ? <p>Automatic retry is scheduled.</p> : <button className="os-secondary" onClick={() => yourTurn ? showHint() : setRetry(v => v + 1)}>Retry</button>}</div>}
         <section className="os-lesson-timeline"><span className="os-label">GAME MOVES</span><div>{moves.length ? moves.map((san, i) => <span className="os-endgame-ply" key={i}>{moveLabel(i)} {san}</span>) : <p>You start directly in the endgame.</p>}</div></section>
