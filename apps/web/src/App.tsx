@@ -60,6 +60,7 @@ import {
 } from "./gameSettings";
 import { homeActions, productHighlights } from "./appContent";
 import "./styles.css";
+import { MoveChecklist } from "./MoveChecklist";
 
 const actionIcons = {
   "start-game": Play,
@@ -1023,6 +1024,7 @@ export function App() {
                 onSquareClick={handleSquareClick}
               />
             )}
+            <MoveChecklist positionKey={displayGame.fen()} />
             {checkThreat && !previewLine ? (
               <div
                 className={`check-alert ${checkThreat.isCheckmate ? "checkmate-alert" : ""}`}
@@ -1492,6 +1494,7 @@ export function App() {
                 game={reviewDisplayGame}
                 isPreview
               />
+              <MoveChecklist positionKey={reviewDisplayGame.fen()} />
               <p className="board-help">
                 Review mode is read-only. Choose a saved candidate or reply to replay that line from
                 the original Call Engine position.

@@ -23,6 +23,7 @@ import {
   replayGame,
 } from "./fullGame";
 import { Board, Piece } from "./Board";
+import { MoveChecklist } from "../MoveChecklist";
 export function Training({
   opening,
   side,
@@ -374,6 +375,7 @@ export function Training({
                     : "Show opponent's move"}
             </button>
           </div>
+          <MoveChecklist positionKey={game.fen()} />
           {engineError && (
             <div className="os-notice warning" role="status">
               {engineError}
