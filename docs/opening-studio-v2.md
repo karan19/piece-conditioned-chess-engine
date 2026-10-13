@@ -127,3 +127,28 @@ Version 3 records can optionally include canonical `bookMoves` and
 used in result checks and PGN export, and saved independently for White/Black.
 Returning to the selected variation explicitly resets that record to its
 original line. The root app, original storage, and API remain untouched.
+
+## Endgame Practice
+
+The sidebar's Endgame Practice entry opens a separate lazy-loaded library at
+`/v2/#view=endgames`, with type, difficulty and goal filters. Its 155 positions
+include 150 validated real-game Lichess puzzles and five tablebase-verified draw
+exercises. Each card previews the **playable** position and solver's side.
+`/v2/#view=endgames&position=<id>` opens that position directly and resumes it.
+See `data/ENDGAMES.md` for provenance, filtering and normalization.
+
+The dedicated board starts from a custom FEN, permits any legal user move, and
+plays an automatic opponent reply. It uses the public Lichess tablebase for
+supported <=7-piece positions without castling rights; missing or failed probes
+fall back to expert Stockfish through the existing API. Exact outcome labels
+account for fifty-move exceptions and do not terminate a playable draw early.
+Only actual game results finish a session. Full history from the initial FEN
+preserves repetition and fifty-move counters.
+
+Hints are optional and do not execute a user move. They use a tablebase reply,
+an intact puzzle solution, or Stockfish. Undo, restart, promotion choice, source
+links and FEN-aware PGN export are supported. `pcce-endgame-practice-v2` stores
+validated per-position move histories; the opening records and original app's
+storage remain separate. Storage failures are surfaced, and network failures
+retain the position and expose retry. Navigating, undoing, or restarting cancels
+stale move/hint requests.
