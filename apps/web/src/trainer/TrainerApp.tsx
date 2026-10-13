@@ -4,9 +4,9 @@ import {
   ArrowRight,
   BookOpen,
   ChevronDown,
-  ChevronRight,
   Droplet,
   Play,
+  RotateCcw,
   Target,
   Timer,
   Unlock,
@@ -15,9 +15,16 @@ import {
 import type { Square } from "chess.js";
 import { openingCourses } from "./openingData";
 import type { CourseProgress, OpeningCourse, OpeningLine } from "./trainerTypes";
-import { makeEmptyLineProgress } from "./srs";
+import { isDueToday, makeEmptyLineProgress } from "./srs";
 import { loadTrainerProgress, saveTrainerProgress } from "./trainerStorage";
-import { cloneGameWithMove, createGame, getBoardPieces, getLegalDestinations, toMoveRecords, type BoardPiece } from "../chessGame";
+import {
+  cloneGameWithMove,
+  createGame,
+  getBoardPieces,
+  getLegalDestinations,
+  toMoveRecords,
+  type BoardPiece
+} from "../chessGame";
 import { TrainerBoard } from "./TrainerBoard";
 import "../styles.css";
 
@@ -28,8 +35,12 @@ const lockedModes = [
   { id: "arena", label: "Arena", icon: Swords }
 ];
 
-function emptyCourseProgress(): CourseProgress {
-  return {};
+type TrainerMode = "learn" | "practice";
+
+
+function sameSAN(a: string, b: string) {
+  const norm = (s: string) => s.replace(/0/g, "O").replace(/[+#!?]/g, "").trim();
+  return norm(a) === norm(b);
 }
 
 function getLineProgress(progress: CourseProgress, line: OpeningLine) {
@@ -38,6 +49,7 @@ function getLineProgress(progress: CourseProgress, line: OpeningLine) {
 
 export function TrainerApp({ onBack }: { onBack: () => void }) {
   const [screen, setScreen] = useState<"course-list" | "course-detail" | "train">("course-list");
+  const [mode, setMode] = useState<TrainerMode>("learn");
   const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null);
   const [trainerProgress, setTrainerProgress] = useState(() => loadTrainerProgress());
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
@@ -45,35 +57,34 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
   const [selectedSquare, setSelectedSquare] = useState<Square | null>(null);
   const [showHint, setShowHint] = useState(false);
   const [essentialsOnly, setEssentialsOnly] = useState(true);
-  const [feedback, setFeedback] = useState<{ kind: "correct" | "wrong" | "line-complete" | "start"; message: string } | null>(null);
+  const [feedback, setFeedback] = useState<{ kind: "correct" | "wrong" | "line-complete" | "start" | "practice-over"; message: string } | null>(null);
+  const [streakThisRun, setStreakThisRun] = useState(0);
+  const [misfiresThisRun, setMisfiresThisRun] = useState(0);
 
-  const selectedCourse = useMemo(
-    () => openingCourses.find((c) => c.id === selectedCourseId) ?? null,
-    [selectedCourseId]
-  );
-  let courseProgress: CourseProgress = useMemo(
+  const selectedCourse = useMemo(() => openingCourses.find((c) => c.id === selectedCourseId) ?? null, [selectedCourseId]);
+  const courseProgress: CourseProgress = useMemo(
     () => (selectedCourseId ? trainerProgress[selectedCourseId] ?? {} : {}),
     [selectedCourseId, trainerProgress]
   );
-  const activeLines = selectedCourse ? (essentialsOnly ? selectedCourse.essentials : selectedCourse.full) : [];
+
+  const activeLines = useMemo(() => {
+    if (!selectedCourse) return [];
+    const source = essentialsOnly ? selectedCourse.essentials : selectedCourse.full;
+    if (mode === "practice") {
+      return source.filter((l) => courseProgress[l.id]?.discovered);
+    }
+    return source;
+  }, [essentialsOnly, selectedCourse, mode, courseProgress]);
 
   const currentLine = activeLines[Math.min(currentLineIndex, Math.max(0, activeLines.length - 1))] ?? null;
 
   const [boardPieces, setBoardPieces] = useState<BoardPiece[]>([]);
-
-  // Determine which move index the trainer auto-plays next.
-  // If moves[idx] is the user's move (side matches), the user should play it.
-  // Otherwise, the trainer plays it automatically.
   const firstMover = selectedCourse?.side ?? "w";
-  const userIsWhite = firstMover === "w";
-  const isUserTurn = (moveIndex: number) => {
-    if (userIsWhite) return moveIndex % 2 === 0;
-    return moveIndex % 2 === 1;
-  };
-  const shouldAutoPlay = !!currentLine && !!!(isUserTurn(currentMoveIndex));
+  const isUserTurn = useCallback((moveIndex: number) => {
+    return firstMover === "w" ? moveIndex % 2 === 0 : moveIndex % 2 === 1;
+  }, [firstMover]);
+  const shouldAutoPlay = !!currentLine && !isUserTurn(currentMoveIndex);
 
-  // Rebuild the game each time the current line or move index changes,
-  // applying all moves so far.
   useEffect(() => {
     if (!currentLine) { setBoardPieces([]); return; }
     const game = createGame();
@@ -83,37 +94,56 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
     setBoardPieces(getBoardPieces(game));
   }, [currentLine, currentMoveIndex]);
 
-  // Auto-play the opponent's move when it's not the user's turn.
+  // Auto-play the opponent's reply when not the user's turn.
   useEffect(() => {
     if (!shouldAutoPlay || !currentLine) return;
-    const nextSan = currentLine.moves[currentMoveIndex];
-    if (!nextSan) {
-      setFeedback({ kind: "line-complete", message: "Line complete!" });
-      return;
-    }
     setCurrentMoveIndex((i) => i + 1);
   }, [currentLine, currentMoveIndex, shouldAutoPlay]);
 
-  useEffect(() => {
-    saveTrainerProgress(trainerProgress);
-  }, [trainerProgress]);
+  useEffect(() => { saveTrainerProgress(trainerProgress); }, [trainerProgress]);
 
   useEffect(() => {
     setSelectedSquare(null);
     setShowHint(false);
-    setFeedback({ kind: "start", message: "Play the next move for your side." });
-  }, [currentLineIndex]);
+    setFeedback({ kind: "start", message: mode === "practice" ? "Recall from memory. No hints by default." : "Play the next move for your side." });
+  }, [currentLineIndex, mode]);
 
-  function discoverNextLine() {
-    if (!selectedCourse) return;
+  function findNextUndiscovered() {
     const lines = activeLines;
-    const nextIdx = lines.findIndex((_, i) => !courseProgress[lines[i]?.id]?.discovered);
-    if (nextIdx >= 0) {
-      setCurrentLineIndex(nextIdx);
+    const nextIdx = lines.findIndex((l, i) => !courseProgress[l.id]?.discovered);
+    return nextIdx >= 0 ? nextIdx : null;
+  }
+
+  function findNextDue() {
+    // Practice mode: find the next due line, or null.
+    const candidates: number[] = [];
+    activeLines.forEach((line, i) => {
+      if (isDueToday(getLineProgress(courseProgress, line))) candidates.push(i);
+    });
+    return candidates.length > 0 ? candidates[0] : null;
+  }
+
+  function advanceToNextLine() {
+    if (!selectedCourse) return;
+    if (mode === "learn") {
+      const next = findNextUndiscovered();
+      if (next === null) {
+        setFeedback({ kind: "line-complete", message: "All lines discovered. Switch to Practice." });
+        return;
+      }
+      setCurrentLineIndex(next);
       setCurrentMoveIndex(0);
-      setFeedback({ kind: "start", message: `New line: ${lines[nextIdx].name}` });
+      setFeedback({ kind: "start", message: `New line: ${activeLines[next]?.name ?? ""}` });
     } else {
-      setFeedback({ kind: "line-complete", message: "All lines discovered. Switch to Practice." });
+      const next = findNextDue();
+      if (next === null) {
+        setFeedback({ kind: "practice-over", message: "Practice done for today. Come back or switch to Learn." });
+        setCurrentLineIndex(-1);
+        return;
+      }
+      setCurrentLineIndex(next);
+      setCurrentMoveIndex(0);
+      setFeedback({ kind: "start", message: `Practice: ${activeLines[next]?.name ?? ""}` });
     }
   }
 
@@ -123,77 +153,97 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
     setCurrentLineIndex(0);
     setCurrentMoveIndex(0);
     setShowHint(false);
+    setStreakThisRun(0);
+    setMisfiresThisRun(0);
+    setMode("learn");
   }
 
-  function startTraining() {
+  function startTraining(nextMode: TrainerMode) {
     if (!selectedCourse) return;
+    setMode(nextMode);
     setScreen("train");
-    discoverNextLine();
+    setStreakThisRun(0);
+    setMisfiresThisRun(0);
+    setCurrentLineIndex(0);
+    setCurrentMoveIndex(0);
+    setShowHint(false);
+    // Kick off advanceToNextLine on mount.
+    setTimeout(() => { advanceToNextLine(); }, 0);
   }
 
   function handleSquareClick(square: Square) {
     if (!currentLine || !selectedCourse) return;
-    if (currentGame && selectedSquare) {
-      const attempted = cloneGameWithMove(currentGame, { from: selectedSquare, to: square });
-      if (attempted) { attemptUserMove({ from: selectedSquare, to: square }); return; }
-    }
+    if (currentMoveIndex === -1) return;
+
+    const game = buildGameUpTo(currentMoveIndex);
     const piece = pieces.find((p) => p.square === square);
+    if (selectedSquare) {
+      const candidate = cloneGameWithMove(game, { from: selectedSquare, to: square });
+      if (candidate) { attemptUserMove({ from: selectedSquare, to: square }); return; }
+    }
     if (!piece) { setSelectedSquare(null); return; }
-    const turnColor = currentMoveIndex % 2 === 0 ? "w" : "b";
-    if (piece.color !== turnColor) return;
-    setSelectedSquare(square);
+    if (piece.color === firstMover) { setSelectedSquare(square); return; }
+  }
+
+  function buildGameUpTo(index: number) {
+    const game = createGame();
+    if (!currentLine) return game;
+    for (let i = 0; i < index; i++) {
+      try { game.move(currentLine.moves[i]); } catch { break; }
+    }
+    return game;
   }
 
   function attemptUserMove(move: { from: Square; to: Square }) {
     if (!currentLine || !selectedCourse) return;
     const expected = currentLine.moves[currentMoveIndex];
     if (!expected) return;
-
-    // Verify with a real game. We build the game up to currentMoveIndex and try to apply the move.
-    const game = createGame();
-    for (let i = 0; i < currentMoveIndex; i++) { try { game.move(currentLine.moves[i]); } catch { break; } }
+    const game = buildGameUpTo(currentMoveIndex);
     const candidate = cloneGameWithMove(game, move as { from: Square; to: Square });
     if (!candidate) { setSelectedSquare(null); return; }
     const records = toMoveRecords(candidate);
     const attemptedSan = records[records.length - 1]?.san ?? "?";
     const now = Date.now();
-    const correct = attemptedSan === expected;
+    const correct = sameSAN(attemptedSan, expected);
 
+    const existing = getLineProgress(courseProgress, currentLine);
     const updatedCourseProgress: CourseProgress = { ...courseProgress };
-    updatedCourseProgress[currentLine.id] = {
-      ...makeEmptyLineProgress(),
-      ...updatedCourseProgress[currentLine.id],
-      discovered: true,
-      box: correct ? Math.min(5, (updatedCourseProgress[currentLine.id]?.box ?? 1) + 1) : 1,
-      lastSeenAt: new Date(now).toISOString(),
-      bestStreak: correct ? (updatedCourseProgress[currentLine.id]?.bestStreak ?? 0) + 1 : 0
-    };
+    if (mode === "learn") {
+      updatedCourseProgress[currentLine.id] = {
+        ...makeEmptyLineProgress(),
+        ...existing,
+        discovered: true,
+        box: correct ? Math.min(5, existing.box + 1) : existing.box,
+        lastSeenAt: new Date(now).toISOString(),
+        bestStreak: correct ? existing.bestStreak + 1 : existing.bestStreak
+      };
+    } else {
+      updatedCourseProgress[currentLine.id] = {
+        ...existing,
+        box: correct ? Math.min(5, existing.box + 1) : 1,
+        lastSeenAt: new Date(now).toISOString(),
+        bestStreak: correct ? existing.bestStreak + 1 : 0
+      };
+    }
     setTrainerProgress((prev) => ({ ...prev, [selectedCourseId ?? ""]: updatedCourseProgress }));
 
     if (correct) {
       setSelectedSquare(null);
+      setStreakThisRun((s) => s + 1);
       const nextIdx = currentMoveIndex + 1;
       if (nextIdx >= currentLine.moves.length) {
-        setFeedback({ kind: "line-complete", message: "Line complete" });
-        setTimeout(() => discoverNextLine(), 1800);
+        setFeedback({ kind: "line-complete", message: mode === "practice" ? `Line complete · +1 box · streak ${streakThisRun + 1}` : "Line complete!" });
+        setTimeout(() => advanceToNextLine(), mode === "practice" ? 2200 : 1800);
       } else {
         setCurrentMoveIndex(nextIdx);
-        setFeedback({ kind: "correct", message: `Correct: ${expected}` });
+        setFeedback({ kind: "correct", message: "Correct" });
       }
     } else {
       setSelectedSquare(null);
+      setStreakThisRun(0);
+      setMisfiresThisRun((m) => m + 1);
       setShowHint(true);
       setFeedback({ kind: "wrong", message: `Not quite. Try ${expected}.` });
-    }
-  }
-
-  function skipToNextLine() {
-    if (currentLineIndex < activeLines.length - 1) {
-      setCurrentLineIndex(currentLineIndex + 1);
-      setCurrentMoveIndex(0);
-      setSelectedSquare(null);
-      setShowHint(false);
-      setFeedback(null);
     }
   }
 
@@ -208,16 +258,9 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
   }
 
   const pieces = boardPieces;
-  const currentGame = useMemo(() => {
-    if (!currentLine) return null;
-    const game = createGame();
-    for (let i = 0; i < currentMoveIndex; i++) {
-      try { game.move(currentLine.moves[i]); } catch { break; }
-    }
-    return game;
-  }, [currentLine, currentMoveIndex]);
+  const currentGame = useMemo(() => buildGameUpTo(currentMoveIndex), [currentLine, currentMoveIndex]);
 
-  // ============ Screen: course-list ============
+  // ============ course-list ============
   if (screen === "course-list") {
     return (
       <main className="app-shell compact-shell trainer-shell">
@@ -252,10 +295,11 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
     );
   }
 
-  // ============ Screen: course-detail ============
+  // ============ course-detail ============
   if (screen === "course-detail" && selectedCourse) {
     const linesShown = essentialsOnly ? selectedCourse.essentials : selectedCourse.full;
     const discoveredCount = getDiscoveryCount(linesShown, trainerProgress[selectedCourse.id] ?? {});
+    const dueCount = linesShown.filter((l) => isDueToday(getLineProgress(courseProgress, l))).length;
     return (
       <main className="app-shell compact-shell trainer-shell">
         <button className="text-button" type="button" onClick={back}>
@@ -268,20 +312,20 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
           <p><em>By {selectedCourse.author}</em></p>
         </header>
         <section className="course-detail-modes">
-          <button className="mode-pill primary" type="button" onClick={startTraining}>
+          <button className="mode-pill primary" type="button" onClick={() => startTraining("learn")}>
             <Play size={18} aria-hidden="true" />
             <span>Learn</span>
             <small>{discoveredCount}/{linesShown.length}</small>
           </button>
           <button
-            className={`mode-pill ${discoveredCount < 2 ? "locked" : ""}`}
+            className={`mode-pill ${discoveredCount < 1 ? "locked" : ""}`}
             type="button"
-            disabled={discoveredCount < 2}
-            onClick={() => startTraining()}
+            disabled={discoveredCount < 1}
+            onClick={() => startTraining("practice")}
           >
             <Unlock size={16} aria-hidden="true" />
             <span>Practice</span>
-            <small>{Math.max(0, discoveredCount - 1)} ready</small>
+            <small>{dueCount} due</small>
           </button>
           {lockedModes.map((m) => (
             <div className="mode-pill locked" key={m.id}>
@@ -305,18 +349,34 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
               <small>{selectedCourse.full.length} lines</small>
             </label>
           </div>
-          <button className="primary-button" type="button" onClick={startTraining} style={{ marginTop: 14 }}>
+          <button className="primary-button" type="button" onClick={() => startTraining(mode)} style={{ marginTop: 14 }}>
             <Play size={18} aria-hidden="true" />
-            {discoveredCount > 0 ? "Continue training" : "Start learning"}
+            {mode === "learn" ? (discoveredCount > 0 ? "Continue training" : "Start learning") : "Start practice"}
           </button>
         </section>
       </main>
     );
   }
 
-  // ============ Screen: train ============
+  // ============ train ============
   if (!selectedCourse || !currentLine) {
-    return <main className="app-shell compact-shell"><p>No course loaded.</p></main>;
+    return (
+      <main className="app-shell compact-shell trainer-shell">
+        <button className="text-button" type="button" onClick={back}>
+          <ArrowLeft size={18} aria-hidden="true" />
+          Back
+        </button>
+        <h1>{feedback?.message ?? "Practice complete."}</h1>
+        {feedback?.kind === "practice-over" ? (
+          <div style={{ marginTop: 18 }}>
+            <button className="primary-button" type="button" onClick={() => startTraining("learn")}>
+              <Play size={18} aria-hidden="true" />
+              Go back to Learning
+            </button>
+          </div>
+        ) : null}
+      </main>
+    );
   }
 
   const flipped = selectedCourse.side === "b";
@@ -340,13 +400,21 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
         </span>
       </header>
 
+      {mode === "practice" ? (
+        <div className="practice-stats">
+          <span>Streak: <strong>{streakThisRun}</strong></span>
+          <span>Misfires: <strong>{misfiresThisRun}</strong></span>
+          <span>Box: <strong>{currentLine ? getLineProgress(courseProgress, currentLine).box : "?"}</strong></span>
+        </div>
+      ) : null}
+
       <section className="trainer-main">
         <div className="trainer-board-zone">
           <TrainerBoard
             pieces={pieces}
             flipped={flipped}
             selectedSquare={selectedSquare}
-            legalDestinations={selectedSquare ? getLegalDestinations(currentGame!, selectedSquare) : []}
+            legalDestinations={selectedSquare ? getLegalDestinations(currentGame, selectedSquare) : []}
             onSquareClick={handleSquareClick}
             statusLabel={feedback?.message ?? ""}
           />
@@ -355,9 +423,13 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
               <ChevronDown size={18} aria-hidden="true" />
               Hint
             </button>
-            <button className="icon-button" type="button" onClick={skipToNextLine}>
+            <button className="icon-button" type="button" onClick={skipLine}>
               <ArrowRight size={18} aria-hidden="true" />
-              Skip line
+              Skip
+            </button>
+            <button className="icon-button" type="button" onClick={restartLine}>
+              <RotateCcw size={18} aria-hidden="true" />
+              Restart
             </button>
           </div>
         </div>
@@ -381,7 +453,7 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
             ))}
           </div>
           {isLineDone ? (
-            <button className="primary-button" type="button" onClick={discoverNextLine}>
+            <button className="primary-button" type="button" onClick={advanceToNextLine}>
               <Play size={18} aria-hidden="true" />
               Next line
             </button>
@@ -390,4 +462,23 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
       </section>
     </main>
   );
+
+  function skipLine() {
+    if (mode === "learn") {
+      advanceToNextLine();
+    } else {
+      // In practice, skipping penalises; commit as "incorrect".
+      if (currentLine) {
+        setStreakThisRun(0);
+        advanceToNextLine();
+      }
+    }
+  }
+
+  function restartLine() {
+    setCurrentMoveIndex(0);
+    setSelectedSquare(null);
+    setShowHint(false);
+    setFeedback({ kind: "start", message: "Line restarted." });
+  }
 }

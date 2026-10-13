@@ -25,7 +25,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "london/symmetrical",
         name: "Symmetrical setup",
-        moves: ["d4","d5","Bf4","c5","e3","Nc6","Nf3","Nf6","c3","g6","Be2","Bg7","0-0","O-O","dxc5"],
+        moves: ["d4","d5","Bf4","c5","e3","Nc6","Nf3","Nf6","c3","g6","Be2","Bg7","O-O","O-O","dxc5"],
         summary: "Both sides mirror; plan the e4 break to fight for the centre."
       },
       {
@@ -55,13 +55,13 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "london/stoic-slav",
         name: "Stoic Slav",
-        moves: ["d4","d5","Bf4","Nf6","e3","e6","Nf3","Bd6","Bd3","O-O","0-0","b6","c4","Bd7"],
+        moves: ["d4","d5","Bf4","Nf6","e3","e6","Nf3","Bd6","Bd3","O-O","O-O","b6","c4","Bd7"],
         summary: "Push c4 to open the queenside after the solid setup."
       },
       {
         id: "london/french-style",
         name: "French-style setup",
-        moves: ["d4","e6","Bf4","d5","e3","Bd6","Bd3","Nf6","Nf3","O-O","0-0","c5","c3","Nc6"],
+        moves: ["d4","e6","Bf4","d5","e3","Bd6","Bd3","Nf6","Nf3","O-O","O-O","c5","c3","Nc6"],
         summary: "Meet a French-style setup by developing Bf4, Nf3 and Bd3 first."
       },
       {
@@ -73,19 +73,19 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "italian/guuoco",
         name: "Giuoco Piano",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","c3","Nf6","d4","exd4","cxd4","Bb4+","Nc3","Nxe4","0-0","Nxc3"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","c3","Nf6","d4","exd4","cxd4","Bb4+","Nc3","Nxe4","O-O","Nxc3"],
         summary: "Open with Bc4/Bc5, Nf3/Nc6, and fight d4 with c3 and Bg5."
       },
       {
         id: "italian/evans",
         name: "Evans Gambit",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","b4","Bxb4","c3","Ba5","d4","exd4","0-0","Nge7","e5","O-O"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","b4","Bxb4","c3","Ba5","d4","exd4","O-O","Nge7","e5","O-O"],
         summary: "Sacrifice the b-pawn for development and attack d4 with c3, d4, e5."
       },
       {
         id: "italian/modern-classical",
         name: "Modern classical: d3 setup",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","d3","Nf6","c3","d6","Nbd2","0-0","0-0","a6","Re1","Ba7"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","d3","Nf6","c3","d6","Nbd2","O-O","O-O","a6","Re1","Ba7"],
         summary: "Slow development with d3 and c3, then push either d3-d4 or e5."
       },
       {
@@ -123,7 +123,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "london/symmetrical",
         name: "Symmetrical setup",
-        moves: ["d4","d5","Bf4","c5","e3","Nc6","Nf3","Nf6","c3","g6","Be2","Bg7","0-0","O-O","dxc5"],
+        moves: ["d4","d5","Bf4","c5","e3","Nc6","Nf3","Nf6","c3","g6","Be2","Bg7","O-O","O-O","dxc5"],
         summary: "Both sides mirror; plan the e4 break to fight for the centre."
       },
       {
@@ -153,13 +153,13 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "london/stoic-slav",
         name: "Stoic Slav",
-        moves: ["d4","d5","Bf4","Nf6","e3","e6","Nf3","Bd6","Bd3","O-O","0-0","b6","c4","Bd7"],
+        moves: ["d4","d5","Bf4","Nf6","e3","e6","Nf3","Bd6","Bd3","O-O","O-O","b6","c4","Bd7"],
         summary: "Push c4 to open the queenside after the solid setup."
       },
       {
         id: "london/french-style",
         name: "French-style setup",
-        moves: ["d4","e6","Bf4","d5","e3","Bd6","Bd3","Nf6","Nf3","O-O","0-0","c5","c3","Nc6"],
+        moves: ["d4","e6","Bf4","d5","e3","Bd6","Bd3","Nf6","Nf3","O-O","O-O","c5","c3","Nc6"],
         summary: "Meet a French-style setup by developing Bf4, Nf3 and Bd3 first."
       },
       {
@@ -171,19 +171,19 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "italian/guuoco",
         name: "Giuoco Piano",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","c3","Nf6","d4","exd4","cxd4","Bb4+","Nc3","Nxe4","0-0","Nxc3"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","c3","Nf6","d4","exd4","cxd4","Bb4+","Nc3","Nxe4","O-O","Nxc3"],
         summary: "Open with Bc4/Bc5, Nf3/Nc6, and fight d4 with c3 and Bg5."
       },
       {
         id: "italian/evans",
         name: "Evans Gambit",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","b4","Bxb4","c3","Ba5","d4","exd4","0-0","Nge7","e5","O-O"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","b4","Bxb4","c3","Ba5","d4","exd4","O-O","Nge7","e5","O-O"],
         summary: "Sacrifice the b-pawn for development and attack d4 with c3, d4, e5."
       },
       {
         id: "italian/modern-classical",
         name: "Modern classical: d3 setup",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","d3","Nf6","c3","d6","Nbd2","0-0","0-0","a6","Re1","Ba7"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","d3","Nf6","c3","d6","Nbd2","O-O","O-O","a6","Re1","Ba7"],
         summary: "Slow development with d3 and c3, then push either d3-d4 or e5."
       },
       {
@@ -253,7 +253,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "sic/kan-quiet",
         name: "Kan: quiet line",
-        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","0-0","Bb4","Qd3","Nc6"],
+        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","O-O","Bb4","Qd3","Nc6"],
         summary: "Develop Qc7 and Bb4, then hit the e4 pawn with Nf6/Qc7 support."
       },
       {
@@ -283,7 +283,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "ck/advance",
         name: "Advance variation",
-        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","0-0","Nge7","Na3","cxd4"],
+        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","O-O","Nge7","Na3","cxd4"],
         summary: "Play e5 first, then Bf5/c5 to hit the centre with a queenside attack."
       },
       {
@@ -339,7 +339,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "sic/kan-quiet",
         name: "Kan: quiet line",
-        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","0-0","Bb4","Qd3","Nc6"],
+        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","O-O","Bb4","Qd3","Nc6"],
         summary: "Develop Qc7 and Bb4, then hit the e4 pawn with Nf6/Qc7 support."
       },
       {
@@ -369,7 +369,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "ck/advance",
         name: "Advance variation",
-        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","0-0","Nge7","Na3","cxd4"],
+        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","O-O","Nge7","Na3","cxd4"],
         summary: "Play e5 first, then Bf5/c5 to hit the centre with a queenside attack."
       },
       {
@@ -409,7 +409,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "london/symmetrical",
         name: "Symmetrical setup",
-        moves: ["d4","d5","Bf4","c5","e3","Nc6","Nf3","Nf6","c3","g6","Be2","Bg7","0-0","O-O","dxc5"],
+        moves: ["d4","d5","Bf4","c5","e3","Nc6","Nf3","Nf6","c3","g6","Be2","Bg7","O-O","O-O","dxc5"],
         summary: "Both sides mirror; plan the e4 break to fight for the centre."
       },
       {
@@ -439,13 +439,13 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "london/stoic-slav",
         name: "Stoic Slav",
-        moves: ["d4","d5","Bf4","Nf6","e3","e6","Nf3","Bd6","Bd3","O-O","0-0","b6","c4","Bd7"],
+        moves: ["d4","d5","Bf4","Nf6","e3","e6","Nf3","Bd6","Bd3","O-O","O-O","b6","c4","Bd7"],
         summary: "Push c4 to open the queenside after the solid setup."
       },
       {
         id: "london/french-style",
         name: "French-style setup",
-        moves: ["d4","e6","Bf4","d5","e3","Bd6","Bd3","Nf6","Nf3","O-O","0-0","c5","c3","Nc6"],
+        moves: ["d4","e6","Bf4","d5","e3","Bd6","Bd3","Nf6","Nf3","O-O","O-O","c5","c3","Nc6"],
         summary: "Meet a French-style setup by developing Bf4, Nf3 and Bd3 first."
       },
       {
@@ -457,19 +457,19 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "italian/guuoco",
         name: "Giuoco Piano",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","c3","Nf6","d4","exd4","cxd4","Bb4+","Nc3","Nxe4","0-0","Nxc3"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","c3","Nf6","d4","exd4","cxd4","Bb4+","Nc3","Nxe4","O-O","Nxc3"],
         summary: "Open with Bc4/Bc5, Nf3/Nc6, and fight d4 with c3 and Bg5."
       },
       {
         id: "italian/evans",
         name: "Evans Gambit",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","b4","Bxb4","c3","Ba5","d4","exd4","0-0","Nge7","e5","O-O"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","b4","Bxb4","c3","Ba5","d4","exd4","O-O","Nge7","e5","O-O"],
         summary: "Sacrifice the b-pawn for development and attack d4 with c3, d4, e5."
       },
       {
         id: "italian/modern-classical",
         name: "Modern classical: d3 setup",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","d3","Nf6","c3","d6","Nbd2","0-0","0-0","a6","Re1","Ba7"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","d3","Nf6","c3","d6","Nbd2","O-O","O-O","a6","Re1","Ba7"],
         summary: "Slow development with d3 and c3, then push either d3-d4 or e5."
       },
       {
@@ -507,7 +507,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "london/symmetrical",
         name: "Symmetrical setup",
-        moves: ["d4","d5","Bf4","c5","e3","Nc6","Nf3","Nf6","c3","g6","Be2","Bg7","0-0","O-O","dxc5"],
+        moves: ["d4","d5","Bf4","c5","e3","Nc6","Nf3","Nf6","c3","g6","Be2","Bg7","O-O","O-O","dxc5"],
         summary: "Both sides mirror; plan the e4 break to fight for the centre."
       },
       {
@@ -537,13 +537,13 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "london/stoic-slav",
         name: "Stoic Slav",
-        moves: ["d4","d5","Bf4","Nf6","e3","e6","Nf3","Bd6","Bd3","O-O","0-0","b6","c4","Bd7"],
+        moves: ["d4","d5","Bf4","Nf6","e3","e6","Nf3","Bd6","Bd3","O-O","O-O","b6","c4","Bd7"],
         summary: "Push c4 to open the queenside after the solid setup."
       },
       {
         id: "london/french-style",
         name: "French-style setup",
-        moves: ["d4","e6","Bf4","d5","e3","Bd6","Bd3","Nf6","Nf3","O-O","0-0","c5","c3","Nc6"],
+        moves: ["d4","e6","Bf4","d5","e3","Bd6","Bd3","Nf6","Nf3","O-O","O-O","c5","c3","Nc6"],
         summary: "Meet a French-style setup by developing Bf4, Nf3 and Bd3 first."
       },
       {
@@ -555,19 +555,19 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "italian/guuoco",
         name: "Giuoco Piano",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","c3","Nf6","d4","exd4","cxd4","Bb4+","Nc3","Nxe4","0-0","Nxc3"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","c3","Nf6","d4","exd4","cxd4","Bb4+","Nc3","Nxe4","O-O","Nxc3"],
         summary: "Open with Bc4/Bc5, Nf3/Nc6, and fight d4 with c3 and Bg5."
       },
       {
         id: "italian/evans",
         name: "Evans Gambit",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","b4","Bxb4","c3","Ba5","d4","exd4","0-0","Nge7","e5","O-O"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","b4","Bxb4","c3","Ba5","d4","exd4","O-O","Nge7","e5","O-O"],
         summary: "Sacrifice the b-pawn for development and attack d4 with c3, d4, e5."
       },
       {
         id: "italian/modern-classical",
         name: "Modern classical: d3 setup",
-        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","d3","Nf6","c3","d6","Nbd2","0-0","0-0","a6","Re1","Ba7"],
+        moves: ["e4","e5","Nf3","Nc6","Bc4","Bc5","d3","Nf6","c3","d6","Nbd2","O-O","O-O","a6","Re1","Ba7"],
         summary: "Slow development with d3 and c3, then push either d3-d4 or e5."
       },
       {
@@ -637,7 +637,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "sic/kan-quiet",
         name: "Kan: quiet line",
-        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","0-0","Bb4","Qd3","Nc6"],
+        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","O-O","Bb4","Qd3","Nc6"],
         summary: "Develop Qc7 and Bb4, then hit the e4 pawn with Nf6/Qc7 support."
       },
       {
@@ -667,7 +667,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "ck/advance",
         name: "Advance variation",
-        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","0-0","Nge7","Na3","cxd4"],
+        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","O-O","Nge7","Na3","cxd4"],
         summary: "Play e5 first, then Bf5/c5 to hit the centre with a queenside attack."
       },
       {
@@ -723,7 +723,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "sic/kan-quiet",
         name: "Kan: quiet line",
-        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","0-0","Bb4","Qd3","Nc6"],
+        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","O-O","Bb4","Qd3","Nc6"],
         summary: "Develop Qc7 and Bb4, then hit the e4 pawn with Nf6/Qc7 support."
       },
       {
@@ -753,7 +753,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "ck/advance",
         name: "Advance variation",
-        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","0-0","Nge7","Na3","cxd4"],
+        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","O-O","Nge7","Na3","cxd4"],
         summary: "Play e5 first, then Bf5/c5 to hit the centre with a queenside attack."
       },
       {
@@ -817,7 +817,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "sic/kan-quiet",
         name: "Kan: quiet line",
-        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","0-0","Bb4","Qd3","Nc6"],
+        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","O-O","Bb4","Qd3","Nc6"],
         summary: "Develop Qc7 and Bb4, then hit the e4 pawn with Nf6/Qc7 support."
       },
       {
@@ -847,7 +847,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "ck/advance",
         name: "Advance variation",
-        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","0-0","Nge7","Na3","cxd4"],
+        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","O-O","Nge7","Na3","cxd4"],
         summary: "Play e5 first, then Bf5/c5 to hit the centre with a queenside attack."
       },
       {
@@ -903,7 +903,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "sic/kan-quiet",
         name: "Kan: quiet line",
-        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","0-0","Bb4","Qd3","Nc6"],
+        moves: ["e4","c5","Nf3","e6","d4","cxd4","Nxd4","a6","Nc3","Qc7","Be2","Nf6","O-O","Bb4","Qd3","Nc6"],
         summary: "Develop Qc7 and Bb4, then hit the e4 pawn with Nf6/Qc7 support."
       },
       {
@@ -933,7 +933,7 @@ export const openingCourses: OpeningCourse[] = [
       {
         id: "ck/advance",
         name: "Advance variation",
-        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","0-0","Nge7","Na3","cxd4"],
+        moves: ["e4","c6","d4","d5","e5","Bf5","Nf3","e6","Be2","c5","c3","Nc6","O-O","Nge7","Na3","cxd4"],
         summary: "Play e5 first, then Bf5/c5 to hit the centre with a queenside attack."
       },
       {
