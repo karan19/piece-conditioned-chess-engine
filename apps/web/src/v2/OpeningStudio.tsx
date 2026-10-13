@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import {
   ArrowDownToLine,
   ArrowLeft,
@@ -8,6 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Compass,
+  Flag,
   Layers3,
   Plus,
   Search,
@@ -39,7 +40,8 @@ import {
 import { openingPlan } from "./lessons";
 import { exportGuidedGame } from "./fullGame";
 import { Training } from "./Training";
-type View = "explore" | "learning";
+const EndgamePractice = lazy(() => import("./EndgamePractice").then(module => ({ default: module.EndgamePractice })));
+type View = "explore" | "learning" | "endgames";
 function introductoryLine(f: Family) {
   if (f.name === "Scandinavian Defense")
     return (
@@ -106,6 +108,8 @@ export function OpeningStudio() {
   useEffect(() => {
     const read = () => {
       const params = new URLSearchParams(location.hash.slice(1));
+      if (params.get("view") === "endgames") setView("endgames");
+      else if (params.get("family")) setView("explore");
       setSide(params.get("side") === "b" ? "b" : "w");
       const f = allFamilies.find((f) =>
         params.get("custom")
@@ -149,7 +153,7 @@ export function OpeningStudio() {
     setSession(null);
     setSearch("");
     setFilter("all");
-    history.replaceState(null, "", location.pathname + "#side=" + side);
+    history.replaceState(null, "", location.pathname + "#" + new URLSearchParams({ side, ...(next === "endgames" ? { view: "endgames" } : {}) }));
     window.scrollTo(0, 0);
   };
   const openFamily = (f: Family) => {
@@ -343,6 +347,7 @@ export function OpeningStudio() {
             <Bookmark size={19} />
             My openings
           </button>
+          <button className={view === "endgames" ? "active" : ""} onClick={() => navigate("endgames")}><Flag size={19} /> Endgame Practice</button>
         </nav>
         <div className="os-sidebar-card">
           <BookOpen size={21} />
@@ -366,7 +371,7 @@ export function OpeningStudio() {
         <header className="os-topbar">
           <span className="os-breadcrumb">A guide, one move at a time</span>
           <span className="os-local-badge">
-            <span /> Openings stay until you remove them
+            <span /> {view === "endgames" ? "Endgames save as you play" : "Openings stay until you remove them"}
           </span>
         </header>
         <main className="os-content">
@@ -384,7 +389,7 @@ export function OpeningStudio() {
               </button>
             </div>
           )}
-          {session ? (
+          {view === "endgames" ? <Suspense fallback={<p role="status">Loading endgame positions…</p>}><EndgamePractice /></Suspense> : session ? (
             <Training
               key={`${session.id}:${side}`}
               opening={session}
@@ -824,7 +829,7 @@ export function OpeningStudio() {
               )}
             </>
           )}
-          {!session && (
+          {!session && view !== "endgames" && (
             <footer className="os-footer">
               <span>
                 Opening studio<span className="os-brand-dot">.</span> /
