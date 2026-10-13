@@ -539,14 +539,6 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
 
       <section className="trainer-main">
         <div className="trainer-board-zone">
-          <TrainerBoard
-            pieces={pieces}
-            flipped={flipped}
-            selectedSquare={selectedSquare}
-            legalDestinations={selectedSquare ? getLegalDestinations(currentGame!, selectedSquare) : []}
-            onSquareClick={handleSquareClick}
-            statusLabel={feedback?.message ?? ""}
-          />
           {evalState ? (
             <div className="eval-bar-strip">
               <span className="eval-bar-label">
@@ -562,6 +554,14 @@ export function TrainerApp({ onBack }: { onBack: () => void }) {
               </div>
             </div>
           ) : null}
+          <TrainerBoard
+            pieces={pieces}
+            flipped={flipped}
+            selectedSquare={selectedSquare}
+            legalDestinations={selectedSquare ? getLegalDestinations(currentGame!, selectedSquare) : []}
+            onSquareClick={handleSquareClick}
+            statusLabel={feedback?.message ?? ""}
+          />
           <div className="trainer-under-board">
             <button className="icon-button" type="button" onClick={() => setShowHint(!showHint)}>
               <ChevronDown size={18} aria-hidden="true" />
