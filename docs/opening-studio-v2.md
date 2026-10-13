@@ -99,3 +99,31 @@ central lines, or rook files. The notes do not claim an engine's intent, force
 replies, or assess a sacrifice as sound without analysis. After the book ends,
 engine suggestions use the same board-effect explanations and current phase
 plans; they are visibly distinguished from recorded opening follow-ups.
+
+## Real-game opponent replies
+
+The coach loads a separate ~391 KB (about 92 KB gzip) anonymous reply-count
+asset on first use. It makes no live requests to the third-party explorer.
+The source is 116,969 eligible human games from the first 64 MiB of Lichess's
+September 2026 rated export, dated September 1. See
+`apps/web/src/v2/data/REAL-GAMES.md` for license, filters, sampling limitations,
+thresholds, checksum, and reproducible generation.
+
+At each book position the Learn panel shows up to six legal continuations,
+counts and percentages for the exact move sequence. Opponent replies have a
+Study button that plays the chosen move, discards incompatible future moves,
+and selects a matching named continuation when one exists. Every reply has
+expandable original, position-based explanations. A compact shortcut above the
+move lesson makes common opponent replies easy to find.
+
+When the current book line ends before move 10, sampled common continuations
+extend the lesson while data remains. At 20 plies (or the end of a longer
+original named line), insufficient sample coverage, or on Continue with
+Stockfish, the engine takes over. Existing full games with engine moves retain
+their original boundary. Sparse positions never invent frequencies.
+
+Version 3 records can optionally include canonical `bookMoves` and
+`bookComplete`; older records still load. Branch moves are validated on restore,
+used in result checks and PGN export, and saved independently for White/Black.
+Returning to the selected variation explicitly resets that record to its
+original line. The root app, original storage, and API remain untouched.
