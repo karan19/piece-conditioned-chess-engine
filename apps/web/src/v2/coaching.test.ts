@@ -38,6 +38,17 @@ describe("Learn coach", () => {
     const rook = parseImportedPgn("1. e4 e5 2. f4 exf4 3. Nf3 d5 4. exd5 Qxd5 5. Nc3 Qe6+ 6. Be2 Nc6 7. O-O Bd7 8. d4 O-O-O 9. Bxf4 Nf6 10. Re1", "Open e-file");
     expect(explainStep(rook, 18, "w")?.why).toContain("open e-file");
   });
+  it("explains fianchetto purpose and its actual first blocker in any opening", () => {
+    const london = parseImportedPgn("1. d4 Nf6 2. Nf3 g6 3. Bf4 Bg7", "London System");
+    const step = explainStep(london, 5, "w")!;
+    expect(step.why).toContain("fianchetto square on g7");
+    expect(step.why).toContain("long h8–a1 diagonal");
+    expect(step.why).toContain("Black's knight on f6");
+    const queenside = parseImportedPgn("1. b3 d5 2. Bb2", "Custom flank opening");
+    expect(explainStep(queenside, 2, "w")?.why).toContain("long h8–a1 diagonal");
+    const blackQueenside = parseImportedPgn("1. a4 b6 2. a5 Bb7", "Custom flank opening");
+    expect(explainStep(blackQueenside, 3, "b")?.why).toContain("long a8–h1 diagonal");
+  });
   it("prioritizes check and gives no continuing opponent plan after mate", () => {
     const game = new Chess();
     for (const san of ["f3", "e5", "g4", "Qh4#"]) game.move(san);
