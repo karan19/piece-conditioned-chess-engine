@@ -2225,3 +2225,49 @@ button {
   justify-content: space-between;
   text-align: left;
 }
+.os-continuation-banner {
+  background: #edf2e6;
+  border: 1px solid #dfe8d2;
+  border-radius: 7px;
+  padding: 17px;
+  margin-top: 17px;
+  font-size: 12px;
+  color: #617b4c;
+}
+.os-continuation-banner p {
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 7px;
+}
+.os-game-result {
+  background: #e4eedb;
+  border: 1px solid #c7d9b5;
+  border-radius: 9px;
+  padding: 24px;
+  margin: 22px 0;
+  color: #4b6d35;
+}
+.os-game-result h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 12px 0;
+}
+.os-game-result p {
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 10px 0;
+}
+.os-game-result > strong {
+  font-size: 23px;
+}
+.os-lesson-timeline button.engine-move {
+  border-bottom: 2px solid #c9ae70;
+}
+.os-board-zone .os-notice {
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.os-session-panel .os-game-result + .os-why-panel {
+  margin-top: 20px;
+}
