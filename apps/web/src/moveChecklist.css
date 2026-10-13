@@ -1,0 +1,27 @@
+.move-checklist {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  padding: 14px 16px;
+  border: 1px solid #d3dcd2;
+  border-radius: 8px;
+  background: #f7f8f2;
+  color: #273e35;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+}
+.mc-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 5px; }
+.move-checklist button { padding: 4px 8px; border: 1px solid #ccd5cb; border-radius: 5px; background: #fff; color: #354c40; font: inherit; cursor: pointer; }
+.move-checklist summary { cursor: pointer; font-weight: 600; }
+.move-checklist :is(button, summary, input):focus-visible { outline: 2px solid #54785e; outline-offset: 3px; }
+.mc-memory, .mc-note { margin: 8px 0 0; color: #5a6e60; font-size: 12px; }
+.mc-question { padding: 9px 0; border-bottom: 1px solid #e1e6dd; }
+.mc-question label { display: flex; align-items: flex-start; gap: 9px; cursor: pointer; }
+.mc-question input { flex: none; width: 16px; height: 16px; margin: 2px 0 0; accent-color: #355b43; }
+.mc-question small { color: #647563; font-size: inherit; }
+.mc-question details { margin: 4px 0 0 25px; }
+.mc-question summary { color: #62765f; font-size: 11px; font-weight: 500; }
+.mc-question p { margin: 6px 0 0; }
+.mc-hidden { padding: 8px 12px; background: transparent; }
