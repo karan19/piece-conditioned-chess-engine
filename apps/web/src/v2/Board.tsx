@@ -1,5 +1,6 @@
 import { Chess, type Square, type PieceSymbol, type Color } from "chess.js";
 import type { Side } from "./catalog";
+import { getCheckThreat, pieceGlyphs } from "../chessGame";
 const labels: Record<PieceSymbol, string> = {
   p: "pawn",
   n: "knight",
@@ -98,6 +99,8 @@ export function Board({
     selected && interactive
       ? game.moves({ square: selected, verbose: true }).map((m) => m.to)
       : [];
+  const checkThreat = getCheckThreat(game);
+  const attackers = new Set(checkThreat?.attackers.map((piece) => piece.square));
   return (
     <div
       className={`os-board ${mini ? "mini" : ""}`}
@@ -109,21 +112,20 @@ export function Board({
           const square = `${file}${rank}` as Square;
           const piece = game.get(square);
           const mark = hint?.from === square || hint?.to === square;
-          const className = `os-square ${(row + col) % 2 ? "dark" : "light"} ${selected === square ? "selected" : ""} ${mark ? "hint" : ""} ${last?.from === square || last?.to === square ? "last" : ""}`;
+          const className = `os-square ${(row + col) % 2 ? "dark" : "light"} ${selected === square ? "selected" : ""} ${mark ? "hint" : ""} ${checkThreat?.kingSquare === square ? "check-king" : ""} ${attackers.has(square) ? "check-attacker" : ""} ${last?.from === square || last?.to === square ? "last" : ""}`;
           const contents = (
             <>
-              {!mini && col === 0 && <span className="rank">{rank}</span>}
-              {!mini && row === 7 && <span className="file">{file}</span>}
+              <span className="os-coordinate" aria-hidden="true">{square}</span>
               {piece && (
                 <span
-                  className="piece-wrap"
+                  className={`piece-wrap os-classic-piece ${piece.color}`}
                   draggable={interactive && piece.color === side}
                   onDragStart={(event) => {
                     event.dataTransfer.setData("text/plain", square);
                     onSelect?.(square);
                   }}
                 >
-                  <Piece type={piece.type} color={piece.color} />
+                  {pieceGlyphs[piece.color][piece.type]}
                 </span>
               )}
               {legal.includes(square) && (
