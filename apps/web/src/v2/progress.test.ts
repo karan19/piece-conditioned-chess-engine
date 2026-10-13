@@ -19,6 +19,8 @@ describe("self-paced learning", () => {
       completed: false,
       visits: 0,
       last: 100,
+      continuation: [],
+      result: null,
     });
     expect(p.records[recordKey(line, "b")]).toBeUndefined();
     expect(JSON.stringify(p)).not.toMatch(/due|box|activity/);
@@ -49,7 +51,7 @@ describe("self-paced learning", () => {
       custom: [],
       activity: { "2026-10-12": 3 },
     });
-    expect(p.version).toBe(2);
+    expect(p.version).toBe(3);
     expect(p.saved).toEqual([`w:${line.family}`]);
     expect(p.records[recordKey(line, "w")].completed).toBe(true);
     expect(JSON.stringify(p)).not.toMatch(/box|due|activity/);

@@ -1,19 +1,22 @@
+import { replayGame, gameResult } from "./fullGame";
 import { openings, parseImportedPgn, type Opening, type Side } from "./catalog";
 export type RecordState = {
   lastPly: number;
   completed: boolean;
   visits: number;
   last: number;
+  continuation: string[];
+  result: string | null;
 };
 export type Progress = {
-  version: 2;
+  version: 3;
   records: Record<string, RecordState>;
   saved: string[];
   custom: Opening[];
 };
 const key = "pcce-opening-studio-v2";
 export const emptyProgress = (): Progress => ({
-  version: 2,
+  version: 3,
   records: {},
   saved: [],
   custom: [],
@@ -25,7 +28,7 @@ export function decodeProgress(value: unknown): Progress {
     throw new Error("Choose an Opening Studio backup.");
   const p = value as Record<string, unknown>;
   if (
-    ![1, 2].includes(Number(p.version)) ||
+    ![1, 2, 3].includes(Number(p.version)) ||
     !p.records ||
     typeof p.records !== "object" ||
     Array.isArray(p.records) ||
@@ -44,11 +47,13 @@ export function decodeProgress(value: unknown): Progress {
           completed: Boolean(r.learned),
           visits: Number(r.attempts),
           last: Number(r.last),
+          continuation: [],
+          result: null,
         };
     } else if (
       Number.isInteger(r.lastPly) &&
       Number(r.lastPly) >= 0 &&
-      Number(r.lastPly) <= 160 &&
+      Number(r.lastPly) <= 10000 &&
       typeof r.completed === "boolean" &&
       Number.isFinite(r.visits) &&
       Number.isFinite(r.last)
@@ -58,6 +63,13 @@ export function decodeProgress(value: unknown): Progress {
         completed: r.completed,
         visits: Number(r.visits),
         last: Number(r.last),
+        continuation:
+          Array.isArray(r.continuation) &&
+          r.continuation.length <= 10000 &&
+          r.continuation.every((m) => typeof m === "string")
+            ? (r.continuation as string[])
+            : [],
+        result: null,
       };
   }
   const custom: Opening[] = [];
@@ -70,8 +82,26 @@ export function decodeProgress(value: unknown): Progress {
       /* Ignore damaged imported lines. */
     }
   }
+  const known = [...openings, ...custom];
+  for (const [id, record] of Object.entries(records)) {
+    const opening = known.find((o) => id.slice(2) === o.id);
+    if (!opening) continue;
+    try {
+      const game = replayGame(opening, record.continuation);
+      record.lastPly = Math.min(
+        record.lastPly,
+        opening.moves.length + record.continuation.length,
+      );
+      record.result =
+        gameResult(replayGame(opening, record.continuation, record.lastPly))
+          ?.title ?? null;
+    } catch {
+      record.continuation = [];
+      record.lastPly = Math.min(record.lastPly, opening.moves.length);
+    }
+  }
   return {
-    version: 2,
+    version: 3,
     records,
     saved: Array.from(
       new Set([
@@ -111,9 +141,12 @@ export function rememberStep(
   side: Side,
   ply: number,
   now = Date.now(),
+  continuation?: string[],
 ): Progress {
   const id = recordKey(opening, side),
     old = progress.records[id];
+  const savedMoves = continuation ?? old?.continuation ?? [];
+  const game = replayGame(opening, savedMoves, ply);
   return {
     ...progress,
     records: {
@@ -123,6 +156,8 @@ export function rememberStep(
         completed: Boolean(old?.completed) || ply === opening.moves.length,
         visits: (old?.visits ?? 0) + (ply === opening.moves.length ? 1 : 0),
         last: now,
+        continuation: savedMoves,
+        result: gameResult(game)?.title ?? null,
       },
     },
   };
