@@ -85,20 +85,6 @@ const castleTargets: Record<Color, { kingSide: Square; queenSide: Square }> = {
   }
 };
 
-const Board3DView = lazy(() =>
-  import("./Board3DView").then((module) => ({ default: module.Board3DView }))
-);
-const opponentMoveDelayMs = 1000;
-const castleTargets: Record<Color, { kingSide: Square; queenSide: Square }> = {
-  b: {
-    kingSide: "g8",
-    queenSide: "c8"
-  },
-  w: {
-    kingSide: "g1",
-    queenSide: "c1"
-  }
-};
 
 function BoardView({
   game,
