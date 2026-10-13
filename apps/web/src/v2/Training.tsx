@@ -122,6 +122,9 @@ export function Training({
     setSelected(null);
     setPromotion(null);
     setFeedback("");
+    setLoading(false);
+    setEngineError("");
+    setRetryAt(null);
     onStep(target, continuation);
   };
   const submit = (from: Square, to: Square, promote?: PieceSymbol) => {
