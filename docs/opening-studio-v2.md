@@ -24,8 +24,8 @@ No existing app components, styles, API routes, or storage keys are changed.
   removal; removing an imported course also removes its custom line.
 - PGN main-line import, line export, and backup export/restore. No quizzes,
   repetition schedules, scores, timers, streaks, or accounts.
-- Storage version 2 at `pcce-opening-studio-v2` migrates version 1 bookmarks,
-  custom lines and completed records, discarding SRS boxes, due dates and daily
+- Storage version 3 at `pcce-opening-studio-v2` migrates older bookmarks,
+  custom lines, checkpoints and completed records, discarding SRS boxes, due dates and daily
   activity. V1 app storage remains untouched.
 
 Explanations are educational descriptions of the recorded line and verifiable
@@ -59,3 +59,25 @@ Publish through a PR into the protected production branch. Verify the Amplify
 job succeeds, `/v2` and `/v2/` return the studio HTML, all referenced assets return
 200, and `/` still returns the original app. Root and V2 styles must remain
 separate. The existing API requires no changes or extra load for the trainer.
+
+## Full-game continuation
+
+Every recorded opening can now continue into a full game. At the current end
+of its known moves, the studio requests one legal move from the existing
+`/api/engine/best-move` endpoint and appends it to the saved game. User-side
+suggestions use expert strength; the opponent uses medium strength. Guidance
+advances only when the user clicks or plays a legal move. After the opening,
+a different legal user move creates a new continuation from that position.
+
+There is no fixed game-length cutoff. Checkmate, stalemate, insufficient
+material, threefold repetition, or the fifty-move rule ends a game. The studio
+treats available repetition/fifty-move draw claims as claimed. It cannot promise
+checkmate for every position. Replaying the entire SAN history preserves
+repetition state; checking only a FEN would lose it.
+
+Storage version 3 preserves prior bookmarks/checkpoints and stores generated
+continuation moves and the actual result. Restore validates saved moves before
+using them. The existing API, root UI, and rate limits are unchanged. Engine
+429 responses wait for Retry-After and retry; other failures leave the position
+intact and offer Retry engine. Only one move ahead is requested, not bulk
+engine games for the whole catalog.
