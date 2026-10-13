@@ -3,6 +3,7 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
+  Lightbulb,
   Check,
   ChevronLeft,
   ChevronRight,
@@ -10,6 +11,7 @@ import {
 } from "lucide-react";
 import type { PieceSymbol, Square } from "chess.js";
 import { gameAt, type Opening, type Side } from "./catalog";
+import { positionGuidance } from "./coaching";
 import { explainStep, openingPlan } from "./lessons";
 import {
   EngineBusyError,
@@ -53,6 +55,7 @@ export function Training({
   );
   const [selected, setSelected] = useState<Square | null>(null);
   const [feedback, setFeedback] = useState("");
+  const [showHint, setShowHint] = useState(false);
   const [promotion, setPromotion] = useState<{
     from: Square;
     to: Square;
@@ -74,6 +77,9 @@ export function Training({
   const finished = Boolean(result);
   const inContinuation = ply >= opening.moves.length;
   const needsMove = !finished && ply === lesson.moves.length;
+  const coaching = positionGuidance(game, side, inContinuation
+    ? phasePlan(game, side === "w" ? "b" : "w")
+    : side === "w" ? guide.black : guide.white);
   useEffect(() => {
     if (!needsMove) return;
     const controller = new AbortController();
@@ -119,6 +125,7 @@ export function Training({
   const last = game.history({ verbose: true }).at(-1);
   const go = (target: number) => {
     setPly(target);
+    setShowHint(false);
     setSelected(null);
     setPromotion(null);
     setFeedback("");
@@ -149,6 +156,7 @@ export function Training({
         move.san,
       ];
       setContinuation(branch);
+      setShowHint(false);
       setPly(ply + 1);
       setSelected(null);
       setFeedback("");
@@ -204,7 +212,7 @@ export function Training({
             selected={selected}
             onSelect={choose}
             interactive={userTurn}
-            hint={!finished ? next?.move : undefined}
+            hint={!finished && showHint ? next?.move : undefined}
             last={last}
           />
           {promotion && (
@@ -242,6 +250,14 @@ export function Training({
                     : next?.instruction))}
           </div>
           <div className="os-board-tools">
+            <button
+              className="os-secondary"
+              aria-pressed={showHint}
+              disabled={finished || !next}
+              onClick={() => setShowHint(value => !value)}
+            >
+              <Lightbulb size={16} /> {showHint ? "Hide hint" : "Highlight move"}
+            </button>
             <button
               className="os-secondary"
               onClick={() => go(0)}
@@ -315,7 +331,8 @@ export function Training({
             </div>
           </section>
         </section>
-        <aside className="os-session-panel">
+        <aside className="os-session-panel os-learn-panel" aria-label="Learn coach">
+          <div className="os-learn-heading"><BookOpen size={20} /><strong>Learn</strong><span>{userTurn ? "Your move" : finished ? "Game review" : "Opponent’s move"}</span></div>
           <span className="os-eyebrow">{opening.eco} · GUIDED LESSON</span>
           <h1>{opening.family}</h1>
           <p className="os-session-variation">
@@ -340,36 +357,37 @@ export function Training({
               <p>Your complete game stays saved in My openings.</p>
             </section>
           )}
-          {explained && (
-            <section className="os-why-panel" aria-live="polite">
-              <span className="os-label">
-                {ply === 0 ? "FIRST MOVE EXPLAINED" : "LAST MOVE EXPLAINED"}
-              </span>
-              <h2>{explained.label}</h2>
-              <h3>Why this move?</h3>
-              <p>{explained.why}</p>
-              <h3>What changes on the board</h3>
-              <ul>
-                {explained.facts.map((f) => (
-                  <li key={f}>{f}</li>
-                ))}
-              </ul>
-            </section>
-          )}
-          {next && !finished && (
-            <section className="os-next-move">
-              <span className="os-label">
-                UP NEXT · {userTurn ? "YOUR MOVE" : "OPPONENT'S REPLY"}
-              </span>
-              <strong>{next.label}</strong>
-              <p>{next.instruction}</p>
-              {ply > 0 && (
-                <details>
-                  <summary>Why is this the next move?</summary>
-                  <p>{next.why}</p>
+          {(next || explained) && (() => {
+            const step = next && !finished ? next : explained!;
+            return (
+              <section className="os-why-panel os-coach-card" aria-live="polite" aria-atomic="true">
+                <span className="os-label">{finished ? "FINAL MOVE" : next ? "MOVE TO PLAY" : "LAST MOVE · WAITING FOR CONTINUATION"}</span>
+                <h2>{step.label}</h2>
+                <p className="os-coach-instruction">{step.instruction}</p>
+                <h3>Why this move?</h3>
+                {step.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+                {!finished && <>
+                  <h3>What your opponent is trying to do</h3>
+                  <p>{coaching.opponentPlan}</p>
+                  <h3>Before you move, watch for</h3>
+                  <ul>{coaching.watch.map(item => <li key={item}>{item}</li>)}</ul>
+                  {step.followUp && <><h3>{inContinuation ? "Known game continuation" : "How this line develops"}</h3><p>{inContinuation ? step.followUp.replace("In this recorded line", "In the saved game continuation") : step.followUp}</p></>}
+                </>}
+                <details className="os-coach-details">
+                  <summary>What this move changes on the board</summary>
+                  <ul>{step.facts.map(f => <li key={f}>{f}</li>)}</ul>
                 </details>
-              )}
-            </section>
+                <p className="os-coach-source">{inContinuation
+                  ? "Stockfish suggestion · explanations describe board effects and possible plans, not the engine’s reasoning."
+                  : "Recorded opening · original teaching notes and position-based guidance. Plans are possibilities, not forced replies."}</p>
+              </section>
+            );
+          })()}
+          {ply > 0 && explained && next && !finished && (
+            <details className="os-last-move">
+              <summary>Review the last move: {explained.label}</summary>
+              <p>{explained.why}</p>
+            </details>
           )}
           <section className="os-plan-panel">
             <span className="os-label">

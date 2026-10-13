@@ -1,5 +1,6 @@
 import { type Move, type PieceSymbol, type Square } from "chess.js";
 import { gameAt, type Opening, type Side } from "./catalog";
+import { movePurpose, positionGuidance, themedPurpose } from "./coaching";
 const names: Record<PieceSymbol, string> = {
   p: "pawn",
   n: "knight",
@@ -13,9 +14,13 @@ export type LessonStep = {
   label: string;
   instruction: string;
   why: string;
+  paragraphs: string[];
   facts: string[];
   reply: string | null;
   plan: string;
+  opponentPlan: string;
+  watch: string[];
+  followUp: string | null;
 };
 const plans: Record<string, { idea: string; white: string; black: string }> = {
   "Scandinavian Defense": {
@@ -218,6 +223,7 @@ export function explainStep(
   side: Side,
 ): LessonStep | null {
   if (ply >= opening.moves.length) return null;
+  const before = gameAt(opening, ply);
   const after = gameAt(opening, ply + 1);
   const move = after.history({ verbose: true }).at(-1)!;
   const actor = move.color === "w" ? "White" : "Black",
@@ -254,34 +260,10 @@ export function explainStep(
       facts.push(
         `Attacks the opponent's ${names[piece.type]} on ${piece.square}.`,
       );
-  let why = specificWhy(opening, opening.moves.slice(0, ply + 1).join(" "));
-  if (!why) {
-    if (move.flags.includes("k") || move.flags.includes("q"))
-      why = `${actor} castles ${move.flags.includes("k") ? "kingside" : "queenside"}, moving the king and rook in one move. This moves the king away from its original central square and brings the rook closer to central play.`;
-    else if (move.promotion)
-      why = `The pawn has reached the last rank and must promote. This line chooses a ${names[move.promotion]}; other promotion choices would create a different position.`;
-    else if (move.captured)
-      why = `${actor} captures the ${names[move.captured]}. This removes an opposing piece and changes the material balance and open lines. Check how the opponent can respond before assuming the capture is safe.`;
-    else if (move.piece === "p" && ["d4", "e4", "d5", "e5"].includes(move.to))
-      why = `${actor} puts a pawn on ${move.to}, occupying a central square. That claims space and changes which central squares the pawns can control.`;
-    else if (
-      (move.piece === "n" || move.piece === "b") &&
-      move.from[1] === (move.color === "w" ? "1" : "8")
-    )
-      why = `${actor} develops the ${names[move.piece]} from its starting rank. Look at the squares it attacks from ${move.to}: development matters because it gives the piece a role in the position.`;
-    else if (move.piece === "b" && ["g2", "b2", "g7", "b7"].includes(move.to))
-      why = `The bishop takes up a fianchetto position on ${move.to}. Its long diagonal can influence central squares; intervening pieces and pawns determine how far it currently sees.`;
-    else if (move.piece === "p")
-      why = `The pawn advances from ${move.from} to ${move.to}, changing the pawn structure. A pawn cannot move backward, so compare the squares it now controls with the squares it leaves behind.`;
-    else if (move.piece === "q")
-      why = `${actor} repositions the queen from ${move.from} to ${move.to}. Check whether it is escaping an attack or creating pressure; repeated queen moves can give the opponent time to develop.`;
-    else if (move.piece === "r")
-      why = `${actor} repositions the rook to ${move.to}. Rooks are most useful on files or ranks with clear paths, so inspect the pawns and pieces along its new lines.`;
-    else if (move.piece === "k")
-      why = `${actor} moves the king to ${move.to}. King moves affect safety and the ability to castle, so pay attention to the opposing pieces' attacks.`;
-    else
-      why = `${actor} repositions the ${names[move.piece]} from ${move.from} to ${move.to}. Compare its new attacks and defenders with its previous square.`;
-  }
+  const teaching = themedPurpose(opening, before, move, ply)
+    ?? specificWhy(opening, opening.moves.slice(0, ply + 1).join(" "));
+  const consequences = movePurpose(before, after, move);
+  let why = teaching ? `${teaching} ${consequences}` : consequences;
   if (after.isCheckmate()) {
     why = `${actor} delivers checkmate. The opposing king is in check, and there is no legal king move, capture, or blocking move that removes the check. This ends the game.`;
     const protectors = after
@@ -302,11 +284,22 @@ export function explainStep(
       `The ${names[move.piece]} moves from ${move.from} to ${move.to}.`,
     );
   const guide = openingPlan(opening, side);
+  const position = positionGuidance(before, side, side === "w" ? guide.black : guide.white);
+  const following = opening.moves.slice(ply + 1, ply + 5);
+  const followUp = following.length
+    ? `In this recorded line, the next steps are ${following.map((san, i) => {
+        const index = ply + i + 1;
+        return `${Math.floor(index / 2) + 1}${index % 2 === 0 ? "." : "..."} ${san}`;
+      }).join(" → ")}. Advance one move at a time to see why each is played; other legal replies can lead to different positions.`
+    : null;
   return {
+    ...position,
+    followUp,
     move,
     label: `${Math.floor(ply / 2) + 1}${move.color === "w" ? "." : "..."} ${move.san}`,
     instruction: `${opponent} ${move.color === side ? "play" : "plays"} ${move.san}: ${move.flags.includes("k") || move.flags.includes("q") ? "castle" : `move the ${names[move.piece]} from ${move.from} to ${move.to}`}.`,
     why,
+    paragraphs: teaching && !after.isCheckmate() && !why.includes("immediate checkmate") ? [teaching, consequences] : [why],
     facts,
     reply: opening.moves[ply + 1] ?? null,
     plan: side === "w" ? guide.white : guide.black,
