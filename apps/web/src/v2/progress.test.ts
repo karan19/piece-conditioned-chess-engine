@@ -1,79 +1,97 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { openings } from "./catalog";
+import { families, openings, parseImportedPgn } from "./catalog";
 import {
-  completeLine,
-  dueLines,
+  decodeProgress,
   emptyProgress,
   loadProgress,
   recordKey,
+  rememberStep,
+  removeFromLearning,
   saveProgress,
-  streak,
 } from "./progress";
 const line = openings.find((o) => o.moves.length > 2)!;
-const now = new Date(2026, 9, 12, 12).getTime();
-describe("spaced repetition", () => {
-  it("keeps guided learning due immediately and separates White and Black progress", () => {
-    const p = completeLine(emptyProgress(), line, "w", true, false, now);
-    expect(dueLines(p, [line], "w", now)).toEqual([line]);
-    expect(dueLines(p, [line], "b", now)).toEqual([]);
-    expect(p.records[recordKey(line, "w")].box).toBe(0);
-  });
-  it("schedules unassisted recall at 1, 3, 7, 14 and 30 days", () => {
-    let p = completeLine(emptyProgress(), line, "b", true, false, now);
-    for (const [i, days] of [1, 3, 7, 14, 30].entries()) {
-      p = completeLine(p, line, "b", true, true, now);
-      expect(p.records[recordKey(line, "b")].box).toBe(i + 1);
-      expect(p.records[recordKey(line, "b")].due).toBe(now + days * 86400000);
-      expect(dueLines(p, [line], "b", now)).toHaveLength(0);
-    }
-    p = completeLine(p, line, "b", true, true, now);
-    expect(p.records[recordKey(line, "b")].box).toBe(5);
-  });
-  it("resets failed or assisted recall to due and does not advance review boxes during learning", () => {
-    let p = completeLine(emptyProgress(), line, "w", true, true, now);
-    p = completeLine(p, line, "w", true, false, now);
-    expect(p.records[recordKey(line, "w")].box).toBe(1);
-    p = completeLine(p, line, "w", false, true, now);
-    expect(p.records[recordKey(line, "w")].box).toBe(0);
-    expect(dueLines(p, [line], "w", now)).toHaveLength(1);
-  });
-  it("counts consecutive local calendar days, including yesterday before today's practice", () => {
-    const p = emptyProgress();
-    for (const offset of [1, 2, 3]) {
-      const date = new Date(now);
-      date.setDate(date.getDate() - offset);
-      p.activity[date.toLocaleDateString("en-CA")] = 1;
-    }
-    expect(streak(p, new Date(now))).toBe(3);
-    expect(streak(p, new Date(now + 2 * 86400000))).toBe(0);
-  });
-});
-
-describe("browser persistence", () => {
+describe("self-paced learning", () => {
   afterEach(() => vi.unstubAllGlobals());
-  it("recovers from corrupt storage and ignores invalid imported lines", () => {
-    vi.stubGlobal("localStorage", { getItem: () => "broken json" });
-    expect(loadProgress()).toEqual(emptyProgress());
-    vi.stubGlobal("localStorage", {
-      getItem: () =>
-        JSON.stringify({
-          ...emptyProgress(),
-          custom: [{ name: "Bad", pgn: "1. e4 e5 2. Ke4" }],
-          activity: { bad: 2 },
-          records: { bad: { box: Infinity } },
-        }),
+  it("remembers position separately for each side without creating schedules", () => {
+    const p = rememberStep(emptyProgress(), line, "w", 2, 100);
+    expect(p.records[recordKey(line, "w")]).toEqual({
+      lastPly: 2,
+      completed: false,
+      visits: 0,
+      last: 100,
     });
-    const p = loadProgress();
-    expect(p.custom).toEqual([]);
-    expect(p.activity).toEqual({});
-    expect(p.records).toEqual({});
+    expect(p.records[recordKey(line, "b")]).toBeUndefined();
+    expect(JSON.stringify(p)).not.toMatch(/due|box|activity/);
   });
-  it("reports blocked storage instead of claiming progress was saved", () => {
+  it("keeps an opening saved after completing or restarting it", () => {
+    let p = emptyProgress();
+    p.saved = [`w:${line.family}`];
+    p = rememberStep(p, line, "w", line.moves.length, 100);
+    expect(p.records[recordKey(line, "w")].completed).toBe(true);
+    p = rememberStep(p, line, "w", 0, 101);
+    expect(p.saved).toEqual([`w:${line.family}`]);
+    expect(p.records[recordKey(line, "w")].completed).toBe(true);
+    expect(p.records[recordKey(line, "w")].lastPly).toBe(0);
+  });
+  it("migrates existing records and bookmarks, discarding repetition data", () => {
+    const p = decodeProgress({
+      version: 1,
+      records: {
+        [recordKey(line, "w")]: {
+          box: 4,
+          due: 1000,
+          attempts: 3,
+          learned: 10,
+          last: 20,
+        },
+      },
+      saved: [`w:${line.family}`],
+      custom: [],
+      activity: { "2026-10-12": 3 },
+    });
+    expect(p.version).toBe(2);
+    expect(p.saved).toEqual([`w:${line.family}`]);
+    expect(p.records[recordKey(line, "w")].completed).toBe(true);
+    expect(JSON.stringify(p)).not.toMatch(/box|due|activity/);
+  });
+  it("only deletes the selected side's saved course and checkpoints", () => {
+    const family = families.find((f) => f.name === line.family)!;
+    let p = rememberStep(
+      rememberStep(emptyProgress(), line, "w", 1),
+      line,
+      "b",
+      2,
+    );
+    p.saved = [`w:${family.name}`, `b:${family.name}`];
+    p = removeFromLearning(p, family.name, family.lines, "w");
+    expect(p.saved).toEqual([`b:${family.name}`]);
+    expect(p.records[recordKey(line, "w")]).toBeUndefined();
+    expect(p.records[recordKey(line, "b")].lastPly).toBe(2);
+    expect(families.some((f) => f.name === family.name)).toBe(true);
+  });
+  it("deletes an imported opening and its checkpoints on both sides only on request", () => {
+    const custom = parseImportedPgn("1. e4 d5 2. exd5 Qxd5", "My Scandinavian");
+    let p = rememberStep(
+      rememberStep(emptyProgress(), custom, "w", 2),
+      custom,
+      "b",
+      3,
+    );
+    p.custom = [custom];
+    p.saved = ["w:My Scandinavian", "b:My Scandinavian", "w:Italian Game"];
+    p = removeFromLearning(p, custom.name, [custom], "w", true);
+    expect(p.custom).toEqual([]);
+    expect(Object.keys(p.records)).toHaveLength(0);
+    expect(p.saved).toEqual(["w:Italian Game"]);
+  });
+  it("recovers from corrupt storage and reports a save failure", () => {
     vi.stubGlobal("localStorage", {
+      getItem: () => "bad",
       setItem: () => {
         throw new Error("quota");
       },
     });
+    expect(loadProgress()).toEqual(emptyProgress());
     expect(saveProgress(emptyProgress())).toBe(false);
   });
 });
