@@ -2271,3 +2271,47 @@ button {
 .os-session-panel .os-game-result + .os-why-panel {
   margin-top: 20px;
 }
+
+/* The coach teaches the upcoming move; the board advances only on user action. */
+.os-learn-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  margin-bottom: 22px;
+  border-radius: 9px;
+  background: #294b3d;
+  color: #fff8e9;
+}
+.os-learn-heading strong { font-size: 18px; }
+.os-learn-heading span { margin-left: auto; font-size: 12px; opacity: .85; }
+.os-coach-card h3 { font-size: 14px; margin-top: 23px; color: #294b3d; }
+.os-coach-card p, .os-coach-card li { font-size: 14px; line-height: 1.75; color: #465944; }
+.os-coach-card .os-coach-instruction {
+  background: #edf2e5;
+  border-left: 3px solid #789658;
+  padding: 13px 15px;
+  color: #294b3d;
+  font-weight: 600;
+  margin: 12px 0 18px;
+}
+.os-coach-details, .os-last-move { font-size: 13px; line-height: 1.75; color: #465944; }
+.os-coach-details { margin-top: 22px; }
+.os-coach-details summary, .os-last-move summary { cursor: pointer; font-weight: 600; }
+.os-last-move { border: 1px solid var(--line); padding: 15px; border-radius: 8px; }
+.os-last-move p { margin-top: 12px; }
+.os-coach-card .os-coach-source { font-size: 11px; color: #74816b; border-top: 1px solid var(--line); padding-top: 13px; margin-top: 22px; }
+.os-learn-panel .os-plan-panel p { font-size: 14px; line-height: 1.75; }
+.os-board-tools { flex-wrap: wrap; }
+@media (max-width: 640px) {
+  .os-coach-card { padding: 18px; }
+  .os-board-tools > button { flex: 1 1 130px; justify-content: center; }
+}
+
+.os-coach-card h3 + p + p { margin-top: 12px; }
+@media (min-width: 1001px) {
+  .os-training-layout { align-items: start; }
+  .os-board-zone { position: sticky; top: 24px; }
+  .os-learn-panel { position: sticky; top: 24px; max-height: calc(100vh - 180px); overflow-y: auto; padding-right: 10px; scrollbar-gutter: stable; }
+  .os-learn-heading { position: sticky; top: 0; z-index: 2; }
+}

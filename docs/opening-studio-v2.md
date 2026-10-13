@@ -81,3 +81,21 @@ using them. The existing API, root UI, and rate limits are unchanged. Engine
 429 responses wait for Retry-After and retry; other failures leave the position
 intact and offer Retry engine. Only one move ahead is requested, not bulk
 engine games for the whole catalog.
+
+## Learn coach panel
+
+The Learn panel teaches the upcoming move before it is played, for either side.
+It includes the instruction, purpose, opponent's plan and current attacks,
+checks and exposed pieces to watch, a preview of up to four recorded follow-ups,
+and the user's longer plan. Last-move review and board-effect details are
+expandable. Highlight move toggles the board hint without advancing the game.
+The hint resets on navigation and on a new user continuation.
+
+Common opening moves have original teaching notes (including London development,
+Caro-Kann central choices, French ...c5, Sicilian d4, Queen's Gambit c4, and
+fianchetto setups). Every other move receives a position-based explanation of
+attacks, support, development, captures/recaptures, center control, newly opened
+central lines, or rook files. The notes do not claim an engine's intent, force
+replies, or assess a sacrifice as sound without analysis. After the book ends,
+engine suggestions use the same board-effect explanations and current phase
+plans; they are visibly distinguished from recorded opening follow-ups.
