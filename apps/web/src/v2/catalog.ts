@@ -93,9 +93,9 @@ export function parseImportedPgn(pgn: string, title: string): Opening {
   const moves = game.history();
   if (!moves.length)
     throw new Error("Add a PGN containing at least one legal move.");
-  if (moves.length > 160)
+  if (moves.length > 1000)
     throw new Error(
-      "Opening lines can contain up to 160 plies. Trim longer games before importing.",
+      "Imported games can contain up to 1,000 plies. Trim longer files before importing.",
     );
   const clean = new Chess();
   try {

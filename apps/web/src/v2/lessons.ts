@@ -261,7 +261,7 @@ export function explainStep(
     else if (move.promotion)
       why = `The pawn has reached the last rank and must promote. This line chooses a ${names[move.promotion]}; other promotion choices would create a different position.`;
     else if (move.captured)
-      why = `${actor} exchanges material by taking the ${names[move.captured]}. Notice which piece recaptures, or whether the following move in this line pursues a different idea. An exchange changes both the material and the open lines.`;
+      why = `${actor} captures the ${names[move.captured]}. This removes an opposing piece and changes the material balance and open lines. Check how the opponent can respond before assuming the capture is safe.`;
     else if (move.piece === "p" && ["d4", "e4", "d5", "e5"].includes(move.to))
       why = `${actor} puts a pawn on ${move.to}, occupying a central square. That claims space and changes which central squares the pawns can control.`;
     else if (
@@ -281,6 +281,21 @@ export function explainStep(
       why = `${actor} moves the king to ${move.to}. King moves affect safety and the ability to castle, so pay attention to the opposing pieces' attacks.`;
     else
       why = `${actor} repositions the ${names[move.piece]} from ${move.from} to ${move.to}. Compare its new attacks and defenders with its previous square.`;
+  }
+  if (after.isCheckmate()) {
+    why = `${actor} delivers checkmate. The opposing king is in check, and there is no legal king move, capture, or blocking move that removes the check. This ends the game.`;
+    const protectors = after
+      .attackers(move.to, move.color)
+      .filter((square) => square !== move.to);
+    if (protectors.length)
+      facts.push(
+        `The piece on ${move.to} is protected by ${protectors
+          .slice(0, 3)
+          .map((square) => `${names[after.get(square)!.type]} on ${square}`)
+          .join(" and ")}.`,
+      );
+  } else if (opening.moves[ply + 1] && gameAt(opening, ply + 2).isCheckmate()) {
+    why += ` However, this move allows ${opening.moves[ply + 1]}, which delivers immediate checkmate. It leaves a decisive threat unanswered.`;
   }
   if (!facts.length)
     facts.push(

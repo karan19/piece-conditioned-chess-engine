@@ -36,6 +36,7 @@ import {
   type Progress,
 } from "./progress";
 import { openingPlan } from "./lessons";
+import { exportGuidedGame } from "./fullGame";
 import { Training } from "./Training";
 type View = "explore" | "learning";
 function introductoryLine(f: Family) {
@@ -193,8 +194,11 @@ export function OpeningStudio() {
     window.scrollTo(0, 0);
   };
   const onStep = useCallback(
-    (ply: number) => {
-      if (session) setProgress((p) => rememberStep(p, session, side, ply));
+    (ply: number, continuation: string[]) => {
+      if (session)
+        setProgress((p) =>
+          rememberStep(p, session, side, ply, Date.now(), continuation),
+        );
     },
     [session, side],
   );
@@ -293,7 +297,7 @@ export function OpeningStudio() {
         ],
       }));
       setNotice(
-        "Backup restored. Openings were retained; old review schedules were discarded.",
+        "Backup restored. Openings and saved games were retained; old review schedules were discarded.",
       );
     } catch (e) {
       setNotice(
@@ -303,7 +307,7 @@ export function OpeningStudio() {
   };
   const exportBackup = () =>
     download(
-      JSON.stringify({ version: 2, progress }, null, 2),
+      JSON.stringify({ version: 3, progress }, null, 2),
       "opening-studio-backup.json",
       "application/json",
     );
@@ -386,6 +390,9 @@ export function OpeningStudio() {
               side={side}
               initialPly={
                 progress.records[recordKey(session, side)]?.lastPly ?? 0
+              }
+              initialContinuation={
+                progress.records[recordKey(session, side)]?.continuation ?? []
               }
               continuations={(family?.lines ?? [])
                 .filter(
@@ -481,9 +488,10 @@ export function OpeningStudio() {
                                 : "Main position"}
                             </strong>
                             <small>
-                              {o.eco} · {o.moves.length} plies
-                              {progress.records[recordKey(o, side)]?.completed
-                                ? " · Walked through"
+                              {o.eco} · {o.moves.length} opening plies · full
+                              game continues
+                              {progress.records[recordKey(o, side)]?.result
+                                ? " · Game completed"
                                 : ""}
                             </small>
                           </span>
@@ -513,8 +521,14 @@ export function OpeningStudio() {
                           aria-label="Export selected line as PGN"
                           onClick={() =>
                             download(
-                              selected.pgn + " *",
-                              "opening-line.pgn",
+                              exportGuidedGame(
+                                selected,
+                                progress.records[recordKey(selected, side)]
+                                  ?.continuation ?? [],
+                                progress.records[recordKey(selected, side)]
+                                  ?.lastPly ?? selected.moves.length,
+                              ),
+                              "guided-game.pgn",
                               "application/x-chess-pgn",
                             )
                           }
@@ -534,13 +548,15 @@ export function OpeningStudio() {
                         onClick={() => start(selected)}
                       >
                         {progress.records[recordKey(selected, side)]?.lastPly
-                          ? "Continue walkthrough"
-                          : "Start guided walkthrough"}
+                          ? "Continue guided game"
+                          : "Start guided game"}
                         <ArrowRight size={18} />
                       </button>
                       <p className="os-training-note">
-                        Explains your moves and the opponent's replies. Nothing
-                        advances until you choose to continue.
+                        Explains your moves and the opponent's replies. The game
+                        continues beyond the opening with Stockfish, until
+                        checkmate or a draw. Nothing advances until you choose
+                        to continue.
                       </p>
                     </>
                   )}
@@ -574,7 +590,7 @@ export function OpeningStudio() {
                   <p>
                     {view === "learning"
                       ? "Keep an opening here for as long as you want. Walk through it again whenever you like, and remove it only when you're comfortable."
-                      : "A move-by-move guide to your opening: what you play, how your opponent responds, and how the position takes shape."}
+                      : "A move-by-move guide from your opening through the rest of the game, until checkmate or a draw."}
                   </p>
                   <div className="os-hero-chips">
                     <span>
