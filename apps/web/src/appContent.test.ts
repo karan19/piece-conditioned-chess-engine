@@ -2,10 +2,9 @@ import { describe, expect, it } from "vitest";
 import { homeActions, productHighlights } from "./appContent";
 
 describe("home app content", () => {
-  it("contains the v1 and v2 entry points", () => {
+  it("contains the two v1 entry points", () => {
     expect(homeActions.map((action) => action.label)).toEqual([
       "Start Game",
-      "Opening Trainer",
       "Learning Journal"
     ]);
   });

@@ -94,28 +94,6 @@ export async function requestBestMove(fen: string, difficulty: Difficulty) {
   return (await response.json()) as BestMoveResponse;
 }
 
-export type EvalResponse = {
-  cp: number | null;
-  mate: number | null;
-  depth: number | null;
-  bestMove: string;
-};
-
-export async function requestEval(fen: string, moveTimeMs = 350) {
-  const response = await fetch(buildApiUrl("/api/engine/eval"), {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ fen, moveTimeMs })
-  });
-
-  if (!response.ok) {
-    const body = (await response.json().catch(() => null)) as { error?: string } | null;
-    throw new Error(body?.error ?? "Evaluation request failed.");
-  }
-
-  return (await response.json()) as EvalResponse;
-}
-
 export function parseUciMove(uci: string) {
   const match = /^([a-h][1-8])([a-h][1-8])([qrbn])?$/.exec(uci);
 
