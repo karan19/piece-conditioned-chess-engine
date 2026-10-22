@@ -1699,7 +1699,7 @@ export function App() {
       <section className="intro-panel" aria-labelledby="page-title">
         <div>
           <p className="eyebrow">Chess learning lab</p>
-          <h1 id="page-title">Piece-Conditioned Chess Engine</h1>
+          <h1 id="page-title">Guided Play</h1>
           <p className="intro-copy">
             A local-first chess learning app where the user chooses a piece,
             Stockfish evaluates the chess, and grounded explanations teach what
