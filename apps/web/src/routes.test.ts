@@ -29,6 +29,8 @@ describe("chess view routing", () => {
   it("has distinct readable paths for every shipped opening family", () => {
     expect(new Set(families.map(f => routeSlug(f.name))).size).toBe(families.length);
     expect(routeSlug("Réti Opening")).toBe("reti-opening");
+    expect(routeSlug("♟")).toBe("custom-opening");
+    expect(localToken("custom:😀:e4")).not.toBe(localToken("custom:😁:e4"));
     expect(localToken("custom:my line")).toBe(localToken("custom:my line"));
     expect(localToken("custom:my line")).not.toBe(localToken("custom:other line"));
   });
