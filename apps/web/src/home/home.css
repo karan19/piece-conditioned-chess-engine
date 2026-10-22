@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
+:root { font-family: 'DM Sans', system-ui, sans-serif; color: #223d32; background: #f6f6ef; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; }
+.home-header { max-width: 1180px; padding: 30px 32px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.home-brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-size: 17px; font-weight: 700; letter-spacing: -.4px; }
+.home-brand > span { display: grid; place-items: center; width: 40px; height: 40px; background: #223d32; border-radius: 10px; color: #faf8e8; font-size: 31px; }
+.home-header nav { display: flex; gap: 28px; font-size: 13px; font-weight: 600; }
+.home-header nav a { text-decoration: none; padding: 8px 0; }
+.home-header nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.chess-home main { max-width: 1080px; margin: auto; padding: 25px 32px 36px; }
+.home-intro { text-align: center; padding: 16px 0 32px; }
+.home-kicker { display: flex; align-items: center; justify-content: center; gap: 8px; color: #737f65; font-size: 10px; font-weight: 700; letter-spacing: 1.8px; }
+.home-intro h1 { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-size: clamp(40px, 5vw, 62px); line-height: 1.22; letter-spacing: -2.5px; margin: 22px 0 20px; }
+.home-intro p { color: #6a7468; font-size: 15px; line-height: 1.9; margin: 0; }
+.home-features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+.home-feature { display: flex; flex-direction: column; position: relative; overflow: hidden; border: 1px solid #dce0d3; border-radius: 14px; background: #fffefa; text-decoration: none; transition: transform .18s, box-shadow .18s; }
+.home-feature:hover { transform: translateY(-4px); box-shadow: 0 15px 30px #233a3210; }
+.home-feature-top { display: flex; align-items: center; justify-content: space-between; padding: 23px 28px 17px; background: #e8edde; color: #526749; }
+.home-feature-top span { font-size: 9px; font-weight: 700; letter-spacing: 1.6px; }
+.home-board-art { height: 144px; display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(4, 36px); overflow: hidden; background: #e8edde; padding: 0 28px; }
+.home-board-art > span { display: grid; place-items: center; font: 32px Georgia, serif; }
+.home-board-art .light { background: #e9cf98; }.home-board-art .dark { background: #a2683f; }
+.home-study .home-feature-top { background: #e9e8db; color: #7a7356; }
+.home-study-art { height: 144px; padding: 8px 28px 20px; background: #e9e8db; display: flex; flex-direction: column; justify-content: space-between; }
+.home-study-art > div { display: flex; gap: 12px; align-items: center; font-family: Georgia, serif; font-size: 18px; }
+.home-moves { font-size: 13px; font-weight: 600; word-spacing: 10px; padding-left: 36px; color: #405343; }.home-moves i { font-style: normal; color: #92947e; }
+.home-feature-body { padding: 25px 28px 24px; display: flex; flex-direction: column; flex: 1; }
+.home-feature h2 { font: 400 28px 'Libre Baskerville', Georgia, serif; letter-spacing: -.9px; margin: 0 0 14px; }
+.home-feature p { font-size: 13px; line-height: 1.8; color: #6c7669; margin: 0; }
+.home-feature ul { padding: 0; margin: 19px 0 25px; list-style: none; color: #52644e; font-size: 12px; line-height: 2.2; }
+.home-feature li::before { content: '✓'; padding-right: 9px; color: #879a70; }
+.home-action { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding-top: 17px; border-top: 1px solid #e7e9df; font-size: 13px; font-weight: 700; margin-top: auto; }
+.home-note { display: flex; align-items: center; justify-content: center; gap: 10px; color: #7b826f; margin: 25px auto 0; }.home-note svg { flex: none; }.home-note p { font-size: 11px; line-height: 1.7; }
+.chess-home footer { max-width: 1180px; margin: auto; padding: 25px 32px; border-top: 1px solid #e1e4d8; display: flex; justify-content: space-between; gap: 16px; color: #858d7a; font-size: 11px; }
+.chess-home a:focus-visible { outline: 3px solid #54785e; outline-offset: 5px; }
+@media (prefers-reduced-motion: reduce) { .home-feature { transition: none; }.home-feature:hover { transform: none; } }
+@media (max-width: 620px) { .home-header { padding: 20px; flex-wrap: wrap; gap: 16px; }.home-header nav { gap: 22px; }.chess-home main { padding: 0 20px 25px; }.home-intro { padding: 25px 0 30px; }.home-kicker { font-size: 8px; letter-spacing: 1px; }.home-intro h1 { letter-spacing: -1.5px; }.home-desktop-break { display: none; }.home-features { grid-template-columns: 1fr; gap: 22px; }.home-feature-body { padding: 24px; }.home-note { align-items: flex-start; }.home-note svg { margin-top: 11px; }.chess-home footer { padding: 22px 20px; flex-wrap: wrap; } }
+
+.home-feature-top { justify-content: flex-start; gap: 12px; color: #294535; }.home-feature-top > h2 { margin: 0; font-size: 25px; }.home-feature-top > svg:last-child { margin-left: auto; flex: none; }
