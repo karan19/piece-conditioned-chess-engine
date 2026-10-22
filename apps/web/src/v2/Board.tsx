@@ -1,3 +1,4 @@
+import "./board.css";
 import { Chess, type Square, type PieceSymbol, type Color } from "chess.js";
 import type { Side } from "./catalog";
 import { getCheckThreat, pieceGlyphs } from "../chessGame";
