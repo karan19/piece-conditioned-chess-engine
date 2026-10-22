@@ -1,3 +1,5 @@
+import { MissingPage, navigateRoute, usePageNavigation, updateRouteQuery, useRouteLocation } from "../navigation";
+import { readStudioRoute } from "../routes";
 import { useEffect, useState } from "react";
 import { Chess } from "chess.js";
 import { ArrowRight, ChevronLeft, ChevronRight, Flag } from "lucide-react";
@@ -9,37 +11,24 @@ import { EndgameSession } from "./EndgameSession";
 export function EndgamePractice() {
   const [records, setRecords] = useState(loadEndgameRecords);
   const [storageError, setStorageError] = useState(false);
-  const [position, setPosition] = useState<EndgamePosition | null>(() => endgames.find(p => p.id === new URLSearchParams(location.hash.slice(1)).get("position")) ?? null);
-  const [type, setType] = useState("all");
-  const [difficulty, setDifficulty] = useState("all");
-  const [goal, setGoal] = useState("all");
-  const [page, setPage] = useState(1);
-  useEffect(() => {
-    const readPosition = () => {
-      const params = new URLSearchParams(location.hash.slice(1));
-      if (params.get("view") === "endgames") setPosition(endgames.find(p => p.id === params.get("position")) ?? null);
-    };
-    window.addEventListener("hashchange", readPosition);
-    return () => window.removeEventListener("hashchange", readPosition);
-  }, []);
+  const url = useRouteLocation();
+  const route = readStudioRoute(url);
+  const position = endgames.find(p => p.id === route.position) ?? null;
+  const { type, difficulty, goal, page } = route;
+  usePageNavigation(`${position?.title ?? "Endgame Practice"} · Chess Learning Lab`, url.pathname);
+  const setType = (value: string) => updateRouteQuery({ type: value === "all" ? null : value, page: null });
+  const setDifficulty = (value: string) => updateRouteQuery({ difficulty: value === "all" ? null : value, page: null });
+  const setGoal = (value: string) => updateRouteQuery({ goal: value === "all" ? null : value, page: null });
+  const setPage = (value: number) => updateRouteQuery({ page: value === 1 ? null : value });
   useEffect(() => { setStorageError(!saveEndgameRecords(records)); }, [records]);
-  useEffect(() => { setPage(1); }, [type, difficulty, goal]);
-  const open = (next: EndgamePosition) => {
-    setPosition(next);
-    history.replaceState(null, "", location.pathname + "#" + new URLSearchParams({ view: "endgames", position: next.id }));
-    window.scrollTo(0, 0);
-  };
-  const exit = () => {
-    setPosition(null);
-    history.replaceState(null, "", location.pathname + "#view=endgames");
-    window.scrollTo(0, 0);
-  };
+  const open = (next: EndgamePosition) => navigateRoute(`/opening-studio/endgames/${encodeURIComponent(next.id)}/${url.search}`);
+  const exit = () => navigateRoute(`/opening-studio/endgames/${url.search}`);
   const filtered = endgames.filter(p => (type === "all" || p.type === type) && (difficulty === "all" || p.difficulty === difficulty) && (goal === "all" || p.goal === goal));
   const pages = Math.max(1, Math.ceil(filtered.length / 12));
   const current = Math.min(page, pages);
   return <>
     {storageError && <div className="os-notice warning" role="alert">Your browser couldn't save this endgame. Export its PGN before leaving.</div>}
-    {position ? <EndgameSession key={position.id} position={position} initialMoves={records[position.id]?.moves ?? []} onSave={moves => setRecords(old => ({ ...old, [position.id]: { moves, last: Date.now() } }))} onExit={exit} /> : <>
+    {route.position && !position ? <MissingPage embedded title="Endgame not found" href="/opening-studio/endgames/" label="Browse endgames">Choose a position from the endgame library.</MissingPage> : position ? <EndgameSession key={position.id} position={position} initialMoves={records[position.id]?.moves ?? []} onSave={moves => setRecords(old => ({ ...old, [position.id]: { moves, last: Date.now() } }))} onExit={exit} /> : <>
       <section className="os-endgame-hero"><span className="os-eyebrow"><Flag size={17} /> SKIP STRAIGHT TO THE ENDGAME</span><h1>Make the last moves count.</h1><p>Start from a real position. Convert an advantage or hold a draw, with optional hints and an opponent that replies automatically.</p><div className="os-endgame-counts"><strong>150 real-game puzzles</strong><span>5 verified draw exercises</span><span>White and Black positions</span></div></section>
       <div className="os-endgame-filters" aria-label="Endgame filters">
         <label>Endgame type<select value={type} onChange={e => setType(e.target.value)}><option value="all">All types</option>{endgameTypes.map(t => <option value={t} key={t}>{t[0].toUpperCase() + t.slice(1)} endings</option>)}</select></label>

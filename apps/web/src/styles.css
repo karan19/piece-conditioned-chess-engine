@@ -1458,3 +1458,6 @@ li {
     width: fit-content;
   }
 }
+
+a.saved-game-card { color: inherit; text-decoration: none; }
+a.saved-game-card:focus-visible { outline: 2px solid #54785e; outline-offset: 3px; }
