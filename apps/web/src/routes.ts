@@ -1,6 +1,6 @@
-export function routeSlug(value: string) { return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+export function routeSlug(value: string) { return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "custom-opening"; }
 export function routeNumber(value: string | null, fallback = 1) { const n = Number(value); return Number.isSafeInteger(n) && n >= 1 && n <= 100000 ? n : fallback; }
-export function localToken(value: string) { let hash = 2166136261; for (const ch of value) hash = Math.imul(hash ^ ch.charCodeAt(0), 16777619); return (hash >>> 0).toString(36); }
+export function localToken(value: string) { let hash = 2166136261; for (let i = 0; i < value.length; i++) hash = Math.imul(hash ^ value.charCodeAt(i), 16777619); return (hash >>> 0).toString(36); }
 export function readStudioRoute(url: URL) {
   const p = url.hash.includes("=") ? new URLSearchParams(url.hash.slice(1)) : url.searchParams;
   const path = url.pathname.replace(/\/+$/, "").slice("/opening-studio".length);
