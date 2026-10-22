@@ -321,12 +321,14 @@ export function OpeningStudio() {
             <ArrowLeft size={16} /> Chess homepage
           </a>
           <a href="/guided-play/" className="os-v1-link">Guided Play <ArrowRight size={16} /></a>
+          <a href="/board-recall/" className="os-v1-link">Board Recall <ArrowRight size={16} /></a>
           <span>OPENING STUDIO</span>
         </div>
       </aside>
       <div className="os-main">
         <header className="os-topbar">
           <span className="os-breadcrumb">A guide, one move at a time</span>
+          <a href="/board-recall/" className="os-feature-shortcut">Board Recall →</a>
           <span className="os-local-badge">
             <span /> {view === "endgames" ? "Endgames save as you play" : "Openings stay until you remove them"}
           </span>
