@@ -45,6 +45,16 @@
     "status": "200"
   },
   {
+    "source": "/guided-play/<*>",
+    "target": "/guided-play/index.html",
+    "status": "200"
+  },
+  {
+    "source": "/opening-studio/<*>",
+    "target": "/opening-studio/index.html",
+    "status": "200"
+  },
+  {
     "source": "</^[^.]+$|\\.(?!(css|gif|glb|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json)$)([^.]+$)/>",
     "target": "/index.html",
     "status": "200"

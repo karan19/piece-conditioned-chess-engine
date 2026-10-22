@@ -1,3 +1,5 @@
+import { MissingPage, RouteLink, navigateRoute, updateRouteQuery, usePageNavigation, useRouteLocation } from "./navigation";
+import { readGuidedRoute } from "./routes";
 import { Suspense, lazy, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
@@ -245,7 +247,12 @@ function playMoveSound(kind: "move" | "capture" | "castle") {
 }
 
 export function App() {
-  const [screen, setScreen] = useState<"home" | "new-game" | "game" | "previous-games" | "review-game">("home");
+  const routeLocation = useRouteLocation();
+  const route = readGuidedRoute(routeLocation);
+  const screen = route.screen;
+  const [routeError, setRouteError] = useState("");
+  const setScreen = (next: "home" | "new-game" | "previous-games") => navigateRoute(next === "home" ? "/guided-play/" : `/guided-play/${next === "previous-games" ? "journal" : "new-game"}/`);
+  usePageNavigation(`${screen === "new-game" ? "New Game" : screen === "game" ? "Game" : screen === "previous-games" ? "Learning Journal" : screen === "review-game" ? "Review" : "Guided Play"} · Chess Learning Lab`, routeLocation.pathname);
   const [fen, setFen] = useState(() => createGame().fen());
   const [selectedSquare, setSelectedSquare] = useState<Square | null>(null);
   const [history, setHistory] = useState<MoveRecord[]>([]);
@@ -285,7 +292,8 @@ export function App() {
   }>({
     status: "idle"
   });
-  const [boardMode, setBoardMode] = useState<"3d" | "2d">("3d");
+  const boardMode = route.board;
+  const setBoardMode = (value: "2d" | "3d") => updateRouteQuery({ board: value === "2d" ? "2d" : null }, true);
   const [moveSoundsEnabled, setMoveSoundsEnabled] = useState(true);
   const [collapsedCandidateIds, setCollapsedCandidateIds] = useState<Set<string>>(() => new Set());
   const [collapsedReviewCandidateIds, setCollapsedReviewCandidateIds] = useState<Set<string>>(() => new Set());
@@ -380,7 +388,7 @@ export function App() {
   }, [fen]);
 
   useEffect(() => {
-    if (screen !== "game" || !currentGameId || !createdAt) {
+    if (screen !== "game" || currentGameId !== route.gameId || !currentGameId || !createdAt) {
       return;
     }
 
@@ -411,13 +419,14 @@ export function App() {
     history,
     learningEvents,
     screen,
+    route.gameId,
     settings,
     status.isGameOver,
     status.label
   ]);
 
   useEffect(() => {
-    if (screen !== "game" || status.isGameOver || isHumanTurn || engineState.status === "thinking") {
+    if (screen !== "game" || currentGameId !== route.gameId || status.isGameOver || isHumanTurn || engineState.status === "thinking") {
       return;
     }
 
@@ -487,6 +496,8 @@ export function App() {
     };
   }, [
     engineRetryKey,
+    currentGameId,
+    route.gameId,
     fen,
     isHumanTurn,
     opponentColor,
@@ -500,7 +511,8 @@ export function App() {
     const nextGame = createGame();
     const now = new Date().toISOString();
 
-    setCurrentGameId(createGameId());
+    const nextId = createGameId();
+    setCurrentGameId(nextId);
     setCreatedAt(now);
     setSettings(nextSettings);
     setFen(nextGame.fen());
@@ -517,10 +529,11 @@ export function App() {
     setCallEngineAnalysisState({ status: "idle" });
     setEngineState({ status: "idle" });
     setEngineRetryKey(0);
-    setScreen("game");
+    setRouteError("");
+    navigateRoute(`/guided-play/games/${encodeURIComponent(nextId)}/${boardMode === "2d" ? "?board=2d" : ""}`);
   }
 
-  function openSavedGame(gameRecord: SavedGame) {
+  function openSavedGame(gameRecord: SavedGame, restoringRoute = false) {
     setCurrentGameId(gameRecord.id);
     setCreatedAt(gameRecord.createdAt);
     setSettings(gameRecord.settings);
@@ -539,8 +552,28 @@ export function App() {
     setCallEngineAnalysisState({ status: "idle" });
     setEngineState({ status: "idle" });
     setEngineRetryKey((current) => current + 1);
-    setScreen("game");
+    setRouteError("");
+    if (!restoringRoute) navigateRoute(`/guided-play/games/${encodeURIComponent(gameRecord.id)}/${boardMode === "2d" ? "?board=2d" : ""}`);
   }
+
+  useEffect(() => {
+    if (screen === "new-game") setDraftSettings({ playerColor: route.playerColor, difficulty: route.difficulty });
+    if (screen === "previous-games") setSavedGames(loadSavedGames());
+    if (screen === "game" && route.gameId !== currentGameId) {
+      const saved = loadSavedGames().find(record => record.id === route.gameId);
+      if (saved) openSavedGame(saved, true);
+      else setRouteError("This game isn’t saved in this browser. Choose a game from your Learning Journal or start a new one.");
+    }
+    if (screen === "review-game") {
+      const games = loadSavedGames();
+      setSavedGames(games);
+      const saved = games.find(record => record.id === route.gameId);
+      setReviewGameId(saved?.id ?? null);
+      setReviewEventId(route.event ?? saved?.learningEvents[0]?.id ?? null);
+      setReviewPreviewLine(null);
+      setRouteError(saved ? "" : "This review isn’t saved in this browser. Open your Learning Journal to choose another game.");
+    }
+  }, [routeLocation.pathname, routeLocation.search]);
 
   function commitMove(move: { from: Square; to: Square; promotion?: "q" | "r" | "b" | "n" }) {
     const nextGame = cloneGameWithMove(game, move);
@@ -835,7 +868,7 @@ export function App() {
     setReviewGameId(gameRecord.id);
     setReviewEventId(gameRecord.learningEvents[0]?.id ?? null);
     setReviewPreviewLine(null);
-    setScreen("review-game");
+    navigateRoute(`/guided-play/journal/${encodeURIComponent(gameRecord.id)}/`);
   }
 
   function previewReviewCandidate(event: LearningEvent, candidate: PieceAnalysisCandidate) {
@@ -891,12 +924,17 @@ export function App() {
     });
   }
 
+  if (screen === "missing") return <MissingPage href="/guided-play/" label="Return to Guided Play">Choose a game, create a new one, or open your Learning Journal.</MissingPage>;
+  if ((screen === "game" && route.gameId !== currentGameId) || (screen === "review-game" && !reviewGame)) {
+    return routeError ? <MissingPage title="Saved game not found" href="/guided-play/journal/" label="Open Learning Journal">{routeError}</MissingPage> : <main className="app-shell"><p role="status">Opening saved game…</p></main>;
+  }
+
   if (screen === "new-game") {
     return (
       <main className="app-shell compact-shell">
         <button className="text-button" type="button" onClick={() => setScreen("home")}>
           <ArrowLeft size={18} aria-hidden="true" />
-          Home
+          Guided Play
         </button>
         <section className="setup-panel" aria-labelledby="new-game-title">
           <div>
@@ -913,14 +951,16 @@ export function App() {
               {(["w", "b"] as Color[]).map((color) => (
                 <button
                   className={draftSettings.playerColor === color ? "active-option" : ""}
+                  aria-pressed={draftSettings.playerColor === color}
                   key={color}
                   type="button"
-                  onClick={() =>
+                  onClick={() => {
                     setDraftSettings((current) => ({
                       ...current,
                       playerColor: color
-                    }))
-                  }
+                    }));
+                    updateRouteQuery({ side: color === "b" ? "black" : null }, true);
+                  }}
                 >
                   {getColorName(color)}
                 </button>
@@ -939,13 +979,15 @@ export function App() {
                       : "difficulty-option"
                   }
                   key={option.id}
+                  aria-pressed={draftSettings.difficulty === option.id}
                   type="button"
-                  onClick={() =>
+                  onClick={() => {
                     setDraftSettings((current) => ({
                       ...current,
                       difficulty: option.id
-                    }))
-                  }
+                    }));
+                    updateRouteQuery({ difficulty: option.id === "medium" ? null : option.id }, true);
+                  }}
                 >
                   <strong>{option.label}</strong>
                   <small>{option.description}</small>
@@ -973,7 +1015,7 @@ export function App() {
         <header className="game-header">
           <button className="text-button" type="button" onClick={() => setScreen("home")}>
             <ArrowLeft size={18} aria-hidden="true" />
-            Home
+            Guided Play
           </button>
           <div>
             <p className="eyebrow">Play</p>
@@ -990,6 +1032,7 @@ export function App() {
             <div className="board-toolbar" aria-label="Board view">
               <button
                 className={boardMode === "3d" ? "active-board-mode" : ""}
+                aria-pressed={boardMode === "3d"}
                 type="button"
                 onClick={() => setBoardMode("3d")}
               >
@@ -997,6 +1040,7 @@ export function App() {
               </button>
               <button
                 className={boardMode === "2d" ? "active-board-mode" : ""}
+                aria-pressed={boardMode === "2d"}
                 type="button"
                 onClick={() => setBoardMode("2d")}
               >
@@ -1390,7 +1434,7 @@ export function App() {
       <main className="app-shell compact-shell">
         <button className="text-button" type="button" onClick={() => setScreen("home")}>
           <ArrowLeft size={18} aria-hidden="true" />
-          Home
+          Guided Play
         </button>
         <section className="saved-games-panel">
           <div className="saved-games-header">
@@ -1411,10 +1455,9 @@ export function App() {
 
                 return (
                   <div className="saved-game-row" key={gameRecord.id}>
-                    <button
+                    <RouteLink
                       className="saved-game-card"
-                      type="button"
-                      onClick={() => openSavedGame(gameRecord)}
+                      href={`/guided-play/games/${encodeURIComponent(gameRecord.id)}/`}
                     >
                       <span>
                         <strong>
@@ -1438,7 +1481,7 @@ export function App() {
                         </small>
                       </span>
                       <ArrowRight size={20} aria-hidden="true" />
-                    </button>
+                    </RouteLink>
                     <button
                       className="review-game-button"
                       type="button"
@@ -1533,7 +1576,7 @@ export function App() {
                       key={event.id}
                       type="button"
                       onClick={() => {
-                        setReviewEventId(event.id);
+                        updateRouteQuery({ event: event.id });
                         setReviewPreviewLine(null);
                       }}
                     >

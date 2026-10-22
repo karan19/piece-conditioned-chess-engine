@@ -4,6 +4,8 @@ import { ArrowRight, BookOpen, Compass, Flag, Sparkles, Swords } from "lucide-re
 import "./home.css";
 
 function Homepage() {
+  const missing = !["/", "/index.html"].includes(location.pathname);
+  if (missing) document.title = "Page not found · Chess Learning Lab";
   return <div className="chess-home">
     <header className="home-header">
       <a className="home-brand" href="/" aria-label="Chess Learning Lab homepage"><span aria-hidden="true">♞</span>Chess Learning Lab</a>
@@ -12,8 +14,7 @@ function Homepage() {
     <main>
       <section className="home-intro">
         <div className="home-kicker"><Sparkles size={14} aria-hidden="true" /> A LITTLE UNDERSTANDING. A BETTER NEXT MOVE.</div>
-        <h1>Find your way<br />on the board.</h1>
-        <p>Play a game with guidance, or take time to understand an opening.<br className="home-desktop-break" /> Two ways to learn. One place to begin.</p>
+        {missing ? <><h1>That page isn’t here.</h1><p><a href="/">Return to the homepage</a>, or choose a chess experience below.</p></> : <><h1>Find your way<br />on the board.</h1><p>Play a game with guidance, or take time to understand an opening.<br className="home-desktop-break" /> Two ways to learn. One place to begin.</p></>}
       </section>
       <section className="home-features" aria-label="Choose your chess experience">
         <a className="home-feature home-play" href="/guided-play/">
