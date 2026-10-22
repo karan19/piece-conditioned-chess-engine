@@ -1,0 +1,14 @@
+.chess-breadcrumbs { font: 500 12px/1.7 system-ui, sans-serif; color: #637267; margin-bottom: 18px; }
+.chess-breadcrumbs ol { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; list-style: none; padding: 0; margin: 0; }
+.chess-breadcrumbs li { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
+.chess-breadcrumbs li + li::before { content: "/"; color: #a1aa9b; }
+.chess-breadcrumbs a { color: #365b44; text-decoration: none; }.chess-breadcrumbs a:hover { text-decoration: underline; }
+.chess-breadcrumbs a:focus-visible, .chess-missing a:focus-visible { outline: 2px solid #54785e; outline-offset: 4px; }
+.chess-breadcrumbs [aria-current] { color: #293f33; }
+.chess-missing { max-width: 850px; margin: 40px auto; padding: 25px; color: #273f33; font-family: system-ui, sans-serif; }.chess-missing p { line-height: 1.8; }.chess-missing a { color: #315a40; }
+.os-sidebar nav > a { display: flex; align-items: center; gap: 13px; width: 100%; padding: 15px 13px; border-radius: 5px; color: #6e7a70; text-decoration: none; font-size: 13px; }
+.os-sidebar nav > a.active { background: #edf1e5; color: #253e33; font-weight: 600; }
+.os-sidebar nav > a:focus-visible { outline: 2px solid #54785e; outline-offset: 2px; }
+@media(max-width:700px) { .os-sidebar nav > a { flex-direction: column; gap: 5px; padding: 10px 4px; font-size: 10px; text-align: center; } }
+
+main h1[tabindex="-1"]:focus { outline: none; }

@@ -659,7 +659,7 @@ button {
   color: #85937c;
   font-size: 10px;
 }
-.os-card-bottom button {
+.os-card-bottom :is(button, a) {
   display: flex;
   align-items: center;
   background: #eff3e7;
@@ -869,7 +869,7 @@ button {
   max-height: 550px;
   overflow: auto;
 }
-.os-lines > button {
+.os-lines > :is(button, a) {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -879,13 +879,13 @@ button {
   text-align: left;
   min-width: 0;
 }
-.os-lines > button.active {
+.os-lines > :is(button, a).active {
   background: #eef3e7;
 }
-.os-lines > button:hover {
+.os-lines > :is(button, a):hover {
   background: #f2f5ec;
 }
-.os-lines > button > span:nth-child(2) {
+.os-lines > :is(button, a) > span:nth-child(2) {
   flex: 1;
   min-width: 0;
 }
@@ -908,7 +908,7 @@ button {
   padding: 7px;
   border-radius: 5px;
 }
-.os-lines > button > svg {
+.os-lines > :is(button, a) > svg {
   color: #9caa8f;
 }
 .os-preview-panel {
@@ -1899,10 +1899,10 @@ button {
     font-size: 9px;
     gap: 5px;
   }
-  .os-card-bottom button {
+  .os-card-bottom :is(button, a) {
     padding: 4px;
   }
-  .os-card-bottom button svg {
+  .os-card-bottom :is(button, a) svg {
     width: 15px;
   }
   .os-card-kind {
@@ -2367,3 +2367,5 @@ button {
   .os-sidebar nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; gap: 3px; }
   .os-sidebar nav button { min-width: 0; white-space: normal; flex-direction: column; padding: 10px 4px; line-height: 1.4; }
 }
+
+.os-course-card a, .os-lines a { color: inherit; text-decoration: none; }.os-lines a:focus-visible, .os-course-card a:focus-visible { outline: 2px solid #54785e; outline-offset: 2px; }

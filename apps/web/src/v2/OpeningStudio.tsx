@@ -1,3 +1,5 @@
+import { Breadcrumbs, MissingPage, RouteLink, navigateRoute, updateRouteQuery, usePageNavigation, useRouteLocation } from "../navigation";
+import { localToken, readStudioRoute, routeSlug, studioFamilyPath, studioListPath } from "../routes";
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import {
   ArrowDownToLine,
@@ -74,19 +76,11 @@ function download(content: string, name: string, type: string) {
 }
 export function OpeningStudio() {
   const [progress, setProgress] = useState<Progress>(loadProgress);
-  const [view, setView] = useState<View>("explore");
-  const [side, setSide] = useState<Side>("w");
-  const [family, setFamily] = useState<Family | null>(null);
-  const [selected, setSelected] = useState<Opening | null>(null);
-  const [session, setSession] = useState<Opening | null>(null);
-  const [search, setSearch] = useState("");
-  const [lineSearch, setLineSearch] = useState("");
-  const [filter, setFilter] = useState("all");
-  const [page, setPage] = useState(1);
-  const [linePage, setLinePage] = useState(1);
+  const url = useRouteLocation();
+  const route = readStudioRoute(url);
+  const { view, side, search, lineSearch, filter, page, linePage, importOpen } = route;
   const [notice, setNotice] = useState("");
   const [storageError, setStorageError] = useState(false);
-  const [importOpen, setImportOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [pgn, setPgn] = useState("");
   const [importError, setImportError] = useState("");
@@ -105,78 +99,46 @@ export function OpeningStudio() {
   useEffect(() => {
     setStorageError(!saveProgress(progress));
   }, [progress]);
+  const family = allFamilies.find(f => route.custom
+    ? f.representative.id === route.custom || localToken(f.representative.id) === route.custom
+    : route.familySlug ? routeSlug(f.name) === route.familySlug : f.name === route.legacyFamily) ?? null;
+  const candidates = family?.lines.filter(o => normalize(`${o.name} ${o.eco} ${o.pgn}`).includes(normalize(lineSearch))) ?? [];
+  const selected = family ? route.hasLine ? family.lines[route.line - 1] ?? null : lineSearch ? candidates[0] ?? introductoryLine(family) : introductoryLine(family) : null;
+  const session = route.learn ? selected : null;
+  const listQuery = () => new URLSearchParams({ ...(side === "b" ? { side: "black" } : {}), ...(search ? { q: search } : {}), ...(filter !== "all" ? { filter } : {}), ...(page > 1 ? { page: String(page) } : {}) });
+  const listHref = (next: View = view) => studioListPath(next) + (listQuery().size ? `?${listQuery()}` : "");
+  const familyHref = (f: Family, o?: Opening, learn = false) => {
+    const query = listQuery();
+    if (view === "learning") query.set("from", "my-openings");
+    if (f.category === "Your line") query.set("custom", localToken(f.representative.id));
+    if (o) query.set("line", String(f.lines.findIndex(line => line.id === o.id) + 1));
+    if (lineSearch || (!family && search)) query.set("variation", lineSearch || search);
+    return studioFamilyPath(f.name, learn) + (query.size ? `?${query}` : "");
+  };
   useEffect(() => {
-    const read = () => {
-      const params = new URLSearchParams(location.hash.slice(1));
-      if (params.get("view") === "endgames") setView("endgames");
-      else if (params.get("family")) setView("explore");
-      setSide(params.get("side") === "b" ? "b" : "w");
-      const f = allFamilies.find((f) =>
-        params.get("custom")
-          ? f.representative.id === params.get("custom")
-          : f.name === params.get("family"),
-      );
-      setFamily(f ?? null);
-      const query = params.get("q") ?? "";
-      const candidates =
-        f?.lines.filter((o) =>
-          normalize(`${o.name} ${o.eco} ${o.pgn}`).includes(normalize(query)),
-        ) ?? [];
-      const chosen = f
-        ? query
-          ? (candidates[0] ?? introductoryLine(f))
-          : introductoryLine(f)
-        : null;
-      setSelected(chosen);
-      setLineSearch(query);
-      setLinePage(
-        Math.floor(
-          Math.max(
-            0,
-            candidates.findIndex((o) => o.id === chosen?.id),
-          ) / 25,
-        ) + 1,
-      );
-      setSession(null);
-    };
-    read();
-    window.addEventListener("hashchange", read);
-    return () => window.removeEventListener("hashchange", read);
-  }, [allFamilies]);
-  useEffect(() => {
-    setPage(1);
-  }, [search, filter, side, view]);
-
-  const navigate = (next: View) => {
-    setView(next);
-    setFamily(null);
-    setSession(null);
-    setSearch("");
-    setFilter("all");
-    history.replaceState(null, "", location.pathname + "#" + new URLSearchParams({ side, ...(next === "endgames" ? { view: "endgames" } : {}) }));
-    window.scrollTo(0, 0);
-  };
-  const openFamily = (f: Family) => {
-    location.hash = new URLSearchParams({
-      family: f.name,
-      side,
-      ...(f.category === "Your line" ? { custom: f.representative.id } : {}),
-      ...(search ? { q: search } : {}),
-    }).toString();
-    window.scrollTo(0, 0);
-  };
-  const chooseSide = (s: Side) => {
-    setSide(s);
-    if (family)
-      location.hash = new URLSearchParams({
-        family: family.name,
-        side: s,
-        ...(family.category === "Your line"
-          ? { custom: family.representative.id }
-          : {}),
-      }).toString();
-    else history.replaceState(null, "", location.pathname + "#side=" + s);
-  };
+    if (!route.legacy) return;
+    const query = listQuery();
+    if (route.position) query.set("position", route.position);
+    let path = studioListPath(view);
+    if (family) {
+      path = studioFamilyPath(family.name);
+      if (family.category === "Your line") query.set("custom", localToken(family.representative.id));
+      if (lineSearch) query.set("variation", lineSearch);
+    } else if (route.legacyFamily || route.custom) {
+      path = studioFamilyPath(route.legacyFamily ?? "imported-line");
+      if (route.custom) query.set("custom", route.custom);
+    } else if (route.position) { path = `/opening-studio/endgames/${encodeURIComponent(route.position)}/`; query.delete("position"); }
+    navigateRoute(path + (query.size ? `?${query}` : ""), true);
+  }, [url.href]);
+  usePageNavigation(`${session ? "Learn · " : ""}${family?.name ?? (view === "learning" ? "My openings" : view === "endgames" ? "Endgame Practice" : "Opening Studio")} · Chess Learning Lab`, url.pathname);
+  const navigate = (next: View) => navigateRoute(studioListPath(next) + (side === "b" ? "?side=black" : ""));
+  const chooseSide = (next: Side) => updateRouteQuery({ side: next === "b" ? "black" : null, page: null });
+  const setSearch = (value: string) => updateRouteQuery({ q: value, page: null }, true);
+  const setFilter = (value: string) => updateRouteQuery({ filter: value === "all" ? null : value, page: null });
+  const setPage = (value: number) => updateRouteQuery({ page: value === 1 ? null : value });
+  const setLinePage = (value: number) => updateRouteQuery({ "line-page": value === 1 ? null : value });
+  const setLineSearch = (value: string) => updateRouteQuery({ variation: value, "line-page": null }, true);
+  const setImportOpen = (value: boolean) => updateRouteQuery({ import: value ? "1" : null }, !value);
   const saved = (f: Family) => progress.saved.includes(`${side}:${f.name}`);
   const saveFamily = (f: Family) =>
     setProgress((p) => ({
@@ -194,7 +156,7 @@ export function OpeningStudio() {
   };
   const start = (o: Opening) => {
     if (family) saveFamily(family);
-    setSession(o);
+    if (family) navigateRoute(familyHref(family, o, true));
     setNotice("");
     window.scrollTo(0, 0);
   };
@@ -333,21 +295,15 @@ export function OpeningStudio() {
         </a>
         <span className="os-sidebar-caption">UNDERSTAND YOUR FIRST MOVES</span>
         <nav aria-label="Opening Studio navigation">
-          <button
-            className={view === "explore" ? "active" : ""}
-            onClick={() => navigate("explore")}
-          >
+          <RouteLink href={studioListPath("explore") + (side === "b" ? "?side=black" : "")} className={view === "explore" ? "active" : ""} aria-current={view === "explore" ? "page" : undefined}>
             <Compass size={19} />
             Explore openings
-          </button>
-          <button
-            className={view === "learning" ? "active" : ""}
-            onClick={() => navigate("learning")}
-          >
+          </RouteLink>
+          <RouteLink href={studioListPath("learning") + (side === "b" ? "?side=black" : "")} className={view === "learning" ? "active" : ""} aria-current={view === "learning" ? "page" : undefined}>
             <Bookmark size={19} />
             My openings
-          </button>
-          <button className={view === "endgames" ? "active" : ""} onClick={() => navigate("endgames")}><Flag size={19} /> Endgame Practice</button>
+          </RouteLink>
+          <RouteLink href={studioListPath("endgames") + (side === "b" ? "?side=black" : "")} className={view === "endgames" ? "active" : ""} aria-current={view === "endgames" ? "page" : undefined}><Flag size={19} /> Endgame Practice</RouteLink>
         </nav>
         <div className="os-sidebar-card">
           <BookOpen size={21} />
@@ -376,6 +332,7 @@ export function OpeningStudio() {
           </span>
         </header>
         <main className="os-content">
+          <Breadcrumbs items={[{ label: "Chess homepage", href: "/" }, { label: "Opening Studio", href: "/opening-studio/" }, ...(view !== "explore" ? [{ label: view === "learning" ? "My openings" : "Endgame Practice", href: view === "endgames" ? studioListPath(view) + url.search : listHref() }] : []), ...(family ? [{ label: family.name, ...(session ? { href: familyHref(family, selected ?? undefined) } : {}) }] : []), ...(session ? [{ label: "Learn" }] : []), ...(view === "endgames" && route.position ? [{ label: `Position ${route.position}` }] : [])]} />
           {storageError && (
             <div className="os-notice warning" role="alert">
               Your browser couldn't save your place. Export a backup before
@@ -390,7 +347,7 @@ export function OpeningStudio() {
               </button>
             </div>
           )}
-          {view === "endgames" ? <Suspense fallback={<p role="status">Loading endgame positions…</p>}><EndgamePractice /></Suspense> : session ? (
+          {(!route.valid || ((route.familySlug || route.legacyFamily || route.custom) && (!family || !selected))) ? <MissingPage embedded title="Opening not found" href="/opening-studio/" label="Explore openings">This opening or variation is unavailable. Imported lines are saved in the browser where you created them.</MissingPage> : view === "endgames" ? <Suspense fallback={<p role="status">Loading endgame positions…</p>}><EndgamePractice /></Suspense> : session ? (
             <Training
               key={`${session.id}:${side}`}
               opening={session}
@@ -414,19 +371,19 @@ export function OpeningStudio() {
                 setProgress((p) =>
                   rememberStep(p, o, side, session.moves.length),
                 );
-                setSession(o);
+                if (family) navigateRoute(familyHref(family, o, true));
               }}
-              onExit={() => setSession(null)}
+              onExit={() => { if (family) navigateRoute(familyHref(family, selected ?? undefined)); }}
               onStep={onStep}
             />
           ) : family ? (
             <>
               <button
                 className="os-link os-back"
-                onClick={() => navigate(view)}
+                onClick={() => navigateRoute(listHref())}
               >
                 <ArrowLeft size={17} />
-                Back to openings
+                {view === "learning" ? "Back to My openings" : "Back to openings"}
               </button>
               <div className="os-detail-heading">
                 <div>
@@ -482,10 +439,11 @@ export function OpeningStudio() {
                     {lines
                       .slice((currentLinePage - 1) * 25, currentLinePage * 25)
                       .map((o) => (
-                        <button
+                        <RouteLink
                           key={o.id}
                           className={selected?.id === o.id ? "active" : ""}
-                          onClick={() => setSelected(o)}
+                          aria-current={selected?.id === o.id ? "true" : undefined}
+                          href={familyHref(family, o)}
                         >
                           <span className="os-line-icon">
                             <BookOpen size={16} />
@@ -505,7 +463,7 @@ export function OpeningStudio() {
                             </small>
                           </span>
                           <ChevronRight size={16} />
-                        </button>
+                        </RouteLink>
                       ))}
                   </div>
                   {!lines.length && (
@@ -703,10 +661,10 @@ export function OpeningStudio() {
                           key={f.representative.id}
                           className="os-course-card"
                         >
-                          <button
+                          <RouteLink
                             className="os-card-art"
                             aria-label={`Explore ${f.name}`}
-                            onClick={() => openFamily(f)}
+                            href={familyHref(f)}
                           >
                             <span className="os-card-code">
                               {f.representative.eco}
@@ -722,7 +680,7 @@ export function OpeningStudio() {
                             <span className="os-card-side">
                               {sideName(side)}
                             </span>
-                          </button>
+                          </RouteLink>
                           <div className="os-card-copy">
                             <div className="os-card-kind">
                               <span>{f.category}</span>
@@ -749,24 +707,19 @@ export function OpeningStudio() {
                                 )}
                               </button>
                             </div>
-                            <button
-                              className="os-card-title"
-                              onClick={() => openFamily(f)}
-                            >
-                              {f.name}
-                            </button>
+                            <RouteLink className="os-card-title" href={familyHref(f)}>{f.name}</RouteLink>
                             <p>{description(f)}</p>
                             <div className="os-card-bottom">
                               <span>
                                 {f.lines.length}{" "}
                                 {f.lines.length === 1 ? "line" : "variations"}
                               </span>
-                              <button
+                              <RouteLink
                                 aria-label={`Open ${f.name}`}
-                                onClick={() => openFamily(f)}
+                                href={familyHref(f)}
                               >
                                 <ArrowRight size={17} />
-                              </button>
+                              </RouteLink>
                             </div>
                           </div>
                         </article>
