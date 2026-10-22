@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { ArrowRight, BookOpen, Compass, Flag, Sparkles, Swords } from "lucide-react";
+import { ArrowRight, BookOpen, Compass, Flag, Brain, Sparkles, Swords } from "lucide-react";
 import "./home.css";
 
 function Homepage() {
@@ -9,12 +9,12 @@ function Homepage() {
   return <div className="chess-home">
     <header className="home-header">
       <a className="home-brand" href="/" aria-label="Chess Learning Lab homepage"><span aria-hidden="true">♞</span>Chess Learning Lab</a>
-      <nav aria-label="Main navigation"><a href="/guided-play/">Guided Play</a><a href="/opening-studio/">Opening Studio</a></nav>
+      <nav aria-label="Main navigation"><a href="/guided-play/">Guided Play</a><a href="/opening-studio/">Opening Studio</a><a href="/board-recall/">Board Recall</a></nav>
     </header>
     <main>
       <section className="home-intro">
         <div className="home-kicker"><Sparkles size={14} aria-hidden="true" /> A LITTLE UNDERSTANDING. A BETTER NEXT MOVE.</div>
-        {missing ? <><h1>That page isn’t here.</h1><p><a href="/">Return to the homepage</a>, or choose a chess experience below.</p></> : <><h1>Find your way<br />on the board.</h1><p>Play a game with guidance, or take time to understand an opening.<br className="home-desktop-break" /> Two ways to learn. One place to begin.</p></>}
+        {missing ? <><h1>That page isn’t here.</h1><p><a href="/">Return to the homepage</a>, or choose a chess experience below.</p></> : <><h1>Find your way<br />on the board.</h1><p>Play with guidance, study an opening, or train your board memory.<br className="home-desktop-break" /> Three ways to learn. One place to begin.</p></>}
       </section>
       <section className="home-features" aria-label="Choose your chess experience">
         <a className="home-feature home-play" href="/guided-play/">
@@ -27,8 +27,13 @@ function Homepage() {
           <div className="home-study-art" aria-hidden="true"><div><Compass size={24} /><span>Understand the opening</span></div><span className="home-moves">1. d4 <i>Nf6</i> 2. Nf3 <i>g6</i></span><div><Flag size={24} /><span>Make the last moves count</span></div></div>
           <div className="home-feature-body"><p>Learn what to play, why it works, and what your opponent wants. Then put your understanding into practice.</p><ul><li>Openings for White and Black</li><li>Guided lessons and common replies</li><li>Endgame positions to play out</li></ul><span className="home-action">Explore and learn <ArrowRight size={20} aria-hidden="true" /></span></div>
         </a>
+        <a className="home-feature home-memory" href="/board-recall/">
+          <div className="home-feature-top"><Brain size={24} aria-hidden="true" /><h2>Board Recall</h2><ArrowRight size={20} aria-hidden="true" /></div>
+          <div className="home-memory-art" aria-hidden="true"><Brain size={44} /><span>See it. Hide it. Rebuild it.</span><small>2s · 5s · 10s · your pace</small></div>
+          <div className="home-feature-body"><p>Take a brief look at a position, then rebuild it from memory. Learn to notice piece groups and pawn patterns.</p><ul><li>Timed position-memory challenges</li><li>Small boards to full positions</li><li>Piece-by-piece result comparison</li></ul><span className="home-action">Train your memory <ArrowRight size={20} aria-hidden="true" /></span></div>
+        </a>
       </section>
-      <div className="home-note"><BookOpen size={18} aria-hidden="true" /><p>Your pace. Your next move. Both experiences include an optional thinking checklist, with progress saved in this browser.</p></div>
+      <div className="home-note"><BookOpen size={18} aria-hidden="true" /><p>Your pace. Your next move. Choose a guided game, study a position, or train your recall. Progress stays in this browser.</p></div>
     </main>
     <footer><span>Chess Learning Lab</span><span>No account needed. Keep learning.</span></footer>
   </div>;
