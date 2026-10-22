@@ -1,8 +1,20 @@
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 
+// Each feature has its own HTML entry, including when a nested route is refreshed.
+const featureRoutes: Plugin = {
+  name: "chess-feature-routes",
+  configureServer(server) { server.middlewares.use(rewriteFeatureEntry); },
+  configurePreviewServer(server) { server.middlewares.use(rewriteFeatureEntry); },
+};
+function rewriteFeatureEntry(req: { url?: string }, _res: unknown, next: () => void) {
+  const url = new URL(req.url ?? "/", "http://localhost");
+  const feature = ["guided-play", "opening-studio"].find(name => url.pathname.startsWith(`/${name}/`) && !url.pathname.includes("."));
+  if (feature) req.url = `/${feature}/index.html${url.search}`;
+  next();
+}
 export default defineConfig({
-  plugins: [react()],
+  plugins: [featureRoutes, react()],
   build: {
     rollupOptions: {
       input: { home: "index.html", app: "guided-play/index.html", studio: "opening-studio/index.html", legacyStudio: "v2/index.html" },
