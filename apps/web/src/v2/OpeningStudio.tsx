@@ -320,7 +320,7 @@ export function OpeningStudio() {
   return (
     <div className="os-app">
       <aside className="os-sidebar">
-        <a href="/v2/" className="os-brand">
+        <a href="/opening-studio/" className="os-brand">
           <span className="os-brand-mark">
             <Piece type="n" color="w" />
           </span>
@@ -362,9 +362,10 @@ export function OpeningStudio() {
         </div>
         <div className="os-sidebar-bottom">
           <a href="/" className="os-v1-link">
-            <ArrowLeft size={16} /> Piece-conditioned engine
+            <ArrowLeft size={16} /> Chess homepage
           </a>
-          <span>OPENING STUDIO / V2</span>
+          <a href="/guided-play/" className="os-v1-link">Guided Play <ArrowRight size={16} /></a>
+          <span>OPENING STUDIO</span>
         </div>
       </aside>
       <div className="os-main">

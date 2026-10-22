@@ -1,0 +1,52 @@
+[
+  {
+    "source": "/v1",
+    "target": "/guided-play/",
+    "status": "301"
+  },
+  {
+    "source": "/v1/",
+    "target": "/guided-play/",
+    "status": "301"
+  },
+  {
+    "source": "/guided-play",
+    "target": "/guided-play/index.html",
+    "status": "200"
+  },
+  {
+    "source": "/guided-play/",
+    "target": "/guided-play/index.html",
+    "status": "200"
+  },
+  {
+    "source": "/opening-studio",
+    "target": "/opening-studio/index.html",
+    "status": "200"
+  },
+  {
+    "source": "/opening-studio/",
+    "target": "/opening-studio/index.html",
+    "status": "200"
+  },
+  {
+    "source": "/v2/index.html",
+    "target": "/v2/",
+    "status": "301"
+  },
+  {
+    "source": "/v2",
+    "target": "/v2/index.html",
+    "status": "200"
+  },
+  {
+    "source": "/v2/",
+    "target": "/v2/index.html",
+    "status": "200"
+  },
+  {
+    "source": "</^[^.]+$|\\.(?!(css|gif|glb|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json)$)([^.]+$)/>",
+    "target": "/index.html",
+    "status": "200"
+  }
+]

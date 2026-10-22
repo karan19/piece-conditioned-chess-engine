@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      input: { app: "index.html", studio: "v2/index.html" },
+      input: { home: "index.html", app: "guided-play/index.html", studio: "opening-studio/index.html", legacyStudio: "v2/index.html" },
     },
   },
   server: {
