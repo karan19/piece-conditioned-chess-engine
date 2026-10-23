@@ -1,3 +1,5 @@
+import { ChessPiece } from "./ChessPiece";
+import { BoardSurface } from "./BoardSurface";
 import { MissingPage, RouteLink, navigateRoute, updateRouteQuery, usePageNavigation, useRouteLocation } from "./navigation";
 import { readGuidedRoute } from "./routes";
 import { Suspense, lazy, useEffect, useMemo, useRef, useState } from "react";
@@ -32,7 +34,6 @@ import {
   getMoveHistoryRows,
   isPromotionMove,
   type MoveRecord,
-  pieceGlyphs,
   ranks,
   toMoveRecords
 } from "./chessGame";
@@ -104,8 +105,8 @@ function BoardView({
   const attackerSquares = new Set(checkThreat?.attackers.map((attacker) => attacker.square) ?? []);
 
   return (
-    <div className="board-frame piece-style-classic" aria-label="Chessboard">
-      {ranks.map((rank) =>
+    <div className="board-frame chess-board piece-style-classic" aria-label="Chessboard">
+      <BoardSurface>{ranks.map((rank) =>
         files.map((file) => {
           const square = `${file}${rank}` as Square;
           const piece = boardPiecesBySquare.get(square);
@@ -134,16 +135,16 @@ function BoardView({
               type="button"
               onClick={() => onSquareClick?.(square)}
             >
-              <span className="square-coordinate">{squareLabel}</span>
+
               {piece ? (
                 <span className={`piece piece-${piece.color}`}>
-                  {pieceGlyphs[piece.color][piece.type]}
+                  <ChessPiece type={piece.type} color={piece.color} />
                 </span>
               ) : null}
             </button>
           );
         })
-      )}
+      )}</BoardSurface>
     </div>
   );
 }
@@ -1177,7 +1178,7 @@ export function App() {
               {selectedPieceSummary ? (
                 <div className="selected-piece-card">
                   <span className={`selected-piece-glyph piece-${selectedPieceSummary.piece.color}`}>
-                    {pieceGlyphs[selectedPieceSummary.piece.color][selectedPieceSummary.piece.type]}
+                    <ChessPiece type={selectedPieceSummary.piece.type} color={selectedPieceSummary.piece.color} />
                   </span>
                   <span>
                     <strong>
@@ -1418,7 +1419,7 @@ export function App() {
                       })
                     }
                   >
-                    {pieceGlyphs[game.turn()][piece]}
+                    <ChessPiece type={piece} color={game.turn()} />
                   </button>
                 ))}
               </div>
