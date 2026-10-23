@@ -35,8 +35,8 @@ type Board3DViewProps = {
 const boardSize = 8;
 const squareSize = 1;
 const boardOffset = (boardSize * squareSize) / 2 - squareSize / 2;
-const lightSquare = 0xe9e1d2;
-const darkSquare = 0x9c5637;
+const lightSquare = 0xeeeed2;
+const darkSquare = 0x769656;
 const pieceModelFiles: Record<BoardPiece["type"], { w: string; b: string }> = {
   k: { w: kingLightUrl, b: kingDarkUrl },
   q: { w: queenLightUrl, b: queenDarkUrl },

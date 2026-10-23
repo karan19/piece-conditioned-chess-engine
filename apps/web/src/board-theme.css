@@ -1,0 +1,45 @@
+/* One board theme for Guided Play, Opening Studio, endgames and Board Recall. */
+.chess-board.board-frame, .chess-board.os-board {
+  --board-light: #eeeed2;
+  --board-dark: #769656;
+  display: grid;
+  grid-template-columns: clamp(16px, 3.2%, 25px) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) clamp(18px, 3.2cqw, 26px);
+  aspect-ratio: auto;
+  padding: 6px 6px 0 0;
+  background: #302e2b;
+  border: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  container-type: inline-size;
+  box-shadow: 0 8px 22px #00000015;
+}
+.chess-grid {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+  width: 100%;
+  aspect-ratio: 1;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.chess-rank-axis, .chess-file-axis {
+  display: grid;
+  color: #a7a5a2;
+  font: 700 clamp(9px, 2.3cqw, 16px)/1 system-ui, sans-serif;
+  pointer-events: none;
+  user-select: none;
+}
+.chess-rank-axis { grid-column: 1; grid-row: 1; grid-template-rows: repeat(8, 1fr); }
+.chess-file-axis { grid-column: 2; grid-row: 2; grid-template-columns: repeat(8, 1fr); }
+.chess-rank-axis span, .chess-file-axis span { display: grid; place-items: center; }
+.chess-piece-image { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; pointer-events: none; filter: none; }
+.recall-glyph .chess-piece-image { width: 42px; height: 42px; margin: auto; }
+.selected-piece-glyph .chess-piece-image { width: 56px; height: 56px; }
+.promotion-options .chess-piece-image { width: 54px; height: 54px; }
+
+.os-card-art .chess-board.os-board { height: auto; }
+@media (max-width: 800px) { .recall-glyph .chess-piece-image { width: 31px; height: 31px; } }
