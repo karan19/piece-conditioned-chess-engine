@@ -1,0 +1,101 @@
+{
+  "video_id": "WQjmUPG3nk4",
+  "title": "The Self-Cage: Pin the Promoted Bishop",
+  "summary": "After the bishop promotion, Black must find a drawing defense while White threatens mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2r2BbK/6p1/7k/6pP/6P1/p7/8/8 b - - 0 1",
+      "question": "How can Black answer the newly promoted bishop without allowing mate?",
+      "explanation": "Be6 controls g8 and uncovers the rook’s pin on Bf8. White’s king and pawns cannot move, and the bishop cannot leave the eighth rank without exposing Kh8. White is stalemated.",
+      "evidence": {
+        "timestamp_s": 130
+      },
+      "proof": {
+        "method": "finite_draw",
+        "fen": "2r2BbK/6p1/7k/6pP/6P1/p7/8/8 b - - 0 1",
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "selfcage_pin_bishop",
+      "start": "start",
+      "title": "Source defense: pin the promoted bishop",
+      "san": [
+        "Be6"
+      ],
+      "commentary": [
+        "Begin after the source f8=B. All ten pieces are retained. Black moves next and must avoid White’s mating threat on g7.",
+        "Be6 controls g8 while clearing g8 for the rook’s pin along c8–h8. Bf8 cannot move without exposing Kh8. Kh8 has no legal flight and g4/h5 are blocked. White is not in check: actual stalemate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Be6 controls g8 while clearing g8 for the rook’s pin along c8–h8. Bf8 cannot move without exposing Kh8. Kh8 has no legal flight and g4/h5 are blocked. White is not in check: actual stalemate.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "2r2B1K/6p1/4b2k/6pP/6P1/p7/8/8 w - - 1 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "selfcage_capture_bishop",
+      "start": "start",
+      "title": "Independent defense: remove the bishop",
+      "san": [
+        "Rxf8"
+      ],
+      "commentary": [
+        "Test a different drawing defense independently of the source’s final pin. Capturing a promoted piece does not automatically remove a stalemate resource.",
+        "Rxf8 captures the promoted bishop. Rf8 protects Bg8, Kh6 covers g7/h7, and the white g4/h5 pawns remain blocked. Kh8 has no legal move and is not in check: actual nine-piece stalemate."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxf8 captures the promoted bishop. Rf8 protects Bg8, Kh6 covers g7/h7, and the white g4/h5 pawns remain blocked. Kh8 has no legal move and is not in check: actual nine-piece stalemate.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "5rbK/6p1/7k/6pP/6P1/p7/8/8 w - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does Bf8 become immobile after Be6?",
+      "answer": "Moving it would uncover Rc8’s attack along the eighth rank to Kh8. The bishop is pinned, while Be6 also covers g8."
+    },
+    {
+      "node": "start",
+      "prompt": "Does this prove bishop promotion was the only drawing choice earlier?",
+      "answer": "No. Exact verification begins after the illustrated f8=B. The earlier position and alternative promotions require their own outcome analysis."
+    }
+  ],
+  "defaultBranch": "selfcage_pin_bishop",
+  "practiceBranch": "selfcage_pin_bishop",
+  "practiceType": "pawn",
+  "practiceGoal": "draw",
+  "startContext": "Begin immediately after f8=B at 130 seconds, with the complete ten-piece source board: White Kh8/Bf8/g4/h5 against Kh6/Rc8/Bg8/a3/g5/g7, Black to move. This later position is exactly drawn by independent finite non-loss certificates for both sides. Black can choose Be6 for immediate stalemate. White’s certificate checks all twenty Black replies, reaching actual stalemate or actual mate; the Rc7/Bxg7+/Rxg7 source route is checked inside that certificate without claiming the intermediate Rc7 position’s exact outcome. Earlier Ne7/h5/Ng8/f7 maneuvers and the assertion that bishop promotion is the only drawing choice remain outside proof. Black is the practice side here, seeking a drawing defense after the illustrated bishop promotion.",
+  "verification_scope": "Begin immediately after f8=B at 130 seconds, with the complete ten-piece source board: White Kh8/Bf8/g4/h5 against Kh6/Rc8/Bg8/a3/g5/g7, Black to move. This later position is exactly drawn by independent finite non-loss certificates for both sides. Black can choose Be6 for immediate stalemate. White’s certificate checks all twenty Black replies, reaching actual stalemate or actual mate; the Rc7/Bxg7+/Rxg7 source route is checked inside that certificate without claiming the intermediate Rc7 position’s exact outcome. Earlier Ne7/h5/Ng8/f7 maneuvers and the assertion that bishop promotion is the only drawing choice remain outside proof. Black is the practice side here, seeking a drawing defense after the illustrated bishop promotion.",
+  "sourceCorrections": [],
+  "finiteDraw": {
+    "max_plies": 4,
+    "white": {
+      "4rBbK/6p1/7k/6pP/6P1/p7/8/8 w - - 1 2": "Bxg7#",
+      "3r1BbK/6p1/7k/6pP/6P1/p7/8/8 w - - 1 2": "Bxg7#",
+      "1r3BbK/6p1/7k/6pP/6P1/p7/8/8 w - - 1 2": "Bxg7#",
+      "r4BbK/6p1/7k/6pP/6P1/p7/8/8 w - - 1 2": "Bxg7#",
+      "5BbK/2r3p1/7k/6pP/6P1/p7/8/8 w - - 1 2": "Bxg7+",
+      "5BbK/6p1/2r4k/6pP/6P1/p7/8/8 w - - 1 2": "Bxg7#",
+      "5BbK/6p1/7k/2r3pP/6P1/p7/8/8 w - - 1 2": "Bxg7#",
+      "5BbK/6p1/7k/6pP/2r3P1/p7/8/8 w - - 1 2": "Bxg7#",
+      "5BbK/6p1/7k/6pP/6P1/p1r5/8/8 w - - 1 2": "Bxg7#",
+      "5BbK/6p1/7k/6pP/6P1/p7/2r5/8 w - - 1 2": "Bxg7#",
+      "5BbK/6p1/7k/6pP/6P1/p7/8/2r5 w - - 1 2": "Bxg7#",
+      "2r2BbK/6p1/7k/6pP/6P1/8/p7/8 w - - 0 2": "Bxg7#"
+    },
+    "black": {
+      "2r2BbK/6p1/7k/6pP/6P1/p7/8/8 b - - 0 1": "Be6"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

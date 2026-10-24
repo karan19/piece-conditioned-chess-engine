@@ -1,0 +1,187 @@
+{
+  "video_id": "TF7EyH_IkKo",
+  "title": "Majestic Bishops",
+  "summary": "Promote to a bishop to keep the defender moving, then use a checking move before accepting the last sacrifice.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/2b5/8/5k2/3p4/4BK2 b - - 0 1",
+      "question": "Which promotion keeps Black’s win alive?",
+      "explanation": "White has played Be1. A queen or rook pins that bishop and leaves the king without a legal move.",
+      "evidence": {
+        "timestamp_s": 6
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "bishops_mating_net",
+      "start": "start",
+      "title": "Promote to a bishop and build the net",
+      "san": [
+        "d1=B",
+        "Bc3",
+        "Bf2",
+        "Be5",
+        "Be2#"
+      ],
+      "commentary": [
+        "Black needs a promotion that preserves White’s legal moves. The pawn can become more than just a queen.",
+        "d1=B is the only winning move in this position. It avoids pinning the e1 bishop horizontally against the f1 king.",
+        "Bc3 is a legal illustrated defense. White keeps the bishop, but it cannot guard the light squares needed to stop Black’s mating net.",
+        "Bf2 restricts e1 and g1. Black’s king controls e2, f2 and g2, leaving the white king with no safe destination.",
+        "Be5 is a representative waiting move from the source idea. White’s dark-squared bishop cannot stop the light-squared net.",
+        "Be2# checks along e2-f1. Black’s king and other bishop cover every escape, and the white bishop cannot capture the checker."
+      ],
+      "classification": "independent alternative illustrating a source idea with representative legal replies",
+      "explanation": "Be2# checks along e2-f1. Black’s king and other bishop cover every escape, and the white bishop cannot capture the checker.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/4B3/8/5k2/4bb2/5K2 w - - 4 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "bishops_queen_stalemate",
+      "start": "start",
+      "title": "Try the usual queen promotion",
+      "san": [
+        "d1=Q"
+      ],
+      "commentary": [
+        "Before choosing the strongest piece, count the defender’s legal moves after promotion.",
+        "d1=Q is immediate stalemate: Be1 is pinned to Kf1, while Black’s king and bishop take away all king moves. White is not in check, so the game is drawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d1=Q is immediate stalemate: Be1 is pinned to Kf1, while Black’s king and bishop take away all king moves. White is not in check, so the game is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/8/8/2b5/8/5k2/8/3qBK2 w - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "bishops_rook_stalemate",
+      "start": "start",
+      "title": "Does a rook avoid stalemate?",
+      "san": [
+        "d1=R"
+      ],
+      "commentary": [
+        "A rook has fewer moves than a queen, but here it creates the same horizontal pin.",
+        "d1=R still pins Be1 against Kf1. White has no legal king or bishop move and is not checked: stalemate again."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d1=R still pins Be1 against Kf1. White has no legal king or bishop move and is not checked: stalemate again.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/8/8/2b5/8/5k2/8/3rBK2 w - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "bishops_knight_draw",
+      "start": "start",
+      "title": "Try a knight and White’s distant defense",
+      "san": [
+        "d1=N",
+        "Ba5"
+      ],
+      "commentary": [
+        "A knight avoids the pin, but avoiding stalemate is only the first condition for a winning promotion.",
+        "d1=N gives up the forced win. The new knight cannot force the opposing bishop into capture against best defense.",
+        "Ba5 keeps White’s bishop away from the knight’s immediate reach. The exact tablebase result is a draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Ba5 keeps White’s bishop away from the knight’s immediate reach. The exact tablebase result is a draw.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/B1b5/8/5k2/8/3n1K2 b - - 1 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "bishops_take_too_soon",
+      "start": "start",
+      "title": "Accept the bishop sacrifice immediately",
+      "san": [
+        "d1=B",
+        "Bf2",
+        "Bxf2"
+      ],
+      "commentary": [
+        "White can try another sacrifice after the bishop promotion. Ask what taking it does to the last king moves.",
+        "d1=B keeps Black’s winning position.",
+        "Bf2 offers White’s bishop. Capturing with the c5 bishop would remove White’s only movable piece.",
+        "Bxf2 is stalemate. The new bishop on d1 does not check Kf1, and Black’s king and f2 bishop deny every escape."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxf2 is stalemate. The new bishop on d1 does not check Kf1, and Black’s king and f2 bishop deny every escape.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/8/5k2/5b2/3b1K2 w - - 0 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "bishops_check_before_capture",
+      "start": "start",
+      "title": "Check before accepting the sacrifice",
+      "san": [
+        "d1=B",
+        "Bf2",
+        "Be2+",
+        "Ke1",
+        "Bxf2+"
+      ],
+      "commentary": [
+        "Compare accepting Bf2 immediately with changing the king’s square first.",
+        "d1=B chooses the winning promotion.",
+        "Bf2 is the defender’s stalemate attempt.",
+        "Be2+ forces the king to move before Black captures the bishop. This changes the geometry of the stalemate trap.",
+        "Ke1 is one legal representative response; it is not claimed to be the only move.",
+        "Bxf2+ captures with check after the king has moved. Black retains two bishops of opposite colors against a bare king, a verified win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Bxf2+ captures with check after the king has moved. Black retains two bishops of opposite colors against a bare king, a verified win.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/8/8/5k2/4bb2/4K3 w - - 0 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why do queen and rook promotion both draw?",
+      "answer": "They pin Be1 horizontally against Kf1. The bishop cannot move legally, and Black’s king and c5 bishop already control every king escape."
+    },
+    {
+      "node": "start",
+      "prompt": "Why insert Be2+ before Bxf2?",
+      "answer": "Moving White’s king prevents the immediate-capture stalemate. After the king moves, Black can take the bishop and keep a winning two-bishop ending."
+    }
+  ],
+  "defaultBranch": "bishops_mating_net",
+  "practiceBranch": "bishops_mating_net",
+  "practiceType": "bishop",
+  "startContext": "Play Black from the position after ...d2 and Be1. The initial pawn push is source context; the promotion choice and selected replies are checked here.",
+  "verification_scope": "The playable starting position and every intermediate position in the selected variations are tablebase-checked. These variations illustrate the key ideas; they do not enumerate all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

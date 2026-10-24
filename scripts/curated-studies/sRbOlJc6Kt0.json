@@ -1,0 +1,171 @@
+{
+  "video_id": "sRbOlJc6Kt0",
+  "title": "Equal Material Huh?",
+  "summary": "Use a bishop interposition to lure the defender into blocking its own queen, then threaten mate from two directions.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "7k/1Q3K2/8/1B4b1/8/8/8/3q4 w - - 0 1",
+      "question": "What matters more than the equal queen-and-bishop material?",
+      "explanation": "White’s king restricts Kh8, but immediate queen checks let Black coordinate its defenders. Bd3 prepares the bishop’s blocking role.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "double_mate",
+      "fen": "7k/5K2/5bB1/1Q6/7q/8/8/8 b - - 7 4",
+      "question": "Why is the black bishop useful to White on f6?",
+      "explanation": "It blocks the queen’s route along the f-file to Kf7. White can now threaten Qh5 and Qe8 without allowing the source’s perpetual-check defense.",
+      "evidence": {
+        "timestamp_s": 91
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "equal_material_queen_defense",
+      "start": "start",
+      "title": "Lure the bishop and switch the queen’s attack",
+      "san": [
+        "Bd3",
+        "Qh5+",
+        "Bg6",
+        "Qh4",
+        "Qb2+",
+        "Bf6",
+        "Qb5",
+        "Qe1",
+        "Qh5#"
+      ],
+      "commentary": [
+        "Begin from the complete six-piece source board. The main line follows the illustrated queen check and bishop interference.",
+        "Bd3 offers the bishop and prepares to answer ...Qh5+ with Bg6, keeping the white king in its restricting position.",
+        "Qh5+ uses Black’s available queen check to try to force that king away.",
+        "Bg6 interposes while attacking the checking queen on h5.",
+        "Qh4 retreats along the h-file and keeps the queen available for defense.",
+        "Qb2+ checks on the long diagonal and deliberately invites the bishop to block.",
+        "Bf6 blocks that diagonal, but also obstructs Black’s own queen’s access to the f-file.",
+        "Qb5 switches threats toward Qh5 and Qe8. The bishop on f6 prevents the queen from checking Kf7 along that file.",
+        "Qe1 is the illustrated queen defense against the eighth-rank attack, leaving h5 available.",
+        "Qh5# is actual mate. Bg6 supports h5 and covers h7, while Kf7 restricts g7 and g8."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qh5# is actual mate. Bg6 supports h5 and covers h7, while Kf7 restricts g7 and g8.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7k/5K2/5bB1/7Q/8/8/8/4q3 b - - 9 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "equal_material_bishop_defense",
+      "start": "double_mate",
+      "title": "Move the blocking bishop",
+      "san": [
+        "Bd8",
+        "Qe8#"
+      ],
+      "commentary": [
+        "Compare the source’s bishop move from the final attacking setup.",
+        "Bd8 abandons the f6 interference square but cannot cover the queen’s entry on e8.",
+        "Qe8# is actual mate along the eighth rank. Kf7 covers g8 and Bg6 covers h7; Black cannot interpose its queen from h4."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qe8# is actual mate along the eighth rank. Kf7 covers g8 and Bg6 covers h7; Black cannot interpose its queen from h4.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win"
+      ],
+      "end_fen": "3bQ2k/5K2/6B1/8/7q/8/8/8 b - - 9 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "equal_material_accept_bishop",
+      "start": "start",
+      "title": "Capture the offered bishop",
+      "san": [
+        "Bd3",
+        "Qxd3",
+        "Qb2+",
+        "Kh7",
+        "Qg7#"
+      ],
+      "commentary": [
+        "Compare the source’s direct acceptance of the first bishop offer.",
+        "Bd3 offers a bishop to divert the queen from its initial defensive arrangement.",
+        "Qxd3 collects that bishop but leaves White a decisive queen check.",
+        "Qb2+ attacks the king along the long diagonal.",
+        "Kh7 is the sole legal reply in this exact position.",
+        "Qg7# is actual mate. Kf7 protects g7 and denies the adjacent escape squares, while the queen covers the h-file flights."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qg7# is actual mate. Kf7 protects g7 and denies the adjacent escape squares, while the queen covers the h-file flights.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/5KQk/8/6b1/8/3q4/8/8 b - - 3 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "equal_material_premature_check",
+      "start": "start",
+      "title": "Start checking before organizing the bishop",
+      "san": [
+        "Qb8+",
+        "Qd8"
+      ],
+      "commentary": [
+        "Compare the source’s first tempting queen check.",
+        "Qb8+ gives up the forced win. White has not arranged the bishop interference.",
+        "Qd8 blocks the check and holds the exact position drawn with best play. The lesson stops before inventing a further forcing sequence."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qd8 blocks the check and holds the exact position drawn with best play. The lesson stops before inventing a further forcing sequence.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "1Q1q3k/5K2/8/1B4b1/8/8/8/8 w - - 2 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "double_mate",
+      "prompt": "Why lure the bishop onto f6 instead of taking it?",
+      "answer": "On f6 it obstructs Black’s queen. White can switch between two mating routes without allowing the f-file checking resource."
+    },
+    {
+      "node": "start",
+      "prompt": "What does Bg6 achieve against ...Qh5+?",
+      "answer": "It blocks the check and attacks the queen while keeping Kf7 close enough to restrict the black king."
+    }
+  ],
+  "defaultBranch": "equal_material_queen_defense",
+  "practiceBranch": "equal_material_queen_defense",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "The complete six-piece source board is visually reconstructed. The bishop offer, ...Qh5+ interposition, ...Bf6 lure and two final mating defenses are checked move by move. Immediate Qb8+ is checked as drawing. The selected branches do not enumerate every legal queen defense.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

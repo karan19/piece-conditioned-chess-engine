@@ -1,0 +1,293 @@
+{
+  "video_id": "P58fTC6d3_M",
+  "title": "War of Geniuses: Walk Out of the Checks",
+  "summary": "Use a bishop sacrifice to escape repeated rook checks, then preserve a mating pattern instead of collecting the rook too early.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2b4k/5P2/r7/5N2/8/8/8/K1B5 w - - 0 1",
+      "question": "How can White answer the rook check and keep the pawn alive?",
+      "explanation": "After ...Ra6+, White has Ka1/Bc1/Nf5/f7 against Kh8/Bc8/Ra6. White must answer check without losing the promotion threat.",
+      "evidence": {
+        "timestamp_s": 14
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "rook_offer",
+      "fen": "2b4k/5P2/8/5NK1/6r1/8/8/8 w - - 12 8",
+      "question": "Should White accept the rook on g4?",
+      "explanation": "The king has reached g5, but ...Rg4+ offers the rook with a bishop-fork resource.",
+      "evidence": {
+        "timestamp_s": 85
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "last_blockade",
+      "fen": "2b3rk/5P2/7K/5N2/8/8/8/8 w - - 14 9",
+      "question": "How can White defeat the final rook blockade?",
+      "explanation": "White Kh6/Nf5/f7 faces Kh8/Bc8/Rg8. Promoting by capture immediately lets the king recapture; improving the knight changes the mating geometry.",
+      "evidence": {
+        "timestamp_s": 132
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "geniuses_king_walk",
+      "start": "start",
+      "title": "Sacrifice, walk, and finish with a knight mate",
+      "san": [
+        "Ba3",
+        "Rxa3+",
+        "Kb2",
+        "Ra2+",
+        "Kc1",
+        "Ra1+",
+        "Kd2",
+        "Ra2+",
+        "Ke3",
+        "Ra3+",
+        "Kf4",
+        "Ra4+",
+        "Kg5",
+        "Rg4+",
+        "Kh6",
+        "Rg8",
+        "Ne7",
+        "Be6",
+        "fxg8=Q+",
+        "Bxg8",
+        "Ng6#"
+      ],
+      "commentary": [
+        "After ...Ra6+, White has Ka1/Bc1/Nf5/f7 against Kh8/Bc8/Ra6. White must answer check without losing the promotion threat.",
+        "Ba3 blocks the a-file check. Giving up the bishop lets the king emerge without allowing the rook to return to f6.",
+        "Rxa3+ accepts the bishop and renews the a-file check.",
+        "Kb2 steps off the file. The rook on a3 cannot now return directly to f6.",
+        "Ra2+ sacrifices the rook: taking it allows the bishop fork on e6.",
+        "Kc1 declines the rook and begins the king walk.",
+        "Ra1+ follows with another rank check.",
+        "Kd2 leaves the first rank while keeping the pawn threat.",
+        "Ra2+ continues checking along the second rank.",
+        "Ke3 climbs off that rank. The source illustrates this selected checking route.",
+        "Ra3+ checks along the third rank.",
+        "Kf4 continues toward the knight’s shelter.",
+        "Ra4+ follows onto the fourth rank.",
+        "Kg5 reaches the kingside, but Black still has a final sacrifice.",
+        "Rg4+ offers the rook directly to the king. The plus sign matters: this move is check.",
+        "Kh6 declines the rook and keeps the king advanced.",
+        "Rg8 blocks the pawn’s capture-promotion route by offering a king recapture. This is the illustrated final defense.",
+        "Ne7 improves the knight before promoting. The knight can deliver mate on g6 if Black’s bishop is drawn onto g8.",
+        "Be6 covers f7 and supports g8. This is the source’s selected bishop defense.",
+        "fxg8=Q+ captures the rook with check and offers the new queen to the bishop.",
+        "Bxg8 captures the queen but occupies the king’s flight square on g8.",
+        "Ng6# is mate. Kh6 covers g7/h7, the knight checks h8, and Black’s own bishop blocks g8."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Ng6# is mate. Kh6 covers g7/h7, the knight checks h8, and Black’s own bishop blocks g8.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6bk/8/6NK/8/8/8/8/8 b - - 1 11",
+      "outcome": "loss"
+    },
+    {
+      "id": "geniuses_wrong_king_exit",
+      "start": "start",
+      "title": "The direct king exit lets the rook return",
+      "san": [
+        "Kb2",
+        "Rf6"
+      ],
+      "commentary": [
+        "After ...Ra6+, White has Ka1/Bc1/Nf5/f7 against Kh8/Bc8/Ra6. White must answer check without losing the promotion threat.",
+        "Kb2 exits check but gives up the exact win. The bishop is still on c1 instead of having diverted the rook.",
+        "Rf6 returns behind the pawn and stops promotion. The exact position is drawn with best play; “losing the advantage” is not the same as a forced loss."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rf6 returns behind the pawn and stops promotion. The exact position is drawn with best play; “losing the advantage” is not the same as a forced loss.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "2b4k/5P2/5r2/5N2/8/8/1K6/2B5 w - - 2 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "geniuses_accept_early_rook",
+      "start": "start",
+      "title": "Taking the first rook offer allows a fork",
+      "san": [
+        "Ba3",
+        "Rxa3+",
+        "Kb2",
+        "Ra2+",
+        "Kxa2",
+        "Be6+",
+        "Kb2",
+        "Bxf7"
+      ],
+      "commentary": [
+        "After ...Ra6+, White has Ka1/Bc1/Nf5/f7 against Kh8/Bc8/Ra6. White must answer check without losing the promotion threat.",
+        "Ba3 diverts the rook.",
+        "Rxa3+ takes the bishop with check.",
+        "Kb2 escapes the file.",
+        "Ra2+ offers the rook while preparing a bishop fork.",
+        "Kxa2 accepts the rook, but abandons the forced win.",
+        "Be6+ checks the king on a2 and attacks the pawn on f7.",
+        "Kb2 answers the check.",
+        "Bxf7 removes the pawn. Knight versus bishop with the kings is an exact draw here."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxf7 removes the pawn. Knight versus bishop with the kings is an exact draw here.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "7k/5b2/8/5N2/8/8/1K6/8 w - - 0 5",
+      "outcome": "draw"
+    },
+    {
+      "id": "geniuses_accept_late_rook",
+      "start": "rook_offer",
+      "title": "Taking on g4 gives a drawn pawn ending",
+      "san": [
+        "Kxg4",
+        "Bxf5+",
+        "Kxf5",
+        "Kg7",
+        "Ke6",
+        "Kf8"
+      ],
+      "commentary": [
+        "White is in check from Rg4. Compare capturing it with the winning Kh6.",
+        "Kxg4 collects the rook but gives up the exact win.",
+        "Bxf5+ captures the knight with check and offers a second liquidation.",
+        "Kxf5 recaptures the bishop, leaving only the f-pawn and kings.",
+        "Kg7 heads toward the pawn’s stopping square.",
+        "Ke6 advances with the pawn, but cannot force promotion against this defense.",
+        "Kf8 blocks the pawn. The exact pawn ending is drawn; Black has survived by giving away the rook."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kf8 blocks the pawn. The exact pawn ending is drawn; Black has survived by giving away the rook.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "5k2/5P2/4K3/8/8/8/8/8 w - - 3 11",
+      "outcome": "draw"
+    },
+    {
+      "id": "geniuses_decline_bishop",
+      "start": "rook_offer",
+      "title": "After the king advances, decline the bishop recapture",
+      "san": [
+        "Kh6",
+        "Rg6+",
+        "Kxg6",
+        "Bxf5+",
+        "Kf6"
+      ],
+      "commentary": [
+        "The rook capture is different after White improves the king from g5 to h6.",
+        "Kh6 preserves the win instead of accepting the rook on g4.",
+        "Rg6+ is the source’s alternative rook offer.",
+        "Kxg6 takes it with the king already advanced.",
+        "Bxf5+ again captures the knight, but now White need not take the bishop.",
+        "Kf6 leaves the bishop on the board and supports f7’s promotion. The exact ending remains winning for White."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kf6 leaves the bishop on the board and supports f7’s promotion. The exact ending remains winning for White.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7k/5P2/5K2/5b2/8/8/8/8 b - - 1 10",
+      "outcome": "loss"
+    },
+    {
+      "id": "geniuses_premature_capture_promotion",
+      "start": "last_blockade",
+      "title": "Promote before improving the knight",
+      "san": [
+        "fxg8=Q+",
+        "Kxg8"
+      ],
+      "commentary": [
+        "The rook on g8 can be captured, but the knight has not yet reached the mating setup.",
+        "fxg8=Q+ gives up the forced win. Black can use the king to capture the queen.",
+        "Kxg8 removes the queen. The remaining knight versus bishop position is drawn; Ne7 first changes which piece can recapture and supplies the mating jump."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxg8 removes the queen. The remaining knight versus bishop position is drawn; Ne7 first changes which piece can recapture and supplies the mating jump.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "2b3k1/8/7K/5N2/8/8/8/8 w - - 0 10",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "rook_offer",
+      "prompt": "Why does capturing the rook on g4 fail?",
+      "answer": "Black can remove the knight with check and reach a drawn king-and-pawn ending. Advancing to h6 first changes the liquidation."
+    },
+    {
+      "node": "last_blockade",
+      "prompt": "Why play Ne7 before promoting?",
+      "answer": "The knight gains g6. After the bishop is drawn onto g8, Ng6 is mate because Black’s bishop occupies its own king’s only remaining flight square."
+    }
+  ],
+  "defaultBranch": "geniuses_king_walk",
+  "practiceBranch": "geniuses_king_walk",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Ra6+ at 14s, a complete seven-piece diagram reconstructed from the saved board. The main selected checking route, early and late rook sacrifices, final knight preparation, and immediate capture-promotion error are checked throughout. The lines illustrate selected defenses rather than an exhaustive legal-move tree. Exact draws are described as draws even when the narration loosely says the advantage is lost.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,155 @@
+{
+  "video_id": "6oZpLtZgBCA",
+  "title": "Unity is Strength: The Pawn Barrier",
+  "summary": "Use the tempo gained by an obstructed enemy king to promote; compare the race with an unnecessary king move.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/7p/2pp1p2/4k3/P7/8/6K1/8 w - - 0 1",
+      "question": "Can the lone a-pawn outrun a king that looks close enough?",
+      "explanation": "Begin after ...bxc6. White has Kg2/a4 against Ke5/c6/d6/f6/h7. Black has four pawns, but c6 and d6 obstruct the king’s direct path toward a8.",
+      "evidence": {
+        "timestamp_s": 117.0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "unity_barrier_race",
+      "start": "start",
+      "title": "Race around the obstructing pawns",
+      "san": [
+        "a5",
+        "Kd5",
+        "a6",
+        "Kc5",
+        "a7",
+        "Kb6",
+        "a8=Q"
+      ],
+      "commentary": [
+        "Begin after ...bxc6. White has Kg2/a4 against Ke5/c6/d6/f6/h7. Black has four pawns, but c6 and d6 obstruct the king’s direct path toward a8.",
+        "a5 uses the winning tempo immediately. The white king does not need to join the race; Black must navigate around its own c6 and d6 pawns.",
+        "Kd5 approaches from below the pawn barrier. The occupied d6 square prevents the more direct king approach through that square.",
+        "a6 keeps running. Moving the white king instead would give the defender time to catch the pawn.",
+        "Kc5 goes around the c6 pawn. The king cannot stand on c6 while its own pawn occupies it.",
+        "a7 leaves only one step to promotion. The pawn is now too far advanced for the king’s illustrated route.",
+        "Kb6 gets close but cannot attack a8 in time. A king on b6 attacks a7, so White must promote now.",
+        "a8=Q promotes before the king can capture the pawn. The exact queen-versus-four-pawns position is winning for White; the later queen conversion is outside this selected race."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "a8=Q promotes before the king can capture the pawn. The exact queen-versus-four-pawns position is winning for White; the later queen conversion is outside this selected race.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "Q7/7p/1kpp1p2/8/8/8/6K1/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "unity_free_square_tempo",
+      "start": "start",
+      "title": "Independent reply: move the blocking c-pawn",
+      "san": [
+        "a5",
+        "c5",
+        "a6",
+        "Kd5",
+        "a7",
+        "Kc6",
+        "a8=Q+"
+      ],
+      "commentary": [
+        "Begin after ...bxc6. White has Kg2/a4 against Ke5/c6/d6/f6/h7. Black has four pawns, but c6 and d6 obstruct the king’s direct path toward a8.",
+        "a5 starts the same forcing pawn race.",
+        "c5 clears c6 for the king, but using a move to clear the square costs Black a tempo. This is an independently selected defense, not an illustrated source line.",
+        "a6 advances while Black spends time reorganizing the king’s route.",
+        "Kd5 approaches the newly cleared c6 square. Black has not recovered the tempo spent moving the pawn.",
+        "a7 keeps the promotion threat immediate.",
+        "Kc6 reaches the cleared square, but still does not control a8.",
+        "a8=Q promotes safely. Every intermediate outcome remains a White win; clearing the obstruction does not repair the lost tempo."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "a8=Q promotes safely. Every intermediate outcome remains a White win; clearing the obstruction does not repair the lost tempo.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "Q7/7p/2kp1p2/2p5/8/8/6K1/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "unity_delayed_race",
+      "start": "start",
+      "title": "Independent error: bring the king first",
+      "san": [
+        "Kf2",
+        "Kd4",
+        "a5",
+        "Kc5",
+        "a6",
+        "Kb6",
+        "a7",
+        "Kxa7"
+      ],
+      "commentary": [
+        "Begin after ...bxc6. White has Kg2/a4 against Ke5/c6/d6/f6/h7. Black has four pawns, but c6 and d6 obstruct the king’s direct path toward a8.",
+        "Kf2 wastes the essential tempo. Black is now winning with best play; White needed a5 before beginning any king maneuver.",
+        "Kd4 begins a winning interception route. This defense and the following moves are independently selected representative replies.",
+        "a5 starts the race one move too late.",
+        "Kc5 approaches the a-file from below the obstructing pawns.",
+        "a6 continues, but Black can now reach b6 before the pawn is ready to promote.",
+        "Kb6 attacks a7 and a5. The king has caught up because of White’s initial delay.",
+        "a7 steps onto the attacked square. White cannot save this pawn by advancing it now.",
+        "Kxa7 removes White’s last pawn. Black’s king and four pawns win against the lone white king; this branch demonstrates the cost of a single wasted tempo."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxa7 removes White’s last pawn. Black’s king and four pawns win against the lone white king; this branch demonstrates the cost of a single wasted tempo.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/k6p/2pp1p2/8/8/8/5K2/8 w - - 0 5",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does having four pawns not let Black stop a single pawn?",
+      "answer": "The c6 and d6 pawns occupy squares the black king would like to use. White can exploit that obstruction with an immediate a5; moving the king first loses the tempo advantage."
+    },
+    {
+      "node": "start",
+      "prompt": "Does moving c6 to c5 solve the problem?",
+      "answer": "It clears a king route, but consumes a move. In the independently checked line White keeps pushing and promotes before the black king can control a8."
+    }
+  ],
+  "defaultBranch": "unity_barrier_race",
+  "practiceBranch": "unity_barrier_race",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "This lesson begins in the visually supported seven-piece diagram after ...bxc6 at 117s, when the central pawn barrier is already formed. It verifies the final a-pawn race and two independent comparisons. The earlier larger setup, Kxg2 drawing attempt, f6 sacrifice, a4 breakthrough and d6/c6 sacrifices remain source context and require separate larger-position analysis. A checked promotion race does not verify those earlier choices.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

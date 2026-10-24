@@ -1,0 +1,125 @@
+{
+  "video_id": "K99sSZx-92c",
+  "title": "Not a Draw: Keep the King Away from the Corner",
+  "summary": "A wrong-colored bishop and rook pawn can still win when coordinated barriers prevent the defending king reaching the promotion corner.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/4k3/8/8/4bK1p/8/8 b - - 0 1",
+      "question": "Should Black push the pawn or improve the bishop?",
+      "explanation": "Black has Ke6, Be3 and h3 against White Kf3. It is Black to move. The bishop has the wrong color for h1, but White has not yet reached the corner.",
+      "evidence": {
+        "timestamp_s": 110
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "wrong_bishop_barrier",
+      "start": "start",
+      "title": "Build the bishop-and-pawn barrier",
+      "san": [
+        "Bf4",
+        "Kf2",
+        "Bh2"
+      ],
+      "commentary": [
+        "Black has Ke6, Be3 and h3 against White Kf3. It is Black to move. The bishop has the wrong color for h1, but White has not yet reached the corner.",
+        "Bf4 offers the bishop while blocking White\u2019s approach through g3. Pawn h3 denies g2, so the king cannot slip toward h1.",
+        "Kf2 stays near the corner without taking the bishop. This is the illustrated defensive retreat.",
+        "Bh2 establishes the final barrier. The bishop controls g1/g3 while h3 controls g2. The exact position is winning for Black; the later king approach still needs accurate play and is not encoded as an immediate promotion."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bh2 establishes the final barrier. The bishop controls g1/g3 while h3 controls g2. The exact position is winning for Black; the later king approach still needs accurate play and is not encoded as an immediate promotion.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/4k3/8/8/7p/5K1b/8 w - - 3 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "wrong_bishop_early_push",
+      "start": "start",
+      "title": "Independent early pawn push permits the corner",
+      "san": [
+        "h2",
+        "Kg2",
+        "Bg1",
+        "Kh1"
+      ],
+      "commentary": [
+        "Black has Ke6, Be3 and h3 against White Kf3. It is Black to move. The bishop has the wrong color for h1, but White has not yet reached the corner.",
+        "h2 gives up the win. The pawn stops controlling g2, opening a route for the defending king.",
+        "Kg2 uses the newly available square. White preserves the exact draw.",
+        "Bg1 is an independently selected representative continuation. The bishop cannot control h1 because it moves on the other color.",
+        "Kh1 reaches the drawing corner. Black cannot force promotion with this wrong-colored bishop and rook pawn; the exact result is a draw."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kh1 reaches the drawing corner. Black cannot force promotion with this wrong-colored bishop and rook pawn; the exact result is a draw.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/4k3/8/8/8/7p/6bK b - - 3 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "wrong_bishop_take_offer",
+      "start": "start",
+      "title": "Taking the offered bishop loses the pawn race",
+      "san": [
+        "Bf4",
+        "Kxf4",
+        "h2",
+        "Kg3",
+        "h1=Q"
+      ],
+      "commentary": [
+        "Black has Ke6, Be3 and h3 against White Kf3. It is Black to move. The bishop has the wrong color for h1, but White has not yet reached the corner.",
+        "Bf4 can be offered because the pawn supplies a second threat.",
+        "Kxf4 removes the bishop but leaves the king too far from the h-pawn.",
+        "h2 advances one step from promotion. White cannot get to h1 in one move.",
+        "Kg3 tries to approach, but cannot stop the immediate promotion. This legal representative reply is independently selected.",
+        "h1=Q promotes. The resulting queen-versus-king position is exactly winning for Black; its later conversion is outside this branch."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "h1=Q promotes. The resulting queen-versus-king position is exactly winning for Black; its later conversion is outside this branch.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/4k3/8/8/6K1/8/7q w - - 0 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is the wrong-colored bishop not automatically a draw?",
+      "answer": "The familiar draw requires the defending king to reach h1. Here Black can deny g1, g2 and g3 with the bishop and pawn, then bring the king closer."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does pushing h2 too soon fail?",
+      "answer": "It removes the pawn\u2019s control of g2. White can use that square to reach h1 before Black builds the barrier."
+    }
+  ],
+  "defaultBranch": "wrong_bishop_barrier",
+  "practiceBranch": "wrong_bishop_barrier",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after White Kf3 at 110s, with Black Ke6/Be3/h3. The four-piece position is reconstructed from the saved physical-board diagrams and adjacent frames. Bf4/Kf2/Bh2 is the illustrated barrier. The early-push and bishop-capture continuations use independently selected representative replies. Earlier ...Be3 and ...h3 decisions are source context.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

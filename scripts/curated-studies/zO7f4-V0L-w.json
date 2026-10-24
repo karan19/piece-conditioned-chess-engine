@@ -1,0 +1,74 @@
+{
+  "video_id": "zO7f4-V0L-w",
+  "title": "Remember: Accept the Stalemate",
+  "summary": "Recognize a protected checking rook that can be sacrificed for stalemate, and distinguish that draw from a repeated-check defense.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1K6/1R6/1kb5/1p6/1P1p4/3P2p1/6p1/6qr b - - 0 1",
+      "question": "Can Black avoid the draw after Rb7+?",
+      "explanation": "Black has only Bxb7 or Ka6. Capturing the rook with the bishop stalemates White; declining lets White repeat protected checks on a7 and b7. Independent non-loss strategies for both sides establish the exact draw.",
+      "evidence": {
+        "timestamp_s": 177
+      },
+      "proof": {
+        "method": "finite_draw",
+        "fen": "1K6/1R6/1kb5/1p6/1P1p4/3P2p1/6p1/6qr b - - 0 1",
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "remember_accept_stalemate",
+      "start": "start",
+      "title": "Take the rook and confirm the stalemate",
+      "san": [
+        "Bxb7"
+      ],
+      "commentary": [
+        "Begin after Rb7+. The white king on b8 protects the checking rook, so Kxb7 is illegal. Ka6 is the only legal king escape; White can answer Ra7+ and repeat checks if Black declines the sacrifice.",
+        "Bxb7 removes White’s only mobile rook. Kb6 and Bb7 cover the white king’s escape squares without checking Kb8; b4 is blocked by b5, and d3 by d4. White has no legal move and is not in check: actual stalemate, despite Black’s promoted queen, rook and pawns."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxb7 removes White’s only mobile rook. Kb6 and Bb7 cover the white king’s escape squares without checking Kb8; b4 is blocked by b5, and d3 by d4. White has no legal move and is not in check: actual stalemate, despite Black’s promoted queen, rook and pawns.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "1K6/1b6/1k6/1p6/1P1p4/3P2p1/6p1/6qr w - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can the king not capture the checking rook?",
+      "answer": "White Kb8 protects b7. Black can either capture with Bc6 or move the king to a6."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does declining the sacrifice still fail to win?",
+      "answer": "Ka6 allows Ra7+. Kb6 is then forced, and Rb7+ restores the checked position. The saved proof follows legal history until White can claim threefold repetition; Black may also choose Bxb7 and immediate stalemate."
+    }
+  ],
+  "defaultBranch": "remember_accept_stalemate",
+  "practiceBranch": "remember_accept_stalemate",
+  "practiceType": "rook",
+  "practiceGoal": "draw",
+  "startContext": "Begin after the final illustrated Rb7+ near 177 seconds: White Kb8/Rb7/b4/d3 against Kb6/Bc6/Qg1/Rh1/b5/d4/g3/g2, Black to move. Native58 shows the complete board before the rook move, native59 its b7 destination highlight while the rook is animating, and native60 confirms Bxb7 and the resulting stalemate. The promoted queen on g1 has already captured the knight; no knight remains. This focused defensive study has one guided stalemate line. Exact draw certificates prove a non-loss for both sides: Black chooses Bxb7; if Black instead chooses Ka6, White uses Ra7+/Kb6/Rb7+ and can claim an actual threefold repetition if Black keeps declining. Every opposing reply and the repetition’s legal move history are saved and checked; an isolated FEN or narrated perpetual-check assertion is insufficient. Earlier Ng1, d3, rook waiting moves and promotion choices remain outside this selected proof.",
+  "verification_scope": "Begin after the final illustrated Rb7+ near 177 seconds: White Kb8/Rb7/b4/d3 against Kb6/Bc6/Qg1/Rh1/b5/d4/g3/g2, Black to move. Native58 shows the complete board before the rook move, native59 its b7 destination highlight while the rook is animating, and native60 confirms Bxb7 and the resulting stalemate. The promoted queen on g1 has already captured the knight; no knight remains. This focused defensive study has one guided stalemate line. Exact draw certificates prove a non-loss for both sides: Black chooses Bxb7; if Black instead chooses Ka6, White uses Ra7+/Kb6/Rb7+ and can claim an actual threefold repetition if Black keeps declining. Every opposing reply and the repetition’s legal move history are saved and checked; an isolated FEN or narrated perpetual-check assertion is insufficient. Earlier Ng1, d3, rook waiting moves and promotion choices remain outside this selected proof.",
+  "sourceCorrections": [],
+  "finiteDraw": {
+    "max_plies": 8,
+    "white": {
+      "1K6/1R6/k1b5/1p6/1P1p4/3P2p1/6p1/6qr w - - 1 2": "Ra7+",
+      "1K6/R7/1kb5/1p6/1P1p4/3P2p1/6p1/6qr w - - 3 3": "Rb7+",
+      "1K6/1R6/k1b5/1p6/1P1p4/3P2p1/6p1/6qr w - - 5 4": "Ra7+",
+      "1K6/R7/1kb5/1p6/1P1p4/3P2p1/6p1/6qr w - - 7 5": "Rb7+"
+    },
+    "black": {
+      "1K6/1R6/1kb5/1p6/1P1p4/3P2p1/6p1/6qr b - - 0 1": "Bxb7"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

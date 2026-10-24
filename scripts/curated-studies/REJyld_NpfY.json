@@ -1,0 +1,104 @@
+{
+  "video_id": "REJyld_NpfY",
+  "title": "Majestic Sacrifice: Promote With a Rook Fork",
+  "summary": "Use promotion with check to force a rook block or a king retreat that leaves the rook hanging.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "7k/2Pr3p/1p3p2/8/8/8/6PK/8 w - - 0 1",
+      "question": "How can White turn promotion into a forcing material gain?",
+      "explanation": "c8=Q+ checks along the eighth rank and attacks Rd7 diagonally. Black must block on d8 or retreat to g7, allowing a rook capture in either case.",
+      "evidence": {
+        "timestamp_s": 148
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "7k/2Pr3p/1p3p2/8/8/8/6PK/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "sacrifice_rook_blocks_promotion",
+      "start": "start",
+      "title": "Independent defense: block the promotion check",
+      "san": [
+        "c8=Q+",
+        "Rd8",
+        "Qxd8+"
+      ],
+      "commentary": [
+        "Begin after ...Rd7. White’s king is on h2, the promotion pawn is on c7 and the other pawn is on g2. Black retains b6/f6/h7.",
+        "c8=Q+ is the source promotion. It checks Kh8 across the eighth rank and attacks Rd7 along c8–d7.",
+        "Rd8 is one of two legal replies, independently supplied. The rook blocks the check but lands beside the queen.",
+        "Qxd8+ captures the blocking rook and reaches an exact seven-piece White win, with all four remaining pawns retained. This branch stops before selecting a further king move."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxd8+ captures the blocking rook and reaches an exact seven-piece White win, with all four remaining pawns retained. This branch stops before selecting a further king move.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3Q3k/7p/1p3p2/8/8/8/6PK/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "sacrifice_king_leaves_rook",
+      "start": "start",
+      "title": "Independent defense: retreat and leave the rook attacked",
+      "san": [
+        "c8=Q+",
+        "Kg7",
+        "Qxd7+"
+      ],
+      "commentary": [
+        "Test the other legal reply to the source promotion, without assuming the rook must interpose.",
+        "c8=Q+ checks Kh8 and simultaneously attacks the rook on d7.",
+        "Kg7 is legal and avoids the eighth-rank check. It leaves Rd7 on the queen’s diagonal.",
+        "Qxd7+ captures the rook with check along the seventh rank. The complete seven-piece position is an exact White win; the earlier knight-sacrifice story is not inferred from this finish."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxd7+ captures the rook with check along the seventh rank. The complete seven-piece position is an exact White win; the earlier knight-sacrifice story is not inferred from this finish.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3Q2kp/1p3p2/8/8/8/6PK/8 b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What two targets does c8=Q create?",
+      "answer": "The new queen checks Kh8 along the eighth rank and attacks Rd7 diagonally."
+    },
+    {
+      "node": "start",
+      "prompt": "Is ...Rd8 forced?",
+      "answer": "No. Kg7 is legal too. The queen captures the rook on d8 or d7 according to Black’s reply."
+    }
+  ],
+  "defaultBranch": "sacrifice_rook_blocks_promotion",
+  "practiceBranch": "sacrifice_rook_blocks_promotion",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rd7 at 148 seconds in the complete eight-piece later diagram: White Kh2/c7/g2 against Kh8/Rd7/b6/f6/h7. The source c8=Q+ promotion is certified against both legal replies: Rd8 and Kg7, followed by the corresponding rook capture into an exact seven-piece win. Black replies and capture completions are explicitly independent additions to the source’s promotion diagram. Earlier eleven-piece knight sacrifices, d6 interference and other rook/knight branches remain outside proof. Native images establish c7/Rd7/Kh2, correcting earlier provisional b7/c7 and Kg2 assumptions.",
+  "verification_scope": "Begin after ...Rd7 at 148 seconds in the complete eight-piece later diagram: White Kh2/c7/g2 against Kh8/Rd7/b6/f6/h7. The source c8=Q+ promotion is certified against both legal replies: Rd8 and Kg7, followed by the corresponding rook capture into an exact seven-piece win. Black replies and capture completions are explicitly independent additions to the source’s promotion diagram. Earlier eleven-piece knight sacrifices, d6 interference and other rook/knight branches remain outside proof. Native images establish c7/Rd7/Kh2, correcting earlier provisional b7/c7 and Kg2 assumptions.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 3,
+    "moves": {
+      "7k/2Pr3p/1p3p2/8/8/8/6PK/8 w - - 0 1": "c8=Q+",
+      "2Qr3k/7p/1p3p2/8/8/8/6PK/8 w - - 1 2": "Qxd8+",
+      "2Q5/3r2kp/1p3p2/8/8/8/6PK/8 w - - 1 2": "Qxd7+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

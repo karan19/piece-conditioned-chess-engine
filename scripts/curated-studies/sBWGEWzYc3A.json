@@ -1,0 +1,147 @@
+{
+  "video_id": "sBWGEWzYc3A",
+  "title": "Parallel Universes: Two Captures, One Mating Rank",
+  "summary": "After either capture of the queen offer, keep checking on the back rank instead of retreating.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "k7/pp2R3/8/8/8/5r1q/3K4/8 w - - 0 1",
+      "question": "The rook took the queen on f3. What is White’s forcing reply?",
+      "explanation": "Re7 can check along the eighth rank. Black’s queen must interpose on c8 because a7 and b7 remain occupied.",
+      "evidence": {
+        "timestamp_s": 131
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "queen_capture",
+      "fen": "k7/pp2R3/8/8/8/2r2q2/3K4/8 w - - 0 1",
+      "question": "The queen took on f3 instead. Does that change the plan?",
+      "explanation": "The same Re8 check works, but now Black’s rook must interpose on c8 instead of its queen.",
+      "evidence": {
+        "timestamp_s": 139
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "parallel_rook_capture_mate",
+      "start": "start",
+      "title": "Source rook capture: force the queen onto c8",
+      "san": [
+        "Re8+",
+        "Qc8",
+        "Rxc8#"
+      ],
+      "commentary": [
+        "Begin at the complete seven-piece diagram after ...Rxf3. The earlier eight-piece Qf3 offer and all other defenses remain outside exact verification.",
+        "Re8+ is the only winning move in this exact root. It checks along the back rank while Black’s pawns occupy a7 and b7.",
+        "Qc8 is Black’s only legal reply. The queen must block the checking rook’s line to Ka8.",
+        "Rxc8# removes the interposing queen with actual mate. The remaining black rook cannot answer the back-rank check, and a7/b7 still block the king’s flights."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxc8# removes the interposing queen with actual mate. The remaining black rook cannot answer the back-rank check, and a7/b7 still block the king’s flights.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "k1R5/pp6/8/8/8/5r2/3K4/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "parallel_queen_capture_mate",
+      "start": "queen_capture",
+      "title": "Source queen capture: force the rook onto c8",
+      "san": [
+        "Re8+",
+        "Rc8",
+        "Rxc8#"
+      ],
+      "commentary": [
+        "Switch to the separate complete seven-piece diagram after ...Qxf3. This is the alternative capture, not a continuation of the rook-capture branch.",
+        "Re8+ again supplies the only winning move. The queen on f3 cannot interpose on the checking segment between e8 and a8.",
+        "Rc8 is Black’s only legal reply. The rook on c3 must return to the back rank.",
+        "Rxc8# captures the blocking rook. Black’s queen survives, but cannot capture the mating rook or free an occupied flight square."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxc8# captures the blocking rook. Black’s queen survives, but cannot capture the mating rook or free an occupied flight square.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "k1R5/pp6/8/8/8/5q2/3K4/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "parallel_rook_capture_retreat",
+      "start": "start",
+      "title": "Independent error: retreat instead of checking",
+      "san": [
+        "Re1",
+        "Rf2+"
+      ],
+      "commentary": [
+        "Independently compare a rook retreat after ...Rxf3. This error is not attributed to the source.",
+        "Re1 gives up the forced mate and loses with best play. The queen and rook are allowed to coordinate against White’s exposed king.",
+        "Rf2+ is a representative winning check along the second rank. White no longer has the immediate Re8/Qc8/Rxc8 mating sequence."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rf2+ is a representative winning check along the second rank. White no longer has the immediate Re8/Qc8/Rxc8 mating sequence.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "k7/pp6/8/8/8/7q/3K1r2/4R3 w - - 2 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "parallel_queen_capture_retreat",
+      "start": "queen_capture",
+      "title": "Independent error after the queen capture",
+      "san": [
+        "Re1",
+        "Qf2+"
+      ],
+      "commentary": [
+        "Independently compare the same retreat after ...Qxf3, preserving Black’s c3 rook and both pawns.",
+        "Re1 again changes a forced win into a forced loss. Giving up the checking tempo lets Black use its material.",
+        "Qf2+ checks along the second rank. This is one representative winning reply; the line stops at an exactly checked White loss."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qf2+ checks along the second rank. This is one representative winning reply; the line stops at an exactly checked White loss.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "k7/pp6/8/8/8/2r5/3K1q2/4R3 w - - 2 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can the queen not save Black after Qc8?",
+      "answer": "It only postpones the check for one move. Rxc8 removes the blocker, while a7 and b7 still occupy the king’s escape squares."
+    },
+    {
+      "node": "queen_capture",
+      "prompt": "Why does a surviving queen not prevent mate?",
+      "answer": "The queen on f3 cannot reach c8 or block the rook’s back-rank checking line after Rxc8. Legal defensive moves matter more than material count."
+    }
+  ],
+  "defaultBranch": "parallel_rook_capture_mate",
+  "practiceBranch": "parallel_rook_capture_mate",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Two separately illustrated seven-piece roots are checked: after ...Rxf3 at 131 seconds and after ...Qxf3 at 139 seconds. The first frame contains a capture overlay, confirmed by the next settled Re8 diagram; both full positions are preserved. The initial nine-piece setup, later eight-piece Qf3 offer, Qc8 refusal and other source defenses remain outside verification. These lines prove what happens after the two selected captures, not the full sacrifice.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

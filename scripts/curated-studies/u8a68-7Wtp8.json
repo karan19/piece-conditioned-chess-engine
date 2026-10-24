@@ -1,0 +1,200 @@
+{
+  "video_id": "u8a68-7Wtp8",
+  "title": "Majestic Victory",
+  "summary": "Walk away from the pawn to escape checks, then underpromote to a rook to avoid stalemate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
+      "question": "Can a lone pawn beat the rook?",
+      "explanation": "The king’s square determines whether the rook can pin or skewer a promoted piece.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "first_check",
+      "fen": "8/2P5/1K1r4/8/8/8/8/k7 w - - 1 2",
+      "question": "Where should the king go after the check?",
+      "explanation": "One step can permit a pin; another can expose the promoted queen to a skewer.",
+      "evidence": {
+        "timestamp_s": 36
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "promotion",
+      "fen": "8/2P5/8/8/3r4/8/2K5/k7 w - - 9 6",
+      "question": "Why would a rook be better than a queen?",
+      "explanation": "Black has a rook sacrifice that draws against a queen but not against a rook.",
+      "evidence": {
+        "timestamp_s": 91
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "victory_complete",
+      "start": "start",
+      "title": "Walk the king down and choose a rook",
+      "san": [
+        "c7",
+        "Rd6+",
+        "Kb5",
+        "Rd5+",
+        "Kb4",
+        "Rd4+",
+        "Kb3",
+        "Rd3+",
+        "Kc2",
+        "Rd4",
+        "c8=R",
+        "Ra4",
+        "Kb3",
+        "Rc4",
+        "Rxc4"
+      ],
+      "commentary": [
+        "White must turn the advanced pawn into a threat without allowing the rook to pin it or skewer the promoted piece.",
+        "c7 advances the pawn. The white king controls c6 and b7, while the pawn controls d8.",
+        "Rd6+ starts a series of checks. The rook wants the king to leave a square that protects the promotion plan.",
+        "Kb5 avoids the seventh-rank pin and keeps control of c6, where the rook would need to stand for a skewer.",
+        "Rd5+ keeps checking. Black is trying to move the king away from the c-file’s critical entry squares.",
+        "Kb4 steps down while keeping c5 covered. Promoting does not yet permit a safe rook skewer.",
+        "Rd4+ follows the king down the board.",
+        "Kb3 keeps c4 controlled. Each retreat preserves the same geometric protection one rank lower.",
+        "Rd3+ checks again. White has reached a point where the edge of the board changes the rook’s possibilities.",
+        "Kc2 escapes the checks while controlling b1, b2 and c1. A skewer from below is no longer available.",
+        "Rd4 sets a different trap: a queen promotion permits ...Rc4+ and stalemate after the rook is captured.",
+        "c8=R avoids the queen’s stalemate trap. After ...Rc4+ and Rxc4, the escape square a2 remains available.",
+        "Ra4 meets the immediate Ra8 mate threat along the a-file.",
+        "Kb3 attacks the rook on a4 and renews the mating threat. The king makes the two rooks unequal.",
+        "Rc4+ is an illustrated last check. White can capture because the king on b3 protects c4.",
+        "Rxc4 leaves a winning rook-versus-king ending. Black’s king still has a legal move, so the game continues instead of ending in stalemate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxc4 leaves a winning rook-versus-king ending. Black’s king still has a legal move, so the game continues instead of ending in stalemate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/2R5/1K6/8/k7 b - - 0 8",
+      "outcome": "loss"
+    },
+    {
+      "id": "victory_pin",
+      "start": "first_check",
+      "title": "Try keeping the king near promotion",
+      "san": [
+        "Kb7",
+        "Rd7"
+      ],
+      "commentary": [
+        "Staying close to the pawn looks natural. Check whether that closeness lets the rook pin it.",
+        "Kb7 puts king and pawn on the seventh rank. White’s winning chance is gone with best defense.",
+        "Rd7 pins c7 against the king on b7. White cannot simply push the pawn and force a winning promotion; the tablebase result is a draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rd7 pins c7 against the king on b7. White cannot simply push the pawn and force a winning promotion; the tablebase result is a draw.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/1KPr4/8/8/8/8/8/k7 w - - 3 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "victory_stalemate",
+      "start": "promotion",
+      "title": "Promote to a queen and test the trap",
+      "san": [
+        "c8=Q",
+        "Rc4+",
+        "Qxc4"
+      ],
+      "commentary": [
+        "The strongest piece is not always the winning promotion. Check what happens if Black can sacrifice the rook with tempo.",
+        "c8=Q allows Black to use the queen’s long diagonals to remove the last king escape.",
+        "Rc4+ checks and attacks the queen on c8. White must resolve the check; taking the rook looks like the cleanest answer.",
+        "Qxc4 is stalemate. The king on c2 covers b1 and b2, and the queen on c4 covers a2 along c4-b3-a2. Black’s king on a1 has no move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxc4 is stalemate. The king on c2 covers b1 and b2, and the queen on c4 covers a2 along c4-b3-a2. Black’s king on a1 has no move.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/2Q5/8/2K5/k7 b - - 0 7",
+      "outcome": "draw"
+    },
+    {
+      "id": "victory_rook_reply",
+      "start": "promotion",
+      "title": "Compare the same trap against a rook",
+      "san": [
+        "c8=R",
+        "Rc4+",
+        "Rxc4",
+        "Ka2"
+      ],
+      "commentary": [
+        "Use the same defensive idea to see precisely what the underpromotion changes.",
+        "c8=R promotes without giving the new piece a queen’s diagonal control.",
+        "Rc4+ is still legal, but its stalemate trick has disappeared.",
+        "Rxc4 captures the rook. The king on c2 covers b1 and b2, but the rook on c4 does not control a2. Black still has a legal king move.",
+        "Ka2 is legal, so there is no stalemate. White retains the standard winning rook-versus-king ending."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ka2 is legal, so there is no stalemate. White retains the standard winning rook-versus-king ending.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/2R5/8/k1K5/8 w - - 1 8",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "first_check",
+      "prompt": "Why does Kb5 work better than Kb7?",
+      "answer": "Kb7 permits a rook pin on d7. Kb5 instead covers c6, stopping the rook from establishing a safe skewer after promotion."
+    },
+    {
+      "node": "promotion",
+      "prompt": "Which legal king move distinguishes rook promotion from queen promotion?",
+      "answer": "After c8=R Rc4+ Rxc4, the rook does not control a2. Black can play Ka2, so it is not stalemate. The queen on c4 would control a2."
+    }
+  ],
+  "defaultBranch": "victory_complete",
+  "practiceBranch": "victory_complete",
+  "practiceType": "pawn",
+  "startContext": "",
+  "verification_scope": "Selected positions reconstructed from saved source images. Every encoded move and intermediate outcome is checked; representative replies illustrate the idea without enumerating every legal defense.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

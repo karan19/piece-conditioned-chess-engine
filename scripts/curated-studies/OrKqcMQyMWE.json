@@ -1,0 +1,108 @@
+{
+  "video_id": "OrKqcMQyMWE",
+  "title": "The Waiting Game: Pin the Pawn, Leave the Bishop a Move",
+  "summary": "Avoid stalemate by leaving the bishop mobile, then remove the pinned pawn with a protected rook.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "KR6/8/8/8/8/2P2N2/6pp/6bk w - - 0 1",
+      "question": "Why go to h8 instead of returning to the first rank?",
+      "explanation": "Rh8 pins h2 against Kh1 while leaving Bg1 free to move. Rb1 would pin the bishop instead and stalemate Black. Nf3 protects h2 for the final rook capture.",
+      "evidence": {
+        "timestamp_s": 109
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "KR6/8/8/8/8/2P2N2/6pp/6bk w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "waiting_pin_pawn",
+      "start": "start",
+      "title": "Source finish: allow the bishop to move",
+      "san": [
+        "Rh8",
+        "Bf2",
+        "Rxh2#"
+      ],
+      "commentary": [
+        "Begin after ...h2 in the complete saved 109-second eight-piece diagram. The earlier queen sacrifice and king walk are outside this proof.",
+        "Rh8 pins h2 against Kh1. The h-pawn cannot move onto its own king, g2 is blocked by Bg1, and the king has no square. Six bishop moves remain legal, so this is not stalemate.",
+        "Bf2 is the illustrated bishop move. It leaves h2 unprotected by the bishop; the other five legal bishop moves are included in the certificate.",
+        "Rxh2# removes the pawn with check. Nf3 protects Rh2 and controls g1; g2 is occupied by Black’s pawn. Black’s king cannot capture the rook or escape."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxh2# removes the pawn with check. Nf3 protects Rh2 and controls g1; g2 is occupied by Black’s pawn. Black’s king cannot capture the rook or escape.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "K7/8/8/8/8/2P2N2/5bpR/7k b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "waiting_long_bishop_move",
+      "start": "start",
+      "title": "Independent defense: move the bishop to a7",
+      "san": [
+        "Rh8",
+        "Ba7",
+        "Rxh2#"
+      ],
+      "commentary": [
+        "Compare the longest bishop retreat rather than assuming ...Bf2 is forced.",
+        "Rh8 creates the same pawn pin while keeping the bishop mobile.",
+        "Ba7 is legal, even though White’s king attacks that square. A bishop may move onto an attacked square; Black’s own king is not exposed.",
+        "Rxh2# still mates. The distant bishop cannot interpose against the adjacent rook check or capture Rh2."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxh2# still mates. The distant bishop cannot interpose against the adjacent rook check or capture Rh2.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "K7/b7/8/8/8/2P2N2/6pR/7k b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why would Rb1 draw immediately?",
+      "answer": "It pins Bg1 to Kh1. Both black pawns are blocked and the king has no square, so Black has no legal move and is not in check: stalemate. This contrast is separately checked by legal move generation."
+    },
+    {
+      "node": "start",
+      "prompt": "What makes Rxh2 safe?",
+      "answer": "Nf3 protects h2, preventing Kxh2, and also controls g1. The bishop has left g1, but that flight square is still covered."
+    }
+  ],
+  "defaultBranch": "waiting_pin_pawn",
+  "practiceBranch": "waiting_pin_pawn",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...h2 at 109 seconds in the complete eight-piece position White Ka8/Rb8/Nf3/c3 versus Black Kh1/Bg1/g2/h2. Rh8 is proved against all six legal bishop replies. Each selected rook capture reaches a directly checked seven-piece mate. The earlier larger waiting plan, king walk and queen-sacrifice choices remain outside this proof.",
+  "verification_scope": "Complete 109-second diagram and later source mate manually reviewed. A finite strategy enumerates all six legal Black bishop moves after Rh8, each leading to a supported exact seven-piece mate. The unencoded Rb1 stalemate contrast has a separately saved legal-position check. Earlier larger waiting and queen-sacrifice decisions remain unverified.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 3,
+    "moves": {
+      "KR6/8/8/8/8/2P2N2/6pp/6bk w - - 0 1": "Rh8",
+      "K6R/b7/8/8/8/2P2N2/6pp/7k w - - 2 2": "Rxh2#",
+      "K6R/8/1b6/8/8/2P2N2/6pp/7k w - - 2 2": "Rxh2#",
+      "K6R/8/8/2b5/8/2P2N2/6pp/7k w - - 2 2": "Rxh2#",
+      "K6R/8/8/8/3b4/2P2N2/6pp/7k w - - 2 2": "Rxh2#",
+      "K6R/8/8/8/8/2P1bN2/6pp/7k w - - 2 2": "Rxh2#",
+      "K6R/8/8/8/8/2P2N2/5bpp/7k w - - 2 2": "Rxh2#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

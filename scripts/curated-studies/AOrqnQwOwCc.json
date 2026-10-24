@@ -1,0 +1,173 @@
+{
+  "video_id": "AOrqnQwOwCc",
+  "title": "Majestic Corner",
+  "summary": "Check the king onto a fork line, then sacrifice the rook to remove the defender of the promotion square.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/7P/5R2/8/8/8/7r/K1k5 w - - 0 1",
+      "question": "How can White displace the rook from the h-file?",
+      "explanation": "After ...Rh2, the rook stops h8=Q. A passive defense allows Black to create mating threats against Ka1.",
+      "evidence": {
+        "timestamp_s": 16
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "rank_defense",
+      "fen": "3r4/7P/5R2/8/8/8/8/K1k5 w - - 0 1",
+      "question": "Does defending the eighth rank change the idea?",
+      "explanation": "After ...Rd8, Black stops h8=Q horizontally. White can rotate the same checking-fork idea onto the d-file.",
+      "evidence": {
+        "timestamp_s": 76
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "corner_file_defense",
+      "start": "start",
+      "title": "Check, fork, and clear the h-file",
+      "san": [
+        "Rf1+",
+        "Kd2",
+        "Rf2+",
+        "Rxf2",
+        "h8=Q"
+      ],
+      "commentary": [
+        "Begin after the source’s ...Rh2. The first saved image shows the h-pawn being dragged; the stable diagrams confirm it belongs on h7.",
+        "Rf1+ checks along the first rank. White first changes the black king’s square instead of passively defending h7.",
+        "Kd2 is the illustrated escape. The king now shares the second rank with Rh2.",
+        "Rf2+ checks the king and attacks Rh2. The rook offers itself to force the defender away from the h-file.",
+        "Rxf2 accepts the sacrifice, removing the checking rook but abandoning the promotion file.",
+        "h8=Q promotes safely. This exact queen-versus-rook position is winning for White; the lesson stops at the checked conversion rather than treating every queen-versus-rook position as automatically won."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "h8=Q promotes safely. This exact queen-versus-rook position is winning for White; the lesson stops at the checked conversion rather than treating every queen-versus-rook position as automatically won.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7Q/8/8/8/8/8/3k1r2/K7 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "corner_rank_defense",
+      "start": "rank_defense",
+      "title": "Rotate the same fork onto the d-file",
+      "san": [
+        "Rc6+",
+        "Kd2",
+        "Rd6+",
+        "Rxd6",
+        "h8=Q"
+      ],
+      "commentary": [
+        "Compare the source’s other rook defense, ...Rd8, with the same kings and h7 pawn.",
+        "Rc6+ checks the king along the c-file, forcing it away from c1.",
+        "Kd2 is the illustrated move toward the center. The king now shares the d-file with Rd8.",
+        "Rd6+ checks and attacks the rook on d8 along one file. The geometry is the rotated version of Rf2+.",
+        "Rxd6 accepts the sacrifice and leaves the eighth rank unguarded.",
+        "h8=Q promotes. The exact resulting queen-versus-rook position is checked as a White win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "h8=Q promotes. The exact resulting queen-versus-rook position is checked as a White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7Q/8/3r4/8/8/8/3k4/K7 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "corner_passive_defense",
+      "start": "start",
+      "title": "Defend the pawn without checking",
+      "san": [
+        "Rf7",
+        "Kd2",
+        "Rf2+",
+        "Rxf2",
+        "h8=Q"
+      ],
+      "commentary": [
+        "Compare the source’s passive rook lift, then correct its illustrated Black reply.",
+        "Rf7 protects h7 but gives away the win. Black can hold by keeping the rook on the h-file without stepping into a checking fork.",
+        "Kd2 threatens ...Rh1 mate but is an error: the king now shares the second rank with Rh2. White regains a forced win.",
+        "Rf2+ is an independently supplied correction to the source’s conclusion. White meets the mating threat with a checking fork of king and rook.",
+        "Rxf2 accepts the sacrifice and removes the checking rook, but releases the h-file.",
+        "h8=Q reaches a checked White win. Thus the source’s ...Kd2 does not demonstrate a forced draw, even though the earlier Rf7 really did give away the win."
+      ],
+      "classification": "independent alternative correcting an illustrated source reply with representative legal completion",
+      "explanation": "h8=Q reaches a checked White win. Thus the source’s ...Kd2 does not demonstrate a forced draw, even though the earlier Rf7 really did give away the win.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7Q/8/8/8/8/8/3k1r2/K7 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "corner_correct_drawing_defense",
+      "start": "start",
+      "title": "Black keeps the rook on the h-file",
+      "san": [
+        "Rf7",
+        "Rh3"
+      ],
+      "commentary": [
+        "This independent defense shows how Black really holds after the passive rook lift.",
+        "Rf7 gives away the win, but Black must avoid the checking fork created by ...Kd2.",
+        "Rh3 keeps the rook behind h7 and leaves the king on c1. The checking-fork setup is absent; this exact position is drawn with best play."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "...Rh3 keeps the rook on the promotion file without putting king and rook on a checking-fork line.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/5R1P/8/8/8/7r/8/K1k5 w - - 2 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why check before sacrificing the rook?",
+      "answer": "The check places Black’s king on the same rank as its rook, allowing Rf2+ to attack both. A rook capture then releases the h-file."
+    },
+    {
+      "node": "rank_defense",
+      "prompt": "What is the shared idea behind Rc6+ and Rf1+?",
+      "answer": "Both checks move the king onto a line with its rook. The next checking fork either wins that rook or deflects it from h8."
+    }
+  ],
+  "defaultBranch": "corner_file_defense",
+  "practiceBranch": "corner_file_defense",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after the illustrated ...Rh2; reconstruct this position from the stable Rf7 diagram and the narrated rook move. A separate node shows the saved ...Rd8 defense. The initial transient h-pawn drag is not treated as a pawn on h6.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "After ...Rh2 Rf7, the illustrated ...Kd2 forces White to leave the corner and Black holds the draw.",
+      "correction": "Rf7 does draw, but ...Kd2 gives White a win again: Rf2+ forks king and rook, then ...Rxf2 h8=Q wins. The independently checked ...Rh3 holds the draw instead. Queen versus rook is checked in the exact resulting positions, not assumed to be a universal win."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

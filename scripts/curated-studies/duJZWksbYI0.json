@@ -1,0 +1,128 @@
+{
+  "video_id": "duJZWksbYI0",
+  "title": "Zugzwang Windmill: Leave One Pawn Move",
+  "summary": "Keep the black king confined while allowing a forced pawn capture that prevents stalemate and releases your passer.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/7p/6Pp/7P/8/p7/k1K5 w - - 0 1",
+      "question": "Black has just played ...h6. Why is a king move better than either pawn move?",
+      "explanation": "The black king is trapped on a1. Kc2 keeps b1 and b2 covered while leaving ...hxg5 available. Moving g5 or capturing h6 instead would leave Black with no legal move: stalemate.",
+      "evidence": {
+        "timestamp_s": 55
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "windmill_delayed_capture",
+      "start": "start",
+      "title": "Source finish with an explicit legal bridge",
+      "san": [
+        "Kc2",
+        "hxg5",
+        "hxg5",
+        "h4",
+        "g6",
+        "h3",
+        "g7",
+        "h2",
+        "g8=Q",
+        "h1=Q",
+        "Qg7#"
+      ],
+      "commentary": [
+        "Begin after the forced ...h6 between the 54- and 56-second samples. The before-and-after boards establish the bridge ...h6/Kc2/hxg5; the earlier eight-piece waiting sequence is outside this proof.",
+        "Kc2 preserves the king cage: b1 and b2 are covered. It is the only winning move; the move leaves Black a pawn capture instead of stalemating it.",
+        "hxg5 is Black\u2019s only legal reply. The pawn from h6 captures White\u2019s g5 pawn, while Black\u2019s other h-pawn remains on h5.",
+        "hxg5 recaptures with the pawn from h4. White now has a passed g-pawn and has freed h4 for Black\u2019s remaining h-pawn.",
+        "h4 is Black\u2019s only legal move. White has preserved a pawn move so the confined king is not stalemated.",
+        "g6 advances the passer while White\u2019s king keeps the corner sealed.",
+        "h3 gives Black another legal pawn move. It approaches promotion, but it will not rescue the king cage.",
+        "g7 prepares White\u2019s promotion first. The black king still cannot move.",
+        "h2 brings Black\u2019s pawn one step from queening. White can promote now without giving stalemate, because Black retains its h-pawn move.",
+        "g8=Q creates White\u2019s queen. Black can still promote, so the game continues.",
+        "h1=Q is the source\u2019s chosen promotion. Black\u2019s only legal moves are promotions on h1, including underpromotions. The new queen does not give check to Kc2.",
+        "Qg7# mates on the long diagonal to a1. Black\u2019s a2 pawn occupies a2 and Kc2 covers b1/b2. Black\u2019s queen on h1 cannot block the g7\u2013a1 diagonal."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qg7# mates on the long diagonal to a1. Black\u2019s a2 pawn occupies a2 and Kc2 covers b1/b2. Black\u2019s queen on h1 cannot block the g7\u2013a1 diagonal.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/6Q1/8/8/8/8/p1K5/k6q b - - 1 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "windmill_push_stalemate",
+      "start": "start",
+      "title": "Independent mistake: push before releasing h4",
+      "san": [
+        "g6"
+      ],
+      "commentary": [
+        "Compare a direct pawn push in the exact seven-piece position.",
+        "g6 is immediate stalemate. Ka1 is trapped, a2 is blocked by its own king, h5 is blocked by h4, and h6 is blocked by h5. None of Black\u2019s pawns can capture."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "g6 is immediate stalemate. Ka1 is trapped, a2 is blocked by its own king, h5 is blocked by h4, and h6 is blocked by h5. None of Black\u2019s pawns can capture.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/8/6Pp/7p/7P/8/p7/k1K5 b - - 0 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "windmill_capture_stalemate",
+      "start": "start",
+      "title": "Independent mistake: capture the last mobile pawn",
+      "san": [
+        "gxh6"
+      ],
+      "commentary": [
+        "Compare taking h6 instead of keeping Black\u2019s pawn capture available.",
+        "gxh6 also stalemates Black. The last pawn that could capture on g5 is gone; h5 is still blocked by h4 and the corner king has no legal square."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "gxh6 also stalemates Black. The last pawn that could capture on g5 is gone; h5 is still blocked by h4 and the corner king has no legal square.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/8/7P/7p/7P/8/p7/k1K5 b - - 0 1",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why deliberately let Black capture g5?",
+      "answer": "After Kc2, ...hxg5 is Black\u2019s only legal move. White recaptures from h4, which opens h4 for the remaining black pawn and avoids stalemate."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does Black getting a queen fail to save the game?",
+      "answer": "White queens first and Black\u2019s h1=Q gives no check. Qg7 then mates along the long diagonal while Kc2 keeps the corner exits covered."
+    }
+  ],
+  "defaultBranch": "windmill_delayed_capture",
+  "practiceBranch": "windmill_delayed_capture",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...h6, reconstructed between the settled 54-second Kc1 diagram and the 56-second ...hxg5 transition. The forced legal bridge is saved separately, and every selected seven-piece successor is checked. This lesson covers the later pawn-release and mate, not a proof of the earlier eight-piece Kc1 waiting choice or the interleaved introductory examples.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

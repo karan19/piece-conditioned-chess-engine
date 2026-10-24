@@ -1,0 +1,147 @@
+{
+  "video_id": "M-_O_vRhIuA",
+  "title": "I See You Rudra: Two Pawn Mates",
+  "summary": "Let the queen appear, then place the knight where it supports two different pawn mates while the enemy pawns shield your king.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1Kp5/2p5/1k6/1P6/P1PN4/8/5q2 w - - 0 1",
+      "question": "Can the new black queen stop both pawn mates?",
+      "explanation": "Nb2 covers a4 and c4 while vacating d3. White threatens a4 or c4; the new queen can change which pawn is right, but cannot stop both.",
+      "evidence": {
+        "timestamp_s": 70
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/1Kp5/2p5/1k6/1P6/P1PN4/8/5q2 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "rudra_source_pawn_mate",
+      "start": "start",
+      "title": "Source finish: the a-pawn gives mate",
+      "san": [
+        "Nb2",
+        "Qf2",
+        "a4#"
+      ],
+      "commentary": [
+        "Begin after Black promotes on f1. The c7 and c6 pawns are retained: they shield Kb7 from the new queen and block their own king.",
+        "Nb2 protects both a4 and c4. The quiet knight retreat prepares two different pawn checks instead of chasing the queen.",
+        "Qf2 is the source’s illustrated queen move. It gives no check and cannot prevent a4. The certificate also checks every other legal queen move and c5.",
+        "a4# checks b5 with a pawn protected by Nb2. The b4 pawn blocks b4, c3 controls b4/d4, and Kb7 controls a6/b6/c6. Black cannot capture the checking pawn or escape."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "a4# checks b5 with a pawn protected by Nb2. The b4 pawn blocks b4, c3 controls b4/d4, and Kb7 controls a6/b6/c6. Black cannot capture the checking pawn or escape.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1Kp5/2p5/1k6/PP6/2P5/1N3q2/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "rudra_queen_changes_pawn",
+      "start": "start",
+      "title": "Independent defense: the queen reaches d1",
+      "san": [
+        "Nb2",
+        "Qd1",
+        "c4#"
+      ],
+      "commentary": [
+        "Test a queen square that changes the correct pawn choice. This defense and reply are independent additions to the source walkthrough.",
+        "Nb2 covers a4 and c4, giving White two possible adjacent pawn checks.",
+        "Qd1 controls a4 along d1–c2–b3–a4. That matters: a4 would allow the queen to capture the checking pawn.",
+        "c4# chooses the other pawn. Nb2 protects c4; White’s a3 pawn controls a4, while the b4 pawn and black c6 pawn complete the cage. The queen cannot stop an adjacent pawn check."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "c4# chooses the other pawn. Nb2 protects c4; White’s a3 pawn controls a4, while the b4 pawn and black c6 pawn complete the cage. The queen cannot stop an adjacent pawn check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1Kp5/2p5/1k6/1PP5/P7/1N6/3q4 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "rudra_black_pawn_reply",
+      "start": "start",
+      "title": "Independent defense: push the shielding pawn",
+      "san": [
+        "Nb2",
+        "c5",
+        "a4#"
+      ],
+      "commentary": [
+        "Test the non-queen defense rather than assuming Black must move its new queen.",
+        "Nb2 threatens the two protected pawn mates and leaves Black to choose a legal reply.",
+        "c5 is legal and moves the c6 pawn forward, but c5 now blocks the black king’s escape while White’s king still covers c6.",
+        "a4# gives the protected pawn check. The newly advanced black c5 pawn supplies an additional self-block rather than opening an escape."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "a4# gives the protected pawn check. The newly advanced black c5 pawn supplies an additional self-block rather than opening an escape.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1Kp5/8/1kp5/PP6/2P5/1N6/5q2 b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What is Nb2 doing besides retreating?",
+      "answer": "It protects both a4 and c4 so that the king cannot capture either checking pawn."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does Qd1 change White’s choice?",
+      "answer": "Qd1 can capture a4 along its diagonal. White uses c4 mate instead; the queen cannot capture that pawn or block its adjacent check."
+    }
+  ],
+  "defaultBranch": "rudra_source_pawn_mate",
+  "practiceBranch": "rudra_source_pawn_mate",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...f1=Q at 70 seconds in the complete nine-piece later diagram. Nb2 is certified against all twenty legal Black replies, each followed by an actual a4 or c4 mate. Selected source Qf2/a4 and independently supplied Qd1/c4 and c5/a4 illustrate the complete certificate. Earlier Nc6 sacrifice, declined-sacrifice branches and the route to promotion remain source context outside this proof. No larger-position engine estimate or tablebase claim is used.",
+  "verification_scope": "Begin after ...f1=Q at 70 seconds in the complete nine-piece later diagram. Nb2 is certified against all twenty legal Black replies, each followed by an actual a4 or c4 mate. Selected source Qf2/a4 and independently supplied Qd1/c4 and c5/a4 illustrate the complete certificate. Earlier Nc6 sacrifice, declined-sacrifice branches and the route to promotion remain source context outside this proof. No larger-position engine estimate or tablebase claim is used.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 3,
+    "moves": {
+      "8/1Kp5/2p5/1k6/1P6/P1PN4/8/5q2 w - - 0 1": "Nb2",
+      "5q2/1Kp5/2p5/1k6/1P6/P1P5/1N6/8 w - - 2 2": "c4#",
+      "8/1Kp2q2/2p5/1k6/1P6/P1P5/1N6/8 w - - 2 2": "a4#",
+      "8/1Kp5/2p2q2/1k6/1P6/P1P5/1N6/8 w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k3q2/1P6/P1P5/1N6/8 w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k6/1P3q2/P1P5/1N6/8 w - - 2 2": "a4#",
+      "8/1Kp5/2p5/1k6/1Pq5/P1P5/1N6/8 w - - 2 2": "a4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P4q/1N6/8 w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P2q2/1N6/8 w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k6/1P6/P1Pq4/1N6/8 w - - 2 2": "a4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P5/1N4q1/8 w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P5/1N3q2/8 w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P5/1N2q3/8 w - - 2 2": "a4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P5/1N6/7q w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P5/1N6/6q1 w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P5/1N6/4q3 w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P5/1N6/3q4 w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P5/1N6/2q5 w - - 2 2": "a4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P5/1N6/1q6 w - - 2 2": "c4#",
+      "8/1Kp5/2p5/1k6/1P6/P1P5/1N6/q7 w - - 2 2": "c4#",
+      "8/1Kp5/8/1kp5/1P6/P1P5/1N6/5q2 w - - 0 2": "a4#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

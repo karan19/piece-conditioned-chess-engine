@@ -1,0 +1,182 @@
+{
+  "video_id": "KI966tikVxk",
+  "title": "Majestic Fork",
+  "summary": "Offer the rook between two opposing rooks, then use promotion checks and queen forks to recover material.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "K5R1/5P1P/8/1k6/8/8/5r1r/8 w - - 0 1",
+      "question": "Can the rook fork two rooks without giving check?",
+      "explanation": "After the illustrated bishop sacrifice and ...Rxf2, the black rooks stand on f2 and h2. Rg2 offers a rook that neither defender can safely capture without releasing a promotion.",
+      "evidence": {
+        "timestamp_s": 102
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "rook_fork_h_rook",
+      "start": "start",
+      "title": "The h-rook accepts the offer",
+      "san": [
+        "Rg2",
+        "Rhxg2",
+        "h8=Q",
+        "Rxf7",
+        "Qe8+",
+        "Kc5",
+        "Qxf7"
+      ],
+      "commentary": [
+        "Begin after ...Rxf2 in the visually reconstructed seven-piece final phase. The earlier nine-piece setup and bishop interference remain source context.",
+        "Rg2 stands between the black rooks and attacks both. Capturing it abandons one promotion file.",
+        "Rhxg2 captures from h2, releasing the h-pawn’s promotion square.",
+        "h8=Q promotes because the h-file is no longer blocked by its rook.",
+        "Rxf7 removes the other pawn, but places the f-rook on the queen’s coming fork diagonal.",
+        "Qe8+ checks Kb5 along e8–b5 and attacks the rook on f7.",
+        "Kc5 is the illustrated escape from the check, leaving the rook attacked.",
+        "Qxf7 wins the forked rook. The resulting exact queen-versus-rook position remains a checked White win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxf7 wins the forked rook. The resulting exact queen-versus-rook position remains a checked White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "K7/5Q2/8/2k5/8/8/6r1/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_fork_f_rook",
+      "start": "start",
+      "title": "The f-rook accepts the offer",
+      "san": [
+        "Rg2",
+        "Rfxg2",
+        "f8=Q",
+        "Ra2+",
+        "Kb8",
+        "Rxh7",
+        "Qf5+",
+        "Kc6",
+        "Qxh7"
+      ],
+      "commentary": [
+        "Compare the illustrated capture with the other black rook.",
+        "Rg2 creates the same double promotion dilemma.",
+        "Rfxg2 captures from f2, leaving f8 free for promotion.",
+        "f8=Q creates a queen while White still has a pawn on h7.",
+        "Ra2+ gives a rank check before Black collects the remaining pawn.",
+        "Kb8 answers the check while keeping the queen available for a checking fork.",
+        "Rxh7 collects the h-pawn but exposes the rook to the queen’s diagonal attack.",
+        "Qf5+ checks Kb5 along the fifth rank and attacks h7 along f5–g6–h7.",
+        "Kc6 escapes the check but cannot save the rook in this selected line.",
+        "Qxh7 wins the rook and leaves a tablebase-checked queen-versus-rook win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxh7 wins the rook and leaves a tablebase-checked queen-versus-rook win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1K6/7Q/2k5/8/8/8/r7/8 b - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_fork_declined",
+      "start": "start",
+      "title": "Decline the capture and block the last pawn",
+      "san": [
+        "Rg2",
+        "Rxf7",
+        "Rxh2",
+        "Rf8+",
+        "Kb7",
+        "Rh8",
+        "Kc7",
+        "Kc5",
+        "Kd7",
+        "Kd5",
+        "Ke7",
+        "Ke5",
+        "Kf7",
+        "Kf5",
+        "Kg7"
+      ],
+      "commentary": [
+        "The source also shows Black preserving the f-rook rather than capturing the offered white rook.",
+        "Rg2 offers the fork and forces Black to address the promotion threats.",
+        "Rxf7 captures f7 and leaves the h-rook available to capture.",
+        "Rxh2 removes that rook. White keeps one rook and the advanced h-pawn.",
+        "Rf8+ uses the surviving rook to check the white king.",
+        "Kb7 answers the check and starts the king’s approach.",
+        "Rh8 blocks the h-pawn directly, setting up the source’s last defensive attempt.",
+        "Kc7 walks closer while White’s rook protects h7 from below.",
+        "Kc5 follows the white king from two ranks away, seeking to hinder its approach.",
+        "Kd7 continues along the seventh rank toward the blockade.",
+        "Kd5 keeps the kings facing along the file in this selected route.",
+        "Ke7 advances along the same rank, keeping the pawn safe.",
+        "Ke5 maintains the distant opposition but cannot forbid the white king’s next step.",
+        "Kf7 approaches g7, where the rook on h8 will be attacked.",
+        "Kf5 follows but is too far to protect the blockading rook.",
+        "Kg7 attacks Rh8 and supports h8. White retains the exact win; the lesson stops before the source’s discontinuous final promotion display."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kg7 attacks Rh8 and supports h8. White retains the exact win; the lesson stops before the source’s discontinuous final promotion display.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7r/6KP/8/5k2/8/8/7R/8 b - - 12 8",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does Rg2 work despite offering a rook?",
+      "answer": "Each capture draws one black rook away from a promotion file. The new queen then checks while attacking the other rook."
+    },
+    {
+      "node": "start",
+      "prompt": "What if Black preserves a rook to stop the last pawn?",
+      "answer": "After ...Rf7 Rxh2 and ...Rh8, the white king can approach g7 with its pawn supported from below. The exact selected position remains winning."
+    }
+  ],
+  "defaultBranch": "rook_fork_h_rook",
+  "practiceBranch": "rook_fork_h_rook",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after the source’s ...Rxf2 at 102 seconds, a seven-piece position reconstructed from stable saved boards. The preceding nine-piece setup and eight-piece Bf2 interference are source context, not part of the tablebase proof. Both rook-capture routes and the selected king approach against the declined capture are checked. The discontinuous last image is not encoded as a legal move.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

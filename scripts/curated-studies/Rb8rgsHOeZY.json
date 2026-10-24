@@ -1,0 +1,191 @@
+{
+  "video_id": "Rb8rgsHOeZY",
+  "title": "Majestic: The Quiet King Move Before Mate",
+  "summary": "Prepare a checking pawn break, then use the king to turn the opponent\u2019s promotion into a mating trap.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/K1k5/6B1/3p4/p7/2PP4/8 w - - 0 1",
+      "question": "Can the bishop stop the a-pawn in time?",
+      "explanation": "Begin after ...Kxc6: White Ka6/Bg5/c2/d2 faces Kc6/a3/d4. The knight sacrifice has removed the defender of d4, but Black can return to defend it.",
+      "evidence": {
+        "timestamp_s": 43
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "quiet_king",
+      "fen": "8/8/K4B2/2k5/2Pp4/3P4/p7/8 w - - 1 4",
+      "question": "The pawn is ready to promote. Why move the king?",
+      "explanation": "After c4+ ...Kc5, White must improve the king before the bishop can deliver the final mating check.",
+      "evidence": {
+        "timestamp_s": 121.0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "majestic_quiet_king",
+      "start": "start",
+      "title": "Prepare the break, then play the quiet king move",
+      "san": [
+        "Bf6",
+        "Kd5",
+        "d3",
+        "a2",
+        "c4+",
+        "Kc5",
+        "Kb7",
+        "a1=Q",
+        "Be7#"
+      ],
+      "commentary": [
+        "Begin after ...Kxc6: White Ka6/Bg5/c2/d2 faces Kc6/a3/d4. The knight sacrifice has removed the defender of d4, but Black can return to defend it.",
+        "Bf6 attacks d4 along e5 and prepares access to the promotion diagonal.",
+        "Kd5 returns to defend d4, so Bxd4 would allow the king to capture the bishop.",
+        "d3 prepares c4 with check and protects the bishop\u2019s future c3 square.",
+        "a2 moves one step from promotion, but gives White the checking tempo.",
+        "c4+ is a two-square pawn move with check. Black may capture en passant, but that opens the bishop\u2019s diagonal.",
+        "Kc5 declines en passant and keeps d4 defended.",
+        "Kb7 is the quiet king move. It covers b6/c6 and prepares Be7 mate if the pawn promotes.",
+        "a1=Q promotes, but the queen on a1 cannot prevent the immediate mating check.",
+        "Be7# is mate. The bishop checks c5 through d6 and also covers b4; Kb7 covers b6/c6, c4 controls b5/d5, d3 protects c4, and Black\u2019s own pawn blocks d4."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Be7# is mate. The bishop checks c5 through d6 and also covers b4; Kb7 covers b6/c6, c4 controls b5/d5, d3 protects c4, and Black\u2019s own pawn blocks d4.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1K2B3/8/2k5/2Pp4/3P4/8/q7 b - - 1 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_en_passant",
+      "start": "start",
+      "title": "En passant opens the bishop\u2019s route",
+      "san": [
+        "Bf6",
+        "Kd5",
+        "d3",
+        "a2",
+        "c4+",
+        "dxc3",
+        "Bxc3"
+      ],
+      "commentary": [
+        "Begin after ...Kxc6: White Ka6/Bg5/c2/d2 faces Kc6/a3/d4. The knight sacrifice has removed the defender of d4, but Black can return to defend it.",
+        "Bf6 prepares the promotion diagonal.",
+        "Kd5 defends d4 for the moment.",
+        "d3 supports c4 and the future bishop landing square c3.",
+        "a2 threatens promotion.",
+        "c4+ forces an answer and offers en passant.",
+        "dxc3 en passant removes c4 but vacates d4, opening f6-e5-d4-c3.",
+        "Bxc3 removes the pawn and controls a1 through b2. The bishop is protected by d3, and the exact remaining ending is winning for White."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxc3 removes the pawn and controls a1 through b2. The bishop is protected by d3, and the exact remaining ending is winning for White.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/K7/3k4/8/2BP4/p7/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_king_abandons_pawn",
+      "start": "quiet_king",
+      "title": "Independent king retreat permits the bishop capture",
+      "san": [
+        "Kb7",
+        "Kd6",
+        "Bxd4"
+      ],
+      "commentary": [
+        "Compare a legal king retreat instead of the source\u2019s promotion.",
+        "Kb7 creates the mating threat.",
+        "Kd6 avoids immediate pawn promotion but stops defending d4. This is an independently selected representative reply.",
+        "Bxd4 removes the blockader and controls a1. The bishop is protected by c4, and the exact position is winning for White."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Bxd4 removes the blockader and controls a1. The bishop is protected by c4, and the exact position is winning for White.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1K6/3k4/8/2PB4/3P4/p7/8 b - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_wrong_bishop_capture",
+      "start": "start",
+      "title": "Independent immediate capture loses the bishop",
+      "san": [
+        "Bf6",
+        "Kd5",
+        "Bxd4",
+        "Kxd4"
+      ],
+      "commentary": [
+        "Begin after ...Kxc6: White Ka6/Bg5/c2/d2 faces Kc6/a3/d4. The knight sacrifice has removed the defender of d4, but Black can return to defend it.",
+        "Bf6 correctly prepares access to d4.",
+        "Kd5 defends d4 with the king.",
+        "Bxd4 is premature: White has not arranged c4 to protect the bishop.",
+        "Kxd4 captures the unsupported bishop. The exact pawn ending is checked rather than judged solely from material."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxd4 captures the unsupported bishop. The exact pawn ending is checked rather than judged solely from material.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/K7/8/3k4/p7/2PP4/8 w - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "quiet_king",
+      "prompt": "Why is Kb7 useful when a pawn is about to promote?",
+      "answer": "It takes away b6 and c6, turning Be7 into mate after promotion. The immediate threat is to the king rather than the new queen."
+    },
+    {
+      "node": "start",
+      "prompt": "Why prepare c4 with d3?",
+      "answer": "The break comes with check; if Black captures en passant, the bishop reaches c3 and d3 protects it while it controls a1."
+    }
+  ],
+  "defaultBranch": "majestic_quiet_king",
+  "practiceBranch": "majestic_quiet_king",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kxc6 at 43s, a supported seven-piece diagram. The earlier eight-piece Nc6 sacrifice remains source context. The d3/c4 checking break, legal en passant defense, quiet Kb7 and promotion mate are checked. The transcript\u2019s reference to A3 preparing c4 is corrected to the visible d3; other king/capture comparisons are independently selected. This is a closely related version of Most Majestic Game (zpX6pvMJhto): the bishop begins on g5 here rather than h4, and both reach the same Bf6 continuation. This version has its own reviewed source diagrams and checked selected branches.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "The captions later refer to A3 as the move preparing c4.",
+      "correction": "The saved board and the earlier narration show d2-d3. That pawn protects the bishop on c3 after en passant."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

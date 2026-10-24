@@ -1,0 +1,1321 @@
+{
+  "node:pawn_alternative": {
+    "fen": "8/8/5kp1/3K3p/8/4P3/6PP/8 w - - 0 1",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F5kp1%2F3K3p%2F8%2F4P3%2F6PP%2F8+w+-+-+0+1",
+    "retrieved_at_utc": "2026-10-24T04:26:15.117289+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": 1,
+      "precise_dtz": 1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "win",
+      "moves": [
+        {
+          "uci": "g2g3",
+          "san": "g3",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "h2h3",
+          "san": "h3",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "e3e4",
+          "san": "e4",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "g2g4",
+          "san": "g4",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "h2h4",
+          "san": "h4",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5d4",
+          "san": "Kd4",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5e4",
+          "san": "Ke4",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5c5",
+          "san": "Kc5",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5d6",
+          "san": "Kd6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5c4",
+          "san": "Kc4",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -4,
+          "precise_dtz": null,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5c6",
+          "san": "Kc6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -4,
+          "precise_dtz": null,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        }
+      ]
+    }
+  },
+  "step:betrayal_pawn_practice:1": {
+    "fen": "8/8/5kp1/3K3p/8/4P1P1/7P/8 b - - 0 1",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F5kp1%2F3K3p%2F8%2F4P1P1%2F7P%2F8+b+-+-+0+1",
+    "retrieved_at_utc": "2026-10-24T04:26:15.128419+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -2,
+      "precise_dtz": -2,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": [
+        {
+          "uci": "f6f5",
+          "san": "Kf5",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        },
+        {
+          "uci": "f6g5",
+          "san": "Kg5",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        },
+        {
+          "uci": "f6e7",
+          "san": "Ke7",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        },
+        {
+          "uci": "f6f7",
+          "san": "Kf7",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        },
+        {
+          "uci": "f6g7",
+          "san": "Kg7",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        },
+        {
+          "uci": "h5h4",
+          "san": "h4",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        },
+        {
+          "uci": "g6g5",
+          "san": "g5",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        }
+      ]
+    }
+  },
+  "step:betrayal_pawn_practice:2": {
+    "fen": "8/8/6p1/3K1k1p/8/4P1P1/7P/8 w - - 1 2",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F6p1%2F3K1k1p%2F8%2F4P1P1%2F7P%2F8+w+-+-+1+2",
+    "retrieved_at_utc": "2026-10-24T04:26:15.646565+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": 1,
+      "precise_dtz": 1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "win",
+      "moves": [
+        {
+          "uci": "h2h3",
+          "san": "h3",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "e3e4",
+          "san": "e4+",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "g3g4",
+          "san": "g4+",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "h2h4",
+          "san": "h4",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5d4",
+          "san": "Kd4",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5d6",
+          "san": "Kd6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -4,
+          "precise_dtz": null,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5c4",
+          "san": "Kc4",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 0,
+          "precise_dtz": 0,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "draw"
+        },
+        {
+          "uci": "d5c5",
+          "san": "Kc5",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 0,
+          "precise_dtz": 0,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "draw"
+        },
+        {
+          "uci": "d5c6",
+          "san": "Kc6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 0,
+          "precise_dtz": 0,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "draw"
+        }
+      ]
+    }
+  },
+  "step:betrayal_pawn_practice:3": {
+    "fen": "8/8/6p1/3K1k1p/4P3/6P1/7P/8 b - - 0 2",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F6p1%2F3K1k1p%2F4P3%2F6P1%2F7P%2F8+b+-+-+0+2",
+    "retrieved_at_utc": "2026-10-24T04:26:15.629347+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -2,
+      "precise_dtz": -2,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": [
+        {
+          "uci": "f5g4",
+          "san": "Kg4",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        },
+        {
+          "uci": "f5g5",
+          "san": "Kg5",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        },
+        {
+          "uci": "f5f6",
+          "san": "Kf6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        }
+      ]
+    }
+  },
+  "step:betrayal_pawn_practice:4": {
+    "fen": "8/8/6p1/3K2kp/4P3/6P1/7P/8 w - - 1 3",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F6p1%2F3K2kp%2F4P3%2F6P1%2F7P%2F8+w+-+-+1+3",
+    "retrieved_at_utc": "2026-10-24T04:26:16.163296+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": 1,
+      "precise_dtz": 1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "win",
+      "moves": [
+        {
+          "uci": "h2h3",
+          "san": "h3",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "g3g4",
+          "san": "g4",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "e4e5",
+          "san": "e5",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "h2h4",
+          "san": "h4+",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5c4",
+          "san": "Kc4",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5d4",
+          "san": "Kd4",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5e5",
+          "san": "Ke5",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5d6",
+          "san": "Kd6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5e6",
+          "san": "Ke6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5c5",
+          "san": "Kc5",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -4,
+          "precise_dtz": null,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5c6",
+          "san": "Kc6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -4,
+          "precise_dtz": null,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        }
+      ]
+    }
+  },
+  "branch:betrayal_pawn_practice": {
+    "fen": "8/8/6p1/3K2kp/4P3/6P1/7P/8 w - - 1 3",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F6p1%2F3K2kp%2F4P3%2F6P1%2F7P%2F8+w+-+-+1+3",
+    "retrieved_at_utc": "2026-10-24T04:26:16.163296+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": 1,
+      "precise_dtz": 1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "win",
+      "moves": [
+        {
+          "uci": "h2h3",
+          "san": "h3",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "g3g4",
+          "san": "g4",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "e4e5",
+          "san": "e5",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "h2h4",
+          "san": "h4+",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5c4",
+          "san": "Kc4",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5d4",
+          "san": "Kd4",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5e5",
+          "san": "Ke5",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5d6",
+          "san": "Kd6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5e6",
+          "san": "Ke6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -2,
+          "precise_dtz": -2,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5c5",
+          "san": "Kc5",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -4,
+          "precise_dtz": null,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "d5c6",
+          "san": "Kc6",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -4,
+          "precise_dtz": null,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        }
+      ]
+    }
+  },
+  "node:start": {
+    "method": "finite_strategy",
+    "fen": "8/8/5qpb/3K2kp/1R6/4P3/6PP/8 w - - 0 1",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "h4+": {
+        "method": "finite_strategy",
+        "fen": "8/8/5qpb/3K2kp/1R5P/4P3/6P1/8 b - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Kf5": {
+            "method": "finite_strategy",
+            "fen": "8/8/5qpb/3K1k1p/1R5P/4P3/6P1/8 w - - 1 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "g4+": {
+                "method": "finite_strategy",
+                "fen": "8/8/5qpb/3K1k1p/1R4PP/4P3/8/8 b - - 0 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "hxg4": {
+                    "method": "finite_strategy",
+                    "fen": "8/8/5qpb/3K1k2/1R4pP/4P3/8/8 w - - 0 3",
+                    "winner": "white",
+                    "category_for_side_to_move": "win",
+                    "rule": "winning_choice",
+                    "children": {
+                      "Rf4+": {
+                        "method": "finite_strategy",
+                        "fen": "8/8/5qpb/3K1k2/5RpP/4P3/8/8 b - - 1 3",
+                        "winner": "white",
+                        "category_for_side_to_move": "loss",
+                        "rule": "all_legal_defenses",
+                        "children": {
+                          "Bxf4": {
+                            "method": "finite_strategy",
+                            "fen": "8/8/5qp1/3K1k2/5bpP/4P3/8/8 w - - 0 4",
+                            "winner": "white",
+                            "category_for_side_to_move": "win",
+                            "rule": "winning_choice",
+                            "children": {
+                              "e4#": {
+                                "method": "finite_strategy",
+                                "fen": "8/8/5qp1/3K1k2/4PbpP/8/8/8 b - - 0 4",
+                                "winner": "white",
+                                "category_for_side_to_move": "loss",
+                                "rule": "checkmate"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:betrayal_pawn_cage:1": {
+    "method": "finite_strategy",
+    "fen": "8/8/5qpb/3K2kp/1R5P/4P3/6P1/8 b - - 0 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Kf5": {
+        "method": "finite_strategy",
+        "fen": "8/8/5qpb/3K1k1p/1R5P/4P3/6P1/8 w - - 1 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "g4+": {
+            "method": "finite_strategy",
+            "fen": "8/8/5qpb/3K1k1p/1R4PP/4P3/8/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "hxg4": {
+                "method": "finite_strategy",
+                "fen": "8/8/5qpb/3K1k2/1R4pP/4P3/8/8 w - - 0 3",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Rf4+": {
+                    "method": "finite_strategy",
+                    "fen": "8/8/5qpb/3K1k2/5RpP/4P3/8/8 b - - 1 3",
+                    "winner": "white",
+                    "category_for_side_to_move": "loss",
+                    "rule": "all_legal_defenses",
+                    "children": {
+                      "Bxf4": {
+                        "method": "finite_strategy",
+                        "fen": "8/8/5qp1/3K1k2/5bpP/4P3/8/8 w - - 0 4",
+                        "winner": "white",
+                        "category_for_side_to_move": "win",
+                        "rule": "winning_choice",
+                        "children": {
+                          "e4#": {
+                            "method": "finite_strategy",
+                            "fen": "8/8/5qp1/3K1k2/4PbpP/8/8/8 b - - 0 4",
+                            "winner": "white",
+                            "category_for_side_to_move": "loss",
+                            "rule": "checkmate"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:betrayal_pawn_cage:2": {
+    "method": "finite_strategy",
+    "fen": "8/8/5qpb/3K1k1p/1R5P/4P3/6P1/8 w - - 1 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "g4+": {
+        "method": "finite_strategy",
+        "fen": "8/8/5qpb/3K1k1p/1R4PP/4P3/8/8 b - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "hxg4": {
+            "method": "finite_strategy",
+            "fen": "8/8/5qpb/3K1k2/1R4pP/4P3/8/8 w - - 0 3",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rf4+": {
+                "method": "finite_strategy",
+                "fen": "8/8/5qpb/3K1k2/5RpP/4P3/8/8 b - - 1 3",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Bxf4": {
+                    "method": "finite_strategy",
+                    "fen": "8/8/5qp1/3K1k2/5bpP/4P3/8/8 w - - 0 4",
+                    "winner": "white",
+                    "category_for_side_to_move": "win",
+                    "rule": "winning_choice",
+                    "children": {
+                      "e4#": {
+                        "method": "finite_strategy",
+                        "fen": "8/8/5qp1/3K1k2/4PbpP/8/8/8 b - - 0 4",
+                        "winner": "white",
+                        "category_for_side_to_move": "loss",
+                        "rule": "checkmate"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:betrayal_pawn_cage:3": {
+    "method": "finite_strategy",
+    "fen": "8/8/5qpb/3K1k1p/1R4PP/4P3/8/8 b - - 0 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "hxg4": {
+        "method": "finite_strategy",
+        "fen": "8/8/5qpb/3K1k2/1R4pP/4P3/8/8 w - - 0 3",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rf4+": {
+            "method": "finite_strategy",
+            "fen": "8/8/5qpb/3K1k2/5RpP/4P3/8/8 b - - 1 3",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Bxf4": {
+                "method": "finite_strategy",
+                "fen": "8/8/5qp1/3K1k2/5bpP/4P3/8/8 w - - 0 4",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "e4#": {
+                    "method": "finite_strategy",
+                    "fen": "8/8/5qp1/3K1k2/4PbpP/8/8/8 b - - 0 4",
+                    "winner": "white",
+                    "category_for_side_to_move": "loss",
+                    "rule": "checkmate"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:betrayal_pawn_cage:4": {
+    "method": "finite_strategy",
+    "fen": "8/8/5qpb/3K1k2/1R4pP/4P3/8/8 w - - 0 3",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rf4+": {
+        "method": "finite_strategy",
+        "fen": "8/8/5qpb/3K1k2/5RpP/4P3/8/8 b - - 1 3",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Bxf4": {
+            "method": "finite_strategy",
+            "fen": "8/8/5qp1/3K1k2/5bpP/4P3/8/8 w - - 0 4",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "e4#": {
+                "method": "finite_strategy",
+                "fen": "8/8/5qp1/3K1k2/4PbpP/8/8/8 b - - 0 4",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:betrayal_pawn_cage:5": {
+    "method": "finite_strategy",
+    "fen": "8/8/5qpb/3K1k2/5RpP/4P3/8/8 b - - 1 3",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Bxf4": {
+        "method": "finite_strategy",
+        "fen": "8/8/5qp1/3K1k2/5bpP/4P3/8/8 w - - 0 4",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "e4#": {
+            "method": "finite_strategy",
+            "fen": "8/8/5qp1/3K1k2/4PbpP/8/8/8 b - - 0 4",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      }
+    }
+  },
+  "step:betrayal_pawn_cage:6": {
+    "method": "finite_strategy",
+    "fen": "8/8/5qp1/3K1k2/5bpP/4P3/8/8 w - - 0 4",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "e4#": {
+        "method": "finite_strategy",
+        "fen": "8/8/5qp1/3K1k2/4PbpP/8/8/8 b - - 0 4",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:betrayal_pawn_cage:7": {
+    "method": "finite_strategy",
+    "fen": "8/8/5qp1/3K1k2/4PbpP/8/8/8 b - - 0 4",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:betrayal_pawn_cage": {
+    "method": "finite_strategy",
+    "fen": "8/8/5qp1/3K1k2/4PbpP/8/8/8 b - - 0 4",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  }
+}

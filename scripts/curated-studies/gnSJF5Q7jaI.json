@@ -1,0 +1,88 @@
+{
+  "video_id": "gnSJF5Q7jaI",
+  "title": "Missed Genius Win: A Drawing Rook Sideline",
+  "summary": "Practice the exact drawing sideline, and distinguish it from the earlier larger position where the source finds a winning pawn push.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/4R3/5p2/3r1kp1/8/5PK1/8 b - - 0 1",
+      "question": "Does Black’s extra pawn win this particular rook ending?",
+      "explanation": "This complete seven-piece position is exactly drawn. Material count alone does not decide a rook ending; both sides need active, accurate moves. It is a preliminary sideline, not the source’s main e5 position.",
+      "evidence": {
+        "timestamp_s": 22
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "genius_draw_pawn_exchange",
+      "start": "start",
+      "title": "Independent continuation: exchange the advanced pawn",
+      "san": [
+        "g3",
+        "fxg3+",
+        "Kg5"
+      ],
+      "commentary": [
+        "Begin after Rxe6 in the preliminary source sideline. Black has Kf4/Rd4/f5/g4; White has Kg2/Re6/f2. Exact tablebase analysis gives a draw.",
+        "g3 advances the g4 pawn to the third rank and keeps the exact draw. It offers White a capture rather than proving that the extra pawn must promote.",
+        "fxg3+ takes that pawn with check from f2. Both kings and rooks remain with White g3 and Black f5: six pieces, still an exact draw.",
+        "Kg5 answers the checking pawn by moving the king away from f4. The complete six-piece position remains exactly drawn; conversion is not inferred from the pawn count."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kg5 answers the checking pawn by moving the king away from f4. The complete six-piece position remains exactly drawn; conversion is not inferred from the pawn count.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/4R3/5pk1/3r4/6P1/6K1/8 w - - 1 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "genius_draw_rook_activity",
+      "start": "start",
+      "title": "Independent continuation: keep both rooks active",
+      "san": [
+        "Rd1",
+        "Re2"
+      ],
+      "commentary": [
+        "Compare rook activity without immediately exchanging pawns. This continuation is independent analysis, not a recovered move sequence.",
+        "Rd1 activates the black rook on the first rank. The g4 and f5 pawns remain, and the exact outcome is still a draw.",
+        "Re2 activates White’s rook on the second rank near its king and f2 pawn. Every original piece in this seven-piece diagram remains, and the saved tablebase confirms the draw."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Re2 activates White’s rook on the second rank near its king and f2 pawn. Every original piece in this seven-piece diagram remains, and the saved tablebase confirms the draw.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/5p2/5kp1/8/4RPK1/3r4 b - - 2 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Does this prove the original tournament position was drawn?",
+      "answer": "No. This is a later preliminary seven-piece sideline. The original ten-piece e5 plan and its rook timing still require separate larger-position proof."
+    },
+    {
+      "node": "start",
+      "prompt": "What does the pawn exchange teach?",
+      "answer": "g3 can be met by fxg3+; after Kg5 the exact rook ending is drawn. An extra pawn alone does not establish a win."
+    }
+  ],
+  "defaultBranch": "genius_draw_pawn_exchange",
+  "practiceBranch": "genius_draw_pawn_exchange",
+  "practiceType": "rook",
+  "practiceGoal": "draw",
+  "startContext": "This is the preliminary drawing sideline at22 seconds, not verification of the main e5 winning plan. Native8 shows the complete seven-piece position after Rxe6: White Kg2/Re6/f2 against Kf4/Rd4/f5/g4, Black to move. The board is reversed: Black king is on f4, not g4. White’s original f4 pawn and Black’s e6 pawn have actually been captured; neither a2 nor an extra pawn is silently dropped. Both teaching branches below are independent representative continuations after this source diagram. Every root, intermediate position and endpoint has saved exact tablebase evidence. The original ten-piece root, the Ra4/Ra5 timing, e5/fxe5 and the main king-shelter winning conversion remain outside this selected draw lesson.",
+  "verification_scope": "This is the preliminary drawing sideline at22 seconds, not verification of the main e5 winning plan. Native8 shows the complete seven-piece position after Rxe6: White Kg2/Re6/f2 against Kf4/Rd4/f5/g4, Black to move. The board is reversed: Black king is on f4, not g4. White’s original f4 pawn and Black’s e6 pawn have actually been captured; neither a2 nor an extra pawn is silently dropped. Both teaching branches below are independent representative continuations after this source diagram. Every root, intermediate position and endpoint has saved exact tablebase evidence. The original ten-piece root, the Ra4/Ra5 timing, e5/fxe5 and the main king-shelter winning conversion remain outside this selected draw lesson.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

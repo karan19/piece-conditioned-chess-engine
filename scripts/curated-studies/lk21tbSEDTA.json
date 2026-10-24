@@ -1,0 +1,115 @@
+{
+  "video_id": "lk21tbSEDTA",
+  "title": "Majestic Win: Two Pin-and-Fork Finishes",
+  "summary": "Place a bishop where capturing it draws the queen onto a knight-fork square. Compare the two king locations before choosing the diagonal.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1N6/k5BP/1q6/6K1/8/n7/8 w - - 0 1",
+      "question": "How can the bishop force a tactical concession?",
+      "explanation": "Begin after ...Qxb5. White has Kg4, Nb7, Bg6 and h6 against Ka6, Qb5 and Na2. The earlier rook and pawn sacrifices are source context.",
+      "evidence": {
+        "timestamp_s": 69
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "king_capture",
+      "fen": "8/1N6/2q3BP/1k6/6K1/8/n7/8 w - - 0 1",
+      "question": "How does the plan change with the king on b5?",
+      "explanation": "This separately pictured seven-piece ending follows ...Kxb5. Black has Kb5 and Qc6, so the bishop must choose a different diagonal.",
+      "evidence": {
+        "timestamp_s": 109
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "majestic_pin_d3",
+      "start": "start",
+      "title": "Pin on d3, then fork from c5",
+      "san": [
+        "Bd3",
+        "Qxd3",
+        "Nc5+",
+        "Kb6",
+        "Nxd3"
+      ],
+      "commentary": [
+        "Begin after ...Qxb5. White has Kg4, Nb7, Bg6 and h6 against Ka6, Qb5 and Na2. The earlier rook and pawn sacrifices are source context.",
+        "Bd3 pins Qb5 to Ka6 along d3-c4-b5-a6, offering the bishop to the queen.",
+        "Qxd3 captures the bishop and removes the pin, but puts the queen on a knight-fork square.",
+        "Nc5+ checks Ka6 and attacks Qd3 at the same time.",
+        "Kb6 escapes the check in the illustrated reply, leaving the queen attacked.",
+        "Nxd3 wins the queen. White retains a tablebase-checked win with the knight and advanced h-pawn against Black’s knight. The further conversion is outside this branch."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxd3 wins the queen. White retains a tablebase-checked win with the knight and advanced h-pawn against Black’s knight. The further conversion is outside this branch.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/1k5P/8/6K1/3N4/n7/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_pin_e8",
+      "start": "king_capture",
+      "title": "Pin on e8, then fork from d6",
+      "san": [
+        "Be8",
+        "Qxe8",
+        "Nd6+",
+        "Kc6",
+        "Nxe8"
+      ],
+      "commentary": [
+        "Compare the separately saved ending with the black king on b5.",
+        "Be8 pins Qc6 along e8-d7-c6-b5. The new king location requires this different bishop diagonal.",
+        "Qxe8 takes the bishop but places the queen where Nd6 will attack it with check.",
+        "Nd6+ checks Kb5 and attacks Qe8, buying the tempo needed to recover the queen.",
+        "Kc6 is the illustrated flight from the knight check.",
+        "Nxe8 captures the queen. The exact knight-and-pawn ending is winning for White; the source’s later compressed king walk is not encoded."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxe8 captures the queen. The exact knight-and-pawn ending is winning for White; the source’s later compressed king walk is not encoded.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "4N3/8/2k4P/8/6K1/8/n7/8 b - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why offer a bishop rather than rush h7?",
+      "answer": "The bishop pins the queen to its king. Capturing the bishop draws the queen onto d3, where Nc5 checks the king and attacks the queen."
+    },
+    {
+      "node": "king_capture",
+      "prompt": "Why change Bd3 to Be8?",
+      "answer": "With Kb5 and Qc6, the relevant diagonal is e8-d7-c6-b5. The fork square changes from c5 to d6."
+    }
+  ],
+  "defaultBranch": "majestic_pin_d3",
+  "practiceBranch": "majestic_pin_d3",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Two visually reconstructed seven-piece diagrams begin after ...Qxb5 at 69s and ...Kxb5 at 109s. The earlier ten-piece setup, rook sacrifice and eight-piece pawn fork remain source context. These are two selected source capture replies, not a claim that Black must always capture the bishop.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,140 @@
+{
+  "video_id": "upofbg74NtQ",
+  "title": "Rook Zugzwang: Account for Every Defense",
+  "summary": "Move h4 to leave every rook move capturable, then meet the king retreat with mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3k4/8/4K2p/p6r/P1R5/7P/8/8 w - - 0 1",
+      "question": "Why does h4 work even though Black can still move its rook?",
+      "explanation": "After h4, Black has eight legal replies. Each rook move loses to a capture or a tablebase-proved winning continuation; ...Ke8 instead permits Rc8 mate. The proof preserves all eight pieces until a legal capture actually removes one.",
+      "evidence": {
+        "timestamp_s": 51
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "3k4/8/4K2p/p6r/P1R5/7P/8/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "zugzwang_king_mate",
+      "start": "start",
+      "title": "Source finish: the king leaves d8",
+      "san": [
+        "h4",
+        "Ke8",
+        "Rc8#"
+      ],
+      "commentary": [
+        "Begin after ...Rxh5 in the complete saved 51-second diagram. This clip repeats the rook-zugzwang composition also found in the other two source entries of this batch. The earlier nine-piece bishop and rook choices remain outside this proof.",
+        "h4 protects g5 and frees the fourth rank for a rook recapture on h4. Black still has eight legal moves, but each has been independently accounted for: seven rook moves lose to captures or an exact reduced-position win, while the king retreat permits mate.",
+        "Ke8 is the illustrated king retreat. It avoids immediately losing the rook, but moves two files from c8, allowing a safe checking rook placement.",
+        "Rc8# mates along the eighth rank. Ke6 covers d7/e7/f7, while Rc8 covers d8/f8 and e8. Black’s rook on h5 cannot reach the only blocking square d8 in one move: h5 and d8 share neither rank nor file. This is an actual eight-piece mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rc8# mates along the eighth rank. Ke6 covers d7/e7/f7, while Rc8 covers d8/f8 and e8. Black’s rook on h5 cannot reach the only blocking square d8 in one move: h5 and d8 share neither rank nor file. This is an actual eight-piece mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2R1k3/8/4K2p/p6r/P6P/8/8/8 b - - 2 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "zugzwang_checking_rook",
+      "start": "start",
+      "title": "Independent defense: the rook checks first",
+      "san": [
+        "h4",
+        "Re5+",
+        "Kxe5"
+      ],
+      "commentary": [
+        "Check the omitted active rook defense rather than treating ...Ke8 as Black’s sole legal move.",
+        "h4 starts the verified plan with all pawns retained.",
+        "Re5+ is legal and checks the white king on e6 along the e-file. A zugzwang explanation must account for this forcing reply too.",
+        "Kxe5 captures the checking rook. The resulting seven-piece rook-and-pawns versus pawns ending is an exact White win; this reduced result is a leaf of the full defense proof."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxe5 captures the checking rook. The resulting seven-piece rook-and-pawns versus pawns ending is an exact White win; this reduced result is a leaf of the full defense proof.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3k4/8/7p/p3K3/P1R4P/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "zugzwang_queenside_capture",
+      "start": "start",
+      "title": "Independent defense: move the rook to b5",
+      "san": [
+        "h4",
+        "Rb5",
+        "axb5"
+      ],
+      "commentary": [
+        "The queenside pawns are part of the mechanism. Keep a4 and a5 when checking Black’s rook moves.",
+        "h4 keeps the winning plan and gives White a pawn defense against ...Rg5.",
+        "Rb5 is legal, but b5 is attacked by White’s pawn on a4. Black cannot move farther to a5 because its own pawn occupies that square.",
+        "axb5 captures the rook. The exact seven-piece ending remains winning for White. The a4 pawn was a tactical defender, not an expendable extra piece."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "axb5 captures the rook. The exact seven-piece ending remains winning for White. The a4 pawn was a tactical defender, not an expendable extra piece.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3k4/8/4K2p/pP6/2R4P/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Is ...Ke8 Black’s only legal move?",
+      "answer": "No. There are eight legal replies after h4. The six sideways rook moves can each be captured, ...Rxh4 reaches a tablebase-proved White win, and ...Ke8 permits Rc8 mate."
+    },
+    {
+      "node": "start",
+      "prompt": "Which pieces make all six sideways rook moves capturable?",
+      "answer": "a4 covers b5, Rc4 covers c5, Ke6 covers d5/e5/f5, and h4 covers g5. Black’s a5 pawn prevents ...Ra5."
+    }
+  ],
+  "defaultBranch": "zugzwang_king_mate",
+  "practiceBranch": "zugzwang_king_mate",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rxh5 at 51 seconds, with White Ke6/Rc4/a4/h3 versus Black Kd8/Rh5/a5/h6. This complete eight-piece later root is proved by a finite legal strategy: h4, every one of Black’s eight legal replies, and a winning capture or actual mate. Supported reduced leaves have exact tablebase evidence; the larger root and mate have separate legal proof certificates. The earlier nine-piece setup is outside this proof. This composition occurs in three source clips, which are not distinct endgames.",
+  "verification_scope": "Complete late digital-board diagram manually reviewed. A finite strategy proves the eight-piece root and every larger encoded intermediate: h4 and all eight legal Black replies are enumerated; each leaf is either actual mate by legal move generation or an exact seven-piece tablebase White win. This is a finite forced-tree proof, not a direct eight-piece tablebase query. Earlier nine-piece choices are not certified.",
+  "sourceCorrections": [
+    {
+      "claim": "The narration describes ...Ke8 as the only move available after h4.",
+      "correction": "Black has eight legal replies. Seven rook moves are legal but lose: the six sideways moves can each be captured, and ...Rxh4 reaches an exact winning reduced position for White. ...Ke8 instead permits actual Rc8 mate. All eight defenses are included in the saved proof."
+    }
+  ],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 3,
+    "moves": {
+      "3k4/8/4K2p/p6r/P1R5/7P/8/8 w - - 0 1": "h4",
+      "4k3/8/4K2p/p6r/P1R4P/8/8/8 w - - 1 2": "Rc8#",
+      "3k4/8/4K2p/p5r1/P1R4P/8/8/8 w - - 1 2": "hxg5",
+      "3k4/8/4K2p/p4r2/P1R4P/8/8/8 w - - 1 2": "Kxf5",
+      "3k4/8/4K2p/p3r3/P1R4P/8/8/8 w - - 1 2": "Kxe5",
+      "3k4/8/4K2p/p2r4/P1R4P/8/8/8 w - - 1 2": "Kxd5",
+      "3k4/8/4K2p/p1r5/P1R4P/8/8/8 w - - 1 2": "Rxc5",
+      "3k4/8/4K2p/pr6/P1R4P/8/8/8 w - - 1 2": "axb5",
+      "3k4/8/4K2p/p7/P1R4r/8/8/8 w - - 0 2": "Rxh4"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

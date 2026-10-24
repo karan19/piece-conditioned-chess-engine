@@ -1,0 +1,135 @@
+{
+  "video_id": "T4behweJkCk",
+  "title": "Let it Burn: Collect the Fork",
+  "summary": "Recognize when the sacrifices have done their job: take the queen, then stop the remaining pawn race.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2k2q2/3Np3/K7/p7/8/1P6/8/8 w - - 0 1",
+      "question": "The knight has checked the king away. What must White collect now?",
+      "explanation": "Nd7 attacks both c8 and f8. Black has just retreated to c8, leaving Qf8 available. The earlier bishop, rook and queen sacrifices are source context; this complete seven-piece position is the checked starting point.",
+      "evidence": {
+        "timestamp_s": 78
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "burn_collect_queen",
+      "start": "start",
+      "title": "Collect the queen at the end of the combination",
+      "san": [
+        "Nxf8"
+      ],
+      "commentary": [
+        "Begin after ...Kc8 at 78 seconds. White has Ka6, Nd7 and b3; Black has Kc8, Qf8, a5 and e7. The checking fork has already been created.",
+        "Nxf8 collects the queen that the knight was attacking. White reaches a checked winning knight-and-pawn ending against two pawns. Black still has legal replies, so this is a winning ending rather than immediate mate or a finished conversion."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxf8 collects the queen that the knight was attacking. White reaches a checked winning knight-and-pawn ending against two pawns. Black still has legal replies, so this is a winning ending rather than immediate mate or a finished conversion.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "2k2N2/4p3/K7/p7/8/1P6/8/8 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "burn_pawn_race",
+      "start": "start",
+      "title": "Independent continuation: answer the central pawn race",
+      "san": [
+        "Nxf8",
+        "e5",
+        "Ng6",
+        "e4",
+        "Nf4"
+      ],
+      "commentary": [
+        "An independently selected representative continuation after the source’s final queen capture. These pawn moves and knight replies are not attributed to the video.",
+        "Nxf8 removes the queen while preserving a forced White win. The remaining black pawns must still be watched.",
+        "e5 uses the pawn’s initial two-square advance to create a central passer. This selected defense still loses with best play, but poses a concrete task for the knight.",
+        "Ng6 develops the knight toward the pawn’s route while keeping the checked win. It attacks e5, which encourages the illustrated pawn advance rather than assuming Black will leave it hanging.",
+        "e4 advances the passer beyond the knight’s current attack. Black can choose other legal moves; this branch follows one representative race.",
+        "Nf4 controls e2, a square the e-pawn must cross before promoting. The pawn can still advance to e3; the knight is restraining its route rather than directly blocking e4. The exact ending is still winning for White. The lesson stops here and leaves conversion to practice, without claiming that the king moves or pawn captures are forced."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nf4 controls e2, a square the e-pawn must cross before promoting. The pawn can still advance to e3; the knight is restraining its route rather than directly blocking e4. The exact ending is still winning for White. The lesson stops here and leaves conversion to practice, without claiming that the king moves or pawn captures are forced.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2k5/8/K7/p7/4pN2/1P6/8/8 b - - 1 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "burn_unnecessary_check",
+      "start": "start",
+      "title": "Independent error: check again instead of taking",
+      "san": [
+        "Nb6+",
+        "Kd8"
+      ],
+      "commentary": [
+        "Compare an independently chosen checking move that postpones the queen capture. The source does not illustrate this mistake.",
+        "Nb6+ checks the king but abandons the attack on f8. White changes a forced win into a forced loss: making a check is less important than completing the existing fork.",
+        "Kd8 escapes the knight check and keeps Black’s checked win. The queen survives, and the knight no longer has the original capture. This is a representative king reply, not a claim that it is the only winning defense."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kd8 escapes the knight check and keeps Black’s checked win. The queen survives, and the knight no longer has the original capture. This is a representative king reply, not a claim that it is the only winning defense.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "3k1q2/4p3/KN6/p7/8/1P6/8/8 w - - 2 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "burn_pawn_distraction",
+      "start": "start",
+      "title": "Independent error: take the pawn instead",
+      "san": [
+        "Kxa5",
+        "Kxd7"
+      ],
+      "commentary": [
+        "Another independently selected comparison: White can legally take a5, but legality alone does not make it the right capture.",
+        "Kxa5 wins a pawn while leaving Qf8 and Nd7 in place. It throws away the forced win and allows Black a winning response.",
+        "Kxd7 removes the knight, leaving Black’s queen and e-pawn against White’s king and b-pawn. Black has a checked win; the earlier sacrifices no longer produce the queen capture White needed."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxd7 removes the knight, leaving Black’s queen and e-pawn against White’s king and b-pawn. Black has a checked win; the earlier sacrifices no longer produce the queen capture White needed.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "5q2/3kp3/8/K7/8/1P6/8/8 w - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is taking the queen better than giving another check?",
+      "answer": "The knight already attacked the king and queen together. Once the king moves, Nxf8 completes the fork. Nb6+ lets the queen survive and changes the exact outcome from a White win to a White loss."
+    },
+    {
+      "node": "start",
+      "prompt": "Does winning the queen mean the game is already over?",
+      "answer": "No. Black retains the a- and e-pawns. The representative ...e5/Ng6/...e4/Nf4 continuation shows how the knight can restrain the central passer while preserving the win; it does not replace the remaining conversion."
+    }
+  ],
+  "defaultBranch": "burn_collect_queen",
+  "practiceBranch": "burn_collect_queen",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kc8 at 78 seconds, at the complete seven-piece final fork. The earlier eleven-piece sacrifice sequence is source context and has not been certified here. Nxf8 is the source’s illustrated finish. The pawn race and missed-fork comparisons are independently selected representative legal continuations, checked at every encoded position.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

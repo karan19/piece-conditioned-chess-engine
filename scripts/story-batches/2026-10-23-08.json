@@ -1,0 +1,190 @@
+{
+  "batch_id": "2026-10-23-08",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three verified selected-line studies: eleven branches, 47 distinct positions, a substantive source-outcome correction, and one false endgame candidate identified as an opening trap.",
+  "reviews": {
+    "RbUXuxisuOY": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed six-piece position after ...Rg8 at 77 seconds. Four checked branches compare unique winning Rd4, bishop-retreat rook sacrifices, a back-rank fork, and the drawn immediate rook capture. Earlier rook checks remain source context.",
+      "source_images": [
+        {
+          "file": "RbUXuxisuOY/montage_accepted.jpg",
+          "sha256": "10942aa0df408dfc4693aa47e2b949997cf50b0e77ef8391a71b45b16e919d67"
+        },
+        {
+          "file": "RbUXuxisuOY/images/image_00001.jpg",
+          "sha256": "2c96daa8caf162b766aaeacf3ceebd9583dd1576d71eab6e1c454484dac7a426"
+        },
+        {
+          "file": "RbUXuxisuOY/images/image_00026.jpg",
+          "sha256": "678f49113a9d88d92de530ce98c726ca19ff739caaad39e1b24aae61e43db12b"
+        },
+        {
+          "file": "RbUXuxisuOY/images/image_00027.jpg",
+          "sha256": "15d9521b84b8d84d6699378a94643faf181968a5f7e4cc133963fc9f19540244"
+        },
+        {
+          "file": "RbUXuxisuOY/images/image_00028.jpg",
+          "sha256": "e8ed4033d2fb3649d17afbe5bce4100e34830424e0cf2936b449787687036c57"
+        },
+        {
+          "file": "RbUXuxisuOY/images/image_00032.jpg",
+          "sha256": "77e0ef52f86b75fe98d03fc92333ecb85b397197041af8283e9f14281e51f040"
+        },
+        {
+          "file": "RbUXuxisuOY/images/image_00038.jpg",
+          "sha256": "2e5491fb844c542417436520b0d2cd713eb0d7de6437347237d31920549351f8"
+        },
+        {
+          "file": "RbUXuxisuOY/images/image_00043.jpg",
+          "sha256": "1309f93ed18d4d8bd1d1ad680e715db83516c746bd585451dab83caf6473f003"
+        },
+        {
+          "file": "RbUXuxisuOY/images/image_00049.jpg",
+          "sha256": "a24bf1660bc57ef1a20927775533a24b7c6965c74762cab45416ab01a31ffdb4"
+        },
+        {
+          "file": "RbUXuxisuOY/images/image_00055.jpg",
+          "sha256": "365a30db48cf0a20884ae6106e106f018ee0b448fe0e8f73070beedc07d3c88c"
+        },
+        {
+          "file": "RbUXuxisuOY/images/image_00059.jpg",
+          "sha256": "749191c390bb842f90869ea8097574a418bf99f1476b844f433ae5f8854a7979"
+        }
+      ]
+    },
+    "8Dw6c0nghMA": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed five-piece position after ...Rb1 at 137 seconds. Three checked branches show unique winning Rh8, source seventh-rank skewer with ...Ke6, and explicitly independent drawing/losing attempts. Earlier eight-piece double-rook battle remains source context.",
+      "source_images": [
+        {
+          "file": "8Dw6c0nghMA/montage_accepted.jpg",
+          "sha256": "c1877042013bb7858b5f0f208aaf94067f17c35d93207992fad8ff0b9959886e"
+        },
+        {
+          "file": "8Dw6c0nghMA/images/image_00001.jpg",
+          "sha256": "ececd37c2b487f0fbdcc6fed5a6e2b2d45b07d0bbac37aa4e6b7d35fc01b4bdf"
+        },
+        {
+          "file": "8Dw6c0nghMA/images/image_00051.jpg",
+          "sha256": "ad4bcc22152482fef85163bf8c3cfacf4827bb1522cc0e1837e851d099c88844"
+        },
+        {
+          "file": "8Dw6c0nghMA/images/image_00055.jpg",
+          "sha256": "c076b31ee912a6529b4aa8551a89ff916614146b4247ac24b0cec29a96dff73a"
+        },
+        {
+          "file": "8Dw6c0nghMA/images/image_00057.jpg",
+          "sha256": "cfebef7421be5e0fb8d2d9dfe2b3d710739e3de034d4296b40ea10c01575cb2a"
+        },
+        {
+          "file": "8Dw6c0nghMA/images/image_00060.jpg",
+          "sha256": "80ec82a2871147161c78c401f58ae6c27d92bab18c95009e8b9851c1f13a0ac3"
+        },
+        {
+          "file": "8Dw6c0nghMA/images/image_00063.jpg",
+          "sha256": "bebe1b60ca50a254adf7f0796925e6e7c45a313ad2f443712b5feec9e3476bc1"
+        },
+        {
+          "file": "8Dw6c0nghMA/images/image_00064.jpg",
+          "sha256": "3fedb5e0cfee3db4a1b137a3102c1314d67e9ed43eb44285724b780b63335568"
+        },
+        {
+          "file": "8Dw6c0nghMA/images/image_00065.jpg",
+          "sha256": "ea11832b67063ff9e4d8335044ea1b1851ef5aca35565387ee1fedbcf4232fa8"
+        },
+        {
+          "file": "8Dw6c0nghMA/images/image_00066.jpg",
+          "sha256": "dbae4eb3384680b0dfb1e68e049e76916921ec7f494f86e81bdc75e6ff194c14"
+        }
+      ]
+    },
+    "VIvQJHquE4U": {
+      "result": "verified_selected_lines",
+      "notes": "Significant source correction: complete initial seven-piece diagram is drawn; Rb8 remains drawn because ...Ra4 (and other fourth-rank moves) holds. The source\u2019s ...Rb2+ loses, and only then is Ke1 a winning retreat. Practice begins after that error at 74 seconds. Four branches check the mating line, two drawing exchanges and representative independent Black drawing defense; all steps saved.",
+      "source_images": [
+        {
+          "file": "VIvQJHquE4U/montage_accepted.jpg",
+          "sha256": "fd6766c719790c9174888f65603ef96db851ff31769f2089b37c1039c3bca76c"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00001.jpg",
+          "sha256": "ebb2210f66fd16f10a62cd13058c7c7ff8cff79a6360898c8fa3d6c5944c857a"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00021.jpg",
+          "sha256": "d56f47967ab30034675984e1c09f02268b80c35f0ab3cdab38898549fe4da91d"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00022.jpg",
+          "sha256": "b109b105171c565da93cb997ca9e58e1f9bc5a7bff7ef9bc2775026ebb5ba527"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00023.jpg",
+          "sha256": "01cb8d441d4d049bb6300520001bc683bf91500a081562beb7182a8bc5ca3924"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00024.jpg",
+          "sha256": "0c9cb955f0e35bebb63c7dd2089d8fab066df5982cab9e572545e048590e53fc"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00025.jpg",
+          "sha256": "542fbf8464a77b65c9c010a9870c1195cbd5ad9a1f43ea0ca8649e7a82495064"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00030.jpg",
+          "sha256": "e497a77d3d5eb9bba13bb2d0a99c2e6d8cc41b323c599747c6df86f2fe062a5f"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00043.jpg",
+          "sha256": "c116b8cdf75072ba65c8e65f70541e22ff613b49f5c85afd7563ed68ceae9410"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00047.jpg",
+          "sha256": "ac91caf82bfb4d34b2d676b65b03ca705fdb88f7b46e1747a84669684a1fb4cf"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00050.jpg",
+          "sha256": "da206d69df1345c70d6919d1b78ed1979b2e8c02c74e391880d3f79c60322806"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00051.jpg",
+          "sha256": "eb79faa1430a7729533560374f852c5ebdfb034e8c23812ad622f718addaa704"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00052.jpg",
+          "sha256": "a0929ea18518b5a5866560ac099ccaef4c7dfa473cffa767e7f0b1d450f5f5c2"
+        },
+        {
+          "file": "VIvQJHquE4U/images/image_00053.jpg",
+          "sha256": "b54eab09f3ca8fd001ae53db6d53e3d79b11800c8e06525cf98685f2a692e407"
+        }
+      ]
+    },
+    "B9YOa6v4KF0": {
+      "result": "not_applicable",
+      "notes": "Reviewed full opening board and complete saved narration: this is a Damiano Defense opening trap after 1.e4 e5 2.Nf3 f6, followed by a knight sacrifice and king hunt. It is not an endgame reconstruction candidate. Preserve it in the searchable full-channel archive rather than label it missing information.",
+      "source_images": [
+        {
+          "file": "B9YOa6v4KF0/images/image_00001.jpg",
+          "sha256": "a6e699669820580cba77e38944a3ff54e5da1d6a0b06550f6deef84c7ba5df15"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 47,
+    "selected_branches": 11,
+    "tests": "96 tests passed across 16 files",
+    "production_build": "passed",
+    "ui_review": "Inspected The Great Trap drawing defense, original-draw versus later-win scope notice, independent-analysis attribution and expanded source correction.",
+    "screenshot": "docs/screenshots/endgame-stories-batch-08.png",
+    "queue_counts": {
+      "verified_selected_lines": 25,
+      "awaiting_reconstruction": 198,
+      "needs_information": 23,
+      "not_applicable": 2
+    },
+    "significant_source_finding": "The Great Trap original diagram is drawn; ...Rb2+ loses. Saved tablebase evidence supports the correction and the moved practice root."
+  }
+}

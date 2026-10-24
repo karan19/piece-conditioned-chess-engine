@@ -1,0 +1,162 @@
+{
+  "video_id": "CCcJU3wI_uw",
+  "title": "Beautiful Rook Sacs",
+  "summary": "Keep the pawn alive by offering the rook on squares that turn a king capture into a fork.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1b2kP2/7R/8/8/8/8/5K2 w - - 0 1",
+      "question": "How can White keep f7 from being captured?",
+      "explanation": "White has Kf1, Rh6 and f7 against Ke7 and Bb7. Rd6 offers the rook and prepares a seventh-rank fork if the king captures f7.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "rook_sacs_king_capture",
+      "start": "start",
+      "title": "The king takes the pawn",
+      "san": [
+        "Rd6",
+        "Kxf7",
+        "Rd7+",
+        "Ke6",
+        "Rxb7"
+      ],
+      "commentary": [
+        "Begin from the complete five-piece source position. The final ...Ke6 retreat and rook capture are independently supplied to complete the source’s fork.",
+        "Rd6 offers the rook while preparing Rd7+ if Black takes the pawn.",
+        "Kxf7 accepts the pawn, placing king and bishop on the seventh rank.",
+        "Rd7+ checks Kf7 while attacking Bb7.",
+        "Ke6 is an independently selected legal reply to complete the illustrated fork idea.",
+        "Rxb7 captures the bishop. Rook versus bare king is exactly won."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxb7 captures the bishop. Rook versus bare king is exactly won.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1R6/4k3/8/8/8/8/5K2 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_sacs_bishop_corner",
+      "start": "start",
+      "title": "The bishop retreats to a8",
+      "san": [
+        "Rd6",
+        "Ba8",
+        "f8=Q+",
+        "Kxf8",
+        "Rd8+"
+      ],
+      "commentary": [
+        "Compare the source’s bishop retreat that keeps an eye on promotion.",
+        "Rd6 prepares the rook’s lateral checking tactics.",
+        "Ba8 retreats to the corner.",
+        "f8=Q+ offers the promoted queen with check.",
+        "Kxf8 takes the queen, placing king and bishop on the eighth rank.",
+        "Rd8+ checks and attacks Ba8 along the same rank. The exact position is winning; the line stops at the checked fork."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rd8+ checks and attacks Ba8 along the same rank. The exact position is winning; the line stops at the checked fork.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "b2R1k2/8/8/8/8/8/8/5K2 b - - 1 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_sacs_bishop_center",
+      "start": "start",
+      "title": "The bishop retreats to e4",
+      "san": [
+        "Rd6",
+        "Be4",
+        "Re6+",
+        "Kxf7",
+        "Rxe4"
+      ],
+      "commentary": [
+        "Compare the source’s central bishop retreat.",
+        "Rd6 offers the same pawn-protecting rook sacrifice.",
+        "Be4 moves the bishop to a central diagonal.",
+        "Re6+ checks the king while placing the rook on the bishop’s file.",
+        "Kxf7 takes the pawn but leaves Be4 to the rook.",
+        "Rxe4 captures the bishop. The exact rook-versus-king ending is won."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxe4 captures the bishop. The exact rook-versus-king ending is won.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/5k2/8/8/4R3/8/8/5K2 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_sacs_wrong_rook_square",
+      "start": "start",
+      "title": "Defend from h8 instead",
+      "san": [
+        "Rh8",
+        "Ba6+",
+        "Kf2",
+        "Kxf7"
+      ],
+      "commentary": [
+        "Compare the source’s tempting rook retreat before the fork has been prepared.",
+        "Rh8 gives up the exact win by allowing a bishop check that removes the defender from the seventh rank.",
+        "Ba6+ checks Kf1 and moves the bishop away from a future seventh-rank fork.",
+        "Kf2 answers the illustrated check.",
+        "Kxf7 removes the pawn. The exact rook-versus-bishop ending is drawn here."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxf7 removes the pawn. The exact rook-versus-bishop ending is drawn here.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "7R/5k2/b7/8/8/8/5K2/8 w - - 0 3",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does Rd6 protect a pawn it does not directly defend?",
+      "answer": "If the king takes f7, Rd7+ attacks king and bishop on the same rank. The tactical threat protects the pawn indirectly."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does the bishop check matter after Rh8?",
+      "answer": "...Ba6+ forces a king response and removes the bishop from the seventh rank, so ...Kxf7 no longer permits the same fork."
+    }
+  ],
+  "defaultBranch": "rook_sacs_king_capture",
+  "practiceBranch": "rook_sacs_king_capture",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "The complete five-piece source root is visually reconstructed. Selected source branches use Rd6, bishop retreats and promoted-queen sacrifices to make rook forks possible. The ...Ke6/Rxb7 completion of the first fork is independently supplied and labeled. Every encoded position is checked; the won forks are not presented as completed mates.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

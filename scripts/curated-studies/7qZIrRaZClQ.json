@@ -1,0 +1,91 @@
+{
+  "video_id": "7qZIrRaZClQ",
+  "title": "Majestic Endgame: Answer the Queen Capture",
+  "summary": "A queen can capture a checking pawn, but the neighboring pawn can recapture with check and preserve the win.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3k4/2q5/1P6/2P5/4K3/6p1/6P1/8 w - - 0 2",
+      "question": "What if Black answers the fork by taking c7 with the queen?",
+      "explanation": "This root is independently derived by the legal ...Qxc7 from the complete final source diagram. White’s b6 pawn can capture the queen with check. It is the only winning move in this exact seven-piece position.",
+      "evidence": {
+        "timestamp_s": 83
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "endgame_queen_capture_reply",
+      "start": "start",
+      "title": "Independent defense: recapture and support the other passer",
+      "san": [
+        "bxc7+",
+        "Kc8",
+        "Kd5",
+        "Kxc7",
+        "c6"
+      ],
+      "commentary": [
+        "The source stops at c7+, an eight-piece fork. This line independently chooses the legal ...Qxc7 defense to reach the seven-piece root. Neither that reply nor the subsequent conversion is attributed to the video.",
+        "bxc7+ removes the queen and checks Kd8. The neighboring pawn has replaced the pawn Black just captured. White preserves a forced win with all remaining pawns retained.",
+        "Kc8 blocks the c7 pawn’s promotion square. White cannot assume immediate c8=Q while the king occupies c8.",
+        "Kd5 approaches and supports the remaining c5 pawn’s advance to c6. The exact pawn ending remains winning for White.",
+        "Kxc7 collects the advanced pawn. This representative defense removes one passer, but White’s king can support the other.",
+        "c6 advances the second passer, protected by Kd5. Black cannot capture it with the king on c7 because d5 controls c6. The complete ending is an exact White win; the remaining conversion is not presented as a recorded source sequence."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "c6 advances the second passer, protected by Kd5. Black cannot capture it with the king on c7 because d5 controls c6. The complete ending is an exact White win; the remaining conversion is not presented as a recorded source sequence.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/2k5/2P5/3K4/8/6p1/6P1/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "endgame_ignore_queen",
+      "start": "start",
+      "title": "Independent mistake: leave the queen on the board",
+      "san": [
+        "c6"
+      ],
+      "commentary": [
+        "Compare advancing the other c-pawn before taking the queen on c7.",
+        "c6 gives up the win and leaves Black an exact winning position. The queen is still present; White must use bxc7+ while it is available."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "c6 gives up the win and leaves Black an exact winning position. The queen is still present; White must use bxc7+ while it is available.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "3k4/2q5/1PP5/8/4K3/6p1/6P1/8 b - - 0 2",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Can Black legally take the checking pawn with the queen?",
+      "answer": "Yes. ...Qxc7 removes the pawn checking Kd8. That defense is legal, but bxc7+ wins the queen back for White."
+    },
+    {
+      "node": "start",
+      "prompt": "Why retain the pawn on c5 after bxc7+?",
+      "answer": "It becomes the second passer. After ...Kc8/Kd5/Kxc7, c6 is protected by White’s king and keeps the exact win."
+    }
+  ],
+  "defaultBranch": "endgame_queen_capture_reply",
+  "practiceBranch": "endgame_queen_capture_reply",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "The source’s final 83-second diagram is an eight-piece c7+ fork. This study starts after the independently selected legal reply ...Qxc7, leaving seven pieces. The reply and every continuation here are independent analysis, explicitly distinct from the source’s illustrated moves. The earlier b6+/Kc8/Ke4 plan, the full eight-piece fork outcome and all other Black defenses remain outside this proof.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

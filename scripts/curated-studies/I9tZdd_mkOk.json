@@ -1,0 +1,160 @@
+{
+  "video_id": "I9tZdd_mkOk",
+  "title": "Trap! Trap! Trap!",
+  "summary": "Attack the rook with the king while the knight forks every safe retreat.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1k1Np3/8/8/8/4r3/1P4P1/6K1 w - - 0 1",
+      "question": "Can Re3 escape the approaching king without a fork?",
+      "explanation": "Begin after ...Kxb7: White has Kg1/Nd7/b2/g2 against Kb7/Re3/e7. The earlier eight-piece pawn offer and Nd7 setup remain source context outside this checked tree.",
+      "evidence": {
+        "timestamp_s": 84
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "trap_rook_d3",
+      "start": "start",
+      "title": "Fork after ...Rd3",
+      "san": [
+        "Kf2",
+        "Rd3",
+        "Nc5+",
+        "Kc6",
+        "Nxd3"
+      ],
+      "commentary": [
+        "Begin after ...Kxb7 in the seven-piece source diagram. The king attack exposes the rook’s limited safe retreats.",
+        "Kf2 attacks Re3. Nd7 and the king cover most of the rook’s escape squares.",
+        "Rd3 is one of the illustrated safe rook retreats, but it lands on a knight-fork square.",
+        "Nc5+ checks Kb7 and attacks the rook on d3. The rook cannot escape before Black answers the check.",
+        "Kc6 is a representative legal king completion supplied independently beyond the illustrated fork.",
+        "Nxd3 collects the rook. The exact knight-and-pawn ending is winning; further conversion is not presented as immediate mate."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nxd3 collects the rook. The exact knight-and-pawn ending is winning; further conversion is not presented as immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4p3/2k5/8/8/3N4/1P3KP1/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "trap_rook_e4",
+      "start": "start",
+      "title": "Fork after ...Re4",
+      "san": [
+        "Kf2",
+        "Re4",
+        "Nc5+",
+        "Kc6",
+        "Nxe4"
+      ],
+      "commentary": [
+        "Begin after ...Kxb7 in the seven-piece source diagram. The king attack exposes the rook’s limited safe retreats.",
+        "Kf2 attacks Re3. Nd7 and the king cover most of the rook’s escape squares.",
+        "Re4 is one of the illustrated safe rook retreats, but it lands on a knight-fork square.",
+        "Nc5+ checks Kb7 and attacks the rook on e4. The rook cannot escape before Black answers the check.",
+        "Kc6 is a representative legal king completion supplied independently beyond the illustrated fork.",
+        "Nxe4 collects the rook. The exact knight-and-pawn ending is winning; further conversion is not presented as immediate mate."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nxe4 collects the rook. The exact knight-and-pawn ending is winning; further conversion is not presented as immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4p3/2k5/8/4N3/8/1P3KP1/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "trap_rook_e6",
+      "start": "start",
+      "title": "Fork after ...Re6",
+      "san": [
+        "Kf2",
+        "Re6",
+        "Nc5+",
+        "Kc6",
+        "Nxe6"
+      ],
+      "commentary": [
+        "Begin after ...Kxb7 in the seven-piece source diagram. The king attack exposes the rook’s limited safe retreats.",
+        "Kf2 attacks Re3. Nd7 and the king cover most of the rook’s escape squares.",
+        "Re6 is one of the illustrated safe rook retreats, but it lands on a knight-fork square.",
+        "Nc5+ checks Kb7 and attacks the rook on e6. The rook cannot escape before Black answers the check.",
+        "Kc6 is a representative legal king completion supplied independently beyond the illustrated fork.",
+        "Nxe6 collects the rook. The exact knight-and-pawn ending is winning; further conversion is not presented as immediate mate."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nxe6 collects the rook. The exact knight-and-pawn ending is winning; further conversion is not presented as immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4p3/2k1N3/8/8/8/1P3KP1/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "trap_rook_b3",
+      "start": "start",
+      "title": "Fork after ...Rb3",
+      "san": [
+        "Kf2",
+        "Rb3",
+        "Nc5+",
+        "Kb6",
+        "Nxb3"
+      ],
+      "commentary": [
+        "Begin after ...Kxb7 in the seven-piece source diagram. The king attack exposes the rook’s limited safe retreats.",
+        "Kf2 attacks Re3. Nd7 and the king cover most of the rook’s escape squares.",
+        "Rb3 is one of the illustrated safe rook retreats, but it lands on a knight-fork square.",
+        "Nc5+ checks Kb7 and attacks the rook on b3. The rook cannot escape before Black answers the check.",
+        "Kb6 is a representative legal king completion supplied independently beyond the illustrated fork.",
+        "Nxb3 collects the rook. The exact knight-and-pawn ending is winning; further conversion is not presented as immediate mate."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nxb3 collects the rook. The exact knight-and-pawn ending is winning; further conversion is not presented as immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4p3/1k6/8/8/1N6/1P3KP1/8 b - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does the king attack work despite the rook’s long range?",
+      "answer": "Kf2 and Nd7 cover its immediate escapes. The safe d3/e4/e6/b3 retreats each allow Nc5+, forking the rook and Kb7."
+    }
+  ],
+  "defaultBranch": "trap_rook_d3",
+  "practiceBranch": "trap_rook_d3",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin at 84 seconds after ...Kxb7, the complete supported seven-piece position. The rook retreat and checking fork ideas are illustrated in the source; each king reply and final rook capture is independently supplied and checked.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

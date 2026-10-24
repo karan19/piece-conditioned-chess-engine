@@ -1,0 +1,125 @@
+{
+  "video_id": "UnrHt2qs4Us",
+  "title": "Ultimate Bishop",
+  "summary": "Use a checking bishop sacrifice to interrupt the rook’s blockade and create two connected promotion threats.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/3PB3/4P3/2p1k3/K7/8/3r4/8 w - - 0 1",
+      "question": "How can White make both pawns count?",
+      "explanation": "The rook on d2 stops the d7 pawn. Direct promotion lets it capture and leaves Black’s king able to collect the other pawn.",
+      "evidence": {
+        "timestamp_s": 134
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "ultimate_rook_interference",
+      "start": "start",
+      "title": "Force the rook off the promotion file",
+      "san": [
+        "Bd6+",
+        "Rxd6",
+        "e7",
+        "Rxd7",
+        "e8=Q+"
+      ],
+      "commentary": [
+        "Begin after ...Ke5. White’s bishop and two advanced connected pawns must defeat the rook’s blockade.",
+        "Bd6+ checks the king and interferes with the rook’s line to d7. Either capture changes the blockade.",
+        "Rxd6 removes the bishop and places the rook on d6. White can now create two promotion threats by advancing the e-pawn.",
+        "e7 makes two simultaneous promotion threats. Capturing d7 cannot stop e8=Q.",
+        "Rxd7 collects one pawn. This is the illustrated choice, not an assertion that Black has no other legal move.",
+        "e8=Q+ promotes with check. The saved tablebase confirms that this exact queen-versus-rook position with Black’s c-pawn is winning for White; conversion is not shown as an automatic capture."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "e8=Q+ promotes with check. The saved tablebase confirms that this exact queen-versus-rook position with Black’s c-pawn is winning for White; conversion is not shown as an automatic capture.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "4Q3/3r4/8/2p1k3/K7/8/8/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "ultimate_king_capture",
+      "start": "start",
+      "title": "The king takes the interfering bishop",
+      "san": [
+        "Bd6+",
+        "Kxd6",
+        "d8=Q+"
+      ],
+      "commentary": [
+        "The bishop sacrifice also works if Black uses the king to capture it.",
+        "Bd6+ offers the bishop while interrupting the rook’s d-file.",
+        "Kxd6 places Black’s own king between Rd2 and the d7 pawn.",
+        "d8=Q+ promotes with check because the rook cannot move through its king on d6. The resulting position is a checked White win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d8=Q+ promotes with check because the rook cannot move through its king on d6. The resulting position is a checked White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3Q4/8/3kP3/2p5/K7/8/3r4/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "ultimate_early_promotion",
+      "start": "start",
+      "title": "Promote without interrupting the rook",
+      "san": [
+        "d8=Q",
+        "Rxd8",
+        "Bxd8",
+        "Kxe6"
+      ],
+      "commentary": [
+        "Try the immediate promotion and compare what remains after exchanges.",
+        "d8=Q throws away the win. The rook still has a clear path up the d-file.",
+        "Rxd8 captures the new queen.",
+        "Bxd8 wins the rook back, but leaves the remaining white pawn exposed.",
+        "Kxe6 removes that pawn. White is left with a bishop against Black’s c-pawn; the exact ending is drawn with best play."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxe6 removes that pawn. White is left with a bishop against Black’s c-pawn; the exact ending is drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "3B4/8/4k3/2p5/K7/8/8/8 w - - 0 3",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What changes when the rook takes the bishop on d6?",
+      "answer": "The bishop disappears, but White gains e7 and two promotion threats. The rook can collect only one pawn in the illustrated continuation."
+    },
+    {
+      "node": "start",
+      "prompt": "What changes when the king takes on d6?",
+      "answer": "Black’s king blocks its own rook’s path up the d-file, allowing d8=Q+ immediately."
+    }
+  ],
+  "defaultBranch": "ultimate_rook_interference",
+  "practiceBranch": "ultimate_rook_interference",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Ke5 at 134 seconds, once the earlier nine-piece setup has reduced to seven pieces. Earlier promotion and stalemate variations remain source context. The final bishop interference and its two capture responses are checked here.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

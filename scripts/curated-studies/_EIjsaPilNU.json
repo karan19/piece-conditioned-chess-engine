@@ -1,0 +1,226 @@
+{
+  "video_id": "_EIjsaPilNU",
+  "title": "The Red Carpet: Clear the Sixth Rank",
+  "summary": "Sacrifice the knight and pawn to clear a rook route, then answer the bishop defenses that interrupt that route.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/7b/2R4P/6Pk/1p1N1P2/3p2K1/1rp5/8 w - - 0 1",
+      "question": "How can White make the trapped king matter before Black promotes?",
+      "explanation": "Nf5 threatens Ng7 mate without blocking Rc6’s control of g6. If the bishop captures, h7 clears the sixth rank; the bishop’s return to h7 then permits Rh6 mate.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/7b/2R4P/6Pk/1p1N1P2/3p2K1/1rp5/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "carpet_clearance",
+      "start": "start",
+      "title": "Source plan: clear the knight and pawn",
+      "san": [
+        "Nf5",
+        "Bxf5",
+        "h7",
+        "Bxh7",
+        "Rh6#"
+      ],
+      "commentary": [
+        "The full initial diagram includes the black rook and all six pawns. Black’s promotion threats are real, so White needs a forcing mating threat.",
+        "Nf5 threatens Ng7 mate. The knight leaves d4 while the rook still controls the sixth rank, preventing the black king from escaping to g6.",
+        "Bxf5 removes the knight but draws the bishop off h7. White has exchanged a mating threat for access to that square.",
+        "h7 vacates h6 and offers the pawn to the bishop. Rc6 now has an open route across the sixth rank; Black must also reckon with promotion.",
+        "Bxh7 accepts the pawn offer and restores the bishop to h7. The knight sacrifice drew the bishop away, and the pawn sacrifice cleared h6 for the rook.",
+        "Rh6# checks Kh5 down the h-file. White’s g5 pawn controls h6 and g6 is covered by the rook; f4 controls g5, Kg3 controls g4 and h4, and the bishop on h7 cannot interpose on adjacent h5–h6. This is actual mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rh6# checks Kh5 down the h-file. White’s g5 pawn controls h6 and g6 is covered by the rook; f4 controls g5, Kg3 controls g4 and h4, and the bishop on h7 cannot interpose on adjacent h5–h6. This is actual mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/7b/7R/6Pk/1p3P2/3p2K1/1rp5/8 b - - 1 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "carpet_promotion_race",
+      "start": "start",
+      "title": "Independent defense: promote immediately",
+      "san": [
+        "Nf5",
+        "c1=Q",
+        "Ng7#"
+      ],
+      "commentary": [
+        "Test Black’s most visible threat instead of taking the knight.",
+        "Nf5 threatens mate on g7 while the rook continues to control the king’s escape squares.",
+        "c1=Q promotes, but the queen cannot capture g7 or interpose against a knight check on the next move. Promotion does not neutralize the threat.",
+        "Ng7# checks h5. The rook covers g6 and h6, Kg3 covers h4 and g4, and f4 protects the occupied g5 square. Black’s bishop on h7 blocks h7 and cannot answer the knight check."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ng7# checks h5. The rook covers g6 and h6, Kg3 covers h4 and g4, and f4 protects the occupied g5 square. Black’s bishop on h7 blocks h7 and cannot answer the knight check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/6Nb/2R4P/6Pk/1p3P2/3p2K1/1r6/2q5 b - - 1 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "carpet_bishop_block",
+      "start": "start",
+      "title": "Independent defense: block the rook on g6",
+      "san": [
+        "Nf5",
+        "Bxf5",
+        "h7",
+        "Bg6",
+        "h8=Q+",
+        "Bh7",
+        "Qxh7#"
+      ],
+      "commentary": [
+        "The source’s return to h7 is not the bishop’s only defense. Account for a move that physically blocks Rc6’s route.",
+        "Nf5 offers the knight and creates the immediate Ng7 mating threat.",
+        "Bxf5 accepts the knight, making the pawn advance possible.",
+        "h7 clears h6 and threatens promotion. The saved proof checks every legal Black reply here.",
+        "Bg6 blocks the rook’s sixth-rank route, so Rh6 is unavailable. White changes the attacking piece rather than forcing the blocked rook through the bishop.",
+        "h8=Q+ promotes with check down the h-file to Kh5. Bg6 also blocks the king’s escape on g6.",
+        "Bh7 is the only legal defense: the bishop interposes on the checking file and offers itself to the new queen.",
+        "Qxh7# removes the interposing bishop. The queen controls h6 and g6, while White’s king and pawns close the lower escape squares."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxh7# removes the interposing bishop. The queen controls h6 and g6, while White’s king and pawns close the lower escape squares.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/7Q/2R5/6Pk/1p3P2/3p2K1/1rp5/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "carpet_bishop_escape",
+      "start": "start",
+      "title": "Independent defense: allow the king toward g6",
+      "san": [
+        "Nf5",
+        "Bxf5",
+        "h7",
+        "Be6",
+        "h8=Q+",
+        "Kg6",
+        "Qg8+",
+        "Kf5",
+        "Qxe6#"
+      ],
+      "commentary": [
+        "The bishop can also block the rook on e6 and let its king escape after promotion. This needs a longer mating calculation.",
+        "Nf5 begins the proved mating strategy.",
+        "Bxf5 removes the knight and frees h7.",
+        "h7 clears the rook’s rank and threatens a new queen.",
+        "Be6 interrupts the rook’s line to g6. A direct Rh6 is blocked, and promotion will allow a king move.",
+        "h8=Q+ checks on the h-file. White accepts that the king can leave h5 because the queen can keep checking.",
+        "Kg6 uses the escape square opened by the bishop’s block. This is the only legal reply to the promotion check.",
+        "Qg8+ places the queen next to the king along the g-file. The complete proof covers both Kf5 and Kh5.",
+        "Kf5 chooses the lower escape. The bishop on e6 is now vulnerable to a capture that also checks the king.",
+        "Qxe6# captures the blocker and mates: Qe6 covers e4, e5, f6, f5 and g6; Rc6 covers f6 and g6; g5 covers f6; f4 covers g5; Kg3 covers f4 and g4. The remaining king flights are covered by the queen and pawns."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxe6# captures the blocker and mates: Qe6 covers e4, e5, f6, f5 and g6; Rc6 covers f6 and g6; g5 covers f6; f4 covers g5; Kg3 covers f4 and g4. The remaining king flights are covered by the queen and pawns.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/2R1Q3/5kP1/1p3P2/3p2K1/1rp5/8 b - - 0 5",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What does the sacrifice change if Black takes on f5?",
+      "answer": "It removes the knight while drawing the bishop from h7. The pawn can advance to h7, clearing h6 for the rook."
+    },
+    {
+      "node": "start",
+      "prompt": "Does h7 force the bishop to capture?",
+      "answer": "No. Bg6 and Be6 are legal blocks. White promotes and continues checking; the full finite proof covers those replies and every other legal defense."
+    }
+  ],
+  "defaultBranch": "carpet_clearance",
+  "practiceBranch": "carpet_clearance",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "The complete twelve-piece initial board is reconstructed from the native diagram. Nf5 is proved by a finite mating strategy against all twelve legal Black replies; after Bxf5/h7 all seventeen legal replies, including every promotion, are covered. Selected teaching branches show the illustrated clearance and independent bishop blocks. The source claims about Ne6 drawing and Nf5 being the unique winning move are not established by this proof.",
+  "verification_scope": "The complete twelve-piece initial board is reconstructed from the native diagram. Nf5 is proved by a finite mating strategy against all twelve legal Black replies; after Bxf5/h7 all seventeen legal replies, including every promotion, are covered. Selected teaching branches show the illustrated clearance and independent bishop blocks. The source claims about Ne6 drawing and Nf5 being the unique winning move are not established by this proof.",
+  "sourceCorrections": [
+    {
+      "claim": "Nf5 is the only winning move, while Ne6 draws at best.",
+      "correction": "The saved proof establishes a forced win for Nf5 against every defense. It does not prove uniqueness or an exact outcome for Ne6; those remain source claims."
+    }
+  ],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 9,
+    "moves": {
+      "8/7b/2R4P/6Pk/1p1N1P2/3p2K1/1rp5/8 w - - 0 1": "Nf5",
+      "8/8/2R3bP/5NPk/1p3P2/3p2K1/1rp5/8 w - - 2 2": "Ng7#",
+      "6b1/8/2R4P/5NPk/1p3P2/3p2K1/1rp5/8 w - - 2 2": "Ng7#",
+      "8/8/2R4P/5bPk/1p3P2/3p2K1/1rp5/8 w - - 0 2": "h7",
+      "2b5/7P/2R5/6Pk/1p3P2/3p2K1/1rp5/8 w - - 1 3": "Rh6#",
+      "8/3b3P/2R5/6Pk/1p3P2/3p2K1/1rp5/8 w - - 1 3": "Rh6#",
+      "8/7P/2R5/6Pk/1p2bP2/3p2K1/1rp5/8 w - - 1 3": "Rh6#",
+      "8/7P/2R1b3/6Pk/1p3P2/3p2K1/1rp5/8 w - - 1 3": "h8=Q+",
+      "7Q/8/2R1b1k1/6P1/1p3P2/3p2K1/1rp5/8 w - - 1 4": "Qg8+",
+      "6Q1/8/2R1b3/5kP1/1p3P2/3p2K1/1rp5/8 w - - 3 5": "Qxe6#",
+      "6Q1/8/2R1b3/6Pk/1p3P2/3p2K1/1rp5/8 w - - 3 5": "Qh7#",
+      "8/7P/2R5/6Pk/1p3Pb1/3p2K1/1rp5/8 w - - 1 3": "Rh6#",
+      "8/7P/2R3b1/6Pk/1p3P2/3p2K1/1rp5/8 w - - 1 3": "h8=Q+",
+      "7Q/7b/2R5/6Pk/1p3P2/3p2K1/1rp5/8 w - - 1 4": "Qxh7#",
+      "8/7P/2R5/6Pk/1p3P2/3p2Kb/1rp5/8 w - - 1 3": "Rh6#",
+      "8/7b/2R5/6Pk/1p3P2/3p2K1/1rp5/8 w - - 0 3": "Rh6#",
+      "8/7P/2R5/5bPk/1p3P2/3p2K1/r1p5/8 w - - 1 3": "Rh6#",
+      "8/7P/2R5/5bPk/1p3P2/3p2K1/2p5/1r6 w - - 1 3": "Rh6#",
+      "8/7P/2R5/5bPk/1p3P2/1r1p2K1/2p5/8 w - - 1 3": "Rh6#",
+      "8/7P/2R5/5bPk/5P2/1p1p2K1/1rp5/8 w - - 0 3": "Rh6#",
+      "8/7P/2R5/5bPk/1p3P2/3p2K1/1r6/2b5 w - - 0 3": "Rh6#",
+      "8/7P/2R5/5bPk/1p3P2/3p2K1/1r6/2n5 w - - 0 3": "Rh6#",
+      "8/7P/2R5/5bPk/1p3P2/3p2K1/1r6/2q5 w - - 0 3": "Rh6#",
+      "8/7P/2R5/5bPk/1p3P2/3p2K1/1r6/2r5 w - - 0 3": "Rh6#",
+      "8/7P/2R5/5bPk/1p3P2/6K1/1rpp4/8 w - - 0 3": "Rh6#",
+      "8/7b/2R4P/5NPk/1p3P2/3p2K1/r1p5/8 w - - 2 2": "Ng7#",
+      "8/7b/2R4P/5NPk/1p3P2/3p2K1/2p5/1r6 w - - 2 2": "Ng7#",
+      "8/7b/2R4P/5NPk/1p3P2/1r1p2K1/2p5/8 w - - 2 2": "Ng7#",
+      "8/7b/2R4P/5NPk/5P2/1p1p2K1/1rp5/8 w - - 0 2": "Ng7#",
+      "8/7b/2R4P/5NPk/1p3P2/3p2K1/1r6/2b5 w - - 0 2": "Ng7#",
+      "8/7b/2R4P/5NPk/1p3P2/3p2K1/1r6/2n5 w - - 0 2": "Ng7#",
+      "8/7b/2R4P/5NPk/1p3P2/3p2K1/1r6/2q5 w - - 0 2": "Ng7#",
+      "8/7b/2R4P/5NPk/1p3P2/3p2K1/1r6/2r5 w - - 0 2": "Ng7#",
+      "8/7b/2R4P/5NPk/1p3P2/6K1/1rpp4/8 w - - 0 2": "Ng7#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

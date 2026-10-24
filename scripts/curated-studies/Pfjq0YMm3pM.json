@@ -1,0 +1,91 @@
+{
+  "video_id": "Pfjq0YMm3pM",
+  "title": "The Mega Fork: Finish the Conversion",
+  "summary": "After the forks, promote with enough power to stop Black’s bishop-supported passed pawn.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/P7/3k1p2/N6K/5b2/4p3/8/8 w - - 0 1",
+      "question": "The queen and rook are gone. What still needs attention?",
+      "explanation": "Black’s e3 pawn is supported by Bf4 and is close to promotion. White still needs to promote and coordinate the queen; winning material earlier did not finish the game.",
+      "evidence": {
+        "timestamp_s": 90
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "mega_queen_stops_pawn",
+      "start": "start",
+      "title": "Source finish: promote, check, then collect the passer",
+      "san": [
+        "a8=Q",
+        "e2",
+        "Qa6+",
+        "Kd5",
+        "Qxe2"
+      ],
+      "commentary": [
+        "Begin after ...e3 in the later seven-piece phase, reconstructed across the 89–90 second transition. Earlier knight forks and queen sacrifice remain outside exact verification.",
+        "a8=Q creates the queen needed for the conversion. The bishop cannot prevent this promotion in the supported diagram.",
+        "e2 advances the bishop-supported passer to one step from promotion. Black has other legal defenses; this is the source’s selected continuation.",
+        "Qa6+ checks Kd6 while placing the queen on the diagonal a6–b5–c4–d3–e2. White gains time to collect the pawn.",
+        "Kd5 leaves the check. This is the source’s illustrated king reply, not the only legal response.",
+        "Qxe2 removes the immediate promotion threat. White keeps an exact winning queen-and-knight ending against bishop and f6 pawn, with further conversion left to practice."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxe2 removes the immediate promotion threat. White keeps an exact winning queen-and-knight ending against bishop and f6 pawn, with further conversion left to practice.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/5p2/N2k3K/5b2/8/4Q3/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "mega_insufficient_underpromotion",
+      "start": "start",
+      "title": "Independent comparison: a rook promotion only draws",
+      "san": [
+        "a8=R"
+      ],
+      "commentary": [
+        "Independently compare a rook underpromotion after the same ...e3. This alternative is not illustrated in the source.",
+        "a8=R gives up the forced win: the exact rook-and-knight versus bishop-and-two-pawns ending is drawn with best play. The rook cannot use the queen’s Qa6+/Qxe2 diagonal mechanism. This is a tablebase result for the complete position, not a claim that every later rook move draws."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "a8=R gives up the forced win: the exact rook-and-knight versus bishop-and-two-pawns ending is drawn with best play. The rook cannot use the queen’s Qa6+/Qxe2 diagonal mechanism. This is a tablebase result for the complete position, not a claim that every later rook move draws.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "R7/8/3k1p2/N6K/5b2/4p3/8/8 b - - 0 1",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does Qa6+ help more than a random check?",
+      "answer": "It checks Kd6 and simultaneously aligns the queen with e2, so White can capture the passed pawn after the selected king move."
+    },
+    {
+      "node": "start",
+      "prompt": "Why is the rook underpromotion a useful comparison?",
+      "answer": "Both moves promote, but the rook lacks the diagonal capture route. The exact rook ending draws, while queen promotion preserves a win."
+    }
+  ],
+  "defaultBranch": "mega_queen_stops_pawn",
+  "practiceBranch": "mega_queen_stops_pawn",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...e3, a disclosed legal bridge between the saved 89-second a7/e4 diagram and the 90-second Qa8/e3 diagram. After Nxa5 at 82 seconds Black is to move; the two changed pieces establish ...e3 followed by a8=Q. All seven pieces are preserved. The earlier eleven-piece Nc6/Qf5/Nd4 fork sequence remains unverified source context.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

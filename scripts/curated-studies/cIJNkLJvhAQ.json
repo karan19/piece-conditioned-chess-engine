@@ -1,0 +1,197 @@
+{
+  "video_id": "cIJNkLJvhAQ",
+  "title": "King of Zugzwang",
+  "summary": "Use a queen sacrifice to reach the right rook ending, then avoid stalemate and defeat a checking knight promotion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5Q2/8/8/8/p7/1p6/6r1/k1KR4 w - - 0 1",
+      "question": "How can White answer the mating threat on c2?",
+      "explanation": "White has Kc1, Rd1 and Qf8 against Ka1, Rg2, a4 and b3. The queen can force the rook onto a2 before Rd2 prepares the needed recapture.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "king_zugzwang_conversion",
+      "start": "start",
+      "title": "Prepare the recapture and solve the rook ending",
+      "san": [
+        "Qa3+",
+        "Ra2",
+        "Rd2",
+        "b2+",
+        "Qxb2+",
+        "Rxb2",
+        "Rxb2",
+        "a3",
+        "Rb1+",
+        "Ka2",
+        "Rb4",
+        "Ka1",
+        "Kc2",
+        "a2",
+        "Kb3",
+        "Kb1",
+        "Rh4",
+        "a1=N+",
+        "Kc3",
+        "Ka2",
+        "Rh8",
+        "Kb1",
+        "Rh2",
+        "Kc1",
+        "Rh1#"
+      ],
+      "commentary": [
+        "Begin from the complete seven-piece source board. The later rook ending is part of the checked line, rather than an assumed conversion.",
+        "Qa3+ forces a response while aligning the black rook with the queen.",
+        "Ra2 is the only legal reply to the queen check.",
+        "Rd2 prepares to recapture on b2 if Black checks with the pawn, while offering the queen on a3.",
+        "b2+ is the illustrated countercheck, trying to exploit White’s exposed king.",
+        "Qxb2+ removes the checking pawn and offers the queen with check.",
+        "Rxb2 captures the queen, but the rook has now been drawn onto the prepared second rank.",
+        "Rxb2 recaptures. White has a winning rook against the a-pawn, but must still avoid stalemate.",
+        "a3 pushes toward promotion and creates the source’s next stalemate problem.",
+        "Rb1+ checks along the first rank, forcing the king to step in front of its own pawn.",
+        "Ka2 blocks a3 from advancing for a move.",
+        "Rb4 takes the fourth rank and confines the king.",
+        "Ka1 is the only legal move, returning behind the pawn.",
+        "Kc2 improves the king while allowing the a-pawn to advance.",
+        "a2 advances, threatening promotion once Ka1 clears the square.",
+        "Kb3 approaches the pawn without stalemating Black.",
+        "Kb1 clears a1 and threatens promotion on the next move.",
+        "Rh4 prepares to answer a queen promotion by mating on the first rank.",
+        "a1=N+ underpromotes with check, avoiding that immediate queen-promotion mate.",
+        "Kc3 answers the knight check and keeps control of b2 and c2.",
+        "Ka2 is the source’s selected escape attempt with the king.",
+        "Rh8 waits while preparing a-file and second-rank mating threats.",
+        "Kb1 returns toward the corner; the knight cannot supply a useful escape for its king.",
+        "Rh2 takes the second rank, leaving Black to move in the mating net.",
+        "Kc1 is the selected final king move, walking onto the first-rank mate.",
+        "Rh1# is actual mate. Kc3 covers b2, c2 and d2, the rook covers the first rank, and Na1 cannot block the checking line."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rh1# is actual mate. Kc3 covers b2, c2 and d2, the rook covers the first rank, and Na1 cannot block the checking line.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/2K5/8/n1k4R b - - 7 13",
+      "outcome": "loss"
+    },
+    {
+      "id": "king_zugzwang_accept_queen",
+      "start": "start",
+      "title": "Accept the offered queen immediately",
+      "san": [
+        "Qa3+",
+        "Ra2",
+        "Rd2",
+        "Rxa3",
+        "Rb2",
+        "Ra2",
+        "Rb1#"
+      ],
+      "commentary": [
+        "Compare the source’s direct acceptance of the queen offered by Rd2.",
+        "Qa3+ checks from the a-file.",
+        "Ra2 is forced to stop the check.",
+        "Rd2 offers the queen and prepares the rook’s lateral switch.",
+        "Rxa3 takes the queen, but leaves Black’s own pieces obstructing one another.",
+        "Rb2 blocks the b-pawn and confines Ka1 behind the a-rook.",
+        "Ra2 is the only legal move: a4 is blocked by Ra3, b3 by Rb2, and the king has no safe square.",
+        "Rb1# is actual mate. Kc1 protects the rook on b1, and Black’s own rook and pawns close the remaining flights."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rb1# is actual mate. Kc1 protects the rook on b1, and Black’s own rook and pawns close the remaining flights.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/p7/1p6/r7/kRK5 b - - 3 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "king_zugzwang_wrong_check",
+      "start": "start",
+      "title": "Check without preparing Rd2",
+      "san": [
+        "Qf6+",
+        "b2+",
+        "Qxb2+",
+        "Rxb2"
+      ],
+      "commentary": [
+        "Compare the source’s natural queen check before the white rook reaches the second rank.",
+        "Qf6+ gives away the forced win by allowing a pawn countercheck.",
+        "b2+ checks while blocking the queen’s diagonal attack on Ka1.",
+        "Qxb2+ removes the pawn and gives check, but White’s rook is still on d1.",
+        "Rxb2 takes the queen. White cannot recapture from d1; the exact resulting rook ending is drawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxb2 takes the queen. White cannot recapture from d1; the exact resulting rook ending is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/p7/8/1r6/k1KR4 w - - 0 3",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What does Rd2 change?",
+      "answer": "It puts the rook on the rank where it can recapture after ...b2+ Qxb2+ ...Rxb2. With the rook on d1, the same exchange leaves Black’s rook alive."
+    },
+    {
+      "node": "start",
+      "prompt": "Why is winning the black rook not the end of the lesson?",
+      "answer": "The a-pawn can create stalemate and checking underpromotion resources. White must coordinate king and rook before claiming a completed win."
+    }
+  ],
+  "defaultBranch": "king_zugzwang_conversion",
+  "practiceBranch": "king_zugzwang_conversion",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "The complete seven-piece source root is visually reconstructed. Selected source branches cover the queen offer, the prepared b2 recapture, rook maneuvering against the a-pawn and the checking knight underpromotion, ending in actual mate. The drawn Qf6+ comparison is checked independently of the source’s verbal assessment; the selected king replies do not constitute an exhaustive defense tree.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

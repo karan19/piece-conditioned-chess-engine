@@ -1,0 +1,123 @@
+{
+  "video_id": "CTmcvqKF8DQ",
+  "title": "Majestic Pawn Chase",
+  "summary": "Save a pawn tempo to force the defending king away from its knight instead of rushing the pawn two squares.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/6p1/8/8/5K2/6N1/6kp/8 b - - 0 1",
+      "question": "Should Black advance one square or two?",
+      "explanation": "The knight on g3 holds h1 only because the king protects it. A pawn move can decide who must leave that arrangement.",
+      "evidence": {
+        "timestamp_s": 159
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "chase_keep_tempo",
+      "start": "start",
+      "title": "Use the one-square pawn advance",
+      "san": [
+        "g6",
+        "Kg4",
+        "g5",
+        "Kf5",
+        "Kxg3",
+        "Kxg5",
+        "h1=Q"
+      ],
+      "commentary": [
+        "Black’s h-pawn is stopped for the moment. Compare how g6 and g5 change which side must move next.",
+        "g6 saves the second pawn step. White must keep the knight on g3 protected while it controls h1.",
+        "Kg4 keeps the knight defended. This gives Black the desired timing for the next pawn move.",
+        "g5 is not check: it takes away f4 and h4, the other squares from which the king could defend g3. White must move, and neither king nor knight can preserve the blockade.",
+        "Kf5 is a representative retreat that gives up the knight’s defense. Other legal replies also require calculation, not a claim that this king move is forced.",
+        "Kxg3 removes the knight, freeing the promotion square.",
+        "Kxg5 collects the other pawn, but cannot reach the h-pawn in time.",
+        "h1=Q promotes. Black has a verified winning queen-versus-king ending; saving the pawn tempo made the difference."
+      ],
+      "classification": "independent alternative illustrating a source idea with representative legal replies",
+      "explanation": "h1=Q promotes. Black has a verified winning queen-versus-king ending; saving the pawn tempo made the difference.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/6K1/8/6k1/8/7q w - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "chase_rushed_double_step",
+      "start": "start",
+      "title": "Spend both pawn steps at once",
+      "san": [
+        "g5+",
+        "Kg4"
+      ],
+      "commentary": [
+        "A check can be premature when the point of the pawn is to preserve a waiting move.",
+        "g5+ uses up the reserve tempo before the white king reaches g4. Black’s forced win is gone.",
+        "Kg4 keeps the knight defended with Black to move. The pawn cannot advance onto the king’s square and the tablebase result is a draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kg4 keeps the knight defended with Black to move. The pawn cannot advance onto the king’s square and the tablebase result is a draw.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/6p1/6K1/6N1/6kp/8 b - - 1 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "chase_other_winning_move",
+      "start": "start",
+      "title": "Check the claim that g6 is the only win",
+      "san": [
+        "Kf2"
+      ],
+      "commentary": [
+        "The source calls g6 the only winning move. Test that statement in this exact saved position.",
+        "Kf2 also keeps a forced Black win according to the tablebase. The source’s unique-move claim is too strong here; g6 remains a useful illustration of the reserve-tempo idea."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kf2 also keeps a forced Black win according to the tablebase. The source’s unique-move claim is too strong here; g6 remains a useful illustration of the reserve-tempo idea.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "8/6p1/8/8/5K2/6N1/5k1p/8 w - - 1 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What does g6 preserve?",
+      "answer": "The later ...g5 advance controls f4 and h4. With the white king on g4, it is White who must move first, and there is no other safe square from which to defend the knight on g3."
+    },
+    {
+      "node": "start",
+      "prompt": "Does a good teaching move have to be the only winning move?",
+      "answer": "No. In this reconstructed position both g6 and Kf2 win. The lesson should explain why g6 works without claiming that every alternative draws."
+    }
+  ],
+  "defaultBranch": "chase_keep_tempo",
+  "practiceBranch": "chase_keep_tempo",
+  "practiceType": "pawn",
+  "startContext": "Play Black from the final king-and-knight blockade, before the g-pawn moves. The earlier knight chase remains source context.",
+  "verification_scope": "The playable starting position and every intermediate position in the selected variations are tablebase-checked. These variations illustrate the key ideas; they do not enumerate all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "The source calls g6 the only winning move.",
+      "correction": "At this exact reconstructed FEN the tablebase also marks Kf2 as winning. We teach the tempo mechanism of g6 without claiming uniqueness."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

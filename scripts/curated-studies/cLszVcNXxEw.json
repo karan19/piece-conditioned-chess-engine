@@ -1,0 +1,144 @@
+{
+  "video_id": "cLszVcNXxEw",
+  "title": "Sacrifices Fest",
+  "summary": "Keep offering the queen with check until the king and rook can be attacked together; compare why an early change of checking file can lose the win.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1P6/8/3P4/8/K5k1/1r6/1r5Q w - - 0 1",
+      "question": "Can the queen keep checking while apparently hanging?",
+      "explanation": "Begin after ...Kxg3. White has Ka3, Qh1, b7 and d5 against Kg3 and rooks on b2/b1. The last white kingside pawn has just disappeared.",
+      "evidence": {
+        "timestamp_s": 148
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "fest_final_offers",
+      "start": "start",
+      "title": "Finish the checking sequence and promote",
+      "san": [
+        "Qg1+",
+        "Kf3",
+        "Qf1+",
+        "Ke3",
+        "Qc1+",
+        "Rxc1",
+        "Kxb2",
+        "Rc2+",
+        "Kb1",
+        "Rc4",
+        "b8=Q"
+      ],
+      "commentary": [
+        "Begin after ...Kxg3. White has Ka3, Qh1, b7 and d5 against Kg3 and rooks on b2/b1. The last white kingside pawn has just disappeared.",
+        "Qg1+ keeps the king moving while the queen remains available to the rook on b1. The rook’s first priority is still stopping b8.",
+        "Kf3 declines the queen offer and steps toward the center.",
+        "Qf1+ changes the checking line and again offers the queen to the rook.",
+        "Ke3 continues the source king walk.",
+        "Qc1+ forks Ke3 and Rb1, while offering the queen for the sixth time across the source’s larger sequence. Only the final three offers are encoded here.",
+        "Rxc1 captures the queen, leaving the rook on b2 available for the white king to capture.",
+        "Kxb2 removes that rook and guards b1. The remaining rook cannot return through b1 to blockade b8.",
+        "Rc2+ tries to keep checking along the second rank.",
+        "Kb1 answers the check while controlling b2, preventing a rook transfer through that square.",
+        "Rc4 is the final illustrated rook placement. It does not stop the b7 pawn from promoting.",
+        "b8=Q is an independently completed promotion after the last saved diagram. The exact queen-and-pawn versus rook ending is winning for White."
+      ],
+      "classification": "selected source sequence with an independently completed final promotion",
+      "explanation": "b8=Q is an independently completed promotion after the last saved diagram. The exact queen-and-pawn versus rook ending is winning for White.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1Q6/8/8/3P4/2r5/4k3/8/1K6 b - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "fest_take_queen_now",
+      "start": "start",
+      "title": "Independent capture of the first offered queen",
+      "san": [
+        "Qg1+",
+        "Rxg1",
+        "Kxb2",
+        "Rg2+",
+        "Kb1"
+      ],
+      "commentary": [
+        "This independently selected legal comparison tests the rook capture in the supported later diagram, rather than assuming the earlier larger variation is identical.",
+        "Qg1+ gives check and leaves the queen on the rook’s rank.",
+        "Rxg1 accepts the queen but abandons the defense of Rb2.",
+        "Kxb2 removes the second rook and protects the b1 entry square. White retains a checked win.",
+        "Rg2+ tries a horizontal check, using the remaining rook.",
+        "Kb1 meets the check and protects b2. The exact position is winning for White; further conversion is outside this branch."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kb1 meets the check and protects b2. The exact position is winning for White; further conversion is outside this branch.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1P6/8/3P4/8/6k1/6r1/1K6 b - - 2 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "fest_king_f4",
+      "start": "start",
+      "title": "An early f-file switch allows a draw",
+      "san": [
+        "Qg1+",
+        "Kf4",
+        "Qf1+",
+        "Ke5"
+      ],
+      "commentary": [
+        "This independently tested comparison changes the king retreat from f3 to f4. White cannot assume the same immediate queen move will still preserve the win.",
+        "Qg1+ begins correctly, keeping the forcing checks available.",
+        "Kf4 selects another legal flight. White still has a forced win, but must choose the next queen maneuver carefully.",
+        "Qf1+ checks but prematurely switches to the f-file. Unlike the source continuation with the king on f3, this exact position is drawn with best play.",
+        "Ke5 preserves the draw in this independent representative defense. Black declines the queen offer and avoids the source’s e3 square, where Qc1+ would enable the winning exchange."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ke5 preserves the draw in this independent representative defense. Black declines the queen offer and avoids the source’s e3 square, where Qc1+ would enable the winning exchange.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/1P6/8/3Pk3/8/K7/1r6/1r3Q2 w - - 4 3",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does capturing the queen fail to solve Black’s problem?",
+      "answer": "The white king can capture Rb2 and guard b1. That denies the remaining rook its direct route behind the promotion square while b7 remains ready to advance."
+    }
+  ],
+  "defaultBranch": "fest_final_offers",
+  "practiceBranch": "fest_final_offers",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kxg3 at 148 seconds, the visually reconstructed seven-piece position. Earlier ten/eight-piece queen and rook maneuvers remain source context. The final three illustrated queen offers are checked, with b8=Q explicitly supplied after the final source diagram; two additional comparisons use independent representative replies, including a drawing error after a different king retreat.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

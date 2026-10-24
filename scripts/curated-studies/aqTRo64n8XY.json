@@ -1,0 +1,261 @@
+{
+  "video_id": "aqTRo64n8XY",
+  "title": "Bishops of Doom",
+  "summary": "Underpromote to a bishop, then use checks before accepting the defender’s final bishop sacrifice.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5k2/8/3P1K2/7b/2B5/8/8/8 w - - 0 1",
+      "question": "Can a bishop promotion do more than a queen?",
+      "explanation": "White has Kf6, Bc4 and d6 against Kf8 and Bh5. Black can use ...Be8 to turn a queen or rook promotion into stalemate.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "doom_bishop_cage",
+      "start": "start",
+      "title": "Promote to a bishop and threaten mate",
+      "san": [
+        "d7",
+        "Be8",
+        "d8=B",
+        "Ba4",
+        "Bf7",
+        "Bb5",
+        "Be7#"
+      ],
+      "commentary": [
+        "Begin from the complete five-piece source board, preserving both bishops and the exact king squares.",
+        "d7 advances the pawn one step from promotion.",
+        "Be8 offers the bishop and prepares a stalemate defense.",
+        "d8=B promotes to a dark-square bishop and leaves the defender’s light-square bishop free to move.",
+        "Ba4 is the illustrated bishop retreat.",
+        "Bf7 controls e8 and g8, confining the king while the promoted bishop prepares Be7 mate.",
+        "Bb5 is the source’s selected bishop move and cannot stop the dark-square mating threat.",
+        "Be7# is actual mate. Kf6 protects e7 and covers f7/g7, while Bf7 controls e8 and g8."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Be7# is actual mate. Kf6 protects e7 and covers f7/g7, while Bf7 controls e8 and g8.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "5k2/4BB2/5K2/1b6/8/8/8/8 b - - 4 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "doom_sacrifice_king_retreat",
+      "start": "start",
+      "title": "Check before accepting the bishop",
+      "san": [
+        "d7",
+        "Be8",
+        "d8=B",
+        "Bf7",
+        "Be7+",
+        "Kg8",
+        "Bxf7+"
+      ],
+      "commentary": [
+        "Compare Black’s most resilient illustrated bishop sacrifice on f7.",
+        "d7 prepares promotion.",
+        "Be8 offers the stalemate trap.",
+        "d8=B keeps the forced win.",
+        "Bf7 offers the bishop on a square where an immediate capture would stalemate.",
+        "Be7+ moves the promoted bishop with check before taking anything.",
+        "Kg8 is the illustrated king retreat that keeps the king away from e8.",
+        "Bxf7+ captures with the original c4 bishop, giving check. With the king displaced to g8, this is not stalemate and the exact two-bishop ending is won."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxf7+ captures with the original c4 bishop, giving check. With the king displaced to g8, this is not stalemate and the exact two-bishop ending is won.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6k1/4BB2/5K2/8/8/8/8/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "doom_sacrifice_other_retreat",
+      "start": "start",
+      "title": "The king chooses e8 instead",
+      "san": [
+        "d7",
+        "Be8",
+        "d8=B",
+        "Bf7",
+        "Be7+",
+        "Ke8",
+        "Bb5#"
+      ],
+      "commentary": [
+        "Follow the same bishop offer and checking preparation, then compare the other source king retreat.",
+        "d7 prepares promotion.",
+        "Be8 offers the bishop.",
+        "d8=B selects the winning promotion.",
+        "Bf7 sets up the capture-stalemate resource.",
+        "Be7+ forces the king to decide before the bishop is captured.",
+        "Ke8 is the illustrated alternative retreat.",
+        "Bb5# is actual mate. Be7 covers d8/f8, Bb5 checks along b5–e8, Kf6 protects e7 and Black’s own Bf7 blocks f7."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bb5# is actual mate. Be7 covers d8/f8, Bb5 checks along b5–e8, Kf6 protects e7 and Black’s own Bf7 blocks f7.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "4k3/4Bb2/5K2/1B6/8/8/8/8 b - - 4 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "doom_capture_too_soon",
+      "start": "start",
+      "title": "Take the bishop without checking first",
+      "san": [
+        "d7",
+        "Be8",
+        "d8=B",
+        "Bf7",
+        "Bxf7"
+      ],
+      "commentary": [
+        "Compare accepting the bishop sacrifice before displacing the king.",
+        "d7 advances toward promotion.",
+        "Be8 offers the bishop.",
+        "d8=B initially keeps White’s exact win.",
+        "Bf7 offers a final stalemate trap.",
+        "Bxf7 is actual stalemate. The bishop on f7 controls e8 and g8, Kf6 controls e7/f7/g7, and Kf8 is not in check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxf7 is actual stalemate. The bishop on f7 controls e8 and g8, Kf6 controls e7/f7/g7, and Kf8 is not in check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "draw"
+      ],
+      "end_fen": "3B1k2/5B2/5K2/8/8/8/8/8 b - - 0 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "doom_queen_stalemate",
+      "start": "start",
+      "title": "Promote to a queen",
+      "san": [
+        "d7",
+        "Be8",
+        "d8=Q"
+      ],
+      "commentary": [
+        "Compare the natural major-piece promotion.",
+        "d7 retains White’s exact win.",
+        "Be8 places the bishop between the promotion square and its king.",
+        "d8=Q is actual stalemate. Be8 is pinned to Kf8, while Bc4 and Kf6 cover the remaining king flights."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d8=Q is actual stalemate. Be8 is pinned to Kf8, while Bc4 and Kf6 cover the remaining king flights.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw"
+      ],
+      "end_fen": "3Qbk2/8/5K2/8/2B5/8/8/8 b - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "doom_knight_draw",
+      "start": "start",
+      "title": "Promote to a knight",
+      "san": [
+        "d7",
+        "Be8",
+        "d8=N",
+        "Ba4"
+      ],
+      "commentary": [
+        "Compare the source’s knight promotion and resilient ...Ba4 defense.",
+        "d7 prepares promotion.",
+        "Be8 offers the bishop.",
+        "d8=N avoids immediate stalemate but gives up the forced win.",
+        "Ba4 is the illustrated retreat that preserves the exact draw against bishop and knight."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Ba4 is the illustrated retreat that preserves the exact draw against bishop and knight.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "3N1k2/8/5K2/8/b1B5/8/8/8 w - - 1 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "doom_rook_stalemate",
+      "start": "start",
+      "title": "Promote to a rook",
+      "san": [
+        "d7",
+        "Be8",
+        "d8=R"
+      ],
+      "commentary": [
+        "Compare the source’s rook underpromotion against the same pin defense.",
+        "d7 keeps White’s exact winning position.",
+        "Be8 prepares to be pinned on the eighth rank.",
+        "d8=R is actual stalemate. The rook pins Be8 to Kf8, while Bc4 and Kf6 deny the king every flight."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d8=R is actual stalemate: the pinned bishop has no legal move and the king has no flight.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw"
+      ],
+      "end_fen": "3Rbk2/8/5K2/8/2B5/8/8/8 b - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why check before taking the bishop on f7?",
+      "answer": "Immediate Bxf7 leaves Kf8 without a legal move. Be7+ displaces the king first: ...Ke8 allows Bb5 mate, while ...Kg8 permits Bxf7+ without stalemate."
+    },
+    {
+      "node": "start",
+      "prompt": "What does Bf7 achieve in the quiet branch?",
+      "answer": "It controls the king’s e8 and g8 flight squares, so the promoted bishop can give Be7 mate on the next turn."
+    }
+  ],
+  "defaultBranch": "doom_bishop_cage",
+  "practiceBranch": "doom_bishop_cage",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "The complete five-piece source root is reconstructed before the opening d7: the first saved image shows the pawn leaving its highlighted d6 origin, and the following stable diagram confirms d7 after ...Be8. Selected source branches compare all four promotions, two replies to Be7+, and capture-stalemate. Every encoded position is checked; the two-bishop conversion after Bxf7+ is a checked winning endpoint, not an immediate mate.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

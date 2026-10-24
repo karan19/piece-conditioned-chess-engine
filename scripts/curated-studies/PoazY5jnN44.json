@@ -1,0 +1,90 @@
+{
+  "video_id": "PoazY5jnN44",
+  "title": "Hail the King: Check the Last Defense",
+  "summary": "Use king support to seal the escape squares, then answer the rook interposition before claiming mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5R2/2r5/8/2p5/8/p4K2/7k/6q1 w - - 0 1",
+      "question": "The queen has been captured. Is Rh8 really immediate mate?",
+      "explanation": "Rf8 can check along the h-file. Kf3 covers g2 and g3, and Black’s queen occupies g1, but the rook on c7 can still block with ...Rh7.",
+      "evidence": {
+        "timestamp_s": 164
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "hail_rook_interposition",
+      "start": "start",
+      "title": "Source idea, corrected defense: block and capture",
+      "san": [
+        "Rh8+",
+        "Rh7",
+        "Rxh7#"
+      ],
+      "commentary": [
+        "Begin after ...Rxc7 at 164 seconds, once the queen sacrifice has reduced the diagram to seven pieces. The source illustrates Rh8 but overlooks an interposition.",
+        "Rh8+ checks Kh2 along the h-file. It is not mate: the rook on c7 can reach h7. White’s king guards g2 and g3, and Black’s own queen occupies g1.",
+        "Rh7 is Black’s only legal reply. It blocks the h-file, buying one move but putting the rook on a square White can capture. This omitted defense is independently supplied.",
+        "Rxh7# captures the blocker and restores the h-file check. Kf3 still covers g2 and g3; Qg1 blocks g1, and the distant queen cannot interpose on the h-file. This is actual mate."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxh7# captures the blocker and restores the h-file check. Kf3 still covers g2 and g3; Qg1 blocks g1, and the distant queen cannot interpose on the h-file. This is actual mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/7R/8/2p5/8/p4K2/7k/6q1 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "hail_wrong_rook_rank",
+      "start": "start",
+      "title": "Independent mistake: check the threat before moving",
+      "san": [
+        "Rf7"
+      ],
+      "commentary": [
+        "Compare a rook move that does not deliver the necessary h-file check. This is an independently chosen mistake.",
+        "Rf7 loses with best defense. The move neither checks Kh2 nor removes Black’s queen; White’s mating cage depends on immediate forcing play, not merely keeping a rook active."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rf7 loses with best defense. The move neither checks Kh2 nor removes Black’s queen; White’s mating cage depends on immediate forcing play, not merely keeping a rook active.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "8/2r2R2/8/2p5/8/p4K2/7k/6q1 b - - 1 1",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is Rh8 check rather than mate?",
+      "answer": "Black’s rook can slide from c7 to h7 and block the check. White must capture that rook before claiming mate."
+    },
+    {
+      "node": "start",
+      "prompt": "Why can’t the king escape after the final capture?",
+      "answer": "Kf3 controls g2 and g3, the h-file is checked by Rh7, and Black’s queen occupies g1."
+    }
+  ],
+  "defaultBranch": "hail_rook_interposition",
+  "practiceBranch": "hail_rook_interposition",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rxc7 in the complete saved 164-second diagram: White Kf3/Rf8 versus Black Kh2/Qg1/Rc7/a3/c5. These two selected seven-piece lines are checked exactly. The earlier eight-piece king walk, Qc7+ offer and king-retreat alternatives remain outside verification scope. The source’s Rh8 mate claim needs the extra ...Rh7/Rxh7 finish.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "The source calls Rh8 immediate checkmate after ...Rxc7.",
+      "correction": "Rh8 is check, but ...Rh7 is a legal and forced rook interposition. Rxh7 then is actual mate. The added defense and capture are independent corrections to the illustrated source idea."
+    }
+  ],
+  "verificationDate": "2026-10-24"
+}

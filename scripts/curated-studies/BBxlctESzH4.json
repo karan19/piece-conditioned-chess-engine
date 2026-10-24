@@ -1,0 +1,199 @@
+{
+  "video_id": "BBxlctESzH4",
+  "title": "Majestic Trick",
+  "summary": "Sacrifice the knight to place Black’s bishop where it will obstruct the king during the queen skewers.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/1p3K2/P7/3p2k1/4b3/2N5/8 w - - 0 1",
+      "question": "Can White win instead of simply racing to promote?",
+      "explanation": "The a-pawn is ready to advance, but Black’s bishop and d-pawn create tactical threats against Nc2. Taking b6 immediately only draws.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "knight_offer",
+      "fen": "8/8/Pp4K1/6b1/6k1/3p4/2N5/8 w - - 0 3",
+      "question": "Why offer the knight on e3 with check?",
+      "explanation": "The bishop on g5 can capture e3, but that new bishop square will later block the black king’s escape from a queen skewer.",
+      "evidence": {
+        "timestamp_s": 51
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "majestic_trick_bishop_obstruction",
+      "start": "start",
+      "title": "Lure the bishop before the queen race",
+      "san": [
+        "a6",
+        "Bg5+",
+        "Kg6",
+        "d3",
+        "Ne3+",
+        "Bxe3",
+        "a7",
+        "d2",
+        "a8=Q",
+        "d1=Q",
+        "Qg2+",
+        "Kf4",
+        "Qg5+",
+        "Ke4",
+        "Qf5+",
+        "Kd4",
+        "Qd7+",
+        "Kc3",
+        "Qxd1"
+      ],
+      "commentary": [
+        "Begin from the complete seven-piece source board. The selected ...Kf4 queen-checking route is encoded, not every king defense.",
+        "a6 advances the passer while keeping the knight available for a tactical offer.",
+        "Bg5+ checks Kf6 and moves the bishop away from the knight’s current lines.",
+        "Kg6 answers the check and approaches the squares needed to support the queen attack later.",
+        "d3 advances and attacks Nc2, forcing White to address the knight’s future.",
+        "Ne3+ offers the knight with check, deliberately inviting the bishop onto e3.",
+        "Bxe3 accepts the knight and places the bishop on the square that will obstruct its own king.",
+        "a7 continues the promotion race; the bishop can no longer stop this pawn.",
+        "d2 brings Black’s pawn one step from promotion as well.",
+        "a8=Q creates White’s queen first.",
+        "d1=Q creates Black’s queen. Despite the extra bishop and pawn, the exact position is winning for White.",
+        "Qg2+ begins the forcing checks, using Kg6 to restrict the black king’s route.",
+        "Kf4 is the source’s main king retreat.",
+        "Qg5+ keeps checking and prevents the king escaping toward f5.",
+        "Ke4 steps toward the bishop that was lured to e3.",
+        "Qf5+ drives the king toward the d-file. The e3 bishop occupies the escape square the king would otherwise want.",
+        "Kd4 is the illustrated move onto the queen’s file.",
+        "Qd7+ skewers Kd4 against Qd1, finally exploiting the bishop’s placement.",
+        "Kc3 answers the check but abandons the queen behind the king.",
+        "Qxd1 wins the queen. The exact queen-versus-bishop-and-pawn endpoint is winning for White; further conversion is outside this selected line."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxd1 wins the queen. The exact queen-versus-bishop-and-pawn endpoint is winning for White; further conversion is outside this selected line.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/1p4K1/8/8/2k1b3/8/3Q4 b - - 0 10",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_trick_early_capture",
+      "start": "start",
+      "title": "Take b6 and race without the lure",
+      "san": [
+        "axb6",
+        "Bg5+",
+        "Kg6",
+        "d3",
+        "b7",
+        "d2",
+        "b8=Q",
+        "d1=Q"
+      ],
+      "commentary": [
+        "Compare the source’s immediate pawn capture instead of a6.",
+        "axb6 removes b6 but gives up the forced win.",
+        "Bg5+ checks the white king and gains time for the d-pawn race.",
+        "Kg6 answers the check while the knight remains on c2.",
+        "d3 starts Black’s run toward promotion.",
+        "b7 puts White’s passed pawn one step from its own promotion.",
+        "d2 leaves Black one step from promoting too.",
+        "b8=Q promotes, but without the bishop lure the exact position remains drawn.",
+        "d1=Q completes the source’s queen race. The tablebase confirms a draw with best play, rather than assuming equal queens always draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d1=Q completes the source’s queen race. The tablebase confirms a draw with best play, rather than assuming equal queens always draw.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "1Q6/8/6K1/6b1/6k1/8/2N5/3q4 w - - 0 5",
+      "outcome": "draw"
+    },
+    {
+      "id": "majestic_trick_rush_pawn",
+      "start": "knight_offer",
+      "title": "Advance without the winning bishop lure",
+      "san": [
+        "a7",
+        "dxc2",
+        "a8=Q",
+        "c1=Q"
+      ],
+      "commentary": [
+        "Compare the source’s rushed pawn line, whose stated losing result requires correction.",
+        "a7 gives up White’s forced win, but the exact result is a draw rather than a Black win.",
+        "dxc2 captures the knight and prepares promotion on c1. White still has an exact draw with correct play.",
+        "a8=Q promotes. The new queen preserves drawing resources despite Black’s extra bishop and pawn.",
+        "c1=Q completes the illustrated race. This exact position is drawn, correcting the source’s claim that Black is completely winning; the result is not inferred from material alone."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "c1=Q completes the illustrated race. This exact position is drawn, correcting the source’s claim that Black is completely winning; the result is not inferred from material alone.",
+      "end_fen": "Q7/8/1p4K1/6b1/6k1/8/8/2q5 w - - 0 5",
+      "outcome": "draw",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "node": "knight_offer",
+      "prompt": "Why is the bishop’s new square on e3 important?",
+      "answer": "After Qg2+, Qg5+ and Qf5+, that bishop occupies e3, denying its king an escape and forcing it onto the d-file in front of Qd1."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does simply taking b6 not force a win?",
+      "answer": "Both sides can promote without the e3 obstruction. The exact queen-race position is drawn with correct play."
+    }
+  ],
+  "defaultBranch": "majestic_trick_bishop_obstruction",
+  "practiceBranch": "majestic_trick_bishop_obstruction",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "The complete seven-piece source board is reconstructed visually. The a6 advance, Ne3+ bishop lure and selected ...Kf4 queen-skewer route are checked exactly, with the initial pawn-capture draw and rushed-pawn draw as comparisons. Other king routes remain source context.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "After a7 ...dxc2 a8=Q ...c1=Q, the source says White is completely losing.",
+      "correction": "Every position in that four-ply line is exactly drawn. a7 gives up the forced win but does not lose with best play; the final queen/bishop/pawn material advantage is not an automatic win for Black."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

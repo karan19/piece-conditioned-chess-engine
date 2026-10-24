@@ -1,0 +1,131 @@
+{
+  "video_id": "4Iuof5bMC8c",
+  "title": "Fools Will Resign: Complete the Knight Fork",
+  "summary": "Finish the king-and-queen fork, then check the resulting ending instead of stopping at a material count.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/4k3/3q1p2/R7/2pNP3/2P5/2K5/8 w - - 0 1",
+      "question": "What does the knight gain by checking from f5?",
+      "explanation": "Nf5+ attacks Ke7 and Qd6 together. Black must answer the check; White then captures the queen and reaches a checked winning ending after exchanges or a pawn capture.",
+      "evidence": {
+        "timestamp_s": 155
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/4k3/3q1p2/R7/2pNP3/2P5/2K5/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "fools_source_exchange",
+      "start": "start",
+      "title": "Source finish: trade the knight after taking the queen",
+      "san": [
+        "Nf5+",
+        "Ke6",
+        "Nxd6",
+        "Kxd6"
+      ],
+      "commentary": [
+        "Begin after ...Qd6 with Kc2, c3 and e4 retained for White and c4/f6 for Black. The earlier king hunt is outside this selected proof.",
+        "Nf5+ forks Ke7 and Qd6. The knight attacks e7 and d6 from f5.",
+        "Ke6 is the source king move. It steps next to the queen so the king can recapture after the knight takes it.",
+        "Nxd6 captures the queen. The material gain is not the end of the reasoning, because Black can capture the knight.",
+        "Kxd6 removes the knight and reaches an exact seven-piece White win: Kc2/Ra5/c3/e4 against Kd6/c4/f6. No pawn is discarded from that result."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxd6 removes the knight and reaches an exact seven-piece White win: Kc2/Ra5/c3/e4 against Kd6/c4/f6. No pawn is discarded from that result.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/3k1p2/R7/2p1P3/2P5/2K5/8 w - - 0 3",
+      "outcome": "win"
+    },
+    {
+      "id": "fools_king_declines_trade",
+      "start": "start",
+      "title": "Independent defense: keep the knight on the board",
+      "san": [
+        "Nf5+",
+        "Kd7",
+        "Nxd6",
+        "Kc6",
+        "Nxc4"
+      ],
+      "commentary": [
+        "Test a different king route and supply a representative continuation independently of the source.",
+        "Nf5+ checks while attacking the queen on d6.",
+        "Kd7 is a legal alternative to Ke6. It leaves the queen exposed to the knight fork.",
+        "Nxd6 captures the queen. All eight remaining pieces stay on the board until the next actual capture.",
+        "Kc6 is a representative king move. The complete certificate also covers every other legal defense here.",
+        "Nxc4 collects the blocked c4 pawn and reaches an exact seven-piece White win with the rook and knight both retained."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nxc4 collects the blocked c4 pawn and reaches an exact seven-piece White win with the rook and knight both retained.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/2k2p2/R7/2N1P3/2P5/2K5/8 b - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why check the ending after Nxd6 rather than declare the game won?",
+      "answer": "Black may capture the knight. The resulting rook-and-pawn ending needs its own outcome check, which confirms a White win here."
+    },
+    {
+      "node": "start",
+      "prompt": "Where is the white king in the saved diagram?",
+      "answer": "On c2. Its actual square and the c3/e4 and c4/f6 pawns are preserved in every verified line."
+    }
+  ],
+  "defaultBranch": "fools_source_exchange",
+  "practiceBranch": "fools_source_exchange",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Qd6 at 155 seconds in the complete nine-piece later diagram: White Kc2/Ra5/Nd4/c3/e4 against Ke7/Qd6/c4/f6. Nf5+ is certified against every legal Black reply and subsequent defense, reaching exact seven-piece wins by the knight/queen exchange or the c4 pawn capture. The source Ke6/Nxd6/Kxd6 ending is shown; the Kd7/Kc6/Nxc4 completion is explicitly independent. Earlier Rc8/queen chase/king shepherd and Ra5 choices remain outside this proof. Native diagrams correct the earlier provisional Kb2 identification to Kc2.",
+  "verification_scope": "Begin after ...Qd6 at 155 seconds in the complete nine-piece later diagram: White Kc2/Ra5/Nd4/c3/e4 against Ke7/Qd6/c4/f6. Nf5+ is certified against every legal Black reply and subsequent defense, reaching exact seven-piece wins by the knight/queen exchange or the c4 pawn capture. The source Ke6/Nxd6/Kxd6 ending is shown; the Kd7/Kc6/Nxc4 completion is explicitly independent. Earlier Rc8/queen chase/king shepherd and Ra5 choices remain outside this proof. Native diagrams correct the earlier provisional Kb2 identification to Kc2.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 7,
+    "moves": {
+      "6k1/8/3N1p2/R7/2p1P3/2P5/2K5/8 w - - 1 3": "Nxc4",
+      "8/6k1/3N1p2/R7/2p1P3/2P5/2K5/8 w - - 1 3": "Nxc4",
+      "8/4k3/3N1p2/R7/2p1P3/2P5/2K5/8 w - - 1 3": "Nxc4",
+      "5k2/8/3N4/R4p2/2p1P3/2P5/2K5/8 w - - 0 3": "Nxf5",
+      "5k2/8/3q1p2/R4N2/2p1P3/2P5/2K5/8 w - - 2 2": "Nxd6",
+      "5k2/8/3N1p2/R7/2p1P3/2P5/2K5/8 w - - 1 3": "Nxc4",
+      "3k4/8/3N1p2/R7/2p1P3/2P5/2K5/8 w - - 1 3": "Nxc4",
+      "8/3k4/3N1p2/R7/2p1P3/2P5/2K5/8 w - - 1 3": "Nxc4",
+      "4k3/8/3q1p2/R4N2/2p1P3/2P5/2K5/8 w - - 2 2": "Nxd6+",
+      "8/2k5/3N1p2/R7/2p1P3/2P5/2K5/8 w - - 1 3": "Nxc4",
+      "3k4/8/3N4/R4p2/2p1P3/2P5/2K5/8 w - - 0 3": "Nxf5",
+      "3k4/8/3q1p2/R4N2/2p1P3/2P5/2K5/8 w - - 2 2": "Nxd6",
+      "8/8/3N1pk1/R7/2p1P3/2P5/2K5/8 w - - 1 3": "Nxc4",
+      "8/8/3Nkp2/R7/2p1P3/2P5/2K5/8 w - - 1 3": "Nxc4",
+      "8/5k2/3q1p2/R4N2/2p1P3/2P5/2K5/8 w - - 2 2": "Nxd6+",
+      "8/8/2kN1p2/R7/2p1P3/2P5/2K5/8 w - - 1 3": "Nxc4",
+      "8/3k4/3N4/R4p2/2p1P3/2P5/2K5/8 w - - 0 3": "Nxf5",
+      "8/3k4/3q1p2/R4N2/2p1P3/2P5/2K5/8 w - - 2 2": "Nxd6",
+      "8/8/3Nk3/R4p2/2p1P3/2P5/2K5/8 w - - 0 3": "Nxf5",
+      "8/8/3qkp2/R4N2/2p1P3/2P5/2K5/8 w - - 2 2": "Nxd6",
+      "8/4k3/3q1p2/R7/2pNP3/2P5/2K5/8 w - - 0 1": "Nf5+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

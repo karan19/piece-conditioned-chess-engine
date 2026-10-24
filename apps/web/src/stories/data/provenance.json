@@ -1,0 +1,14 @@
+{
+  "source": "Pietro Checkmate Shorts local board_v3 extraction",
+  "catalogVideos": 513,
+  "endgameRelated": 248,
+  "verifiedStudies": 198,
+  "narratedVideos": 429,
+  "snapshots": 18125,
+  "excludedImageVideos": [
+    "Z7SQg2fLB70"
+  ],
+  "classification": "Title and narration keyword discovery; the full channel remains searchable so candidates are not silently omitted.",
+  "manifestSha256": "22f79d6d2c07a67449ca262899ed19bda78df0d9ffe284b498b6d39d294ed9c7",
+  "license": "Third-party source material retains its original ownership; project MIT license does not cover imported narration and video imagery."
+}

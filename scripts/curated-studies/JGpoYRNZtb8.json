@@ -1,0 +1,84 @@
+{
+  "video_id": "JGpoYRNZtb8",
+  "title": "Underpromotion: See the Stalemate Before Taking",
+  "summary": "A pawn promotion can offer the new queen for a forced capture that leaves its own king stalemated.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/4QP2/2k5/PN6/P1p5/K7 b - - 0 1",
+      "question": "Black faces a queen and knight. How can the pawn save the draw?",
+      "explanation": "Promote with check on c1. White’s only legal reply is Nxc1, after which the queen and pawns cover every Black king flight without checking it.",
+      "evidence": {
+        "timestamp_s": 54
+      },
+      "proof": {
+        "method": "finite_draw",
+        "fen": "8/8/8/4QP2/2k5/PN6/P1p5/K7 b - - 0 1",
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "underpromotion_stalemate_rescue",
+      "start": "start",
+      "title": "Source defensive promotion and stalemate",
+      "san": [
+        "c1=Q+",
+        "Nxc1"
+      ],
+      "commentary": [
+        "Begin after White’s queen has captured the bishop on e5 and Black’s king has captured c4. All remaining a2/a3/f5 pawns stay on the board. The preceding queen promotion is context, not a certified forced sequence.",
+        "c1=Q+ promotes with a check along c1–b1–a1. White cannot move the king onto b1 or b2, and its a2 pawn occupies a2. Nxc1 is the only legal response.",
+        "Nxc1 removes the promoted queen and is stalemate. Black Kc4 is not in check: Qe5 covers b5/c5/d5/d4/c3/d3, a3 covers b4, and a2 covers b3. Black has no other piece or pawn to move. The exact position is drawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxc1 removes the promoted queen and is stalemate. Black Kc4 is not in check: Qe5 covers b5/c5/d5/d4/c3/d3, a3 covers b4, and a2 covers b3. Black has no other piece or pawn to move. The exact position is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/4QP2/2k5/P7/P7/K1N5 b - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does capturing the promoted queen fail to win?",
+      "answer": "After Nxc1 Black has only Kc4, with every flight covered but the king itself not checked. That is stalemate, regardless of White’s material."
+    },
+    {
+      "node": "start",
+      "prompt": "Have all three underpromotions been proved here?",
+      "answer": "No. This is the later defensive stalemate mechanism after the illustrated queen capture. The complete rook-underpromotion conversion still needs separate analysis."
+    }
+  ],
+  "defaultBranch": "underpromotion_stalemate_rescue",
+  "practiceBranch": "underpromotion_stalemate_rescue",
+  "practiceType": "pawn",
+  "practiceGoal": "draw",
+  "startContext": "Selected eight-piece defensive stalemate mechanism only, after White has promoted to a queen, Black has played Kxc4 and White has captured Be5: White Ka1/Qe5/Nb3/a2/a3/f5 against Kc4/c2, Black to move. The complete boards before and after these captures are visually reviewed; the selected root is their legally replayed intermediate, not an invented caption-only FEN. Black can promote with check on c1 and force Nxc1, which is actual stalemate. Independent analysis checks every Black root move, including all four promotions and Kd3; separate complete non-loss certificates prove this root exactly drawn. This is the same composition in two source clips, not two different games. The music-only clip supplies no chess narration. This scope does not prove all earlier promotion alternatives, claim that White had to choose Qxe5, or certify the complete earlier knight/bishop/rook-underpromotion plan and ten-piece rook conversion. Earlier drafts and review history remain preserved.",
+  "verification_scope": "Selected eight-piece defensive stalemate mechanism only, after White has promoted to a queen, Black has played Kxc4 and White has captured Be5: White Ka1/Qe5/Nb3/a2/a3/f5 against Kc4/c2, Black to move. The complete boards before and after these captures are visually reviewed; the selected root is their legally replayed intermediate, not an invented caption-only FEN. Black can promote with check on c1 and force Nxc1, which is actual stalemate. Independent analysis checks every Black root move, including all four promotions and Kd3; separate complete non-loss certificates prove this root exactly drawn. This is the same composition in two source clips, not two different games. The music-only clip supplies no chess narration. This scope does not prove all earlier promotion alternatives, claim that White had to choose Qxe5, or certify the complete earlier knight/bishop/rook-underpromotion plan and ten-piece rook conversion. Earlier drafts and review history remain preserved.",
+  "sourceCorrections": [],
+  "finiteDraw": {
+    "max_plies": 6,
+    "white": {
+      "8/8/8/4QP2/8/PN1k4/P1p5/K7 w - - 1 2": "Kb2",
+      "8/8/8/4QP2/2k5/PN6/P7/K1q5 w - - 0 2": "Nxc1",
+      "8/8/8/4QP2/2k5/PN6/P7/K1r5 w - - 0 2": "Nxc1",
+      "8/8/8/4QP2/2k5/PN6/P7/K1b5 w - - 0 2": "Nxc1",
+      "8/8/8/4QP2/2k5/PN6/P7/K1n5 w - - 0 2": "Nxc1",
+      "8/8/8/4QP2/2k5/PN6/PKp5/8 w - - 3 3": "Qe2+",
+      "8/8/8/4QP2/8/PN1k4/PK6/2q5 w - - 0 3": "Kxc1",
+      "8/8/8/4QP2/8/PN1k4/PK6/2r5 w - - 0 3": "Kxc1",
+      "8/8/8/4QP2/8/PN1k4/PK6/2b5 w - - 0 3": "Kxc1",
+      "8/8/8/4QP2/8/PN1k4/PK6/2n5 w - - 0 3": "Kxc1",
+      "8/8/8/3k1P2/8/PN6/PKp1Q3/8 w - - 5 4": "Qe6#"
+    },
+    "black": {
+      "8/8/8/4QP2/2k5/PN6/P1p5/K7 b - - 0 1": "c1=Q+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

@@ -1,0 +1,106 @@
+{
+  "video_id": "eKA-3FsY_cc",
+  "title": "F.W.R: Escort the King Into Castling",
+  "summary": "Use the rook checks to escort the king down the board, then activate the untouched rook through the stipulated queenside castle.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/r2p4/1R6/P1rk1b2/2p5/1pPp3q/3P3B/R3K3 w Q - 0 1",
+      "question": "How can White keep the king moving toward the first rank?",
+      "explanation": "Rd6+ begins a forced staircase. The black pieces and pawns deny their own king room while White keeps the queenside castling right for the finish.",
+      "evidence": {
+        "timestamp_s": 121
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/1R6/P1rk1b2/2p5/1pPp3q/3P3B/R3K3 w Q - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "fwr_castling_staircase",
+      "start": "start",
+      "title": "Source staircase and the castling finish",
+      "san": [
+        "Rd6+",
+        "Ke4",
+        "Rd4+",
+        "Kf3",
+        "Rf4+",
+        "Kg2",
+        "Rf2+",
+        "Kh1",
+        "O-O-O+",
+        "Qf1",
+        "Rdxf1#"
+      ],
+      "commentary": [
+        "Begin after ...Kd5 with both black rooks, bishop, queen and all remaining pawns intact. White’s queenside castling right is an explicit source stipulation.",
+        "Rd6+ cuts across the sixth rank and checks down the d-file. The black king has exactly one legal response.",
+        "Ke4 is forced. Black’s own c5 rook and d3 pawn help restrict the king; the checking rook covers the d-file.",
+        "Rd4+ checks along the fourth rank. The rook is protected by the white c3 pawn, so the king cannot capture it.",
+        "Kf3 is the only legal reply. Black’s d3 pawn blocks one escape, and White’s d2 pawn controls e3.",
+        "Rf4+ shifts the check onto the f-file. The bishop on h2 protects f4 along h2–g3–f4.",
+        "Kg2 is forced. White’s king and pawns control the neighboring squares that might otherwise let Black escape.",
+        "Rf2+ brings the rook to the second rank, checking Kg2 while denying the king a return up the f-file.",
+        "Kh1 is forced into the corner. White has preserved the unmoved king and a1 rook for the final activation.",
+        "O-O-O+ is legal under the source-stipulated right: e1, d1 and c1 are safe, and b1/c1/d1 are empty. The rook arriving on d1 checks along the first rank.",
+        "Qf1 is Black’s sole legal defense, interposing the queen between Rd1 and Kh1. The castle itself was check, not immediate mate.",
+        "Rdxf1# uses the rook that just castled to capture the blockading queen. The f2 rook remains on f2 and the h2 bishop controls g1, leaving the king no legal answer."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rdxf1# uses the rook that just castled to capture the blockading queen. The f2 rook remains on f2 and the h2 bishop controls g1, leaving the king no legal answer.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why must the castling right remain in the position?",
+      "answer": "The finish activates Ra1 with O-O-O+. Removing the stipulated right changes the legal moves and would invalidate this lesson."
+    },
+    {
+      "node": "start",
+      "prompt": "Does castling itself end the game?",
+      "answer": "No. Black can interpose Qf1. Rdxf1 is the actual mate, with the other rook still on f2."
+    }
+  ],
+  "defaultBranch": "fwr_castling_staircase",
+  "practiceBranch": "fwr_castling_staircase",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin at 121 seconds after ...Kd5 in the complete sixteen-piece later diagram. The source explicitly stipulates White queenside castling; that right is preserved, not inferred from a still image. Every selected position is certified by a finite legal strategy ending in actual mate, retaining all pieces and checking every Black defense. This is castling-aware legal verification, not a Syzygy tablebase proof. The preceding queen sacrifice, knight capture and first rook checks remain unverified source context.",
+  "verification_scope": "Begin at 121 seconds after ...Kd5 in the complete sixteen-piece later diagram. The source explicitly stipulates White queenside castling; that right is preserved, not inferred from a still image. Every selected position is certified by a finite legal strategy ending in actual mate, retaining all pieces and checking every Black defense. This is castling-aware legal verification, not a Syzygy tablebase proof. The preceding queen sacrifice, knight capture and first rook checks remain unverified source context.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 11,
+    "moves": {
+      "8/r2p4/1R6/P1rk1b2/2p5/1pPp3q/3P3B/R3K3 w Q - 0 1": "Rd6+",
+      "8/r2p4/3R4/P1r2b2/2p1k3/1pPp3q/3P3B/R3K3 w Q - 2 2": "Rd4+",
+      "8/r2p4/8/P1r2b2/2pR4/1pPp1k1q/3P3B/R3K3 w Q - 4 3": "Rf4+",
+      "8/r2p4/8/P1r2b2/2p2R2/1pPp3q/3P2kB/R3K3 w Q - 6 4": "Rf2+",
+      "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/R3K2k w Q - 8 5": "O-O-O+",
+      "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6": "Rdxf1#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

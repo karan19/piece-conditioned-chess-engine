@@ -1,0 +1,155 @@
+{
+  "video_id": "o988a8BFTbM",
+  "title": "Pawns of Destiny: The King Changes Wings",
+  "summary": "Walk the king across the board before approaching the checking rook from the side it cannot protect.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/P1K4P/8/8/8/8/2r5/1k6 w - - 0 1",
+      "question": "Why is Kd7 safe when an earlier central approach failed?",
+      "explanation": "White is checked by Rc2. The king on c7 is high enough to protect a rook entry square on the eighth rank as it crosses to the other wing.",
+      "evidence": {
+        "timestamp_s": 101
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "destiny_king_crossing",
+      "start": "start",
+      "title": "Cross the board and chase the rook",
+      "san": [
+        "Kd7",
+        "Rd2+",
+        "Ke7",
+        "Re2+",
+        "Kf7",
+        "Rf2+",
+        "Kg6",
+        "Rg2+",
+        "Kh5",
+        "Rh2+",
+        "Kg4",
+        "Rg2+",
+        "Kh3",
+        "Ra2",
+        "h8=Q",
+        "Rxa7"
+      ],
+      "commentary": [
+        "Begin after ...Rc2+ in the five-piece later phase. Both a7 and h7 are ready to promote, and White must end the rook’s safe checking pattern.",
+        "Kd7 answers check and controls c8. Unlike an early central approach, the king now denies the rook its eighth-rank blockade.",
+        "Rd2+ follows the king with another file check.",
+        "Ke7 continues across the seventh rank, staying close enough to attack a rook trying to occupy the eighth rank.",
+        "Re2+ keeps checking rather than allowing either pawn to promote.",
+        "Kf7 keeps crossing toward the distant h-pawn. The black king remains stranded on b1.",
+        "Rf2+ repeats the file-checking pattern.",
+        "Kg6 turns downward on the opposite wing. The distant black king still cannot protect the rook’s checks near the h-file.",
+        "Rg2+ checks the king on the g-file.",
+        "Kh5 approaches from the edge rather than retreating toward the middle.",
+        "Rh2+ is another check, but the king is steadily closing the distance to the rook.",
+        "Kg4 approaches further while keeping both pawns ready to promote. Black’s checking rook has less room to stay away from the king.",
+        "Rg2+ is the illustrated final safe file check.",
+        "Kh3 attacks the rook on g2. A check on h2 could now be met by Kxh2, since Kb1 cannot protect that rook.",
+        "Ra2 stops the a-pawn from behind, but cannot stop h8 as well.",
+        "h8=Q promotes. White has ended the checking cycle and obtained a checked winning queen-versus-rook setup.",
+        "Rxa7 collects the remaining pawn, as shown in the last saved board. White still has an exactly checked queen-versus-rook win; this is not a claim that every such material balance always wins."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxa7 collects the remaining pawn, as shown in the last saved board. White still has an exactly checked queen-versus-rook win; this is not a claim that every such material balance always wins.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7Q/r7/8/8/8/7K/8/1k6 w - - 0 9",
+      "outcome": "win"
+    },
+    {
+      "id": "destiny_corner_shelter",
+      "start": "start",
+      "title": "Hide behind the a-pawn",
+      "san": [
+        "Kb8",
+        "Rb2+",
+        "Ka8",
+        "Rh2"
+      ],
+      "commentary": [
+        "Compare the source’s idea of sheltering behind a7 instead of crossing the board.",
+        "Kb8 heads toward the a-pawn’s corner. It still preserves a win, but shelter alone will not finish the job.",
+        "Rb2+ checks along the b-file. White must choose its next square carefully.",
+        "Ka8 gives away the win by occupying its own promotion square. The exact position becomes drawn.",
+        "Rh2 stops the h-pawn. White has obtained shelter but not a useful promotion arrangement; this exact position is drawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rh2 stops the h-pawn. White has obtained shelter but not a useful promotion arrangement; this exact position is drawn.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "K7/P6P/8/8/8/8/7r/1k6 w - - 4 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "destiny_central_too_low",
+      "start": "start",
+      "title": "Approach the center one rank too low",
+      "san": [
+        "Kd6",
+        "Rc8"
+      ],
+      "commentary": [
+        "This independently selected comparison tests why the king’s rank matters after ...Rc2+.",
+        "Kd6 gives away the win. The king is too far from c8 to punish the rook’s blockade.",
+        "Rc8 stops both a8 and h8 along the eighth rank. Unlike Kd7, Kd6 does not attack Rc8, and the exact position is drawn."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rc8 stops both a8 and h8 along the eighth rank. Unlike Kd7, Kd6 does not attack Rc8, and the exact position is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "2r5/P6P/3K4/8/8/8/8/1k6 w - - 2 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What changed to make the central crossing possible?",
+      "answer": "The king has reached the seventh rank. Kd7 controls c8, preventing the rook from settling on the rank that stops both promotions."
+    },
+    {
+      "node": "start",
+      "prompt": "Why approach the rook on the h-side?",
+      "answer": "The black king on b1 helped protect checks near the a-side. On the other wing it cannot protect a rook on h2, so Kh3 ends the checking cycle."
+    }
+  ],
+  "defaultBranch": "destiny_king_crossing",
+  "practiceBranch": "destiny_king_crossing",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rc2+ at 101 seconds in the complete five-piece later phase. This is a different source clip from the earlier Pawns of Destiny study. The earlier checks and initial a7/h7 advances remain context. The final king crossing and corner shelter are reconstructed from saved images; Kd6 ...Rc8 is an independent comparison.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

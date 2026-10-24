@@ -1,0 +1,171 @@
+{
+  "video_id": "dJdod4yyRss",
+  "title": "Danya VS Magnus: Promote With the Right Piece",
+  "summary": "Use checking pawn pushes and a bishop intermezzo, then choose a knight or queen according to the king’s escape.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "7Q/8/8/4N3/b3PP2/ppk1P3/6P1/1K6 b - - 0 1",
+      "question": "Can the new white queen stop Black’s checking pawn attack?",
+      "explanation": "The queen on h8 is boxed out by its own knight and pawns. Black can keep checking until the king’s route determines the right promotion.",
+      "evidence": {
+        "timestamp_s": 57
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "7Q/8/8/4N3/b3PP2/ppk1P3/6P1/1K6 b - - 0 1",
+        "winner": "black",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "danya_knight_promotion",
+      "start": "start",
+      "title": "Source finish: bishop intermezzo and knight mate",
+      "san": [
+        "a2+",
+        "Ka1",
+        "b2+",
+        "Kxa2",
+        "Bb3+",
+        "Ka3",
+        "b1=N#"
+      ],
+      "commentary": [
+        "Begin after White promotes on h8. All four remaining white pawns are retained: those on e3, e4, f4 and g2 still matter to queen access.",
+        "a2+ uses the pawn to check Kb1. White has two legal king replies, Ka1 and Kc1; the source chooses the corner.",
+        "Ka1 follows the source. The new queen cannot block an adjacent pawn check.",
+        "b2+ opens the bishop’s diagonal and offers the a2 pawn. White now has only Kxa2.",
+        "Kxa2 removes the a-pawn, but Black must improve the bishop before promoting the remaining pawn.",
+        "Bb3+ is the source intermezzo. The bishop is protected by Kc3 and checks Ka2, forcing a choice between a3 and b1.",
+        "Ka3 chooses the outward route. A queen promotion would not check this king, so Black uses a different piece.",
+        "b1=N# checks a3 with the promoted knight. Kc3 controls b2/b3/b4 and Bb3 controls a2/a4; White cannot capture the knight or block its check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "b1=N# checks a3 with the promoted knight. Kc3 controls b2/b3/b4 and Bb3 controls a2/a4; White cannot capture the knight or block its check.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "7Q/8/8/4N3/4PP2/Kbk1P3/6P1/1n6 w - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "danya_queen_promotion",
+      "start": "start",
+      "title": "Source comparison: the king returns to b1",
+      "san": [
+        "a2+",
+        "Ka1",
+        "b2+",
+        "Kxa2",
+        "Bb3+",
+        "Kb1",
+        "Bc2+",
+        "Ka2",
+        "b1=Q+",
+        "Ka3",
+        "Qb3#"
+      ],
+      "commentary": [
+        "Compare the other legal king reply to the bishop intermezzo. The earlier promotion and pawn checks stay the same.",
+        "a2+ begins the forcing pawn attack.",
+        "Ka1 enters the corner, as in the source’s main line.",
+        "b2+ checks and vacates b3 for the bishop.",
+        "Kxa2 is forced. Immediate promotion is not the source plan; the bishop first improves with tempo.",
+        "Bb3+ offers the protected bishop and checks the king.",
+        "Kb1 chooses to return toward the promotion square. Black must use the bishop to drive the king off b1.",
+        "Bc2+ checks b1 and is protected by Kc3. The white king cannot capture the bishop.",
+        "Ka2 is the sole legal move. The b2 pawn controls a1 and c1, while Black’s king controls b2.",
+        "b1=Q+ promotes with check against Ka2. Here the queen is the right piece because it keeps the attack forcing.",
+        "Ka3 is forced, with the king and bishop denying the other flights.",
+        "Qb3# finishes beside the protected black king. White’s distant queen and knight cannot answer the adjacent queen check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qb3# finishes beside the protected black king. White’s distant queen and knight cannot answer the adjacent queen check.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "7Q/8/8/4N3/4PP2/Kqk1P3/2b3P1/8 w - - 2 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "danya_other_first_reply",
+      "start": "start",
+      "title": "Independent defense: decline the corner",
+      "san": [
+        "a2+",
+        "Kc1",
+        "b2#"
+      ],
+      "commentary": [
+        "Account for the legal Kc1 reply omitted from the narrated corner line. This continuation is independently supplied.",
+        "a2+ checks Kb1. The king can choose a1 or c1; neither escapes the verified later attack.",
+        "Kc1 declines the corner, but steps onto the square attacked by a pawn arriving on b2.",
+        "b2# checks c1. The move also vacates b3, opening Ba4’s diagonal to d1; Kc3 covers b2/c2/d2, and the a2 pawn controls b1. White has no legal answer."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "b2# checks c1. The move also vacates b3, opening Ba4’s diagonal to d1; Kc3 covers b2/c2/d2, and the a2 pawn controls b1. White has no legal answer.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "7Q/8/8/4N3/b3PP2/2k1P3/pp4P1/2K5 w - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why use Bb3 before promoting?",
+      "answer": "It forces the white king to choose a3 or b1 and prepares a checking promotion appropriate to that route."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does one line promote to a knight and the other to a queen?",
+      "answer": "A knight on b1 checks Ka3. A queen on b1 checks Ka2 after the bishop drives the king away from b1."
+    }
+  ],
+  "defaultBranch": "danya_knight_promotion",
+  "practiceBranch": "danya_knight_promotion",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin immediately after the illustrated h8=Q at 57 seconds in the complete eleven-piece later diagram. The finite mate certificate covers both White king replies to a2+ and every subsequent defense, retaining Ne5 and White e3/e4/f4/g2. The source knight-promotion and king-return queen-promotion branches are shown; the omitted Kc1/b2 mate is explicitly independent. The earlier Kc3 move and alternatives to h8=Q remain unverified context, not a claim that the original position was lost or that promotion was White’s only move.",
+  "verification_scope": "Begin immediately after the illustrated h8=Q at 57 seconds in the complete eleven-piece later diagram. The finite mate certificate covers both White king replies to a2+ and every subsequent defense, retaining Ne5 and White e3/e4/f4/g2. The source knight-promotion and king-return queen-promotion branches are shown; the omitted Kc1/b2 mate is explicitly independent. The earlier Kc3 move and alternatives to h8=Q remain unverified context, not a claim that the original position was lost or that promotion was White’s only move.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "black",
+    "max_plies": 11,
+    "moves": {
+      "7Q/8/8/4N3/b3PP2/1pk1P3/p5P1/2K5 b - - 1 2": "b2#",
+      "7Q/8/8/4N3/4PP2/Kbk1P3/1p4P1/8 b - - 2 4": "b1=N#",
+      "7Q/8/8/4N3/4PP2/Kbk1P3/1p4P1/8 b - - 6 6": "b1=N#",
+      "7Q/8/8/4N3/4PP2/K1k1P3/2b3P1/1q6 b - - 1 6": "Qb3#",
+      "7Q/8/8/4N3/4PP2/2k1P3/Kpb3P1/8 b - - 4 5": "b1=Q+",
+      "7Q/8/8/4N3/4PP2/1bk1P3/1p4P1/1K6 b - - 2 4": "Bc2+",
+      "7Q/8/8/4N3/b3PP2/2k1P3/Kp4P1/8 b - - 0 3": "Bb3+",
+      "7Q/8/8/4N3/b3PP2/1pk1P3/p5P1/K7 b - - 1 2": "b2+",
+      "7Q/8/8/4N3/b3PP2/ppk1P3/6P1/1K6 b - - 0 1": "a2+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

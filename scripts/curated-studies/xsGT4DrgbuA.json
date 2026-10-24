@@ -1,0 +1,137 @@
+{
+  "video_id": "xsGT4DrgbuA",
+  "title": "Bishop VS Rook!",
+  "summary": "Offer the bishop, then use a checking deflection to clear the promotion rank.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/BP6/8/6k1/K7/8/2r5 w - - 0 1",
+      "question": "How can the bishop help before the pawn advances?",
+      "explanation": "White must prevent the rook from settling behind b6 or reaching the eighth rank with time to stop promotion.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "bishop_rook_deflection",
+      "start": "start",
+      "title": "Block, answer the check, and divert the rook",
+      "san": [
+        "Bc4",
+        "Rb1",
+        "Bb3",
+        "Ra1+",
+        "Ba2",
+        "Re1",
+        "b7",
+        "Re8",
+        "Be6+",
+        "Rxe6",
+        "b8=Q"
+      ],
+      "commentary": [
+        "Begin from the complete five-piece source board.",
+        "Bc4 offers the bishop while preparing Bb3 to block the rook’s view of the b-pawn.",
+        "Rb1 goes behind the pawn, attempting the familiar rook blockade.",
+        "Bb3 blocks the b-file while remaining near the white king.",
+        "Ra1+ checks the king along the a-file, trying to displace its support.",
+        "Ba2 interposes against the check and protects b1 along the a2–b1 diagonal.",
+        "Re1 is the source’s attempt to reroute to the back rank.",
+        "b7 threatens promotion, keeping the rook under time pressure.",
+        "Re8 controls b8 along the eighth rank and also watches the bishop’s checking square e6.",
+        "Be6+ offers the bishop with check against Kg4, drawing the rook away from the promotion rank if it captures.",
+        "Rxe6 accepts the source’s illustrated sacrifice and abandons the eighth rank.",
+        "b8=Q promotes safely. This exact queen-versus-rook position is winning for White; the selected branch stops at the checked conversion."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "b8=Q promotes safely. This exact queen-versus-rook position is winning for White; the selected branch stops at the checked conversion.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1Q6/8/4r3/8/6k1/K7/8/8 b - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "bishop_rook_accept_early",
+      "start": "start",
+      "title": "Take the bishop immediately",
+      "san": [
+        "Bc4",
+        "Rxc4",
+        "b7"
+      ],
+      "commentary": [
+        "Compare the source’s immediate acceptance of the bishop sacrifice.",
+        "Bc4 offers material to gain promotion time.",
+        "Rxc4 captures, but places the rook where a timely blockade is difficult.",
+        "b7 reaches the seventh rank. Ka3 controls b4 and b3, while the pawn controls a8 and c8. The exact position is a checked White win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "b7 reaches the seventh rank. Ka3 controls b4 and b3, while the pawn controls a8 and c8. The exact position is a checked White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1P6/8/8/2r3k1/K7/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "bishop_rook_pawn_early",
+      "start": "start",
+      "title": "Push the pawn before preparing the bishop",
+      "san": [
+        "b7",
+        "Rb1"
+      ],
+      "commentary": [
+        "Compare the source’s immediate pawn push.",
+        "b7 gives away the forced win because the bishop has not prepared an effective answer to the rook’s rear blockade.",
+        "Rb1 stops promotion from behind. This exact position is drawn; an eventual rook sacrifice against the pawn can leave White with only a bishop."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rb1 stops promotion from behind. This exact position is drawn; an eventual rook sacrifice against the pawn can leave White with only a bishop.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/1P6/B7/8/6k1/K7/8/1r6 w - - 1 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why offer Bc4 before advancing the pawn?",
+      "answer": "It prepares Bb3 and Ba2 against the checking blockade. Taking the bishop immediately instead loses time against b7."
+    },
+    {
+      "node": "start",
+      "prompt": "Why can Be6+ work even when Re8 attacks e6?",
+      "answer": "The capture moves the rook off the promotion rank. White trades the bishop for the tempo needed to promote safely."
+    }
+  ],
+  "defaultBranch": "bishop_rook_deflection",
+  "practiceBranch": "bishop_rook_deflection",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin from the complete five-piece opening diagram. The selected ...Re1/...Re8 defense is met by Be6+ and the illustrated rook capture. The early bishop capture and premature pawn advance are checked separately; no exhaustive list of rook defenses is claimed.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

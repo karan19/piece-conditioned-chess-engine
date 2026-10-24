@@ -1,0 +1,149 @@
+{
+  "batch_id": "2026-10-23-10",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three studies, eleven selected branches, 54 distinct checked positions. Preserve exact outcome reversals in source drawing examples and distinguish Rh2+ from actual mate.",
+  "reviews": {
+    "8oJ_ufd_-i8": {
+      "result": "verified_selected_lines",
+      "notes": "Four branches and 19 checked positions from the complete five-piece opening. Corrected the source premature-king example: Kf7 draws, ...d3 returns a White win, Ra4 returns a draw. Added independent ...e2 drawing defense. Rh2+ is not actual mate: the sole ...Qh4 interposition is followed by independently supplied Rxh4#. Source winning plan remains valid.",
+      "source_images": [
+        {
+          "file": "8oJ_ufd_-i8/montage_accepted.jpg",
+          "sha256": "cbfa4f20131f9c5ab616e2d086c64a2e3c7da9169aff718a8584c500cf761ce2"
+        },
+        {
+          "file": "8oJ_ufd_-i8/images/image_00001.jpg",
+          "sha256": "c5456ff4765893f5cfb389a24f771e077d72133625e998a175d26abe61733a83"
+        },
+        {
+          "file": "8oJ_ufd_-i8/images/image_00018.jpg",
+          "sha256": "74ea6b62fd8f86e11b43645c89205942fd6d9673b883b2588b9d8ac53a5b8fc2"
+        },
+        {
+          "file": "8oJ_ufd_-i8/images/image_00019.jpg",
+          "sha256": "9fba6e6ba3525ca65bc7a378ac8a7abdd3cc929bda6bcaa261e75927dcb152b1"
+        },
+        {
+          "file": "8oJ_ufd_-i8/images/image_00020.jpg",
+          "sha256": "7a63d5405feb82cb5f7c5d4ba0253e425fc569f02656c34e5996f4bcfc6b7551"
+        },
+        {
+          "file": "8oJ_ufd_-i8/images/image_00021.jpg",
+          "sha256": "2cd315f923d0b1eee4ef6f2bb6a7e4e4fc265c51210ffa2341b836f6882af1ca"
+        },
+        {
+          "file": "8oJ_ufd_-i8/images/image_00030.jpg",
+          "sha256": "5f65e05befc5925fdaf963b4f136c6fc125af0c0e1ee46b56fdb6944808efae1"
+        },
+        {
+          "file": "8oJ_ufd_-i8/images/image_00031.jpg",
+          "sha256": "f5b31a715dc25effed1a1da4288a1d7a5e21f446dc3511312d3c32ccbd70a613"
+        },
+        {
+          "file": "8oJ_ufd_-i8/images/image_00033.jpg",
+          "sha256": "2ae958224fe39ccc1c009b7b2e7188e549d634b1ca40b9db7056b1f7448a1357"
+        },
+        {
+          "file": "8oJ_ufd_-i8/images/image_00040.jpg",
+          "sha256": "74c8ef6131e6129ecd22393f702faab5a13b70fab921452ddfbf9e59d92fce20"
+        }
+      ]
+    },
+    "sY2HWDyHuX4": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches and 20 checked positions from the complete six-piece diagram. Trapped-knight sacrifice Nc8+ Kd8 Ka5 Kxc8 Ka6 sets zugzwang; two bishop-sacrifice routes reach winning pawn endings. Immediate Ka6 draws. Captions and stable diagrams agree; transient king slides were not encoded as positions.",
+      "source_images": [
+        {
+          "file": "sY2HWDyHuX4/montage_accepted.jpg",
+          "sha256": "90a673796f71bdfae8fe8d01a5269ecb89780a4669b2e55b0f7ba59c3abdf42c"
+        },
+        {
+          "file": "sY2HWDyHuX4/images/image_00001.jpg",
+          "sha256": "1a6dd02d4c32370c27aad1bf3e7ed8e63cb8a85e848882d595c5df45369b2bd7"
+        },
+        {
+          "file": "sY2HWDyHuX4/images/image_00004.jpg",
+          "sha256": "dc8d02b032e05a53cf4ec23df436b202e9bbc74e6be5485d7c5853b3ecc431f6"
+        },
+        {
+          "file": "sY2HWDyHuX4/images/image_00019.jpg",
+          "sha256": "c76b89cc989073d33c2ae67746962d3c02f64500e37d69c64b12c53468936498"
+        },
+        {
+          "file": "sY2HWDyHuX4/images/image_00021.jpg",
+          "sha256": "adeec95fed5ea9c5abe6bb083d92aef2c80efb7215d42de7f99d23f5942642db"
+        },
+        {
+          "file": "sY2HWDyHuX4/images/image_00022.jpg",
+          "sha256": "a6fc01f319ec12b23000c22de22f7cb28fd46dbcd9e0e94dd18e27990095370e"
+        },
+        {
+          "file": "sY2HWDyHuX4/images/image_00028.jpg",
+          "sha256": "ba7087ad5361703dd56a60e489d7090916a16da3628e3dae8ce0c056d967d27a"
+        },
+        {
+          "file": "sY2HWDyHuX4/images/image_00029.jpg",
+          "sha256": "a98604b969068731efaa0f1f1cf8ad08ee5ae5e375e2393b7e159993ab8d7aca"
+        },
+        {
+          "file": "sY2HWDyHuX4/images/image_00032.jpg",
+          "sha256": "4576d36593b029e01eafaf166b52991eea11be489b813d337c8e2187e2d5c356"
+        },
+        {
+          "file": "sY2HWDyHuX4/images/image_00033.jpg",
+          "sha256": "92e15026285cb8800d9d4b6384296083c3d2a9a7c39ab37bc2356537408971fc"
+        }
+      ]
+    },
+    "AOrqnQwOwCc": {
+      "result": "verified_selected_lines",
+      "notes": "Four branches and 15 checked positions. Root after illustrated ...Rh2 reconstructed from stable Rf7 diagram and preceding move; transient opening pawn drag resolved as h7. Separate ...Rd8 node rotates the checking fork. Corrected source passive-defense example: Rf7 draws but ...Kd2 loses to Rf2+; supplied independent ...Rh3 drawing defense and explicit winning completion.",
+      "source_images": [
+        {
+          "file": "AOrqnQwOwCc/montage_accepted.jpg",
+          "sha256": "79cd85ed29074aaccbb3dc9a4f843c736ddea6c4b2668ec13bd5addfa4ee7250"
+        },
+        {
+          "file": "AOrqnQwOwCc/images/image_00001.jpg",
+          "sha256": "da95c58f24fc7b71238b3870e2adc6c085e47f3b7bab5dc5a8934922db928e4a"
+        },
+        {
+          "file": "AOrqnQwOwCc/images/image_00004.jpg",
+          "sha256": "86348bd0aaf4ef45214304b6daa2dd38e1f072ebac78f9c60601cb68f108cd10"
+        },
+        {
+          "file": "AOrqnQwOwCc/images/image_00005.jpg",
+          "sha256": "f00fa5139e9e738680ab0d3f027f50b6dfd52da031c673444bc1f55bac6da096"
+        },
+        {
+          "file": "AOrqnQwOwCc/images/image_00011.jpg",
+          "sha256": "d32294d98d59158cd6b9731aff2f5f8f26e6f6769162bc21555fa871c19bdf6d"
+        },
+        {
+          "file": "AOrqnQwOwCc/images/image_00022.jpg",
+          "sha256": "18b6193616f2250d2444d32f017ee2d53843bb396b20f1ee4c03c8c73faaa8d0"
+        },
+        {
+          "file": "AOrqnQwOwCc/images/image_00023.jpg",
+          "sha256": "980b4591a710ffb4d8726c4f7c6c1a44024d1391cb4882a4228bfea2eb78515c"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 54,
+    "selected_branches": 11,
+    "tests": "98 tests passed across 16 files; every encoded move replayed and evidence reconciled; focused test covers actual mate, source outcome reversals, counterfork and zugzwang turn.",
+    "production_build": "passed",
+    "ui_review": "CUA checked Rh2+ interposition, actual Rxh4# game-over display, independent Rf2+ correction, and Ka6 zugzwang board.",
+    "screenshot": "docs/screenshots/endgame-stories-batch-10.png",
+    "additional_screenshot": "docs/screenshots/endgame-stories-batch-10-check.png",
+    "queue_counts": {
+      "verified_selected_lines": 31,
+      "awaiting_reconstruction": 192,
+      "needs_information": 23,
+      "not_applicable": 2
+    },
+    "local_only": true
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "video_id": "hgFcWql1ya4",
+  "title": "Majestic Misplacement",
+  "summary": "Improve the king before exchanging bishops, then deflect the opposing king so promotion wins with tempo.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/bPB5/P7/2kp4/K7/8/8/8 w - - 0 1",
+      "question": "Why delay the immediate promotion?",
+      "explanation": "White can exchange the b-pawn for Black’s bishop, but the king must first deny Black access to b6.",
+      "evidence": {
+        "timestamp_s": 21
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "deflection",
+      "fen": "1B6/8/P7/K1k5/8/3p4/8/8 w - - 0 4",
+      "question": "How can White win the pawn race?",
+      "explanation": "Both pawns are close to promotion. The bishop can change the black king’s position before the race begins.",
+      "evidence": {
+        "timestamp_s": 64
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "misplace_skewer",
+      "start": "start",
+      "title": "Prepare the king, then sacrifice for a skewer",
+      "san": [
+        "Ka5",
+        "d4",
+        "b8=Q",
+        "Bxb8",
+        "Bxb8",
+        "d3",
+        "Bd6+",
+        "Kxd6",
+        "a7",
+        "d2",
+        "a8=Q",
+        "d1=Q",
+        "Qd8+"
+      ],
+      "commentary": [
+        "Begin after ...Ba7 declines the first bishop sacrifice. The b7 pawn is attacked, but White has time for a king move.",
+        "Ka5 controls b6. White removes the defensive king route before liquidating the bishops.",
+        "d4 advances Black’s counterplay. This is the source’s selected reply, not the only legal defense.",
+        "b8=Q offers the promoted queen to eliminate the black bishop.",
+        "Bxb8 captures the queen. Black exchanges the bishop for the b-pawn.",
+        "Bxb8 recaptures. White keeps the bishop and the a-pawn, but must still stop the d-pawn.",
+        "d3 brings Black within two moves of promotion. Racing immediately would throw away the win.",
+        "Bd6+ forces the king to address a checking bishop sacrifice. Its destination determines the promotion tactics.",
+        "Kxd6 accepts the bishop and places the king on the d-file, in front of its own future queen.",
+        "a7 starts the promotion race now that the king has been deflected.",
+        "d2 keeps Black’s counter-promotion threat alive.",
+        "a8=Q gets White a queen first. The important point is the coming alignment on the d-file.",
+        "d1=Q also promotes, but Black’s king on d6 is vulnerable to a skewer.",
+        "Qd8+ checks along the d-file. Once the king leaves that file, White takes the queen on d1; the tablebase confirms the winning endpoint."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qd8+ checks along the d-file. Once the king leaves that file, White takes the queen on d1; the tablebase confirms the winning endpoint.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3Q4/8/3k4/K7/8/8/8/3q4 b - - 1 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "misplace_early_queen",
+      "start": "start",
+      "title": "Promote before improving the king",
+      "san": [
+        "b8=Q",
+        "Bxb8",
+        "Bxb8",
+        "Kb6",
+        "a7",
+        "Kb7"
+      ],
+      "commentary": [
+        "Compare the same bishop exchange while White’s king still stands on a4.",
+        "b8=Q is the actual error: without Ka5, the resulting bishop-and-rook-pawn ending is drawn.",
+        "Bxb8 removes the promoted queen as before.",
+        "Bxb8 leaves White with an extra bishop, but that bishop does not control the a8 promotion square.",
+        "Kb6 uses the route White failed to cover and attacks a6.",
+        "a7 saves the pawn from capture, but gives Black time to occupy its promotion corner.",
+        "Kb7 reaches the defensive corner route. White’s light-squared bishop cannot drive the king from the dark promotion square; this position is a checked draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kb7 reaches the defensive corner route. White’s light-squared bishop cannot drive the king from the dark promotion square; this position is a checked draw.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "1B6/Pk6/8/3p4/K7/8/8/8 w - - 1 4",
+      "outcome": "draw"
+    },
+    {
+      "id": "misplace_race",
+      "start": "deflection",
+      "title": "Race without deflecting the king",
+      "san": [
+        "a7",
+        "d2",
+        "a8=Q",
+        "d1=Q"
+      ],
+      "commentary": [
+        "White’s extra bishop does not automatically decide a queen ending. Check the timing before advancing.",
+        "a7 gives up the forced win by starting the race too early.",
+        "d2 keeps pace while the king remains safely away from the d-file skewer.",
+        "a8=Q promotes first, but no decisive check interrupts Black’s reply.",
+        "d1=Q gives Black a queen without placing its king in front of it. The exact resulting queen-and-bishop ending is drawn with best play."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d1=Q gives Black a queen without placing its king in front of it. The exact resulting queen-and-bishop ending is drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "QB6/8/8/K1k5/8/8/8/3q4 w - - 0 6",
+      "outcome": "draw"
+    },
+    {
+      "id": "misplace_blockade",
+      "start": "deflection",
+      "title": "If the king declines the sacrifice",
+      "san": [
+        "Bd6+",
+        "Kc4",
+        "Bf4"
+      ],
+      "commentary": [
+        "The sacrifice also has a positional point if Black refuses to capture the bishop.",
+        "Bd6+ checks and offers the bishop. White wants the king away from the a8 corner.",
+        "Kc4 declines the capture and walks away from the promotion corner.",
+        "Bf4 controls d2, stopping the pawn’s next step. The king on c4 is too far away to recreate the earlier corner defense; White retains a checked win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bf4 controls d2, stopping the pawn’s next step. The king on c4 is too far away to recreate the earlier corner defense; White retains a checked win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/P7/K7/2k2B2/3p4/8/8 b - - 3 5",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What does Ka5 accomplish that a promotion cannot?",
+      "answer": "It denies ...Kb6 before the bishop exchange. The wrong-colored bishop cannot win if Black reaches the a8 corner."
+    },
+    {
+      "node": "deflection",
+      "prompt": "Why does giving up the bishop improve the pawn race?",
+      "answer": "After ...Kxd6 the king stands in front of its future queen, so Qd8+ skewers them. After ...Kc4, Bf4 stops the pawn while the king is too far from the corner."
+    }
+  ],
+  "defaultBranch": "misplace_skewer",
+  "practiceBranch": "misplace_skewer",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Ba7 at 21 seconds. The preceding Bc7 sacrifice remains source context. The selected king preparation, drawing errors and bishop deflection are checked here.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

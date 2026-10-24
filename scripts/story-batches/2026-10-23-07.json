@@ -1,0 +1,194 @@
+{
+  "batch_id": "2026-10-23-07",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three verified selected-line studies: ten branches and 51 distinct checked positions. Preserve an eight-piece source for separate analysis.",
+  "reviews": {
+    "LnBiKmJsKDI": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed seven-piece position after ...Bh3. Three checked branches: bishop diversion/knight preparation, actual stalemate after premature d8=Q Re8+ Qxe8, and king-declines-sacrifice fork. Saved final board confirms the checking rook move after Nf2 is ...Rg3+, not ...Re8+, before Kh8. Earlier eight-piece setup is context.",
+      "source_images": [
+        {
+          "file": "LnBiKmJsKDI/montage_accepted.jpg",
+          "sha256": "c6ff92d0502d97fda6462f718144d3a08396814b6929055de5af9ef1a9650ff4"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00001.jpg",
+          "sha256": "392667f3df6cbd6d36e1e5f63ea7c6af67ed4b6baf8eb16d70c21d10181bad38"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00017.jpg",
+          "sha256": "0dec846a346b066c70078e3c569f7564f0298e5fec394bbd5839f4fd56a2f77a"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00022.jpg",
+          "sha256": "8d84adaab2c81cecac8ffc91fc534b76974ed736868a60551a976a970e506d5d"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00023.jpg",
+          "sha256": "f280bb0bc17cdc235c2c391519f6940e4d2bf361bc76a5a131128f34b36904e0"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00025.jpg",
+          "sha256": "9fa067f3e9e0f18d3610a23dc7c360ef3a0c92bf24c071ad15c1ca94723f457d"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00028.jpg",
+          "sha256": "0030845168940c39dcfd9866985eec60b52ee1daad568de979d3d1976612876e"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00033.jpg",
+          "sha256": "d757b2d6e0b925a5ecaa02d2f185caa5d1c16baba251a31b57b5bfe2a8daaf63"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00038.jpg",
+          "sha256": "9245e1515d894ac902999fc4286e485e79fbe7c63d6a58dbcd6cdebf1290b0dd"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00043.jpg",
+          "sha256": "6d7e98a3afa60be6be695727e8f0be323f43dde00585bbe0d12394bb591bba8f"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00044.jpg",
+          "sha256": "e3853c2dd450041f78a5c10d8cc6eea62f1729fedb41db4ca3a3e5380d820ae1"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00045.jpg",
+          "sha256": "9b06f802eedaf88bf0853ff2d4c8b14d46fb0a025dad07af35b4edd70f4166cb"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00046.jpg",
+          "sha256": "49b4b4de0b7f87b188d602254db82ea4ab9ae5eed3576472e2bd2d1eb44c9d84"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00047.jpg",
+          "sha256": "5be77341517c95929e4dcb83a45a4b12106adfb53dbb5dce948d59cd9a45254e"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00048.jpg",
+          "sha256": "a16a05eee2487cd20b6fb3779e1a6b7312fca60f0111e0c521a58f7163e88e8f"
+        },
+        {
+          "file": "LnBiKmJsKDI/images/image_00050.jpg",
+          "sha256": "6de57bcf6589bb844da43f9cc6a28f3f663201b86f91f57c9d5f22084be68cc5"
+        }
+      ]
+    },
+    "UnrHt2qs4Us": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the seven-piece final phase after ...Ke5: Ka4 Be7 d7 e6 against Ke5 Rd2 c5. Three checked branches show Bd6+ with either rook or king capture, and the drawing premature promotion. The preceding nine-piece sequence is context; no FEN inferred from automatic-caption square names.",
+      "source_images": [
+        {
+          "file": "UnrHt2qs4Us/montage_accepted.jpg",
+          "sha256": "1b0e89be08d159d26dd516327b0c8b4286225f3d0fbb39b8081b0d1863f5e5e7"
+        },
+        {
+          "file": "UnrHt2qs4Us/images/image_00001.jpg",
+          "sha256": "9bf304ff346335a186ac0f458d875ca4b304de590067248a4672bfbf78643a1b"
+        },
+        {
+          "file": "UnrHt2qs4Us/images/image_00046.jpg",
+          "sha256": "16944776cf66a4ec2bfabcc9523484246a43f34f67a584c2b6bcbcc391fe1837"
+        },
+        {
+          "file": "UnrHt2qs4Us/images/image_00049.jpg",
+          "sha256": "6aacb90ee36a7a530dae4a34adcbacd5777d9271c0928b5f40fb4f744104a807"
+        },
+        {
+          "file": "UnrHt2qs4Us/images/image_00051.jpg",
+          "sha256": "cabe525edfa11d1a4277d0d6bcdbf680bdaa6e984f8b7c615a672b808c0f2227"
+        },
+        {
+          "file": "UnrHt2qs4Us/images/image_00053.jpg",
+          "sha256": "cb57f556043694139d10408312027df641ceeac7888997925096dc0a67cca10c"
+        },
+        {
+          "file": "UnrHt2qs4Us/images/image_00056.jpg",
+          "sha256": "8276f474fe7a77b6bafc60bd682053b486add156dfa9421ce52b48990a65d5ac"
+        },
+        {
+          "file": "UnrHt2qs4Us/images/image_00060.jpg",
+          "sha256": "9cb646abf2e93ec1a652e8022ce7be4e288e9163b0a79a82957e8a1b496a88af"
+        }
+      ]
+    },
+    "RGE18Mn9DuY": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed six-piece position after ...Rg2. Four checked branches: pinned-rook diversion, direct queen mate, two illustrated replies after deliberate queen promotion, and drawing immediate promotion. g8=Q+ gives check in both sacrifice and immediate-promotion lines; diversion matters because ...Rxg8 is no longer available. Earlier king retreat is context.",
+      "source_images": [
+        {
+          "file": "RGE18Mn9DuY/montage_accepted.jpg",
+          "sha256": "e787fa8873c5044c19aa45c873dcd60531bc40bcc8a0951ad12c57c2ff573994"
+        },
+        {
+          "file": "RGE18Mn9DuY/images/image_00001.jpg",
+          "sha256": "4a91728df336feabca3567730a765cb3b6a598e1c0bae51269873c2ee4a78e3e"
+        },
+        {
+          "file": "RGE18Mn9DuY/images/image_00042.jpg",
+          "sha256": "cf872d3ada236238fb0c9f6fd25692c3ed2226d16c543f29b88cc44288251b04"
+        },
+        {
+          "file": "RGE18Mn9DuY/images/image_00050.jpg",
+          "sha256": "23bbce8aa11fa24b0cdd0ed013cb6afcd79e1e342777f6222afa9e12c44f3139"
+        },
+        {
+          "file": "RGE18Mn9DuY/images/image_00052.jpg",
+          "sha256": "ea2c3f8124b1903b3165eb6a8458a86f11668cde0baf8286ce82778ece50d9ad"
+        },
+        {
+          "file": "RGE18Mn9DuY/images/image_00054.jpg",
+          "sha256": "838d15f13d11b606b901b2c3ca455a86959ad3cb4d273d7fc117f76d773677f1"
+        },
+        {
+          "file": "RGE18Mn9DuY/images/image_00055.jpg",
+          "sha256": "4994530184895937ac7808af1a5daf2e99a572451ef84da7196c1f8d1477dd41"
+        },
+        {
+          "file": "RGE18Mn9DuY/images/image_00062.jpg",
+          "sha256": "6edf3888c18c5df61e8c262602b4914eb012dadeed8d8926a887c502fe40598d"
+        },
+        {
+          "file": "RGE18Mn9DuY/images/image_00064.jpg",
+          "sha256": "81428a950f5a51278a79b95391886682c7368c20991c65d3feaf09536ba4a80e"
+        },
+        {
+          "file": "RGE18Mn9DuY/images/image_00067.jpg",
+          "sha256": "367ed05b3c6de72b15b9bc19a88ccf1ac689e63732e7d4ec8feec6c100a08561"
+        },
+        {
+          "file": "RGE18Mn9DuY/images/image_00070.jpg",
+          "sha256": "ea41691b4b9f2a11a51f2deca92f3c85f99a5d3992e0ed4ed6f4d677d8e3ed18"
+        }
+      ]
+    },
+    "PoazY5jnN44": {
+      "result": "awaiting_reconstruction",
+      "notes": "Reviewed complete initial board and montage: White Kf4 Ra8 a7; Black Kh3 Rh7 a3 c5 g7 (eight pieces). The queen-sacrifice climax retains eight pieces until a queen/rook is captured. Source images and captions are available.",
+      "analysis_required": "Reconstruct and verify the eight-piece forcing mating tree with disclosed appropriate analysis, or locate a substantive later supported start. Do not call the full initial king-walk or queen-sacrifice sequence tablebase verified from a terminal seven-piece mate alone.",
+      "source_images": [
+        {
+          "file": "PoazY5jnN44/images/image_00001.jpg",
+          "sha256": "24576faa25f123c91b3b7d5c346c597076e85b05b3f7c3bcc3a0485af25c194c"
+        },
+        {
+          "file": "PoazY5jnN44/montage_accepted.jpg",
+          "sha256": "523f42c321a663003ad4264b37fb07f840b5335f61a5d044437da43ebb097608"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 51,
+    "selected_branches": 10,
+    "tests": "95 tests passed across 16 files",
+    "production_build": "passed",
+    "ui_review": "Inspected Majestic Style after the deliberate queen promotion and Kb3; board, side to move, corrected legal queen-check explanation and move controls match the reconstruction.",
+    "screenshot": "docs/screenshots/endgame-stories-batch-07.png",
+    "queue_counts": {
+      "verified_selected_lines": 22,
+      "awaiting_reconstruction": 202,
+      "needs_information": 23,
+      "not_applicable": 1
+    }
+  }
+}

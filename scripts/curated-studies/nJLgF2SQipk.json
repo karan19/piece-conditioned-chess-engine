@@ -1,0 +1,142 @@
+{
+  "video_id": "nJLgF2SQipk",
+  "title": "Swapping Pieces: Replace the Queen’s Defense",
+  "summary": "Use a rook sacrifice and a knight reroute to force the defender on g8 to become a rook, enabling smothered mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1q1N3k/6pp/5p2/8/4R3/K1p5/Q4p2/4r2r w - - 0 1",
+      "question": "How can White replace the defender of g8?",
+      "explanation": "Re8+ forces the rook from e1 onto e8. Then Nf7+/Nh6+ repositions the knight to protect g8, and Qg8+ can force the rook onto that square before Nf7 mate.",
+      "evidence": {
+        "timestamp_s": 109
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "1q1N3k/6pp/5p2/8/4R3/K1p5/Q4p2/4r2r w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "swap_rook_defender",
+      "start": "start",
+      "title": "Source finish: rook replacement and smothered mate",
+      "san": [
+        "Re8+",
+        "Rxe8",
+        "Nf7+",
+        "Kg8",
+        "Nh6+",
+        "Kh8",
+        "Qg8+",
+        "Rxg8",
+        "Nf7#"
+      ],
+      "commentary": [
+        "Begin after ...Kh8. White’s knight on d8 blocks the black queen on b8 from reaching e8 along the back rank.",
+        "Re8+ offers the remaining white rook on the back rank. The black queen cannot pass through the knight on d8 to capture it or interpose farther along the rank.",
+        "Rxe8 is the sole legal reply. The rook from e1 takes the sacrifice and becomes the defender White wants to divert to g8.",
+        "Nf7+ checks h8 and prepares the knight’s route to h6. It is important to reposition before offering the queen.",
+        "Kg8 is the sole legal reply. The king leaves the corner while the rook remains on e8.",
+        "Nh6+ gives double check: the knight attacks g8 and vacates the a2–g8 diagonal for Qa2. Only king moves can answer both checks; Kh8 and Kf8 are legal.",
+        "Kh8 chooses the source corner retreat. Black’s g7 and h7 pawns leave little room around the king.",
+        "Qg8+ offers the queen beside the king. Nh6 protects g8, so Kxg8 is illegal. Qb8 cannot reach g8 because its own rook on e8 blocks the rank.",
+        "Rxg8 is the sole legal reply. The rook takes the queen and now occupies g8, blocking its own king’s escape.",
+        "Nf7# checks h8. Black’s own Rg8, g7 pawn and h7 pawn fill the king’s three adjacent squares; a knight check cannot be blocked."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nf7# checks h8. Black’s own Rg8, g7 pawn and h7 pawn fill the king’s three adjacent squares; a knight check cannot be blocked.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1q4rk/5Npp/5p2/8/8/K1p5/5p2/7r b - - 1 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "swap_king_refusal",
+      "start": "start",
+      "title": "Independent defense: retreat to f8 instead",
+      "san": [
+        "Re8+",
+        "Rxe8",
+        "Nf7+",
+        "Kg8",
+        "Nh6+",
+        "Kf8",
+        "Qf7#"
+      ],
+      "commentary": [
+        "Check the other king retreat after the double check rather than assuming Black must return to h8.",
+        "Re8+ forces the rook onto the back rank.",
+        "Rxe8 is the only legal answer and replaces the distant rook with a nearby defender.",
+        "Nf7+ checks the corner king and begins the reroute.",
+        "Kg8 is forced because the knight check leaves no other legal king move.",
+        "Nh6+ gives double check from the knight and queen. Kf8 is a legal alternative to the illustrated Kh8.",
+        "Kf8 declines the corner, but puts the king next to the protected mating square f7.",
+        "Qf7# checks f8. Nh6 protects f7, Qf7 covers e7/g7 and g8, and Black’s rook on e8 occupies the remaining back-rank flight."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qf7# checks f8. Nh6 protects f7, Qf7 covers e7/g7 and g8, and Black’s rook on e8 occupies the remaining back-rank flight.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1q2rk2/5Qpp/5p1N/8/8/K1p5/5p2/7r b - - 5 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can’t White offer Qg8 immediately after Rxe8?",
+      "answer": "With the knight still on d8, g8 is unprotected and Kxg8 is legal. The Nf7/Nh6 reroute is essential."
+    },
+    {
+      "node": "start",
+      "prompt": "Does Nh6+ force the king back to h8?",
+      "answer": "No. Kf8 is also legal, but Qf7 mates. Kh8 instead permits the queen sacrifice and smothered mate."
+    }
+  ],
+  "defaultBranch": "swap_rook_defender",
+  "practiceBranch": "swap_rook_defender",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kh8 at 109 seconds in the complete thirteen-piece later diagram. The rook replacement, knight reroute and queen offer are proved against every legal defense, including the omitted Kf8 retreat. The source king-corner continuation is preserved; Qf7 mate after Kf8 is independent analysis. Earlier Qa2, first rook offer and alternative queen/king responses remain outside this selected proof.",
+  "verification_scope": "Begin after ...Kh8 at 109 seconds in the complete thirteen-piece later diagram. The rook replacement, knight reroute and queen offer are proved against every legal defense, including the omitted Kf8 retreat. The source king-corner continuation is preserved; Qf7 mate after Kf8 is independent analysis. Earlier Qa2, first rook offer and alternative queen/king responses remain outside this selected proof.",
+  "sourceCorrections": [
+    {
+      "claim": "After the double check the king has to return to the corner.",
+      "correction": "At the verified later double check Nh6+, both Kh8 and Kf8 are legal. Kf8 allows independent Qf7 mate; the source Kh8 permits Qg8+/Rxg8/Nf7 mate."
+    }
+  ],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 11,
+    "moves": {
+      "1q1N3k/6pp/5p2/8/4R3/K1p5/Q4p2/4r2r w - - 0 1": "Re8+",
+      "1q1Nr2k/6pp/5p2/8/8/K1p5/Q4p2/7r w - - 0 2": "Nf7+",
+      "1q2r1k1/5Npp/5p2/8/8/K1p5/Q4p2/7r w - - 2 3": "Nh6+",
+      "1q2rk2/6pp/5p1N/8/8/K1p5/Q4p2/7r w - - 4 4": "Qf7#",
+      "1q2r2k/6pp/5p1N/8/8/K1p5/Q4p2/7r w - - 4 4": "Qg8+",
+      "1q4rk/6pp/5p1N/8/8/K1p5/5p2/7r w - - 0 5": "Nf7#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

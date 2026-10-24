@@ -1,0 +1,107 @@
+{
+  "video_id": "3woRCScilzI",
+  "title": "Roads of Destiny: Compare the Two Final Knight Mates",
+  "summary": "After the queen is taken, identify how a lone knight mates because pawns, enemy pieces and the distant king cover every escape.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "4q3/K2n3p/7p/p2N2nk/2p4p/PP5P/8/8 w - - 0 1",
+      "question": "The queen is gone. Can the knight finish the right-side pattern?",
+      "explanation": "After Kxh5, Black’s own g5 knight and h4/h6 pawns occupy three flights. Nf4 checks by a knight jump and covers g6; White h3 covers g4.",
+      "evidence": {
+        "timestamp_s": 94
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "4q3/K2n3p/7p/p2N2nk/2p4p/PP5P/8/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    },
+    {
+      "id": "left_pattern",
+      "fen": "4q3/K4n1p/7p/pkn2N2/7p/PP3b1P/8/8 w - - 0 1",
+      "question": "How does the matching left-side pattern work?",
+      "explanation": "After Kxb5, White’s king on a7 and pawns on a3/b3 are essential. They cover the squares that the checking knight cannot cover by itself.",
+      "evidence": {
+        "timestamp_s": 146
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "4q3/K4n1p/7p/pkn2N2/7p/PP3b1P/8/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "destiny_right_mate",
+      "start": "start",
+      "title": "Right-side finish after Kxh5",
+      "san": [
+        "Nf4#"
+      ],
+      "commentary": [
+        "Begin after Black has actually taken the queen on h5. Whether Black could refuse the earlier offer is outside this selected exercise.",
+        "Nf4# checks Kh5 and covers g6. Black’s Ng5 and h4/h6 pawns occupy three flights, while White h3 covers g4. A knight check cannot be blocked; none of Black’s pieces can capture the knight. This full fourteen-piece position is actual mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nf4# checks Kh5 and covers g6. Black’s Ng5 and h4/h6 pawns occupy three flights, while White h3 covers g4. A knight check cannot be blocked; none of Black’s pieces can capture the knight. This full fourteen-piece position is actual mate.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "4q3/K2n3p/7p/p5nk/2p2N1p/PP5P/8/8 b - - 1 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "destiny_left_mate",
+      "start": "left_pattern",
+      "title": "Left-side finish after Kxb5",
+      "san": [
+        "Nd4#"
+      ],
+      "commentary": [
+        "Begin in the separate source diagram after Kxb5. White’s knight starts on f5; this is not a continuation from the right-side position.",
+        "Nd4# checks Kb5 and covers c6. Ka7 covers a6/b6, a3 covers b4, and b3 covers a4/c4; Black’s a5 pawn and c5 knight occupy a5/c5. Every escape is accounted for and the knight cannot be captured or its check blocked: actual mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nd4# checks Kb5 and covers c6. Ka7 covers a6/b6, a3 covers b4, and b3 covers a4/c4; Black’s a5 pawn and c5 knight occupy a5/c5. Every escape is accounted for and the knight cannot be captured or its check blocked: actual mate.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "4q3/K4n1p/7p/pkn5/3N3p/PP3b1P/8/8 b - - 1 1",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Can we conclude Black had to take Qh5+?",
+      "answer": "No. Kg7 and Kf5 are legal refusals in the earlier larger diagram. This exercise verifies the mate after Kxh5, not the entire queen-offer plan."
+    },
+    {
+      "node": "left_pattern",
+      "prompt": "Why does the king on a7 matter?",
+      "answer": "It covers a6 and b6. Along with the a3/b3 pawns and Black’s own blockers, that removes the flights left after Nd4 checks b5."
+    }
+  ],
+  "defaultBranch": "destiny_right_mate",
+  "practiceBranch": "destiny_right_mate",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Final mating patterns only, after Black has accepted the queen on h5 or b5. Both complete fourteen-piece diagrams are visually reconstructed: native32 confirms Kxh5 at94 seconds; native51/52 confirm Kxb5 at143–146 seconds. The right pattern has White Ka7/Nd5/a3/b3/h3 against Kh5/Qe8/Nd7/Ng5/a5/c4/h4/h6/h7. The left has White Ka7/Nf5/a3/b3/h3 against Kb5/Qe8/Nc5/Nf7/Bf3/a5/h4/h6/h7. The branches teach Nf4# and Nd4# respectively, with exact finite certificates ending in actual mate. The queen offers themselves, refusals such as Kg7 or Kf5, the skewer conversion and the original seventeen-piece root remain outside this proof. These two mate-in-one exercises must not be read as certification that Black had to accept either queen offer.",
+  "verification_scope": "Final mating patterns only, after Black has accepted the queen on h5 or b5. Both complete fourteen-piece diagrams are visually reconstructed: native32 confirms Kxh5 at94 seconds; native51/52 confirm Kxb5 at143–146 seconds. The right pattern has White Ka7/Nd5/a3/b3/h3 against Kh5/Qe8/Nd7/Ng5/a5/c4/h4/h6/h7. The left has White Ka7/Nf5/a3/b3/h3 against Kb5/Qe8/Nc5/Nf7/Bf3/a5/h4/h6/h7. The branches teach Nf4# and Nd4# respectively, with exact finite certificates ending in actual mate. The queen offers themselves, refusals such as Kg7 or Kf5, the skewer conversion and the original seventeen-piece root remain outside this proof. These two mate-in-one exercises must not be read as certification that Black had to accept either queen offer.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 1,
+    "moves": {
+      "4q3/K2n3p/7p/p2N2nk/2p4p/PP5P/8/8 w - - 0 1": "Nf4#",
+      "4q3/K4n1p/7p/pkn2N2/7p/PP3b1P/8/8 w - - 0 1": "Nd4#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

@@ -1,0 +1,76 @@
+{
+  "video_id": "wgwsy8pth3c",
+  "title": "A Useless Queen: Recognize the Final Bishop Mate",
+  "summary": "A queen cannot block an adjacent bishop check: use the king and pawns to account for every escape.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/3B4/p5pp/P6k/7P/4q1PK/8 w - - 0 1",
+      "question": "Why can the queen not save this exact position?",
+      "explanation": "Bg3 checks Kh4 on an adjacent diagonal. The queen on e2 cannot interpose or capture the bishop, while White’s king and h-pawn seal the exits.",
+      "evidence": {
+        "timestamp_s": 122
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/8/3B4/p5pp/P6k/7P/4q1PK/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "useless_final_bishop_mate",
+      "start": "start",
+      "title": "Final source pattern after Qe2",
+      "san": [
+        "Bg3#"
+      ],
+      "commentary": [
+        "Begin after the source’s Qe2. The queen is on e2 rather than the caption’s a2; all ten pieces remain, including a4 and a5.",
+        "Bg3# checks Kh4 on the adjacent diagonal. Kh2 protects g3 and h3, h3 covers g4, and Black’s own g5/h5 pawns occupy the other flights. Qe2 cannot capture g3 or block an adjacent check. Black has no legal reply: actual mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bg3# checks Kh4 on the adjacent diagonal. Kh2 protects g3 and h3, h3 covers g4, and Black’s own g5/h5 pawns occupy the other flights. Qe2 cannot capture g3 or block an adjacent check. Black has no legal reply: actual mate.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "8/8/8/p5pp/P6k/6BP/4q1PK/8 b - - 1 1",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can a queen not interpose here?",
+      "answer": "The checking bishop on g3 is next to the king on h4. There is no square between them on which any defender can interpose."
+    },
+    {
+      "node": "start",
+      "prompt": "Does this prove every Black reply to Bd6 loses?",
+      "answer": "No. This exercise verifies the illustrated Qe2/Bg3 mate. The omitted Qg1+ resource and resulting larger ending require separate analysis."
+    }
+  ],
+  "defaultBranch": "useless_final_bishop_mate",
+  "practiceBranch": "useless_final_bishop_mate",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Final bishop-mate pattern only, after the illustrated Qe2 at121–122 seconds. Native28/29 establish the complete ten-piece diagram: White Kh2/Bd6/a4/g2/h3 against Kh4/Qe2/a5/g5/h5; native30/31 confirm Bg3 mate. The caption says Qa2, but the visible queen is on e2. Bg3# is proved by an exact finite certificate ending in actual mate, with both a4/a5 pawns retained. This does not certify the earlier rook sacrifice, the complete Bd6 waiting plan or every queen defense. In particular, Bd6/Qg1+/Kxg1/g4 reaches a larger ending still needing outcome analysis; that legal resource is preserved in the earlier draft rather than omitted as impossible. A broader bounded strategy search was not used as an exact proof.",
+  "verification_scope": "Final bishop-mate pattern only, after the illustrated Qe2 at121–122 seconds. Native28/29 establish the complete ten-piece diagram: White Kh2/Bd6/a4/g2/h3 against Kh4/Qe2/a5/g5/h5; native30/31 confirm Bg3 mate. The caption says Qa2, but the visible queen is on e2. Bg3# is proved by an exact finite certificate ending in actual mate, with both a4/a5 pawns retained. This does not certify the earlier rook sacrifice, the complete Bd6 waiting plan or every queen defense. In particular, Bd6/Qg1+/Kxg1/g4 reaches a larger ending still needing outcome analysis; that legal resource is preserved in the earlier draft rather than omitted as impossible. A broader bounded strategy search was not used as an exact proof.",
+  "sourceCorrections": [
+    {
+      "claim": "The caption says the queen goes to a2.",
+      "correction": "Native28/29 show Qe2. The exercise preserves that visible square and verifies the exact resulting mate."
+    }
+  ],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 1,
+    "moves": {
+      "8/8/3B4/p5pp/P6k/7P/4q1PK/8 w - - 0 1": "Bg3#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

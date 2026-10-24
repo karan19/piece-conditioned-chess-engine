@@ -1,0 +1,65 @@
+{
+  "batch_id": "2026-10-23-03",
+  "reviewed_on": "2026-10-23",
+  "scope": "Continue with Black-to-move studies and a seven-piece knight mate.",
+  "reviews": {
+    "TF7EyH_IkKo": {
+      "result": "verified_selected_lines",
+      "notes": "Verified Black-to-move bishop underpromotion, queen/rook stalemates, the drawing knight promotion, and checking before capturing White’s bishop.",
+      "source_images": [
+        {
+          "file": "TF7EyH_IkKo/images/image_00001.jpg",
+          "sha256": "ce735d739551881ceb24ab1fce2d72e274e9e2272590d19c8b43debc2231e524"
+        },
+        {
+          "file": "TF7EyH_IkKo/images/image_00036.jpg",
+          "sha256": "de4e28a6d08ed8b339d48263504867e753527d889f0356d6b2867908a301baf2"
+        },
+        {
+          "file": "TF7EyH_IkKo/images/image_00047.jpg",
+          "sha256": "7f6c9abd35437c52b9111a5418868021a270fc96f89b32f5176466035462b3cd"
+        }
+      ]
+    },
+    "CTmcvqKF8DQ": {
+      "result": "verified_selected_lines",
+      "notes": "Verified the final six-piece blockade from Black’s side. The tempo-preserving pawn move wins; tablebase also shows Kf2 wins, correcting the source’s claim that g6 is unique.",
+      "source_images": [
+        {
+          "file": "CTmcvqKF8DQ/images/image_00001.jpg",
+          "sha256": "db934b80f084f62ef83dc6370bc333d45553f97c0001a0141474739f7e809c0f"
+        },
+        {
+          "file": "CTmcvqKF8DQ/images/image_00039.jpg",
+          "sha256": "b0fcc29da64f5f0fe228af8ef1118a8ef85dd380de6fa048ace564e136ef035c"
+        },
+        {
+          "file": "CTmcvqKF8DQ/images/image_00051.jpg",
+          "sha256": "4de75e01c1406ccab56adcde77642be5f1aa344f7066eb1b7aeaa0696b8059fb"
+        }
+      ]
+    },
+    "HJaowRJZD6Y": {
+      "result": "verified_selected_lines",
+      "notes": "Verified the seven-piece finish after ...Nxd7, including the forced knight-cube mate and drawing alternatives. Initial eight-piece setup remains source context.",
+      "source_images": [
+        {
+          "file": "HJaowRJZD6Y/images/image_00001.jpg",
+          "sha256": "6860bf1590a5134fb6d0bc2b25528f06132ba187b1d269814b72c746c68da9a5"
+        },
+        {
+          "file": "HJaowRJZD6Y/images/image_00025.jpg",
+          "sha256": "c669920a9d743b41e893e8613313e56acd64c0591f7c57ee81012e9194daf7db"
+        },
+        {
+          "file": "HJaowRJZD6Y/images/image_00026.jpg",
+          "sha256": "053fd2298085f448d017e576cd3e1ad3163581b39520d232bbad7a492f898f59"
+        },
+        {
+          "file": "HJaowRJZD6Y/images/image_00030.jpg",
+          "sha256": "86140a652ebbbb8406cabb785e6532fbd7802aee75bc83a6cc961d5e2e3c80fd"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "batch_id": "2026-10-23-18",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three studies and eleven selected branches; four larger sources pending analysis and one middlegame review outside study scope. Includes exact source-outcome and caption corrections.",
+  "reviews": {
+    "sRbOlJc6Kt0": {
+      "result": "verified_selected_lines",
+      "notes": "Four branches, 18 exact positions from complete six-piece board. Bd3 prepares Bg6 against ...Qh5+, Qb2+ lures ...Bf6, and Qb5 creates two mating routes. Source ...Qe1 permits Qh5 mate; ...Bd8 permits Qe8 mate. Accepting Bd3 leads to Qg7 mate. Immediate Qb8+ ...Qd8 draws.",
+      "source_images": [
+        {
+          "file": "sRbOlJc6Kt0/montage_accepted.jpg",
+          "sha256": "6d1740f90b23e1900146cc0cdd2d7ced1603c5993c14482ca790903861f5232b"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00001.jpg",
+          "sha256": "5cc70472bd0add5faef46a2d83cfc0922f7efba79a7d49d41ed01206b37d70d1"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00012.jpg",
+          "sha256": "f58db1922be82fccb9b76b06466dbfaea89c41b602b28a8d33c846c3970b0e65"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00013.jpg",
+          "sha256": "4f3db4f311813cc79007ebdc15eee23ca4693180a36af24ebea0e57d1bb04e99"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00014.jpg",
+          "sha256": "c2b9b3ded27fbb579c744424a951592b390e84901fa66b4dbbdd1e3f6e4f28db"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00015.jpg",
+          "sha256": "1534adefd100d5618c2b0c701fa81539eb9f25c1add3dc5e8eab4fa5aa2b1d4a"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00016.jpg",
+          "sha256": "b959becf1eac4fc021a94c06fb3dc602825ef599acd1ac8301d0f747ea7e3987"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00017.jpg",
+          "sha256": "ff4b346b4377d65d7bb8162fef5387cd2bdcd8100c5cbbbe3c106f67c172d7f8"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00019.jpg",
+          "sha256": "7484a8cc18dc9735ef9645e57c04b49cbb11c427ed376775995bed67e184708b"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00020.jpg",
+          "sha256": "0ccd76ba8625c62a60db2b3ddfb8b6bd951846292f5d793588a7bdbb20e0d68e"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00021.jpg",
+          "sha256": "5d28221d10431d02b23a6e88e2f69dff04cab9939185cb835f669c7d83a74c02"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00025.jpg",
+          "sha256": "880936cd50e5402e8e310e694c93e46a43f66be945ae19334bdb1a1d9c087fd0"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00026.jpg",
+          "sha256": "5b0886a53d08d111a1cb8bcdfceb8f9f6c8c8b7a6ffc5240958d11d82854805b"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00027.jpg",
+          "sha256": "96da5c930ad74fd69ebaef5a801d14dd6b1f5f00bc51d5a6480059957e3fc193"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00032.jpg",
+          "sha256": "bc5b69fb910005462da61a79e6101de233d08ca7d89ac493a3e4d5f09cbb1adc"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00033.jpg",
+          "sha256": "4dbf0ddacea2a52bfed92b6d30358d7035f30aaaa588af53988f076fce7430ac"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00034.jpg",
+          "sha256": "568f4c118fe8494327358505fbd9b50083f6fc7eb96bdc375191ca0d68e137f4"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00035.jpg",
+          "sha256": "0aaacb4e47b94f5ac21f696a2c03e6c5d0c7e8ac11317e18691ca53a0b834d64"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00036.jpg",
+          "sha256": "30d9143f79228ef9ee0c184e1a98750b6ffdd534164e0674aef001eb7e5be366"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00038.jpg",
+          "sha256": "bb9d2f2ba3a7e570b78c7a10c8ce4e292222ef167bf654e43ffb9e96773bfe0c"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00039.jpg",
+          "sha256": "3fae3a6e5f95dc0c94ac201c3a4a45b202b390b17d199a7d5be15a3854eea25a"
+        },
+        {
+          "file": "sRbOlJc6Kt0/images/image_00040.jpg",
+          "sha256": "6dd2f1d554629e3a37e84982c2488e0983ee6addf7849e007dafeca0964c8611"
+        }
+      ]
+    },
+    "LSvxwy9516Y": {
+      "result": "verified_selected_lines",
+      "notes": "Four branches, 13 exact positions from three separate seven-piece diagrams after ...Qxb1. Qf5+ ...Qxf5 stalemates Kd4 with Bd2, or Ke3 with Bc3. The third stable board is Kd2 with Bd4, correcting captioned Ke2: Qh8+ ...Kg6 Qh7+ ...Kxh7 stalemates. Reusing Qf5 in that third cage loses because Kc1 remains legal. Earlier nine/eight-piece sequence is context, not certified.",
+      "source_images": [
+        {
+          "file": "LSvxwy9516Y/montage_accepted.jpg",
+          "sha256": "7ea2c1dfe4d2cf195e71549a35308990ed31c53069d19c7004f91742ab45c6ca"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00001.jpg",
+          "sha256": "79adc19a0b03284f3f1a4b563779451bd6cd894066d192e090555fa5e0a817b6"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00024.jpg",
+          "sha256": "a5d8a16782b2705321e54d1ce547da260987cce1cffac6b39f79d7b3d24e4e61"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00026.jpg",
+          "sha256": "f83042499f749e749a123fb4855e6ce62a52c3625e0a04f07b50efa21f7237f4"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00027.jpg",
+          "sha256": "63a8c07991fcd7d8dd9aa3a54d68e32c07586541fb30772ec08d5539edfb3d57"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00028.jpg",
+          "sha256": "1854ce6e908f3b5da244600ed54caf8db636cd97e00c666abbb28f650b89b7ab"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00030.jpg",
+          "sha256": "5e29ffa97df1ca2aa35260eb52480e051157f91c2a69b967e856297ad82aa5a5"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00032.jpg",
+          "sha256": "499da885927e922b3efe2cf06b20d79919db1f74d4d8a577f5dea5326e7a8f9b"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00033.jpg",
+          "sha256": "a0d5cc482b16c499324b1483aefa24551efabe0f2d46d2123d14978f3096b1de"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00034.jpg",
+          "sha256": "e5983bc214655e428e3ddaa41a9f9c4c3e20879c693ae02c8652b2926d1e682f"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00035.jpg",
+          "sha256": "ce2a40619ce909e34239aabbb75091bb793485eafa934ef065dba77f93f19867"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00041.jpg",
+          "sha256": "fd6be980df22715ad26a8a70f6344812b9d9be752a0f8b43b7a302e1a7ef5368"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00044.jpg",
+          "sha256": "75238ad97537b202105ddcff25b242f7566f12e4761771b87159a41be3c88c68"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00045.jpg",
+          "sha256": "82558da54bec88c2c64bb96d8fdd04f2831a4b2c5252ae1eec81c0e1dc5daaf1"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00046.jpg",
+          "sha256": "0c0d3e04aae4ffb305fb2b0e3b2b9f5bdf89a2fe3bb23165fa9fc9362d73ec2f"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00047.jpg",
+          "sha256": "f799d8807d1b49a6252b2ff66c44e2c18959633a4c540613d4d3154d430767c5"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00048.jpg",
+          "sha256": "3bc1a39e69a51701f5e4d1c8baadecac6de280ba9fee87e4a463107013c8f9b9"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00053.jpg",
+          "sha256": "ff62c04e8ec441b8edd0530390ae7b7f83a26fb1c9d4067fc483bc2013096851"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00054.jpg",
+          "sha256": "5c2a6335c3147f98063ddbaea632b80acdfce3cb4ba461e32b9308887de3d77d"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00055.jpg",
+          "sha256": "845f026c234e42838aeb0b5223f57f62fdecdda6896be67f3879e46f018e96c8"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00056.jpg",
+          "sha256": "c281ef741519966fa59a10ede70c6112f4e14d37cf5e84f5d759bfa2474ddffa"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00057.jpg",
+          "sha256": "3f2b3488687c371f3dfc5461c1c73ee49c78ccef2a3a68538513a13dc6c31d61"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00058.jpg",
+          "sha256": "30bce0bcbff909215d939622f32218024ef671f452a19a7f71aa29027e0951d2"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00059.jpg",
+          "sha256": "891c59a83eb606375237d84f0e555e86bcafb3398b80ebaced7370ea0ecbae0a"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00060.jpg",
+          "sha256": "01025d858eafaed4273d9d6cb5c857a63d5f21275b10f91f764ccecd0b665910"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00061.jpg",
+          "sha256": "0e3554b1c103b8478329eff3972baee008f9536619296a6d6f4de443574927a4"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00062.jpg",
+          "sha256": "a5e49ea21e84c85196914db91be2b13d39fb6422148e2db17d1eb23516e568aa"
+        },
+        {
+          "file": "LSvxwy9516Y/images/image_00063.jpg",
+          "sha256": "81fae24a1a1cbfdec3c4a8f9f3227e9ce7eedc922aeaa7c283302c892de01258"
+        }
+      ]
+    },
+    "BBxlctESzH4": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 32 exact positions from complete seven-piece board. a6 and Ne3+ lure ...Bxe3 before a forcing queen-skewer route through Qg2/Qg5/Qf5/Qd7 wins Qd1. Immediate axb6 draws. Correction: rushed a7 ...dxc2 a8=Q ...c1=Q is also drawn at every encoded step, not a Black win as claimed in the source. Both correction and exact evidence retained.",
+      "source_images": [
+        {
+          "file": "BBxlctESzH4/montage_accepted.jpg",
+          "sha256": "4444ad587e0067995637bc1627a512c8e517b12e89e91e24bdebdf26bcaa5ba0"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00001.jpg",
+          "sha256": "c23c789f7c39f190c043d08b249b881f5729d83e5c0bdde57b6ae034e6bbd0a7"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00002.jpg",
+          "sha256": "14060124864a978e06029cadaff193e636751180ee3456bbac4009d7a206644e"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00003.jpg",
+          "sha256": "adb6397a58fdf5edf1fc7847c7b4a35658795b6b1012590111f88f8d51dba0d7"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00004.jpg",
+          "sha256": "7af6fd06b6be6955a3226e0bb30978648c9216724e15aaa1dec11c7a3bc2216b"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00005.jpg",
+          "sha256": "1bc419181c960a0b26f5fa8efef5f73db84f6e91fead1a250f15b2d28adf2fa4"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00006.jpg",
+          "sha256": "b6429a47308628cb35f853a63d73e2947c1a5c0d823588f3f45d4ebe05b967aa"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00007.jpg",
+          "sha256": "2fca03502a353cf9b176b8808aec2ccb4771b75eeabf1f78a77bcdf86dc8d389"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00008.jpg",
+          "sha256": "cb0f5fc9d062f28dc87c3f4b711a83310ccc867304e191195e142c5193606afb"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00010.jpg",
+          "sha256": "d26b71a58fc22c99d5d8b10d79ee95332bb13f6c40b920832a4980cd76387ad0"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00012.jpg",
+          "sha256": "f48ee0fbb2e02a4797d9f8847ae6d6d76f33fd5349f44ab8f63fd73d4fa30c45"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00020.jpg",
+          "sha256": "a2f478c6bdfaf0cd586669abb4d39e68b41a9bec48e54d9897a7804e032c3508"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00021.jpg",
+          "sha256": "80e351dbc061d766ca75d398f4fee41af4901035e0ed792301a328f8fddcf780"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00026.jpg",
+          "sha256": "385e5729eb1c171860bc044e6c9379b477f6c918d0572d85e7e505d467cbb1fa"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00027.jpg",
+          "sha256": "173784e37c62e7f89a86a3533741155c306ac200b720ac536ae2d46b73e085ae"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00028.jpg",
+          "sha256": "28ff8ca2ad5a3e9f812469c4413aa6b3b5d0ef1f8e91e798f9264f186342277a"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00029.jpg",
+          "sha256": "b95082a8f77766eb35bf258b5b7321342be4814a77637dc382fa2276b17348b4"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00030.jpg",
+          "sha256": "72109a331cfa2112dda7866762baee079c6090ae4d1458fbc22c82889a9eb82b"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00031.jpg",
+          "sha256": "bcf9ec3609863572e0bc2d858e6768a776de9e7a10b74dda5464ccf27fb92a4b"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00037.jpg",
+          "sha256": "12315429b5e115003c4a2778afc6e9e893f90213884b20f294ca9aa94b9be550"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00038.jpg",
+          "sha256": "fabd256f3408d79407cd844b5be8ed8440730a0ed7d70d01ff43d034df52fbe1"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00039.jpg",
+          "sha256": "7d0a91e5f1b772c7bdc0607df0c601ed0b64bfd80495cbc88faae7d70ac8b8f6"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00042.jpg",
+          "sha256": "2c9bb8fe34d3e1758ad04d7dfb747836fb67d132fc64866108b429fb047c3605"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00043.jpg",
+          "sha256": "16c2030a4473b896ade01a1bac1fea2aff095f9faf96683637a050f1f0a555d9"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00044.jpg",
+          "sha256": "12459d36b97e1fbf88316a58024f8a5be4ed0c097489ffd53cb51b33040fabbc"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00045.jpg",
+          "sha256": "48e7a6f8db847ec3e102bf88a1b9691e0f01a00621114af248ffdd867a93ca7f"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00046.jpg",
+          "sha256": "fa3a75b8102bb59b17a3ee9e33740244fa1fa26fbd0569ac662580bf820d476d"
+        },
+        {
+          "file": "BBxlctESzH4/images/image_00047.jpg",
+          "sha256": "65cfcbf040480310d998fc55f591012defca25f7ccdea523d3c3b236bab0f902"
+        }
+      ]
+    },
+    "14kR3bfc18Y": {
+      "result": "not_applicable",
+      "notes": "Reviewed full narration and montage: the creator explicitly explains that the follower\u2019s losses occur in the middlegame, then reviews queen blunders, knight forks and planning. There is no endgame study to reconstruct. Keep the searchable source; outside Endgame Stories study scope, not an information gap.",
+      "source_images": [
+        {
+          "file": "14kR3bfc18Y/montage_accepted.jpg",
+          "sha256": "f8d55528faed406579f8f84f4ddadb3e5728d03baa751e0206a1dedb059406ac"
+        },
+        {
+          "file": "14kR3bfc18Y/images/image_00001.jpg",
+          "sha256": "ebcb13d15c481362d56e5133689e9955a7fcec048b6a1c9a3fc0fcb769bb3213"
+        }
+      ]
+    },
+    "RIVmNObFz7k": {
+      "result": "awaiting_reconstruction",
+      "notes": "Source board and narration present. Larger real-game position with queens, multiple rooks/minor pieces and pawns. The Rd5/e7/Rd8 pin and final Qd5/Qxb5 mating idea need complete legal board reconstruction and supported larger-position analysis or a clearly scoped substantive later small phase. No result inferred merely from narration of resignation.",
+      "source_images": [
+        {
+          "file": "RIVmNObFz7k/images/image_00001.jpg",
+          "sha256": "eafc9b7c91cfa351bc662d91088d4340def2571bf1a79a38fc831d6e9ae87875"
+        }
+      ],
+      "analysis_required": "Source board and narration present. Larger real-game position with queens, multiple rooks/minor pieces and pawns. The Rd5/e7/Rd8 pin and final Qd5/Qxb5 mating idea need complete legal board reconstruction and supported larger-position analysis or a clearly scoped substantive later small phase. No result inferred merely from narration of resignation."
+    },
+    "3woRCScilzI": {
+      "result": "awaiting_reconstruction",
+      "notes": "Source board and narration present. Roads of Destiny begins with seventeen pieces: White Ka7 Qc2 Nd5 Nf5 a3 b3 h3; Black Ke5 Qe8 Nd7 Nf7 Bf3 a5 c4 g6 h4 h7. The two queen-sacrifice/knight-mate branches remain large. Needs supported larger-position analysis, not a terminal small-board proof.",
+      "source_images": [
+        {
+          "file": "3woRCScilzI/images/image_00001.jpg",
+          "sha256": "94f7054f5216009f3d2ed9f635f8bf9d8874b0cd8f51d3070797323560c8129e"
+        }
+      ],
+      "analysis_required": "Source board and narration present. Roads of Destiny begins with seventeen pieces: White Ka7 Qc2 Nd5 Nf5 a3 b3 h3; Black Ke5 Qe8 Nd7 Nf7 Bf3 a5 c4 g6 h4 h7. The two queen-sacrifice/knight-mate branches remain large. Needs supported larger-position analysis, not a terminal small-board proof."
+    },
+    "0rxEWrigO_k": {
+      "result": "awaiting_reconstruction",
+      "notes": "Source board and narration present. Initial ten-piece diagram: White Kc2 Rb8 Nd4 Bh2; Black Ka3 Qe7 c7 d7 e6 h7. After ...exd6 the mating-and-pin maneuver still has nine pieces, and winning the queen alone still leaves eight. Requires supported larger-position analysis or a substantive later conversion with explicit limited scope.",
+      "source_images": [
+        {
+          "file": "0rxEWrigO_k/images/image_00001.jpg",
+          "sha256": "b5e4af309a417df66ce2a3ddfbf16813a694ccab96ef44a29483671d5b402051"
+        }
+      ],
+      "analysis_required": "Source board and narration present. Initial ten-piece diagram: White Kc2 Rb8 Nd4 Bh2; Black Ka3 Qe7 c7 d7 e6 h7. After ...exd6 the mating-and-pin maneuver still has nine pieces, and winning the queen alone still leaves eight. Requires supported larger-position analysis or a substantive later conversion with explicit limited scope."
+    },
+    "M-_O_vRhIuA": {
+      "result": "awaiting_reconstruction",
+      "notes": "Source board, narration and montage present. Initial ten pieces: White Kb7 Nd8 Nh8 a3 b4 c3; Black Kb5 c7 d7 f4. The ...dxc6 knight sacrifice leaves nine, and the final pawn/knight mating cage still exceeds seven. Needs larger-position verification; source presence does not justify a needs_information label.",
+      "source_images": [
+        {
+          "file": "M-_O_vRhIuA/montage_accepted.jpg",
+          "sha256": "b87f93123b20800474e3e1dda3dac5e6ed64b0459a6979d183e41f89688f1cc4"
+        },
+        {
+          "file": "M-_O_vRhIuA/images/image_00001.jpg",
+          "sha256": "783e85ecc5bfdbe190244796fb84c3b52602333659c9ff2b4f49cbe55516225e"
+        }
+      ],
+      "analysis_required": "Source board, narration and montage present. Initial ten pieces: White Kb7 Nd8 Nh8 a3 b4 c3; Black Kb5 c7 d7 f4. The ...dxc6 knight sacrifice leaves nine, and the final pawn/knight mating cage still exceeds seven. Needs larger-position verification; source presence does not justify a needs_information label."
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 63,
+    "selected_branches": 11,
+    "tests": "106 tests passed across 16 files; tests three queen mates, three distinct Genie stalemates, the legal Kc1 escape in the wrong sacrifice, and every step of the corrected queen-race draw.",
+    "production_build": "Passed TypeScript and Vite build; existing bundle-size advisory remains.",
+    "ui_review": "CUA confirmed actual Qe8 mate, Kd2 stalemate after ...Kxh7, and the corrected drawn promoted-queen position with source correction visible.",
+    "screenshots": [
+      "docs/screenshots/endgame-stories-batch-18.png",
+      "docs/screenshots/endgame-stories-batch-18-correction.png"
+    ],
+    "queue_counts": {
+      "verified_selected_lines": 55,
+      "awaiting_reconstruction": 166,
+      "needs_information": 23,
+      "not_applicable": 4
+    },
+    "local_only": true
+  }
+}

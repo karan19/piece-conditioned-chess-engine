@@ -1,0 +1,218 @@
+{
+  "video_id": "iDC8o_fKF_A",
+  "title": "2 Rooks VS 2 Pawns",
+  "summary": "Use checking tempos to build a blockade and gain time for the king, then answer either promotion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1k6/6P1/3r3P/8/8/8/5K2/r7 b - - 0 1",
+      "question": "Can Black blockade both advanced pawns in time?",
+      "explanation": "Black has Kb8, Ra1 and Rd6 against Kf2, g7 and h6. Black moves first and must displace the white king with check.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "final_promotions",
+      "fen": "2rr4/5KPP/8/5k2/8/8/8/8 w - - 0 1",
+      "question": "Does a knight promotion change the finish?",
+      "explanation": "This separately reviewed late source diagram has Kf7/g7/h7 against Kf5/Rc8/Rd8. The intervening repeated king walk is source context rather than an invented connecting sequence.",
+      "evidence": {
+        "timestamp_s": 159
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "rooks_gain_tempo",
+      "start": "start",
+      "title": "Check, blockade and gain a king tempo",
+      "san": [
+        "Rd2+",
+        "Ke3",
+        "Rd8",
+        "h7",
+        "Re1+",
+        "Kf4",
+        "Ree8",
+        "Kf5",
+        "Rc8",
+        "Kf6",
+        "Red8",
+        "Kf7",
+        "Rd7+",
+        "Kf6",
+        "Rd6+",
+        "Ke5",
+        "Rdd8",
+        "Kf6",
+        "Kb7"
+      ],
+      "commentary": [
+        "Begin with Black to move in the complete six-piece source root.",
+        "Rd2+ forces the king away from the first two ranks before the rooks take up the blockade.",
+        "Ke3 is the selected king escape from check, moving from f2 to e3.",
+        "Rd8 moves the checking rook to the back rank.",
+        "h7 brings the pawns side by side on the seventh rank.",
+        "Re1+ uses the other rook to gain a checking tempo.",
+        "Kf4 is the illustrated king response.",
+        "Re8 completes the back-rank blockade. Capturing a promoted piece can be followed by the other rook’s recapture.",
+        "Kf5 tries to approach the rooks and pawns.",
+        "Rc8 makes room for the other rook to switch files.",
+        "Kf6 advances toward the blockade.",
+        "Rd8 shifts the other rook behind the approaching king.",
+        "Kf7 reaches the seventh rank.",
+        "Rd7+ checks horizontally and pushes the king away.",
+        "Kf6 retreats one rank.",
+        "Rd6+ checks again and denies the king its previous position.",
+        "Ke5 is the selected retreat, preserving White’s most resilient route in the narration.",
+        "Rd8 restores the blockade while the king is farther away.",
+        "Kf6 approaches again, but now it takes another move to reach f7.",
+        "Kb7 spends that extra tempo improving Black’s king. The exact position remains a Black win; the repeated later king walk is not encoded as an uninterrupted sequence."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kb7 spends that extra tempo improving Black’s king. The exact position remains a Black win; the repeated later king walk is not encoded as an uninterrupted sequence.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "2rr4/1k4PP/5K2/8/8/8/8/8 w - - 15 11",
+      "outcome": "loss"
+    },
+    {
+      "id": "rooks_passive_blockade",
+      "start": "start",
+      "title": "Blockade without checking first",
+      "san": [
+        "Rd8",
+        "h7",
+        "Rh1",
+        "g8=Q",
+        "Rxg8",
+        "hxg8=Q+"
+      ],
+      "commentary": [
+        "Compare the source’s passive blockade before displacing Kf2.",
+        "Rd8 gives up Black’s forced win, but the exact position is drawn at this point; the later ...Rh1 mistake will lose.",
+        "h7 threatens both promotions and preserves the draw against best defense.",
+        "Rh1 tries to stop the h-pawn, but this is the losing error: the g-pawn can promote with a winning recapture.",
+        "g8=Q creates a queen while the white king remains safe on f2.",
+        "Rxg8 removes that queen but places the rook on the h-pawn’s capture square.",
+        "hxg8=Q promotes by recapture. White retains a checked win against the remaining rook."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "hxg8=Q promotes by recapture. White retains a checked win against the remaining rook.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1k4Q1/8/8/8/8/8/5K2/7r b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "rooks_queen_mate",
+      "start": "final_promotions",
+      "title": "A queen promotion allows mate",
+      "san": [
+        "g8=Q",
+        "Rc7#"
+      ],
+      "commentary": [
+        "Begin in the separately reviewed late six-piece diagram after ...Kf5, not at the initial root.",
+        "g8=Q creates a queen but cannot save the king.",
+        "Rc7# is actual mate. Kf5 controls e6/f6/g6, Rd8 controls the eighth rank and the checking rook seals rank seven."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rc7# is actual mate. Kf5 controls e6/f6/g6, Rd8 controls the eighth rank and the checking rook seals rank seven.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "3r2Q1/2r2K1P/8/5k2/8/8/8/8 w - - 1 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "rooks_knight_defense",
+      "start": "final_promotions",
+      "title": "A knight promotion blocks with check",
+      "san": [
+        "g8=N",
+        "Rc7+",
+        "Ne7+",
+        "Rxe7+",
+        "Kxe7",
+        "Rh8"
+      ],
+      "commentary": [
+        "Compare the source’s more resilient knight underpromotion in the same late diagram.",
+        "g8=N creates a knight that can interpose with check on e7.",
+        "Rc7+ checks, but the knight means this is not mate.",
+        "Ne7+ blocks the rook check while attacking Kf5.",
+        "Rxe7+ captures that knight and answers its check with a check.",
+        "Kxe7 takes the sacrificed rook, leaving a rook against the last pawn.",
+        "Rh8 stops h8 promotion from behind. This is a checked Black win, requiring normal conversion rather than an immediate mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rh8 stops h8 promotion from behind. This is a checked Black win, requiring normal conversion rather than an immediate mate.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "7r/4K2P/8/5k2/8/8/8/8 w - - 1 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why check before building the blockade?",
+      "answer": "The check pushes the white king away before the rooks move behind the pawns. Later rank checks force another retreat and gain time to improve Black’s king."
+    },
+    {
+      "node": "final_promotions",
+      "prompt": "Why is the knight promotion different?",
+      "answer": "It blocks Rc7+ with Ne7+, giving check itself. Black must capture that knight before stopping the remaining h-pawn."
+    }
+  ],
+  "defaultBranch": "rooks_gain_tempo",
+  "practiceBranch": "rooks_gain_tempo",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Black plays from the complete six-piece root. A checked opening blockade sequence ends after ...Kb7. A separately reconstructed late diagram after ...Kf5 checks both promotion choices; the source’s repeated intervening king walk remains context, with no invented connection.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    "In the exact root, the passive ...Rd8 h7 comparison is drawn; it becomes a White win only after ...Rh1. The lesson distinguishes the drawing error from the later losing error."
+  ],
+  "verificationDate": "2026-10-23"
+}

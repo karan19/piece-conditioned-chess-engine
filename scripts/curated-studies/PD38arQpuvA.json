@@ -1,0 +1,150 @@
+{
+  "video_id": "PD38arQpuvA",
+  "title": "A Brave Pawn Runs: Spend the Tempo on Promotion",
+  "summary": "Push the remote passer before the bishop can attack it; compare the source’s separate pawn-mate finish.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2K5/3p4/1k5P/1P1b4/8/8/8/8 w - - 0 1",
+      "question": "The queen and rook have disappeared. Which pawn matters now?",
+      "explanation": "White has Kc8, b5 and h6 versus Kb6, Bd5 and d7. The bishop cannot control the dark promotion square h8, but can still attack h7 if White wastes a move.",
+      "evidence": {
+        "timestamp_s": 79
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "pawn_mate",
+      "fen": "q7/k1Kp4/b6P/1P6/8/8/8/8 w - - 0 1",
+      "question": "In a different source branch, how can a pawn mate a king with a queen?",
+      "explanation": "Begin separately after ...Bxa6 at 109 seconds. White has Kc7, b5 and h6 versus Ka7, Qa8, Ba6 and d7. The black queen and bishop occupy the king’s own flight squares.",
+      "evidence": {
+        "timestamp_s": 109
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "brave_source_race",
+      "start": "start",
+      "title": "Source ending: advance the remote passer",
+      "san": [
+        "h7",
+        "Kxb5",
+        "h8=Q"
+      ],
+      "commentary": [
+        "Begin after ...Kb6 at 79 seconds in the complete six-piece ending. The earlier nine-piece sacrifice sequence is outside this exact verification.",
+        "h7 spends the move on the passer and keeps a forced White win. The bishop on d5 cannot attack h8, and the king is too far away to stop promotion immediately.",
+        "Kb5 is the source’s illustrated king move. It leaves the b-pawn in place and does not catch the h-pawn.",
+        "h8=Q promotes. White has a checked winning queen ending against bishop and pawn, with b5 still present. Further conversion is left to practice; this is not immediate mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "h8=Q promotes. White has a checked winning queen ending against bishop and pawn, with b5 still present. Further conversion is left to practice; this is not immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2K4Q/3p4/8/1k1b4/8/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "brave_bishop_defense",
+      "start": "start",
+      "title": "Independent defense: bring the bishop toward the passer",
+      "san": [
+        "h7",
+        "Be6",
+        "h8=Q"
+      ],
+      "commentary": [
+        "An independently selected representative bishop reply tests whether the bishop can stop the advanced h-pawn.",
+        "h7 acts before Black can establish a useful attack on h7.",
+        "Be6 approaches the pawn along a light-square diagonal, but h8 is a dark square and is not controlled by this bishop. This defense still loses with best play.",
+        "h8=Q promotes safely and retains the exact White win. The bishop’s square color matters here because White has already secured the pawn’s final advance."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "h8=Q promotes safely and retains the exact White win. The bishop’s square color matters here because White has already secured the pawn’s final advance.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2K4Q/3p4/1k2b3/1P6/8/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "brave_wasted_capture",
+      "start": "start",
+      "title": "Independent error: collect d7 first",
+      "san": [
+        "Kxd7",
+        "Be4",
+        "h7",
+        "Bxh7"
+      ],
+      "commentary": [
+        "An independently selected comparison tests a tempting capture before advancing h6.",
+        "Kxd7 removes a black pawn but gives up the forced win. White has allowed time for the bishop to attack the h-pawn’s next square.",
+        "Be4 controls h7 along e4-f5-g6-h7 and holds a draw with best play. A wrong-color bishop for h8 can still stop a pawn before it reaches promotion.",
+        "h7 now steps onto the bishop’s diagonal. This selected continuation remains drawn; White no longer has the immediate winning race.",
+        "Bxh7 removes the h-pawn. The exact bishop-versus-b-pawn ending is drawn. The important error was spending the first tempo on Kxd7, not merely the final pawn capture."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Bxh7 removes the h-pawn. The exact bishop-versus-b-pawn ending is drawn. The important error was spending the first tempo on Kxd7, not merely the final pawn capture.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/3K3b/1k6/1P6/8/8/8/8 w - - 0 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "brave_pawn_mate",
+      "start": "pawn_mate",
+      "title": "Separate source branch: a pawn closes the cage",
+      "san": [
+        "b6#"
+      ],
+      "commentary": [
+        "Begin separately after ...Bxa6 at 109 seconds, a complete seven-piece diagram. This is not a continuation of the six-piece queen-sacrifice branch shown by the other lines.",
+        "b6# checks Ka7. Kc7 controls b6, b7 and b8; Black’s own Ba6 and Qa8 occupy a6 and a8. Neither piece can capture the pawn on b6 or interpose against its adjacent check. Black has no escape and is checkmated."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "b6# checks Ka7. Kc7 controls b6, b7 and b8; Black’s own Ba6 and Qa8 occupy a6 and a8. Neither piece can capture the pawn on b6 or interpose against its adjacent check. Black has no escape and is checkmated.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "q7/k1Kp4/bP5P/8/8/8/8/8 b - - 0 1",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why must White push h7 before capturing d7?",
+      "answer": "Taking d7 gives Black ...Be4, which controls h7 before the pawn can advance safely. Immediate h7 wins the race because the bishop cannot control h8."
+    },
+    {
+      "node": "pawn_mate",
+      "prompt": "How can a queen fail to prevent a pawn mate?",
+      "answer": "The queen on a8 occupies a king flight square and cannot capture b6. White’s king protects the checking pawn and covers the b-file escapes; Black’s own bishop blocks a6."
+    }
+  ],
+  "defaultBranch": "brave_source_race",
+  "practiceBranch": "brave_source_race",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Two separately reconstructed later positions are checked: after ...Kb6 at 79 seconds in the six-piece queen-sacrifice ending, and after ...Bxa6 at 109 seconds in the seven-piece pawn-mate branch. The larger original promotion/rook-sacrifice setup is source context outside exact verification. The bishop-defense and wasted-capture comparisons are independently selected; the two source branches are not joined into an invented legal sequence.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

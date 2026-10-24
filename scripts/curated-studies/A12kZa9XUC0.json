@@ -1,0 +1,171 @@
+{
+  "video_id": "A12kZa9XUC0",
+  "title": "Surgical Win",
+  "summary": "Keep the king off checking squares until the pawn sacrifice creates a winning race.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/1kp3p1/8/K4P1P/8/8/8 w - - 0 1",
+      "question": "Push the pawn now, or improve the king route?",
+      "explanation": "White must create a passed h-pawn without allowing the c-pawn to gain a decisive checking tempo.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "last_route",
+      "fen": "8/8/1k4p1/8/2p2P1P/8/8/3K4 b - - 1 3",
+      "question": "Is it finally time to sacrifice f4?",
+      "explanation": "The king has reached d1 by the light squares b3 and c2. The c-pawn cannot drive it away with a checking advance.",
+      "evidence": {
+        "timestamp_s": 117
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "surgical_light_squares",
+      "start": "start",
+      "title": "Follow the light squares, then sacrifice",
+      "san": [
+        "Kb3",
+        "c5",
+        "Kc2",
+        "c4",
+        "Kd1",
+        "c3",
+        "f5",
+        "gxf5",
+        "Kc2"
+      ],
+      "commentary": [
+        "Begin from the complete six-piece source board. Pawn races depend on the king’s route as well as the number of steps to promotion.",
+        "Kb3 approaches the c-pawn while avoiding b4, where ...c5 would arrive with check.",
+        "c5 starts Black’s passed-pawn race. It does not check the king on b3.",
+        "Kc2 continues along light squares and prepares to meet the advancing c-pawn without losing a checking tempo.",
+        "c4 advances again, hoping to force the king into an awkward approach.",
+        "Kd1 keeps the king on a light square. White delays the pawn sacrifice until it can block the c-pawn from the correct side.",
+        "c3 is the source’s attempt to keep the king on b6 while racing the pawn toward promotion.",
+        "f5 now sacrifices a pawn at the favorable moment, drawing the g-pawn away from the h-pawn’s file.",
+        "gxf5 accepts and creates Black’s second passer, but it also leaves the h-pawn free to advance.",
+        "Kc2 blocks c2 and threatens to collect c3. White can coordinate against the two black passers while the h-pawn runs; this exact position is a White win. The branch stops at the checked blockade, without assuming a particular further Black move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kc2 blocks c2 and threatens to collect c3. White can coordinate against the two black passers while the h-pawn runs; this exact position is a White win. The branch stops at the checked blockade, without assuming a particular further Black move.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/1k6/5p2/7P/2p5/2K5/8 b - - 1 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "surgical_push_early",
+      "start": "start",
+      "title": "Sacrifice before improving the king",
+      "san": [
+        "f5",
+        "gxf5"
+      ],
+      "commentary": [
+        "Compare the immediate pawn sacrifice with the king still on a4.",
+        "f5 gives away the forced win. The h-pawn becomes passed, but the king has not reached the required defensive route.",
+        "gxf5 accepts. Black’s c-pawn and new f-pawn give enough counterplay to draw this exact position; a passed h-pawn alone does not establish a win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "gxf5 accepts. Black’s c-pawn and new f-pawn give enough counterplay to draw this exact position; a passed h-pawn alone does not establish a win.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/1kp5/5p2/K6P/8/8/8 w - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "surgical_wrong_approach",
+      "start": "start",
+      "title": "Approach on a checking square",
+      "san": [
+        "Kb4",
+        "c5+",
+        "Kc3"
+      ],
+      "commentary": [
+        "Compare the source’s more direct king approach before the c-pawn advances.",
+        "Kb4 gives away the win because it allows Black to gain a checking tempo.",
+        "c5+ checks the king on b4, making White spend a move responding before it can continue toward the c-pawn.",
+        "Kc3 answers the check, but the exact position is drawn. The source’s first-move Kb3 avoids the checking tempo and preserves the winning route."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kc3 answers the check, but the exact position is drawn. The source’s first-move Kb3 avoids the checking tempo and preserves the winning route.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/1k4p1/2p5/5P1P/2K5/8/8 b - - 1 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "surgical_wrong_middle",
+      "start": "start",
+      "title": "Step onto c3 instead of c2",
+      "san": [
+        "Kb3",
+        "c5",
+        "Kc3",
+        "Kc6"
+      ],
+      "commentary": [
+        "Compare a different king route after the correct first move.",
+        "Kb3 preserves the win by avoiding the immediate pawn check.",
+        "c5 continues the pawn race without check.",
+        "Kc3 gives away the win. White’s king has stepped onto a dark square where the later pawn advance can gain a checking tempo.",
+        "Kc6 is the source’s waiting defense. Black keeps the pawn timing flexible, and this exact position is drawn with best play."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kc6 is the source’s waiting defense. Black keeps the pawn timing flexible, and this exact position is drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/2k3p1/2p5/5P1P/2K5/8/8 w - - 2 3",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why care about the colors of the king’s squares?",
+      "answer": "In this setup, b3, c2 and d1 avoid the c-pawn’s checking advances at the crucial moments. The useful rule is the exact tempo pattern, not that one color is always better."
+    },
+    {
+      "node": "last_route",
+      "prompt": "Why wait until Kd1 before playing f5?",
+      "answer": "The king can then return to c2 to stop c3 without first being displaced by a pawn check. That leaves time to handle the other passer while h4 runs."
+    }
+  ],
+  "defaultBranch": "surgical_light_squares",
+  "practiceBranch": "surgical_light_squares",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin from the full six-piece opening diagram. The selected route is Kb3–c2–d1 before f5; three comparisons show why earlier pawn pushes or different king squares give away the win. Source pawn races beyond the checked blockade remain context.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

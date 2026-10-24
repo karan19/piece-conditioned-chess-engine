@@ -1,0 +1,32 @@
+{
+  "node:start": {
+    "method": "finite_strategy",
+    "fen": "8/p5pk/7r/5p2/3N1Pp1/1P1Q2K1/P4BR1/8 b - - 0 1",
+    "winner": "black",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rh3#": {
+        "method": "finite_strategy",
+        "fen": "8/p5pk/8/5p2/3N1Pp1/1P1Q2Kr/P4BR1/8 w - - 1 2",
+        "winner": "black",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:art_conditional_rook_mate:1": {
+    "method": "finite_strategy",
+    "fen": "8/p5pk/8/5p2/3N1Pp1/1P1Q2Kr/P4BR1/8 w - - 1 2",
+    "winner": "black",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:art_conditional_rook_mate": {
+    "method": "finite_strategy",
+    "fen": "8/p5pk/8/5p2/3N1Pp1/1P1Q2Kr/P4BR1/8 w - - 1 2",
+    "winner": "black",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "video_id": "Lum_UyZzrJE",
+  "title": "Legendary Pawn: Hold the Rook Ending",
+  "summary": "Once the attack has simplified to a drawable ending, recover material with check and avoid exposing the pawn.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/7p/4K2k/7b/6P1/8/7R/5r2 w - - 0 1",
+      "question": "Black has taken the bishop. Can White recover material without losing?",
+      "explanation": "The bishop on h5 stands in front of Kh6 on the rook\u2019s file. Rxh5+ removes it with check and reaches an exact draw. The e6 pawn has already disappeared; White\u2019s king is on e6, not d6.",
+      "evidence": {
+        "timestamp_s": 26
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "legendary_drawn_simplification",
+      "start": "start",
+      "title": "Source sideline: recover the bishop with check",
+      "san": [
+        "Rxh5+",
+        "Kg6"
+      ],
+      "commentary": [
+        "Begin after ...Rxf1 in the complete saved 26-second diagram. This is the source\u2019s illustrated mistake sideline, now an exact drawing objective rather than a claim that the earlier attack was verified.",
+        "Rxh5+ captures the bishop and checks Kh6. White recovers material and keeps the exact draw; a rook and pawn remain on each side.",
+        "Kg6 steps out of the h-file check. White\u2019s g4 pawn protects Rh5, so the king cannot simply take the rook. The exact ending is drawn with best play; equal material alone is not the proof."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kg6 steps out of the h-file check. White\u2019s g4 pawn protects Rh5, so the king cannot simply take the rook. The exact ending is drawn with best play; equal material alone is not the proof.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/7p/4K1k1/7R/6P1/8/8/5r2 w - - 1 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "legendary_expose_pawn",
+      "start": "start",
+      "title": "Independent mistake: push instead of taking the bishop",
+      "san": [
+        "g5+",
+        "Kg6"
+      ],
+      "commentary": [
+        "Compare a pawn check that leaves Black\u2019s extra bishop on the board.",
+        "g5+ gives up the draw. White has not removed Bh5 and has advanced the pawn into Black\u2019s king\u2019s reach.",
+        "Kg6 escapes the check and attacks g5. Black keeps the bishop and an exact winning position; checking first has not solved White\u2019s material problem."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kg6 escapes the check and attacks g5. Black keeps the bishop and an exact winning position; checking first has not solved White\u2019s material problem.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/7p/4K1k1/6Pb/8/8/7R/5r2 w - - 1 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why capture with the rook before pushing again?",
+      "answer": "Rxh5+ removes Black\u2019s bishop with check and preserves the draw. In this exact diagram g5+ loses with best defense."
+    },
+    {
+      "node": "start",
+      "prompt": "Does one rook and one pawn each guarantee a draw?",
+      "answer": "No. Here the complete positions have exact drawing results. White still needs to keep the rook safe and coordinate the king and pawn."
+    }
+  ],
+  "defaultBranch": "legendary_drawn_simplification",
+  "practiceBranch": "legendary_drawn_simplification",
+  "practiceType": "rook",
+  "practiceGoal": "draw",
+  "startContext": "Begin after ...Rxf1 at 26 seconds, with White Ke6/Rh2/g4 versus Black Kh6/Rf1/Bh5/h7. This seven-piece root is drawn and practice asks White to hold a draw. The earlier nine-piece Rf2 plan, eight-piece g4 error and separate Be2 sacrifice remain outside verification scope. The source continuation Rxh5+/Kg6 and an independent losing comparison are checked here.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

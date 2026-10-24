@@ -1,0 +1,230 @@
+{
+  "video_id": "Y8IfsumRNz0",
+  "title": "King Ladder??",
+  "summary": "Walk the king down the bishops’ diagonals, releasing the pinned knight just long enough to avoid stalemate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/5BK1/8/8/p7/4B3/pn6/1k6 w - - 0 1",
+      "question": "How can White improve without allowing promotion?",
+      "explanation": "The bishops control a2 and c1, while Black’s own knight and pawns restrict its king. White must preserve useful legal moves for Black.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "locked_cage",
+      "fen": "8/5KB1/6B1/8/8/p7/pn6/k7 w - - 0 5",
+      "question": "Why does a random king move draw immediately?",
+      "explanation": "With the pawn now on a3, Black’s king and pawns are immobilized and the b2 knight is pinned to Ka1. White must interrupt a bishop diagonal before Black can move.",
+      "evidence": {
+        "timestamp_s": 64
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "final_bishop_switch",
+      "fen": "8/6B1/6B1/8/8/p7/pnK5/k7 w - - 16 13",
+      "question": "What changes once the white king reaches c2?",
+      "explanation": "The king can now help the bishops remove a3 and set up mate. Capturing Nb2 too early would replace the pinned knight with a dangerous passed pawn after ...axb2.",
+      "evidence": {
+        "timestamp_s": 120
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "king_ladder_walk",
+      "start": "start",
+      "title": "Release the knight and walk down the board",
+      "san": [
+        "Bg6+",
+        "Ka1",
+        "Kf7",
+        "Nd1",
+        "Bd4+",
+        "Nb2",
+        "Bg7",
+        "a3",
+        "Kf6",
+        "Nd3",
+        "Ke6+",
+        "Nb2",
+        "Ke5",
+        "Nd3+",
+        "Kd5+",
+        "Nb2",
+        "Kd4",
+        "Na4",
+        "Kc4+",
+        "Nb2+",
+        "Kc3",
+        "Na4+",
+        "Kc2+",
+        "Nb2",
+        "Bf8",
+        "Nc4",
+        "Kb3",
+        "Nb2",
+        "Bxa3",
+        "Nc4",
+        "Bc1",
+        "Nb2",
+        "Bxb2#"
+      ],
+      "commentary": [
+        "Begin from the complete seven-piece diagram. Follow one selected illustrated route through the knight’s defenses; not all legal replies are enumerated.",
+        "Bg6+ checks along g6–b1 and controls b1, tightening the black king’s cage.",
+        "Ka1 retreats into the corner, where Black’s own a2 pawn limits its king.",
+        "Kf7 approaches the bishop diagonals so the king can later interrupt them deliberately.",
+        "Nd1 attacks Be3, inviting White to find a useful checking bishop retreat.",
+        "Bd4+ saves the bishop with check along d4–a1.",
+        "Nb2 blocks the check and returns to the square pinning the knight to its king.",
+        "Bg7 restores the long diagonal and prepares the king’s controlled interference.",
+        "a3 uses Black’s remaining pawn move. Now the pawns block one another, creating the stalemate danger.",
+        "Kf6 blocks Bg7’s diagonal, unpinning the knight rather than leaving Black without a legal move.",
+        "Nd3 uses that released diagonal to move the knight. It now blocks the g6 bishop’s line to b1.",
+        "Ke6+ reopens Bg7’s diagonal and checks the cornered king.",
+        "Nb2 blocks the discovered check and restores the original pin.",
+        "Ke5 interrupts Bg7’s diagonal again, allowing the knight another move.",
+        "Nd3+ uses the release and checks the white king on e5.",
+        "Kd5+ escapes the knight check while reopening the bishop’s check on Ka1.",
+        "Nb2 interposes once more, keeping Black alive.",
+        "Kd4 interrupts Bg7’s diagonal on the next lower square and unpins the knight.",
+        "Na4 is the illustrated knight move; it occupies the a-file above Black’s pawns.",
+        "Kc4+ steps off the bishop line, giving another discovered check.",
+        "Nb2+ blocks that check and checks Kc4 with the knight.",
+        "Kc3 answers the knight check while deliberately blocking the bishop diagonal.",
+        "Na4+ leaves the unpinned square and checks White again.",
+        "Kc2+ answers the check and reveals Bg7’s diagonal toward Ka1.",
+        "Nb2 is again required in this selected route to cover the discovered check.",
+        "Bf8 changes the bishop’s diagonal and prepares to capture a3 with support from the approaching king.",
+        "Nc4 guards a3, trying to prevent its capture.",
+        "Kb3 approaches the pawn and attacks Nc4, making the guard unstable.",
+        "Nb2 returns to the corner defense but no longer protects a3.",
+        "Bxa3 removes that pawn. With the white king close, the mating construction is now possible.",
+        "Nc4 keeps the knight active and controls b2, the intended mating square.",
+        "Bc1 waits while preserving control of b2. Black cannot leave its knight on c4 forever.",
+        "Nb2 is the source’s final illustrated knight return. It moves onto the square where White can capture with mate.",
+        "Bxb2# is the independently completed actual mate: Kb3 protects the bishop, Bg6 controls b1 and the a2 pawn blocks Black’s other flight."
+      ],
+      "classification": "selected source ladder with independent final mating completion",
+      "explanation": "Bxb2# is the independently completed actual mate: Kb3 protects the bishop, Bg6 controls b1 and the a2 pawn blocks Black’s other flight.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/6B1/8/8/1K6/pB6/k7 b - - 0 17",
+      "outcome": "loss"
+    },
+    {
+      "id": "king_ladder_stalemate",
+      "start": "locked_cage",
+      "title": "Leave the cage completely closed",
+      "san": [
+        "Ke8"
+      ],
+      "commentary": [
+        "Compare a legal independent king move that does not interrupt either bishop’s diagonal.",
+        "Ke8 is actual stalemate. Ka1 is not in check, Nb2 cannot leave the diagonal pin, the pawns are blocked and the king has no legal flight."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ke8 is actual stalemate. Ka1 is not in check, Nb2 cannot leave the diagonal pin, the pawns are blocked and the king has no legal flight.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "4K3/6B1/6B1/8/8/p7/pn6/k7 b - - 1 5",
+      "outcome": "draw"
+    },
+    {
+      "id": "king_ladder_other_knight",
+      "start": "final_bishop_switch",
+      "title": "The knight chooses the a-file",
+      "san": [
+        "Bf8",
+        "Na4",
+        "Bxa3",
+        "Nb2",
+        "Bxb2#"
+      ],
+      "commentary": [
+        "Compare the source’s alternative knight move after the bishop switch.",
+        "Bf8 prepares the capture on a3 without allowing that pawn to promote.",
+        "Na4 leaves a3 undefended and abandons the c4 control of b2.",
+        "Bxa3 removes the pawn and threatens Bb2 mate.",
+        "Nb2 is an independently selected representative return; Black cannot use the knight as a permanent guard of b2 from a4.",
+        "Bxb2# captures the knight and is actual mate. The bishop is protected by Kc2, while Bg6 closes b1 and a2 is occupied by Black’s pawn."
+      ],
+      "classification": "selected source alternative with independent representative knight reply and mating completion",
+      "explanation": "Bb2# is actual mate. The bishop is protected by Kc2 and blocks the knight’s route, while Bg6 closes b1.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/6B1/8/8/8/pBK5/k7 b - - 0 15",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "locked_cage",
+      "prompt": "Why must White temporarily weaken its bishop control?",
+      "answer": "Black otherwise has no legal move. The king blocks a bishop diagonal to release the pinned knight, then steps off that diagonal to check and force it back."
+    },
+    {
+      "node": "final_bishop_switch",
+      "prompt": "Why not simply capture Nb2?",
+      "answer": "Bxb2 lets ...axb2 replace the pinned knight with a passed pawn protected by Ka1. Bf8 first reorganizes the bishops so a3 can be removed safely."
+    }
+  ],
+  "defaultBranch": "king_ladder_walk",
+  "practiceBranch": "king_ladder_walk",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "The complete seven-piece board and selected long king-ladder route are reconstructed from saved images. The final Bxb2 mating completions are independently supplied and labeled; the source ends its main illustration after ...Nb2. The random-move stalemate comparison is independent.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

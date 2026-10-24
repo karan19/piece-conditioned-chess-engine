@@ -1,0 +1,19 @@
+{
+  "batch_id": "2026-10-23-01",
+  "reviewed_on": "2026-10-23",
+  "scope": "Record the three studies delivered before continuing this collection.",
+  "reviews": {
+    "KEnJIrhWSDQ": {
+      "result": "verified_selected_lines",
+      "notes": "Previously checked Majestic Trap, including the drawing pawn-capture alternative. Original saved checks retained."
+    },
+    "NysivKCHQiY": {
+      "result": "verified_selected_lines",
+      "notes": "Previously checked Pawns of Destiny, including the corrected central king route. Original saved checks retained."
+    },
+    "zpX6pvMJhto": {
+      "result": "verified_selected_lines",
+      "notes": "Most Majestic Game: eight selected variations checked from the position after Nc6 Kxc6; the preceding eight-piece setup is outside that tablebase check."
+    }
+  }
+}

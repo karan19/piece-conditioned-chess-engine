@@ -1,0 +1,195 @@
+{
+  "batch_id": "2026-10-23-13",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three studies, eight selected branches. A five-piece king crossing, six-piece Black underpromotion and seven-piece queen sacrifice; one live-game larger endgame remains pending analysis.",
+  "reviews": {
+    "o988a8BFTbM": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches from the five-piece phase after ...Rc2+ at 101 seconds. Winning Kd7 crossing and h-file approach reaches h8=Q ...Rxa7, a checked queen-versus-rook win. Corner shelter Kb8 ...Rb2+ still wins until Ka8 gives away the win; ...Rh2 holds. Independent Kd6 ...Rc8 comparison draws. This is a second source clip titled Pawns of Destiny, not a duplicate source ID.",
+      "source_images": [
+        {
+          "file": "o988a8BFTbM/montage_accepted.jpg",
+          "sha256": "de62953892dceb6bf9bf245a28d2d408840f1745a833d46e305f9527820ff6e8"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00001.jpg",
+          "sha256": "3ed05573bb870021cf411d3eeb9988705075aad1ef247f32faf545dcbd82a278"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00010.jpg",
+          "sha256": "e7bb1af27e60b814d94a1df170d6a00d80f87c042c0941798f8831c1dfb6adaa"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00011.jpg",
+          "sha256": "66a9cb4b5d3671a5a5d6e39fe9121793b98a262b4dfe0b09e7040de365584714"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00014.jpg",
+          "sha256": "aa3912e4ad26a43158126b0aa5ab7ea600fe71c478dc57acff90461e3272abbf"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00022.jpg",
+          "sha256": "4e2faa21359c6aefcef6095c238dac8ba9bb9174aefe14ca7f6e217ae1ad8e8f"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00031.jpg",
+          "sha256": "62e6186dc3a7b64c0bee1cde80a524c0d782cce3257e0b47845bf474c409ad2a"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00032.jpg",
+          "sha256": "d1c9ea71a83b2d4118f8e8dd0daa0edc156ca8e27f0fc31f8360985589ec10e8"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00033.jpg",
+          "sha256": "0c7332e863694562c2e1656c117e6cb0ee245a3c7f5472fb661b9190ffa2439e"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00036.jpg",
+          "sha256": "ab1b0c21c4cadaffe1edd3bcfc5e68dfe91de973a439ad85fa18dbe8d5bbb0a4"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00038.jpg",
+          "sha256": "349523aa271e17c03f79c296e8c85f396900698ee008f6338d88be57d7e12ce8"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00040.jpg",
+          "sha256": "f4792fbf03e8fc95c9b8fec68c20e614df35110f50c0032ef85d93e68d89ea50"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00043.jpg",
+          "sha256": "e71c6ee8bc961bae17103ee0f1f8bf7b0675f9987339c8766408e7431192c703"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00044.jpg",
+          "sha256": "b07f4476788c0d0f3e612a5d98e263baf312886cc98a41a5394f5db0198f535e"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00045.jpg",
+          "sha256": "ba049eef6c84e419ada4aea4e6eba40c0ab4435d137eb7751f7eee1d30eb5943"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00046.jpg",
+          "sha256": "56526c9e12e0add094617cf2f8ace4ff6eeed6e29918454f1247bcd120b3272d"
+        },
+        {
+          "file": "o988a8BFTbM/images/image_00047.jpg",
+          "sha256": "1cf9d3704f78f805be8e9761c24b5af34b1077be56c06620d9809dbe2947a15a"
+        }
+      ]
+    },
+    "bGQVHlG-kwU": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches from stable six-piece position after Rxe4 at 103 seconds. Black to move, Kc1, b2/c5 versus Ka3 Re4 c4. b1=N+ forces king moves permitting Nc3+ or Nd2+ forks; independent legal retreat/capture completions explicitly labeled. Queen promotion instead loses to independently completed Re1+ skewer. Earlier larger bishop sacrifice remains source context.",
+      "source_images": [
+        {
+          "file": "bGQVHlG-kwU/montage_accepted.jpg",
+          "sha256": "c1fcc7a545ff6128f596280a0ed67f85a24bccdd97ddb759d0fd265fa7d19b5c"
+        },
+        {
+          "file": "bGQVHlG-kwU/images/image_00001.jpg",
+          "sha256": "be8ac98822698771ed6499bf5f07e95a45715189b254b0ca2b7eeeb2633a659c"
+        },
+        {
+          "file": "bGQVHlG-kwU/images/image_00033.jpg",
+          "sha256": "03ad19bb948257021e3feb3cce715332419911c8a2030be1f587c6477f4132b6"
+        },
+        {
+          "file": "bGQVHlG-kwU/images/image_00034.jpg",
+          "sha256": "c8f202e27f1e2fd6519037b2f11734e13099309a5bc5fc1c584dd7c846e8cd47"
+        },
+        {
+          "file": "bGQVHlG-kwU/images/image_00036.jpg",
+          "sha256": "1bc93d86c11784379cbcc823935dcfcac1181241b38962d993e5214158328d76"
+        },
+        {
+          "file": "bGQVHlG-kwU/images/image_00040.jpg",
+          "sha256": "46af4982413edaff53308f58179d8bed914880839c9f04c71fdfe0b261284428"
+        },
+        {
+          "file": "bGQVHlG-kwU/images/image_00044.jpg",
+          "sha256": "60b9e07c421d5f73872b9bfd0f17ab68d5e0a02f37ffe9f200d65f31302e1c05"
+        }
+      ]
+    },
+    "D2XKSJ6O5fE": {
+      "result": "verified_selected_lines",
+      "notes": "Two branches from stable seven-piece position after Qa1+ ...Rd1 at 27 seconds. Saved boards resolve captioned Qc4 to Qc3+, then ...Rdd2 Qc1+ ...Rd1 Qe3+. Both blockers on e2 reach actual Nf3 mate, with Qxe2+ sacrificing the queen against ...Ne2+. Source resets are not treated as consecutive moves.",
+      "source_images": [
+        {
+          "file": "D2XKSJ6O5fE/montage_accepted.jpg",
+          "sha256": "a57ec929d9cb303720fcfdb925698c98bd3828f815e6e8b83af70aefb5dc18e2"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00001.jpg",
+          "sha256": "6c339986a59a7fd3d3add93de636d03e31aa7b272480c81293154f80a2d62f73"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00009.jpg",
+          "sha256": "9fa7c366bca119fba7d4bbda94fbcb1b8f2fe3a13b773ba6c02d199e2bfe4fc7"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00012.jpg",
+          "sha256": "04d85a9af740b8cf43ffa29b565153e3c1d82bd811909ab4f61181c441f865ff"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00014.jpg",
+          "sha256": "1a7361c4e5c6bdfc8f9e24cf922bae6cc32b425a9aeb893c550c11ccfaf89488"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00016.jpg",
+          "sha256": "35839eacb33838aa1fb291543f032f3272ae93c2c2547de39f8504ddddfbf448"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00017.jpg",
+          "sha256": "ff269ab7a6e4f09accd82f009395b4f85f24f931635361cac50db12a372ad8e2"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00018.jpg",
+          "sha256": "81ca7b98b44fc3f84d901ea6bf3f15e4c38334b3d22da8ae234147048d776835"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00019.jpg",
+          "sha256": "44fefdf5b93537ce301776d5cddf7d00763529e799733b6c0837ad47f346baf6"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00020.jpg",
+          "sha256": "2061ef151d3122ce3e0a06ea202fab596f78b7c70b18ebb4fc2afa589d79c50b"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00024.jpg",
+          "sha256": "64c5de313c3c8a4eef1305bc73d53a5e77f7df7d353ba97d15935624d0a60ce7"
+        },
+        {
+          "file": "D2XKSJ6O5fE/images/image_00026.jpg",
+          "sha256": "f1cf002eb1c52c60ad786838833f2d7694a53a8e47e9c226d512566f49b23456"
+        }
+      ]
+    },
+    "3D03PTU_hbE": {
+      "result": "awaiting_reconstruction",
+      "notes": "Live-game endgame footage with a larger initial board (White Kc2 Rd3 a3 b3 c3 d4 f2 g4 h3; Black Kg8 Re6 Bb8 a6 b5 f4 g5 h6). Source narration is a time-scramble conversation rather than a move-by-move analysis. Saved frames and captions are present; no missing-information status assigned.",
+      "analysis_required": "Reconstruct a critical legal position and side to move from the stable live-game frames, then verify a selected instructive sequence with supported larger-position analysis, or inspect a later clearly supported seven-piece phase. Do not infer the game score or outcome from the spoken time-pressure remarks.",
+      "source_images": [
+        {
+          "file": "3D03PTU_hbE/images/image_00001.jpg",
+          "sha256": "98c0a46c69c8e668f946f3f85f53864ccbf298d060cd2ce2424c34c2c65ce80f"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 49,
+    "selected_branches": 8,
+    "tests": "101 tests passed across 16 files. Every encoded position checked against saved evidence; focused tests cover king crossing, exact outcome changes, Black underpromotion, queen route and two actual Nf3 mates.",
+    "production_build": "passed",
+    "ui_review": "CUA confirmed Black board orientation and winning underpromotion endpoint, second Pawns of Destiny king-crossing endpoint, and Knight VS 2 Rooks actual mate with corrected move sequence.",
+    "screenshot": "docs/screenshots/endgame-stories-batch-13.png",
+    "queue_counts": {
+      "verified_selected_lines": 40,
+      "awaiting_reconstruction": 183,
+      "needs_information": 23,
+      "not_applicable": 2
+    },
+    "local_only": true
+  }
+}

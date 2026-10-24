@@ -322,6 +322,7 @@ export function OpeningStudio() {
           </a>
           <a href="/guided-play/" className="os-v1-link">Guided Play <ArrowRight size={16} /></a>
           <a href="/board-recall/" className="os-v1-link">Board Recall <ArrowRight size={16} /></a>
+          <a href="/endgame-stories/" className="os-v1-link">Endgame Stories <ArrowRight size={16} /></a>
           <span>OPENING STUDIO</span>
         </div>
       </aside>

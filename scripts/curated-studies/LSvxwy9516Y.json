@@ -1,0 +1,164 @@
+{
+  "video_id": "LSvxwy9516Y",
+  "title": "The Genie part 2",
+  "summary": "Choose the queen sacrifice that leaves the lone king without a legal move.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5Q2/6pk/8/1b6/3K4/8/3b4/1q6 w - - 0 1",
+      "question": "Can White sacrifice the queen to force a draw?",
+      "explanation": "After the first illustrated ...Qxb1, White has only king and queen against queen, two bishops and a pawn. Qf5 checks while offering the last piece.",
+      "evidence": {
+        "timestamp_s": 84
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    },
+    {
+      "id": "second_cage",
+      "fen": "5Q2/6pk/8/1b6/8/2b1K3/8/1q6 w - - 0 1",
+      "question": "Does the same queen sacrifice work with the king on e3?",
+      "explanation": "In this separate source variation, ...Bc3+ has driven the white king to e3 before ...Qxb1. The bishop’s new diagonal completes a different stalemate cage.",
+      "evidence": {
+        "timestamp_s": 126
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    },
+    {
+      "id": "third_cage",
+      "fen": "5Q2/6pk/8/1b6/3b4/8/3K4/1q6 w - - 0 1",
+      "question": "Why change the sacrifice when the king reaches d2?",
+      "explanation": "The second bishop check has placed the king on d2 and the bishop on d4. Qf5 would no longer stalemate White, so the queen must be offered on another square.",
+      "evidence": {
+        "timestamp_s": 152
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "genie_first_stalemate",
+      "start": "start",
+      "title": "Offer the queen with a fork",
+      "san": [
+        "Qf5+",
+        "Qxf5"
+      ],
+      "commentary": [
+        "Begin after the first ...Qxb1 in the seven-piece final phase. The earlier knight sacrifice, promotion and Bb1 offer remain source context.",
+        "Qf5+ checks Kh7 and attacks Qb1 along the diagonal, offering White’s only remaining piece.",
+        "Qxf5 is actual stalemate. Kd4 is not in check, and the queen on f5 with bishops on b5 and d2 covers all eight neighboring squares."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxf5 is actual stalemate. Kd4 is not in check, and the queen on f5 with bishops on b5 and d2 covers all eight neighboring squares.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/6pk/8/1b3q2/3K4/8/3b4/8 w - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "genie_second_stalemate",
+      "start": "second_cage",
+      "title": "Repeat the sacrifice in a shifted cage",
+      "san": [
+        "Qf5+",
+        "Qxf5"
+      ],
+      "commentary": [
+        "Begin from the separately reconstructed seven-piece diagram after ...Bc3+ Ke3 ...Qxb1, not from an invented connection to the first branch.",
+        "Qf5+ again checks and forks the black queen, inviting the capture.",
+        "Qxf5 is actual stalemate around Ke3. Bc3 covers d4 and d2, Bb5 covers d3 and e2, and the queen covers the remaining flights."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxf5 is actual stalemate around Ke3. Bc3 covers d4 and d2, Bb5 covers d3 and e2, and the queen covers the remaining flights.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/6pk/8/1b3q2/8/2b1K3/8/8 w - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "genie_third_stalemate",
+      "start": "third_cage",
+      "title": "Change the sacrifice to the h-file",
+      "san": [
+        "Qh8+",
+        "Kg6",
+        "Qh7+",
+        "Kxh7"
+      ],
+      "commentary": [
+        "Begin from the separately reconstructed seven-piece diagram after the second bishop check and ...Qxb1. The saved board shows Kd2, correcting the caption’s Ke2.",
+        "Qh8+ offers the queen with check while leaving the white king’s cage untouched.",
+        "Kg6 declines that first offer, but puts the king on the queen’s next checking route.",
+        "Qh7+ offers the queen again while attacking Qb1 along the diagonal.",
+        "Kxh7 is actual stalemate. Qb1 controls c1, d1, e1, c2 and d3; Bb5 controls e2; Bd4 controls c3 and e3. Kd2 itself is not in check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxh7 is actual stalemate. Qb1 controls c1, d1, e1, c2 and d3; Bb5 controls e2; Bd4 controls c3 and e3. Kd2 itself is not in check.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/6pk/8/1b6/3b4/8/3K4/1q6 w - - 0 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "genie_wrong_sacrifice",
+      "start": "third_cage",
+      "title": "Reuse the earlier sacrifice in the wrong cage",
+      "san": [
+        "Qf5+",
+        "Qxf5"
+      ],
+      "commentary": [
+        "Compare the source’s warning that the earlier queen sacrifice no longer works with Kd2.",
+        "Qf5+ loses the exact drawing resource in this cage.",
+        "Qxf5 does not stalemate White: Kc1 remains legal. Black retains an exact win with its queen, bishops and pawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxf5 does not stalemate White: Kc1 remains legal. Black retains an exact win with its queen, bishops and pawn.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/6pk/8/1b3q2/3b4/8/3K4/8 w - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "third_cage",
+      "prompt": "Why does Qf5 fail in this version?",
+      "answer": "After ...Qxf5 the square c1 remains available to Kd2. White has a legal king move, so there is no stalemate."
+    },
+    {
+      "node": "third_cage",
+      "prompt": "Why offer the queen on h7 instead?",
+      "answer": "After ...Kxh7 the black queen stays on b1, where it closes c1 and the other first-rank flights. Together with the bishops it stalemates Kd2."
+    }
+  ],
+  "defaultBranch": "genie_first_stalemate",
+  "practiceBranch": "genie_first_stalemate",
+  "practiceType": "queen",
+  "practiceGoal": "draw",
+  "startContext": "Begin after the first ...Qxb1 at 84 seconds in a seven-piece final phase. Two additional seven-piece source diagrams show the alternative bishop checks before that capture. The preceding nine-piece setup and eight-piece connecting sequence remain source context and are not certified here. Each reconstructed cage and encoded queen sacrifice is checked exactly.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "The caption names the second king retreat as Ke2.",
+      "correction": "The stable saved diagrams show Kd2 after ...Bd4+. The third stalemate is reconstructed with Kd2; Ke2 is not substituted into the board."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

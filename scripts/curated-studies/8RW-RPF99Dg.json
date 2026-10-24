@@ -1,0 +1,184 @@
+{
+  "video_id": "8RW-RPF99Dg",
+  "title": "DRAW???: One King Tempo Changes Everything",
+  "summary": "Compare two nearly identical pawn endings: moving the king closer before liquidation changes a draw into a win.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/Pk4p1/8/5K1p/7P/8 w - - 0 1",
+      "question": "Should White save the outside pawn or activate the king?",
+      "explanation": "After the bishop and knight have been exchanged, White has Kf3/a5/h2 against Kb5/g5/h3. The extra king tempo is decisive.",
+      "evidence": {
+        "timestamp_s": 108
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "late_king",
+      "fen": "8/8/8/Pk4p1/8/7p/4K2P/8 w - - 0 1",
+      "question": "What if White had liquidated with the king still on e2?",
+      "explanation": "The same pawns and black king remain, but White’s king is one step farther from the kingside. The exact position is drawn.",
+      "evidence": {
+        "timestamp_s": 87
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "draws_king_race",
+      "start": "start",
+      "title": "Independent legal reconstruction of the winning king race",
+      "san": [
+        "Kg4",
+        "Kxa5",
+        "Kxh3",
+        "Kb5",
+        "Kg4",
+        "Kc5",
+        "Kxg5"
+      ],
+      "commentary": [
+        "After the bishop and knight have been exchanged, White has Kf3/a5/h2 against Kb5/g5/h3. The extra king tempo is decisive.",
+        "Kg4 approaches both kingside pawns. White allows a5 to fall because the king’s head start matters more than that pawn.",
+        "Kxa5 collects the outside pawn. This is an independently chosen representative reply, not a claim that every sampled king animation is a complete move.",
+        "Kxh3 must come first: this is the only winning move in this exact position. Taking g5 instead would give up the win.",
+        "Kb5 starts Black’s journey toward the drawing corner.",
+        "Kg4 returns toward g5 while keeping the winning tempo. This is the only win-preserving move in this exact position.",
+        "Kc5 continues toward the kingside. Black cannot repair the lost tempo in this selected line.",
+        "Kxg5 removes the last black pawn. White’s king is now on g5, rather than h3 as in the wrong capture order. The exact remaining rook-pawn ending is winning; the later conversion is not encoded here."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxg5 removes the last black pawn. White’s king is now on g5, rather than h3 as in the wrong capture order. The exact remaining rook-pawn ending is winning; the later conversion is not encoded here.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/2k3K1/8/8/7P/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "draws_king_retreat",
+      "start": "start",
+      "title": "Independent retreat gives up the winning tempo",
+      "san": [
+        "Ke2"
+      ],
+      "commentary": [
+        "After the bishop and knight have been exchanged, White has Kf3/a5/h2 against Kb5/g5/h3. The extra king tempo is decisive.",
+        "Ke2 gives up the winning king tempo. Black can hold a draw with best play from this exact position; this is an independent comparison after the minor pieces have already disappeared."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ke2 gives up the winning king tempo. Black can hold a draw with best play from this exact position; this is an independent comparison after the minor pieces have already disappeared.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/8/8/Pk4p1/8/7p/4K2P/8 b - - 1 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "draws_save_wrong_pawn",
+      "start": "start",
+      "title": "Independent pawn advance misses the king race",
+      "san": [
+        "a6"
+      ],
+      "commentary": [
+        "After the bishop and knight have been exchanged, White has Kf3/a5/h2 against Kb5/g5/h3. The extra king tempo is decisive.",
+        "a6 spends the critical tempo on the doomed outside pawn instead of improving the king. The exact resulting position is drawn with best play."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "a6 spends the critical tempo on the doomed outside pawn instead of improving the king. The exact resulting position is drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/8/P7/1k4p1/8/5K1p/7P/8 b - - 0 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "draws_late_king",
+      "start": "late_king",
+      "title": "Independent king race from the earlier drawn diagram",
+      "san": [
+        "Kf3",
+        "Kxa5",
+        "Kg3",
+        "Kb5",
+        "Kxh3"
+      ],
+      "commentary": [
+        "Begin in the saved comparison with White Ke2. It is already drawn: the earlier king placement cannot be repaired for free.",
+        "Kf3 tries to catch up, but now Black gets the next move.",
+        "Kxa5 collects the outside pawn while White has spent a tempo reaching f3.",
+        "Kg3 approaches h3, leaving the g5 pawn on the board.",
+        "Kb5 returns toward the kingside. This is an independently chosen representative reply.",
+        "Kxh3 collects one pawn, but the exact ending with Black’s g5 pawn remains drawn. Counting pawns alone misses the difference made by king tempi."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxh3 collects one pawn, but the exact ending with Black’s g5 pawn remains drawn. Counting pawns alone misses the difference made by king tempi.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/1k4p1/8/7K/7P/8 b - - 0 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "draws_wrong_capture_order",
+      "start": "start",
+      "title": "Independent capture in the wrong order draws",
+      "san": [
+        "Kg4",
+        "Kxa5",
+        "Kxg5"
+      ],
+      "commentary": [
+        "After the bishop and knight have been exchanged, White has Kf3/a5/h2 against Kb5/g5/h3. The extra king tempo is decisive.",
+        "Kg4 correctly approaches the kingside pawns.",
+        "Kxa5 takes the outside pawn, leaving White the decisive choice of capture order.",
+        "Kxg5 first throws away the win. White still needs to spend time collecting h3; Kxh3 first preserves a crucial king tempo."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "The order of king captures changes the exact result.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw"
+      ],
+      "end_fen": "8/8/8/k5K1/8/7p/7P/8 b - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can White give up a5?",
+      "answer": "Kf3 is close enough to collect the kingside pawns and win the remaining rook-pawn ending. The distant a-pawn buys time by drawing Black’s king away."
+    },
+    {
+      "node": "late_king",
+      "prompt": "Why is the same material drawn with Ke2?",
+      "answer": "White needs another king move before reaching the kingside. That lost tempo changes the exact result; the earlier king placement matters more than the material count."
+    }
+  ],
+  "defaultBranch": "draws_king_race",
+  "practiceBranch": "draws_king_race",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "The verified lesson begins in two six-piece diagrams after ...fxg5: White Kf3 at 108s versus White Ke2 at 87s. Both diagrams are reconstructed from saved images. All encoded race replies are independent legal representative continuations because the source’s sampled king-race animation skips moves. The earlier eight-piece Nd4/Kf3 zugzwang and its uniqueness claim remain unverified source context.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

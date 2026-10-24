@@ -1,0 +1,193 @@
+{
+  "video_id": "mfn7tyrzIl0",
+  "title": "Majestic Genius Draw",
+  "summary": "Use promotion threats to gain king tempi before entering the opposing pawn’s square.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3K4/7p/3k4/P7/8/8/8/8 w - - 0 1",
+      "question": "Can moving toward the corner help stop a distant pawn?",
+      "explanation": "White has Kd8/a5 against Kd6/h7. Going straight toward h7 is too slow, but threatening a6 forces Black’s king to spend time on the a-file.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "genius_draw_double_purpose",
+      "start": "start",
+      "title": "Threaten promotion before racing home",
+      "san": [
+        "Kc8",
+        "Kc6",
+        "Kb8",
+        "Kb5",
+        "Kb7",
+        "Kxa5",
+        "Kc6",
+        "h5",
+        "Kd5",
+        "h4",
+        "Ke4",
+        "h3",
+        "Kf3",
+        "h2",
+        "Kg2",
+        "h1=Q+",
+        "Kxh1"
+      ],
+      "commentary": [
+        "Begin from the complete four-piece source root. The king retreats to create threats before returning toward the h-pawn; the final direct pawn race is an independently checked representative completion.",
+        "Kc8 threatens a6, after which Kc8 controls b7 and interferes with Black’s route to the pawn.",
+        "Kc6 approaches the a-pawn and meets that immediate threat.",
+        "Kb8 renews White’s promotion threat while preserving a way back toward the center.",
+        "Kb5 reaches the pawn, but spends another king tempo doing so.",
+        "Kb7 threatens to support the a-pawn again instead of rushing toward h7 immediately.",
+        "Kxa5 accepts the pawn and spends one more tempo away from the h-pawn.",
+        "Kc6 now reaches the drawing route. The three promotion threats have bought the necessary time.",
+        "h5 uses Black’s available double pawn move in the representative race.",
+        "Kd5 heads diagonally toward h1, remaining in the pawn’s square.",
+        "h4 advances toward promotion.",
+        "Ke4 keeps closing the distance.",
+        "h3 brings Black two steps from promotion.",
+        "Kf3 approaches g2.",
+        "h2 threatens to promote next move.",
+        "Kg2 reaches the capture square in time.",
+        "h1=Q+ promotes with check, but the new queen is undefended.",
+        "Kxh1 captures the queen. Only two kings remain, so the board position is drawn."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxh1 captures the queen. Only two kings remain, so the board position is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/k7/8/8/8/7K b - - 0 9",
+      "outcome": "draw"
+    },
+    {
+      "id": "genius_draw_direct_king",
+      "start": "start",
+      "title": "Run toward the pawn immediately",
+      "san": [
+        "Ke8",
+        "h5"
+      ],
+      "commentary": [
+        "Compare an independent direct king approach without first creating pawn threats.",
+        "Ke8 gives away the draw: Black need not spend any king moves dealing with a6.",
+        "h5 uses the initial double advance. The exact position is a Black win because White’s king is too far away and the a-pawn can be stopped."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "h5 uses the initial double advance. The exact position is a Black win because White’s king is too far away and the a-pawn can be stopped.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "4K3/8/3k4/P6p/8/8/8/8 w - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "genius_draw_push_early",
+      "start": "start",
+      "title": "Push the a-pawn before improving the king",
+      "san": [
+        "a6",
+        "Kc6",
+        "a7",
+        "Kb7",
+        "Ke7",
+        "h5"
+      ],
+      "commentary": [
+        "Compare the source’s premature pawn push.",
+        "a6 gives up the drawing tempo mechanism.",
+        "Kc6 approaches the pawn without being kept from b7.",
+        "a7 advances to the seventh rank, but the king cannot protect it.",
+        "Kb7 attacks a7 and stops promotion.",
+        "Ke7 moves White’s king away in the illustrated losing comparison.",
+        "h5 starts the distant passer while Kb7 keeps the a7 pawn blocked. The exact position remains winning for Black; taking a7 immediately instead would allow a draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "h5 starts the distant passer while Kb7 keeps the a7 pawn blocked. The exact position remains winning for Black; taking a7 immediately instead would allow a draw.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/Pk2K3/8/7p/8/8/8/8 w - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "genius_draw_black_capture_error",
+      "start": "start",
+      "title": "Black captures the a-pawn too early",
+      "san": [
+        "a6",
+        "Kc6",
+        "a7",
+        "Kb7",
+        "Ke7",
+        "Kxa7"
+      ],
+      "commentary": [
+        "Compare an independently checked early king capture in the losing-pawn-push variation.",
+        "a6 gives away White’s original draw.",
+        "Kc6 approaches the a-pawn.",
+        "a7 advances but cannot promote safely.",
+        "Kb7 blocks the pawn and preserves Black’s win.",
+        "Ke7 moves toward the distant h-pawn.",
+        "Kxa7 spends a tempo too far away: the exact remaining king-and-pawn ending is drawn. Black should start its pawn race while keeping a7 blocked instead."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxa7 spends a tempo too far away: the exact remaining king-and-pawn ending is drawn. Black should start its pawn race while keeping a7 blocked instead.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "draw"
+      ],
+      "end_fen": "8/k3K2p/8/8/8/8/8/8 w - - 0 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why not head straight toward h7?",
+      "answer": "White first threatens promotion to make Black spend tempi on the a-pawn. Those forced responses let the king return to c6 in time to stop the h-pawn."
+    }
+  ],
+  "defaultBranch": "genius_draw_double_purpose",
+  "practiceBranch": "genius_draw_double_purpose",
+  "practiceType": "king",
+  "practiceGoal": "draw",
+  "startContext": "Begin in the complete four-piece source root at zero seconds. Practice aims to draw. The corner maneuver follows the source; the final direct pawn race and immediate king error use explicitly independent representative continuations.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,158 @@
+{
+  "video_id": "cFbQM4lbfDw",
+  "title": "Most Zugzwang ever Zugzwanged",
+  "summary": "Place both bishops correctly before using the king to restrict the rook to a fork or a pin.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1r6/8/8/8/B4P2/B7/k1K5 w - - 0 1",
+      "question": "Where should the attacked bishop go?",
+      "explanation": "White has Kc1, Ba2, Ba3 and f3 against Ka1 and Rb7. Be6 preserves a bishop net that Bg8 would not create.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "bishop_rook_fork_net",
+      "start": "start",
+      "title": "Build the bishop net, then fork the rook",
+      "san": [
+        "Be6",
+        "Rb3",
+        "Bd6",
+        "Rc3+",
+        "Kd2",
+        "Rxf3",
+        "Ke2",
+        "Rf6",
+        "Be5+"
+      ],
+      "commentary": [
+        "Begin from the complete six-piece source board. The central line includes the intervening Kd2 and ...Rxf3 before Ke2.",
+        "Be6 moves the attacked a2 bishop to the diagonal needed for the net.",
+        "Rb3 attacks Ba3 and f3, setting up the rook’s defensive resource.",
+        "Bd6 moves the a3 bishop while preserving coordination with Be6.",
+        "Rc3+ checks along the c-file, forcing the king to respond.",
+        "Kd2 answers the check and approaches the rook.",
+        "Rxf3 collects the pawn, but places the rook where the white king can restrict it.",
+        "Ke2 attacks Rf3 and helps confine the rook. The two bishops control most of its other safe destinations.",
+        "Rf6 is the source’s selected flight square on the a1–f6 diagonal.",
+        "Be5+ checks Ka1 while attacking Rf6. White has an exact win at the fork; no unshown king reply is assumed."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Be5+ checks Ka1 while attacking Rf6. White has an exact win at the fork; no unshown king reply is assumed.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/4Br2/4B3/8/8/4K3/k7 b - - 3 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "bishop_rook_pin_net",
+      "start": "start",
+      "title": "The rook chooses the pin square",
+      "san": [
+        "Be6",
+        "Rb3",
+        "Bd6",
+        "Rc3+",
+        "Kd2",
+        "Rxf3",
+        "Ke2",
+        "Rc3",
+        "Be5",
+        "Kb2",
+        "Kd2"
+      ],
+      "commentary": [
+        "Follow the same source setup and compare the rook’s other illustrated destination.",
+        "Be6 places the first bishop precisely.",
+        "Rb3 attacks the pawn and the other bishop.",
+        "Bd6 forms the bishop net.",
+        "Rc3+ checks the king.",
+        "Kd2 answers that check.",
+        "Rxf3 takes the pawn.",
+        "Ke2 attacks the rook and controls nearby squares.",
+        "Rc3 retreats onto the same diagonal as Ka1.",
+        "Be5 pins Rc3 to Ka1. The rook now blocks the bishop’s checking line.",
+        "Kb2 is the illustrated king approach, defending the rook.",
+        "Kd2 adds a second attack on Rc3. The checked position is winning; the lesson stops before inventing a final rook reply."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kd2 adds a second attack on Rc3. The checked position is winning; the lesson stops before inventing a final rook reply.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/4B3/4B3/8/2r5/1k1K4/8 b - - 5 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "bishop_rook_capture_stalemate",
+      "start": "start",
+      "title": "Retreat to g8 and accept the rook",
+      "san": [
+        "Bg8",
+        "Rb3",
+        "Bxb3"
+      ],
+      "commentary": [
+        "Compare the source’s natural long bishop retreat and the tempting rook capture.",
+        "Bg8 gives up White’s forced win by allowing the rook’s stalemate defense.",
+        "Rb3 offers the rook while attacking the bishop and pawn.",
+        "Bxb3 is actual stalemate. Kc1 covers b1/b2, Bb3 covers a2, and Ka1 is not in check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxb3 is actual stalemate. Kc1 covers b1/b2, Bb3 covers a2, and Ka1 is not in check.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/8/BB3P2/8/k1K5 b - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is the bishop’s retreat square important?",
+      "answer": "Be6 and Bd6 control enough rook destinations for Ke2 to force a diagonal fork or pin. Bg8 permits the checking rook defense and a stalemate capture instead."
+    },
+    {
+      "node": "start",
+      "prompt": "What is the difference between Be5+ and Be5?",
+      "answer": "Against Rf6, Be5+ checks the king and forks the rook. Against Rc3, the rook blocks the bishop’s line to Ka1 and is pinned, so Be5 is not check."
+    }
+  ],
+  "defaultBranch": "bishop_rook_fork_net",
+  "practiceBranch": "bishop_rook_fork_net",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "The complete six-piece source root and selected bishop-net branches are visually reconstructed. The saved sequence includes Kd2 after ...Rc3+, then ...Rxf3 Ke2; those intervening moves are preserved rather than treating Ke2 as a jump from c1. The skewer/fork endpoints are exact wins, not immediate mates. The advertising overlay is outside the chess lesson.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

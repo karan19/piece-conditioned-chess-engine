@@ -1,0 +1,91 @@
+{
+  "video_id": "VQVcI84wcH4",
+  "title": "A Knight Is Enough: Complete the Queen Fork",
+  "summary": "Capture the queen, then watch the blocked central pawns rather than treating the knight ending as already finished.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3N4/2kp1q2/p7/8/3p4/8/1K1P4/8 w - - 0 1",
+      "question": "The knight fork is in place. Should White finish the capture?",
+      "explanation": "Nd8 attacks Qf7, while Kc7 attacks the knight. Nxf7 removes the queen and reaches a winning seven-piece ending. The eight-piece root is proved by that legal winning capture, not directly queried in a tablebase.",
+      "evidence": {
+        "timestamp_s": 77
+      },
+      "winningMoveWitness": "Nxf7",
+      "proof": {
+        "method": "legal_winning_move",
+        "fen": "3N4/2kp1q2/p7/8/3p4/8/1K1P4/8 w - - 0 1",
+        "category_for_side_to_move": "win",
+        "san": "Nxf7",
+        "successor_fen": "8/2kp1N2/p7/8/3p4/8/1K1P4/8 b - - 0 1",
+        "successor_evidence_key": "witness:start"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "titles_collect_queen",
+      "start": "start",
+      "title": "Source finish: collect the queen",
+      "san": [
+        "Nxf7"
+      ],
+      "commentary": [
+        "Begin after ...Kc7, reconstructed between the saved 76-second Nd8/Kb7/Qf7 and 77-second Nf7/Kc7 diagrams. Earlier rook and knight offers remain outside this proof scope.",
+        "Nxf7 removes the queen and escapes the king’s attack. The exact seven-piece knight-and-pawn versus three-pawns ending is winning for White. This capture is a legal winning witness for the preceding eight-piece position; it does not prove the earlier nine-piece double offer."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxf7 removes the queen and escapes the king’s attack. The exact seven-piece knight-and-pawn versus three-pawns ending is winning for White. This capture is a legal winning witness for the preceding eight-piece position; it does not prove the earlier nine-piece double offer.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "8/2kp1N2/p7/8/3p4/8/1K1P4/8 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "titles_restrain_passer",
+      "start": "start",
+      "title": "Independent continuation: watch the d-pawn",
+      "san": [
+        "Nxf7",
+        "d3",
+        "Ne5"
+      ],
+      "commentary": [
+        "Continue independently after the source’s queen capture. These pawn and knight moves are representative checked analysis, not moves claimed to appear in the clip.",
+        "Nxf7 captures the queen and preserves a forced White win.",
+        "d3 advances Black’s passer, but White’s d2 pawn still blocks further forward progress. All three black pawns remain in the reconstruction.",
+        "Ne5 attacks d3 and centralizes the knight. White still wins, but further king and knight coordination is required; the lesson does not call this a finished conversion or a forced pawn capture."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ne5 attacks d3 and centralizes the knight. White still wins, but further king and knight coordination is required; the lesson does not call this a finished conversion or a forced pawn capture.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/2kp4/p7/4N3/8/3p4/1K1P4/8 b - - 1 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does the queen capture prove this later position is winning?",
+      "answer": "White has a legal move, Nxf7, whose complete resulting position is an exact Black loss. That establishes a White win without pretending the eight-piece root was directly tablebase-probed."
+    },
+    {
+      "node": "start",
+      "prompt": "Why keep White’s d2 pawn in the reconstruction?",
+      "answer": "It stops the black d-pawn’s forward progress on d3, giving White time to coordinate king and knight. Removing it would change the ending."
+    }
+  ],
+  "defaultBranch": "titles_collect_queen",
+  "practiceBranch": "titles_collect_queen",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kc7 in the 76–77 second transition. The complete eight-piece root is reconstructed from the before-and-after fork diagrams and proved by Nxf7, a legal capture into a seven-piece exact opponent loss. Every encoded successor has tablebase evidence. The original rook offer, drawing queen-capture alternative, nine-piece Nc6 double offer and Arabian mate remain source context outside this selected later-phase verification.",
+  "verification_scope": "Complete before-and-after fork diagrams manually reviewed. The eight-piece root has a legal winning-move reduction via Nxf7 to an exact seven-piece opponent loss; it is not itself an ordinary tablebase result. All encoded successors and endpoints are tablebase checked. Earlier nine-piece tactics remain unverified.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

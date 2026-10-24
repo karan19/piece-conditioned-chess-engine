@@ -1,0 +1,485 @@
+{
+  "step:underpromotion_stalemate_rescue:2": {
+    "fen": "8/8/8/4QP2/2k5/P7/P7/K1N5 b - - 0 2",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F2k5%2FP7%2FP7%2FK1N5+b+-+-+0+2",
+    "retrieved_at_utc": "2026-10-24T10:09:14.207608+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": true,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": 0,
+      "precise_dtz": 0,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "draw",
+      "moves": []
+    }
+  },
+  "branch:underpromotion_stalemate_rescue": {
+    "fen": "8/8/8/4QP2/2k5/P7/P7/K1N5 b - - 0 2",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F2k5%2FP7%2FP7%2FK1N5+b+-+-+0+2",
+    "retrieved_at_utc": "2026-10-24T10:09:14.207608+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": true,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": 0,
+      "precise_dtz": 0,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "draw",
+      "moves": []
+    }
+  },
+  "node:start": {
+    "method": "finite_draw",
+    "fen": "8/8/8/4QP2/2k5/PN6/P1p5/K7 b - - 0 1",
+    "category_for_side_to_move": "draw",
+    "strategies": {
+      "white": {
+        "method": "non_losing_strategy",
+        "fen": "8/8/8/4QP2/2k5/PN6/P1p5/K7 b - - 0 1",
+        "side": "white",
+        "rule": "all_legal_replies",
+        "children": {
+          "Kd3": {
+            "method": "non_losing_strategy",
+            "fen": "8/8/8/4QP2/8/PN1k4/P1p5/K7 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Kb2": {
+                "method": "non_losing_strategy",
+                "fen": "8/8/8/4QP2/8/PN1k4/PKp5/8 b - - 2 2",
+                "side": "white",
+                "rule": "all_legal_replies",
+                "children": {
+                  "Kc4": {
+                    "method": "non_losing_strategy",
+                    "fen": "8/8/8/4QP2/2k5/PN6/PKp5/8 w - - 3 3",
+                    "side": "white",
+                    "rule": "safe_choice",
+                    "children": {
+                      "Qe2+": {
+                        "method": "non_losing_strategy",
+                        "fen": "8/8/8/5P2/2k5/PN6/PKp1Q3/8 b - - 4 3",
+                        "side": "white",
+                        "rule": "all_legal_replies",
+                        "children": {
+                          "Kd5": {
+                            "method": "non_losing_strategy",
+                            "fen": "8/8/8/3k1P2/8/PN6/PKp1Q3/8 w - - 5 4",
+                            "side": "white",
+                            "rule": "safe_choice",
+                            "children": {
+                              "Qe6#": {
+                                "method": "non_losing_strategy",
+                                "fen": "8/8/4Q3/3k1P2/8/PN6/PKp5/8 b - - 6 4",
+                                "side": "white",
+                                "rule": "checkmate"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "c1=B+": {
+                    "method": "non_losing_strategy",
+                    "fen": "8/8/8/4QP2/8/PN1k4/PK6/2b5 w - - 0 3",
+                    "side": "white",
+                    "rule": "safe_choice",
+                    "children": {
+                      "Kxc1": {
+                        "fen": "8/8/8/4QP2/8/PN1k4/P7/2K5 b - - 0 3",
+                        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F8%2FPN1k4%2FP7%2F2K5+b+-+-+0+3",
+                        "retrieved_at_utc": "2026-10-24T10:09:14.755688+00:00",
+                        "response": {
+                          "checkmate": false,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": -2,
+                          "precise_dtz": -2,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "loss",
+                          "moves": [
+                            {
+                              "uci": "d3c4",
+                              "san": "Kc4",
+                              "zeroing": false,
+                              "conversion": false,
+                              "checkmate": false,
+                              "stalemate": false,
+                              "variant_win": false,
+                              "variant_loss": false,
+                              "insufficient_material": false,
+                              "dtz": 1,
+                              "precise_dtz": 1,
+                              "dtm": null,
+                              "dtw": null,
+                              "dtc": null,
+                              "category": "win"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "c1=N": {
+                    "method": "non_losing_strategy",
+                    "fen": "8/8/8/4QP2/8/PN1k4/PK6/2n5 w - - 0 3",
+                    "side": "white",
+                    "rule": "safe_choice",
+                    "children": {
+                      "Kxc1": {
+                        "fen": "8/8/8/4QP2/8/PN1k4/P7/2K5 b - - 0 3",
+                        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F8%2FPN1k4%2FP7%2F2K5+b+-+-+0+3",
+                        "retrieved_at_utc": "2026-10-24T10:09:14.755688+00:00",
+                        "response": {
+                          "checkmate": false,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": -2,
+                          "precise_dtz": -2,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "loss",
+                          "moves": [
+                            {
+                              "uci": "d3c4",
+                              "san": "Kc4",
+                              "zeroing": false,
+                              "conversion": false,
+                              "checkmate": false,
+                              "stalemate": false,
+                              "variant_win": false,
+                              "variant_loss": false,
+                              "insufficient_material": false,
+                              "dtz": 1,
+                              "precise_dtz": 1,
+                              "dtm": null,
+                              "dtw": null,
+                              "dtc": null,
+                              "category": "win"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "c1=Q+": {
+                    "method": "non_losing_strategy",
+                    "fen": "8/8/8/4QP2/8/PN1k4/PK6/2q5 w - - 0 3",
+                    "side": "white",
+                    "rule": "safe_choice",
+                    "children": {
+                      "Kxc1": {
+                        "fen": "8/8/8/4QP2/8/PN1k4/P7/2K5 b - - 0 3",
+                        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F8%2FPN1k4%2FP7%2F2K5+b+-+-+0+3",
+                        "retrieved_at_utc": "2026-10-24T10:09:14.755688+00:00",
+                        "response": {
+                          "checkmate": false,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": -2,
+                          "precise_dtz": -2,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "loss",
+                          "moves": [
+                            {
+                              "uci": "d3c4",
+                              "san": "Kc4",
+                              "zeroing": false,
+                              "conversion": false,
+                              "checkmate": false,
+                              "stalemate": false,
+                              "variant_win": false,
+                              "variant_loss": false,
+                              "insufficient_material": false,
+                              "dtz": 1,
+                              "precise_dtz": 1,
+                              "dtm": null,
+                              "dtw": null,
+                              "dtc": null,
+                              "category": "win"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "c1=R": {
+                    "method": "non_losing_strategy",
+                    "fen": "8/8/8/4QP2/8/PN1k4/PK6/2r5 w - - 0 3",
+                    "side": "white",
+                    "rule": "safe_choice",
+                    "children": {
+                      "Kxc1": {
+                        "fen": "8/8/8/4QP2/8/PN1k4/P7/2K5 b - - 0 3",
+                        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F8%2FPN1k4%2FP7%2F2K5+b+-+-+0+3",
+                        "retrieved_at_utc": "2026-10-24T10:09:14.755688+00:00",
+                        "response": {
+                          "checkmate": false,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": -2,
+                          "precise_dtz": -2,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "loss",
+                          "moves": [
+                            {
+                              "uci": "d3c4",
+                              "san": "Kc4",
+                              "zeroing": false,
+                              "conversion": false,
+                              "checkmate": false,
+                              "stalemate": false,
+                              "variant_win": false,
+                              "variant_loss": false,
+                              "insufficient_material": false,
+                              "dtz": 1,
+                              "precise_dtz": 1,
+                              "dtm": null,
+                              "dtw": null,
+                              "dtc": null,
+                              "category": "win"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "c1=B": {
+            "method": "non_losing_strategy",
+            "fen": "8/8/8/4QP2/2k5/PN6/P7/K1b5 w - - 0 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Nxc1": {
+                "fen": "8/8/8/4QP2/2k5/P7/P7/K1N5 b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F2k5%2FP7%2FP7%2FK1N5+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T10:09:14.207608+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": true,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 0,
+                  "precise_dtz": 0,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "draw",
+                  "moves": []
+                }
+              }
+            }
+          },
+          "c1=N": {
+            "method": "non_losing_strategy",
+            "fen": "8/8/8/4QP2/2k5/PN6/P7/K1n5 w - - 0 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Nxc1": {
+                "fen": "8/8/8/4QP2/2k5/P7/P7/K1N5 b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F2k5%2FP7%2FP7%2FK1N5+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T10:09:14.207608+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": true,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 0,
+                  "precise_dtz": 0,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "draw",
+                  "moves": []
+                }
+              }
+            }
+          },
+          "c1=Q+": {
+            "method": "non_losing_strategy",
+            "fen": "8/8/8/4QP2/2k5/PN6/P7/K1q5 w - - 0 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Nxc1": {
+                "fen": "8/8/8/4QP2/2k5/P7/P7/K1N5 b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F2k5%2FP7%2FP7%2FK1N5+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T10:09:14.207608+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": true,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 0,
+                  "precise_dtz": 0,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "draw",
+                  "moves": []
+                }
+              }
+            }
+          },
+          "c1=R+": {
+            "method": "non_losing_strategy",
+            "fen": "8/8/8/4QP2/2k5/PN6/P7/K1r5 w - - 0 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Nxc1": {
+                "fen": "8/8/8/4QP2/2k5/P7/P7/K1N5 b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F2k5%2FP7%2FP7%2FK1N5+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T10:09:14.207608+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": true,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 0,
+                  "precise_dtz": 0,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "draw",
+                  "moves": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "black": {
+        "method": "non_losing_strategy",
+        "fen": "8/8/8/4QP2/2k5/PN6/P1p5/K7 b - - 0 1",
+        "side": "black",
+        "rule": "safe_choice",
+        "children": {
+          "c1=Q+": {
+            "method": "non_losing_strategy",
+            "fen": "8/8/8/4QP2/2k5/PN6/P7/K1q5 w - - 0 2",
+            "side": "black",
+            "rule": "all_legal_replies",
+            "children": {
+              "Nxc1": {
+                "fen": "8/8/8/4QP2/2k5/P7/P7/K1N5 b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F2k5%2FP7%2FP7%2FK1N5+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T10:09:14.207608+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": true,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 0,
+                  "precise_dtz": 0,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "draw",
+                  "moves": []
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:underpromotion_stalemate_rescue:1": {
+    "method": "finite_draw",
+    "fen": "8/8/8/4QP2/2k5/PN6/P7/K1q5 w - - 0 2",
+    "category_for_side_to_move": "draw",
+    "strategies": {
+      "white": {
+        "method": "non_losing_strategy",
+        "fen": "8/8/8/4QP2/2k5/PN6/P7/K1q5 w - - 0 2",
+        "side": "white",
+        "rule": "safe_choice",
+        "children": {
+          "Nxc1": {
+            "fen": "8/8/8/4QP2/2k5/P7/P7/K1N5 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F2k5%2FP7%2FP7%2FK1N5+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T10:09:14.207608+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": true,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": 0,
+              "precise_dtz": 0,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "draw",
+              "moves": []
+            }
+          }
+        }
+      },
+      "black": {
+        "method": "non_losing_strategy",
+        "fen": "8/8/8/4QP2/2k5/PN6/P7/K1q5 w - - 0 2",
+        "side": "black",
+        "rule": "all_legal_replies",
+        "children": {
+          "Nxc1": {
+            "fen": "8/8/8/4QP2/2k5/P7/P7/K1N5 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2F4QP2%2F2k5%2FP7%2FP7%2FK1N5+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T10:09:14.207608+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": true,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": 0,
+              "precise_dtz": 0,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "draw",
+              "moves": []
+            }
+          }
+        }
+      }
+    }
+  }
+}

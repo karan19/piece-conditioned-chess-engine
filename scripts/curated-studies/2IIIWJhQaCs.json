@@ -1,0 +1,166 @@
+{
+  "video_id": "2IIIWJhQaCs",
+  "title": "Gukesh’s Knight Stops Two Pawns",
+  "summary": "Coordinate the knight and king before releasing the passed h-pawn. Compare the played finish with an independent premature pawn push.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/7P/N3p3/1P1p2K1/3k4/8 w - - 1 60",
+      "question": "Should White push the h-pawn or improve the knight first?",
+      "explanation": "Na4 must cover two advanced connected passers. Nb2 prepares Nc4+, gaining time while attacking e3 and controlling d2. The saved crop omits rank eight; the published complete game score independently establishes that rank is empty.",
+      "evidence": {
+        "timestamp_s": 58
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "pawn_race",
+      "fen": "8/8/8/7P/5K2/1P6/8/3k4 w - - 0 65",
+      "question": "Why can White afford to lose the knight?",
+      "explanation": "Both black pawns have disappeared. White’s distant h-pawn now has a clear path, and Black’s king on d1 cannot catch it. The b3 pawn is still part of this complete position.",
+      "evidence": {
+        "timestamp_s": 73
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "gukesh_knight_coordination",
+      "start": "start",
+      "title": "Played knight route, then the video’s post-resignation illustration",
+      "san": [
+        "Nb2",
+        "e3",
+        "Nc4+",
+        "Ke2",
+        "Kf4",
+        "d2",
+        "Nxe3",
+        "d1=Q",
+        "Nxd1",
+        "Kxd1",
+        "h6"
+      ],
+      "commentary": [
+        "Begin after 59...Kd2. The first five plies, through 62.Kf4, were played. Black resigned there; the remaining moves illustrate the video’s explanation and were not played in the game.",
+        "Nb2 brings the knight toward c4 while attacking d3. Black’s king on d2 currently protects that pawn. White preserves a forced win; Nb6 also wins, so Nb2 is not claimed unique.",
+        "e3 brings the connected passers onto the third rank. Black threatens to advance either pawn, but has allowed the checking knight maneuver.",
+        "Nc4+ gains a tempo by checking Kd2. The knight attacks e3 and controls d2, giving it influence over both promotion routes.",
+        "Ke2 escapes the check and protects e3. The knight needs king support before it can remove that pawn safely.",
+        "Kf4 supports e3, so Nxe3 can no longer be met by ...Kxe3. This is the game’s actual final move: Carlsen resigned. The continuation below is the video’s illustrative line.",
+        "d2 advances the d-pawn toward promotion while Ke2 still protects e3. It is an illustrated losing defense, not Black’s only legal choice.",
+        "Nxe3 removes the e-pawn. Kf4 protects the knight, while Ne3 now controls the other pawn’s promotion square d1.",
+        "d1=Q creates a queen, but the promotion square is already attacked by the knight. This illustrates why reaching the back rank is not enough.",
+        "Nxd1 captures the new queen. White trades the knight’s mobility for the removal of Black’s last pawn.",
+        "Kxd1 takes the knight. White is still winning because the h-pawn is too distant for the black king; the extra b3 pawn remains on the board.",
+        "h6 starts the final sprint after both black passers have gone. This advance is shown in the clip; the lesson does not call the resulting pawn ending immediate mate."
+      ],
+      "classification": "played game through 62.Kf4; selected source illustration after resignation",
+      "explanation": "h6 starts the final sprint after both black passers have gone. This advance is shown in the clip; the lesson does not call the resulting pawn ending immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/7P/8/5K2/1P6/8/3k4 b - - 0 65",
+      "outcome": "loss"
+    },
+    {
+      "id": "gukesh_push_too_soon",
+      "start": "start",
+      "title": "Independent error: race before organizing the knight",
+      "san": [
+        "h6",
+        "e3"
+      ],
+      "commentary": [
+        "Independently compare the natural pawn push from the same complete seven-piece root. This mistake and reply are not attributed to the game or video.",
+        "h6 gives up the forced win. The passed pawn advances, but Na4 has not reached the checking c4 square in time.",
+        "e3 keeps an exact draw with best play. Black’s connected passers now force White to divide attention between stopping promotion and advancing the h-pawn. The line stops here rather than assuming a particular queen race or forced draw sequence."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "e3 keeps an exact draw with best play. Black’s connected passers now force White to divide attention between stopping promotion and advancing the h-pawn. The line stops here rather than assuming a particular queen race or forced draw sequence.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/7P/8/N7/1P1pp1K1/3k4/8 w - - 0 61",
+      "outcome": "draw"
+    },
+    {
+      "id": "gukesh_finish_race",
+      "start": "pawn_race",
+      "title": "Independent continuation: the king cannot catch the h-pawn",
+      "san": [
+        "h6",
+        "Kc2",
+        "h7",
+        "Kxb3",
+        "h8=Q"
+      ],
+      "commentary": [
+        "Continue independently from the video’s illustrated position after ...Kxd1. The first h-pawn advance is shown in the clip; the black king moves and final promotion are representative additions, not moves played in the original game.",
+        "h6 puts the pawn two moves from promotion. White no longer needs the knight because both black promotion threats have been eliminated.",
+        "Kc2 heads toward b3. This is a legal representative reply; Black still loses even if it chooses a different king move.",
+        "h7 leaves only one move to promotion. Black’s king cannot reach g7 or h8 in time.",
+        "Kxb3 takes the spare pawn, but that capture does nothing to stop h8. Keeping b3 in the reconstruction matters even though White wins without it.",
+        "h8=Q promotes. The exact queen-versus-king endpoint is winning, with further conversion left to practice."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "h8=Q promotes. The exact queen-versus-king endpoint is winning, with further conversion left to practice.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7Q/8/8/8/5K2/1k6/8/8 b - - 0 67",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What does Nc4+ accomplish beyond making a check?",
+      "answer": "It gains time to attack e3 and control d2. Kf4 then protects the knight’s planned capture on e3."
+    },
+    {
+      "node": "pawn_race",
+      "prompt": "Why is sacrificing the knight acceptable?",
+      "answer": "The knight has eliminated both connected passers. Black’s king is too far from the h-file, so White can replace the knight with a queen."
+    }
+  ],
+  "defaultBranch": "gukesh_knight_coordination",
+  "practiceBranch": "gukesh_knight_coordination",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after 59...Kd2 at 58 seconds in Gukesh–Carlsen, Norway Chess round 6, 1 June 2025. Saved images show ranks 1–7; the Swedish Chess Federation’s published full PGN supplies the omitted rank eight and independently confirms the played position. Exact verification starts at this seven-piece phase. The earlier rook sacrifice remains source context. The actual game ends at 62.Kf4; subsequent captures in the main line are the video’s post-resignation illustration, and the two comparison branches are independently selected.",
+  "verification_scope": "Saved board images manually reviewed and matched to the Swedish Chess Federation’s published complete PGN (scripts/story-drafts/2IIIWJhQaCs.source-game.pgn). The PGN establishes the omitted eighth rank. Every encoded intermediate position and endpoint has exact tablebase evidence. Selected variations, not an exhaustive defense tree or verification of the earlier larger position.",
+  "sourceCorrections": [
+    {
+      "claim": "The continuation after Kf4 might be mistaken for moves played in the original game.",
+      "correction": "The published game score ends at 62.Kf4. The video’s ...d2/Nxe3/...d1=Q/Nxd1/...Kxd1 line explains the resignation; those moves were not played."
+    }
+  ],
+  "additionalSources": [
+    {
+      "url": "https://schack.se/nyhet/internationellt/2025/06/carlsens-nya-utspel-efter-utbrottet-vid-bradet/",
+      "role": "Complete published game score resolves rank eight omitted by the saved video crop."
+    }
+  ],
+  "verificationDate": "2026-10-24"
+}

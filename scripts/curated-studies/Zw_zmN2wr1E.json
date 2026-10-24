@@ -1,0 +1,153 @@
+{
+  "video_id": "Zw_zmN2wr1E",
+  "title": "Beautiful Move: The Rook Offer",
+  "summary": "Offer the rook with check, then exploit either king capture or queen capture with a precise queen maneuver.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "q5r1/8/8/8/8/8/Q7/1R3K1k w - - 0 1",
+      "question": "How can White break the mutual defenses?",
+      "explanation": "The physical demonstration starts with White Kf1, Qa2 and Rb1 against Kh1, Qa8 and Rg8. Kf2 opens the rook\u2019s first-rank line while shielding h2 from Qa2.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "beautiful_king_capture",
+      "start": "start",
+      "title": "The king captures the rook",
+      "san": [
+        "Kf2+",
+        "Kh2",
+        "Rh1+",
+        "Kxh1",
+        "Qb1+",
+        "Kh2",
+        "Qh7#"
+      ],
+      "commentary": [
+        "The physical demonstration starts with White Kf1, Qa2 and Rb1 against Kh1, Qa8 and Rg8. Kf2 opens the rook\u2019s first-rank line while shielding h2 from Qa2.",
+        "Kf2+ discovers check from Rb1 along the first rank as Kf1 leaves it. It also protects the queen\u2019s eventual g2/g3 mating squares.",
+        "Kh2 escapes the discovered rook check, but White\u2019s king on f2 controls g1/g2/g3.",
+        "Rh1+ offers the rook next to the black king. White uses a forcing sacrifice to break the position open.",
+        "Kxh1 accepts with the king. Black has moved off h2 and gives White a new checking angle.",
+        "Qb1+ checks across the first rank and forces the black king upward again.",
+        "Kh2 is forced because White\u2019s king controls g1/g2.",
+        "Qh7# checks down the h-file. Kf2 covers g1/g2/g3 and Qh7 covers h1/h3, leaving no flight or interposition."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qh7# checks down the h-file. Kf2 covers g1/g2/g3 and Qh7 covers h1/h3, leaving no flight or interposition.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "q5r1/7Q/8/8/8/8/5K1k/8 b - - 3 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "beautiful_queen_capture",
+      "start": "start",
+      "title": "The queen captures the rook",
+      "san": [
+        "Kf2+",
+        "Kh2",
+        "Rh1+",
+        "Qxh1",
+        "Qxg8",
+        "Kh3",
+        "Qg3#"
+      ],
+      "commentary": [
+        "The physical demonstration starts with White Kf1, Qa2 and Rb1 against Kh1, Qa8 and Rg8. Kf2 opens the rook\u2019s first-rank line while shielding h2 from Qa2.",
+        "Kf2+ discovers the rook check along the first rank.",
+        "Kh2 moves away from the line while staying near the white king.",
+        "Rh1+ sacrifices the rook and forces Black to choose a capturer.",
+        "Qxh1 uses the queen to capture. Black keeps the king on h2 but abandons Rg8.",
+        "Qxg8 removes the black rook. White has created a zugzwang arrangement with a mating threat on g2.",
+        "Kh3 is the illustrated king move, leaving the h2 shelter.",
+        "Qg3# mates next to the king, protected by Kf2. The black queen on h1 cannot capture g3."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qg3# mates next to the king, protected by Kf2. The black queen on h1 cannot capture g3.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/6Qk/5K2/7q b - - 2 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "beautiful_guard_g2",
+      "start": "start",
+      "title": "The queen tries to keep g2 defended",
+      "san": [
+        "Kf2+",
+        "Kh2",
+        "Rh1+",
+        "Qxh1",
+        "Qxg8",
+        "Qe4",
+        "Qg1+",
+        "Kh3",
+        "Qg3#"
+      ],
+      "commentary": [
+        "The physical demonstration starts with White Kf1, Qa2 and Rb1 against Kh1, Qa8 and Rg8. Kf2 opens the rook\u2019s first-rank line while shielding h2 from Qa2.",
+        "Kf2+ discovers check from the rook on b1.",
+        "Kh2 is the king\u2019s forced retreat.",
+        "Rh1+ offers the rook to disrupt Black\u2019s mutual defenses.",
+        "Qxh1 captures with the queen and leaves the black rook undefended.",
+        "Qxg8 wins the rook and threatens Qg2 mate.",
+        "Qe4 guards g2 along e4-f3-g2, trying to preserve the mating defense.",
+        "Qg1+ switches the checking angle; the queen on e4 cannot capture or interpose against this adjacent diagonal check.",
+        "Kh3 is forced, since Kf2 covers g1/g2/g3 and Qg1 controls h2.",
+        "Qg3# is protected by the white king. The black queen cannot stop this adjacent mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qg3# is protected by the white king. The black queen cannot stop this adjacent mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/4q3/6Qk/5K2/8 b - - 4 5",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What does the rook sacrifice change?",
+      "answer": "King capture allows Qb1+ and Qh7 mate. Queen capture abandons Rg8 and leaves White a zugzwang arrangement with two different checking angles."
+    }
+  ],
+  "defaultBranch": "beautiful_king_capture",
+  "practiceBranch": "beautiful_king_capture",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "The full six-piece physical setup is visually reconstructed with Kf1 (the earlier digital Pretty Sacrifice study used Ke1). The common rook-offer motif is attributed as a repeated composition pattern, not a new independent chess idea. Both captures and a selected queen defense are checked.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

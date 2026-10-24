@@ -1,0 +1,141 @@
+{
+  "video_id": "pdUB7oIOA3I",
+  "title": "Majestic Puzzle",
+  "summary": "Improve the king before pushing the passed pawn, keeping Black’s own pawns from creating stalemate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "k1K5/8/p7/pP6/P7/8/8/8 w - - 0 1",
+      "question": "Why is b6 too early even though the pawn is passed?",
+      "explanation": "Begin after the bishop sacrifice and exchanges: White has Kc8/a4/b5 against Ka8/a6/a5. Both black pawns are blocked, so White must preserve a legal king move for Black.",
+      "evidence": {
+        "timestamp_s": 138
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "puzzle_capture_conversion",
+      "start": "start",
+      "title": "Improve the king before the pawn exchange",
+      "san": [
+        "Kc7",
+        "axb5",
+        "axb5",
+        "a4",
+        "b6",
+        "a3",
+        "b7+",
+        "Ka7",
+        "b8=Q+",
+        "Ka6",
+        "Qb6#"
+      ],
+      "commentary": [
+        "Begin in the complete supported six-piece source diagram. The earlier nine-piece bishop plan remains context.",
+        "Kc7 frees b8 so Black can answer a later pawn check without being stalemated now.",
+        "axb5 uses the a6 pawn to remove the passed b-pawn.",
+        "axb5 recaptures with White’s a4 pawn and creates a new passed b-pawn.",
+        "a4 advances Black’s remaining pawn.",
+        "b6 starts White’s counter-race.",
+        "a3 advances again.",
+        "b7+ advances with check against Ka8 and threatens promotion supported by Kc7.",
+        "Ka7 is the selected king move while Black’s pawn remains on a3.",
+        "b8=Q+ promotes with check.",
+        "Ka6 is the illustrated escape from that queen check.",
+        "Qb6# is actual mate: Kc7 supports the queen while it seals the sixth rank and b-file."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qb6# is actual mate: Kc7 supports the queen while it seals the sixth rank and b-file.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/2K5/kQ6/8/8/p7/8/8 b - - 2 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "puzzle_king_declines_exchange",
+      "start": "start",
+      "title": "The king moves instead of exchanging pawns",
+      "san": [
+        "Kc7",
+        "Ka7",
+        "b6+",
+        "Ka8",
+        "b7+",
+        "Ka7",
+        "b8=Q#"
+      ],
+      "commentary": [
+        "Compare the source’s king-move alternative instead of ...axb5.",
+        "Kc7 preserves the winning pawn structure and avoids the immediate stalemate.",
+        "Ka7 is a legal king move made possible by White’s retreat from c8.",
+        "b6+ advances with check, using the pawn’s attack on a7.",
+        "Ka8 steps back to the corner.",
+        "b7+ checks a8 and prepares promotion.",
+        "Ka7 is forced in this selected route while the a6 pawn blocks the lower escape.",
+        "b8=Q# promotes with actual mate. Black’s own a6 pawn helps trap the king."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "b8=Q# promotes with actual mate. Black’s own a6 pawn helps trap the king.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1Q6/k1K5/p7/p7/P7/8/8/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "puzzle_premature_pawn",
+      "start": "start",
+      "title": "Push the passed pawn before moving the king",
+      "san": [
+        "b6"
+      ],
+      "commentary": [
+        "Compare the source’s tempting pawn push while White’s king is still on c8.",
+        "b6 is actual stalemate: it covers a7, Kc8 covers b7/b8, and the a6/a5 pawns are blocked. Black’s king on a8 is not in check and has no legal move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "b6 is actual stalemate: it covers a7, Kc8 covers b7/b8, and the a6/a5 pawns are blocked. Black’s king on a8 is not in check and has no legal move.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "k1K5/8/pP6/p7/P7/8/8/8 b - - 0 1",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why move the king instead of immediately pushing b6?",
+      "answer": "With Kc8 and b6, Black has no legal move and is not checked. Kc7 frees b8, keeping play alive until the pawn can advance safely."
+    }
+  ],
+  "defaultBranch": "puzzle_capture_conversion",
+  "practiceBranch": "puzzle_capture_conversion",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin at 138 seconds in the complete supported six-piece pawn ending. Earlier nine-/eight-/seven-piece bishop sacrifices and exchanges are source context outside this checked tree. Selected king alternatives, the pawn exchange, promotion mates and premature stalemate are checked.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,125 @@
+{
+  "video_id": "h-5uLMAm6gI",
+  "title": "1 Knight VS 3 Pawns",
+  "summary": "Keep the opposing pawns on the board so they become the walls of a knight mating cage.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/2k5/Kp1n4/PP6/8/P7/8/8 b - - 0 1",
+      "question": "Should Black trade its pawn immediately?",
+      "explanation": "Black has Kc7, Nd6 and b6 against Ka6, a5, b5 and a3. The tempting pawn trade draws; ...Nb7 lets White’s own pawns block its king.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "one_knight_pawn_cage",
+      "start": "start",
+      "title": "Offer the pawn, then build the cage",
+      "san": [
+        "Nb7",
+        "axb6+",
+        "Kb8",
+        "a4",
+        "Ka8",
+        "a5",
+        "Nc5#"
+      ],
+      "commentary": [
+        "Begin from the complete seven-piece source board with Black to move. The learner is playing Black.",
+        "Nb7 offers b6 and prepares the knight’s final route to c5.",
+        "axb6+ accepts the pawn with check, but leaves a white pawn obstructing b6.",
+        "Kb8 answers the check and controls a7 and b7, confining the white king.",
+        "a4 is White’s only legal move. The king and b-pawns cannot move safely.",
+        "Ka8 keeps the cage intact and passes the move back to White.",
+        "a5 is again White’s only legal move, placing the last pawn beside its trapped king.",
+        "Nc5# is actual Black mate. Ka8 covers a7/b7, White’s own pawns occupy a5/b5/b6, and Nc5 attacks Ka6."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nc5# is actual Black mate. Ka8 covers a7/b7, White’s own pawns occupy a5/b5/b6, and Nc5 attacks Ka6.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "k7/8/KP6/PPn5/8/8/8/8 w - - 1 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "one_knight_pawn_trade",
+      "start": "start",
+      "title": "Trade the pawns immediately",
+      "san": [
+        "bxa5",
+        "Kxa5"
+      ],
+      "commentary": [
+        "Compare the source’s natural pawn capture instead of the knight maneuver.",
+        "bxa5 gives up Black’s exact win by trading off an important cage pawn.",
+        "Kxa5 recaptures. The checked knight-versus-two-pawns ending is drawn rather than a forced Black win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxa5 recaptures. The checked knight-versus-two-pawns ending is drawn rather than a forced Black win.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/2k5/3n4/KP6/8/P7/8/8 b - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "one_knight_wrong_attack",
+      "start": "start",
+      "title": "Attack the pawn with Nc4",
+      "san": [
+        "Nc4",
+        "axb6+",
+        "Nxb6"
+      ],
+      "commentary": [
+        "Compare the source’s direct attack on b5 with the knight.",
+        "Nc4 gives up the forced win by allowing a pawn exchange with check.",
+        "axb6+ captures Black’s last pawn and checks Kc7.",
+        "Nxb6 recaptures, but the exact knight-versus-two-pawns ending is drawn. White’s king no longer has the same pawn cage."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxb6 recaptures, but the exact knight-versus-two-pawns ending is drawn. White’s king no longer has the same pawn cage.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/2k5/Kn6/1P6/8/P7/8/8 w - - 0 3",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "How can one knight deliver mate here?",
+      "answer": "The opponent’s pawns occupy its king’s escape squares. The black king closes a7/b7 and the knight checks from c5; this is not a claim that king and knight can mate a bare king."
+    },
+    {
+      "node": "start",
+      "prompt": "Why avoid the immediate pawn trade?",
+      "answer": "The trade removes a pawn that can become part of White’s prison. Nb7 instead lets White create the blocking pawn on b6."
+    }
+  ],
+  "defaultBranch": "one_knight_pawn_cage",
+  "practiceBranch": "one_knight_pawn_cage",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "The complete seven-piece source root is visually reconstructed with Black to move. Selected source comparisons cover the actual knight mate and two drawn exchanges. Expected move outcomes are recorded from White’s perspective, while practice and the board orientation follow Black.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

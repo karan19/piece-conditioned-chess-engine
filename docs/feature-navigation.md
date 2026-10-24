@@ -15,6 +15,10 @@ The root URL is the Chess Learning Lab homepage. Both feature apps use the brows
 | Guided lesson | `/opening-studio/openings/london-system/learn/?line=2` |
 | Endgame library | `/opening-studio/endgames/?type=rook&difficulty=hard&page=2` |
 | Endgame position | `/opening-studio/endgames/0008Q/` |
+| Endgame Stories library | `/endgame-stories/` |
+| Guided endgame study | `/endgame-stories/KEnJIrhWSDQ/?line=main_bind&ply=2` |
+| Source walkthrough | `/endgame-stories/NysivKCHQiY/?mode=source&frame=12` |
+| Study practice | `/endgame-stories/KEnJIrhWSDQ/?mode=practice` |
 
 Opening queries preserve search (`q`), category (`filter`), pagination (`page`), variation search (`variation`), variation pagination (`line-page`), learning side (`side`), and the originating saved list (`from=my-openings`). Lines use a one-based index in the pinned catalog family. Imported lines use a short stable token in `custom`. The import dialog uses `import=1`, so browser Back closes it.
 

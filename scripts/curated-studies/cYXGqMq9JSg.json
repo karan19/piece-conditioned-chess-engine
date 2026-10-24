@@ -1,0 +1,177 @@
+{
+  "video_id": "cYXGqMq9JSg",
+  "title": "The Law of Attraction: Draw the Queen into a Fork",
+  "summary": "Allow promotion, then use bishop checks and a sacrifice to place the new queen on a knight-fork square.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1P3kp1/8/7K/8/8/5n1P/4b3 b - - 0 1",
+      "question": "Can Black allow White to promote?",
+      "explanation": "Black has Kf7/Be1/Nf2/g7 against White Kh5/b7/h2. White threatens b8=Q, but the king\u2019s exposed position permits a forcing sequence.",
+      "evidence": {
+        "timestamp_s": 1.0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "attraction_queen_fork",
+      "start": "start",
+      "title": "Allow the queen, then force the fork",
+      "san": [
+        "g6+",
+        "Kh4",
+        "Bb4",
+        "b8=Q",
+        "Be7+",
+        "Kg3",
+        "Bd6+",
+        "Qxd6",
+        "Ne4+",
+        "Kf4",
+        "Nxd6"
+      ],
+      "commentary": [
+        "Black has Kf7/Be1/Nf2/g7 against White Kh5/b7/h2. White threatens b8=Q, but the king\u2019s exposed position permits a forcing sequence.",
+        "g6+ is the only winning move in this exact diagram. The pawn check starts driving the king into the tactical geometry.",
+        "Kh4 is the illustrated critical king retreat.",
+        "Bb4 allows promotion while preparing Be7 with check. The bishop changes diagonals before the pawn becomes a queen.",
+        "b8=Q promotes. Material alone hides the exposed king\u2019s problem.",
+        "Be7+ checks h4 along f6-g5.",
+        "Kg3 answers the check and puts the king on the diagonal that a bishop on d6 will attack.",
+        "Bd6+ checks g3 through e5-f4 and also attacks Qb8 through c7.",
+        "Qxd6 captures the bishop, but places the queen on d6.",
+        "Ne4+ forks Kg3 and Qd6. The bishop sacrifice has arranged both targets.",
+        "Kf4 is an independently selected representative legal king escape from the fork.",
+        "Nxd6 captures the queen. The exact knight-and-pawn versus pawn ending is winning for Black; further conversion is outside this selected branch."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nxd6 captures the queen. The exact knight-and-pawn versus pawn ending is winning for Black; further conversion is outside this selected branch.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/5k2/3n2p1/8/5K2/8/7P/8 w - - 0 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "attraction_other_king_exit",
+      "start": "start",
+      "title": "A different king exit permits the blockade",
+      "san": [
+        "g6+",
+        "Kh6",
+        "Bd2+",
+        "Kh7",
+        "Bf4"
+      ],
+      "commentary": [
+        "Black has Kf7/Be1/Nf2/g7 against White Kh5/b7/h2. White threatens b8=Q, but the king\u2019s exposed position permits a forcing sequence.",
+        "g6+ checks before the pawn promotes.",
+        "Kh6 tries to escape upward rather than enter the main forcing route.",
+        "Bd2+ checks h6 along e3-f4-g5.",
+        "Kh7 moves beyond the check.",
+        "Bf4 reaches the diagonal f4-e5-d6-c7-b8 and stops promotion. The exact position remains winning for Black."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bf4 reaches the diagonal f4-e5-d6-c7-b8 and stops promotion. The exact position remains winning for Black.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/1P3k1K/6p1/8/5b2/8/5n1P/8 w - - 4 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "attraction_wrong_discovered_check",
+      "start": "start",
+      "title": "Independent immediate discovered check loses",
+      "san": [
+        "g6+",
+        "Kh4",
+        "Ne4+",
+        "Kh3"
+      ],
+      "commentary": [
+        "Black has Kf7/Be1/Nf2/g7 against White Kh5/b7/h2. White threatens b8=Q, but the king\u2019s exposed position permits a forcing sequence.",
+        "g6+ starts correctly.",
+        "Kh4 leaves the king on the bishop\u2019s e1-f2-g3-h4 diagonal.",
+        "Ne4+ clears that diagonal, giving discovered check, but this is the wrong move order: the exact resulting position is winning for White.",
+        "Kh3 is the only winning king escape in this exact position. It keeps the promotion threat; the knight cannot stop b8=Q in time."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kh3 is the only winning king escape in this exact position. It keeps the promotion threat; the knight cannot stop b8=Q in time.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1P3k2/6p1/8/4n3/7K/7P/4b3 b - - 3 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "attraction_wrong_king_escape",
+      "start": "start",
+      "title": "Independent wrong king escape gives Black another chance",
+      "san": [
+        "g6+",
+        "Kh4",
+        "Ne4+",
+        "Kg4"
+      ],
+      "commentary": [
+        "Black has Kf7/Be1/Nf2/g7 against White Kh5/b7/h2. White threatens b8=Q, but the king\u2019s exposed position permits a forcing sequence.",
+        "g6+ starts correctly.",
+        "Kh4 leaves the king on the bishop\u2019s e1-f2-g3-h4 diagonal.",
+        "Ne4+ clears that diagonal, giving discovered check, but this is the wrong move order: the exact resulting position is winning for White.",
+        "Kg4 gives away White\u2019s restored win and leaves an exact Black win. After the premature discovered check, White must choose Kh3 instead; a legal king escape is not automatically a good one."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kg4 gives away White\u2019s restored win and leaves an exact Black win. After the premature discovered check, White must choose Kh3 instead; a legal king escape is not automatically a good one.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "win",
+        "loss"
+      ],
+      "end_fen": "8/1P3k2/6p1/8/4n1K1/8/7P/4b3 b - - 3 3",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why permit b8=Q?",
+      "answer": "The bishop can check the king onto g3 and then offer itself on d6, attacking both king and queen. After Qxd6, Ne4 checks and forks the queen."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does the immediate discovered check fail?",
+      "answer": "Moving the knight first clears the bishop\u2019s diagonal without arranging the queen-fork geometry. The king escapes and the promotion threat remains."
+    }
+  ],
+  "defaultBranch": "attraction_queen_fork",
+  "practiceBranch": "attraction_queen_fork",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "The full seven-piece physical-board position is reconstructed as Black Kf7/Be1/Nf2/g7 versus White Kh5/b7/h2. The central promotion-and-bishop-sacrifice mechanism and the alternative checking blockade are illustrated. The main fork\u2019s final Kf4 reply is independently selected because the source ends at the fork; the immediate discovered-check comparison also uses an independent representative king reply. The exact proof applies to every encoded position, not to an exhaustive tree of all defenses.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,195 @@
+{
+  "batch_id": "2026-10-23-14",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three studies and ten selected branches; two larger cage/zugzwang studies remain pending analysis with available sources.",
+  "reviews": {
+    "xsGT4DrgbuA": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 16 exact positions from complete five-piece board. Bc4 prepares Bb3/Ba2 against ...Rb1 and ...Ra1+; selected ...Re1/...Re8 defense is met with Be6+ ...Rxe6 b8=Q. Early bishop acceptance wins for White; premature b7 ...Rb1 draws. No exhaustive rook-defense tree claimed.",
+      "source_images": [
+        {
+          "file": "xsGT4DrgbuA/montage_accepted.jpg",
+          "sha256": "79075e9b199a1776282ea8ad145a60f85b8565e7a694d29a513ea3c93dd6ca70"
+        },
+        {
+          "file": "xsGT4DrgbuA/images/image_00001.jpg",
+          "sha256": "d19f2afa226473f12d0358a25b76ea0bfc65768a22db68bdd23d0695b4fcc0bd"
+        },
+        {
+          "file": "xsGT4DrgbuA/images/image_00018.jpg",
+          "sha256": "0e3f128b80a81fb8d9d9829886900ab055ea455fb8c9194a4de3f9aa9a369c73"
+        },
+        {
+          "file": "xsGT4DrgbuA/images/image_00025.jpg",
+          "sha256": "00f93d6cdd0889492dbe43157ab212336d8c609c26195947d0e53eb49bf4f3cc"
+        },
+        {
+          "file": "xsGT4DrgbuA/images/image_00054.jpg",
+          "sha256": "beadf7a0386b5340804c56209f572f6f3ef4a2643d9860552a649e3ad353c37c"
+        }
+      ]
+    },
+    "cYJCZheo0tI": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 20 exact positions from complete six-piece board. Source corner/king-tempo ideas retained with independent Qe6 defenses and explicit ...Qg8 queen interpositions before Raxg8#/Rfxg8#. Independent loose Rg8+ comparison loses to ...Kxg8. Do not present representative queen replies as an exhaustive source tree.",
+      "source_images": [
+        {
+          "file": "cYJCZheo0tI/montage_accepted.jpg",
+          "sha256": "6dd7704ac35a0fc8f6d1c7ff4eeb1a8389bb6f8da890c654c1bb306c283056df"
+        },
+        {
+          "file": "cYJCZheo0tI/images/image_00001.jpg",
+          "sha256": "90720edf3f1a09e24d6ca79ca59b7baecb1825621ef18897d82271fdefcb23ef"
+        },
+        {
+          "file": "cYJCZheo0tI/images/image_00003.jpg",
+          "sha256": "21c48c3696bbb78643fe96de063858c151a3e061a45e4b981d8f2a04b0d356e5"
+        },
+        {
+          "file": "cYJCZheo0tI/images/image_00024.jpg",
+          "sha256": "b3f8bb3d503dde2aa54983d7908a2d362a29a22621a3c94eb5dd18d3caeca1b0"
+        },
+        {
+          "file": "cYJCZheo0tI/images/image_00025.jpg",
+          "sha256": "c7eee21ba1f839a4ba68b4340f4fe291bfc5e0ce11cc05d57aa41cbf388bb914"
+        },
+        {
+          "file": "cYJCZheo0tI/images/image_00026.jpg",
+          "sha256": "add64d2e20bb4a24ad57b3b244e8556937ef700481110857b0d0acc17c8aaa9b"
+        },
+        {
+          "file": "cYJCZheo0tI/images/image_00027.jpg",
+          "sha256": "e75e85c40f18a0a04bb69fc38133ddb7f1b95a27a747434ed7b28fa3b7950607"
+        }
+      ]
+    },
+    "EHhyba_Pt1M": {
+      "result": "verified_selected_lines",
+      "notes": "Four selected branches from seven-piece position after ...Qc6. Correct captioned Rxc4 to visually supported Rxe4+. Main source b8=N+ forks Qd7 after checking preparation. b8=Q allows ...Qc6+ Qb7+ Qxb7 actual mate. Separate saved ...Qb8+ diagram yields actual stalemate after either Kxb8 or Qxb8; intervening queen maneuvers not encoded as a continuous branch.",
+      "source_images": [
+        {
+          "file": "EHhyba_Pt1M/montage_accepted.jpg",
+          "sha256": "5fab3ec2564dbba7ccacd88623fcdd85b8720c3b64e7e3ccb0d617e39cc5fbae"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00001.jpg",
+          "sha256": "f97d97724d2b3a06980e2927c4ff988a4c618800e6ed73e03274d4fc11571c4d"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00002.jpg",
+          "sha256": "34d96cc3b4dd81c870be6636d67f0c60a62c04ec4eccf39b645ed5fdd60df9aa"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00003.jpg",
+          "sha256": "c5ebf6e9fac21a84119ff3624066dac83b95010e57e93701c9b1c9a2b636fd02"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00004.jpg",
+          "sha256": "5e37fb4e341b793362fd278b4685b102219825880626854f641b8c6bd0d42142"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00005.jpg",
+          "sha256": "73515e75c72b5c4fd65c9ebae985ed95b1c51daf2fb5f644dfe7881182e40e7c"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00006.jpg",
+          "sha256": "2e31ba7fbd1c91e3d484637a8d59cd94b1f71825663d1286695cd31f03f3f05a"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00010.jpg",
+          "sha256": "aa153bae9b4ad6870f1c5df5347cba102fac2d79b1fcc6676941933feca27ba7"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00013.jpg",
+          "sha256": "5d615cb015904c58a2c626cffb4477e7320c968983b643cf9f1b3bbe61c178d6"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00017.jpg",
+          "sha256": "72c5c0d66b6d1312afa3f697e4ac9022204b8032bd6680d35ca766c49feea18a"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00020.jpg",
+          "sha256": "0c593c4bb482d852873bcb2900e920006bbbf7a0a2ee06374d3d8029ce02da43"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00025.jpg",
+          "sha256": "3f35d2d0f524a3b6935c6a2d0e813be9d9b0eff22484f519275573d3f776fca7"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00034.jpg",
+          "sha256": "75901f0269b5cc03d961e1a44bb85de7d944667dba798bd3b89468008c6c12c7"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00035.jpg",
+          "sha256": "0ce454bbb36d1196dc0bfbf9aa4a4770a6b084ca556a1566186c677f210525e2"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00036.jpg",
+          "sha256": "b9b30bfed81bec5626739c60ebe1e5a3ee1730b7b10e94df4e5f2e0cb9c5d737"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00037.jpg",
+          "sha256": "2bec45a594d3a28a050d59417baaf0132ff47fd752b220115445080547b4bf12"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00039.jpg",
+          "sha256": "bc932ce8faa252774ab6281b7ea50959553c83425b6f7d8b175ac61802ad81a1"
+        },
+        {
+          "file": "EHhyba_Pt1M/images/image_00041.jpg",
+          "sha256": "8ce35f987979f7e6dc78fb53f460b8aa1837653185355cd74248576091f6321d"
+        }
+      ]
+    },
+    "upofbg74NtQ": {
+      "result": "awaiting_reconstruction",
+      "notes": "Stable selected setup before ...Rg5+ has nine pieces: White Kf5 Rc4 Bh5 a4 h3; Black Kd8 Rg8 a5 h6. After ...Rg5+ Ke6 ...Rxh5 the central h4 zugzwang still has eight pieces. Source boards and narration are available.",
+      "analysis_required": "Verify the eight-piece rook-and-pawn zugzwang with supported larger-position analysis. A seven-piece terminal mate after a further pawn capture alone does not certify the preceding h4 plan.",
+      "source_images": [
+        {
+          "file": "upofbg74NtQ/images/image_00001.jpg",
+          "sha256": "3ccd934f00b9700e92f1eac24b997ee49f13eeacd1dd98e7a35b51a92cf3a456"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00017.jpg",
+          "sha256": "1f2cf92c7bcedd0ad5eafd0de5ef521c85beff40aa61202cdb99682a9fec13ed"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00020.jpg",
+          "sha256": "a01a06440eafb778ae3f0330a1bfe459423b06c5fc88f406fb9b572efa2b29b4"
+        }
+      ]
+    },
+    "qFXXw2fk8wo": {
+      "result": "awaiting_reconstruction",
+      "notes": "Stable late position before ...Bxc2 has nine pieces: White Kd1 Rc2 Bc3; Black Ka1 Rb2 Bb1 a2 b3 f3. Accepting the rook leaves eight pieces in the final bishop mating net. Source boards and captions are present.",
+      "analysis_required": "Reconstruct and verify the larger pinned cage, king walk and rook sacrifice with supported analysis, or disclose a substantive later small position. Do not call the full plan exactly tablebase-proven from its terminal mate.",
+      "source_images": [
+        {
+          "file": "qFXXw2fk8wo/images/image_00001.jpg",
+          "sha256": "e7fbb1e40c3fff943c7fc0b5df4ed4824037bca02d9bbb690056365507384128"
+        },
+        {
+          "file": "qFXXw2fk8wo/images/image_00023.jpg",
+          "sha256": "02f3464b5cbcb4fd2ff7efe83f16c5829f70fdfac24ee45a42fcc33262ceeeeb"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 53,
+    "selected_branches": 10,
+    "tests": "102 tests passed across 16 files. Generic evidence/legal replay/source checks and focused bishop deflection, queen interposition mates, knight fork, mating counterattack and both actual stalemate captures.",
+    "production_build": "passed",
+    "ui_review": "CUA confirmed War of Brilliants knight-fork endpoint and queen-capture stalemate, Bishop VS Rook promotion, and full two-rook mate after the explicit queen interposition.",
+    "screenshot": "docs/screenshots/endgame-stories-batch-14.png",
+    "additional_screenshot": "docs/screenshots/endgame-stories-batch-14-explanation.png",
+    "queue_counts": {
+      "verified_selected_lines": 43,
+      "awaiting_reconstruction": 180,
+      "needs_information": 23,
+      "not_applicable": 2
+    },
+    "local_only": true
+  }
+}

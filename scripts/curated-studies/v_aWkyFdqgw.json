@@ -1,0 +1,99 @@
+{
+  "video_id": "v_aWkyFdqgw",
+  "title": "Dummies Will Resign: The Final Knight Fork",
+  "summary": "Recognize the final checking fork once the bishop sacrifice has drawn the queen to f4.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/7p/5p2/P7/5q2/1KN5/8/2k5 w - - 0 1",
+      "question": "Can White win the queen before the a-pawn needs to move?",
+      "explanation": "Begin after ...Qxf4 has captured White’s bishop. White has Kb3/Nc3/a5 against Kc1/Qf4/f6/h7. The queen and king share the knight’s fork geometry.",
+      "evidence": {
+        "timestamp_s": 75.0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "dummies_final_fork",
+      "start": "start",
+      "title": "Fork first, then take the queen",
+      "san": [
+        "Ne2+",
+        "Kd2",
+        "Nxf4"
+      ],
+      "commentary": [
+        "Begin after ...Qxf4 has captured White’s bishop. White has Kb3/Nc3/a5 against Kc1/Qf4/f6/h7. The queen and king share the knight’s fork geometry.",
+        "Ne2+ checks Kc1 and attacks Qf4. The check gives Black no time to move the queen.",
+        "Kd2 answers the knight check. This is the illustrated king escape.",
+        "Nxf4 captures the queen. The exact knight-and-pawn versus two-pawn ending is winning for White; promotion and full conversion are outside this short pattern lesson."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxf4 captures the queen. The exact knight-and-pawn versus two-pawn ending is winning for White; promotion and full conversion are outside this short pattern lesson.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/7p/5p2/P7/5N2/1K6/3k4/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "dummies_pawn_distraction",
+      "start": "start",
+      "title": "Independent pawn push misses the fork",
+      "san": [
+        "a6"
+      ],
+      "commentary": [
+        "Begin after ...Qxf4 has captured White’s bishop. White has Kb3/Nc3/a5 against Kc1/Qf4/f6/h7. The queen and king share the knight’s fork geometry.",
+        "a6 spends the forcing tempo on the pawn. The exact resulting position is winning for Black; White needed the checking fork before the queen could escape."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "a6 spends the forcing tempo on the pawn. The exact resulting position is winning for Black; White needed the checking fork before the queen could escape.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "8/7p/P4p2/8/5q2/1KN5/8/2k5 b - - 0 1",
+      "outcome": "win"
+    },
+    {
+      "id": "dummies_knight_retreat",
+      "start": "start",
+      "title": "Independent knight retreat misses the fork",
+      "san": [
+        "Nb1"
+      ],
+      "commentary": [
+        "Begin after ...Qxf4 has captured White’s bishop. White has Kb3/Nc3/a5 against Kc1/Qf4/f6/h7. The queen and king share the knight’s fork geometry.",
+        "Nb1 moves the knight away from the checking-fork square and gives up the exact win. Black is now winning with best play; the exposed king and queen no longer form an immediate Ne2 fork."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nb1 moves the knight away from the checking-fork square and gives up the exact win. Black is now winning with best play; the exposed king and queen no longer form an immediate Ne2 fork.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "8/7p/5p2/P7/5q2/1K6/8/1Nk5 b - - 1 1",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why must the knight check while attacking the queen?",
+      "answer": "A queen attack alone would let the queen escape. Ne2 checks the king and attacks f4 at the same time, forcing a king reply before White captures the queen."
+    }
+  ],
+  "defaultBranch": "dummies_final_fork",
+  "practiceBranch": "dummies_final_fork",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "This short final-pattern lesson begins in the supported seven-piece diagram after ...Qxf4 at 75s. It checks Ne2+/Kd2/Nxf4 and two independent wrong moves. The earlier larger queen/rook trades, Bg3 and Bf4 bishop offer remain source context; these final checks do not certify that complete setup. The source continues to the winning six-piece knight ending, whose exact outcome is checked without assuming a particular later pawn race.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

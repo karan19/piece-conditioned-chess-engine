@@ -1,0 +1,161 @@
+{
+  "video_id": "1MSXNJuwTYI",
+  "title": "Majestic Rook",
+  "summary": "Keep the h-pawn available as support before giving up the rook and advancing the protected passer.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5K1k/7p/7R/6PP/3r4/8/8/8 w - - 0 1",
+      "question": "Should the rook move aside immediately?",
+      "explanation": "White has Kf8, Rh6, g5 and h5 against Kh8, Rd4 and h7. Rh6 pins h7 to the king, so g6 can exploit the pin before the rook is exchanged.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "rook_support_pawn",
+      "start": "start",
+      "title": "Exploit the pin, then keep a supporting pawn",
+      "san": [
+        "g6",
+        "Rd7",
+        "Rxh7+",
+        "Rxh7",
+        "h6",
+        "Rc7",
+        "g7+",
+        "Kh7",
+        "g8=Q+"
+      ],
+      "commentary": [
+        "Begin from the complete seven-piece source diagram, including the h-pawns that decide both promotion and stalemate resources.",
+        "g6 advances while h7 is pinned to Kh8 by Rh6, so ...hxg6 is illegal here.",
+        "Rd7 is the illustrated defense of h7, preparing to recapture the rook.",
+        "Rxh7+ removes the pawn with check and offers the white rook.",
+        "Rxh7 accepts the rook sacrifice. White’s remaining pawns must now cooperate rather than rush independently.",
+        "h6 preserves two separate pawns and prepares a protected g7 advance.",
+        "Rc7 is the source’s selected rook retreat, avoiding the mating trap after ...Rxh6.",
+        "g7+ advances with check. The pawn is protected by h6, preventing ...Rxg7.",
+        "Kh7 leaves the corner, since the checking pawn cannot be captured safely.",
+        "g8=Q+ promotes with check. The exact queen-and-pawn versus rook ending is winning; conversion beyond this endpoint is not assumed."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "g8=Q+ promotes with check. The exact queen-and-pawn versus rook ending is winning; conversion beyond this endpoint is not assumed.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "5KQ1/2r4k/7P/8/8/8/8/8 b - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_capture_support_pawn",
+      "start": "start",
+      "title": "Black takes the supporting pawn",
+      "san": [
+        "g6",
+        "Rd7",
+        "Rxh7+",
+        "Rxh7",
+        "h6",
+        "Rxh6",
+        "g7+",
+        "Kh7",
+        "g8=Q#"
+      ],
+      "commentary": [
+        "Compare the illustrated attempt to remove the h-pawn after accepting White’s rook sacrifice.",
+        "g6 exploits the pin on h7.",
+        "Rd7 guards the h-pawn and invites the rook trade.",
+        "Rxh7+ offers the rook with check.",
+        "Rxh7 accepts the offered rook.",
+        "h6 prepares g7 with pawn support.",
+        "Rxh6 removes that support but puts the rook where it cannot stop promotion with check.",
+        "g7+ forces the king away while the pawn approaches promotion.",
+        "Kh7 is the only legal king reply; Kf8 controls g7 and g8.",
+        "g8=Q# is actual mate. The new queen controls h7 and h8, Kf8 protects the queen, and Rh6 blocks the remaining h6 flight."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "g8=Q# is actual mate. The new queen controls h7 and h8, Kf8 protects the queen, and Rh6 blocks the remaining h6 flight.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "5KQ1/7k/7r/8/8/8/8/8 b - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_move_aside",
+      "start": "start",
+      "title": "Move the rook before exploiting the pin",
+      "san": [
+        "Rf6",
+        "Rd7",
+        "g6",
+        "hxg6",
+        "Rxg6",
+        "Rg7"
+      ],
+      "commentary": [
+        "Compare the source’s natural attempt to clear the pawns’ path by moving the rook first.",
+        "Rf6 releases the pin on h7 and gives up White’s exact win.",
+        "Rd7 defends the seventh rank against the pawn advance.",
+        "g6 no longer has the same force because the h-pawn can capture legally.",
+        "hxg6 exchanges Black’s h-pawn for White’s g-pawn.",
+        "Rxg6 recaptures, but White now has only a rook and an h-pawn against the rook.",
+        "Rg7 is the illustrated blockade. This exact rook-and-h-pawn ending is drawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rg7 is the illustrated blockade. This exact rook-and-h-pawn ending is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "5K1k/6r1/6R1/7P/8/8/8/8 w - - 1 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does g6 work before Rf6?",
+      "answer": "Rh6 pins h7 to Kh8. Moving the rook first releases that pin and allows ...hxg6, leaving the drawn rook-and-h-pawn ending."
+    },
+    {
+      "node": "start",
+      "prompt": "Why keep the h-pawn instead of rushing g7?",
+      "answer": "After the rook sacrifice, h6 protects g7. Black cannot take that pawn with the rook without allowing the checked mating promotion."
+    }
+  ],
+  "defaultBranch": "rook_support_pawn",
+  "practiceBranch": "rook_support_pawn",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "The complete seven-piece source position is visually reconstructed. Three selected source branches compare g6 while h7 is pinned, the supporting h6 move, actual promotion mate after ...Rxh6, and the drawn rook-first route. Every encoded position is checked exactly.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

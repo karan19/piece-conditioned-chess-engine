@@ -1,0 +1,206 @@
+{
+  "video_id": "s7QODDUiDqg",
+  "title": "The Great Blockade",
+  "summary": "Use the bishop to restrain both spare pawns, then force the opposing king away from the squares that trap your own king.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "K1k5/P1pp1B1p/8/8/8/8/8/8 w - - 0 1",
+      "question": "How can White free a king that blocks its own pawn?",
+      "explanation": "Begin after ...Kc8. White\u2019s king on a8 blocks its own a7 pawn, and Black keeps the king trapped by controlling b8 and b7.",
+      "evidence": {
+        "timestamp_s": 54
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "blockade",
+      "fen": "K7/P1k5/8/8/7p/7B/8/8 b - - 4 11",
+      "question": "Why must the black king finally give ground?",
+      "explanation": "This position is derived by legal replay after Bh3 in the selected route around 171 seconds. Bh3 blocks h4 while controlling c8, forcing the king to give ground; the sampled source images span the subsequent king moves.",
+      "evidence": {
+        "timestamp_s": 171
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "blockade_complete_route",
+      "start": "start",
+      "title": "Restrain the pawns until the king must move",
+      "san": [
+        "Be8",
+        "c5",
+        "Bxd7+",
+        "Kc7",
+        "Be6",
+        "h6",
+        "Bd5",
+        "Kc8",
+        "Bf7",
+        "Kc7",
+        "Be6",
+        "h5",
+        "Bf7",
+        "h4",
+        "Be6",
+        "c4",
+        "Bxc4",
+        "Kc8",
+        "Be6+",
+        "Kc7",
+        "Bh3",
+        "Kc6",
+        "Kb8",
+        "Kb6",
+        "a8=Q"
+      ],
+      "commentary": [
+        "Begin after ...Kc8. White\u2019s king on a8 blocks its own a7 pawn, and Black keeps the king trapped by controlling b8 and b7.",
+        "Be8 targets d7 and prepares a bishop offer. The piece on e8 is a bishop, despite the caption calling it a king move.",
+        "c5 keeps the d7 pawn in place and vacates c7 for the black king.",
+        "Bxd7+ removes d7 with check and offers the bishop to the king.",
+        "Kc7 declines the bishop, continuing to restrict Ka8.",
+        "Be6 controls c8, c4 and h3. White begins restricting both pawn advances without abandoning the king blockade.",
+        "h6 is the source\u2019s patient pawn move, preserving more waiting moves than an immediate ...h5.",
+        "Bd5 changes the bishop\u2019s diagonal, covering c4 and preparing a return while allowing the king to c8.",
+        "Kc8 renews the blockade from the eighth rank.",
+        "Bf7 covers c4 and h5, restraining both pawns\u2019 next advances.",
+        "Kc7 returns to keep b8 controlled. White can repeat the useful bishop placement.",
+        "Be6 again covers c8, c4 and h3. Black must change something.",
+        "h5 advances the h-pawn in the selected line.",
+        "Bf7 attacks h5 while maintaining control of c4.",
+        "h4 escapes the attack but is now one step from the bishop\u2019s blocking square h3.",
+        "Be6 covers both h3 and c4, so either pawn advance becomes vulnerable.",
+        "c4 gives up the c-pawn rather than moving the king away from the blockade.",
+        "Bxc4 removes that pawn. Only h4 remains as a potential waiting move.",
+        "Kc8 maintains the blockade while the bishop is away from the checking diagonal.",
+        "Be6+ checks along e6-d7-c8, forcing the king off c8.",
+        "Kc7 returns to the remaining blockading square.",
+        "Bh3 blocks h4 and still controls c8 along h3-g4-f5-e6-d7-c8. Black must move the king away.",
+        "Kc6 is the illustrated retreat. With the pawn blocked, Black cannot simply wait.",
+        "Kb8 finally leaves the promotion square clear while keeping a7 defended.",
+        "Kb6 is the illustrated king continuation. It cannot prevent promotion on the next move.",
+        "a8=Q promotes. The exact queen-and-bishop versus h-pawn position is checked as a White win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "a8=Q promotes. The exact queen-and-bishop versus h-pawn position is checked as a White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "QK6/8/1k6/8/7p/7B/8/8 b - - 0 13",
+      "outcome": "loss"
+    },
+    {
+      "id": "blockade_d_pawn",
+      "start": "start",
+      "title": "Advance the d-pawn instead",
+      "san": [
+        "Be8",
+        "d5",
+        "Bd7+",
+        "Kxd7",
+        "Kb8",
+        "d4",
+        "a8=Q"
+      ],
+      "commentary": [
+        "Begin after ...Kc8. White\u2019s king on a8 blocks its own a7 pawn, and Black keeps the king trapped by controlling b8 and b7.",
+        "Be8 aims at the d7 pawn and prepares to offer the bishop with check.",
+        "d5 vacates d7 while leaving c7 occupied, reducing the king\u2019s useful alternatives.",
+        "Bd7+ offers the bishop and forces Black to respond to check.",
+        "Kxd7 takes it, but abandons control of b8.",
+        "Kb8 clears a8 and prepares promotion.",
+        "d4 advances in the illustrated source continuation; Black cannot stop a8=Q.",
+        "a8=Q promotes. White\u2019s queen against the three remaining pawns is checked as winning; no immediate mate is asserted."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "a8=Q promotes. White\u2019s queen against the three remaining pawns is checked as winning; no immediate mate is asserted.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "QK6/2pk3p/8/8/3p4/8/8/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "blockade_other_retreat",
+      "start": "blockade",
+      "title": "Independent retreat through d8",
+      "san": [
+        "Kd8",
+        "Kb8",
+        "Ke8",
+        "a8=Q"
+      ],
+      "commentary": [
+        "This independent representative alternative begins after the same Bh3 blockade. It demonstrates why another king retreat also releases White\u2019s king.",
+        "Kd8 abandons the square c7. Black cannot stay on c8 because the bishop controls it.",
+        "Kb8 clears the promotion square and maintains support of the pawn.",
+        "Ke8 is a representative legal king move, moving farther from the pawn.",
+        "a8=Q+ promotes with check along the eighth rank. The exact position is a White win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "a8=Q+ promotes with check along the eighth rank. The exact position is a White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "QK2k3/8/8/8/7p/7B/8/8 b - - 0 13",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "blockade",
+      "prompt": "Why does Bh3 finally release the white king?",
+      "answer": "The bishop stops h4 from advancing and attacks c8. Black has no pawn move and cannot stay on c7, so the king must give ground and allow Kb8."
+    }
+  ],
+  "defaultBranch": "blockade_complete_route",
+  "practiceBranch": "blockade_complete_route",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kc8 at 54 seconds, a visually reconstructed seven-piece diagram. The earlier eight-piece Bf7 and ...Ba8 Kxa8 sacrifice remain source context. The selected full blockade route, d-pawn alternative and explicitly independent final king retreat are checked exactly.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    "The caption says king to E8, but the saved board clearly shows the white bishop moving from f7 to e8. The legal move is Be8."
+  ],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,141 @@
+{
+  "video_id": "9Ji38GBhYc0",
+  "title": "The Great Retreat: Stop Promotion From the First Rank",
+  "summary": "Step behind the pawn, then distinguish a checking promotion from a king move or an underpromotion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/Kp6/1p6/kP6/P1R4p/8 w - - 0 1",
+      "question": "How does Rc1 meet the h-pawn without repeating the earlier stalemate trap?",
+      "explanation": "From c1 the rook can capture a queen or rook promoted on h1. If Black moves the king or chooses a lesser promotion, White has a checked winning capture in the complete remaining ending.",
+      "evidence": {
+        "timestamp_s": 174
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/8/8/Kp6/1p6/kP6/P1R4p/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "retreat_queen_promotion",
+      "start": "start",
+      "title": "Independent reply: promote to a queen",
+      "san": [
+        "Rc1",
+        "h1=Q",
+        "Rxh1"
+      ],
+      "commentary": [
+        "Begin after ...h2, with both white a2/b3 pawns and Black b5/b4/h2 retained. Earlier rook maneuvers are outside this selected proof.",
+        "Rc1 is the source’s final move. It places the rook behind h1 without capturing the h-pawn prematurely.",
+        "h1=Q is an independently supplied promotion. It threatens White but the queen lands on the rook’s first rank.",
+        "Rxh1 captures the new queen and reaches an exact seven-piece White win. Black’s king and doubled b-pawns remain, so the outcome is checked rather than assumed."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxh1 captures the new queen and reaches an exact seven-piece White win. Black’s king and doubled b-pawns remain, so the outcome is checked rather than assumed.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/Kp6/1p6/kP6/P7/7R b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "retreat_king_approach",
+      "start": "start",
+      "title": "Independent reply: attack the rook with the king",
+      "san": [
+        "Rc1",
+        "Kb2",
+        "Rh1",
+        "Ka3",
+        "Kxb5"
+      ],
+      "commentary": [
+        "Test a legal king move instead of assuming the h-pawn must promote immediately.",
+        "Rc1 offers first-rank control while retaining all pawns.",
+        "Kb2 attacks Rc1. White must move the rook rather than allow a king capture.",
+        "Rh1 gets out of the attack and blocks the h-pawn from in front. The rook can collect it when appropriate.",
+        "Ka3 is a representative retreat. The full certificate also checks the other legal king moves, captures and promotions.",
+        "Kxb5 captures the back doubled pawn and reaches an exact seven-piece White win. This is an actual pawn capture, not removal of a spare pawn to force tablebase coverage."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxb5 captures the back doubled pawn and reaches an exact seven-piece White win. This is an actual pawn capture, not removal of a spare pawn to force tablebase coverage.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/1K6/1p6/kP6/P6p/7R b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "retreat_knight_promotion",
+      "start": "start",
+      "title": "Independent reply: underpromote to a knight",
+      "san": [
+        "Rc1",
+        "h1=N",
+        "Kxb5"
+      ],
+      "commentary": [
+        "Test an underpromotion, keeping the actual piece and its different attack pattern.",
+        "Rc1 is the source move. The certificate covers queen, rook, bishop and knight promotions separately.",
+        "h1=N promotes without a checking line along the first rank. White need not respond as if it were a queen.",
+        "Kxb5 is a legal winning pawn capture into seven-piece coverage, even while the new black knight remains on h1. Exact outcome evidence, rather than a material count, confirms White’s win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxb5 is a legal winning pawn capture into seven-piece coverage, even while the new black knight remains on h1. Exact outcome evidence, rather than a material count, confirms White’s win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/1K6/1p6/kP6/P7/2R4n b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Is Black forced to promote immediately?",
+      "answer": "No. Kb2 and Kxa2 are legal too. The certificate checks those king moves and all four promotions."
+    },
+    {
+      "node": "start",
+      "prompt": "Why not always take the new piece on h1?",
+      "answer": "A queen or rook creates different threats from a knight or bishop. Against the lesser promotions, a checked winning capture on b5 is available too."
+    }
+  ],
+  "defaultBranch": "retreat_queen_promotion",
+  "practiceBranch": "retreat_queen_promotion",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...h2 at 174 seconds in the complete eight-piece later diagram: White Ka5/Rc2/a2/b3 against Ka3/b5/b4/h2. The source Rc1 is certified against every legal Black reply, including all four promotions and the king moves, through exact seven-piece winning captures. Subsequent replies are explicitly independently supplied representative completions; the source stops after Rc1. The earlier larger rook retreat and stalemate-squeeze sequence remain outside this proof. All five pawns are preserved until an actual capture.",
+  "verification_scope": "Begin after ...h2 at 174 seconds in the complete eight-piece later diagram: White Ka5/Rc2/a2/b3 against Ka3/b5/b4/h2. The source Rc1 is certified against every legal Black reply, including all four promotions and the king moves, through exact seven-piece winning captures. Subsequent replies are explicitly independently supplied representative completions; the source stops after Rc1. The earlier larger rook retreat and stalemate-squeeze sequence remain outside this proof. All five pawns are preserved until an actual capture.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 6,
+    "moves": {
+      "8/8/8/Kp6/1p6/1Pk5/P6p/7R w - - 4 3": "Kxb5",
+      "8/8/8/Kp6/1p6/kP6/P6p/7R w - - 4 3": "Kxb5",
+      "8/8/8/Kp6/1p6/1P6/P1k4p/7R w - - 4 3": "Kxb5",
+      "8/8/8/Kp6/1p6/1P6/Pk5p/2R5 w - - 2 2": "Rh1",
+      "8/8/8/Kp6/1p6/kP6/P7/2R4q w - - 0 2": "Rxh1",
+      "8/8/8/Kp6/1p6/kP6/P7/2R4r w - - 0 2": "Rxh1",
+      "8/8/8/Kp6/1p6/kP6/P7/2R4b w - - 0 2": "Kxb5",
+      "8/8/8/Kp6/1p6/kP6/P7/2R4n w - - 0 2": "Kxb5",
+      "8/8/8/Kp6/1p6/kP6/P1R4p/8 w - - 0 1": "Rc1"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

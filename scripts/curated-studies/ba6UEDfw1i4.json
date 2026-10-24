@@ -1,0 +1,103 @@
+{
+  "video_id": "ba6UEDfw1i4",
+  "title": "Troitsky’s Genius: Finish the Skewer",
+  "summary": "Collect the queen at the end of the skewer, then coordinate the new material advantage with the h-pawn.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "7q/1K2p3/8/5k1P/4pr2/2Q5/8/8 w - - 0 1",
+      "question": "The king has left the long diagonal. Should White finish the skewer?",
+      "explanation": "Qc3 attacks Qh8 through d4, e5, f6 and g7. After the illustrated ...Kf5, White can capture the queen. The complete eight-piece root is proved by that legal capture into a seven-piece exact Black loss.",
+      "evidence": {
+        "timestamp_s": 169
+      },
+      "winningMoveWitness": "Qxh8",
+      "proof": {
+        "method": "legal_winning_move",
+        "fen": "7q/1K2p3/8/5k1P/4pr2/2Q5/8/8 w - - 0 1",
+        "category_for_side_to_move": "win",
+        "san": "Qxh8",
+        "successor_fen": "7Q/1K2p3/8/5k1P/4pr2/8/8/8 b - - 0 1",
+        "successor_evidence_key": "witness:start"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "troitsky_collect_queen",
+      "start": "start",
+      "title": "Source finish: collect the corner queen",
+      "san": [
+        "Qxh8"
+      ],
+      "commentary": [
+        "Begin after ...Kf5 in the settled 169-second physical-board diagram. Earlier king shepherding, Kb7 and Nf4 remain outside this selected proof.",
+        "Qxh8 captures the queen along c3–d4–e5–f6–g7–h8. The exact seven-piece ending is winning for White, with Black’s rook and both e-pawns retained. This legal winning capture proves the later eight-piece root, while further conversion is still needed."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxh8 captures the queen along c3–d4–e5–f6–g7–h8. The exact seven-piece ending is winning for White, with Black’s rook and both e-pawns retained. This legal winning capture proves the later eight-piece root, while further conversion is still needed.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "7Q/1K2p3/8/5k1P/4pr2/8/8/8 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "troitsky_pawn_and_rook",
+      "start": "start",
+      "title": "Independent continuation: let the rook take the passer",
+      "san": [
+        "Qxh8",
+        "Ke6",
+        "h6",
+        "Rh4",
+        "h7",
+        "Rxh7",
+        "Qxh7"
+      ],
+      "commentary": [
+        "Continue independently after the source queen capture. The king and rook replies below are representative checked analysis, not moves claimed to be in the clip.",
+        "Qxh8 finishes the skewer and preserves a forced White win.",
+        "Ke6 moves Black’s king toward the center. The rook and two e-pawns remain on the board.",
+        "h6 advances White’s passer. Qh8 still occupies its promotion square, so queening will eventually require moving the queen; the pawn can also draw the rook away.",
+        "Rh4 prepares to stop the passer from behind. This is one legal defense, not an assertion that Black has no alternatives.",
+        "h7 moves the pawn next to the queen. The queen on h8 protects h7, so a rook capture can be answered.",
+        "Rxh7 removes the passer but places the rook on a square attacked by Qh8. Black still loses with best play.",
+        "Qxh7 removes the rook. White’s queen and king win against the two e-pawns in this exact ending. The h-pawn’s advance has served as a diversion rather than a completed promotion."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxh7 removes the rook. White’s queen and king win against the two e-pawns in this exact ending. The h-pawn’s advance has served as a diversion rather than a completed promotion.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1K2p2Q/4k3/8/4p3/8/8/8 b - - 0 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What makes the corner queen capturable?",
+      "answer": "After ...Kf5 the black king has left Qc3’s diagonal through e5 toward h8, so Qxh8 is legal and wins the queen."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does advancing h7 not promote immediately?",
+      "answer": "White’s own queen occupies h8. In the selected independent line the pawn instead draws Black’s rook onto h7, where Qxh7 removes it."
+    }
+  ],
+  "defaultBranch": "troitsky_collect_queen",
+  "practiceBranch": "troitsky_collect_queen",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kf5 in the complete settled physical-board diagram at 169 seconds. All eight pieces are retained: White Kb7/Qc3/h5 versus Black Kf5/Qh8/Rf4/e7/e4. Qxh8 proves this later root by reaching an exact seven-piece opponent loss. The earlier larger checking sequence, Kb7 and Nf4 sacrifices remain source context outside the proof.",
+  "verification_scope": "Late physical-board images manually reviewed, with settled 169- and 172-second diagrams cross-checked. The eight-piece root has a legal Qxh8 winning witness into an exact seven-piece opponent loss. Every encoded successor is directly tablebase checked. Earlier larger sacrifices and king shepherding remain unverified.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

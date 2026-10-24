@@ -1,0 +1,78 @@
+{
+  "video_id": "F1EdxuZdc5U",
+  "title": "Chess Elevator: The Last Floor",
+  "summary": "Use the rook to force the king to capture a pawn, then bring the bishop into a mating net supported by the white king.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/3b4/1R6/3q4/p1k3p1/2PpB3/8/3K4 w - - 0 1",
+      "question": "How can White finish the king’s descent?",
+      "explanation": "Rb4+ is protected by the pawn on c3. Black must capture that pawn; Bd2 then checks with support from Kd1, while the rook and Black’s own pieces close the remaining flights.",
+      "evidence": {
+        "timestamp_s": 112
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/3b4/1R6/3q4/p1k3p1/2PpB3/8/3K4 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "elevator_last_floor",
+      "start": "start",
+      "title": "Source finish: force the final pawn capture",
+      "san": [
+        "Rb4+",
+        "Kxc3",
+        "Bd2#"
+      ],
+      "commentary": [
+        "Begin only after ...Kc4 in the saved later diagram. All ten pieces are present, including all three black pawns and the white c3 pawn.",
+        "Rb4+ checks along the fourth rank. The c3 pawn protects b4, so Kxb4 is illegal. Be3 covers c5 and d4, the rook covers b5 and d4, and Black’s own a4 pawn, Qd5 and d3 pawn occupy other flights. Only Kxc3 remains.",
+        "Kxc3 is the sole legal reply. The king takes the remaining c-pawn and reaches the square where White’s king can assist the final bishop check.",
+        "Bd2# checks Kc3. Kd1 protects d2 and c2; Rb4 covers b2, b3, c4 and d4. If the king tries to capture the rook on b4, leaving c3 opens Bd2’s diagonal to b4. Black’s own d3 pawn blocks the remaining flight."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bd2# checks Kc3. Kd1 protects d2 and c2; Rb4 covers b2, b3, c4 and d4. If the king tries to capture the rook on b4, leaving c3 opens Bd2’s diagonal to b4. Black’s own d3 pawn blocks the remaining flight.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3b4/8/3q4/pR4p1/2kp4/3B4/3K4 b - - 1 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can’t Black simply capture the rook on b4?",
+      "answer": "White’s pawn on c3 protects b4. Black can capture that pawn on c3 instead, but the resulting king placement allows Bd2 mate."
+    },
+    {
+      "node": "start",
+      "prompt": "What makes Bd2 mate work now?",
+      "answer": "The white king on d1 protects d2 and c2, while the rook covers the b-file and fourth rank. Black’s pawn on d3 blocks another flight."
+    }
+  ],
+  "defaultBranch": "elevator_last_floor",
+  "practiceBranch": "elevator_last_floor",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Only the complete ten-piece later diagram after ...Kc4 at 112 seconds is verified here. Rb4+ is proved against the sole legal reply Kxc3, followed by actual nine-piece Bd2 mate. The preceding queen/bishop sacrifices and earlier elevator checks, including unshown queen interpositions, remain unverified source context. This is a short mating-net lesson, not certification of the full composition.",
+  "verification_scope": "Only the complete ten-piece later diagram after ...Kc4 at 112 seconds is verified here. Rb4+ is proved against the sole legal reply Kxc3, followed by actual nine-piece Bd2 mate. The preceding queen/bishop sacrifices and earlier elevator checks, including unshown queen interpositions, remain unverified source context. This is a short mating-net lesson, not certification of the full composition.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 3,
+    "moves": {
+      "8/3b4/1R6/3q4/p1k3p1/2PpB3/8/3K4 w - - 0 1": "Rb4+",
+      "8/3b4/8/3q4/pR4p1/2kpB3/8/3K4 w - - 0 2": "Bd2#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

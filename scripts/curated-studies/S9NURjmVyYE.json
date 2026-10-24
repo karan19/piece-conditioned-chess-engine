@@ -1,0 +1,152 @@
+{
+  "video_id": "S9NURjmVyYE",
+  "title": "Simply Majestic",
+  "summary": "Use a checking bishop move to keep the pawn alive, then sacrifice the promoted queen to build a mating cage.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5k2/4p2p/6P1/3K4/8/4B3/8/8 w - - 0 1",
+      "question": "Should White trade the pawns immediately?",
+      "explanation": "White has Kd5, Be3 and g6 against Kf8, e7 and h7. Trading g6 for h7 leaves the pawn exposed; a bishop check changes the king’s route.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "simply_queen_sacrifice",
+      "start": "start",
+      "title": "Give up the queen to force the king into the cage",
+      "san": [
+        "Bh6+",
+        "Kg8",
+        "g7",
+        "Kf7",
+        "g8=Q+",
+        "Kxg8",
+        "Ke6",
+        "Kh8",
+        "Kf7",
+        "e5",
+        "Bg7#"
+      ],
+      "commentary": [
+        "Reconstruct the complete six-piece starting board. Black’s two pawns are essential to the final mating cage.",
+        "Bh6+ checks along the h6–f8 diagonal, moving the bishop before the pawns are exchanged.",
+        "Kg8 approaches the promotion square rather than retreating toward the center.",
+        "g7 prevents ...hxg6 from removing White’s only pawn and keeps Black’s king tied to the corner.",
+        "Kf7 leaves the corner, apparently preparing to stop promotion with the king.",
+        "g8=Q+ promotes with check and deliberately offers the new queen to the king.",
+        "Kxg8 accepts the queen. White has only a bishop left, but Black’s own pawns will help close the escape squares.",
+        "Ke6 controls d7, e7 and f7 and blocks the e-pawn on its starting square. The bishop controls f8 and g7, leaving the king only h8.",
+        "Kh8 is the only legal move: the king cannot leave through f7, f8 or g7, and the e-pawn is blocked by Ke6.",
+        "Kf7 maintains control of e7, f8 and g8 but releases the e-pawn. Black now has to spend a pawn move.",
+        "e5 is the source’s selected double pawn advance. The king remains trapped in the corner.",
+        "Bg7# is actual mate. Kf7 protects Bg7 and covers g8, while Black’s own h7 pawn blocks h7."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bg7# is actual mate. Kf7 protects Bg7 and covers g8, while Black’s own h7 pawn blocks h7.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7k/5KBp/8/4p3/8/8/8/8 b - - 1 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "simply_trade_pawns",
+      "start": "start",
+      "title": "Capture h7 before checking",
+      "san": [
+        "gxh7",
+        "Kg7",
+        "h8=Q+",
+        "Kxh8"
+      ],
+      "commentary": [
+        "Compare the source’s immediate pawn trade, before the bishop changes the black king’s route.",
+        "gxh7 gives up the forced win: the new h-pawn cannot be protected on its promotion square.",
+        "Kg7 attacks h7 and controls h8, preparing to capture a promoted piece.",
+        "h8=Q+ is the illustrated attempt to promote anyway; its check does not save the queen.",
+        "Kxh8 removes White’s last pawn. King and bishop against king and pawn is exactly drawn here."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxh8 removes White’s last pawn. King and bishop against king and pawn is exactly drawn here.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "7k/4p3/8/3K4/8/4B3/8/8 w - - 0 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "simply_push_black_pawn",
+      "start": "start",
+      "title": "Advance the e-pawn instead of escaping",
+      "san": [
+        "Bh6+",
+        "Kg8",
+        "g7",
+        "e5",
+        "Ke6",
+        "e4"
+      ],
+      "commentary": [
+        "Follow the same checking preparation, then compare Black’s illustrated pawn advance.",
+        "Bh6+ changes the black king’s route before the pawn tension is resolved.",
+        "Kg8 remains near the pawn, hoping to prevent promotion.",
+        "g7 keeps the white pawn and restricts the king’s escape squares.",
+        "e5 tries to make progress with the spare pawn rather than moving Kf7.",
+        "Ke6 supports the approach toward f7 and the cornered king. White keeps the exact win.",
+        "e4 advances the pawn again. The lesson stops at this checked winning position; the remaining bishop collection and promotion are source context."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "e4 advances the pawn again. The lesson stops at this checked winning position; the remaining bishop collection and promotion are source context.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6k1/6Pp/4K2B/8/4p3/8/8/8 w - - 0 4",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "How can a lone bishop still help deliver mate?",
+      "answer": "Black’s h7 pawn blocks its own king. White’s king and bishop can coordinate with that obstruction after the queen sacrifice; the lesson does not claim that bishop and king alone can mate a bare king."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does the checking move come before the pawn push?",
+      "answer": "Bh6+ changes the black king’s route before g7 preserves the pawn. Immediate gxh7 allows ...Kg7 and removal of the promoted queen."
+    }
+  ],
+  "defaultBranch": "simply_queen_sacrifice",
+  "practiceBranch": "simply_queen_sacrifice",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "The complete six-piece starting board is visually reconstructed. Three selected source branches compare the queen sacrifice, an immediate drawn pawn trade, and Black’s e-pawn alternative. Every encoded position is checked exactly; these are selected variations rather than an exhaustive defense tree.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

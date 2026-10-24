@@ -1,0 +1,71 @@
+{
+  "video_id": "RIVmNObFz7k",
+  "title": "Majestic Queen: Finish After the Queen Is Accepted",
+  "summary": "The queen offer can distract a pawn while a rook removes the last back-rank blocker; verify the mate before assuming the sacrifice works against every defense.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3Rr2k/4P1pp/5p2/1p6/8/4P3/5PPP/2q2NK1 w - - 0 1",
+      "question": "Black has taken the queen. What wins immediately?",
+      "explanation": "Rxe8 removes the defending rook with check along the eighth rank. Black’s king has no flight and the queen on c1 cannot interpose on f8 or g8.",
+      "evidence": {
+        "timestamp_s": 151
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "3Rr2k/4P1pp/5p2/1p6/8/4P3/5PPP/2q2NK1 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "majestic_queen_conditional_mate",
+      "start": "start",
+      "title": "Conditional source finish after axb5",
+      "san": [
+        "Rxe8#"
+      ],
+      "commentary": [
+        "Begin after a6xb5 has actually captured White’s offered queen. This selected diagram proves the mate after that acceptance, not all defenses to the earlier queen sacrifice.",
+        "Rxe8# removes Black’s back-rank blocker and checks Kh8. The rook controls g8, Black’s own g7/h7 pawns occupy both seventh-rank flights, and Qc1 cannot capture the rook or interpose on f8/g8. All fifteen root pieces are accounted for; the capture leaves actual mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxe8# removes Black’s back-rank blocker and checks Kh8. The rook controls g8, Black’s own g7/h7 pawns occupy both seventh-rank flights, and Qc1 cannot capture the rook or interpose on f8/g8. All fifteen root pieces are accounted for; the capture leaves actual mate.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "4R2k/4P1pp/5p2/1p6/8/4P3/5PPP/2q2NK1 b - - 0 1",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Which piece accepted the offered queen?",
+      "answer": "The pawn from a6 captured it on b5. Black’s queen stayed on c1; that square matters when checking whether it can defend the back rank."
+    },
+    {
+      "node": "start",
+      "prompt": "Does this prove Black had to accept the sacrifice?",
+      "answer": "No. Qxf1+ is a legal alternative in the earlier larger position. This exercise verifies the immediate mate only after the illustrated axb5."
+    }
+  ],
+  "defaultBranch": "majestic_queen_conditional_mate",
+  "practiceBranch": "majestic_queen_conditional_mate",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Conditional final back-rank mate only, after Black takes the offered queen with a6xb5 at151 seconds. Native56 establishes the complete fifteen-piece diagram: White Kg1/Rd8/Nf1/e7/e3/f2/g2/h2 against Kh8/Qc1/Re8/b5/f6/g7/h7; native57/58 confirm Rxe8 mate. The captured piece on b5 is White’s queen, and the capturing pawn came from a6. Rxe8# has an exact finite certificate ending in actual mate with every remaining pawn retained. This does not prove that accepting the queen was forced, certify all defenses to Qxb5, or establish the earlier seventeen-piece Qd5/Kh8/queen-offer plan. The legal Qxf1+/Kxf1 refusal and its larger conversion remain explicitly outside this proof, with the earlier full legal draft preserved. The narrated resignation is not itself outcome evidence.",
+  "verification_scope": "Conditional final back-rank mate only, after Black takes the offered queen with a6xb5 at151 seconds. Native56 establishes the complete fifteen-piece diagram: White Kg1/Rd8/Nf1/e7/e3/f2/g2/h2 against Kh8/Qc1/Re8/b5/f6/g7/h7; native57/58 confirm Rxe8 mate. The captured piece on b5 is White’s queen, and the capturing pawn came from a6. Rxe8# has an exact finite certificate ending in actual mate with every remaining pawn retained. This does not prove that accepting the queen was forced, certify all defenses to Qxb5, or establish the earlier seventeen-piece Qd5/Kh8/queen-offer plan. The legal Qxf1+/Kxf1 refusal and its larger conversion remain explicitly outside this proof, with the earlier full legal draft preserved. The narrated resignation is not itself outcome evidence.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 1,
+    "moves": {
+      "3Rr2k/4P1pp/5p2/1p6/8/4P3/5PPP/2q2NK1 w - - 0 1": "Rxe8#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

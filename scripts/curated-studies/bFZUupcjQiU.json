@@ -1,0 +1,102 @@
+{
+  "video_id": "bFZUupcjQiU",
+  "title": "The Royal Pin: Collect the Queen",
+  "summary": "Collect the exposed queen with check, then use a second check to pick up the bishop. Winning material still requires conversion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1q3k2/5p1p/8/2b1Q3/1p6/8/1K6/8 w - - 0 1",
+      "question": "The bishop has captured on c5. Should White take the queen?",
+      "explanation": "The bishop has left the e5–d6–c7–b8 diagonal. White can capture Qb8 with check. The complete eight-piece root is proved by a legal winning capture into a seven-piece exact Black loss, rather than a direct tablebase query.",
+      "evidence": {
+        "timestamp_s": 72
+      },
+      "winningMoveWitness": "Qxb8+",
+      "proof": {
+        "method": "legal_winning_move",
+        "fen": "1q3k2/5p1p/8/2b1Q3/1p6/8/1K6/8 w - - 0 1",
+        "category_for_side_to_move": "win",
+        "san": "Qxb8+",
+        "successor_fen": "1Q3k2/5p1p/8/2b5/1p6/8/1K6/8 b - - 0 1",
+        "successor_evidence_key": "witness:start"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "royal_collect_queen",
+      "start": "start",
+      "title": "Source capture: finish the diagonal tactic",
+      "san": [
+        "Qxb8+"
+      ],
+      "commentary": [
+        "Begin after ...Bxc5 in the saved 72-second diagram. Earlier Bc5+, ...Bd6 and Qe5 are context outside this selected proof.",
+        "Qxb8+ captures Black’s queen and checks Kf8 along the eighth rank. The resulting seven-piece ending is an exact White win, even with all three black pawns present. Black still has legal replies and the conversion is not over."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxb8+ captures Black’s queen and checks Kf8 along the eighth rank. The resulting seven-piece ending is an exact White win, even with all three black pawns present. Black still has legal replies and the conversion is not over.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "1Q3k2/5p1p/8/2b5/1p6/8/1K6/8 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "royal_collect_bishop",
+      "start": "start",
+      "title": "Independent continuation: a checking fork",
+      "san": [
+        "Qxb8+",
+        "Kg7",
+        "Qe5+",
+        "Kg6",
+        "Qxc5"
+      ],
+      "commentary": [
+        "Continue independently after the source capture. The following king replies and queen fork are representative analysis, not a continuation claimed to appear in the clip.",
+        "Qxb8+ wins the exposed queen with check; all three black pawns remain part of the exact position.",
+        "Kg7 escapes the eighth-rank check. This is one legal defense; ...Ke7 is also available.",
+        "Qe5+ checks Kg7 on e5–f6–g7 while attacking Bc5 along the fifth rank. A forcing move lets White improve the material balance again.",
+        "Kg6 steps out of check but leaves Bc5 available. This selected reply preserves White’s forced win; it is not presented as the only defense.",
+        "Qxc5 removes the bishop. White’s queen and king face three pawns in an exact winning ending, with further conversion still required."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxc5 removes the bishop. White’s queen and king face three pawns in an exact winning ending, with further conversion still required.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/5p1p/6k1/2Q5/1p6/8/1K6/8 b - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is taking the queen now legal?",
+      "answer": "The black bishop moved from d6 to c5, opening Qe5’s diagonal through d6 and c7 to b8. Qxb8+ also forces Black to answer check."
+    },
+    {
+      "node": "start",
+      "prompt": "Does the narrator’s warning mean this liquidation is a forced draw?",
+      "answer": "No. The warning concerns hasty practical play. The complete position after Qxb8+ is an exact White win with best play, although that does not eliminate the need to convert carefully."
+    }
+  ],
+  "defaultBranch": "royal_collect_queen",
+  "practiceBranch": "royal_collect_queen",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Bxc5 at 72 seconds. This clip repeats the same composition as MNa0sXJ9HWM; it is a second source entry, not a distinct endgame. The eight-piece root has a legal Qxb8+ witness into a seven-piece exact opponent loss. Earlier nine-piece pin construction and the later backtracked Qg3+/Qg5 pin remain source context outside this proof.",
+  "verification_scope": "All saved source diagrams reviewed manually. The eight-piece later root is proved by a legal winning-move reduction Qxb8+ into an exact seven-piece opponent loss. Every encoded successor and endpoint is tablebase checked. Earlier nine-piece decisions and the later backtracked pin are outside scope.",
+  "sourceCorrections": [
+    {
+      "claim": "The source warns that cashing in too soon is very likely to lead to a draw.",
+      "correction": "This is a practical warning, not a claim of a forced draw. The complete seven-piece position after Qxb8+ is winning for White with best play. The lesson keeps every pawn and does not equate a material gain with a finished conversion."
+    }
+  ],
+  "verificationDate": "2026-10-24"
+}

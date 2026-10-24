@@ -1,0 +1,103 @@
+{
+  "video_id": "OlT6Eg3rIyY",
+  "title": "Advanced Bongcloud: The Outside Passed Pawn",
+  "summary": "Black can let the white king collect a pawn while advancing a different pawn toward promotion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/p1p1K3/1p6/1k6/8/8/8 b - - 0 1",
+      "question": "Can White catch the b-pawn by capturing c6?",
+      "explanation": "Black has a winning five-piece ending. Kc3 supports the b-pawn from in front, while the white king is too far away to stop its advance after collecting c6.",
+      "evidence": {
+        "timestamp_s": 160
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "bongcloud_outside_passer",
+      "start": "start",
+      "title": "Independent continuation: collect a pawn, lose the race",
+      "san": [
+        "Kc3",
+        "Kd6",
+        "b4",
+        "Kxc6",
+        "b3",
+        "Kc5",
+        "b2"
+      ],
+      "commentary": [
+        "Begin with White Ke6 and Black Kb4/a6/b5/c6. Black moves next. The larger earlier pawn ending remains outside this exact proof.",
+        "Kc3 is visible in the next source state. Black brings the king near the promotion route; b2 is already within its protection.",
+        "Kd6 approaches c6. This is a legal representative White reply, also seen in the next native diagram; later move order is supplied independently.",
+        "b4 begins the passed-pawn advance. White can take c6, but capturing one pawn does not stop a different pawn.",
+        "Kxc6 removes c6. The exact four-piece ending still favors Black; a6 and b4 remain real threats on the board.",
+        "b3 advances toward b2 and b1. White’s king on c6 cannot return quickly enough to the promotion route.",
+        "Kc5 heads back toward the pawn. This independently supplied move does not change the exact winning result for Black.",
+        "b2 puts the pawn one step from promotion. Kc3 protects it, and the white king cannot capture it. The saved tablebase confirms a Black win; no unobserved game moves are claimed."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "b2 puts the pawn one step from promotion. Kc3 protects it, and the white king cannot capture it. The saved tablebase confirms a Black win; no unobserved game moves are claimed.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/p7/2K5/8/2k5/1p6/8 w - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "bongcloud_king_wrong_direction",
+      "start": "start",
+      "title": "Independent reply: the king walks away",
+      "san": [
+        "Kc3",
+        "Kf6",
+        "b4"
+      ],
+      "commentary": [
+        "Test another legal White king reply to the source Kc3. This is an independent comparison, not source narration.",
+        "Kc3 gives the black king access to the pawn’s path and leaves the b-pawn free to run.",
+        "Kf6 moves farther from the b-file. White still has no pawn of its own to create a counter-race.",
+        "b4 preserves the exact Black win. White’s king is farther away than in the c6-capture line, so Black can advance without first collecting any other material."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "b4 preserves the exact Black win. White’s king is farther away than in the c6-capture line, so Black can advance without first collecting any other material.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/p1p2K2/8/1p6/2k5/8/8 w - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can Black allow Kxc6?",
+      "answer": "The c6 pawn is not the pawn that must promote. Black advances the distant b-pawn while White spends king moves collecting c6."
+    },
+    {
+      "node": "start",
+      "prompt": "Does this prove the earlier rook trade was winning?",
+      "answer": "No. Exact verification starts only at this complete five-piece later diagram. The earlier nine-piece pawn ending and rook trade still need separate analysis."
+    }
+  ],
+  "defaultBranch": "bongcloud_outside_passer",
+  "practiceBranch": "bongcloud_outside_passer",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin at 160 seconds after White Ke6 in the complete five-piece pawn ending: White Ke6 versus Black Kb4/a6/b5/c6, with Black to move. The next native diagram shows Kc3 and White Kd6 while the b-pawn is dragged forward. Every encoded position is exactly checked with the tablebase. Replies after the initial Kc3 are supplied as independent representative continuations, not a recovered complete game score: rapid play skips intermediate moves. The preceding nine-piece ending, rook-versus-knight phase, rook exchange and exact fast capture chronology remain outside this verification. No white pawn has been artificially removed from this later board.",
+  "verification_scope": "Begin at 160 seconds after White Ke6 in the complete five-piece pawn ending: White Ke6 versus Black Kb4/a6/b5/c6, with Black to move. The next native diagram shows Kc3 and White Kd6 while the b-pawn is dragged forward. Every encoded position is exactly checked with the tablebase. Replies after the initial Kc3 are supplied as independent representative continuations, not a recovered complete game score: rapid play skips intermediate moves. The preceding nine-piece ending, rook-versus-knight phase, rook exchange and exact fast capture chronology remain outside this verification. No white pawn has been artificially removed from this later board.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

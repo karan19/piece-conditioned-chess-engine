@@ -1,0 +1,136 @@
+{
+  "video_id": "enr20Gxq8OA",
+  "title": "Tricky Deal",
+  "summary": "Use bishop checks to move the king, then block the rook’s rank with a bishop supported by the promotion pawn.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "4r3/P7/8/3p4/3k3B/3P4/3K4/8 w - - 0 1",
+      "question": "How can a dark-squared bishop overcome a rook on a light square?",
+      "explanation": "The bishop cannot attack e8 directly. Look for a way to block the rook’s line to a8.",
+      "evidence": {
+        "timestamp_s": 59
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "deal_interference",
+      "start": "start",
+      "title": "Check first, then block the rook",
+      "san": [
+        "Bf2+",
+        "Ke5",
+        "Bg3+",
+        "Kf5",
+        "Bb8",
+        "Rxb8",
+        "axb8=Q"
+      ],
+      "commentary": [
+        "The study starts after Black’s rook has reached e8. The white king has been checked back to d2. Direct promotion gives up the win.",
+        "Bf2+ checks along f2-e3-d4. White improves the bishop with tempo instead of trying to attack e8.",
+        "Ke5 is forced: the d3 pawn covers c4 and e4, the bishop covers c5 and e3, and d5 is occupied by Black’s pawn.",
+        "Bg3+ checks again along g3-f4-e5. The bishop now has a route to b8 along f4-e5-d6-c7.",
+        "Kf5 is the illustrated retreat. It vacates the diagonal the bishop needs to reach b8.",
+        "Bb8 blocks the eighth rank between the rook and a8. The pawn on a7 protects the bishop on b8.",
+        "Rxb8 removes the blocker, but sacrifices the rook onto a square the pawn can capture.",
+        "axb8=Q recaptures with promotion. White has exchanged a bishop and pawn for a rook and a queen, retaining a verified win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "axb8=Q recaptures with promotion. White has exchanged a bishop and pawn for a rook and a queen, retaining a verified win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1Q6/8/8/3p1k2/8/3P4/3K4/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "deal_king_retreat",
+      "start": "start",
+      "title": "Test a different king retreat",
+      "san": [
+        "Bf2+",
+        "Ke5",
+        "Bg3+",
+        "Kd4",
+        "Bb8",
+        "Rxb8",
+        "axb8=Q"
+      ],
+      "commentary": [
+        "Test whether the same interference idea survives another legal response to the bishop check.",
+        "Bf2+ starts the forcing maneuver.",
+        "Ke5 is the only legal king answer.",
+        "Bg3+ opens the route toward b8 while checking.",
+        "Kd4 is another legal retreat. It also clears e5, so the bishop’s long diagonal is available.",
+        "Bb8 still blocks the rook’s line to a8 and is protected by the a7 pawn.",
+        "Rxb8 is a representative way to remove the blocker; it allows a capture with promotion.",
+        "axb8=Q reaches another verified White win. The important condition was clearing the diagonal, not the king choosing exactly f5."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "axb8=Q reaches another verified White win. The important condition was clearing the diagonal, not the king choosing exactly f5.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1Q6/8/8/3p4/3k4/3P4/3K4/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "deal_rushed_promotion",
+      "start": "start",
+      "title": "Try promoting immediately",
+      "san": [
+        "a8=Q",
+        "Rxa8"
+      ],
+      "commentary": [
+        "The pawn is ready to promote, but the rook already watches a8 along the eighth rank.",
+        "a8=Q promotes without removing that defense. White has traded away the forcing bishop maneuver and gives up the forced win.",
+        "Rxa8 captures the queen. The remaining bishop-and-pawn position is a tablebase draw with best play."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxa8 captures the queen. The remaining bishop-and-pawn position is a tablebase draw with best play.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "r7/8/8/3p4/3k3B/3P4/3K4/8 w - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What does Bb8 achieve that attacking e8 cannot?",
+      "answer": "It interferes with the rook’s line to a8. Since a7 protects b8, capturing the bishop allows axb8=Q."
+    },
+    {
+      "node": "start",
+      "prompt": "Why use two checks before blocking the rook?",
+      "answer": "The checks bring the bishop to g3 and move the king away from e5, clearing the g3-f4-e5-d6-c7-b8 diagonal."
+    }
+  ],
+  "defaultBranch": "deal_interference",
+  "practiceBranch": "deal_interference",
+  "practiceType": "bishop",
+  "startContext": "Begin after the rook checks have driven White’s king to d2 and Black has played ...Re8. This study verifies the final bishop maneuver and contrasts it with immediate promotion.",
+  "verification_scope": "Selected positions reconstructed from saved source images. Every encoded move and intermediate outcome is checked; representative replies illustrate the idea without enumerating every legal defense.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

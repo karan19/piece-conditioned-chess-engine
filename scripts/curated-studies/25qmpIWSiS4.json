@@ -1,0 +1,161 @@
+{
+  "video_id": "25qmpIWSiS4",
+  "title": "Dancing Knights",
+  "summary": "Improve the king before offering the knight, then preserve the tempo needed to defeat the promotion blockade.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "K2n4/8/P7/8/2k5/8/2N5/8 w - - 0 1",
+      "question": "Why block your own pawn with Ka7?",
+      "explanation": "White has Ka8, Nc2 and a6 against Kc4 and Nd8. The king must improve before Nb4; otherwise the defender can keep checking and taking the pawn.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "late_blockade",
+      "fen": "8/PK6/1n6/1k6/1N6/8/8/8 w - - 0 1",
+      "question": "How can White dislodge Nb6 from the promotion square?",
+      "explanation": "This separately reviewed late source diagram has Kb7, Nb4 and a7 against Kb5 and Nb6. Nd5 attacks the blockading knight while keeping the pawn ready to promote.",
+      "evidence": {
+        "timestamp_s": 161
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "dancing_prepare_king",
+      "start": "start",
+      "title": "Improve the king before offering the knight",
+      "san": [
+        "Ka7",
+        "Kb5",
+        "Nb4",
+        "Ka5",
+        "Kb8",
+        "Nc6+",
+        "Kb7",
+        "Nd8+",
+        "Kc7",
+        "Ne6+",
+        "Kb8"
+      ],
+      "commentary": [
+        "Begin from the complete five-piece source board. This selected line stops before the later reset diagrams.",
+        "Ka7 blocks the pawn for now, but improves the king’s access to the promotion corner.",
+        "Kb5 keeps an eye on a6 and the knight’s next square.",
+        "Nb4 offers the knight while preparing to improve the king.",
+        "Ka5 is the source’s waiting move, declining the offered knight.",
+        "Kb8 leaves the knight offered but approaches c7, where the king can attack Nd8 if needed.",
+        "Nc6+ checks and renews the knight blockade.",
+        "Kb7 answers the check on the side that preserves White’s exact win.",
+        "Nd8+ returns with check.",
+        "Kc7 attacks the knight while answering the check.",
+        "Ne6+ checks from a different square, but the defender has spent the needed tempo.",
+        "Kb8 returns to the promotion corner. The exact position is winning; the later diagram is reconstructed separately rather than linked by invented moves."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kb8 returns to the promotion corner. The exact position is winning; the later diagram is reconstructed separately rather than linked by invented moves.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1K6/8/P3n3/k7/1N6/8/8/8 b - - 11 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "dancing_late_knight_offer",
+      "start": "late_blockade",
+      "title": "Offer the knight against the final blockade",
+      "san": [
+        "Nd5",
+        "Nc4",
+        "a8=Q"
+      ],
+      "commentary": [
+        "Begin from the separately reviewed late diagram at 161 seconds. The connecting source resets are not encoded as a continuous move sequence.",
+        "Nd5 attacks Nb6. The defender cannot keep both the knight and the same control of a8.",
+        "Nc4 is an independently selected representative retreat that saves the knight but abandons a8.",
+        "a8=Q promotes. This exact queen-and-knight versus knight ending is won; further conversion is outside the selected line."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "a8=Q promotes. This exact queen-and-knight versus knight ending is won; further conversion is outside the selected line.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "Q7/1K6/8/1k1N4/2n5/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "dancing_king_wrong_square",
+      "start": "start",
+      "title": "Move to b8 before preparing Ka7",
+      "san": [
+        "Kb8",
+        "Kb5",
+        "a7",
+        "Nc6+",
+        "Kb7",
+        "Nxa7"
+      ],
+      "commentary": [
+        "Compare the source’s premature king move and pawn push.",
+        "Kb8 gives up the exact win by allowing the defender’s checking route.",
+        "Kb5 approaches the pawn and prepares the knight blockade.",
+        "a7 rushes the pawn while the king and knight are not coordinated.",
+        "Nc6+ checks the king and attacks a7.",
+        "Kb7 answers the check but cannot save the pawn.",
+        "Nxa7 captures the last pawn. The two-knight ending is exactly drawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxa7 captures the last pawn. The two-knight ending is exactly drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/nK6/8/1k6/8/8/2N5/8 w - - 0 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why move the king before offering the knight?",
+      "answer": "Ka7 prepares Kb8 and Kc7 with the right timing. In the illustrated premature Kb8 line, ...Nc6+ wins the pawn instead."
+    },
+    {
+      "node": "late_blockade",
+      "prompt": "What does Nd5 change?",
+      "answer": "It attacks the knight controlling a8. A retreat such as the independently checked ...Nc4 saves that knight but lets White promote."
+    }
+  ],
+  "defaultBranch": "dancing_prepare_king",
+  "practiceBranch": "dancing_prepare_king",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "The complete five-piece root and a separate late five-piece source diagram are visually reconstructed. The first source line preserves a checked win and the premature Kb8 route draws. The late Nd5 idea is source-based, with ...Nc4 and promotion supplied as an independent representative continuation. Source resets between diagrams are explicitly not treated as a continuous legal sequence.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

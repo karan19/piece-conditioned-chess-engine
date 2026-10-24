@@ -1,0 +1,122 @@
+{
+  "video_id": "QeyXfv1Mr_A",
+  "title": "I Need Time!",
+  "summary": "Use the tempo gained by a rook sacrifice to promote with check before the opposing pawn can move.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "4k3/8/5KP1/5p2/5P2/8/6p1/6r1 w - - 0 1",
+      "question": "What did the rook sacrifice buy?",
+      "explanation": "After ...Rxg1, the black rook blocks its own g2 pawn. White has Kf6, f4 and g6 against Ke8, Rg1, f5 and g2. The g-pawn must move immediately.",
+      "evidence": {
+        "timestamp_s": 70
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "need_time_promote",
+      "start": "start",
+      "title": "Use the tempo before the rook clears g1",
+      "san": [
+        "g7",
+        "Rh1",
+        "g8=Q+",
+        "Kd7",
+        "Qxg2"
+      ],
+      "commentary": [
+        "Begin in the seven-piece phase after ...Rxg1 at 70 seconds. The preceding eight-piece Rg1 sacrifice remains source context, outside this exact checked tree.",
+        "g7 uses the tempo while Black’s own rook blocks g2 from promoting.",
+        "Rh1 clears the pawn’s promotion square, but costs Black a move.",
+        "g8=Q+ promotes with check, so Black cannot answer immediately with ...g1=Q.",
+        "Kd7 is the illustrated king retreat from the promotion check.",
+        "Qxg2 removes the dangerous passer. White retains an exactly checked queen-and-pawns versus rook-and-pawn win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxg2 removes the dangerous passer. White retains an exactly checked queen-and-pawns versus rook-and-pawn win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3k4/5K2/5p2/5P2/8/6Q1/7r b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "need_time_other_rook_file",
+      "start": "start",
+      "title": "The rook clears g1 on the other side",
+      "san": [
+        "g7",
+        "Rf1",
+        "g8=Q+",
+        "Kd7",
+        "Qxg2"
+      ],
+      "commentary": [
+        "This independent representative rook retreat tests the same timing idea on the other side of g1.",
+        "g7 takes the essential promotion tempo.",
+        "Rf1 clears g1, but f4 blocks the rook’s line toward Kf6, so this move does not give check.",
+        "g8=Q+ promotes with check before the black pawn can advance.",
+        "Kd7 is an independently selected legal reply, matching the source’s king retreat in the other rook line.",
+        "Qxg2 removes the passer and retains the exact White win; further rook conversion is not invented."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxg2 removes the passer and retains the exact White win; further rook conversion is not invented.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3k4/5K2/5p2/5P2/8/6Q1/5r2 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "need_time_waste_tempo",
+      "start": "start",
+      "title": "Move the king instead of the pawn",
+      "san": [
+        "Ke5"
+      ],
+      "commentary": [
+        "This independent comparison tests whether White can afford a spare king move after sacrificing the rook.",
+        "Ke5 loses the exact winning position. Black can now use the lost tempo; the branch stops at this checked losing board rather than inventing a source continuation."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ke5 loses the exact winning position. Black can now use the lost tempo; the branch stops at this checked losing board rather than inventing a source continuation.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "4k3/8/6P1/4Kp2/5P2/8/6p1/6r1 b - - 1 1",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is a rook allowed to capture White’s rook?",
+      "answer": "After the source’s ...Rxg1, the capturing rook occupies its own pawn’s promotion square. That obstruction gives White the time needed to push g7."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does promotion with check matter?",
+      "answer": "The check forces Black to answer with the king before playing ...g1=Q. White can then use Qxg2 to eliminate the pawn."
+    }
+  ],
+  "defaultBranch": "need_time_promote",
+  "practiceBranch": "need_time_promote",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rxg1 at 70 seconds, a visually reconstructed seven-piece phase. The earlier eight-piece position and Rg1 offer are source context, not tablebase-certified here. The illustrated ...Rh1 promotion race is preserved; ...Rf1 and the losing Ke5 tempo comparison are independently supplied and explicitly labeled.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,148 @@
+{
+  "video_id": "0rxEWrigO_k",
+  "title": "Majestic Combination: Test the Relative Pin",
+  "summary": "Fork king and queen, then check the legal pawn capture and the actual rook-versus-pawns conversion instead of assuming the queen gain ends the calculation.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1R1pq2p/3pp3/8/3N4/k7/2K5/8 w - - 0 1",
+      "question": "How does the rook prepare a fork even when the pawn can capture?",
+      "explanation": "Ra7+ forces Kb4 and places the rook behind the d7 blocker. Nc6+ then forks king and queen; dxc6 remains legal, but exposes Qe7 to the rook.",
+      "evidence": {
+        "timestamp_s": 123
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/1R1pq2p/3pp3/8/3N4/k7/2K5/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "combination_relative_pin",
+      "start": "start",
+      "title": "Independent defense: the pinned pawn captures legally",
+      "san": [
+        "Ra7+",
+        "Kb4",
+        "Nc6+",
+        "dxc6",
+        "Rxe7"
+      ],
+      "commentary": [
+        "Begin after Ka3 at123 seconds with White Kc2/Rb7/Nd4 against Ka3/Qe7/d7/d6/e6/h7. The king route has prepared a change from chasing checks to a concrete fork.",
+        "Ra7+ checks on the a-file and lines the rook up with Qe7 behind d7. The white king and knight cover the lower king escapes.",
+        "Kb4 is the only legal answer to the rook check. White now has the nine-piece fork setup shown in native30/31.",
+        "Nc6+ checks b4 and attacks Qe7. White threatens to collect the queen after a king move.",
+        "dxc6 is a legal answer to check. The d7 pawn captures the knight; the pin is to a queen, not to Black’s king, so chess rules do not prohibit it.",
+        "Rxe7 captures the exposed queen along the seventh rank. White Kc2/Re7 faces Kb4/c6/d6/e6/h7: the complete seven-piece ending is an exact White win, not a material-count assumption."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxe7 captures the exposed queen along the seventh rank. White Kc2/Re7 faces Kb4/c6/d6/e6/h7: the complete seven-piece ending is an exact White win, not a material-count assumption.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4R2p/2ppp3/8/1k6/8/2K5/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "combination_source_king_reply",
+      "start": "start",
+      "title": "Source king reply, then an independent pawn collection",
+      "san": [
+        "Ra7+",
+        "Kb4",
+        "Nc6+",
+        "Kc5",
+        "Nxe7",
+        "h6",
+        "Rxd7"
+      ],
+      "commentary": [
+        "Begin after Ka3 at123 seconds with White Kc2/Rb7/Nd4 against Ka3/Qe7/d7/d6/e6/h7. The king route has prepared a change from chasing checks to a concrete fork.",
+        "Ra7+ checks on the a-file and lines the rook up with Qe7 behind d7. The white king and knight cover the lower king escapes.",
+        "Kb4 is the only legal answer to the rook check. White now has the nine-piece fork setup shown in native30/31.",
+        "Nc6+ forks king and queen while the rook attacks through the d7 blocker.",
+        "Kc5 answers the check by moving the king. The queen remains attacked by Nc6.",
+        "Nxe7 takes the queen and leaves eight pieces. All d7/d6/e6/h7 pawns remain, so a complete conversion proof is still required.",
+        "h6 is an independent representative pawn reply. It does not remove the d7 blocker from the rook’s path.",
+        "Rxd7 collects that pawn. White Kc2/Rd7/Ne7 faces Kc5/d6/e6/h6: seven complete pieces and an exact White win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxd7 collects that pawn. White Kc2/Rd7/Ne7 faces Kc5/d6/e6/h6: seven complete pieces and an exact White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3RN3/3pp2p/2k5/8/8/2K5/8 b - - 0 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is dxc6 legal despite the pin?",
+      "answer": "Moving the pawn exposes the queen rather than the king. It is a relative pin; Black may sacrifice its queen, and the resulting ending must be checked."
+    },
+    {
+      "node": "start",
+      "prompt": "Why continue after winning the queen?",
+      "answer": "Nxe7 leaves eight pieces, including four black pawns. The finite proof checks every Black reply through exact supported winning endings; the displayed h6/Rxd7 is one representative continuation."
+    }
+  ],
+  "defaultBranch": "combination_relative_pin",
+  "practiceBranch": "combination_relative_pin",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after Ka3 at123 seconds in the complete nine-piece later diagram: White Kc2/Rb7/Nd4 against Ka3/Qe7/d7/d6/e6/h7. Native28 establishes this full board; Ra7+ forces Kb4, and native30/31 confirm the resulting diagram, native32 shows Nc6+, and native33 the illustrated Kc5 reply. The rook attacks the queen through d7, so the pawn is relatively pinned to the queen, not legally pinned to its king: dxc6 is legal and must be checked. The selected fork and independent capture continuations retain all four black pawns until an actual capture. A complete finite White strategy enumerates every Black reply through exact supported wins. Earlier Bd6/cxd6, the earlier king-and-rook route and the other queen-capture branch remain outside this selected conversion proof.",
+  "verification_scope": "Begin after Ka3 at123 seconds in the complete nine-piece later diagram: White Kc2/Rb7/Nd4 against Ka3/Qe7/d7/d6/e6/h7. Native28 establishes this full board; Ra7+ forces Kb4, and native30/31 confirm the resulting diagram, native32 shows Nc6+, and native33 the illustrated Kc5 reply. The rook attacks the queen through d7, so the pawn is relatively pinned to the queen, not legally pinned to its king: dxc6 is legal and must be checked. The selected fork and independent capture continuations retain all four black pawns until an actual capture. A complete finite White strategy enumerates every Black reply through exact supported wins. Earlier Bd6/cxd6, the earlier king-and-rook route and the other queen-capture branch remain outside this selected conversion proof.",
+  "sourceCorrections": [
+    {
+      "claim": "The rook pins the d7 pawn, allowing Nc6+.",
+      "correction": "This is a relative pin to Qe7. dxc6 is legal; Rxe7 then reaches a separately checked complete seven-piece ending."
+    }
+  ],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 7,
+    "moves": {
+      "8/1R1pq2p/3pp3/8/3N4/k7/2K5/8 w - - 0 1": "Ra7+",
+      "8/R2pq2p/3pp3/8/1k1N4/8/2K5/8 w - - 2 2": "Nc6+",
+      "8/R2pq2p/2Npp3/2k5/8/8/2K5/8 w - - 4 3": "Nxe7",
+      "8/R2pN2p/1k1pp3/8/8/8/2K5/8 w - - 1 4": "Rxd7",
+      "8/R2pN2p/3pp3/1k6/8/8/2K5/8 w - - 1 4": "Rxd7",
+      "8/R2pN2p/3pp3/8/3k4/8/2K5/8 w - - 1 4": "Rxd7",
+      "8/R2pN2p/3pp3/8/2k5/8/2K5/8 w - - 1 4": "Rxd7",
+      "8/R2pN2p/3pp3/8/1k6/8/2K5/8 w - - 1 4": "Rxd7",
+      "8/R2pN3/3pp2p/2k5/8/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pN2p/3p4/2k1p3/8/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pN2p/4p3/2kp4/8/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pN3/3pp3/2k4p/8/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pq2p/2Npp3/1k6/8/8/2K5/8 w - - 4 3": "Nxe7",
+      "8/R2pN2p/3pp3/2k5/8/8/2K5/8 w - - 1 4": "Rxd7",
+      "8/R2pN3/3pp2p/1k6/8/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pN2p/3p4/1k2p3/8/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pN2p/4p3/1k1p4/8/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pN3/3pp3/1k5p/8/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pq2p/2Npp3/8/2k5/8/2K5/8 w - - 4 3": "Nxe7",
+      "8/R2pN3/3pp2p/8/2k5/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pN2p/3p4/4p3/2k5/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pN2p/4p3/3p4/2k5/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R2pN3/3pp3/7p/2k5/8/2K5/8 w - - 0 4": "Rxd7",
+      "8/R3q2p/2ppp3/8/1k6/8/2K5/8 w - - 0 3": "Rxe7"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

@@ -1,0 +1,186 @@
+{
+  "node:start": {
+    "method": "finite_strategy",
+    "fen": "3r3r/1R3p1p/6p1/1p6/8/5PP1/1Q5P/1K1k1q2 w - - 0 1",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Qc2+": {
+        "method": "finite_strategy",
+        "fen": "3r3r/1R3p1p/6p1/1p6/8/5PP1/2Q4P/1K1k1q2 b - - 1 1",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Ke1": {
+            "method": "finite_strategy",
+            "fen": "3r3r/1R3p1p/6p1/1p6/8/5PP1/2Q4P/1K2kq2 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Re7+": {
+                "method": "finite_strategy",
+                "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/2Q4P/1K2kq2 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Qe2": {
+                    "method": "finite_strategy",
+                    "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/2Q1q2P/1K2k3 w - - 4 3",
+                    "winner": "white",
+                    "category_for_side_to_move": "win",
+                    "rule": "winning_choice",
+                    "children": {
+                      "Qxe2#": {
+                        "method": "finite_strategy",
+                        "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/4Q2P/1K2k3 b - - 0 3",
+                        "winner": "white",
+                        "category_for_side_to_move": "loss",
+                        "rule": "checkmate"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:kasparov_conditional_queen_rook_mate:1": {
+    "method": "finite_strategy",
+    "fen": "3r3r/1R3p1p/6p1/1p6/8/5PP1/2Q4P/1K1k1q2 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Ke1": {
+        "method": "finite_strategy",
+        "fen": "3r3r/1R3p1p/6p1/1p6/8/5PP1/2Q4P/1K2kq2 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Re7+": {
+            "method": "finite_strategy",
+            "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/2Q4P/1K2kq2 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qe2": {
+                "method": "finite_strategy",
+                "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/2Q1q2P/1K2k3 w - - 4 3",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Qxe2#": {
+                    "method": "finite_strategy",
+                    "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/4Q2P/1K2k3 b - - 0 3",
+                    "winner": "white",
+                    "category_for_side_to_move": "loss",
+                    "rule": "checkmate"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:kasparov_conditional_queen_rook_mate:2": {
+    "method": "finite_strategy",
+    "fen": "3r3r/1R3p1p/6p1/1p6/8/5PP1/2Q4P/1K2kq2 w - - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Re7+": {
+        "method": "finite_strategy",
+        "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/2Q4P/1K2kq2 b - - 3 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Qe2": {
+            "method": "finite_strategy",
+            "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/2Q1q2P/1K2k3 w - - 4 3",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Qxe2#": {
+                "method": "finite_strategy",
+                "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/4Q2P/1K2k3 b - - 0 3",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:kasparov_conditional_queen_rook_mate:3": {
+    "method": "finite_strategy",
+    "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/2Q4P/1K2kq2 b - - 3 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Qe2": {
+        "method": "finite_strategy",
+        "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/2Q1q2P/1K2k3 w - - 4 3",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Qxe2#": {
+            "method": "finite_strategy",
+            "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/4Q2P/1K2k3 b - - 0 3",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      }
+    }
+  },
+  "step:kasparov_conditional_queen_rook_mate:4": {
+    "method": "finite_strategy",
+    "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/2Q1q2P/1K2k3 w - - 4 3",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Qxe2#": {
+        "method": "finite_strategy",
+        "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/4Q2P/1K2k3 b - - 0 3",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:kasparov_conditional_queen_rook_mate:5": {
+    "method": "finite_strategy",
+    "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/4Q2P/1K2k3 b - - 0 3",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:kasparov_conditional_queen_rook_mate": {
+    "method": "finite_strategy",
+    "fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/4Q2P/1K2k3 b - - 0 3",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  }
+}

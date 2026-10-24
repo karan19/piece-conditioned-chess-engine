@@ -1,0 +1,100 @@
+{
+  "video_id": "sM3iUBx537Y",
+  "title": "The Draw of Draws: Give Check to Become Stalemated",
+  "summary": "Use the last pawn to force the opposing king onto the squares that lock your own king.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5q2/8/2p5/3p2pp/6pk/8/5pP1/7K w - - 0 1",
+      "question": "How can the last pawn force a draw against a queen?",
+      "explanation": "g3+ attacks Kh4. Black must capture the pawn or step to h3; either king move covers White’s remaining flights while f2 controls g1. White then has no legal move and is not in check.",
+      "evidence": {
+        "timestamp_s": 166
+      },
+      "proof": {
+        "method": "finite_draw",
+        "fen": "5q2/8/2p5/3p2pp/6pk/8/5pP1/7K w - - 0 1",
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "drawdraws_king_captures",
+      "start": "start",
+      "title": "Source finish: the king takes the checking pawn",
+      "san": [
+        "g3+",
+        "Kxg3"
+      ],
+      "commentary": [
+        "Begin after ...gxf2. The black pawn on f2 came from g3, leaving g3 free for White’s last pawn. Black retains c6/d5/g4/g5/h5.",
+        "g3+ checks Kh4. The pawn’s advance is forcing; Black cannot simply make an unrelated queen move.",
+        "Kxg3 captures White’s last pawn. Kh1 cannot go to g1 because f2 attacks it, or to g2/h2 because Kg3 controls them. White is not in check and has no legal move: actual stalemate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxg3 captures White’s last pawn. Kh1 cannot go to g1 because f2 attacks it, or to g2/h2 because Kg3 controls them. White is not in check and has no legal move: actual stalemate.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "5q2/8/2p5/3p2pp/6p1/6k1/5p2/7K w - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "drawdraws_king_declines",
+      "start": "start",
+      "title": "Source alternative: the king steps to h3",
+      "san": [
+        "g3+",
+        "Kh3"
+      ],
+      "commentary": [
+        "Compare the other legal answer to the pawn check. Every pawn stays on the board in this branch.",
+        "g3+ forces a king response. Kh3 and Kxg3 are the only legal replies.",
+        "Kh3 leaves the white pawn blocked by g4. Kh1 cannot use g1 because of f2, or g2/h2 because Kh3 controls them. White is not in check, so this is actual stalemate too."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kh3 leaves the white pawn blocked by g4. Kh1 cannot use g1 because of f2, or g2/h2 because Kh3 controls them. White is not in check, so this is actual stalemate too.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "5q2/8/2p5/3p2pp/6p1/6Pk/5p2/7K w - - 1 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why must Black answer with the king?",
+      "answer": "The adjacent pawn check cannot be blocked. No black piece can capture g3 except Kh4, leaving just Kxg3 and Kh3."
+    },
+    {
+      "node": "start",
+      "prompt": "Is one illustrated stalemate enough to prove the root drawn?",
+      "answer": "No. White must be able to avoid losing, and Black must be able to prevent a White win. Separate complete legal strategies establish both for this selected diagram."
+    }
+  ],
+  "defaultBranch": "drawdraws_king_captures",
+  "practiceBranch": "drawdraws_king_captures",
+  "practiceType": "pawn",
+  "practiceGoal": "draw",
+  "startContext": "Begin after ...gxf2 at 166 seconds in the complete ten-piece later diagram: White Kh1/g2 against Kh4/Qf8/c6/d5/f2/g4/g5/h5. The source g3+ forces either Kxg3 or Kh3, both actual stalemates with every pawn retained until the shown capture. Exact draw verification supplies separate finite non-loss strategies for White and Black: White forces these stalemates; Black’s independent Qf4+ responses to Kh2 prevent a White win through complete legal mate/stalemate leaves. This proves the selected root drawn, not merely one sampled stalemate. The earlier eleven-plus-piece bishop fortress, queen captures and knight sacrifice remain outside this proof.",
+  "verification_scope": "Begin after ...gxf2 at 166 seconds in the complete ten-piece later diagram: White Kh1/g2 against Kh4/Qf8/c6/d5/f2/g4/g5/h5. The source g3+ forces either Kxg3 or Kh3, both actual stalemates with every pawn retained until the shown capture. Exact draw verification supplies separate finite non-loss strategies for White and Black: White forces these stalemates; Black’s independent Qf4+ responses to Kh2 prevent a White win through complete legal mate/stalemate leaves. This proves the selected root drawn, not merely one sampled stalemate. The earlier eleven-plus-piece bishop fortress, queen captures and knight sacrifice remain outside this proof.",
+  "sourceCorrections": [],
+  "finiteDraw": {
+    "max_plies": 6,
+    "white": {
+      "5q2/8/2p5/3p2pp/6pk/8/5pP1/7K w - - 0 1": "g3+"
+    },
+    "black": {
+      "5q2/8/2p5/3p2pp/6pk/6P1/5p2/7K b - - 0 1": "Kxg3",
+      "5q2/8/2p5/3p2pp/6pk/8/5pPK/8 b - - 1 1": "Qf4+",
+      "8/8/2p5/3p2pp/5qpk/8/5pP1/7K b - - 3 2": "Qg3",
+      "8/8/2p5/3p2pp/5qpk/6P1/5p1K/8 b - - 0 2": "Qxg3+",
+      "8/8/2p5/3p2pp/6pk/6q1/5p2/7K b - - 1 3": "Qg1#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

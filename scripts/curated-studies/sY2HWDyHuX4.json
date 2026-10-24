@@ -1,0 +1,158 @@
+{
+  "video_id": "sY2HWDyHuX4",
+  "title": "Tricky Situation",
+  "summary": "Sacrifice the trapped knight and use a king waiting move to win the blockade by zugzwang.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1b6/N1p1k3/2P5/1K6/8/8/8/8 w - - 0 1",
+      "question": "Should White defend the knight or sacrifice it?",
+      "explanation": "The knight on a7 is trapped by Bb8, c7 and the black king. Saving material must be weighed against the king route into the blockade.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "zugzwang",
+      "fen": "1bk5/2p5/K1P5/8/8/8/8/8 b - - 1 3",
+      "question": "How does Black release the blockade?",
+      "explanation": "The king on a6 and pawn on c6 restrict Black’s bishop and king. Black cannot keep both pieces in their current defensive arrangement.",
+      "evidence": {
+        "timestamp_s": 65
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "tricky_waiting_sacrifice",
+      "start": "start",
+      "title": "Check, wait, and sacrifice on your terms",
+      "san": [
+        "Nc8+",
+        "Kd8",
+        "Ka5",
+        "Kxc8",
+        "Ka6",
+        "Kd8",
+        "Kb7",
+        "Ba7",
+        "Kxa7",
+        "Kc8",
+        "Ka8"
+      ],
+      "commentary": [
+        "Begin from the complete six-piece source diagram. White seeks a winning king route, not a way to keep every piece.",
+        "Nc8+ forces the black king to answer check. The knight deliberately enters another attacked square.",
+        "Kd8 attacks Nc8 while staying near Bb8 and the blocked c-pawns.",
+        "Ka5 is the waiting move. White postpones Ka6 until after Black has captured the knight and used a tempo.",
+        "Kxc8 accepts the knight sacrifice. Black gains material but must now face the king approach with the wrong side to move.",
+        "Ka6 creates the source’s zugzwang. Moving the king permits Kb7, while a bishop sacrifice releases White’s route.",
+        "Kd8 leaves the bishop without its king’s direct protection.",
+        "Kb7 traps Bb8: a7 and c7 are controlled by the white king, and c7 is occupied by Black’s pawn.",
+        "Ba7 offers the bishop on its own terms, trying to regain a useful opposition after the capture.",
+        "Kxa7 collects the bishop. The pawn ending still requires an accurate waiting move.",
+        "Kc8 attempts to hold the c-file blockade and keep White away from c7.",
+        "Ka8 retains the win by passing the move back to Black. Kb8, b7 and d7 are controlled by White’s king or pawn, so Black must yield its useful blockade. This is a checked winning pawn ending, not an immediate mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Ka8 retains the win by passing the move back to Black. Kb8, b7 and d7 are controlled by White’s king or pawn, so Black must yield its useful blockade. This is a checked winning pawn ending, not an immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "K1k5/2p5/2P5/8/8/8/8/8 b - - 2 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "tricky_defend_knight",
+      "start": "start",
+      "title": "Defend the knight immediately",
+      "san": [
+        "Ka6",
+        "Kd6",
+        "Nb5+",
+        "Kc5"
+      ],
+      "commentary": [
+        "Compare trying to save Na7 before creating the favorable tempo.",
+        "Ka6 gives away the forced win. Black can approach the pawn while attacking the knight’s defender.",
+        "Kd6 threatens to approach c6 and remove White’s remaining winning material.",
+        "Nb5+ saves the knight with check, but it does not preserve the winning king-and-pawn arrangement.",
+        "Kc5 attacks the pawn on c6. The exact position is drawn; preserving the knight was less valuable than arranging the right king tempo."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kc5 attacks the pawn on c6. The exact position is drawn; preserving the knight was less valuable than arranging the right king tempo.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "1b6/2p5/K1P5/1Nk5/8/8/8/8 w - - 4 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "tricky_bishop_sacrifice",
+      "start": "zugzwang",
+      "title": "Sacrifice the bishop before moving the king",
+      "san": [
+        "Ba7",
+        "Kxa7",
+        "Kd8",
+        "Kb7"
+      ],
+      "commentary": [
+        "Compare the source’s direct bishop sacrifice while Black’s king is still on c8.",
+        "Ba7 offers the bishop immediately, trying to keep the king in front of the c-pawn.",
+        "Kxa7 accepts. White now has a winning pawn ending despite equal pawn counts.",
+        "Kd8 is a representative king retreat illustrated in the source’s pawn-ending explanation.",
+        "Kb7 approaches c7 and preserves the win. The c6 pawn covers d7 while the king controls b8, c8 and c7; Black cannot maintain its original blockade."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kb7 approaches c7 and preserves the win. The c6 pawn covers d7 while the king controls b8, c8 and c7; Black cannot maintain its original blockade.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3k4/1Kp5/2P5/8/8/8/8/8 b - - 2 5",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why Ka5 instead of Ka6 after Nc8+ Kd8?",
+      "answer": "Ka5 waits for ...Kxc8. Only then does Ka6 leave Black to move in the restrictive king-and-bishop blockade."
+    },
+    {
+      "node": "zugzwang",
+      "prompt": "Why can sacrificing a knight win a pawn ending?",
+      "answer": "The sacrifice changes the move order and king placement. White gains a route to the bishop and c7 pawn that immediate defense of the knight does not provide."
+    }
+  ],
+  "defaultBranch": "tricky_waiting_sacrifice",
+  "practiceBranch": "tricky_waiting_sacrifice",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin from the full six-piece source board. The saved diagrams support the trapped-knight sacrifice, the delayed king approach and two bishop-sacrifice routes. The selected branches stop at checked winning pawn endings rather than inventing a full promotion sequence.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,148 @@
+{
+  "video_id": "v-0WoMLKBHw",
+  "title": "The Breakthrough: Open the Outside File",
+  "summary": "Give up the second pawn to pull a defender away and leave the outside pawn a clear path to promotion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1pp5/1p6/P1P5/8/7k/8/7K w - - 0 1",
+      "question": "Should White recapture, or offer another pawn?",
+      "explanation": "Begin after b6 ...axb6 in the physical demonstration. White has Kh1 and pawns a5/c5 against Kh3 and pawns b6/b7/c7. The earlier eight-piece b6 decision is source context.",
+      "evidence": {
+        "timestamp_s": 26
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "breakthrough_second_sacrifice",
+      "start": "start",
+      "title": "Sacrifice c6 to free the a-pawn",
+      "san": [
+        "c6",
+        "bxc6",
+        "a6",
+        "c5",
+        "a7",
+        "c4",
+        "a8=Q"
+      ],
+      "commentary": [
+        "Begin after b6 ...axb6 in the physical demonstration. White has Kh1 and pawns a5/c5 against Kh3 and pawns b6/b7/c7. The earlier eight-piece b6 decision is source context.",
+        "c6 offers the second pawn. Its purpose is to pull b7 away from the seventh rank, leaving the a-file free.",
+        "bxc6 accepts the second sacrifice. This is the illustrated defensive capture.",
+        "a6 advances the surviving outside pawn on the cleared file.",
+        "c5 starts a counter-race with Black’s newly created passer.",
+        "a7 moves one square from promotion. Black’s pawn is still farther away.",
+        "c4 continues the counter-race but does not stop a8.",
+        "a8=Q promotes first. The exact queen-versus-pawns ending is winning for White; full queen conversion is outside this branch."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "a8=Q promotes first. The exact queen-versus-pawns ending is winning for White; full queen conversion is outside this branch.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "Q7/2p5/1p6/8/2p5/7k/8/7K b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "breakthrough_wrong_recaptures",
+      "start": "start",
+      "title": "Independent automatic recaptures lose the race",
+      "san": [
+        "axb6"
+      ],
+      "commentary": [
+        "Begin after b6 ...axb6 in the physical demonstration. White has Kh1 and pawns a5/c5 against Kh3 and pawns b6/b7/c7. The earlier eight-piece b6 decision is source context.",
+        "axb6 abandons the winning breakthrough. The exact resulting position is losing for White against best defense. Black is not obliged to make an automatic recapture."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Automatic recapture abandons the winning breakthrough and loses against best defense.",
+      "end_fen": "8/1pp5/1P6/2P5/8/7k/8/7K b - - 0 1",
+      "outcome": "win",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ]
+    },
+    {
+      "id": "breakthrough_decline_sacrifice",
+      "start": "start",
+      "title": "Independent refusal leaves the other passer",
+      "san": [
+        "c6",
+        "b5",
+        "cxb7",
+        "b4",
+        "b8=Q"
+      ],
+      "commentary": [
+        "Begin after b6 ...axb6 in the physical demonstration. White has Kh1 and pawns a5/c5 against Kh3 and pawns b6/b7/c7. The earlier eight-piece b6 decision is source context.",
+        "c6 creates the breakthrough threat.",
+        "b5 declines the offer and advances the b6 pawn. This is an independently chosen alternative, not an assertion that the source illustrates it.",
+        "cxb7 removes the other b-pawn and leaves White one step from promotion.",
+        "b4 pursues the counter-race too slowly.",
+        "b8=Q promotes. The exact position remains winning for White, so declining the offered c6 pawn does not rescue this selected defense."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "b8=Q promotes. The exact position remains winning for White, so declining the offered c6 pawn does not rescue this selected defense.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1Q6/2p5/8/P7/1p6/7k/8/7K b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "breakthrough_drawn_wall",
+      "start": "start",
+      "title": "Independent recaptures create a drawn pawn wall",
+      "san": [
+        "axb6",
+        "cxb6",
+        "cxb6"
+      ],
+      "commentary": [
+        "Begin after b6 ...axb6 in the physical demonstration. White has Kh1 and pawns a5/c5 against Kh3 and pawns b6/b7/c7. The earlier eight-piece b6 decision is source context.",
+        "axb6 gives up the win and actually leaves Black a winning position with best play.",
+        "cxb6 automatically recaptures instead of preserving that advantage. This particular reply gives White a draw.",
+        "cxb6 leaves White b6 facing Black b7. Neither pawn can advance or capture the opposing pawn directly ahead, and the exact king-and-pawn ending is drawn."
+      ],
+      "classification": "independent comparison with a suboptimal Black recapture",
+      "explanation": "The selected automatic-recapture sequence draws, but Black could instead preserve a win after axb6.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/1p6/1P6/8/8/7k/8/7K b - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why offer a second pawn instead of recovering material?",
+      "answer": "Capturing c6 pulls the b7 pawn away from the outside passer. White needs a clear promotion file more than a balanced pawn count."
+    }
+  ],
+  "defaultBranch": "breakthrough_second_sacrifice",
+  "practiceBranch": "breakthrough_second_sacrifice",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin at the saved seven-piece position after b6 ...axb6 at 26s. The physical board is reviewed square by square; the kings remain on h1/h3. The initial eight-piece b6 choice is not claimed as exactly solved here. The c6/bxc6/a-pawn race is illustrated; automatic-recapture and declined-sacrifice comparisons use independent representative replies.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

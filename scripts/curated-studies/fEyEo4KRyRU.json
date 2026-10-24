@@ -1,0 +1,71 @@
+{
+  "video_id": "fEyEo4KRyRU",
+  "title": "King of Zugzwang: Punish the Queen Retreat",
+  "summary": "A queen can block its own king’s flight while a knight and bishop cover the remaining exits.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2k5/1qp5/2N5/p1P5/4K3/Pp3B2/1P6/8 w - - 0 1",
+      "question": "Why does the queen retreat to b7 fail?",
+      "explanation": "Bg4 checks along g4–f5–e6–d7–c8. Nc6 covers b8 and d8, while Black’s queen and pawn fill b7 and c7.",
+      "evidence": {
+        "timestamp_s": 72
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "2k5/1qp5/2N5/p1P5/4K3/Pp3B2/1P6/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "zugzwang_conditional_bishop_mate",
+      "start": "start",
+      "title": "Conditional source mate after Qb7",
+      "san": [
+        "Bg4#"
+      ],
+      "commentary": [
+        "Begin after Qb7 in the earlier diagram, with Black’s pawn still on a5. The later a4 diagram is a different position; no full zugzwang proof is asserted here.",
+        "Bg4# checks Kc8 along the long diagonal and covers d7. Nc6 controls b8/d8, Black’s own Qb7/c7 occupy the other flights, and Qb7 cannot capture the bishop or block on d7/e6/f5. The king has no legal reply."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bg4# checks Kc8 along the long diagonal and covers d7. Nc6 controls b8/d8, Black’s own Qb7/c7 occupy the other flights, and Qb7 cannot capture the bishop or block on d7/e6/f5. The king has no legal reply.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "2k5/1qp5/2N5/p1P5/4K1B1/Pp6/1P6/8 b - - 1 1",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does the queen fail to defend its king?",
+      "answer": "On b7 it occupies a flight square but cannot capture Bg4 or reach an interposition square on g4–c8."
+    },
+    {
+      "node": "start",
+      "prompt": "Does this certify the entire zugzwang?",
+      "answer": "No. It proves the immediate mate after Qb7 only. The later queen confinement, waiting move and complete minor-piece conversion remain outside this proof."
+    }
+  ],
+  "defaultBranch": "zugzwang_conditional_bishop_mate",
+  "practiceBranch": "zugzwang_conditional_bishop_mate",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Conditional eleven-piece mate only, after Qb7 at72 seconds: White Ke4/Bf3/Nc6/a3/b2/c5 against Kc8/Qb7/a5/b3/c7. Native26 establishes the complete board and native27 illustrates Bg4 mate. Black a5 belongs to this earlier diagram; it must not be spliced with the later a4 zugzwang position. Bg4# is certified as actual mate. This does not prove the full Ne5/Nc6/Ke3/Bg2/Kd2 queen-confinement plan, force Qb7, or certify the later ten-piece conversion after a queen fork. Previous full legal reconstruction and review history remain preserved.",
+  "verification_scope": "Conditional eleven-piece mate only, after Qb7 at72 seconds: White Ke4/Bf3/Nc6/a3/b2/c5 against Kc8/Qb7/a5/b3/c7. Native26 establishes the complete board and native27 illustrates Bg4 mate. Black a5 belongs to this earlier diagram; it must not be spliced with the later a4 zugzwang position. Bg4# is certified as actual mate. This does not prove the full Ne5/Nc6/Ke3/Bg2/Kd2 queen-confinement plan, force Qb7, or certify the later ten-piece conversion after a queen fork. Previous full legal reconstruction and review history remain preserved.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 1,
+    "moves": {
+      "2k5/1qp5/2N5/p1P5/4K3/Pp3B2/1P6/8 w - - 0 1": "Bg4#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

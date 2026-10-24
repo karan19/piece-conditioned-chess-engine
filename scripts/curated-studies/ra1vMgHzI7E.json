@@ -1,0 +1,92 @@
+{
+  "video_id": "ra1vMgHzI7E",
+  "title": "Majenius Move",
+  "summary": "Recognize that extra blocked pawns can imprison their own king and force a pawn mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/5ppp/5K1k/7p/7P/8/8 w - - 0 1",
+      "question": "Can Black’s four pawns move safely?",
+      "explanation": "Begin after ...hxg6: White has Kf5/h3 against Kh5 and f6/g6/h6/h4. The earlier knight and bishop sacrifices remain source context outside this checked seven-piece tree.",
+      "evidence": {
+        "timestamp_s": 78
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "majenius_pawn_mate",
+      "start": "start",
+      "title": "Force the only pawn to move",
+      "san": [
+        "Kxf6",
+        "g5",
+        "Kf5",
+        "g4",
+        "hxg4#"
+      ],
+      "commentary": [
+        "Begin in the complete seven-piece source diagram after the bishop and queen have disappeared.",
+        "Kxf6 removes the pawn that could otherwise move independently. The black king remains boxed in by its own pawns and White’s king.",
+        "g5 is Black’s only legal move, stepping the g-pawn forward.",
+        "Kf5 gains the opposition and controls g4/g5/g6 while preserving the mating capture.",
+        "g4 is again Black’s only legal move. Black must allow the h-pawn’s capture.",
+        "hxg4# is actual pawn mate. Kf5 protects g4 and covers g5/g6; Black’s own h4/h6 pawns block the remaining h-file flights."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "hxg4# is actual pawn mate. Kf5 protects g4 and covers g5/g6; Black’s own h4/h6 pawns block the remaining h-file flights.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/7p/5K1k/6Pp/8/8/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "majenius_wrong_king",
+      "start": "start",
+      "title": "Let the king escape after the pawn push",
+      "san": [
+        "Kxf6",
+        "g5",
+        "Ke5"
+      ],
+      "commentary": [
+        "Compare an independently supplied wrong king retreat after the forced pawn advance.",
+        "Kxf6 removes Black’s movable f-pawn.",
+        "g5 is forced by the blocked position.",
+        "Ke5 abandons control of g6, releasing Black’s king from the mating net. The exact remaining pawn ending is a Black win with best play."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ke5 abandons control of g6, giving Black’s king an escape and losing the forced mating net. The exact outcome is checked rather than inferred from material.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "loss"
+      ],
+      "end_fen": "8/8/7p/4K1pk/7p/7P/8/8 b - - 1 2",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why take f6 before returning the king?",
+      "answer": "Removing f6 leaves Black with only the g-pawn to move. Kf5 then turns that forced movement into a pawn mate."
+    }
+  ],
+  "defaultBranch": "majenius_pawn_mate",
+  "practiceBranch": "majenius_pawn_mate",
+  "practiceType": "king",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...hxg6 at 78 seconds, the complete seven-piece pawn ending. Earlier queen, knight and bishop sacrifices remain unverified source context. The final forced pawn mate and a representative king error are checked.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

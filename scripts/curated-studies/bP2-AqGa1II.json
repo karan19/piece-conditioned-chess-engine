@@ -1,0 +1,135 @@
+{
+  "video_id": "bP2-AqGa1II",
+  "title": "Stop That Pawn: Promotion Skewers",
+  "summary": "Promote into a checking skewer instead of judging the race only by who gets a queen first.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5K2/1P1p4/3p4/p7/8/5k2/7p/8 w - - 0 1",
+      "question": "Which checking line will expose the new queen?",
+      "explanation": "Begin after ...Kxf3 with White Kf8 and b7 against Kf3 and pawns a5, d7, d6 and h2. Both sides are about to promote.",
+      "evidence": {
+        "timestamp_s": 94
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "king_d1",
+      "fen": "1Q3K2/3p4/3p4/p7/8/8/7p/3k4 b - - 0 1",
+      "question": "What changes when the king stands on d1?",
+      "explanation": "This separate source diagram already has White Qb8. Black is to move with Kd1 and h2. The king and promotion square can be attacked along the first rank.",
+      "evidence": {
+        "timestamp_s": 50
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "stop_diagonal_skewer",
+      "start": "start",
+      "title": "Use the b7–h1 diagonal",
+      "san": [
+        "b8=Q",
+        "h1=Q",
+        "Qb7+",
+        "Kg3",
+        "Qxh1"
+      ],
+      "commentary": [
+        "Begin after ...Kxf3 with White Kf8 and b7 against Kf3 and pawns a5, d7, d6 and h2. Both sides are about to promote.",
+        "b8=Q creates the queen needed for a checking skewer. White has not lost merely because Black also promotes.",
+        "h1=Q creates the second queen, but Kf3 stands on the b7–h1 diagonal.",
+        "Qb7+ checks along b7-c6-d5-e4-f3-g2-h1. The king is in front of its own queen.",
+        "Kg3 escapes the diagonal and exposes Qh1. This is the illustrated source reply.",
+        "Qxh1 captures the exposed queen. The exact queen-versus-three-pawns ending is winning for White."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxh1 captures the exposed queen. The exact queen-versus-three-pawns ending is winning for White.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "5K2/3p4/3p4/p7/8/6k1/8/7Q b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "stop_rank_skewer",
+      "start": "king_d1",
+      "title": "Use the first rank with the king on d1",
+      "san": [
+        "h1=Q",
+        "Qb1+",
+        "Ke2",
+        "Qxh1"
+      ],
+      "commentary": [
+        "Begin in the separately pictured Qb8/Kd1 diagram, with Black to move.",
+        "h1=Q promotes, but places the queen behind Kd1 on the first rank.",
+        "Qb1+ checks Kd1 and attacks the new queen through the king.",
+        "Ke2 is a legal representative king flight from the rank check, independently supplied rather than claiming an exact sampled source move.",
+        "Qxh1 wins the queen after the king vacates the first rank. The exact remaining ending is winning for White."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxh1 wins the queen after the king vacates the first rank. The exact remaining ending is winning for White.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "5K2/3p4/3p4/p7/8/8/4k3/7Q b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "stop_wrong_alignment",
+      "start": "start",
+      "title": "Copy the rank idea with the king on f3",
+      "san": [
+        "b8=Q",
+        "h1=Q",
+        "Qb1",
+        "Qxb1"
+      ],
+      "commentary": [
+        "Begin after ...Kxf3 with White Kf8 and b7 against Kf3 and pawns a5, d7, d6 and h2. Both sides are about to promote.",
+        "b8=Q begins the same promotion race.",
+        "h1=Q creates the opposing queen.",
+        "Qb1 does not check Kf3. The first-rank skewer from the Kd1 diagram does not transfer to this position.",
+        "Qxb1 captures White’s undefended queen. This independent error comparison is losing for White; geometry, not the shared promotion race, determines the right check."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxb1 captures White’s undefended queen. This independent error comparison is losing for White; geometry, not the shared promotion race, determines the right check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "5K2/3p4/3p4/p7/8/5k2/8/1q6 w - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is Qb7+ stronger than copying Qb1?",
+      "answer": "Qb7 checks the king on f3 while lining up its queen on h1. Qb1 does not check that king and simply allows Qxb1."
+    }
+  ],
+  "defaultBranch": "stop_diagonal_skewer",
+  "practiceBranch": "stop_diagonal_skewer",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin in the seven-piece diagram after ...Kxf3 at 94s and compare the separately pictured Qb8/Kd1 ending. The earlier knight and bishop sacrifices occur in larger setups and are source context. The diagonal skewer is illustrated; the alternative king flight and wrong-alignment comparison are independently selected legal replies.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

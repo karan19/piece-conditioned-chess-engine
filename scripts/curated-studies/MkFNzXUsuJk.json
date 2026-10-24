@@ -1,0 +1,202 @@
+{
+  "video_id": "MkFNzXUsuJk",
+  "title": "Majestic Domain Expansion: Promote to a Bishop",
+  "summary": "Keep Black’s queen alive until a bishop promotion builds a mating net that can be answered only by a fork.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1P6/1q6/8/k3N3/4Q3/1K2P3/8 w - - 0 1",
+      "question": "How can White win without taking the hanging queen?",
+      "explanation": "Begin after ...Ka4. White has Kb2/Qe3/Ne4/b7/e2 against Ka4/Qb6. Capturing the apparently free queen would stalemate the black king.",
+      "evidence": {
+        "timestamp_s": 45.0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "promotion_choice",
+      "fen": "8/1P6/8/8/8/k1N1q3/2K1P3/8 w - - 2 3",
+      "question": "Which promotion preserves the win without enabling stalemate?",
+      "explanation": "White Kc2/Nc3/b7/e2 faces Ka3/Qe3. A bishop on b8 will threaten Bd6 mate, while a new queen allows ...Qd2+ and stalemate.",
+      "evidence": {
+        "timestamp_s": 101.0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "domain_bishop_fork",
+      "start": "start",
+      "title": "Offer the queen, then underpromote and fork",
+      "san": [
+        "Kc2",
+        "Qxe3",
+        "Nc3+",
+        "Ka3",
+        "b8=B",
+        "Qe6",
+        "Bd6+",
+        "Qxd6",
+        "Nb5+",
+        "Ka4",
+        "Nxd6"
+      ],
+      "commentary": [
+        "Begin after ...Ka4. White has Kb2/Qe3/Ne4/b7/e2 against Ka4/Qb6. Capturing the apparently free queen would stalemate the black king.",
+        "Kc2 declines the queen and improves the king’s control of b3. White offers Qe3 instead.",
+        "Qxe3 captures White’s queen. The illustration shows this stubborn defense, rather than accepting stalemate.",
+        "Nc3+ saves the knight with check and controls a2 and a4.",
+        "Ka3 is the only legal king escape from the knight check.",
+        "b8=B promotes to a bishop. Its Bd6 mating threat avoids the stalemate problem caused by a queen on b8.",
+        "Qe6 defends d6. Black’s queen must deal with the mating threat; ordinary safe checks are unavailable in this exact net.",
+        "Bd6+ checks along d6-c5-b4-a3 anyway. The queen’s defense is also a decoy.",
+        "Qxd6 is forced: it removes the checking bishop but lands on a knight-fork square.",
+        "Nb5+ checks Ka3 and attacks Qd6. Black must answer the king check before saving the queen.",
+        "Ka4 is the illustrated king retreat; this is not an assertion that it is the only legal reply.",
+        "Nxd6 wins the queen. The saved four-piece king/knight/pawn versus king ending is an exact White win; its later conversion is outside this selected branch."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxd6 wins the queen. The saved four-piece king/knight/pawn versus king ending is an exact White win; its later conversion is outside this selected branch.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/3N4/8/k7/8/2K1P3/8 b - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "domain_direct_stalemate",
+      "start": "start",
+      "title": "Taking the free queen stalemates",
+      "san": [
+        "Qxb6"
+      ],
+      "commentary": [
+        "Begin after ...Ka4. White has Kb2/Qe3/Ne4/b7/e2 against Ka4/Qb6. Capturing the apparently free queen would stalemate the black king.",
+        "Qxb6 removes Black’s only movable piece without checking Ka4. Kb2, Ne4 and Qb6 cover every king escape, so the game is immediately stalemated."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxb6 removes Black’s only movable piece without checking Ka4. Kb2, Ne4 and Qb6 cover every king escape, so the game is immediately stalemated.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/1P6/1Q6/8/k3N3/8/1K2P3/8 b - - 0 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "domain_queen_promotion_trap",
+      "start": "promotion_choice",
+      "title": "Queen promotion allows the last sacrifice",
+      "san": [
+        "b8=Q",
+        "Qd2+",
+        "Kxd2"
+      ],
+      "commentary": [
+        "Begin after Kc2 Qxe3 Nc3+ Ka3.",
+        "b8=Q gives up the win. The new queen helps seal the black king’s escape squares.",
+        "Qd2+ offers Black’s final piece with check. This is the illustrated stalemate resource.",
+        "Kxd2 captures the queen and stalemates Ka3. Nc3 covers a2/a4; Qb8 covers b2/b3/b4. Black is not in check and has no legal move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxd2 captures the queen and stalemates Ka3. Nc3 covers a2/a4; Qb8 covers b2/b3/b4. Black is not in check and has no legal move.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "1Q6/8/8/8/8/k1N5/3KP3/8 b - - 0 4",
+      "outcome": "draw"
+    },
+    {
+      "id": "domain_pawn_capture_fork",
+      "start": "start",
+      "title": "The queen takes b7 instead",
+      "san": [
+        "Kc2",
+        "Qxb7",
+        "Nc5+",
+        "Kb4",
+        "Nxb7"
+      ],
+      "commentary": [
+        "Begin after ...Ka4. White has Kb2/Qe3/Ne4/b7/e2 against Ka4/Qb6. Capturing the apparently free queen would stalemate the black king.",
+        "Kc2 leaves b7 apparently available, but the knight can exploit the alignment of king and queen.",
+        "Qxb7 takes the advanced pawn. This is the source’s alternate capture.",
+        "Nc5+ checks Ka4 and attacks Qb7, forcing a king reply.",
+        "Kb4 is the illustrated retreat from the fork.",
+        "Nxb7 removes the queen. White’s remaining e-pawn makes this a checked win, rather than a bare-knight draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxb7 removes the queen. White’s remaining e-pawn makes this a checked win, rather than a bare-knight draw.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1N6/8/8/1k6/4Q3/2K1P3/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "domain_no_defense_mate",
+      "start": "promotion_choice",
+      "title": "A queen move that does not defend d6",
+      "san": [
+        "b8=B",
+        "Qh3",
+        "Bd6#"
+      ],
+      "commentary": [
+        "Compare the source’s queen retreat after the same bishop promotion.",
+        "b8=B threatens Bd6 mate without creating the queen-promotion stalemate.",
+        "Qh3 does not defend d6 or give check. Black still has a queen, but it cannot prevent the illustrated mating move.",
+        "Bd6# checks Ka3 along the diagonal. Nc3 covers a2/a4, Kc2 covers b2/b3, and the bishop controls b4; Black has no escape or useful interposition."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bd6# checks Ka3 along the diagonal. Nc3 covers a2/a4, Kc2 covers b2/b3, and the bishop controls b4; Black has no escape or useful interposition.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/3B4/8/8/k1N4q/2K1P3/8 b - - 2 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why refuse an undefended queen?",
+      "answer": "Qxb6 is stalemate. Keeping Black’s queen on the board gives Black legal moves while White improves the king and builds a winning net."
+    },
+    {
+      "node": "promotion_choice",
+      "prompt": "Why choose a bishop rather than a queen?",
+      "answer": "A queen on b8 lets ...Qd2+ force a stalemate after capture. A bishop instead threatens Bd6 mate, and the queen’s defense of d6 leads to a knight fork."
+    }
+  ],
+  "defaultBranch": "domain_bishop_fork",
+  "practiceBranch": "domain_bishop_fork",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Ka4 in the saved seven-piece diagram, once White’s queen has captured the black bishop. The earlier eight-piece bishop-defense and queen-offer setup remain source context. This study checks the stalemate refusal, both queen captures, the rare bishop promotion, its mating threat and the forced-queen-decoy knight fork. It does not claim exact verification of the earlier larger setup.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

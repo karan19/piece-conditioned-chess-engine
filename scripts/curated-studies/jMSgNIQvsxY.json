@@ -1,0 +1,125 @@
+{
+  "video_id": "jMSgNIQvsxY",
+  "title": "Majestic Geniality",
+  "summary": "Underpromote to avoid stalemate, then use the king to turn the rook blockade into mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1K6/7P/k7/1p1r4/1P6/8/8/8 w - - 0 1",
+      "question": "Which promotion keeps a forced win?",
+      "explanation": "After ...Rxd5, White has Kb8, h7 and b4 against Ka6, Rd5 and b5. Queen promotion creates a stalemate trap; a rook deliberately leaves more space.",
+      "evidence": {
+        "timestamp_s": 90
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "geniality_rook_promotion",
+      "start": "start",
+      "title": "Underpromote and improve the king",
+      "san": [
+        "h8=R",
+        "Rd6",
+        "Kc7",
+        "Rg6",
+        "Ra8#"
+      ],
+      "commentary": [
+        "Begin after ...Rxd5 in the stable six-piece final phase. The earlier ten-piece bishop/rook sacrifices remain context.",
+        "h8=R avoids the queen’s extra diagonal control and threatens Rh6 mate.",
+        "Rd6 blocks the sixth rank and stops that immediate mating idea.",
+        "Kc7 attacks Rd6 and controls b6. It also clears the eighth-rank route for Ra8 mate.",
+        "Rg6 is the source’s selected rook retreat. It still blocks the sixth rank, but cannot prevent the new Ra8 mating threat.",
+        "Ra8# is actual mate. Kc7 covers b6 and b7, b4 controls a5 and Black’s b5 pawn blocks the remaining flight."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Ra8# is actual mate. Kc7 covers b6 and b7, b4 controls a5 and Black’s b5 pawn blocks the remaining flight.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "R7/2K5/k5r1/1p6/1P6/8/8/8 b - - 4 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "geniality_queen_stalemate",
+      "start": "start",
+      "title": "Promote to a queen and accept the rook",
+      "san": [
+        "h8=Q",
+        "Rd8+",
+        "Qxd8"
+      ],
+      "commentary": [
+        "Compare the source’s natural queen promotion.",
+        "h8=Q gives up the forced win by allowing a rook sacrifice that uses the queen’s diagonal control.",
+        "Rd8+ offers the rook with check along the eighth rank.",
+        "Qxd8 is actual stalemate. Qd8 covers a5 and b6, Kb8 covers a7 and b7, and Black’s b5 pawn is blocked by b4. Ka6 is not in check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxd8 is actual stalemate. Qd8 covers a5 and b6, Kb8 covers a7 and b7, and Black’s b5 pawn is blocked by b4. Ka6 is not in check.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "1K1Q4/8/k7/1p6/1P6/8/8/8 b - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "geniality_rook_avoids_stalemate",
+      "start": "start",
+      "title": "Test the same sacrifice against a rook",
+      "san": [
+        "h8=R",
+        "Rd8+",
+        "Rxd8",
+        "Kb6"
+      ],
+      "commentary": [
+        "This independent representative line tests why the queen’s stalemate defense does not work after rook promotion.",
+        "h8=R keeps White’s exact win and leaves diagonal flight squares available.",
+        "Rd8+ offers the same checking rook sacrifice.",
+        "Rxd8 captures the rook. Unlike Qxd8, it does not control b6 diagonally.",
+        "Kb6 is legal, so there is no stalemate. White retains an exactly checked rook-and-pawn win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kb6 is legal, so there is no stalemate. White retains an exactly checked rook-and-pawn win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1K1R4/8/1k6/1p6/1P6/8/8/8 w - - 1 3",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is a rook better than a queen here?",
+      "answer": "After ...Rd8+ Qxd8 the queen covers b6 and a5, stalemating Ka6. A rook on d8 leaves b6 available, so capturing does not stalemate Black."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does Kc7 change the mating threat?",
+      "answer": "It attacks the blockading rook and controls b6 and b7, letting Ra8 close the a-file once the rook moves away."
+    }
+  ],
+  "defaultBranch": "geniality_rook_promotion",
+  "practiceBranch": "geniality_rook_promotion",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rxd5 at 90 seconds in the visually reconstructed six-piece final phase. The earlier ten-piece setup and intermediate bishop/rook ideas are source context. Rook promotion, the selected ...Rd6/...Rg6 mating line and queen stalemate are checked; the parallel rook-capture escape is independently supplied.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

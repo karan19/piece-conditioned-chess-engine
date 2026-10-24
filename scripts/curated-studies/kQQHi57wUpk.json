@@ -1,0 +1,129 @@
+{
+  "video_id": "kQQHi57wUpk",
+  "title": "Happy Destruction: Close the Diagonal",
+  "summary": "Use a pawn check to fix the king’s corner, then bring the queen onto the mating diagonal while accounting for a rook block.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2r1r3/pk1n2p1/3Q1p2/P6p/3P4/4P2P/5P2/5K2 w - - 0 1",
+      "question": "Why push a pawn instead of taking the knight?",
+      "explanation": "a6+ forces the king to a8. White can then use Qd5+ and the a6 pawn’s protection of b7 to finish the attack.",
+      "evidence": {
+        "timestamp_s": 100
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "2r1r3/pk1n2p1/3Q1p2/P6p/3P4/4P2P/5P2/5K2 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "happy_source_finish",
+      "start": "start",
+      "title": "Source finish: the pawn prepares queen mate",
+      "san": [
+        "a6+",
+        "Ka8",
+        "Qd5+",
+        "Kb8",
+        "Qb7#"
+      ],
+      "commentary": [
+        "Begin after ...Kxb7. White’s king is on f1, not g1; Black still has both rooks, Nd7 and all four remaining pawns.",
+        "a6+ is a checking pawn move, not a quiet move. Qd6 controls b8, leaving only a8 available to the black king.",
+        "Ka8 is forced, as the saved board shows. The caption’s B8 at this moment is a square error.",
+        "Qd5+ aligns the queen with a8 along d5–c6–b7–a8. Black can move to b8 or interpose Rc6; both defenses are certified.",
+        "Kb8 chooses the source’s king retreat and leaves the pawn on a6 ready to protect the final queen square.",
+        "Qb7# is protected by a6. The queen covers a8, b8 and c8 while Black’s own a7 pawn fills a7. Neither rook nor knight can capture or block the adjacent queen check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qb7# is protected by a6. The queen covers a8, b8 and c8 while Black’s own a7 pawn fills a7. Neither rook nor knight can capture or block the adjacent queen check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1kr1r3/pQ1n2p1/P4p2/7p/3P4/4P2P/5P2/5K2 b - - 4 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "happy_rook_interposition",
+      "start": "start",
+      "title": "Independent completion: the rook blocks on c6",
+      "san": [
+        "a6+",
+        "Ka8",
+        "Qd5+",
+        "Rc6",
+        "Qxc6+",
+        "Kb8",
+        "Qb7#"
+      ],
+      "commentary": [
+        "Keep the full position and test the rook block highlighted by the source. The continuation after that block is independently supplied.",
+        "a6+ checks the king and prepares to protect a future queen on b7.",
+        "Ka8 is the only legal king move. The queen on d6 rules out b8 at this point.",
+        "Qd5+ creates the long diagonal check and invites the rook to interpose.",
+        "Rc6 blocks the queen’s diagonal from d5 to a8. This is the only legal interposition; it moves the c8 rook away from the back rank.",
+        "Qxc6+ removes the blocking rook with check. White keeps the attack while eliminating one defender.",
+        "Kb8 is forced. The queen on c6 covers b7, and the pawn on a6 protects b7 for the finish.",
+        "Qb7# delivers the protected queen mate. The remaining e8 rook and d7 knight have no legal way to answer the adjacent check."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qb7# delivers the protected queen mate. The remaining e8 rook and d7 knight have no legal way to answer the adjacent check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1k2r3/pQ1n2p1/P4p2/7p/3P4/4P2P/5P2/5K2 b - - 2 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Is a6 a quiet move here?",
+      "answer": "No: a6 checks Kb7. Qd6 controls b8, so Black must go to a8."
+    },
+    {
+      "node": "start",
+      "prompt": "Can a rook block Qd5?",
+      "answer": "Yes. Rc6 is legal. Qxc6+ forces Kb8, and Qb7 is protected mate."
+    }
+  ],
+  "defaultBranch": "happy_source_finish",
+  "practiceBranch": "happy_source_finish",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kxb7 at 100 seconds in the complete fifteen-piece later diagram, with White Kf1 and all five white pawns retained. a6+ forces Ka8, and Qd5+ is proved against both Kb8 and Rc6, ending in actual queen mates. The Rc6/Qxc6+/Kb8/Qb7 completion is an explicitly independent line responding to the source’s highlighted blocking resource. The earlier rook and bishop sacrifices, queen capture of Nd7 and alternative sacrifices remain outside this selected proof.",
+  "verification_scope": "Begin after ...Kxb7 at 100 seconds in the complete fifteen-piece later diagram, with White Kf1 and all five white pawns retained. a6+ forces Ka8, and Qd5+ is proved against both Kb8 and Rc6, ending in actual queen mates. The Rc6/Qxc6+/Kb8/Qb7 completion is an explicitly independent line responding to the source’s highlighted blocking resource. The earlier rook and bishop sacrifices, queen capture of Nd7 and alternative sacrifices remain outside this selected proof.",
+  "sourceCorrections": [
+    {
+      "claim": "The caption calls a6+ a quiet move and names B8 as the immediate king destination.",
+      "correction": "The complete board gives a6 check against Kb7; the only reply is Ka8. Kb8 is available after the later Qd5+ instead."
+    }
+  ],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 7,
+    "moves": {
+      "1kr1r3/p2n2p1/P4p2/3Q3p/3P4/4P2P/5P2/5K2 w - - 3 3": "Qb7#",
+      "1k2r3/p2n2p1/P1Q2p2/7p/3P4/4P2P/5P2/5K2 w - - 1 4": "Qb7#",
+      "k3r3/p2n2p1/P1r2p2/3Q3p/3P4/4P2P/5P2/5K2 w - - 3 3": "Qxc6+",
+      "k1r1r3/p2n2p1/P2Q1p2/7p/3P4/4P2P/5P2/5K2 w - - 1 2": "Qd5+",
+      "2r1r3/pk1n2p1/3Q1p2/P6p/3P4/4P2P/5P2/5K2 w - - 0 1": "a6+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

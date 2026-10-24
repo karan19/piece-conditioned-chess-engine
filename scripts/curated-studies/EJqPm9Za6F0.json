@@ -1,0 +1,152 @@
+{
+  "video_id": "EJqPm9Za6F0",
+  "title": "Knight+Rook VS Queen",
+  "summary": "Use checks to gain time against a promotion, and let the new queen obstruct its own king in the final mating net.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3N4/4R3/6k1/8/5K1P/8/5p2/8 w - - 0 1",
+      "question": "How can White create time before ...f1=Q?",
+      "explanation": "A direct Re1 permits ...fxe1=Q. White first restricts the black king with h5, then uses checks to redirect the rook or construct mate.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "rook_knight_main",
+      "start": "start",
+      "title": "Allow the queen, then use it as a blocker",
+      "san": [
+        "h5+",
+        "Kh6",
+        "Nf7+",
+        "Kxh5",
+        "Re5+",
+        "Kh4",
+        "Ng5",
+        "f1=Q+",
+        "Nf3+",
+        "Kh3",
+        "Rh5+",
+        "Kg2",
+        "Rh2#"
+      ],
+      "commentary": [
+        "The f2 pawn is about to promote. Look for forcing threats against the king before trying to stop the pawn directly.",
+        "h5+ checks the king on g6. Black must answer the pawn check before considering promotion; the only legal replies are Kf6, Kh6 and Kxh5.",
+        "Kh6 keeps the h-pawn alive and avoids the immediate Rf7 mate seen after ...Kf6.",
+        "Nf7+ checks h6 and makes Black address the king’s safety before promoting.",
+        "Kxh5 accepts the pawn. With the knight now on f7, White cannot use the earlier Rh7+ route.",
+        "Re5+ uses the rook to check along the fifth rank instead.",
+        "Kh4 heads down the board. This is the source’s selected defensive continuation.",
+        "Ng5 is a quiet move: the knight supports a different checking route and prepares Nf3+ after promotion.",
+        "f1=Q promotes with check up the f-file toward Kf4.",
+        "Nf3+ interposes on the f-file and checks h4 at the same time. White meets a check with a check.",
+        "Kh3 escapes the knight check, but the king remains vulnerable to the rook.",
+        "Rh5+ checks down the h-file, supported by the knight on f3.",
+        "Kg2 walks onto the queen’s diagonal. Black’s own queen still occupies f1.",
+        "Rh2# checks across the second rank. Nf3 protects the rook and covers g1 and h4; Kf4 covers f3 and g3. Black’s queen blocks f1 and cannot capture the rook or interpose on g2-h2."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rh2# checks across the second rank. Nf3 protects the rook and covers g1 and h4; Kf4 covers f3 and g3. Black’s queen blocks f1 and cannot capture the rook or interpose on g2-h2.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/5K2/5N2/6kR/5q2 b - - 5 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_knight_short_mate",
+      "start": "start",
+      "title": "The king chooses the wrong side",
+      "san": [
+        "h5+",
+        "Kf6",
+        "Rf7#"
+      ],
+      "commentary": [
+        "The first king reply already reveals why White spends a tempo on h5.",
+        "h5+ gives check and forces a king response. The pawn also controls g6, helping to restrict Black’s retreat.",
+        "Kf6 steps onto a square where the white king and knight remove the available flights.",
+        "Rf7# checks along the f-file. Nd8 protects f7 and covers e6; Kf4 covers e5, f5 and g5. The rook covers the seventh rank and the h5 pawn covers g6."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rf7# checks along the f-file. Nd8 protects f7 and covers e6; Kf4 covers e5, f5 and g5. The rook covers the seventh rank and the h5 pawn covers g6.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3N4/5R2/5k2/7P/5K2/8/5p2/8 b - - 2 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_knight_first_rank",
+      "start": "start",
+      "title": "Capture the pawn before the knight moves",
+      "san": [
+        "h5+",
+        "Kxh5",
+        "Rh7+",
+        "Kg6",
+        "Rh1"
+      ],
+      "commentary": [
+        "If Black captures the h-pawn immediately, White’s rook can reach the first rank with tempo.",
+        "h5+ checks and offers the pawn to pull Black’s king onto the h-file.",
+        "Kxh5 accepts while White’s knight is still on d8.",
+        "Rh7+ forces a king response and puts the rook on the file it needs.",
+        "Kg6 is the illustrated retreat. Black has spent a move answering check rather than promoting.",
+        "Rh1 controls f1 from the side, preparing to capture the promoted piece. White keeps a checked win; this selected line stops at the successful defensive setup."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rh1 controls f1 from the side, preparing to capture the promoted piece. White keeps a checked win; this selected line stops at the successful defensive setup.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3N4/8/6k1/8/5K2/8/5p2/7R b - - 3 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does the timing of ...Kxh5 matter?",
+      "answer": "Before Nf7+, White has Rh7+ followed by Rh1. After the knight reaches f7, the rook must instead check from e5 and build a mating net."
+    },
+    {
+      "node": "start",
+      "prompt": "How can a new queen fail to save the king?",
+      "answer": "Nf3+ blocks its f-file check with tempo. At the end the queen occupies f1, removing a flight square, while a contact rook check leaves no square to interpose."
+    }
+  ],
+  "defaultBranch": "rook_knight_main",
+  "practiceBranch": "rook_knight_main",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Reconstructed from the complete initial six-piece board. The principal source line reaches actual mate after ...f1=Q; two earlier king choices show the alternatives. These selected lines do not enumerate every legal promotion or king defense.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,138 @@
+{
+  "video_id": "-MD-izjC-Yk",
+  "title": "2 Rooks VS 1 Queen!: Refuse the Free Queen",
+  "summary": "Use the rook fork to drive the king into a pawn mate, and recognize why taking the queen instead ends the game in stalemate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1Pk2q2/KpP5/1P6/8/8/8/3R4 w - - 0 1",
+      "question": "Can White use the fork for something better than winning the queen?",
+      "explanation": "Rd7+ attacks the king and queen. If the king retreats to b8, c7 is mate; Rxf7 would instead remove the last movable black piece and cause stalemate.",
+      "evidence": {
+        "timestamp_s": 154
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/1Pk2q2/KpP5/1P6/8/8/8/3R4 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    },
+    {
+      "id": "mate_or_queen",
+      "fen": "1k6/1P1R1q2/KpP5/1P6/8/8/8/8 w - - 2 2",
+      "question": "Take the queen or finish the mating net?",
+      "explanation": "The black king is already caged by Ka6 and the pawns. White can mate with c7, while Rxf7 leaves Black without a legal move and without check.",
+      "evidence": {
+        "timestamp_s": 158
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "1k6/1P1R1q2/KpP5/1P6/8/8/8/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "rooks_refuse_queen",
+      "start": "start",
+      "title": "Source finish: decline the queen and mate",
+      "san": [
+        "Rd7+",
+        "Kb8",
+        "c7#"
+      ],
+      "commentary": [
+        "Begin after ...Qf7. Both white b-pawns and the c6 pawn, Black’s b6 pawn and the queen are retained in the complete eight-piece root.",
+        "Rd7+ forks Kc7 and Qf7. Black has two legal replies: Kb8 or Qxd7. Moving the king is the source choice, not the only legal defense.",
+        "Kb8 retreats into the corner cage. White can capture the queen, but must first check whether Black would have any moves afterward.",
+        "c7# checks b8 with the pawn. Rd7 protects c7, Ka6 controls a7 and b7, and the b7 pawn controls a8/c8. There is no way to interpose against the pawn’s adjacent check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "c7# checks b8 with the pawn. Rd7 protects c7, Ka6 controls a7 and b7, and the b7 pawn controls a8/c8. There is no way to interpose against the pawn’s adjacent check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1k6/1PPR1q2/Kp6/1P6/8/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "rooks_queen_capture",
+      "start": "start",
+      "title": "Independent defense: the queen captures the rook",
+      "san": [
+        "Rd7+",
+        "Qxd7",
+        "cxd7"
+      ],
+      "commentary": [
+        "Account for the queen’s legal capture of the checking rook instead of assuming the king must retreat.",
+        "Rd7+ checks while offering the rook to Qf7. The c6 pawn is ready to recapture on d7.",
+        "Qxd7 captures the rook and reaches an exact seven-piece White win. It removes the immediate rook check but leaves the queen en prise to the pawn.",
+        "cxd7 captures the queen and reaches an exact six-piece White win. The advanced d7 and b7 pawns remain genuine threats; no automatic promotion or particular king reply is assumed."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "cxd7 captures the queen and reaches an exact six-piece White win. The advanced d7 and b7 pawns remain genuine threats; no automatic promotion or particular king reply is assumed.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1PkP4/Kp6/1P6/8/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "rooks_stalemate_error",
+      "start": "mate_or_queen",
+      "title": "Source warning: take the queen too soon",
+      "san": [
+        "Rxf7"
+      ],
+      "commentary": [
+        "Compare the tempting material capture after ...Kb8. The king and locked b-pawn have almost no freedom.",
+        "Rxf7 removes the queen but gives no check. Black’s king has no legal flight, and b6 cannot advance into White’s b5 pawn. This is actual stalemate, so the exact result is a draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxf7 removes the queen but gives no check. Black’s king has no legal flight, and b6 cannot advance into White’s b5 pawn. This is actual stalemate, so the exact result is a draw.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "1k6/1P3R2/KpP5/1P6/8/8/8/8 b - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "mate_or_queen",
+      "prompt": "Why is c7 better than Rxf7?",
+      "answer": "c7 checks the king and mates. Rxf7 removes the queen without checking, leaving Black no legal move."
+    },
+    {
+      "node": "start",
+      "prompt": "Can Black capture the checking rook with the queen?",
+      "answer": "Yes. Qxd7 is legal, but cxd7 removes the queen and preserves an exact White win."
+    }
+  ],
+  "defaultBranch": "rooks_refuse_queen",
+  "practiceBranch": "rooks_refuse_queen",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Qf7 at 154 seconds in the complete eight-piece later diagram. Rd7+ is proved against both legal replies: the source Kb8 permits c7 mate, while independent Qxd7 reaches a supported exact White win and allows cxd7. The later Rxf7 error is actual seven-piece stalemate, checked exactly. Earlier two-rook maneuvers, Qg7 offer and other capture branches remain outside this selected proof.",
+  "verification_scope": "Begin after ...Qf7 at 154 seconds in the complete eight-piece later diagram. Rd7+ is proved against both legal replies: the source Kb8 permits c7 mate, while independent Qxd7 reaches a supported exact White win and allows cxd7. The later Rxf7 error is actual seven-piece stalemate, checked exactly. Earlier two-rook maneuvers, Qg7 offer and other capture branches remain outside this selected proof.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 3,
+    "moves": {
+      "8/1Pk2q2/KpP5/1P6/8/8/8/3R4 w - - 0 1": "Rd7+",
+      "1k6/1P1R1q2/KpP5/1P6/8/8/8/8 w - - 2 2": "c7#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

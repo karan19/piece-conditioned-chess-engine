@@ -1,0 +1,128 @@
+{
+  "video_id": "Vm9PJ07HakA",
+  "title": "Majestic Defense",
+  "summary": "Leave the tempting pawn alone: escort the advanced passer, imprison the king, and finish with a pawn mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "N7/8/8/5k2/4p1P1/8/5p2/7K b - - 0 1",
+      "question": "Where should the king go after g4+?",
+      "explanation": "Black has already accepted the rook sacrifice. Capturing the checking pawn is tempting, but the winning route supports the f2 pawn instead.",
+      "evidence": {
+        "timestamp_s": 123
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "defense_king_escort",
+      "start": "start",
+      "title": "Keep the pawn as a barrier and escort f2",
+      "san": [
+        "Kf4",
+        "Kg2",
+        "Ke3",
+        "Kf1",
+        "Kf3",
+        "g5",
+        "e3",
+        "g6",
+        "e2#"
+      ],
+      "commentary": [
+        "Begin after ...Kxf5 and g4+. Black must answer the pawn check without losing the advanced f-pawn.",
+        "Kf4 is the only winning reply in the exact root. Black leaves g4 alone and heads for e3.",
+        "Kg2 approaches f2, trying to blockade and capture the advanced pawn.",
+        "Ke3 protects f2 directly and threatens ...Ke2, supporting promotion.",
+        "Kf1 blocks the promotion square. This selected defense leaves White’s king trapped in front of the pawn.",
+        "Kf3 protects e2 and g2. The king and f2 pawn now deny White’s king every legal step.",
+        "g5 is a waiting move. The pawn advances, but White’s king still cannot move.",
+        "e3 prepares ...e2 with check. Black’s king protects the square on which that pawn will land.",
+        "g6 is another selected waiting move. The remote knight on a8 cannot interrupt the immediate threat.",
+        "e2# checks f1 with the pawn. Kf3 protects e2 and g2; the f2 pawn controls e1 and g1, completing a king-and-pawn mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "e2# checks f1 with the pawn. Kf3 protects e2 and g2; the f2 pawn controls e1 and g1, completing a king-and-pawn mate.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "N7/8/6P1/8/8/5k2/4pp2/5K2 w - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "defense_pawn_greed",
+      "start": "start",
+      "title": "Capture the checking pawn",
+      "san": [
+        "Kxg4",
+        "Kg2"
+      ],
+      "commentary": [
+        "Compare the natural capture with the king’s purposeful central route.",
+        "Kxg4 removes the pawn but gives up the win. The king is too far away to protect f2 in time.",
+        "Kg2 reaches the blockade while the king cannot immediately escort f2. This exact knight-and-pawn position is drawn with best play."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kg2 reaches the blockade while the king cannot immediately escort f2. This exact knight-and-pawn position is drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "N7/8/8/8/4p1k1/8/5pK1/8 b - - 1 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "defense_retreat",
+      "start": "start",
+      "title": "Retreat from the checking pawn",
+      "san": [
+        "Ke5",
+        "Kg2"
+      ],
+      "commentary": [
+        "A retreat also answers the check, but does not improve the passer’s support.",
+        "Ke5 abandons the winning route to e3. The tablebase evaluates the position as drawn.",
+        "Kg2 uses the lost tempo to approach f2. This independently selected reply illustrates the same blockade resource."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kg2 uses the lost tempo to approach f2. This independently selected reply illustrates the same blockade resource.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "N7/8/8/4k3/4p1P1/8/5pK1/8 b - - 2 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is the g4 pawn more useful alive?",
+      "answer": "Taking it sends Black’s king away from the passer. Kf4 instead reaches e3 in time to defend f2 before White can remove it."
+    },
+    {
+      "node": "start",
+      "prompt": "Why can a pawn deliver mate without promoting?",
+      "answer": "The king on f3 protects e2 and g2, while the f2 pawn takes e1 and g1. Advancing the e-pawn to e2 checks the trapped king on f1."
+    }
+  ],
+  "defaultBranch": "defense_king_escort",
+  "practiceBranch": "defense_king_escort",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after White’s rook sacrifice has been accepted and g4+ is on the board, at 123 seconds. Earlier rook checks and the sacrifice remain source context. The selected king escort and two drawing deviations are checked here.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

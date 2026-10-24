@@ -1,0 +1,151 @@
+{
+  "batch_id": "2026-10-23-09",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three verified selected-line studies: ten branches and 48 distinct checked positions; preserve exact pawn-race and underpromotion outcomes, including a source draw-versus-loss correction.",
+  "reviews": {
+    "P51ckne8WhY": {
+      "result": "verified_selected_lines",
+      "notes": "Source title is \u201c\u2026\u201d. Descriptive study title Two Pawns Against a Rook begins after ...Ke8 at 141 seconds (five pieces). Three checked branches compare Kg8 shouldering, losing g7 ...Kf7, and drawing Kh8. Corrected the source\u2019s draw claim after g7 ...Kf7: it loses because Kf7 protects g8. Promotion/capture completion is explicitly independent. Earlier rook sacrifice remains context.",
+      "source_images": [
+        {
+          "file": "P51ckne8WhY/montage_accepted.jpg",
+          "sha256": "cec3c514933b0e3250f7edf786364ed99f864b1d3d739ec1d9aae55e2c4fa913"
+        },
+        {
+          "file": "P51ckne8WhY/images/image_00001.jpg",
+          "sha256": "d1b7c19d5bd431d172dc2a16a46acb1671f645c0bebd04257ae208d7f3ed7c79"
+        },
+        {
+          "file": "P51ckne8WhY/images/image_00002.jpg",
+          "sha256": "1d9f9c7d3ff29ae4ea1c1a4a65f31d3733db366a94dd4cb418fbed0622d5d8c9"
+        },
+        {
+          "file": "P51ckne8WhY/images/image_00044.jpg",
+          "sha256": "6fa182e4e614a2b5c884de79a495035f8bb0e2c68b17d4bfe970cf2c3a4c5448"
+        },
+        {
+          "file": "P51ckne8WhY/images/image_00047.jpg",
+          "sha256": "cf5b074a7a1fad437c6a3c167717b60c45ac575965c002ea6676f712022ea73e"
+        },
+        {
+          "file": "P51ckne8WhY/images/image_00051.jpg",
+          "sha256": "0bce45d8eef6a6039a652cd5bcfecf3f287526942f12fa55f8f0fb5c1a584b9e"
+        },
+        {
+          "file": "P51ckne8WhY/images/image_00053.jpg",
+          "sha256": "bc52c8cbb33e93c3e174381702efc03cf2c3b61ed623149a77222d70d6daceff"
+        },
+        {
+          "file": "P51ckne8WhY/images/image_00056.jpg",
+          "sha256": "6ed58d431e1c464e008618467c507fc40ad764f69745e7c4d2edc46e371192e2"
+        },
+        {
+          "file": "P51ckne8WhY/images/image_00059.jpg",
+          "sha256": "104ac040fe7e980ffd35329832473bf3c24a15044954d10e26d3279b0df6bf63"
+        },
+        {
+          "file": "P51ckne8WhY/images/image_00062.jpg",
+          "sha256": "81d176495da711d15c524e966f9fffe4482992275edfb7d7ff7219df68abc827"
+        },
+        {
+          "file": "P51ckne8WhY/images/image_00065.jpg",
+          "sha256": "185d354488db6b78fc81bc949a0e329a28a4d98f57e60a0082c9b457f3d00efc"
+        }
+      ]
+    },
+    "Ml6F1l_2AZU": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed six-piece phase after ...h3 at 124 seconds. Three checked branches include checking before rook sacrifice, exact winning pawn blockade, actual stalemate after Rxg3 h2 and independent quiet a5, and losing Ke2 after ...Kxg3. Earlier seven-piece moves remain context.",
+      "source_images": [
+        {
+          "file": "Ml6F1l_2AZU/montage_accepted.jpg",
+          "sha256": "4690fed386f7938f215ea1f2470bccd6670ab5bfcfeef39103a932b42024686e"
+        },
+        {
+          "file": "Ml6F1l_2AZU/images/image_00001.jpg",
+          "sha256": "25f0acce43cd32e521572c427f637461c40a492a98778b1ec276a9613d790084"
+        },
+        {
+          "file": "Ml6F1l_2AZU/images/image_00034.jpg",
+          "sha256": "54df3dcc9c7129305cae6076e72acd41a5589e2f863895f92c68537a94c47ac0"
+        },
+        {
+          "file": "Ml6F1l_2AZU/images/image_00036.jpg",
+          "sha256": "256a491167bd8b13db7102ce80a2b818a5db76e13e3453f0c2255d074f391316"
+        },
+        {
+          "file": "Ml6F1l_2AZU/images/image_00037.jpg",
+          "sha256": "92762ded2e9b719ff0f1274dff8d21dace76bf5ac7d394d6c33c7f1c3e3bc6cc"
+        },
+        {
+          "file": "Ml6F1l_2AZU/images/image_00039.jpg",
+          "sha256": "a9e346d8fe1d57508539deb97484e24d2df456af9d0ed89ab47a4e50d41e4aa9"
+        },
+        {
+          "file": "Ml6F1l_2AZU/images/image_00041.jpg",
+          "sha256": "3bfabc6c70207fc4deca7f6f377104d29b206596bd6d13a974c5d598ec510b9f"
+        },
+        {
+          "file": "Ml6F1l_2AZU/images/image_00044.jpg",
+          "sha256": "5d78efa50b8a8e7ab49336fd6727492a90db94701bb06e3ce6eb53736f23ff3b"
+        },
+        {
+          "file": "Ml6F1l_2AZU/images/image_00046.jpg",
+          "sha256": "d4cca2745b9d33126fc282a4501a669946586fcbe7ea13bad8535027ab14b6aa"
+        },
+        {
+          "file": "Ml6F1l_2AZU/images/image_00049.jpg",
+          "sha256": "d8a845d4b4c673c31d6736874abe77bdf8abbafbe8a462064781cc2d58d90d8a"
+        }
+      ]
+    },
+    "4VHe805f7Bw": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed complete four-piece board and selected king walk through repeated side checks. Four checked branches include rook underpromotion, actual queen stalemate, and two early drawing king routes. Verified correct mating threats: c8=R threatens Ra8, ...Ra4 blocks the a-file, and Kb3 attacks the rook while threatening Rc1 mate.",
+      "source_images": [
+        {
+          "file": "4VHe805f7Bw/montage_accepted.jpg",
+          "sha256": "1a3a7cf479d673532eb4078c1df2b7049044063ed9d15975caa5d821bdb32021"
+        },
+        {
+          "file": "4VHe805f7Bw/images/image_00001.jpg",
+          "sha256": "149464c7513b9cf6240e7816bac7bb485ac1de95f627946bb383c8257a049d13"
+        },
+        {
+          "file": "4VHe805f7Bw/images/image_00021.jpg",
+          "sha256": "89eaaa3658dfc041ae5a5ab373e2731c3251eb3d0fd6fbaf4b9b39aa85ee81e0"
+        },
+        {
+          "file": "4VHe805f7Bw/images/image_00027.jpg",
+          "sha256": "f0a97caa27322b19a5b45f552e5d00d1119205a5ec44cde8f43ce572ab4392b9"
+        },
+        {
+          "file": "4VHe805f7Bw/images/image_00028.jpg",
+          "sha256": "9de1ec31929fc7d6150268d2e4bd5b7e0bbb0189f03380a1cb7dff17a9bdc2ad"
+        },
+        {
+          "file": "4VHe805f7Bw/images/image_00035.jpg",
+          "sha256": "d710867b9e975e149487a99108fc6e299adce9b69ce5dcce7461879cdf797ff0"
+        },
+        {
+          "file": "4VHe805f7Bw/images/image_00041.jpg",
+          "sha256": "6f9c52f1a688d997562987acacce916cdab2f0f4fbda81ee953aeae6081e0086"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 48,
+    "selected_branches": 10,
+    "tests": "97 tests passed across 16 files",
+    "production_build": "passed",
+    "ui_review": "Inspected the rook-underpromotion line through Kb3, board pieces, move controls, exact outcome and the corrected Ra8/Rc1 mating-threat explanation.",
+    "screenshot": "docs/screenshots/endgame-stories-batch-09.png",
+    "queue_counts": {
+      "verified_selected_lines": 28,
+      "awaiting_reconstruction": 195,
+      "needs_information": 23,
+      "not_applicable": 2
+    }
+  }
+}

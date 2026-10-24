@@ -1,0 +1,170 @@
+{
+  "video_id": "WDUlvMgXGjA",
+  "title": "The Famous Lucena",
+  "summary": "Prepare a fourth-rank rook bridge, drive the king away and shelter your king from checks.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2K1k3/2PR4/8/8/8/8/8/2r5 w - - 0 1",
+      "question": "How can the king make room for c7 to promote?",
+      "explanation": "The white king blocks its own pawn, and the defending rook can check from behind. A fourth-rank rook will later interpose and end those checks.",
+      "evidence": {
+        "timestamp_s": 85
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "last_check",
+      "fen": "8/2P2k2/8/2K5/4R3/8/8/2r5 w - - 12 7",
+      "question": "What was the purpose of the rook on e4?",
+      "explanation": "White has drawn the checking rook to c1 and reached c5. The prepared rook can now block the file on c4 while protected by the king.",
+      "evidence": {
+        "timestamp_s": 142
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "bridge_built",
+      "fen": "8/2P2k2/8/2K5/2R5/8/8/2r5 b - - 13 7",
+      "question": "Can exchanging the rooks save Black?",
+      "explanation": "The c4 bridge is protected by Kc5. If Black exchanges rooks, the white king recaptures and the c-pawn promotes beyond the black king’s reach.",
+      "evidence": {
+        "timestamp_s": 150
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "lucena_build_bridge",
+      "start": "start",
+      "title": "Prepare the bridge before walking the king",
+      "san": [
+        "Rd4",
+        "Ke7",
+        "Re4+",
+        "Kf7",
+        "Kd7",
+        "Rd1+",
+        "Kc6",
+        "Rc1+",
+        "Kd6",
+        "Rd1+",
+        "Kc5",
+        "Rc1+",
+        "Rc4"
+      ],
+      "commentary": [
+        "Begin from the source’s five-piece Lucena diagram after ...Rc1. The earlier two-pawn game sequence remains context.",
+        "Rd4 puts the rook on the fourth rank in advance, preparing a later shelter from file checks.",
+        "Ke7 is the source’s selected waiting king move.",
+        "Re4+ checks along the e-file, pushing the defending king farther from c7.",
+        "Kf7 moves away. The king is now far enough that a later rook trade cannot stop the pawn.",
+        "Kd7 clears c8 so the pawn can promote, but remains ready to answer checks.",
+        "Rd1+ starts checking from behind along the d-file.",
+        "Kc6 stays near the pawn and heads toward the bridge square.",
+        "Rc1+ switches files to follow the king.",
+        "Kd6 zigzags away from the check rather than abandoning the prepared fourth rank.",
+        "Rd1+ follows onto the d-file again.",
+        "Kc5 reaches a square where the king will protect a rook interposition on c4.",
+        "Rc1+ is the last illustrated check before White builds the bridge.",
+        "Rc4 blocks the check and is protected by Kc5. The selected exact position is winning; the source reports resignation here rather than showing a forced mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rc4 blocks the check and is protected by Kc5. The selected exact position is winning; the source reports resignation here rather than showing a forced mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/2P2k2/8/2K5/2R5/8/8/2r5 b - - 13 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "lucena_exchange_bridge",
+      "start": "bridge_built",
+      "title": "Exchange the rook that forms the bridge",
+      "san": [
+        "Rxc4+",
+        "Kxc4",
+        "Ke6",
+        "c8=Q+"
+      ],
+      "commentary": [
+        "This independently completed representative line tests the source’s claim that a rook trade does not save Black.",
+        "Rxc4+ removes the bridge rook and checks the white king.",
+        "Kxc4 recaptures, reaching a king-and-pawn ending with Black too far from c8.",
+        "Ke6 is an independent representative king approach, still outside the pawn’s promotion square.",
+        "c8=Q+ promotes with check. The exact queen ending is winning for White; further mating technique is not encoded."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "c8=Q+ promotes with check. The exact queen ending is winning for White; further mating technique is not encoded.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2Q5/8/4k3/8/2K5/8/8/8 b - - 0 9",
+      "outcome": "loss"
+    },
+    {
+      "id": "lucena_abandon_bridge",
+      "start": "last_check",
+      "title": "Move away instead of using the bridge",
+      "san": [
+        "Kb5",
+        "Rxc7"
+      ],
+      "commentary": [
+        "Compare an independent king retreat at the moment the bridge is ready.",
+        "Kb5 abandons the forced win by leaving c7 unprotected.",
+        "Rxc7 removes the pawn. The resulting exact rook-versus-rook ending is drawn; the prepared rook must be used at the right moment."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxc7 removes the pawn. The resulting exact rook-versus-rook ending is drawn; the prepared rook must be used at the right moment.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/2r2k2/8/1K6/4R3/8/8/8 w - - 0 8",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "last_check",
+      "prompt": "Why did the rook go to the fourth rank so early?",
+      "answer": "The king needs a protected interposition once it reaches c5. Rc4 ends the checking sequence without giving up the pawn."
+    },
+    {
+      "node": "bridge_built",
+      "prompt": "Why does trading rooks lose for Black?",
+      "answer": "Kxc4 leaves the c7 pawn ready to promote, while the black king on f7 cannot reach c8 in time."
+    }
+  ],
+  "defaultBranch": "lucena_build_bridge",
+  "practiceBranch": "lucena_build_bridge",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin at 85 seconds in the source’s stable five-piece Lucena demonstration after ...Rc1. This board and the selected bridge-building king route are visually reconstructed and tablebase-checked. The preceding six-piece game and intervening demonstration variations remain source context. The rook-trade completion and failed Kb5 comparison are independent representative lines.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

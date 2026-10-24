@@ -1,0 +1,217 @@
+{
+  "video_id": "7Yu93iFg2iE",
+  "title": "Majestic: A Bishop Waiting Move Against a Queen",
+  "summary": "Keep the queen tied to the king\u2019s cage, then answer each queen defense with a pawn check, bishop mate or exact winning capture.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/5B2/8/pp6/k7/P7/KPq5/8 w - - 0 1",
+      "question": "How can White pass the move without losing the mating threats?",
+      "explanation": "Be6 keeps the bishop on the route to b3 while preparing Bd7 if Black pushes b4. The queen must keep preventing mate, but its legal moves cannot preserve the defense.",
+      "evidence": {
+        "timestamp_s": 114
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/5B2/8/pp6/k7/P7/KPq5/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "majestic_queen_interference",
+      "start": "start",
+      "title": "Source defense: block the bishop with the queen",
+      "san": [
+        "Be6",
+        "Qc4+",
+        "b3+",
+        "Qxb3+",
+        "Bxb3#"
+      ],
+      "commentary": [
+        "Begin after ...Qc2, with White Ka2/Bf7/a3/b2 and Black Ka4/Qc2/a5/b5 all retained. The earlier queen sacrifice is outside this proof.",
+        "Be6 preserves the diagonal to b3 and prepares a checking answer to ...b4. It is the source\u2019s waiting move; the proof covers every legal Black reply.",
+        "Qc4+ checks Ka2 along c4\u2013b3\u2013a2 while blocking the bishop\u2019s route to b3. White must answer the check, and direct Bb3 is unavailable.",
+        "b3+ interposes against the queen check and checks Ka4 at the same time. The pawn is protected by Ka2; Black cannot interpose against its adjacent pawn check.",
+        "Qxb3+ is the only legal reply. It captures the checking pawn and checks Ka2 again, but reaches an exact seven-piece White win because the bishop can capture the queen.",
+        "Bxb3# captures the queen with check. Ka2 protects b3, a3 covers b4, and Black\u2019s a5/b5 pawns occupy the remaining escape squares."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxb3# captures the queen with check. Ka2 protects b3, a3 covers b4, and Black\u2019s a5/b5 pawns occupy the remaining escape squares.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/pp6/k7/PB6/K7/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_pawn_release",
+      "start": "start",
+      "title": "Source defense: release the b-pawn",
+      "san": [
+        "Be6",
+        "b4",
+        "Bd7+",
+        "Qc6",
+        "Bxc6#"
+      ],
+      "commentary": [
+        "Compare Black\u2019s only pawn move in the complete later diagram.",
+        "Be6 prepares Bd7 with check if the b5 pawn leaves its blocking square.",
+        "b4 changes the pawn cage, but White\u2019s king on a2 still controls b3.",
+        "Bd7+ checks along d7\u2013c6\u2013b5\u2013a4. The king cannot escape through b3 or b4, and a5 remains occupied.",
+        "Qc6 is the sole legal block. The queen interposes on the checking diagonal.",
+        "Bxc6# removes the blocker. The bishop checks a4, White\u2019s a3 pawn protects against Kxb4, and the black a5 pawn and white king close the other flights."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxc6# removes the blocker. The bishop checks a4, White\u2019s a3 pawn protects against Kxb4, and the black a5 pawn and white king close the other flights.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_queen_check",
+      "start": "start",
+      "title": "Independent defense: give check on b1",
+      "san": [
+        "Be6",
+        "Qb1+",
+        "Kxb1"
+      ],
+      "commentary": [
+        "Test the queen\u2019s legal checking resource, which is omitted from the source\u2019s concluding two branches.",
+        "Be6 leaves Black the choice of queen checks as well as quiet defenses.",
+        "Qb1+ checks Ka2 along the adjacent diagonal. The queen on b1 is not protected by Ka4.",
+        "Kxb1 legally captures the queen and reaches an exact seven-piece White win. This stops at the checked ending rather than assuming a later conversion."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxb1 legally captures the queen and reaches an exact seven-piece White win. This stops at the checked ending rather than assuming a later conversion.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/4B3/pp6/k7/P7/1P6/1K6 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_queen_d3",
+      "start": "start",
+      "title": "Independent defense: guard b3 from d3",
+      "san": [
+        "Be6",
+        "Qd3",
+        "b3+",
+        "Qxb3+",
+        "Bxb3#"
+      ],
+      "commentary": [
+        "Test another queen placement that prevents an immediate bishop mate on b3.",
+        "Be6 maintains both the bishop route and the pawn-check option.",
+        "Qd3 guards b3 across the third rank. White can still use the pawn check to force the queen onto the bishop\u2019s diagonal.",
+        "b3+ checks with the protected pawn. The black king has no legal flight.",
+        "Qxb3 is forced and reaches an exact supported White win.",
+        "Bxb3# completes the same protected bishop mate, this time after a different queen defense."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Bxb3# completes the same protected bishop mate, this time after a different queen defense.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/pp6/k7/PB6/K7/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_queen_abandons_guard",
+      "start": "start",
+      "title": "Independent defense: move the queen far away",
+      "san": [
+        "Be6",
+        "Qh7",
+        "Bb3#"
+      ],
+      "commentary": [
+        "Test a queen move that abandons the b3 defense rather than offering a capture.",
+        "Be6 keeps b3 available along e6\u2013d5\u2013c4\u2013b3.",
+        "Qh7 is legal, but neither controls b3 nor gives check to the white king.",
+        "Bb3# gives the protected adjacent bishop check. No distant queen interposition is possible against that check."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Bb3# gives the protected adjacent bishop check. No distant queen interposition is possible against that check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/7q/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why use b3 against Qc4 rather than move the bishop directly?",
+      "answer": "Qc4 blocks the bishop\u2019s diagonal. The pawn check forces Qxb3, putting the queen back on a square the bishop can capture."
+    },
+    {
+      "node": "start",
+      "prompt": "Can Black try a queen check instead?",
+      "answer": "Yes. Qb1+ is legal, but Kxb1 captures the undefended queen and leaves an exact winning seven-piece ending."
+    }
+  ],
+  "defaultBranch": "majestic_queen_interference",
+  "practiceBranch": "majestic_queen_interference",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Qc2 at 114 seconds in the complete eight-piece later diagram. Be6 is certified against every legal Black reply: actual mates or legal captures reaching exact supported seven-piece wins. The source Qc4/b3+/Qxb3/Bxb3 mate and b4/Bd7+/Qc6/Bxc6 mate are encoded; three queen alternatives are independently labeled. Earlier Qd1 sacrifice, queen-capture and Ka2/Qa1 stalemate comparisons remain unverified context outside this selected root. Captures retain the remaining pawns; no material-only or larger-engine estimate substitutes for proof.",
+  "verification_scope": "Begin after ...Qc2 at 114 seconds in the complete eight-piece later diagram. Be6 is certified against every legal Black reply: actual mates or legal captures reaching exact supported seven-piece wins. The source Qc4/b3+/Qxb3/Bxb3 mate and b4/Bd7+/Qc6/Bxc6 mate are encoded; three queen alternatives are independently labeled. Earlier Qd1 sacrifice, queen-capture and Ka2/Qa1 stalemate comparisons remain unverified context outside this selected root. Captures retain the remaining pawns; no material-only or larger-engine estimate substitutes for proof.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 7,
+    "moves": {
+      "2q5/8/4B3/pp6/k7/P7/KP6/8 w - - 2 2": "Bxc8",
+      "8/7q/4B3/pp6/k7/P7/KP6/8 w - - 2 2": "Bb3#",
+      "8/2q5/4B3/pp6/k7/P7/KP6/8 w - - 2 2": "Bb3#",
+      "8/8/4B1q1/pp6/k7/P7/KP6/8 w - - 2 2": "Bb3#",
+      "8/8/2q1B3/pp6/k7/P7/KP6/8 w - - 2 2": "Bb3#",
+      "8/8/4B3/pp3q2/k7/P7/KP6/8 w - - 2 2": "Bxf5",
+      "8/8/4B3/ppq5/k7/P7/KP6/8 w - - 2 2": "Bb3#",
+      "8/8/4B3/pp6/k3q3/P7/KP6/8 w - - 2 2": "Bb3#",
+      "8/8/4B3/pp6/k1q5/P7/KP6/8 w - - 2 2": "b3+",
+      "8/8/4B3/pp6/k7/P2q4/KP6/8 w - - 2 2": "b3+",
+      "8/8/4B3/pp6/k7/P1q5/KP6/8 w - - 2 2": "bxc3",
+      "8/8/4B3/pp6/k7/Pq6/KP6/8 w - - 2 2": "Bxb3#",
+      "8/8/4B3/pp6/k7/P7/KP5q/8 w - - 2 2": "Bb3#",
+      "8/8/4B3/pp6/k7/P7/KP4q1/8 w - - 2 2": "Bb3#",
+      "8/8/4B3/pp6/k7/P7/KP3q2/8 w - - 2 2": "Bb3#",
+      "8/8/4B3/pp6/k7/P7/KP2q3/8 w - - 2 2": "Bb3#",
+      "8/8/4B3/pp6/k7/P7/KP1q4/8 w - - 2 2": "Bb3#",
+      "8/8/4B3/pp6/k7/P7/KP6/3q4 w - - 2 2": "b3+",
+      "8/8/4B3/pp6/k7/P7/KP6/2q5 w - - 2 2": "Bb3#",
+      "8/8/4B3/pp6/k7/P7/KP6/1q6 w - - 2 2": "Kxb1",
+      "8/3B4/2q5/p7/kp6/P7/KP6/8 w - - 2 3": "Bxc6#",
+      "8/8/4B3/p7/kp6/P7/KPq5/8 w - - 0 2": "Bd7+",
+      "8/5B2/8/pp6/k7/P7/KPq5/8 w - - 0 1": "Be6"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

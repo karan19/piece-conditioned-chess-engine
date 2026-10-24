@@ -1,0 +1,308 @@
+{
+  "batch_id": "2026-10-23-59",
+  "reviewed_on": "2026-10-24",
+  "scope": "Three source entries sharing one complete eight-piece rook-zugzwang composition; finite strategy proof enumerates every legal Black defense without discarding pawns.",
+  "reviews": {
+    "upofbg74NtQ": {
+      "result": "verified_selected_lines",
+      "supersedes_batch": "2026-10-23-14",
+      "notes": "Late twenty source diagrams and native complete ...Rxh5 position at 51 seconds reviewed. All eight pieces preserved. A finite legal strategy proves h4 against every one of eight Black replies: six sideways rook moves allow winning captures, ...Rxh4 gives an exact seven-piece White win, and ...Ke8 allows actual eight-piece Rc8 mate. Three source/independent branches show king retreat, ...Re5+ and ...Rb5. This composition repeats the other two batch sources. Earlier nine-piece setup remains outside proof.",
+      "source_images": [
+        {
+          "file": "upofbg74NtQ/images/image_00010.jpg",
+          "sha256": "51937be4d017af83f9cb088d28ebe4a6bc27d2571f7b2cf44191dc21703863e2"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00011.jpg",
+          "sha256": "584871c8f711bb450aaf3daa7eb27ab455117e24e9905ee078704d77e635d82d"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00012.jpg",
+          "sha256": "061cfb94f971df0d105d43bb5c8263bae130f14c55d9569d9c6fbf2eaecf6c5b"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00013.jpg",
+          "sha256": "ee4ce463e93d42ff51132e06696ebdd15e39c5fe0fde89a79740eb8920385282"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00014.jpg",
+          "sha256": "bd44d86852518fb35fb21c384126479de774a4a4e921662e005106c25d787403"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00015.jpg",
+          "sha256": "5f86e651e89da67b5767294e69ab828fc5780d549aa5437a51032768278d0f75"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00016.jpg",
+          "sha256": "9069d4995215b8aaf335225c095109ff09f6eadb2d42be488b03ce66e9e95c1f"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00017.jpg",
+          "sha256": "1f2cf92c7bcedd0ad5eafd0de5ef521c85beff40aa61202cdb99682a9fec13ed"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00018.jpg",
+          "sha256": "16d215bbac13fbfb114b10f26d100879e93b529163229ff38efd9d37d9bab101"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00019.jpg",
+          "sha256": "f263cc2ee05fa11ff2d0ff3ac8e3b662174595b2caf1374001eeb7aeb278a9aa"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00020.jpg",
+          "sha256": "a01a06440eafb778ae3f0330a1bfe459423b06c5fc88f406fb9b572efa2b29b4"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00021.jpg",
+          "sha256": "e4b8d4b5fe23ce02db4498ced54b7164c4886b3d258aedefffe062a54b3dede8"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00022.jpg",
+          "sha256": "d6ba3ca780132c9bd027ad80b9bd7928d96711d9d9ba540a04cc8fcb918a2334"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00023.jpg",
+          "sha256": "63d64dc60dd4411b8b11dff2d22fe524f37fd4e1c48b28ed7239f624f570efb3"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00024.jpg",
+          "sha256": "2a5d01b8b22651071b794d290a6a45e3eb5f2a912f72c71ad89ce046f1896227"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00025.jpg",
+          "sha256": "705e65c64d1b0557cd96d6c2623ab90b8cfe01c977821725367e83cd120f8f21"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00026.jpg",
+          "sha256": "aff034fce83e3bd8bf9a3f810d6202a77c11ef0fc80ca19b2209e0427a6e7415"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00027.jpg",
+          "sha256": "47d7db087b14044d4c63ac5eadb15bf92e140a3c88e2005afb8990ecdf5368be"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00028.jpg",
+          "sha256": "6393801d6cfcb78d2b2f01d78207c6c069d6baef14474dc43cada42ccc3c148c"
+        },
+        {
+          "file": "upofbg74NtQ/images/image_00029.jpg",
+          "sha256": "dd52908fffd847b7f265114351f81b1ee5d658f469461fd5c945f56e6ecc66e6"
+        }
+      ],
+      "reconstruction": {
+        "file": "scripts/curated-studies/upofbg74NtQ.json",
+        "sha256": "63e000ba560450871e9ededf468201df3d2df789bbf200f0254da0d6e53d7bbe"
+      }
+    },
+    "jek48Yfug-4": {
+      "result": "verified_selected_lines",
+      "supersedes_batch": "2026-10-23-40",
+      "notes": "Late twenty source diagrams and native complete ...Rxh5 position at 51 seconds reviewed. All eight pieces preserved. A finite legal strategy proves h4 against every one of eight Black replies: six sideways rook moves allow winning captures, ...Rxh4 gives an exact seven-piece White win, and ...Ke8 allows actual eight-piece Rc8 mate. Three source/independent branches show king retreat, ...Re5+ and ...Rb5. This composition repeats the other two batch sources. Earlier nine-piece setup remains outside proof.",
+      "source_images": [
+        {
+          "file": "jek48Yfug-4/images/image_00002.jpg",
+          "sha256": "94dee5e55eb312e03d4de748b1f51f7f2b83909e57ea670ea9027820c2e10a0e"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00003.jpg",
+          "sha256": "c8584cc89bdce5dfe65367cd4576fae020b8cc821eb10350dc0c0048624eb05d"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00004.jpg",
+          "sha256": "ede2de47ae8e2a33ed7898fe67ac2fc3ce30399065b1e11eda7ef6ea89ee37c4"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00005.jpg",
+          "sha256": "93f9a6b679d4524209c0a7343a38522e62566e65a2daa350a2d5076b5350f28e"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00006.jpg",
+          "sha256": "a0dc952bda884e15aae56810761aa755b68eddc8e6c60516282ea90fe1daefb9"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00007.jpg",
+          "sha256": "9b87c75f59dff05b3208d151bed01f1a1f449b39d5cef285476325dbec89abfc"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00008.jpg",
+          "sha256": "8db0a261e8e81af9deca02b337eb331aed10624136a98d648617d8339c9c3e90"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00009.jpg",
+          "sha256": "51a2087536c5735966108805dee9cff973b1c4dc056d6d14d80ac81c47a146e7"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00010.jpg",
+          "sha256": "1c8e596e1d3cdc3ee3cdea440465a1953a497e95923a0168a2d123e20500efad"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00011.jpg",
+          "sha256": "e8c592bcdee107e738b123e90b1f755cd457ff5057966d7d62a961d28d7cbf56"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00012.jpg",
+          "sha256": "20f2eb1e1f470794b6c35337eb363a5419bd1c9e7cb713a49f2c1c57e7012c00"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00013.jpg",
+          "sha256": "1f13b46ee3baf5791e794dcb11efac0b995d98cef08704508a7108dede11805d"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00014.jpg",
+          "sha256": "9cfda7a8e9690c1084c34d9443c32f14faebeb303033d12abd80d5d2878e56a1"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00015.jpg",
+          "sha256": "7d061366e8872c31648dc078fca6c029c345379cdbce961cb4effe91ef1787d6"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00016.jpg",
+          "sha256": "4499a8f14a62c44d8c89b4a2f41d4d8a5504ff1ebb53d5bf3057ee4d9ae14e2f"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00017.jpg",
+          "sha256": "411410d901034f59496c50fb616c0bd48056944797eb78e7e7c2540ab0720a9a"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00018.jpg",
+          "sha256": "5660258be1842b88ad5d7f2788e372aba28ee5b25fcb47faf3ae30012baaf648"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00019.jpg",
+          "sha256": "9d8c34c6955477e6d0574681def1a738e5cde0d02037ce71d2176b87ef01d29c"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00020.jpg",
+          "sha256": "f50578080c46dc815396f80136cc976b59083f98c375bfc9ccdb1401f749ae9c"
+        },
+        {
+          "file": "jek48Yfug-4/images/image_00021.jpg",
+          "sha256": "cd78d4a1e31f7e09dc724a79e66866ed7aa4c0b3dc1fda535ec8531695956b01"
+        }
+      ],
+      "reconstruction": {
+        "file": "scripts/curated-studies/jek48Yfug-4.json",
+        "sha256": "17a4a6d6ec65ed07f4c1836b1eebf65dc3cdb69774c5f7a947f68d27f02551f7"
+      }
+    },
+    "XGrko3A8kjs": {
+      "result": "verified_selected_lines",
+      "supersedes_batch": "2026-10-23-04",
+      "notes": "Late twenty source diagrams and native complete ...Rxh5 position at 51 seconds reviewed. All eight pieces preserved. A finite legal strategy proves h4 against every one of eight Black replies: six sideways rook moves allow winning captures, ...Rxh4 gives an exact seven-piece White win, and ...Ke8 allows actual eight-piece Rc8 mate. Three source/independent branches show king retreat, ...Re5+ and ...Rb5. This composition repeats the other two batch sources. Earlier nine-piece setup remains outside proof.",
+      "source_images": [
+        {
+          "file": "XGrko3A8kjs/images/image_00010.jpg",
+          "sha256": "a1718576c0d7c48fa90cad05c789cfb702f11755cf425e933ef010b0d87aac3f"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00011.jpg",
+          "sha256": "4aff5785dc0695bdf352add1dab63ca6dcc00832ffc4b888d50982b318cfb53c"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00012.jpg",
+          "sha256": "d7d5220fd8bea3b3974dd114469b4639d092fbe7a5b63630c8c001454bd879fe"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00013.jpg",
+          "sha256": "556b489762750c217b802fe1c31582001bbcd6a29476bf1ff099890211c4b0c8"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00014.jpg",
+          "sha256": "ea62131b247d02f04b0c856a76cf241a1a48ddab13f23c29d629a23bb82669fb"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00015.jpg",
+          "sha256": "848a07ea97e9d51848b8fb2740b337a7e6c6757b1c61062ff36dd3f60500ac18"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00016.jpg",
+          "sha256": "fcff35b47b2e51006db17a09205d25900acde2fa961a9e044a9626430f4150bb"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00017.jpg",
+          "sha256": "9b2fbe0946cbf66eb08ca6f8e21e05534101836e91e5363ff8fade26f3884591"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00018.jpg",
+          "sha256": "d6163b675d771f0aa665397f7e50be69785a776dcb27d9a6ed40588df4769452"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00019.jpg",
+          "sha256": "dcc0c67ed9c538b32492c0ba219d8b15b44fc5b3a3c868bb834216603c348f33"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00020.jpg",
+          "sha256": "cece5d715976d2fd566a91d45e74e87083831f5dda99ea8c5362b651f7bd131e"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00021.jpg",
+          "sha256": "22b3a65c5eda026ec31c41b4c63560ebd04c4019b62363e7ad8cdb336a243043"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00022.jpg",
+          "sha256": "d577561efb81ad568da5688214c292c30e023b64c503b2109ff80d0ecc789dac"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00023.jpg",
+          "sha256": "ae4dc0dce2546379aa6826882a9462a1246c1c2cf966d2bb5b03cfdc5b7dc2c2"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00024.jpg",
+          "sha256": "f72b2f0af5fb5b1605c59675b8c67f91887f1625e1331e9705f40d4a04dccd5f"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00025.jpg",
+          "sha256": "b6c82071dde25f09e733ab67732ed716702397754f3c055558b6dac7f7345117"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00026.jpg",
+          "sha256": "00c8b8de9e755526a3c99f76f70e252d249b267bcfb343504d335dd1a7c5ca8d"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00027.jpg",
+          "sha256": "a1f5f078b08342294f0a565b705c7b0ee0413d2cf61438b7367cc5db6531d6db"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00028.jpg",
+          "sha256": "218217f28b7d6dd55019dcebbc77f5444b0c341b0b2da163659c26641bb65e7a"
+        },
+        {
+          "file": "XGrko3A8kjs/images/image_00029.jpg",
+          "sha256": "c61714fb5934cd8739b54f20b670c6713ec6ca8e3ecd41254fda6761101e38b4"
+        }
+      ],
+      "reconstruction": {
+        "file": "scripts/curated-studies/XGrko3A8kjs.json",
+        "sha256": "36bb0a228d4cd49cab77d8d8ac23f03d2002a0f9c690499edd1676e0f9968b12"
+      }
+    }
+  },
+  "validation": {
+    "local_only": true,
+    "selected_branches": 9,
+    "encoded_intermediate_steps": 27,
+    "web_tests": "155 passed across 16 files, including independent Chess.js replay of every certificate defense",
+    "verifier_tests": "8 passed: false-mate and winning-witness checks; complete-defense enumeration; draw/mismatched-leaf, missing-response and cutoff rejection; repetition/fifty-move claims preserved",
+    "importer_tests": "4 passed, including finite proof outcome distinct from direct tablebase response",
+    "production_build": "passed in 5.06s; existing large-chunk advisory",
+    "source_hash_audit": "All 60 reviewed late image hashes and three study hashes match; curated/draft lessons and evidence are identical.",
+    "study_audit": "All 27 selected moves replay canonically. Each source certificate includes all eight legal defenses after h4, seven exact supported tablebase leaves and one actual eight-piece mate leaf. Across the repeated composition, seven distinct tablebase and ten larger proof positions occur; counted within sources these are 21 and 30. No larger board is sent to the tablebase.",
+    "tablebase_positions_within_sources": 21,
+    "tablebase_positions_across_sources": 7,
+    "larger_proof_positions_within_sources": 30,
+    "larger_proof_positions_across_sources": 10,
+    "browser_review": [
+      "docs/screenshots/endgame-stories-batch-59-mate.png",
+      "docs/screenshots/endgame-stories-batch-59-check.png",
+      "docs/screenshots/endgame-stories-batch-59-pawn.png"
+    ],
+    "tracker_counts": {
+      "verified_selected_lines": 147,
+      "not_applicable": 13,
+      "awaiting_reconstruction": 61,
+      "needs_information": 27
+    },
+    "history_audit": "All three prior decisions retained in review history; 248 candidates reconcile, 147 verified source entries and 491 branches.",
+    "legacy_cli_regression": "Three copied prior studies (castling witness, eight-piece capture witness and ordinary drawn root) re-verify from saved evidence with identical lesson JSON; originals untouched."
+  }
+}

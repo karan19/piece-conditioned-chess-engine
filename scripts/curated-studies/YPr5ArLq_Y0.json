@@ -1,0 +1,71 @@
+{
+  "video_id": "YPr5ArLq_Y0",
+  "title": "Bishops 1V1: Finish the Mating Net",
+  "summary": "Look for mate before promoting: the defending bishop’s blocking square can remove its own king’s last escape.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/pP3p2/2p5/4b3/2K1kp1p/8/3PB1P1/8 w - - 0 1",
+      "question": "Should White promote, or finish the attack immediately?",
+      "explanation": "The b7 pawn is ready, but Bd3 is mate now. Black’s bishop on e5 blocks its own king, while White’s king and d2/g2 pawns cover the remaining flights.",
+      "evidence": {
+        "timestamp_s": 139
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/pP3p2/2p5/4b3/2K1kp1p/8/3PB1P1/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "bishops_final_net",
+      "start": "start",
+      "title": "Final source finish: bishop mate before promotion",
+      "san": [
+        "Bd3#"
+      ],
+      "commentary": [
+        "Begin after Be5 in the source’s final diagram. Earlier king and bishop choices are context rather than a verified complete forcing line.",
+        "Bd3# checks Ke4 on the adjacent diagonal. Kc4 protects d3 and covers d4/d5; d2 covers e3, g2 covers f3, and Bd3 covers f5. Black’s own Be5 and f4 pawn occupy e5/f4. No interposition is possible on an adjacent diagonal, and no defender can capture the protected bishop: actual mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bd3# checks Ke4 on the adjacent diagonal. Kc4 protects d3 and covers d4/d5; d2 covers e3, g2 covers f3, and Bd3 covers f5. Black’s own Be5 and f4 pawn occupy e5/f4. No interposition is possible on an adjacent diagonal, and no defender can capture the protected bishop: actual mate.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "8/pP3p2/2p5/4b3/2K1kp1p/3B4/3P2P1/8 b - - 1 1",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Which defending piece removes the last flight?",
+      "answer": "Black’s bishop on e5 occupies a king escape square. Moving to defend promotion has created a self-blockade in this exact diagram."
+    },
+    {
+      "node": "start",
+      "prompt": "Does this establish that the whole earlier maneuver is forced?",
+      "answer": "No. It verifies Bd3 mate after the illustrated Be5. The earlier king retreats, bishop captures and promotion outcomes remain outside this selected proof."
+    }
+  ],
+  "defaultBranch": "bishops_final_net",
+  "practiceBranch": "bishops_final_net",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Final mating pattern only, beginning after Be5 at139 seconds. Native39 shows the king on c4 with Black’s bishop still on d4; native40 confirms Be5 and native41 confirms Bd3 mate. The complete twelve-piece diagram has White Kc4/Be2/b7/d2/g2 against Ke4/Be5/a7/c6/f7/f4/h4. White can play Bd3# immediately. A finite certificate establishes this exact later win by actual mate, without discarding any pawn or using an engine estimate. This does not prove that Be5 was forced or certify the earlier d4/Bf3/Be2 displacement, bishop-capture alternative, premature promotion comparison or the original fourteen-piece setup. Those larger outcomes remain separate analysis requirements.",
+  "verification_scope": "Final mating pattern only, beginning after Be5 at139 seconds. Native39 shows the king on c4 with Black’s bishop still on d4; native40 confirms Be5 and native41 confirms Bd3 mate. The complete twelve-piece diagram has White Kc4/Be2/b7/d2/g2 against Ke4/Be5/a7/c6/f7/f4/h4. White can play Bd3# immediately. A finite certificate establishes this exact later win by actual mate, without discarding any pawn or using an engine estimate. This does not prove that Be5 was forced or certify the earlier d4/Bf3/Be2 displacement, bishop-capture alternative, premature promotion comparison or the original fourteen-piece setup. Those larger outcomes remain separate analysis requirements.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 1,
+    "moves": {
+      "8/pP3p2/2p5/4b3/2K1kp1p/8/3PB1P1/8 w - - 0 1": "Bd3#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

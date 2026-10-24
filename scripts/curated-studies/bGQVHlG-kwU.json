@@ -1,0 +1,131 @@
+{
+  "video_id": "bGQVHlG-kwU",
+  "title": "Brilliant Genius!",
+  "summary": "Underpromote with check so the knight can fork the rook and then protect the remaining pawn.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/2p5/2P1R3/K7/1p6/2k5 b - - 0 1",
+      "question": "Which promotion preserves Black’s win?",
+      "explanation": "The bishop has been sacrificed and captured on e4. Black’s b2 pawn is ready to promote, but a queen can be skewered against Kc1.",
+      "evidence": {
+        "timestamp_s": 103
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "genius_knight_c3",
+      "start": "start",
+      "title": "Promote with check and fork from c3",
+      "san": [
+        "b1=N+",
+        "Ka4",
+        "Nc3+",
+        "Ka5",
+        "Nxe4"
+      ],
+      "commentary": [
+        "Begin after Rxe4 in the six-piece final phase. The earlier larger position and bishop sacrifice remain source context.",
+        "b1=N+ underpromotes with check against Ka3. The tempo forces White to move its king before saving the rook.",
+        "Ka4 is the illustrated king escape. The black king on c1 prevents an escape to b2.",
+        "Nc3+ forks Ka4 and Re4, using the knight’s second checking tempo.",
+        "Ka5 is an independently selected legal escape from the checking fork.",
+        "Nxe4 removes the rook and protects c5. Black has an exactly checked winning knight-and-pawn ending despite the initially smaller promotion choice."
+      ],
+      "classification": "selected illustrated source variation with independent representative fork completion",
+      "explanation": "Nxe4 removes the rook and protects c5. Black has an exactly checked winning knight-and-pawn ending despite the initially smaller promotion choice.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/K1p5/2P1n3/8/8/2k5 w - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "genius_knight_d2",
+      "start": "start",
+      "title": "The king escapes toward b3",
+      "san": [
+        "b1=N+",
+        "Kb3",
+        "Nd2+",
+        "Ka3",
+        "Nxe4"
+      ],
+      "commentary": [
+        "Compare the source’s other illustrated fork square after promotion. The final king retreat and rook capture are independently completed here.",
+        "b1=N+ checks Ka3 immediately, denying White a free rook move.",
+        "Kb3 changes the fork square that Black needs.",
+        "Nd2+ checks Kb3 and attacks Re4. The fork works from d2 rather than c3.",
+        "Ka3 is an independently selected legal retreat from the check.",
+        "Nxe4 collects the rook and guards c5. This exact ending is winning for Black."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nxe4 collects the rook and guards c5. This exact ending is winning for Black.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/2p5/2P1n3/K7/8/2k5 w - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "genius_queen_skewer",
+      "start": "start",
+      "title": "Promote to a queen instead",
+      "san": [
+        "b1=Q",
+        "Re1+",
+        "Kd2",
+        "Rxb1"
+      ],
+      "commentary": [
+        "Compare the source’s warning about a queen promotion; its skewer is independently completed with a representative king retreat.",
+        "b1=Q gives away Black’s win. It does not check Ka3, leaving White time for a rook skewer.",
+        "Re1+ checks Kc1 along the first rank with Qb1 behind it.",
+        "Kd2 is an independently selected legal king response. The queen remains exposed on b1.",
+        "Rxb1 removes the queen. This exact rook-and-pawn ending is winning for White, so maximum promotion material actually reverses the result."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxb1 removes the queen. This exact rook-and-pawn ending is winning for White, so maximum promotion material actually reverses the result.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/2p5/2P5/K7/3k4/1R6 b - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does a knight outperform a queen here?",
+      "answer": "b1=N gives check and forces the king onto a square that permits a second checking fork of Re4. A queen gives no check and allows Re1+ to skewer it behind Kc1."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does Nxe4 help beyond winning the rook?",
+      "answer": "From e4 the knight also protects c5. Black can bring its king forward without immediately losing that remaining pawn."
+    }
+  ],
+  "defaultBranch": "genius_knight_c3",
+  "practiceBranch": "genius_knight_c3",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after Rxe4 at 103 seconds in a stable six-piece position, viewed from Black’s perspective in the source. The initial larger setup and bishop maneuver are not included in this exact scope. Two knight-fork routes and the contrasting queen skewer are checked; representative completions are explicitly independent.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

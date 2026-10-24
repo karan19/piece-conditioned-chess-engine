@@ -1,0 +1,195 @@
+{
+  "video_id": "RGE18Mn9DuY",
+  "title": "Majestic Style",
+  "summary": "Use a pinned rook sacrifice to promote with check, then compare a direct mate with a carefully controlled queen promotion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "7R/6P1/8/8/8/p3K3/k5r1/8 w - - 0 1",
+      "question": "How can White improve the timing of promotion?",
+      "explanation": "The rook on g2 sits behind the pawn. Rh2 can pin that rook against its king on a2 and redirect it before promotion.",
+      "evidence": {
+        "timestamp_s": 95
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "finish_choice",
+      "fen": "8/8/8/8/8/3K4/p6Q/1k6 w - - 2 6",
+      "question": "Stop promotion or allow it deliberately?",
+      "explanation": "With the king on d3, White can either mate before promotion or move to c3 and keep mating threats after ...a1=Q+.",
+      "evidence": {
+        "timestamp_s": 138
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "style_direct_mate",
+      "start": "start",
+      "title": "Deflect the rook and finish before promotion",
+      "san": [
+        "Rh2",
+        "Rxh2",
+        "g8=Q+",
+        "Kb2",
+        "Qb8+",
+        "Ka1",
+        "Qxh2",
+        "a2",
+        "Kd3",
+        "Kb1",
+        "Qc2+",
+        "Ka1",
+        "Qc1#"
+      ],
+      "commentary": [
+        "Begin after ...Rg2. Earlier king retreat maneuvers remain source context; this six-piece position is checked exactly.",
+        "Rh2 pins the black rook on the second rank against Ka2. It threatens to remove the defender of the g-pawn.",
+        "Rxh2 accepts the rook offer and leaves the g-file. This is the source’s selected response.",
+        "g8=Q+ promotes with check along the diagonal to a2. With the black rook diverted to h2, it can no longer capture the new queen.",
+        "Kb2 chooses the illustrated outward king route. The other king replies are outside this selected branch.",
+        "Qb8+ checks the king and attacks Rh2 along b8-c7-d6-e5-f4-g3-h2.",
+        "Ka1 retreats to the corner and leaves the rook available to capture.",
+        "Qxh2 removes the rook. White must still deal with the a-pawn.",
+        "a2 brings the pawn one step from promotion.",
+        "Kd3 approaches the corner, controlling c2 and c3.",
+        "Kb1 is the only legal king move; the pawn on a2 is blocked by the king while it stands on a1.",
+        "Qc2+ checks b1 with the queen protected by Kd3.",
+        "Ka1 is forced back into the corner.",
+        "Qc1# checks along the first rank. Kd3 protects c2, the queen covers b1 and b2, and Black’s own pawn occupies a2."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qc1# checks along the first rank. Kd3 protects c2, the queen covers b1 and b2, and Black’s own pawn occupies a2.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/3K4/p7/k1Q5 b - - 5 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "style_allow_queen",
+      "start": "finish_choice",
+      "title": "Allow a queen, then restrict its checks",
+      "san": [
+        "Kc3",
+        "a1=Q+",
+        "Kb3",
+        "Qa5",
+        "Qb2#"
+      ],
+      "commentary": [
+        "This is the source’s stylish alternative after Kd3 Kb1, not a jump directly from the earlier king on e3.",
+        "Kc3 deliberately allows promotion, preparing to approach on b3.",
+        "a1=Q+ promotes with check along the diagonal a1-b2-c3.",
+        "Kb3 steps off the diagonal. Qh2 covers a2 and b2; the nearby queen checks on a3, a4 or c3 would let the white king capture the checking queen.",
+        "Qa5 is the illustrated queen reply. It does not check Kb3 or stop White’s contact mate.",
+        "Qb2# is protected by Kb3. The black queen on a5 cannot capture b2 or interpose against a queen checking the adjacent king on b1."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qb2# is protected by Kb3. The black queen on a5 cannot capture b2 or interpose against a queen checking the adjacent king on b1.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/q7/8/1K6/1Q6/1k6 b - - 3 8",
+      "outcome": "loss"
+    },
+    {
+      "id": "style_king_move",
+      "start": "finish_choice",
+      "title": "If Black moves the king after promoting",
+      "san": [
+        "Kc3",
+        "a1=Q+",
+        "Kb3",
+        "Kc1",
+        "Qc2#"
+      ],
+      "commentary": [
+        "Compare the other illustrated reply after the same deliberate promotion.",
+        "Kc3 prepares the king’s b3 approach while allowing Black to promote.",
+        "a1=Q+ checks along the diagonal.",
+        "Kb3 leaves White threatening a protected contact queen mate.",
+        "Kc1 is the illustrated king reply, leaving the queen on a1.",
+        "Qc2# is protected by Kb3 and checks c1. The queen covers the remaining flights on b1, d1, b2 and d2; Black’s queen cannot block an adjacent-file check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qc2# is protected by Kb3 and checks c1. The queen covers the remaining flights on b1, d1, b2 and d2; Black’s queen cannot block an adjacent-file check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/1K6/2Q5/q1k5 b - - 3 8",
+      "outcome": "loss"
+    },
+    {
+      "id": "style_rush_promotion",
+      "start": "start",
+      "title": "Promote before redirecting the rook",
+      "san": [
+        "g8=Q+",
+        "Rxg8",
+        "Rxg8"
+      ],
+      "commentary": [
+        "Before sacrificing the rook on h2, compare immediate promotion.",
+        "g8=Q+ checks along the diagonal to a2, but gives up the forced win because the rook on g2 can capture the new queen.",
+        "Rxg8 removes the new queen along the g-file.",
+        "Rxg8 recaptures, but White’s king on e3 is still too far from the a-pawn and its king. The exact remaining rook ending is drawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxg8 recaptures, but White’s king on e3 is still too far from the a-pawn and its king. The exact remaining rook ending is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "6R1/8/8/8/8/p3K3/k7/8 b - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why sacrifice the rook before promoting?",
+      "answer": "...Rxh2 removes the rook from the g-file. White then promotes with check, gaining time to fork the king and rook."
+    },
+    {
+      "node": "finish_choice",
+      "prompt": "Why is Kc3 different from simply ignoring the passer?",
+      "answer": "The king plans Kb3 after the checking promotion. Its own queen covers checking routes and supports contact mate; the displayed continuations are checked individually."
+    }
+  ],
+  "defaultBranch": "style_direct_mate",
+  "practiceBranch": "style_direct_mate",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rg2 at 95 seconds. Earlier rook checks and king retreat are source context. The sacrifice, one promotion-check king route, direct mate, two illustrated queen-ending replies and drawing immediate promotion are checked here; no exhaustive proof tree is displayed.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,202 @@
+{
+  "video_id": "sAGoBjAasgo",
+  "title": "I Love Zugzwang",
+  "summary": "Make the opponent’s extra pawns obstruct its own king and rook; quiet rook moves force a decisive change.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/8/7R/p1K3p1/8/rk6 w - - 0 1",
+      "question": "Can White win without racing to capture a pawn?",
+      "explanation": "White has one rook against a rook and two advanced pawns. Capturing material is less urgent than restricting the black king.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "zug_king",
+      "start": "start",
+      "title": "Zugzwang: king moves",
+      "san": [
+        "Re4",
+        "g2",
+        "Re1+",
+        "Ka2",
+        "Re2+",
+        "Kb1",
+        "Rxg2",
+        "Kc1",
+        "Rg1#"
+      ],
+      "commentary": [
+        "White has one rook against a rook and two advanced pawns. Capturing material is less urgent than restricting the black king.",
+        "Re4 quietly prepares an e-file check if the g-pawn advances. White keeps the king cut off from the upper board.",
+        "g2 pushes the dangerous passer, but now the rook can check from e1 without losing it.",
+        "Re1+ checks along the first rank. The white king prevents Kb2 and the rook controls c1.",
+        "Ka2 is forced: a2 is the king’s only legal escape from the first-rank check.",
+        "Re2+ is an independently supplied connecting check, rather than an assumed jump between source snapshots. It forces the king back to the first rank.",
+        "Kb1 is forced because Kc3 covers b2/b3 and the other a-file squares are occupied by Black’s pieces.",
+        "Rxg2 removes the g-pawn and reaches the separately illustrated zugzwang diagram. Black has no waiting move.",
+        "Kc1 leaves the corner formation and walks onto the first rank.",
+        "Rg1# checks along the first rank. Kc3 covers b2/c2/d2, and the black king on c1 blocks its own rook from interposing."
+      ],
+      "classification": "source mating pattern with independently supplied connecting checks",
+      "explanation": "Rg1# checks along the first rank. Kc3 covers b2/c2/d2, and the black king on c1 blocks its own rook from interposing.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/p1K5/8/r1k3R1 b - - 2 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "zug_pawn",
+      "start": "start",
+      "title": "Zugzwang: pawn moves",
+      "san": [
+        "Re4",
+        "g2",
+        "Re1+",
+        "Ka2",
+        "Re2+",
+        "Kb1",
+        "Rxg2",
+        "a2",
+        "Rg1#"
+      ],
+      "commentary": [
+        "White has one rook against a rook and two advanced pawns. Capturing material is less urgent than restricting the black king.",
+        "Re4 quietly prepares an e-file check if the g-pawn advances. White keeps the king cut off from the upper board.",
+        "g2 pushes the dangerous passer, but now the rook can check from e1 without losing it.",
+        "Re1+ checks along the first rank. The white king prevents Kb2 and the rook controls c1.",
+        "Ka2 is forced: a2 is the king’s only legal escape from the first-rank check.",
+        "Re2+ is an independently supplied connecting check, rather than an assumed jump between source snapshots. It forces the king back to the first rank.",
+        "Kb1 is forced because Kc3 covers b2/b3 and the other a-file squares are occupied by Black’s pieces.",
+        "Rxg2 removes the g-pawn and reaches the separately illustrated zugzwang diagram. Black has no waiting move.",
+        "a2 advances the other pawn and blocks the black king’s flight square.",
+        "Rg1# checks along the first rank. The new pawn on a2 blocks the king’s flight, Kc3 covers b2/c2, and Kb1 prevents Ra1 from interposing along the rank."
+      ],
+      "classification": "source mating pattern with independently supplied connecting checks",
+      "explanation": "Rg1# checks along the first rank. The new pawn on a2 blocks the king’s flight, Kc3 covers b2/c2, and Kb1 prevents Ra1 from interposing along the rank.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/2K5/p7/rk4R1 b - - 1 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "zug_rook",
+      "start": "start",
+      "title": "Zugzwang: rook moves",
+      "san": [
+        "Re4",
+        "g2",
+        "Re1+",
+        "Ka2",
+        "Re2+",
+        "Kb1",
+        "Rxg2",
+        "Ra2",
+        "Rg1#"
+      ],
+      "commentary": [
+        "White has one rook against a rook and two advanced pawns. Capturing material is less urgent than restricting the black king.",
+        "Re4 quietly prepares an e-file check if the g-pawn advances. White keeps the king cut off from the upper board.",
+        "g2 pushes the dangerous passer, but now the rook can check from e1 without losing it.",
+        "Re1+ checks along the first rank. The white king prevents Kb2 and the rook controls c1.",
+        "Ka2 is forced: a2 is the king’s only legal escape from the first-rank check.",
+        "Re2+ is an independently supplied connecting check, rather than an assumed jump between source snapshots. It forces the king back to the first rank.",
+        "Kb1 is forced because Kc3 covers b2/b3 and the other a-file squares are occupied by Black’s pieces.",
+        "Rxg2 removes the g-pawn and reaches the separately illustrated zugzwang diagram. Black has no waiting move.",
+        "Ra2 moves the rook away from its defensive first-rank square.",
+        "Rg1# checks along the first rank after the defending rook leaves it. Kc3 controls b2 and c2."
+      ],
+      "classification": "source mating pattern with independently supplied connecting checks",
+      "explanation": "Rg1# checks along the first rank after the defending rook leaves it. Kc3 controls b2 and c2.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/p1K5/r7/1k4R1 b - - 2 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "zug_king_first",
+      "start": "start",
+      "title": "The king escapes before the pawn advances",
+      "san": [
+        "Re4",
+        "Ka2",
+        "Re2+",
+        "Kb1",
+        "Rg2",
+        "a2",
+        "Rg1#"
+      ],
+      "commentary": [
+        "White has one rook against a rook and two advanced pawns. Capturing material is less urgent than restricting the black king.",
+        "Re4 threatens the same checking maneuver if Black pushes g2.",
+        "Ka2 moves the king immediately, retaining the g3 pawn as a potential rook shield.",
+        "Re2+ forces the king back to the first rank; Kc3 covers the nearby second-rank flights.",
+        "Kb1 returns to the corner arrangement. The rook still on a1 prevents Ka1.",
+        "Rg2 stops the g-pawn before it advances, and recreates the mating net one rank higher.",
+        "a2 is the illustrated pawn move, closing a2 and blocking the black rook’s path.",
+        "Rg1# checks along the first rank. The pawn on a2 occupies the black king’s escape square, Kc3 covers b2/c2, and Kb1 blocks its own rook on a1 from interposing."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rg1# checks along the first rank. The pawn on a2 occupies the black king’s escape square, Kc3 covers b2/c2, and Kb1 blocks its own rook on a1 from interposing.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/2K3p1/p7/rk4R1 b - - 1 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why are Black’s extra pawns a liability?",
+      "answer": "The a-pawn can block its own rook, while the g-pawn can shield the white rook. Once Black must move, that fragile arrangement gives way to mate."
+    }
+  ],
+  "defaultBranch": "zug_king_first",
+  "practiceBranch": "zug_king_first",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "The full six-piece opening diagram is visually reconstructed. The king-first branch follows the illustrated Re4 ...Ka2 Re2+ ...Kb1 Rg2 plan. Three pawn-first branches include explicitly identified independent connecting checks before the separately illustrated five-piece zugzwang diagram; source snapshots are not assumed to form a continuous move list.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

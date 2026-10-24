@@ -1,0 +1,180 @@
+{
+  "batch_id": "2026-10-23-11",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three studies, eleven selected branches, 51 distinct exact positions; king tempo route, bishop barricade and seven-piece knight mating net. Correct two captioned move names from stable board images.",
+  "reviews": {
+    "A12kZa9XUC0": {
+      "result": "verified_selected_lines",
+      "notes": "Four branches, 16 exact positions from the complete six-piece source board. Winning king route Kb3-c2-d1 avoids pawn-check tempos before f5. Compared drawing immediate f5, Kb4 c5+ Kc3, and Kb3 c5 Kc3 Kc6. Selected winning line ends after Kc2 blocks the pawn on c3; no invented continuation of the later race.",
+      "source_images": [
+        {
+          "file": "A12kZa9XUC0/montage_accepted.jpg",
+          "sha256": "279e5d8c799cd56623f5acb7ee36cf5fac42f4fd8f8febaae4cff36ad3fb85b4"
+        },
+        {
+          "file": "A12kZa9XUC0/images/image_00001.jpg",
+          "sha256": "d5542ed3b1dea62739dded64fa623dbac2a0a3944a972ef09f503d45ddd60c7e"
+        },
+        {
+          "file": "A12kZa9XUC0/images/image_00008.jpg",
+          "sha256": "f8b7c4ac0184e64d94839080ebfd709984b23a6e45c2984450645220082ac9ae"
+        },
+        {
+          "file": "A12kZa9XUC0/images/image_00010.jpg",
+          "sha256": "ef15ec0433389c5cf70d2b1531b0acfaf344a3dee6d7a137d8a883aeae07e683"
+        },
+        {
+          "file": "A12kZa9XUC0/images/image_00011.jpg",
+          "sha256": "5a59e2eb698e0cd91ae39c78650fe51c0bf80b98451604a2ff4d5110e357e2b6"
+        },
+        {
+          "file": "A12kZa9XUC0/images/image_00022.jpg",
+          "sha256": "2960309e336d74cad6e36fca6514f1e6e13f58895184eb4a091f535e5a91ebeb"
+        },
+        {
+          "file": "A12kZa9XUC0/images/image_00024.jpg",
+          "sha256": "856cfe1d23fa1ed768b5d2fd62a39af44ad48fd523f3733f3a40a69d4e52459c"
+        },
+        {
+          "file": "A12kZa9XUC0/images/image_00026.jpg",
+          "sha256": "012719686c5ef40a601e8c9534a7690c489bf9e1130456e7bd6a3c245154c3c0"
+        },
+        {
+          "file": "A12kZa9XUC0/images/image_00043.jpg",
+          "sha256": "6b175131caf6822922dbc17faf6485b81916005ff45bb2097733f7fb664e46b8"
+        },
+        {
+          "file": "A12kZa9XUC0/images/image_00053.jpg",
+          "sha256": "fba3c99ccf68287eacbd36ef7216c83456504d56bfaca0dcbc312d7b946e721e"
+        },
+        {
+          "file": "A12kZa9XUC0/images/image_00056.jpg",
+          "sha256": "3848ed3d11f95821b2e0fd793de492162255a1d796236302a89da5913babb3f5"
+        }
+      ]
+    },
+    "1Zm_QO2Ehso": {
+      "result": "verified_selected_lines",
+      "notes": "Four branches, 21 exact positions from the complete six-piece source board. Stable diagrams resolve captioned first Bd6 as Be6 from a2, followed by Bd6 from a3. Compared rook fork, rook pin, actual stalemate after Bxb3 and drawn Bg8 route. ...Kb1 Bxf6 fork completion is independently labeled.",
+      "source_images": [
+        {
+          "file": "1Zm_QO2Ehso/montage_accepted.jpg",
+          "sha256": "594f52f281252736981f222727023394f34d6ffe598a3f190e974ec5a73bf16b"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00001.jpg",
+          "sha256": "7a4b7a5c5dd691fcbb5c646b83ba5ff76badda93778012e16595e76458431a45"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00018.jpg",
+          "sha256": "88d3efcac15884daa25f4abd013a2446ca6d31a19d7a1b6bc004cc38855d0c73"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00019.jpg",
+          "sha256": "1bce68dc9e46c52b5a5cb68d6fb1d4a18122b137d1cd79bcb2227fb0a7edbbb7"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00020.jpg",
+          "sha256": "8c410d65da556b05f0123028f0ad979ee2f1c2a8a4edcd4434245c1d920bf81b"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00021.jpg",
+          "sha256": "d815fca62f4cfeccbfebd15aa3f23268d51de2d76f0fdb094437a6907a813685"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00022.jpg",
+          "sha256": "51b2895ba8327ba3afaec98be9ac29c1f49fed241edb39bf41d2608020b802b2"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00023.jpg",
+          "sha256": "b1ac8667867a2d922de81b0c8709de46e5e313457ec15a5977ac50e7085ac494"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00025.jpg",
+          "sha256": "a0a0e889c24e7ee37e3bad2560674c34806f34f9da44a353fe9b745cba599aee"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00026.jpg",
+          "sha256": "156559154b6e5003ee589bfdf894f2963f35bac3c29a123b6df9d311dbc21b76"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00037.jpg",
+          "sha256": "f11450829873f7dbe662d5b80a9cd396cc700a959e8d73c7705bfd7397f9547f"
+        },
+        {
+          "file": "1Zm_QO2Ehso/images/image_00040.jpg",
+          "sha256": "47e406326d607439c857eef2e9da8b627e522877058d9c1bf89129b4c0f3a2a4"
+        }
+      ]
+    },
+    "IbQUuXJOIqE": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 14 exact positions beginning after ...Kc1 at 107 seconds (seven pieces); earlier eight-piece setup and first underpromotion remain context. Rook sacrifice Rc2+ Nxc2, Nb3+, Kf1 and Kf2 force winning mating net. Three actual mates checked. Saved stable final image resolves captioned ...Nc3 to ...Nca3 from c2; b1 knight stays to defend c3.",
+      "source_images": [
+        {
+          "file": "IbQUuXJOIqE/montage_accepted.jpg",
+          "sha256": "5c5573e6bee64c0109b9f56905f92eebe32c145ac0ade98483d48aa2aa554d82"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00001.jpg",
+          "sha256": "76adf272afc6bab01777ce08b6ca8ade08f0e3130da2be5225d6aa9122e39105"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00025.jpg",
+          "sha256": "8e30572e36bfe87dcf783ddc7a322076efd5def31b91c1d3124aff929e4a97cc"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00037.jpg",
+          "sha256": "8ffb3fbc71b49403d33b1f9aa0241ed33373d1f81ea541ba2d0a23e8ebce1785"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00038.jpg",
+          "sha256": "7753722882a996e58028caff1304e1700b30088f93ed924a0fba83f26ae010d5"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00039.jpg",
+          "sha256": "d3208aeb539e3760143b96a5942f22eab58e42a0cff7e36a03132665f7684c71"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00051.jpg",
+          "sha256": "fa130d14c9104342857b99ca9a1ee09d6fdfead94084232ba027f3953ba3cfad"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00055.jpg",
+          "sha256": "55a94f6beeb0fb08343dbe8ed5ce4baf022c5659707f2c29535b987da4cf05cd"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00057.jpg",
+          "sha256": "80540d3e02f4c0a1c781c81995d8b5b7ba67bfb1255e355569d85a297fc374b2"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00058.jpg",
+          "sha256": "e2a59fe4e8910ff9b2d809da53cdd3feb13bc2c81669d5a08cade239ba2bd207"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00059.jpg",
+          "sha256": "cdb9e5e98d96d66a543bc2aed893ac431d3cc0637c7b6288665214452d932708"
+        },
+        {
+          "file": "IbQUuXJOIqE/images/image_00061.jpg",
+          "sha256": "ac3e14a339410c92e688203aa9bbcfb4e21b940150459a575bee16ac2acb524e"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 51,
+    "selected_branches": 11,
+    "tests": "99 tests passed across 16 files. Generic evidence/replay/source checks plus focused route, bishop geometry, stalemate and three actual knight mates.",
+    "production_build": "passed",
+    "ui_review": "CUA confirmed Knights of Doom actual Ne3# mate, Bishops VS Rook actual stalemate, and Surgical Win checked blockade explanation.",
+    "screenshot": "docs/screenshots/endgame-stories-batch-11.png",
+    "queue_counts": {
+      "verified_selected_lines": 34,
+      "awaiting_reconstruction": 189,
+      "needs_information": 23,
+      "not_applicable": 2
+    },
+    "local_only": true
+  }
+}

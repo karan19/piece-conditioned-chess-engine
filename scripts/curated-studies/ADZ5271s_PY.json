@@ -1,0 +1,131 @@
+{
+  "video_id": "ADZ5271s_PY",
+  "title": "Out of The Woods",
+  "summary": "Give back the rook to eliminate a dangerous passer, then use the active king to win the pawn race.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3r4/3PK3/8/1P1p4/3k4/8/8/8 b - - 1 1",
+      "question": "Must the attacked rook retreat?",
+      "explanation": "White’s king attacks Rd8 and supports d7. Black can give up the rook for that pawn because its active king can then catch the b-pawn.",
+      "evidence": {
+        "timestamp_s": 104
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "woods_rook_return",
+      "start": "start",
+      "title": "Trade the rook for the dangerous pawn",
+      "san": [
+        "Rxd7+",
+        "Kxd7",
+        "Kc5",
+        "b6",
+        "Kxb6",
+        "Kd6",
+        "d4"
+      ],
+      "commentary": [
+        "Begin after White’s queen sacrifice, ...Rxd8 and Ke7. The preceding eight-piece promotion battle is source context.",
+        "Rxd7+ removes the dangerous passer with check and offers the rook. Calculate the pawn ending before declining the sacrifice.",
+        "Kxd7 accepts the rook. White has eliminated Black’s last piece, but its king is poorly placed for the remaining race.",
+        "Kc5 attacks b5 while keeping Black’s own pawn ready to advance.",
+        "b6 is the source’s selected attempt to save the pawn by pushing it.",
+        "Kxb6 catches that pawn. White’s king on d7 cannot defend b6.",
+        "Kd6 approaches the remaining d-pawn, trying to enter its path.",
+        "d4 starts the race with the white king behind the pawn. The exact resulting king-and-pawn ending is winning for Black; this branch stops at that checked endpoint."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d4 starts the race with the white king behind the pawn. The exact resulting king-and-pawn ending is winning for Black; this branch stops at that checked endpoint.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/1k1K4/8/3p4/8/8/8 w - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "woods_rook_retreat",
+      "start": "start",
+      "title": "A rook retreat that gives White time",
+      "san": [
+        "Ra8",
+        "b6"
+      ],
+      "commentary": [
+        "This independently selected alternative tests whether saving the rook preserves the result.",
+        "Ra8 gives away Black’s win and leaves White winning. Moving the rook is not automatically safer than exchanging it.",
+        "b6 is a checked winning reply. White keeps both passers alive and threatens b7 while the king on e7 supports d7. The selected endpoint is a White win, not an unverified general rule about all rook retreats."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "b6 is a checked winning reply. White keeps both passers alive and threatens b7 while the king on e7 supports d7. The selected endpoint is a White win, not an unverified general rule about all rook retreats.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win"
+      ],
+      "end_fen": "r7/3PK3/1P6/3p4/3k4/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "woods_wrong_promotion",
+      "start": "start",
+      "title": "White promotes too soon after the retreat",
+      "san": [
+        "Ra8",
+        "d8=Q",
+        "Rxd8",
+        "Kxd8",
+        "Kc5"
+      ],
+      "commentary": [
+        "Even after Black’s mistake, White still has to choose accurately. Compare b6 with immediate promotion.",
+        "Ra8 is losing for Black with best play: White can keep both passers with b6.",
+        "d8=Q instead throws away White’s win. The rook can capture the new queen along the eighth rank.",
+        "Rxd8 exchanges the rook for the d-pawn. This capture does not give check to the king on e7.",
+        "Kxd8 recaptures, but leaves White’s king too far from the b-pawn.",
+        "Kc5 attacks b5. The resulting pawn ending is a checked Black win, showing why White needed to keep both passers rather than rush promotion."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kc5 attacks b5. The resulting pawn ending is a checked Black win, showing why White needed to keep both passers rather than rush promotion.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "3K4/8/8/1Pkp4/8/8/8/8 w - - 1 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What matters more than keeping the rook?",
+      "answer": "Eliminating d7 leaves Black’s king close enough to catch b5. The material sacrifice is justified by the exact resulting pawn ending."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does immediate promotion fail after ...Ra8?",
+      "answer": "It lets the rook exchange itself for the d-pawn. White needs b6 to keep two promotion threats alive instead."
+    }
+  ],
+  "defaultBranch": "woods_rook_return",
+  "practiceBranch": "woods_rook_return",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rxd8 and Ke7 at 104 seconds. This six-piece position is visually reconstructed; the earlier eight-piece promotion sequence and queen sacrifice remain source context. Independent rook-retreat comparisons are labeled separately from the illustrated sacrifice.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,177 @@
+{
+  "video_id": "nDzMs3B_Nw8",
+  "title": "Sublime Draw",
+  "summary": "Sacrifice both pawns to change the timing, then step back with the king to preserve the opposition and hold a draw.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/2p5/8/kP6/2P5/8/8/K7 w - - 0 1",
+      "question": "Can White draw without keeping either pawn?",
+      "explanation": "The black king is closer to the pawns. White must change the move count and pawn structure before approaching.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    },
+    {
+      "id": "first_capture",
+      "fen": "8/2p5/1P6/k7/2P5/8/8/K7 b - - 0 1",
+      "question": "Which capture gives White time?",
+      "explanation": "Black can take b6 with either the king or pawn. Those captures lead to different defensive ideas.",
+      "evidence": {
+        "timestamp_s": 72
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    },
+    {
+      "id": "opposition",
+      "fen": "8/8/8/k1p5/8/8/8/K7 w - - 0 3",
+      "question": "Does moving closer always help?",
+      "explanation": "Both white pawns are gone. The surviving black pawn is not enough to win if White chooses the correct king square.",
+      "evidence": {
+        "timestamp_s": 80
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "sublime_complete",
+      "start": "start",
+      "title": "Sacrifice the pawns and hold the opposition",
+      "san": [
+        "b6",
+        "cxb6",
+        "c5",
+        "bxc5",
+        "Kb1",
+        "c4",
+        "Kb2",
+        "Kb4",
+        "Kc2"
+      ],
+      "commentary": [
+        "White is trying to draw, not win. The only drawing first move is a pawn sacrifice that changes Black’s timing.",
+        "b6 offers the b-pawn and draws with best defense. Advancing the other pawn or moving the king immediately would lose.",
+        "cxb6 accepts with the pawn. White should not rush the king toward c4 yet.",
+        "c5 offers the second pawn. The point is to bring Black’s pawn to a square where opposition can hold it.",
+        "bxc5 leaves Black with the only pawn. Material alone does not decide this king ending.",
+        "Kb1 steps back and preserves the draw. The direct Kb2 would give Black the favorable timing.",
+        "c4 pushes the pawn instead of immediately bringing the king closer. White still has a precise defensive route.",
+        "Kb2 approaches now that the pawn has moved and controls the relevant entry squares.",
+        "Kb4 brings Black’s king closer, but its own pawn on c4 blocks the direct route through that square.",
+        "Kc2 holds the draw. Black cannot take the desired opposition by stepping onto c4 because its own pawn occupies it."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kc2 holds the draw. Black cannot take the desired opposition by stepping onto c4 because its own pawn occupies it.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/1kp5/8/2K5/8 b - - 3 5",
+      "outcome": "draw"
+    },
+    {
+      "id": "sublime_king_capture",
+      "start": "first_capture",
+      "title": "What if the king takes the first pawn?",
+      "san": [
+        "Kxb6",
+        "Kb2"
+      ],
+      "commentary": [
+        "The king capture removes the same pawn, but spends a king move instead of advancing Black’s pawn.",
+        "Kxb6 gives White the tempo needed to approach and support c4.",
+        "Kb2 reaches a tablebase-drawn ending. This king approach works after the king capture, unlike rushing toward the pawn after ...cxb6."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kb2 reaches a tablebase-drawn ending. This king approach works after the king capture, unlike rushing toward the pawn after ...cxb6.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/2p5/1k6/8/2P5/8/1K6/8 b - - 1 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "sublime_wrong_king_step",
+      "start": "opposition",
+      "title": "Try the natural Kb2 first",
+      "san": [
+        "Kb2",
+        "Kb4"
+      ],
+      "commentary": [
+        "White has no pawns left, so king timing is everything. Compare Kb2 with the quieter Kb1.",
+        "Kb2 loses the draw. Getting closer has handed Black the favorable opposition timing.",
+        "Kb4 keeps a forced Black win. The kings face one another on the b-file with White to move, and Black can use the pawn move when needed."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kb4 keeps a forced Black win. The kings face one another on the b-file with White to move, and Black can use the pawn move when needed.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/2p5/1k6/8/1K6/8 w - - 2 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "sublime_king_approach",
+      "start": "opposition",
+      "title": "Meet a king approach instead of a pawn push",
+      "san": [
+        "Kb1",
+        "Kb4",
+        "Kb2"
+      ],
+      "commentary": [
+        "If Black approaches with the king, White must keep choosing squares that deny entry rather than chase the pawn.",
+        "Kb1 is the drawing move from this exact position.",
+        "Kb4 tries to gain ground before moving the pawn.",
+        "Kb2 now takes direct opposition against the king on b4 with Black to move. The same king square that lost when played immediately now holds a draw because the move timing has changed."
+      ],
+      "classification": "independent alternative illustrating a source idea with representative legal replies",
+      "explanation": "Kb2 now takes direct opposition against the king on b4 with Black to move. The same king square that lost when played immediately now holds a draw because the move timing has changed.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/2p5/1k6/8/1K6/8 b - - 3 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "opposition",
+      "prompt": "Why is Kb1 better than Kb2 here?",
+      "answer": "Kb1 preserves the move timing needed to meet the king approach. Kb2 instead allows ...Kb4 with White to move, giving Black the favorable opposition."
+    },
+    {
+      "node": "start",
+      "prompt": "What did White gain by sacrificing the pawns?",
+      "answer": "The captures changed Black’s pawn structure and spent moves. That creates a drawable king ending that White would not reach by simply trying to defend both pawns."
+    }
+  ],
+  "defaultBranch": "sublime_complete",
+  "practiceBranch": "sublime_complete",
+  "practiceType": "pawn",
+  "practiceGoal": "draw",
+  "startContext": "",
+  "verification_scope": "Starting positions reconstructed from saved source images. Every encoded intermediate position and endpoint is checked against the tablebase. These are selected instructive variations, not an exhaustive tree of every legal defense.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,109 @@
+{
+  "video_id": "Ye4Nfj-v4T8",
+  "title": "2 Rooks vs 2 Rooks",
+  "summary": "Move the king out of its own rook’s way to create a ladder mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "4kr1r/R7/8/8/8/8/8/2KR4 w - - 0 1",
+      "question": "How can White make progress against the back-rank rooks?",
+      "explanation": "Castling has already placed the white king on c1 and rook on d1. The rook on a7 confines Ke8, but White needs room for a second rook to attack from b1.",
+      "evidence": {
+        "timestamp_s": 77
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "rooks_clear_b_file",
+      "start": "start",
+      "title": "Walk to a1, then swing the rook",
+      "san": [
+        "Kb1",
+        "Rfg8",
+        "Ka1",
+        "Rf8",
+        "Rb1",
+        "Kd8",
+        "Rb8#"
+      ],
+      "commentary": [
+        "Begin after castling and the illustrated ...Rf8. Earlier checking and material-winning examples are source context; castling itself is not tablebase-certified.",
+        "Kb1 starts clearing c1 and d1 while keeping the king on the back rank, where the black rooks cannot give a useful check.",
+        "Rfg8 waits on the back rank. Moving this rook away from that rank allows a checking skewer against the other rook.",
+        "Ka1 completes the retreat and clears b1 for White’s d-rook.",
+        "Rf8 returns along the back rank, preserving Black’s defensive arrangement for the selected source line.",
+        "Rb1 uses the space the king has just cleared and threatens Rb8 mate. The a7 rook keeps the king off the seventh rank.",
+        "Kd8 tries to move away, but remains in range of the b-file ladder check.",
+        "Rb8# is actual checkmate. The b8 rook checks along the eighth rank, and the a7 rook cuts off the seventh-rank escapes."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rb8# is actual checkmate. The b8 rook checks along the eighth rank, and the a7 rook cuts off the seventh-rank escapes.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1R1k1r1r/R7/8/8/8/8/8/K7 b - - 7 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "rooks_premature_swing",
+      "start": "start",
+      "title": "Swing before the king has shelter",
+      "san": [
+        "Rd6",
+        "Rh1+",
+        "Kb2",
+        "Rf2+",
+        "Kc3"
+      ],
+      "commentary": [
+        "Compare the source’s rook activation before the king retreats to a1.",
+        "Rd6 gives up the win: it leaves the white king exposed to useful checks along the first rank.",
+        "Rh1+ uses the newly opened back rank to start checking the king.",
+        "Kb2 leaves the back rank to answer the check.",
+        "Rf2+ brings the other rook down with tempo. Black’s checking activity holds the exact position drawn.",
+        "Kc3 continues the illustrated escape. The tablebase confirms a draw, so this active-looking rook swing does not force a win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kc3 continues the illustrated escape. The tablebase confirms a draw, so this active-looking rook swing does not force a win.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "4k3/R7/3R4/8/8/2K5/5r2/7r b - - 5 3",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does the king retreat to a1?",
+      "answer": "It clears b1 for the rook without allowing the black rooks useful checks. Rb1 then threatens the ladder mate Rb8."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does immediate Rd6 fail to force a win?",
+      "answer": "Moving that rook off the first rank lets ...Rh1+ expose the king. Black gains active checks instead of waiting helplessly on the eighth rank."
+    }
+  ],
+  "defaultBranch": "rooks_clear_b_file",
+  "practiceBranch": "rooks_clear_b_file",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin at 77 seconds after the source’s queenside castling and ...Rf8. The six-piece post-castling position is visually reconstructed and checked exactly. The opening claim that White still has castling rights is a source stipulation, not an inference from a static board, and is outside the tablebase scope. Selected waiting moves and the premature rook swing are encoded.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

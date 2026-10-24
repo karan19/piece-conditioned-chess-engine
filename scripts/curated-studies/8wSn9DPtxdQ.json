@@ -1,0 +1,172 @@
+{
+  "video_id": "8wSn9DPtxdQ",
+  "title": "Zugzwang of Zugzwangs",
+  "summary": "Use checking moves to restrict the king, then make a quiet king move that removes the queen\u2019s defensive squares.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2k2q2/8/8/1K1N4/8/8/6Q1/8 w - - 0 1",
+      "question": "How can the king help when the queens are far away?",
+      "explanation": "The complete five-piece physical-board setup has White Kb5, Nd5 and Qg2 against Kc8 and Qf8. A quiet king move will matter after the checks.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "zugzwangs_quiet_king",
+      "start": "start",
+      "title": "Check, then give Black the move",
+      "san": [
+        "Qc2+",
+        "Kd8",
+        "Qc7+",
+        "Ke8",
+        "Ka4",
+        "Qf7",
+        "Qc8#"
+      ],
+      "commentary": [
+        "The complete five-piece physical-board setup has White Kb5, Nd5 and Qg2 against Kc8 and Qf8. A quiet king move will matter after the checks.",
+        "Qc2+ checks up the c-file, driving the king away from c8.",
+        "Kd8 chooses the illustrated route toward the kingside. Other king replies are separate variations.",
+        "Qc7+ brings the queen close and forces the king farther right.",
+        "Ke8 keeps Qf8 defending e7, where White threatens a protected queen mate. Checking immediately would let the king escape through f7.",
+        "Ka4 quietly takes a3 away from the black queen: Qa3 would otherwise keep e7 defended along a3-b4-c5-d6-e7. The king move preserves White\u2019s mating threats.",
+        "Qf7 continues defending e7 along the seventh rank, but occupies the king\u2019s f7 escape square. White changes the checking square instead.",
+        "Qc8# checks along the eighth rank. Nd5 covers e7, Qc8 covers d7/d8/f8, and Black\u2019s own queen occupies f7."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qc8# checks along the eighth rank. Nd5 covers e7, Qc8 covers d7/d8/f8, and Black\u2019s own queen occupies f7.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2Q1k3/5q2/8/3N4/K7/8/8/8 b - - 7 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "zugzwangs_check_too_soon",
+      "start": "start",
+      "title": "Checking instead of improving the king",
+      "san": [
+        "Qc2+",
+        "Kd8",
+        "Qc7+",
+        "Ke8",
+        "Qc8+",
+        "Kf7"
+      ],
+      "commentary": [
+        "The complete five-piece physical-board setup has White Kb5, Nd5 and Qg2 against Kc8 and Qf8. A quiet king move will matter after the checks.",
+        "Qc2+ starts the forcing approach.",
+        "Kd8 moves right rather than toward the queenside.",
+        "Qc7+ continues the approach while maintaining coordination with the knight.",
+        "Ke8 reaches the critical diagram with the queen still on f8.",
+        "Qc8+ checks prematurely and gives away the forced win. The king has the f7 flight that ...Qf7 would have occupied.",
+        "Kf7 escapes. The exact remaining queen-and-knight versus queen position is drawn with best play; the selected line stops here."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kf7 escapes. The exact remaining queen-and-knight versus queen position is drawn with best play; the selected line stops here.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "2Q2q2/5k2/8/1K1N4/8/8/8/8 w - - 6 4",
+      "outcome": "draw"
+    },
+    {
+      "id": "zugzwangs_knight_check",
+      "start": "start",
+      "title": "A tempting knight check loses the knight",
+      "san": [
+        "Qc2+",
+        "Kd8",
+        "Qc7+",
+        "Ke8",
+        "Nf6+",
+        "Qxf6"
+      ],
+      "commentary": [
+        "The complete five-piece physical-board setup has White Kb5, Nd5 and Qg2 against Kc8 and Qf8. A quiet king move will matter after the checks.",
+        "Qc2+ begins the same checking approach.",
+        "Kd8 selects the main source route.",
+        "Qc7+ keeps the black king under pressure.",
+        "Ke8 reaches the position where a quiet move is needed.",
+        "Nf6+ gives up the win by exposing the knight to the queen on f8.",
+        "Qxf6 removes the knight and leaves a drawn queen ending. Black has a concrete response to the seemingly forcing check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxf6 removes the knight and leaves a drawn queen ending. Black has a concrete response to the seemingly forcing check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "4k3/2Q5/5q2/1K6/8/8/8/8 w - - 0 4",
+      "outcome": "draw"
+    },
+    {
+      "id": "zugzwangs_other_king",
+      "start": "start",
+      "title": "Independent example against ...Kb8",
+      "san": [
+        "Qc2+",
+        "Kb8",
+        "Qc7+",
+        "Ka8",
+        "Nb6#"
+      ],
+      "commentary": [
+        "An independently selected legal example illustrates the other direction of retreat, rather than claiming the sampled physical frames encode this exact move list.",
+        "Qc2+ checks along the file and asks Black which side to choose.",
+        "Kb8 goes toward the queenside, where White can coordinate queen and knight.",
+        "Qc7+ checks along the diagonal to b8 and cuts off c8.",
+        "Ka8 retreats to the corner in this representative line.",
+        "Nb6# checks a8 while Qc7 covers b8/b7 and Kb5 covers a6. The position is actual mate."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nb6# checks a8 while Qc7 covers b8/b7 and Kb5 covers a6. The position is actual mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "k4q2/2Q5/1N6/1K6/8/8/8/8 b - - 5 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can Ka4 matter more than another check?",
+      "answer": "Ka4 removes a3 as a defensive queen square while preserving the Qe7 mating threat. Black must change the arrangement; the illustrated Qf7 reply keeps e7 defended but blocks the king\u2019s flight, allowing Qc8 mate."
+    }
+  ],
+  "defaultBranch": "zugzwangs_quiet_king",
+  "practiceBranch": "zugzwangs_quiet_king",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "The five-piece physical-board setup is reconstructed from multiple saved frames and the spoken Qc2 anchor. The illustrated main route and two checking errors are checked exactly; the ...Kb8 continuation is explicitly independent. No exhaustive defense tree is claimed.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

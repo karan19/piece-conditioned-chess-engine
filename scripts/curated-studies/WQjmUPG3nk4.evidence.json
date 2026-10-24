@@ -1,0 +1,331 @@
+{
+  "node:start": {
+    "method": "finite_draw",
+    "fen": "2r2BbK/6p1/7k/6pP/6P1/p7/8/8 b - - 0 1",
+    "category_for_side_to_move": "draw",
+    "strategies": {
+      "white": {
+        "method": "non_losing_strategy",
+        "fen": "2r2BbK/6p1/7k/6pP/6P1/p7/8/8 b - - 0 1",
+        "side": "white",
+        "rule": "all_legal_replies",
+        "children": {
+          "Ba2": {
+            "method": "non_losing_strategy",
+            "fen": "2r2B1K/6p1/7k/6pP/6P1/p7/b7/8 w - - 1 2",
+            "side": "white",
+            "rule": "stalemate"
+          },
+          "Bb3": {
+            "method": "non_losing_strategy",
+            "fen": "2r2B1K/6p1/7k/6pP/6P1/pb6/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "stalemate"
+          },
+          "Bc4": {
+            "method": "non_losing_strategy",
+            "fen": "2r2B1K/6p1/7k/6pP/2b3P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "stalemate"
+          },
+          "Bd5": {
+            "method": "non_losing_strategy",
+            "fen": "2r2B1K/6p1/7k/3b2pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "stalemate"
+          },
+          "Be6": {
+            "method": "non_losing_strategy",
+            "fen": "2r2B1K/6p1/4b2k/6pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "stalemate"
+          },
+          "Bf7": {
+            "method": "non_losing_strategy",
+            "fen": "2r2B1K/5bp1/7k/6pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "stalemate"
+          },
+          "Bh7": {
+            "method": "non_losing_strategy",
+            "fen": "2r2B1K/6pb/7k/6pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "stalemate"
+          },
+          "Ra8": {
+            "method": "non_losing_strategy",
+            "fen": "r4BbK/6p1/7k/6pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "r5bK/6B1/7k/6pP/6P1/p7/8/8 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Rb8": {
+            "method": "non_losing_strategy",
+            "fen": "1r3BbK/6p1/7k/6pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "1r4bK/6B1/7k/6pP/6P1/p7/8/8 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Rc1": {
+            "method": "non_losing_strategy",
+            "fen": "5BbK/6p1/7k/6pP/6P1/p7/8/2r5 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "6bK/6B1/7k/6pP/6P1/p7/8/2r5 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Rc2": {
+            "method": "non_losing_strategy",
+            "fen": "5BbK/6p1/7k/6pP/6P1/p7/2r5/8 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "6bK/6B1/7k/6pP/6P1/p7/2r5/8 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Rc3": {
+            "method": "non_losing_strategy",
+            "fen": "5BbK/6p1/7k/6pP/6P1/p1r5/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "6bK/6B1/7k/6pP/6P1/p1r5/8/8 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Rc4": {
+            "method": "non_losing_strategy",
+            "fen": "5BbK/6p1/7k/6pP/2r3P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "6bK/6B1/7k/6pP/2r3P1/p7/8/8 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Rc5": {
+            "method": "non_losing_strategy",
+            "fen": "5BbK/6p1/7k/2r3pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "6bK/6B1/7k/2r3pP/6P1/p7/8/8 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Rc6": {
+            "method": "non_losing_strategy",
+            "fen": "5BbK/6p1/2r4k/6pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "6bK/6B1/2r4k/6pP/6P1/p7/8/8 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Rc7": {
+            "method": "non_losing_strategy",
+            "fen": "5BbK/2r3p1/7k/6pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7+": {
+                "method": "non_losing_strategy",
+                "fen": "6bK/2r3B1/7k/6pP/6P1/p7/8/8 b - - 0 2",
+                "side": "white",
+                "rule": "all_legal_replies",
+                "children": {
+                  "Rxg7": {
+                    "method": "non_losing_strategy",
+                    "fen": "6bK/6r1/7k/6pP/6P1/p7/8/8 w - - 0 3",
+                    "side": "white",
+                    "rule": "stalemate"
+                  }
+                }
+              }
+            }
+          },
+          "Rd8": {
+            "method": "non_losing_strategy",
+            "fen": "3r1BbK/6p1/7k/6pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "3r2bK/6B1/7k/6pP/6P1/p7/8/8 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Re8": {
+            "method": "non_losing_strategy",
+            "fen": "4rBbK/6p1/7k/6pP/6P1/p7/8/8 w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "4r1bK/6B1/7k/6pP/6P1/p7/8/8 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Rxf8": {
+            "method": "non_losing_strategy",
+            "fen": "5rbK/6p1/7k/6pP/6P1/p7/8/8 w - - 0 2",
+            "side": "white",
+            "rule": "stalemate"
+          },
+          "a2": {
+            "method": "non_losing_strategy",
+            "fen": "2r2BbK/6p1/7k/6pP/6P1/8/p7/8 w - - 0 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Bxg7#": {
+                "method": "non_losing_strategy",
+                "fen": "2r3bK/6B1/7k/6pP/6P1/8/p7/8 b - - 0 2",
+                "side": "white",
+                "rule": "checkmate"
+              }
+            }
+          }
+        }
+      },
+      "black": {
+        "method": "non_losing_strategy",
+        "fen": "2r2BbK/6p1/7k/6pP/6P1/p7/8/8 b - - 0 1",
+        "side": "black",
+        "rule": "safe_choice",
+        "children": {
+          "Be6": {
+            "method": "non_losing_strategy",
+            "fen": "2r2B1K/6p1/4b2k/6pP/6P1/p7/8/8 w - - 1 2",
+            "side": "black",
+            "rule": "stalemate"
+          }
+        }
+      }
+    }
+  },
+  "step:selfcage_pin_bishop:1": {
+    "method": "finite_draw",
+    "fen": "2r2B1K/6p1/4b2k/6pP/6P1/p7/8/8 w - - 1 2",
+    "category_for_side_to_move": "draw",
+    "strategies": {
+      "white": {
+        "method": "non_losing_strategy",
+        "fen": "2r2B1K/6p1/4b2k/6pP/6P1/p7/8/8 w - - 1 2",
+        "side": "white",
+        "rule": "stalemate"
+      },
+      "black": {
+        "method": "non_losing_strategy",
+        "fen": "2r2B1K/6p1/4b2k/6pP/6P1/p7/8/8 w - - 1 2",
+        "side": "black",
+        "rule": "stalemate"
+      }
+    }
+  },
+  "branch:selfcage_pin_bishop": {
+    "method": "finite_draw",
+    "fen": "2r2B1K/6p1/4b2k/6pP/6P1/p7/8/8 w - - 1 2",
+    "category_for_side_to_move": "draw",
+    "strategies": {
+      "white": {
+        "method": "non_losing_strategy",
+        "fen": "2r2B1K/6p1/4b2k/6pP/6P1/p7/8/8 w - - 1 2",
+        "side": "white",
+        "rule": "stalemate"
+      },
+      "black": {
+        "method": "non_losing_strategy",
+        "fen": "2r2B1K/6p1/4b2k/6pP/6P1/p7/8/8 w - - 1 2",
+        "side": "black",
+        "rule": "stalemate"
+      }
+    }
+  },
+  "step:selfcage_capture_bishop:1": {
+    "method": "finite_draw",
+    "fen": "5rbK/6p1/7k/6pP/6P1/p7/8/8 w - - 0 2",
+    "category_for_side_to_move": "draw",
+    "strategies": {
+      "white": {
+        "method": "non_losing_strategy",
+        "fen": "5rbK/6p1/7k/6pP/6P1/p7/8/8 w - - 0 2",
+        "side": "white",
+        "rule": "stalemate"
+      },
+      "black": {
+        "method": "non_losing_strategy",
+        "fen": "5rbK/6p1/7k/6pP/6P1/p7/8/8 w - - 0 2",
+        "side": "black",
+        "rule": "stalemate"
+      }
+    }
+  },
+  "branch:selfcage_capture_bishop": {
+    "method": "finite_draw",
+    "fen": "5rbK/6p1/7k/6pP/6P1/p7/8/8 w - - 0 2",
+    "category_for_side_to_move": "draw",
+    "strategies": {
+      "white": {
+        "method": "non_losing_strategy",
+        "fen": "5rbK/6p1/7k/6pP/6P1/p7/8/8 w - - 0 2",
+        "side": "white",
+        "rule": "stalemate"
+      },
+      "black": {
+        "method": "non_losing_strategy",
+        "fen": "5rbK/6p1/7k/6pP/6P1/p7/8/8 w - - 0 2",
+        "side": "black",
+        "rule": "stalemate"
+      }
+    }
+  }
+}

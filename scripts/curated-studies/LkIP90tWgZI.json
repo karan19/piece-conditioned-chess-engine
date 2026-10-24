@@ -1,0 +1,167 @@
+{
+  "video_id": "LkIP90tWgZI",
+  "title": "Esacriats",
+  "summary": "Use the king to block and reopen its own bishop’s diagonal, approaching the corner while avoiding stalemate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/B6B/8/7K/p7/1p6/bk6 w - - 0 1",
+      "question": "How can the king approach without letting Black promote?",
+      "explanation": "The bishops can trap the king, but a permanent trap would leave Black no legal move before White is ready to mate.",
+      "evidence": {
+        "timestamp_s": 4
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "blockade",
+      "fen": "8/8/7B/8/7K/1B6/pp6/bk6 w - - 0 4",
+      "question": "How can White make progress without stalemate?",
+      "explanation": "The pawn on a2 cannot advance because Black’s bishop occupies a1. The b2 pawn is blocked by White’s bishop.",
+      "evidence": {
+        "timestamp_s": 32
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "esacriats_complete",
+      "start": "start",
+      "title": "Walk the king through the bishop’s diagonal",
+      "san": [
+        "Bd3+",
+        "Ka2",
+        "Bc4+",
+        "Kb1",
+        "Bb3",
+        "a2",
+        "Kg5",
+        "Kc1",
+        "Kf5+",
+        "Kb1",
+        "Kf4",
+        "Kc1",
+        "Ke4+",
+        "Kb1",
+        "Ke3",
+        "Kc1",
+        "Kd3+",
+        "Kb1",
+        "Bc2#"
+      ],
+      "commentary": [
+        "Begin after the source rook sacrifice and ...Kxb1. The two bishops must hold the king while White’s king approaches.",
+        "Bd3+ checks the king on b1 along d3-c2-b1.",
+        "Ka2 is forced because the bishops and Black’s own pieces block the other squares.",
+        "Bc4+ checks a2 along c4-b3-a2.",
+        "Kb1 is forced back into the corner.",
+        "Bb3 controls a2 and c2. The bishop on h6 still controls c1, leaving Black’s king without a move.",
+        "a2 uses the remaining pawn step. Black’s own bishop on a1 now blocks that pawn, so White must avoid a quiet stalemating move.",
+        "Kg5 blocks the h6-g5-f4-e3-d2-c1 diagonal. White deliberately releases c1 while bringing the king closer.",
+        "Kc1 is the only legal response. Black’s other pieces remain blocked.",
+        "Kf5+ uncovers the bishop’s diagonal and gives a discovered check.",
+        "Kb1 is forced back. White’s king has advanced without freeing the pawns.",
+        "Kf4 blocks the diagonal at its next square, allowing another waiting move.",
+        "Kc1 again uses the only square White has deliberately released.",
+        "Ke4+ reopens the diagonal with discovered check and improves the king.",
+        "Kb1 is forced back once more.",
+        "Ke3 blocks the same diagonal closer to the corner. The king is now approaching the bishop on b3.",
+        "Kc1 is again the only legal move.",
+        "Kd3+ clears the diagonal and checks. This time White’s king is close enough to defend c2.",
+        "Kb1 is forced, but the final checking move is now protected.",
+        "Bc2# checks b1 and is protected by Kd3. The other bishop covers c1, while Black’s own bishop and pawns occupy a1, a2 and b2."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bc2# checks b1 and is protected by Kd3. The other bishop covers c1, while Black’s own bishop and pawns occupy a1, a2 and b2.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/7B/8/8/3K4/ppB5/bk6 b - - 13 10",
+      "outcome": "loss"
+    },
+    {
+      "id": "esacriats_stalemate",
+      "start": "blockade",
+      "title": "Make a harmless-looking bishop move",
+      "san": [
+        "Be3"
+      ],
+      "commentary": [
+        "The trap is complete, but White is not yet close enough to mate. A move that keeps c1 covered gives Black nothing to play.",
+        "Be3 is stalemate. The bishops still control a2, c2 and c1, while Black’s bishop and pawns cannot move. Black is not in check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Be3 is stalemate. The bishops still control a2, c2 and c1, while Black’s bishop and pawns cannot move. Black is not in check.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/7K/1B2B3/pp6/bk6 b - - 1 4",
+      "outcome": "draw"
+    },
+    {
+      "id": "esacriats_take_pawn",
+      "start": "blockade",
+      "title": "Remove the pawn with check",
+      "san": [
+        "Bxa2+",
+        "Kxa2"
+      ],
+      "commentary": [
+        "Capturing the a2 pawn removes part of the cage. Check what the king can take after the bishop check.",
+        "Bxa2+ gives up the win. The bishop on a2 is not defended by White’s king on h4.",
+        "Kxa2 captures that bishop and escapes the trap. The tablebase determines the exact result of this mistaken exchange."
+      ],
+      "classification": "independent alternative illustrating a source idea with representative legal replies",
+      "explanation": "Kxa2 captures that bishop and escapes the trap. The tablebase determines the exact result of this mistaken exchange.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/7B/8/7K/8/kp6/b7 w - - 0 5",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "blockade",
+      "prompt": "Why does blocking your own bishop help?",
+      "answer": "It releases c1 so Black has a legal king move. Stepping off the diagonal then checks the king back, allowing White’s king to approach without stalemate."
+    },
+    {
+      "node": "blockade",
+      "prompt": "Why is Bc2 mate only after the king reaches d3?",
+      "answer": "The bishop on c2 needs protection from the king. Kd3 supplies it, while the other bishop and Black’s own blocked pieces remove every escape."
+    }
+  ],
+  "defaultBranch": "esacriats_complete",
+  "practiceBranch": "esacriats_complete",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after the source rook sacrifice and ...Kxb1. The selected bishop-and-king maneuver is checked here; the earlier sacrifice remains source context.",
+  "verification_scope": "Starting positions reconstructed from saved source images. Every encoded intermediate position and endpoint is checked against the tablebase. These are selected instructive variations, not an exhaustive tree of every legal defense.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

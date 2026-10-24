@@ -1,0 +1,481 @@
+{
+  "batch_id": "2026-10-23-61",
+  "reviewed_on": "2026-10-24",
+  "scope": "Complete larger-board finite mating proofs for Red Carpet and the later Majestic Pawn sacrifice; explicitly limited final mating-net lesson for Chess Elevator.",
+  "reviews": {
+    "_EIjsaPilNU": {
+      "result": "verified_selected_lines",
+      "supersedes_batch": "2026-10-23-36",
+      "notes": "All 29 diagrams/captions reviewed; native initial board has White Kg3/Rc6/Nd4/f4/g5/h6 against Kh5/Bh7/Rb2/b4/c2/d3. Nf5 finite proof covers all twelve legal replies. After Bxf5/h7 all seventeen replies are covered, including Bg6/Be6 blocks and four c-pawn promotions. Four teaching branches show source clearance, independent promotion and both bishop blocks. No uniqueness or Ne6 draw claim is certified.",
+      "source_images": [
+        {
+          "file": "_EIjsaPilNU/images/image_00001.jpg",
+          "sha256": "b94182786b629a88ff9c2ed99ec722cae2003bbc3a8bd7bc8210375b63c9f134"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00002.jpg",
+          "sha256": "de21169355fbb978b6889a0a1b76daf9e6000c7d6f6f0e4a5b56599efb7b1fcf"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00003.jpg",
+          "sha256": "db07f98c14dee5905824484fc902035c6e378b5645f2e0ee2f43491cad1cb387"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00004.jpg",
+          "sha256": "b3bd75b3d34730c33697e8d0599c5cc44fcedd4761dd226b6b984966fd2e1f44"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00005.jpg",
+          "sha256": "02100fa8306a04420fa99f7f019d75f10b78446422485c588d16f5d8b5cc2eec"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00006.jpg",
+          "sha256": "df71025e98372e45d56dd6dd72f86b77469a1ec0c551650e17b3fd4b82fa5acf"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00007.jpg",
+          "sha256": "7741f703e8d95fcc56900a7a9a6ed80399298271a96afdddf25361bbe332a7e8"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00008.jpg",
+          "sha256": "3466f270ca44ef27450071d252b3350d592c5bb1bd5f05a8dcaad991005d0d81"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00009.jpg",
+          "sha256": "6c210a6aa2b6e4b1aa9b6f4807f62514cf20cff1cdd17cc9f8772089448c88af"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00010.jpg",
+          "sha256": "67d8e77ee37858e09d1f0f729e0a7013be7a5b999e914be3c444fcf18a69b171"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00011.jpg",
+          "sha256": "aac6de0c4d3d61df78585772b158828f422e2d1ff67a33e7d881d5a2a0e5e000"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00012.jpg",
+          "sha256": "344d29725c299e55d066730ed184490a68d95b2614fcf17a7d7882689ec423ab"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00013.jpg",
+          "sha256": "b8198bed4dc58e1c6f485459e089a78fb87fd8708f4ab449d591292df43ec627"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00014.jpg",
+          "sha256": "66dcb356ba8cde3a73c998523eadaeb7c7f40511b32b79254f148fbad40c148e"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00015.jpg",
+          "sha256": "7d999a23a9f16e18079069f63c7a2d41de7a7652a03983db5b18a19fd4f906ba"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00016.jpg",
+          "sha256": "7de1cd08a9a3900ed1a127382d0368d049a7021c2f5a3fc689ed45c198a41936"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00017.jpg",
+          "sha256": "0ec12051a08bbf7b4ce57e0b288c847bebb135e4a9c7d0bb684af8583da94584"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00018.jpg",
+          "sha256": "4ac365797b944ba006b2eb92910d6c76a9b67e271fb2d22c03b5d6a451fc4183"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00019.jpg",
+          "sha256": "4a5dca0d5f12f40a167cf506889b30fca84d54e5763e14b8d12fcc382f418506"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00020.jpg",
+          "sha256": "686678d2aafae6ff904a17367843f50243e04077f0bf155488d116e02614a16c"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00021.jpg",
+          "sha256": "ec40eb72ebf2aa6a32f73d0f604150a9ed6467b842f44970cb36d36b240482a0"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00022.jpg",
+          "sha256": "d34c69becf0015f4c2cb6c45757200e7221d8dd14019b5b3ba0caa16036a7d21"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00023.jpg",
+          "sha256": "8522a07d3d7d9f4fb998ad289655291dc4785abd25d0177afe6c2dbb5536f439"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00024.jpg",
+          "sha256": "da9697da9b0f9c0117c1b90789a51626e484caad66a0967063c4631d2d887d10"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00025.jpg",
+          "sha256": "b84cef5837cb6dc884a6422c32a3caf853fa84bdc76757c62924c3824376e6ee"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00026.jpg",
+          "sha256": "c9a82f50ea62ed263a6bcfea2ba138eab92b1f79ecf2d6f653ce2ca23407a88b"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00027.jpg",
+          "sha256": "7207c13067d22f8d4768e9ca4e8e3fc6686bbed60c896ae5f72df167831326b5"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00028.jpg",
+          "sha256": "2b572bed53649140fd8dae0b63b1f4f07ca861640c20d937e5830080ecdfe06a"
+        },
+        {
+          "file": "_EIjsaPilNU/images/image_00029.jpg",
+          "sha256": "216aaa42a31ead48da8c9bdf255a2c687d1f3d798fcb91b09320a16179fcf1b0"
+        }
+      ],
+      "reconstruction": {
+        "file": "scripts/curated-studies/_EIjsaPilNU.json",
+        "sha256": "83308c14dd4c9a2273aad890c531cacd7c27dafa716d0432c937ce0833ce6645"
+      }
+    },
+    "gOQ3onEYVIA": {
+      "result": "verified_selected_lines",
+      "supersedes_batch": "2026-10-23-50",
+      "notes": "All 35 board diagrams/captions reviewed; native image23 at 69 seconds confirms thirteen-piece root after Bg6. Complete finite mating proof checks all five defenses to Qc1+, including both knight blocks and both rook blocks, rather than assuming every sacrifice is accepted. Five teaching branches cover source double-queen/bishop sacrifice and representative independent blocks. Earlier promotion/trade/unique-move claims remain outside scope. Prior legal-only reconstruction is preserved.",
+      "source_images": [
+        {
+          "file": "gOQ3onEYVIA/images/image_00001.jpg",
+          "sha256": "a98a0a5655e7145d5fca5aac1f289c934033deed3939109d65199a0c55615ddc"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00002.jpg",
+          "sha256": "daf5c545ad6f96c1d3849c3b4abc1efab3b4d66561afe98608814d370877fc8b"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00003.jpg",
+          "sha256": "1024f38c78d56dd3f5146fa18dccabc9d0c45fc1a9d30cc5ad17a9a07fc76337"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00004.jpg",
+          "sha256": "03cda2de68401067b8b4222913305cf832df9196e9fe63d5225c0f9557c7d57f"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00005.jpg",
+          "sha256": "dc6b7e8e20a30aee75fd9b3ef424f703a948344164f2736308a7cb291a478ab2"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00006.jpg",
+          "sha256": "cfe1d05501440c6f561340bff9bb073a60ee195332f52382815f9247ef67e8c7"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00007.jpg",
+          "sha256": "951769df56b897d76c93e71a737053f8b74317bb911a2828e51a9310477c9ca4"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00008.jpg",
+          "sha256": "11b120c4b5f0d25d496b99c4cbb2d28e7caaf12a5efc280ab840fbc387b4802d"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00009.jpg",
+          "sha256": "a9094cca7fd9553ed18da7920a2bc8cde87f6af9c6a500ef6e8432fec2319462"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00010.jpg",
+          "sha256": "828e085500ca30745b5e2b343da0264822dc18f260bbc54c995c9659a72082e3"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00011.jpg",
+          "sha256": "4d441c13ff5b7a20f045027092ba24c5de7e69c983fda0f5494cd09638997ddb"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00012.jpg",
+          "sha256": "bc8c27df7885ba1d85d2f794b0432794582a7135fb14d19e742c10b22305d16e"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00013.jpg",
+          "sha256": "223ac06ce1b0ae9034abc93f79b6dcf3840c2b7ba777aabfe94245aa0d441724"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00014.jpg",
+          "sha256": "f53e494adcc338a78e36c9efc8c73ebd406d154d6210dd35bebe137bc360f28e"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00015.jpg",
+          "sha256": "f1efcf407893584a946b954ef69b8554f71d585c65b8c00f48c8aa2211d612bb"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00016.jpg",
+          "sha256": "d67a39b00908487d637893e8ac31f7b492f76ce017dcc997ff555d97e9403c9c"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00017.jpg",
+          "sha256": "cda0c1f8454bdb70e607497f308ee293a937fbbb57d1bad25e69feaf822447cf"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00018.jpg",
+          "sha256": "eb0e2d487810bb06b2df195f5741976c52ca14ced9934ef025b798927bac6b7c"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00019.jpg",
+          "sha256": "a98c64ae561e00ba06fd31877438fedd783d43d71abb9922a9588406a14b5e5d"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00020.jpg",
+          "sha256": "79ee116d2a6c1b6c5fda5ae73bb76eb67cfaa3805545b1f5706071b215f1746e"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00021.jpg",
+          "sha256": "85c55f065623809128210a0c6e091db8940ddcce928f54098e7c92d3429bd771"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00022.jpg",
+          "sha256": "2e3edcf89b48f8154d57081e1332004f2422f5e118571aa408bab8b0c71f54a4"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00023.jpg",
+          "sha256": "96c45f8fd8e0136dc7b7d87e0e8174ee504c63f4ea6d72642d0b2721a8af337e"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00024.jpg",
+          "sha256": "94eadd31a042c1dc90e37e6e10ed0d569ed2663a0fd007a6d119f47d2efa474f"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00025.jpg",
+          "sha256": "5dd217b9809768bdc27c081169ad4a87dcd7faa811c86aef0e6ec09d8f1cd829"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00026.jpg",
+          "sha256": "fe4736539ac85c1cb706d33cb41434d4d4869da06136b58f904ca11c58cedab1"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00027.jpg",
+          "sha256": "fb63ba9810d13e401dfd16bc471dc566a393ac1f127678ad965ca69c749d7443"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00028.jpg",
+          "sha256": "524ae5a78e6efbf1e1d4500d95d67aec63a4a4718ce18889bd0098f375ad6a7c"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00029.jpg",
+          "sha256": "8a1386457e63d1533411da0fca88e0dcabac59a558c3e679cded998233dac304"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00030.jpg",
+          "sha256": "ea63b97ebd39d6c99c78a77e9615e5c6786cdc35cc5531e9970baf345c5f47bc"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00031.jpg",
+          "sha256": "030f090d1901defe4c6bf3b90545811a390428f8d9e22fff668a004a39f28943"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00032.jpg",
+          "sha256": "d125b69722aca8510154620b50468e2cf65c1f824a1abdf96ccc56d058b63d77"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00033.jpg",
+          "sha256": "cb9f5bcd73454188ce472cb378642044d3d055521d97778a099055dd0fdc0bb4"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00034.jpg",
+          "sha256": "73806acf2fa84e91c353925b7594bf2d4d0923b8f8e0fbe7c5f1569f83aebcd7"
+        },
+        {
+          "file": "gOQ3onEYVIA/images/image_00035.jpg",
+          "sha256": "43ad5893d4f7c46a29dfddfee4d43a50f36b277fbddcd52a2ef4ac85bb6342b0"
+        }
+      ],
+      "reconstruction": {
+        "file": "scripts/curated-studies/gOQ3onEYVIA.json",
+        "sha256": "83713c94745d591c4e23a0f819bd432ac790d77cc026f0ef8042dcc5053de9e8"
+      }
+    },
+    "F1EdxuZdc5U": {
+      "result": "verified_selected_lines",
+      "supersedes_batch": "2026-10-23-35",
+      "notes": "All 38 board diagrams/captions reviewed; native image31 at 112 seconds confirms the complete ten-piece later root after Kc4. Selected final elevator stage Rb4+/Kxc3/Bd2 mate is proved against the sole legal defense. The white c3 pawn protects b4, then its capture places Black where Kd1 can support the bishop mate. Earlier queen/bishop sacrifices and elevator checks remain unverified; this is explicitly a short mating-net lesson, not the full composition.",
+      "source_images": [
+        {
+          "file": "F1EdxuZdc5U/images/image_00001.jpg",
+          "sha256": "85b9e0e331147a1fc558e0ac6ba1e744d4d746ce073287ef3659be26ddb79bb9"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00002.jpg",
+          "sha256": "f4ae5082cccb9f483b7d0bee0fff3475269d18b6dd168b6542fec21c33e243bc"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00003.jpg",
+          "sha256": "34833c5eb1e9d719a1ffe4ced56ae1fb78aaa23976e400ca41c3e3fb0f81da65"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00004.jpg",
+          "sha256": "0466fa004710f80d23860fa91a1dd0003bfbd4f5a93d08e84a72694a1c3e5414"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00005.jpg",
+          "sha256": "7f7c85ad9ebea5f96fcf303035f61027c9667f565a0351d4fe5d53047d8506bd"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00006.jpg",
+          "sha256": "173995de49271ce4a6e450d03fc43d35f2b8718efc2405b3cf0dbbb48a6f2de5"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00007.jpg",
+          "sha256": "10ba2ddad1b38ac5eec855b311f230d93595745569037e8bb6476872156d9980"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00008.jpg",
+          "sha256": "ba31820f1edcc2071a63129ee4e2c2cd24c78a454077f2763031fa2e631385d1"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00009.jpg",
+          "sha256": "6fc60424cc1386283579ca601bbcd2d431382215eda7be3fc581bbf81dad1f27"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00010.jpg",
+          "sha256": "fc9eaa8bf8019573db49eb6a536442140042cd318df673c2bd0ffd73af93eec9"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00011.jpg",
+          "sha256": "f2335c579634560d455a23435c6a64dd195c4a2e9b5ab24cc9729d3013a00bd2"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00012.jpg",
+          "sha256": "4ee683baa24989573e0c17bc5b6b2d31c7a0f6361dcd5387890776ea8f097b45"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00013.jpg",
+          "sha256": "b929a66c0a66596546c24761556cfcd0ee6f3b06a9eae38d0b9dd67b961048d9"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00014.jpg",
+          "sha256": "61302cdd39d0b256f70156b3b220eddfe42a0f46fd331b80eec10554edfc51ea"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00015.jpg",
+          "sha256": "c37aa1eeb185bf65c8a8291f84fc684fe57e01575bc8df894fec156e3e2379a2"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00016.jpg",
+          "sha256": "4a71848066f0f63393621464e78fb8fa8131ca55cab7ec85aa69cd745209a2bc"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00017.jpg",
+          "sha256": "6fda4025350c1450a7bdd6ce22b78321d18e18a21a65852b17885fc3f92676ec"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00018.jpg",
+          "sha256": "ae879454d1af8e4180eddb44a0aab8d7b7e5f0d44e4c795f5b7c0c818b15d9ef"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00019.jpg",
+          "sha256": "bbbdea5caa018cb3486a00d2e1198d7380bf822a1254931549ac313f23b7be91"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00020.jpg",
+          "sha256": "7884db04b4343adb6f77a516fdf53385bec77735c545877fbfcc5b7751cdd00a"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00021.jpg",
+          "sha256": "84c389f25d1675564c8e7a3a11a0c343bd6a6aabc4814c494f0bc4141ce3472f"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00022.jpg",
+          "sha256": "186a28fa6f147db7817da93500cddeba09691960a17070070a0082c5c4d11db9"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00023.jpg",
+          "sha256": "5e660b2283deff63e7f58ea8afc52bff6e6162ac5cd7be00a6aa3fe241820694"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00024.jpg",
+          "sha256": "9bc2fa42273971a6e462d69adbc13784037860c62925d0ab4a7e4af959a9ded5"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00025.jpg",
+          "sha256": "3e7393cf63caee6fd14116fe38aef48a2e4f803374c0e30c3f4759d4fa6d52a9"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00026.jpg",
+          "sha256": "c0ae1b68e68a0410685ccc8fb281d7eaedbdcebdad17c58d806def6e776c9528"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00027.jpg",
+          "sha256": "3700f36d51fe82d4ddc1286232622ba37cd841ebd1ef4f1fe94bdda6741239f5"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00028.jpg",
+          "sha256": "dd6f02654d27d7cf3e65a20e7a2c1766bb5005b30cf8d403b202d3ed74cc1895"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00029.jpg",
+          "sha256": "8d6f777fec1154c58f606bcfb4b666b63c0ad48c5f07c68d326cddfe8a675060"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00030.jpg",
+          "sha256": "198eb7eb4c43367d8f32e5e0f4735da72b1101de0b08169cc51e92e618acd1c7"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00031.jpg",
+          "sha256": "2707b644f77c6917845c6f20d58c65fff43da2d5ec42698964769b47af396955"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00032.jpg",
+          "sha256": "4de35071716c894cc80dcec2243027966343aa59cefe1bebc7aa6dad7118482f"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00033.jpg",
+          "sha256": "c205f59625a021717eb96af66d1b572648bea644e7f6be1da145d75124c047fd"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00034.jpg",
+          "sha256": "af6bb52d0152249bef08b0ae94c9853a9d950c6a9232c788224907861f4a4d72"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00035.jpg",
+          "sha256": "37116a6f6c2bc2a59efda83231feda41907c67d44f8c1d99ad9f7644a77ba328"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00036.jpg",
+          "sha256": "6d6bc03441320176c8dac816c6ff908c3df6a99cd306edf18a65eb752c2d8f97"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00037.jpg",
+          "sha256": "0523aaac911c609f5cb8452934cc292db5ea8c1b9f2d52acb7ef52404984a5ae"
+        },
+        {
+          "file": "F1EdxuZdc5U/images/image_00038.jpg",
+          "sha256": "c5c556f76be8c01c5bd1b1b9bfe7fdb2b4e4ba500234f890c32c9e44ce564a39"
+        }
+      ],
+      "reconstruction": {
+        "file": "scripts/curated-studies/F1EdxuZdc5U.json",
+        "sha256": "86d7370cc6e1638e6207e9dedd250d6b42ebf9499ff5429a39fef5cdd8c2074b"
+      }
+    }
+  },
+  "validation": {
+    "local_only": true,
+    "selected_branches": 10,
+    "encoded_intermediate_steps": 52,
+    "source_hash_audit": "All 102 reviewed board-image hashes and three curated lesson hashes match; draft/curated lessons and evidence are identical.",
+    "study_audit": "All 52 selected moves replay canonically to White wins. Root finite certificates rebuild identically and every defender node contains every legal move. All leaves are actual mates; no larger board is sent to a tablebase.",
+    "tablebase_positions": 0,
+    "larger_proof_positions": 110,
+    "root_defense_counts": {
+      "_EIjsaPilNU": 12,
+      "gOQ3onEYVIA": 5,
+      "F1EdxuZdc5U": 1
+    },
+    "root_mate_leaves": {
+      "_EIjsaPilNU": 29,
+      "gOQ3onEYVIA": 12,
+      "F1EdxuZdc5U": 1
+    },
+    "tracker_counts": {
+      "verified_selected_lines": 153,
+      "not_applicable": 13,
+      "awaiting_reconstruction": 55,
+      "needs_information": 27
+    },
+    "history_audit": "All three prior decisions retained in review history; 248 candidates reconcile, 153 verified source entries and 509 branches.",
+    "web_tests": "160 passed across sixteen files; includes independent Chess.js replay of all finite proof defenses and pin/clearance/mating-net contrasts",
+    "production_build": "passed in 5.54 seconds; existing large-chunk advisory",
+    "browser_review": [
+      "docs/screenshots/endgame-stories-batch-61-block.png",
+      "docs/screenshots/endgame-stories-batch-61-pawn.png",
+      "docs/screenshots/endgame-stories-batch-61-elevator.png"
+    ]
+  }
+}

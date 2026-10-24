@@ -1,0 +1,135 @@
+{
+  "video_id": "JG5qrUG8r0Y",
+  "title": "Majestic Sacrifices: The Pawn Ending",
+  "summary": "After the heavy pieces disappear, improve the king before committing the spare pawns. The wrong pawn push changes the exact result.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/6pp/8/5pK1/3k3P/6P1/8/8 b - - 0 1",
+      "question": "Should Black activate the king or push a pawn?",
+      "explanation": "Begin in the separate pawn ending at 65s, with Black to move after White’s king has reached g5. Black has Kd4 and pawns f5/g7/h7 against Kg5 and pawns g3/h4.",
+      "evidence": {
+        "timestamp_s": 65
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "sacrifices_king_conversion",
+      "start": "start",
+      "title": "Independent king activation and pawn conversion",
+      "san": [
+        "Ke4",
+        "h5",
+        "Kf3",
+        "h6",
+        "gxh6+",
+        "Kxh6",
+        "Kxg3",
+        "Kg5",
+        "f4",
+        "Kf5",
+        "f3",
+        "Ke4",
+        "f2",
+        "Kd3",
+        "f1=Q+"
+      ],
+      "commentary": [
+        "Begin in the separate pawn ending at 65s, with Black to move after White’s king has reached g5. Black has Kd4 and pawns f5/g7/h7 against Kg5 and pawns g3/h4.",
+        "Ke4 activates the king and preserves Black’s exact win. It threatens to approach the white pawns from f3.",
+        "h5 runs White’s outside pawn in this independent representative defense.",
+        "Kf3 heads toward g3 while Black still has g7 available to stop the h-pawn.",
+        "h6 moves within two steps of promotion.",
+        "gxh6+ removes the passer with check against Kg5.",
+        "Kxh6 recaptures, but the white king has been diverted from g3.",
+        "Kxg3 removes White’s remaining pawn. Black keeps the f5 passer and h7 pawn.",
+        "Kg5 returns toward the central passer. This is a representative legal continuation, not a claim of best defense at every turn.",
+        "f4 starts the promotion march while Black’s king supports its route.",
+        "Kf5 approaches the f-pawn but cannot capture it while Kg3 controls f4.",
+        "f3 advances the protected passer.",
+        "Ke4 takes a different route toward the pawn.",
+        "f2 leaves only one step to promotion.",
+        "Kd3 cannot reach f1 in time in this selected continuation.",
+        "f1=Q+ promotes with check. The exact queen-and-pawn versus king ending is winning for Black."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "f1=Q+ promotes with check. The exact queen-and-pawn versus king ending is winning for Black.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/7p/8/8/8/3K2k1/8/5q2 w - - 0 9",
+      "outcome": "loss"
+    },
+    {
+      "id": "sacrifices_pawn_tempo",
+      "start": "start",
+      "title": "Independent premature g-pawn advance",
+      "san": [
+        "g6"
+      ],
+      "commentary": [
+        "Begin in the separate pawn ending at 65s, with Black to move after White’s king has reached g5. Black has Kd4 and pawns f5/g7/h7 against Kg5 and pawns g3/h4.",
+        "g6 gives up the forced win and leaves an exact draw with best play. Black needed to activate the king before choosing a pawn commitment."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "g6 gives up the forced win and leaves an exact draw with best play. Black needed to activate the king before choosing a pawn commitment.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/7p/6p1/5pK1/3k3P/6P1/8/8 w - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "sacrifices_check_error",
+      "start": "start",
+      "title": "Independent pawn check reverses the advantage",
+      "san": [
+        "h6+"
+      ],
+      "commentary": [
+        "Begin in the separate pawn ending at 65s, with Black to move after White’s king has reached g5. Black has Kd4 and pawns f5/g7/h7 against Kg5 and pawns g3/h4.",
+        "h6+ gives check, but the exact resulting position is winning for White. A forcing-looking move can be worse than quiet king improvement. This branch stops at the checked result comparison rather than inventing a conversion."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "h6+ gives check, but the exact resulting position is winning for White. A forcing-looking move can be worse than quiet king improvement. This branch stops at the checked result comparison rather than inventing a conversion.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "8/6p1/7p/5pK1/3k3P/6P1/8/8 w - - 0 2",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why keep the pawn moves in reserve?",
+      "answer": "King activation puts pressure on the white pawns while retaining g7 as a response to h5–h6. The exact comparisons show that g6 draws and h6+ even loses for Black."
+    }
+  ],
+  "defaultBranch": "sacrifices_king_conversion",
+  "practiceBranch": "sacrifices_king_conversion",
+  "practiceType": "king",
+  "practiceGoal": "win",
+  "startContext": "Begin only in the seven-piece pawn ending shown at 65s with White Kg5 and Black Kd4. The earlier knight/bishop sacrifices, larger rook-check sequence and later pawn mate remain source context. All encoded continuations from this saved ending are independent representative lines; Black is the practice side and must preserve a win.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}
