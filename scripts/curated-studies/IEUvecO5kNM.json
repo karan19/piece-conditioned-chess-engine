@@ -1,0 +1,148 @@
+{
+  "video_id": "IEUvecO5kNM",
+  "title": "Stunning Sacrifice: Close the King’s Last Escape",
+  "summary": "Offer the queen to block the king’s escape, then distinguish a checking pawn push from the final pawn recapture that actually mates.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2Q2R2/3p2p1/4ppqk/7p/3P1KbP/3BP1P1/8/8 b - - 0 1",
+      "question": "How can Black force mate despite being a rook down?",
+      "explanation": "Qe4+ offers the queen on a square that White must occupy. Pawn checks then close the king’s escape routes; the h4 pawn still gets a checking capture before Black’s f-pawn delivers mate.",
+      "evidence": {
+        "timestamp_s": 36
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "2Q2R2/3p2p1/4ppqk/7p/3P1KbP/3BP1P1/8/8 b - - 0 1",
+        "winner": "black",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "stunning_bishop_capture",
+      "start": "start",
+      "title": "Source line: the bishop takes the queen",
+      "san": [
+        "Qe4+",
+        "Bxe4",
+        "e5+",
+        "dxe5",
+        "g5+",
+        "hxg5+",
+        "fxg5#"
+      ],
+      "commentary": [
+        "Begin with the complete sixteen-piece board. Black must create a forcing attack before White’s extra rook matters.",
+        "Qe4+ offers the queen with check on e4, not d4. White has only Bxe4 or Kxe4; moving another piece or simply retreating the king cannot answer the check legally.",
+        "Bxe4 accepts the queen, placing White’s own bishop on the e4 escape square.",
+        "e5+ checks Kf4 with the pawn from e6. The bishop on e4 and Black’s other controls leave only one legal reply.",
+        "dxe5 takes the checking pawn, but White’s own pawn now occupies e5 and blocks another potential king flight.",
+        "g5+ checks Kf4 with the g7 pawn advancing two squares. This is not mate: the h4 pawn can capture it with check.",
+        "hxg5+ is White’s only legal reply. It removes the checking pawn and checks Kh6 from g5, so Black must still answer that check.",
+        "fxg5# takes the white pawn with the pawn from f6 and checks Kf4. White’s bishop and e5 pawn block e4/e5; Bg4 and Black’s pawns cover the other flights. White has no legal reply: actual mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "fxg5# takes the white pawn with the pawn from f6 and checks Kf4. White’s bishop and e5 pawn block e4/e5; Bg4 and Black’s pawns cover the other flights. White has no legal reply: actual mate.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "2Q2R2/3p4/7k/4P1pp/4BKb1/4P1P1/8/8 w - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "stunning_king_capture",
+      "start": "start",
+      "title": "Source alternative: the king takes the queen",
+      "san": [
+        "Qe4+",
+        "Kxe4",
+        "d5+",
+        "Kf4",
+        "e5+",
+        "dxe5",
+        "g5+",
+        "hxg5+",
+        "fxg5#"
+      ],
+      "commentary": [
+        "Compare White’s only other reply to the same queen offer. Both branches are illustrated source variations, not a full historical game score.",
+        "Qe4+ forces White to take the queen with king or bishop.",
+        "Kxe4 uses the king and leaves Bd3 on its original square. Black needs an extra pawn check to restore Kf4.",
+        "d5+ advances the d7 pawn two squares, checking the king on e4.",
+        "Kf4 is forced back. White still has its queen, rook and bishop, but none can interrupt the coming close-range pawn checks.",
+        "e5+ forces the d4 pawn to capture, recreating the self-blockade on e5.",
+        "dxe5 removes the checking pawn and fills the e5 escape square with White’s own pawn.",
+        "g5+ checks the king. As in the other branch, hxg5+ remains legal and must not be omitted from the calculation.",
+        "hxg5+ answers the pawn check with a checking capture against Kh6. White’s h-pawn is now on g5 rather than h4.",
+        "fxg5# answers that check and delivers actual mate. Black’s d5 pawn also controls e4, filling the role played by White’s bishop in the other variation."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "fxg5# answers that check and delivers actual mate. Black’s d5 pawn also controls e4, filling the role played by White’s bishop in the other variation.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "2Q2R2/8/7k/3pP1pp/5Kb1/3BP1P1/8/8 w - - 0 6",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why give the queen away on e4?",
+      "answer": "White must take with bishop or king. The bishop blocks e4 directly; if the king takes, d5+ forces it back to f4 and also controls e4."
+    },
+    {
+      "node": "start",
+      "prompt": "Is g5+ already checkmate?",
+      "answer": "No. White’s h4 pawn can play hxg5+, checking Kh6. Black then plays f6xg5#, which answers the check and actually mates."
+    }
+  ],
+  "defaultBranch": "stunning_bishop_capture",
+  "practiceBranch": "stunning_bishop_capture",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin at the complete sixteen-piece diagram after Kf4 36 seconds: White Kf4/Qc8/Rf8/Bd3/d4/e3/g3/h4 against Kh6/Qg6/Bg4/d7/e6/f6/g7/h5. Native13 establishes the full reversed board. The offered queen goes to e4, despite caption d4. Both legal White replies to Qe4+ are covered: Bxe4 and Kxe4. After the pawn-check sequence, g5+ is not immediate mate: White must answer hxg5+, then fxg5# is actual mate. Native27/28/29 show that complete bishop-capture finish, including the white pawn on g5 and then Black f6xg5. Native34/35 illustrate the corresponding king-capture branch. The prior legal-only review stopped before the final recapture; it is preserved and corrected rather than silently discarded. A complete finite Black strategy checks every White reply through actual mate, with all sixteen root pieces retained. Earlier queen/bishop-capture blunders and king-escape alternatives before this root remain outside the proof.",
+  "verification_scope": "Begin at the complete sixteen-piece diagram after Kf4 36 seconds: White Kf4/Qc8/Rf8/Bd3/d4/e3/g3/h4 against Kh6/Qg6/Bg4/d7/e6/f6/g7/h5. Native13 establishes the full reversed board. The offered queen goes to e4, despite caption d4. Both legal White replies to Qe4+ are covered: Bxe4 and Kxe4. After the pawn-check sequence, g5+ is not immediate mate: White must answer hxg5+, then fxg5# is actual mate. Native27/28/29 show that complete bishop-capture finish, including the white pawn on g5 and then Black f6xg5. Native34/35 illustrate the corresponding king-capture branch. The prior legal-only review stopped before the final recapture; it is preserved and corrected rather than silently discarded. A complete finite Black strategy checks every White reply through actual mate, with all sixteen root pieces retained. Earlier queen/bishop-capture blunders and king-escape alternatives before this root remain outside the proof.",
+  "sourceCorrections": [
+    {
+      "claim": "The caption names the queen offer as d4.",
+      "correction": "The board shows Qe4+, which is legal and forces Bxe4 or Kxe4."
+    },
+    {
+      "claim": "The narrated g5 push is described as pawn checkmate.",
+      "correction": "g5+ allows the forced hxg5+. The later source image confirms fxg5#, the actual mate. The earlier review correctly found hxg5+ but stopped before this visually supported recapture."
+    }
+  ],
+  "finiteStrategy": {
+    "winner": "black",
+    "max_plies": 12,
+    "moves": {
+      "2Q2R2/8/5p1k/3pP1Pp/5Kb1/3BP1P1/8/8 b - - 0 5": "fxg5#",
+      "2Q2R2/6p1/5p1k/3pP2p/5KbP/3BP1P1/8/8 b - - 0 4": "g5+",
+      "2Q2R2/6p1/4pp1k/3p3p/3P1KbP/3BP1P1/8/8 b - - 1 3": "e5+",
+      "2Q2R2/3p2p1/4pp1k/7p/3PK1bP/3BP1P1/8/8 b - - 0 2": "d5+",
+      "2Q2R2/3p4/5p1k/4P1Pp/4BKb1/4P1P1/8/8 b - - 0 4": "fxg5#",
+      "2Q2R2/3p2p1/5p1k/4P2p/4BKbP/4P1P1/8/8 b - - 0 3": "g5+",
+      "2Q2R2/3p2p1/4pp1k/7p/3PBKbP/4P1P1/8/8 b - - 0 2": "e5+",
+      "2Q2R2/3p2p1/4ppqk/7p/3P1KbP/3BP1P1/8/8 b - - 0 1": "Qe4+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

@@ -1,0 +1,110 @@
+{
+  "video_id": "kYJfQjr6jQk",
+  "title": "I Lost my Mind: Leave a Legal Move",
+  "summary": "With two queens, restrict the opposing king without accidentally removing every legal move.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/3k4/8/2K5/2P5/5q2/4q3/8 b - - 0 1",
+      "question": "Black has two queens. Which queen move avoids the stalemate trap?",
+      "explanation": "White has Kc5 and c4; Black has Kd7, Qf3 and Qe2. White’s pawn is blocked by its own king. Before tightening the cage, count the king’s legal moves.",
+      "evidence": {
+        "timestamp_s": 12
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "mind_leave_flights",
+      "start": "start",
+      "title": "Independent alternative: leave two flights, then mate",
+      "san": [
+        "Qb3",
+        "Kd4",
+        "Qbxc4#"
+      ],
+      "commentary": [
+        "Begin after Kc5 at 12 seconds. The source shows Black throwing away this win with ...Qb2. This winning comparison is independently selected, not a continuation played in the video.",
+        "Qb3 leaves White two legal moves, Kd4 and Kd5. The c-pawn remains blocked, but the king is not stalemated.",
+        "Kd4 chooses one of those two flights. White still loses with best play; the other king move is checked in a separate branch.",
+        "Qbxc4# takes the pawn with the queen from b3, checking the adjacent king. Qe2 protects c4 and covers escape squares, so White cannot capture the checking queen or escape."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qbxc4# takes the pawn with the queen from b3, checking the adjacent king. Qe2 protects c4 and covers escape squares, so White cannot capture the checking queen or escape.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/3k4/8/8/2qK4/8/4q3/8 w - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "mind_other_flight",
+      "start": "start",
+      "title": "Independent alternative: the king chooses d5",
+      "san": [
+        "Qb3",
+        "Kd5",
+        "Qbxc4#"
+      ],
+      "commentary": [
+        "This independently selected branch checks the other legal king response to ...Qb3.",
+        "Qb3 keeps the win by leaving Kd4 and Kd5 available. It is one winning method, not a uniqueness claim.",
+        "Kd5 uses the other flight. White’s pawn is still on c4 and remains a mating target.",
+        "Qbxc4# captures with the b3 queen and mates along the c4-d5 diagonal. Qe2 and Qc4 cover the king’s escape squares, and the black king on d7 helps control the sixth rank."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qbxc4# captures with the b3 queen and mates along the c4-d5 diagonal. Qe2 and Qc4 cover the king’s escape squares, and the black king on d7 helps control the sixth rank.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/3k4/8/3K4/2q5/8/4q3/8 w - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "mind_source_stalemate",
+      "start": "start",
+      "title": "Source error: shut every door",
+      "san": [
+        "Qb2"
+      ],
+      "commentary": [
+        "The source illustrates Black moving the e2 queen to b2 in this exact five-piece ending.",
+        "Qb2 is stalemate, not mate. White’s king on c5 is not attacked; Qb2, Qf3 and Kd7 cover every available king square, while c4 cannot advance into its own king. White has no legal move and the win becomes a draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qb2 is stalemate, not mate. White’s king on c5 is not attacked; Qb2, Qf3 and Kd7 cover every available king square, while c4 cannot advance into its own king. White has no legal move and the win becomes a draw.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/3k4/8/2K5/2P5/5q2/1q6/8 w - - 1 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is a queen move that leaves an escape square useful here?",
+      "answer": "White has no pawn move because Kc5 blocks c4. Leaving Kd4 or Kd5 avoids stalemate and lets Black finish with a protected queen capture."
+    },
+    {
+      "node": "start",
+      "prompt": "Does having two queens change the stalemate rule?",
+      "answer": "No. If White is not in check and has no legal move, the game is drawn regardless of Black’s extra material."
+    }
+  ],
+  "defaultBranch": "mind_leave_flights",
+  "practiceBranch": "mind_leave_flights",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin after Kc5 at 12 seconds, a complete five-piece position shown from Black’s perspective. The earlier game and queen win are outside this reconstruction. Black is the practice side. The source’s ...Qb2 stalemate is compared with explicitly independent winning ...Qb3 continuations.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

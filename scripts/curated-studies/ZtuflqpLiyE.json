@@ -1,0 +1,126 @@
+{
+  "video_id": "ZtuflqpLiyE",
+  "title": "Domain Expansion",
+  "summary": "Avoid the queen-promotion stalemate and use a bishop underpromotion to build a mating net on light squares.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "kb4r1/2P2P2/K7/8/8/1N6/8/8 w - - 0 1",
+      "question": "Which promotion keeps winning chances?",
+      "explanation": "Begin after ...Rg8. White has captured the knight on c7 during the preceding larger sequence. Black’s rook now invites a promotion capture with a stalemate trap.",
+      "evidence": {
+        "timestamp_s": 107
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "domain_bishop",
+      "start": "start",
+      "title": "Underpromote and build the mating net",
+      "san": [
+        "fxg8=B",
+        "Bxc7",
+        "Nd4",
+        "Kb8",
+        "Nc6+",
+        "Ka8",
+        "Be6",
+        "Be5",
+        "Bc8",
+        "Bd6",
+        "Bb7#"
+      ],
+      "commentary": [
+        "The supported seven-piece diagram is reconstructed after ...Rg8. Earlier rook checks and the knight sacrifice are source context.",
+        "fxg8=B captures the rook without pinning Bb8 to Ka8 along the eighth rank. Black still has legal bishop moves, so this avoids stalemate and retains a forced win.",
+        "Bxc7 removes White’s remaining pawn. Black hopes its bishop can contain the white bishop and knight.",
+        "Nd4 prepares Nc6, restricting the black king and coordinating with Ka6.",
+        "Kb8 steps out of the corner. This is the illustrated king reply, not every possible defense.",
+        "Nc6+ drives the king back toward a8 and covers b8 as well as a7.",
+        "Ka8 retreats to the corner; Kb7 is controlled by Ka6.",
+        "Be6 begins the route from g8 to c8 and then b7. The dark-squared bishop cannot contest those light squares.",
+        "Be5 is the saved representative bishop move. Black keeps material but cannot stop the selected mating route.",
+        "Bc8 prepares Bb7 mate while preserving the knight’s control of b8.",
+        "Bd6 is the illustrated bishop retreat, which cannot cover the light square b7.",
+        "Bb7# completes the mating net: Nc6 covers b8/a7 and Ka6 protects b7."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bb7# completes the mating net: Nc6 covers b8/a7 and Ka6 protects b7.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "k7/1B6/K1Nb4/8/8/8/8/8 b - - 9 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "domain_queen",
+      "start": "start",
+      "title": "Take the rook with a queen",
+      "san": [
+        "fxg8=Q"
+      ],
+      "commentary": [
+        "Black’s rook offer is designed to exploit the excessive reach of a new queen.",
+        "fxg8=Q is immediate stalemate. Qg8 controls b8, Ka6 controls a7/b7, and Nb3 controls a5/c5/d4/d2/c1/a1. Black’s bishop on b8 is pinned to Ka8 and cannot move legally."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "fxg8=Q is immediate stalemate. Qg8 controls b8, Ka6 controls a7/b7, and Nb3 controls a5/c5/d4/d2/c1/a1. Black’s bishop on b8 is pinned to Ka8 and cannot move legally.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "kb4Q1/2P5/K7/8/8/1N6/8/8 b - - 0 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "domain_other_capture",
+      "start": "start",
+      "title": "Capture the bishop instead",
+      "san": [
+        "cxb8=Q+",
+        "Rxb8"
+      ],
+      "commentary": [
+        "The other promotion capture removes the bishop, but leaves the rook available to stop the f-pawn.",
+        "cxb8=Q+ promotes with check along the eighth rank. This choice gives away the forced win.",
+        "Rxb8 removes the new queen and controls f8 along the eighth rank. The exact rook-versus-knight-and-pawn ending is drawn with best play."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxb8 removes the new queen and controls f8 along the eighth rank. The exact rook-versus-knight-and-pawn ending is drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "kr6/5P2/K7/8/8/1N6/8/8 w - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does a bishop promotion avoid stalemate?",
+      "answer": "A bishop on g8 does not pin Bb8 to Ka8 along the eighth rank. Black can move that bishop, including Bxc7, so there is no stalemate. White keeps the bishop and knight needed to build a mating net."
+    }
+  ],
+  "defaultBranch": "domain_bishop",
+  "practiceBranch": "domain_bishop",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rg8 at 107 seconds, a supported seven-piece position after the earlier knight sacrifice has been captured on c7. The preceding eight-piece rook-check sequence remains source context. Selected promotion choices and a bishop-and-knight mating route are checked here.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

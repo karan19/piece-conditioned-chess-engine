@@ -1,0 +1,120 @@
+{
+  "video_id": "Df1mNH3I580",
+  "title": "Thousand Promotions: The Final Stalemate Contrast",
+  "summary": "Compare the final rook and queen captures: the stronger piece can remove the opponent’s last legal move.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3R4/8/8/8/6p1/4k1P1/8/1B1q2K1 w - - 0 1",
+      "question": "Does capturing the queen leave a legal reply?",
+      "explanation": "Begin after ...d1=Q+ in the saved rook variation. White has Kg1, Rd8, Bb1 and g3 against Ke3, Qd1 and g4. White must answer the queen check.",
+      "evidence": {
+        "timestamp_s": 164
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "queen_version",
+      "fen": "3Q4/8/8/8/6p1/4k1P1/8/1B1q2K1 w - - 0 1",
+      "question": "What happens with a queen instead of a rook on d8?",
+      "explanation": "This separately pictured seven-piece diagram differs only in White’s queen on d8. Capturing on d1 changes the black king’s available flights.",
+      "evidence": {
+        "timestamp_s": 145
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    },
+    {
+      "id": "before_promotion",
+      "fen": "3R4/8/8/8/6p1/4k1P1/3p4/1B4K1 b - - 0 1",
+      "question": "Can a different Black promotion rescue the ending?",
+      "explanation": "This saved seven-piece rook diagram is immediately before Black promotes d2. Black is losing; this node is a comparison, not the practice starting side.",
+      "evidence": {
+        "timestamp_s": 163
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "thousand_rook_capture",
+      "start": "start",
+      "title": "Capture without causing stalemate",
+      "san": [
+        "Rxd1"
+      ],
+      "commentary": [
+        "Begin after ...d1=Q+ in the saved rook variation. White has Kg1, Rd8, Bb1 and g3 against Ke3, Qd1 and g4. White must answer the queen check.",
+        "Rxd1 removes the checking queen. Unlike a queen, Rd1 does not control f3 or e2, so Black is not stalemated. The exact six-piece ending is winning for White; the longer conversion is not shown."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxd1 removes the checking queen. Unlike a queen, Rd1 does not control f3 or e2, so Black is not stalemated. The exact six-piece ending is winning for White; the longer conversion is not shown.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "8/8/8/8/6p1/4k1P1/8/1B1R2K1 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "thousand_queen_stalemate",
+      "start": "queen_version",
+      "title": "The queen capture stalemates",
+      "san": [
+        "Qxd1"
+      ],
+      "commentary": [
+        "Begin in the separately saved queen version, after ...d1=Q+.",
+        "Qxd1 is stalemate. Qd1 covers d2, d4, e2 and f3; Bb1 covers d3, e4 and f5; g3 covers f4; Kg1 covers f2. Black’s g4 pawn is blocked by g3. The king on e3 is not checked and has no legal move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxd1 is stalemate. Qd1 covers d2, d4, e2 and f3; Bb1 covers d3, e4 and f5; g3 covers f4; Kg1 covers f2. Black’s g4 pawn is blocked by g3. The king on e3 is not checked and has no legal move.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/6p1/4k1P1/8/1B1Q2K1 b - - 0 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "thousand_black_knight",
+      "start": "before_promotion",
+      "title": "Independent Black knight promotion also fails",
+      "san": [
+        "d1=N",
+        "Rxd1"
+      ],
+      "commentary": [
+        "An independent comparison starts before Black’s promotion in the saved rook diagram.",
+        "d1=N chooses a knight instead of a queen, but does not solve the threat of capture by Rd8.",
+        "Rxd1 removes the new knight and reaches the same winning six-piece ending. This checks one alternative promotion, not every legal Black move."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxd1 removes the new knight and reaches the same winning six-piece ending. This checks one alternative promotion, not every legal Black move.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/6p1/4k1P1/8/1B1R2K1 b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "queen_version",
+      "prompt": "Why does the queen draw while the rook wins after capture?",
+      "answer": "The queen on d1 also controls e2 and f3, closing the last king flights. The rook leaves legal king moves, so its material advantage can be converted instead of ending immediately in stalemate."
+    }
+  ],
+  "defaultBranch": "thousand_rook_capture",
+  "practiceBranch": "thousand_rook_capture",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Only the final seven-piece rook/queen diagrams are verified here: rook before ...d1=Q+ at 163s, after that promotion at 164s, and the corresponding queen variation. The earlier ten/eight-piece promotion choices and sacrifices remain source context. This comparison verifies the final stalemate mechanism, not an exact proof of the earlier rook-underpromotion decision.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,155 @@
+{
+  "video_id": "eW42fqN6gxU",
+  "title": "Pawn Chase!",
+  "summary": "Keep both minor pieces, then stop a pawn race by threatening mate instead of chasing promotion squares.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3N1k2/8/2K5/8/p7/1p6/8/6B1 w - - 0 1",
+      "question": "Can White stop the connected pawns and still win?",
+      "explanation": "The bishop and knight must both survive if White is to force a win. A direct blockade can stop the pawns while losing the knight.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "mating_fork",
+      "fen": "3k4/8/2KN4/2B5/p7/8/1p6/8 w - - 2 4",
+      "question": "How does Bd4 attack more than a pawn?",
+      "explanation": "The bishop can attack b2 while threatening Bf6 mate. The king and knight already cover the black king’s escape squares.",
+      "evidence": {
+        "timestamp_s": 112
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "pawn_chase_mating_fork",
+      "start": "start",
+      "title": "Preserve the knight and threaten mate",
+      "san": [
+        "Bc5+",
+        "Ke8",
+        "Nb7",
+        "b2",
+        "Nd6+",
+        "Kd8",
+        "Bd4",
+        "b1=Q",
+        "Bf6#"
+      ],
+      "commentary": [
+        "Begin from the complete six-piece source board. Follow the illustrated ...Ke8 defense against the bishop check.",
+        "Bc5+ checks Kf8 along the diagonal while preparing Ba3 against less active king retreats.",
+        "Ke8 attacks Nd8, trying to force White to waste a tempo saving the knight.",
+        "Nb7 saves that knight and prepares to check from d6.",
+        "b2 advances the dangerous passer, apparently threatening promotion before the knight can stop it.",
+        "Nd6+ checks and coordinates with Bc5. Black must answer the check before promoting.",
+        "Kd8 avoids the bishop’s discovered-check lines and keeps the promotion threat.",
+        "Bd4 attacks b2 along the diagonal and threatens Bf6 mate, turning the race into a double threat.",
+        "b1=Q promotes, but the new queen does not defend the black king’s mating cage.",
+        "Bf6# is actual mate. Nd6 covers c8 and e8, Kc6 covers c7 and d7, and the bishop checks along f6–e7–d8."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bf6# is actual mate. Nd6 covers c8 and e8, Kc6 covers c7 and d7, and the bishop checks along f6–e7–d8.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3k4/8/2KN1B2/8/p7/8/8/1q6 b - - 1 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "pawn_chase_defend_pawn",
+      "start": "mating_fork",
+      "title": "Defend the passer instead of promoting",
+      "san": [
+        "Bd4",
+        "a3",
+        "Bf6#"
+      ],
+      "commentary": [
+        "Compare the source’s alternative of supporting the b-pawn.",
+        "Bd4 combines an attack on b2 with the mating threat on f6.",
+        "a3 protects b2, but leaves the black king’s escape squares unchanged.",
+        "Bf6# is still actual mate. Defending the attacked pawn does not answer the more urgent threat."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bf6# is still actual mate. Defending the attacked pawn does not answer the more urgent threat.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3k4/8/2KN1B2/8/8/p7/1p6/8 b - - 1 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "pawn_chase_early_blockade",
+      "start": "start",
+      "title": "Block the pawns before saving the knight",
+      "san": [
+        "Bd4",
+        "a3",
+        "Bc5+",
+        "Ke8",
+        "Bxa3",
+        "Kxd8"
+      ],
+      "commentary": [
+        "Compare the source’s first tempting blockade.",
+        "Bd4 aims at b2 immediately, but gives up the forced win.",
+        "a3 supports the b-pawn’s advance and makes a simple permanent blockade impossible.",
+        "Bc5+ gains time to capture a3, but cannot also save Nd8.",
+        "Ke8 attacks the knight while answering the bishop check.",
+        "Bxa3 removes the a-pawn and aims to stop the remaining passer.",
+        "Kxd8 removes the knight. The exact bishop-versus-pawn ending is drawn; stopping promotion alone has not preserved winning material."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxd8 removes the knight. The exact bishop-versus-pawn ending is drawn; stopping promotion alone has not preserved winning material.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "3k4/8/2K5/8/8/Bp6/8/8 w - - 0 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "mating_fork",
+      "prompt": "Why can Black not simply promote after Bd4?",
+      "answer": "Bf6 is mate. The knight and white king cover the escape squares, and the newly promoted queen on b1 cannot answer that check."
+    },
+    {
+      "node": "start",
+      "prompt": "Why is stopping the pawns not enough?",
+      "answer": "The early bishop blockade loses Nd8. The remaining bishop can hold the pawn but cannot force mate against the lone king once the pawn is gone."
+    }
+  ],
+  "defaultBranch": "pawn_chase_mating_fork",
+  "practiceBranch": "pawn_chase_mating_fork",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "The complete six-piece source board and selected ...Ke8/...Kd8 route are reconstructed from saved images. Both illustrated defenses to Bd4 lead to actual Bf6 mate. The early blockade is checked as a draw. Other king retreats and discovered-check branches remain source context; no exhaustive tree is claimed.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

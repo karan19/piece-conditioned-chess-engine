@@ -1,0 +1,162 @@
+{
+  "batch_id": "2026-10-23-05",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three visually reconstructed studies: 11 selected branches and 72 distinct checked positions. Keep the 11-piece queen-cage study pending for larger-position analysis.",
+  "reviews": {
+    "hgFcWql1ya4": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the seven-piece position after ...Ba7, the Ka5 preparation, premature-promotion draw, unprepared race draw, and Bd6+ deflection. Four branches and every intermediate checked; the selected skewer endpoint wins.",
+      "source_images": [
+        {
+          "file": "hgFcWql1ya4/montage_accepted.jpg",
+          "sha256": "74939a759e2a26eab5af0ef35b71edbe344f276b4bd214e5a4bd17f13daadbd6"
+        },
+        {
+          "file": "hgFcWql1ya4/images/image_00001.jpg",
+          "sha256": "2335025d9c6c060aae9154e29cf9304f1e734df09812acfacde550d4198ad08b"
+        },
+        {
+          "file": "hgFcWql1ya4/images/image_00008.jpg",
+          "sha256": "6e0fec25306859ebfe24f24406803be7b4e8e192807b9c2edb3c940ad75faa2d"
+        },
+        {
+          "file": "hgFcWql1ya4/images/image_00026.jpg",
+          "sha256": "adb22bb5e32cdefe0aa9076026452dc880cff5021b843509807d801dc5cbb9ce"
+        }
+      ]
+    },
+    "Pev0s_MaUVI": {
+      "result": "verified_selected_lines",
+      "notes": "Begin after ...Kxa1 removes the rook from the earlier eight-piece setup. Reconstructed king approach, two queen-promotion mates, knight-underpromotion mate, and losing repetition of the queen plan. Four branches and every intermediate checked; original sacrifice outside exact scope.",
+      "source_images": [
+        {
+          "file": "Pev0s_MaUVI/montage_accepted.jpg",
+          "sha256": "bbcf477487a5260fcda43a8004575d59640151e56c18591e2ed7bd3d82ef34f2"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00001.jpg",
+          "sha256": "0f224f77a86a9d8251f762d072404bfaa4782cff513da9e31e91f5d2b3e66130"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00015.jpg",
+          "sha256": "1c85e95474d2c242c3b7d3751898155232ae72a1b89bf7da26437c9ae3e964f5"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00020.jpg",
+          "sha256": "94d9dc968297c541dba167c3e5c895698cf6fcb2a330fc1bc4d5ca9d419403d6"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00024.jpg",
+          "sha256": "187120cc1cf26569334c5962f8c88b124b8d67bda75d9b3539a5e01a46732ec0"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00027.jpg",
+          "sha256": "9492ba89f523f15d9f3f2639318b2aeb5fea3d8cb3a6c84a8481338dfdf86205"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00028.jpg",
+          "sha256": "058366d4fb176b4ea0c35f47f4601058b7cf235c097e9203658da1420fe77de7"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00029.jpg",
+          "sha256": "032350d615814ab2c49396dd4cb5869d903414d69fb1c5932e637afb1635aa66"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00030.jpg",
+          "sha256": "936d934394ff3f07456e97699ff88b9fe3fdbf2442d46a107e1f9329319e65ee"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00031.jpg",
+          "sha256": "6261902eec7240eb05abc20665e28963c4eabaea546a4da1e67a9bccb15d09dc"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00032.jpg",
+          "sha256": "b1d0b5651ca124d78a9fb6827c66b5dcfc8dfa63526a2ba124e1b27fd7bdbb19"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00034.jpg",
+          "sha256": "71680008d120edbfcc10e06e63ff69371b1586bb1d5328470e45119f7ae9c8e4"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00035.jpg",
+          "sha256": "8712f104f0458fe321a2dc227408698a12f7388f828b8df66bab7fd37bb83301"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00036.jpg",
+          "sha256": "00e7c7abcf79ac0a6507edfb5649a12dd6f32e3c3d7cc46f1f6a1497a1dc3e9e"
+        },
+        {
+          "file": "Pev0s_MaUVI/images/image_00047.jpg",
+          "sha256": "385391599615522472f3e303210ed437184fe301b4a4a9d4aee8b49008c923b0"
+        }
+      ]
+    },
+    "EJqPm9Za6F0": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the initial six-piece board, full promotion-with-check mating line, Rf7 mate, and Rh7+/Rh1 defense. Three branches and every intermediate checked. h5+ is check and forces exactly three king replies; saved legal replay caught and removed an incorrect draft suggestion that immediate promotion was legal.",
+      "source_images": [
+        {
+          "file": "EJqPm9Za6F0/montage_accepted.jpg",
+          "sha256": "c24bfd849b054e47e46dc0e7e49839e48966f5f31bea38d6fe313f3aebaf2cb8"
+        },
+        {
+          "file": "EJqPm9Za6F0/images/image_00001.jpg",
+          "sha256": "00abefff7225412afde212b37d19b42ee34aa82b0df73ea98be4bc18695002c7"
+        },
+        {
+          "file": "EJqPm9Za6F0/images/image_00013.jpg",
+          "sha256": "da9558c70e41438c853b7fad9b98174111de1c27b8ad723bfb8e31a169ae9066"
+        },
+        {
+          "file": "EJqPm9Za6F0/images/image_00018.jpg",
+          "sha256": "e9a5415aa6c736c7df70d262b2b124161c161acf926faeec0f2a1701e0f41bad"
+        },
+        {
+          "file": "EJqPm9Za6F0/images/image_00038.jpg",
+          "sha256": "a0587d06694612ad85ee89d90a8ad78567c4c557801330b0a7c3c564ee77d9a6"
+        },
+        {
+          "file": "EJqPm9Za6F0/images/image_00039.jpg",
+          "sha256": "352ee504f84a5958ab44a07b0aed5cb49f9f0593ccd3d23c0a84eb8748f3309d"
+        },
+        {
+          "file": "EJqPm9Za6F0/images/image_00053.jpg",
+          "sha256": "aed5b8a16d5feec04378e621e382e6a56481c9ab13ae412bc9d8e5c7e002eef5"
+        },
+        {
+          "file": "EJqPm9Za6F0/images/image_00056.jpg",
+          "sha256": "c9521ffd90bfd51db2f271d5d464104a93b0276ddc06dd46d919734c3cb3ab74"
+        },
+        {
+          "file": "EJqPm9Za6F0/images/image_00058.jpg",
+          "sha256": "c7654b525d7c6dc6f6ec77aac27754859be31cd2202df9083291e81d2d016822"
+        }
+      ]
+    },
+    "fEyEo4KRyRU": {
+      "result": "awaiting_reconstruction",
+      "notes": "Reviewed complete opening board: White Ke4 Bf3 Ng6 pawns a3 b2 c5; Black Kd7 Qb8 pawns a5 b3 c7 (11 pieces). The narrated queen-cage maneuver needs larger-position verification; source material is available.",
+      "analysis_required": "Reconstruct the selected queen-cage line and use legal replay plus supported engine or forced-tree analysis. Ordinary seven-piece tablebases cannot certify this 11-piece setup; no exact outcome is claimed.",
+      "source_images": [
+        {
+          "file": "fEyEo4KRyRU/images/image_00001.jpg",
+          "sha256": "00e52ca3b8e10db8fd72e2a4a0159d35491cf5b43b46236649b610c3e6ddb0b8"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 72,
+    "selected_branches": 11,
+    "tests": "93 tests passed across 16 files",
+    "production_build": "passed",
+    "ui_review": "Verified rook-and-knight final mate, move list, board pieces, explanation and source scope in the in-app browser.",
+    "screenshot": "docs/screenshots/endgame-stories-batch-05.png",
+    "queue_counts": {
+      "verified_selected_lines": 16,
+      "awaiting_reconstruction": 208,
+      "needs_information": 23,
+      "not_applicable": 1
+    }
+  }
+}

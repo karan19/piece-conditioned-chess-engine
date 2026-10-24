@@ -1,0 +1,85 @@
+{
+  "video_id": "u9TqVKo4tgg",
+  "title": "Majestic: The Bishop Blocks Its Own Rook",
+  "summary": "Promote with check when a capturing bishop interrupts its own rook’s defense, then finish the king cage with the queen.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1K6/2P3P1/k7/pp6/1pb5/8/8/2r5 w - - 0 1",
+      "question": "Why can the c-pawn promote while a rook still stands on c1?",
+      "explanation": "The black bishop on c4 blocks Rc1’s path to c8. White can promote with check, forcing the king into a short queen mating net.",
+      "evidence": {
+        "timestamp_s": 140
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "1K6/2P3P1/k7/pp6/1pb5/8/8/2r5 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "six_majestics_bishop_block",
+      "start": "start",
+      "title": "Source finish after the bishop captures",
+      "san": [
+        "c8=Q+",
+        "Kb6",
+        "Qc7+",
+        "Ka6",
+        "Qa7#"
+      ],
+      "commentary": [
+        "Begin after ...Bxc4 in this source variation. All three black pawns, Rc1, Bc4 and White’s g7 pawn remain on the board.",
+        "c8=Q+ promotes with a diagonal check against Ka6. Rc1 cannot capture the new queen because its own bishop on c4 blocks the file.",
+        "Kb6 is forced: Kb8 controls a7 and b7, the new queen checks a6 and covers c6, and Black’s a5/b5 pawns occupy other flights.",
+        "Qc7+ checks along the seventh-rank diagonal to b6 and keeps the king boxed against its own pawns.",
+        "Ka6 is the sole legal reply. The queen controls c6 and c5, while the white king controls b7.",
+        "Qa7# checks down the a-file. Kb8 protects a7 and b7, the queen controls b6, and Black’s own a5/b5 pawns close the remaining escape squares."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qa7# checks down the a-file. Kb8 protects a7 and b7, the queen controls b6, and Black’s own a5/b5 pawns close the remaining escape squares.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1K6/Q5P1/k7/pp6/1pb5/8/8/2r5 b - - 4 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What prevents ...Rxc8 after promotion?",
+      "answer": "The black bishop on c4 blocks the rook’s path up the c-file."
+    },
+    {
+      "node": "start",
+      "prompt": "Why is Qa7 protected?",
+      "answer": "White’s king on b8 controls a7, so the black king cannot capture the checking queen."
+    }
+  ],
+  "defaultBranch": "six_majestics_bishop_block",
+  "practiceBranch": "six_majestics_bishop_block",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Bxc4 at 140 seconds in the complete nine-piece source variation. c8=Q+ is proved through all legal replies to actual mate, retaining a5/b5/b4, Rc1, Bc4 and g7. The bishop blocks its own rook from capturing on c8. The preceding ten-piece c7/Rc1/Be2+ plan, pawn-capture branch and separate rook-capture branch remain outside this selected proof; those larger branches are not certified merely by their promotion claims.",
+  "verification_scope": "Begin after ...Bxc4 at 140 seconds in the complete nine-piece source variation. c8=Q+ is proved through all legal replies to actual mate, retaining a5/b5/b4, Rc1, Bc4 and g7. The bishop blocks its own rook from capturing on c8. The preceding ten-piece c7/Rc1/Be2+ plan, pawn-capture branch and separate rook-capture branch remain outside this selected proof; those larger branches are not certified merely by their promotion claims.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 5,
+    "moves": {
+      "1K6/2Q3P1/k7/pp6/1pb5/8/8/2r5 w - - 3 3": "Qa7#",
+      "1KQ5/6P1/1k6/pp6/1pb5/8/8/2r5 w - - 1 2": "Qc7+",
+      "1K6/2P3P1/k7/pp6/1pb5/8/8/2r5 w - - 0 1": "c8=Q+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

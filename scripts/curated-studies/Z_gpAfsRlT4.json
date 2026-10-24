@@ -1,0 +1,110 @@
+{
+  "video_id": "Z_gpAfsRlT4",
+  "title": "Checkmate the Sphinx",
+  "summary": "Let the enemy pawn cage its own king, then coordinate king, knight and bishop before promotion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/p7/8/k7/P1K4p/NB6/8 w - - 0 1",
+      "question": "What does the pawn on a6 take away from Black’s king?",
+      "explanation": "Begin after a6 ...bxa6: White has Kc3, Na2, Bb2 and a3 against Ka4, a6 and h3. The earlier eight-piece pawn offer remains source context outside this exact checked tree.",
+      "evidence": {
+        "timestamp_s": 66
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "sphinx_upper_mate",
+      "start": "start",
+      "title": "Mate after the king goes to a5",
+      "san": [
+        "Kc2",
+        "h2",
+        "Be5",
+        "h1=Q",
+        "Nc3+",
+        "Ka5",
+        "Bc7#"
+      ],
+      "commentary": [
+        "Begin from the complete seven-piece diagram after ...bxa6. The black pawn on a6 will obstruct its king.",
+        "Kc2 frees c3 for the knight and controls b3, denying the king’s escape toward the center.",
+        "h2 continues the promotion race.",
+        "Be5 both attacks h2 along the diagonal and prepares the mating net near a5/a3.",
+        "h1=Q promotes, but the new queen has no tempo before White’s checking finish.",
+        "Nc3+ checks Ka4 while keeping the king confined near its own a6 pawn.",
+        "Ka5 chooses the upper escape square.",
+        "Bc7# mates along c7–a5. The a6 pawn blocks its own king, while the knight and White’s king cover the remaining exits."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bc7# mates along c7–a5. The a6 pawn blocks its own king, while the knight and White’s king cover the remaining exits.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/2B5/p7/k7/8/P1N5/2K5/7q b - - 3 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "sphinx_lower_mate",
+      "start": "start",
+      "title": "Mate after the king goes to a3",
+      "san": [
+        "Kc2",
+        "h2",
+        "Be5",
+        "h1=Q",
+        "Nc3+",
+        "Kxa3",
+        "Bd6#"
+      ],
+      "commentary": [
+        "Compare the source’s lower king escape from the same knight check.",
+        "Kc2 makes room for Nc3 and controls b3.",
+        "h2 threatens promotion.",
+        "Be5 prepares both mating diagonals.",
+        "h1=Q creates a queen without stopping the checking attack.",
+        "Nc3+ forces the king to answer the knight.",
+        "Kxa3 takes White’s a3 pawn, but enters the second mating diagonal.",
+        "Bd6# mates along d6–a3. Kc2 and Nc3 close the remaining escape squares, despite Black’s new queen."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bd6# mates along d6–a3. Kc2 and Nc3 close the remaining escape squares, despite Black’s new queen.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/p2B4/8/8/k1N5/2K5/7q b - - 1 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does Kc2 matter before the knight check?",
+      "answer": "It frees c3 for the knight and holds b3. Be5 can then prepare either Bc7 mate or Bd6 mate after Black promotes."
+    }
+  ],
+  "defaultBranch": "sphinx_upper_mate",
+  "practiceBranch": "sphinx_upper_mate",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after a6 ...bxa6 at 66 seconds, the complete supported seven-piece diagram. The initial eight-piece pawn offer is source context outside this exact tree. Both selected promotion-and-king-reply mating finishes are checked.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

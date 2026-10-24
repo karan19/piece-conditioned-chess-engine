@@ -1,0 +1,71 @@
+{
+  "video_id": "4Quo3b0e3sY",
+  "title": "Chess is Art: Punish the Queen Capture",
+  "summary": "When the queen is offered, count the king’s flights before taking: a protected rook can deliver mate on an open file.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/p5pk/7r/5p2/3N1Pp1/1P1Q2K1/P4BR1/8 b - - 0 1",
+      "question": "White has taken the queen. How can Black finish?",
+      "explanation": "Rh3 checks Kg3 at close range. The g4 pawn protects the rook, while White’s own bishop, rook and f-pawn obstruct the king’s escape.",
+      "evidence": {
+        "timestamp_s": 134
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/p5pk/7r/5p2/3N1Pp1/1P1Q2K1/P4BR1/8 b - - 0 1",
+        "winner": "black",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "art_conditional_rook_mate",
+      "start": "start",
+      "title": "Conditional source finish after Qxd3",
+      "san": [
+        "Rh3#"
+      ],
+      "commentary": [
+        "Begin in the source variation after Qxd3. This verifies the punishment for accepting the queen, not every defense to the earlier g4 move.",
+        "Rh3# checks Kg3 horizontally from the adjacent file. Black’s g4 pawn protects h3 and controls f3; f5 protects g4. White’s own Rg2/Bf2/f4 block g2/f2/f4, and the rook controls h2/h4. There is no interposition square next to the king and no legal capture of the protected rook: actual mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rh3# checks Kg3 horizontally from the adjacent file. Black’s g4 pawn protects h3 and controls f3; f5 protects g4. White’s own Rg2/Bf2/f4 block g2/f2/f4, and the rook controls h2/h4. There is no interposition square next to the king and no legal capture of the protected rook: actual mate.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "8/p5pk/8/5p2/3N1Pp1/1P1Q2Kr/P4BR1/8 w - - 1 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can the king not take Rh3?",
+      "answer": "Black’s g4 pawn attacks h3. Capturing the rook would move White’s king onto a protected square."
+    },
+    {
+      "node": "start",
+      "prompt": "Does this show the actual game ended with Rh3 mate?",
+      "answer": "No. This is the source’s conditional Qxd3 variation. The narrated game chose Rh2; that larger continuation is not certified by this exercise."
+    }
+  ],
+  "defaultBranch": "art_conditional_rook_mate",
+  "practiceBranch": "art_conditional_rook_mate",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Conditional final rook-mate pattern only, after White accepts the queen with Qxd3 at134 seconds. Native41 establishes the full fourteen-piece diagram: White Kg3/Qd3/Rg2/Bf2/Nd4/a2/b3/f4 against Kh7/Rh6/a7/f5/g4/g7; native42 confirms Rh3 mate. The f4 pawn came from the earlier capture and remains on the board. Native43 shows an animated rook while the source resets a variation, not a stable rook on h4 to splice into the game. Rh3# has an exact finite certificate ending in actual mate. The earlier fifteen-piece g4 position and White refusal Rh2/Qxf3+/Nxf3 remain outside this proof. A bounded twelve-ply strategy search from that larger root did not complete a certificate; source resignation or material gain is not treated as proof of those larger outcomes.",
+  "verification_scope": "Conditional final rook-mate pattern only, after White accepts the queen with Qxd3 at134 seconds. Native41 establishes the full fourteen-piece diagram: White Kg3/Qd3/Rg2/Bf2/Nd4/a2/b3/f4 against Kh7/Rh6/a7/f5/g4/g7; native42 confirms Rh3 mate. The f4 pawn came from the earlier capture and remains on the board. Native43 shows an animated rook while the source resets a variation, not a stable rook on h4 to splice into the game. Rh3# has an exact finite certificate ending in actual mate. The earlier fifteen-piece g4 position and White refusal Rh2/Qxf3+/Nxf3 remain outside this proof. A bounded twelve-ply strategy search from that larger root did not complete a certificate; source resignation or material gain is not treated as proof of those larger outcomes.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "black",
+    "max_plies": 1,
+    "moves": {
+      "8/p5pk/7r/5p2/3N1Pp1/1P1Q2K1/P4BR1/8 b - - 0 1": "Rh3#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

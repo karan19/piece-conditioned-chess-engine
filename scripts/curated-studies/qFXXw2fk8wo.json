@@ -1,0 +1,156 @@
+{
+  "video_id": "qFXXw2fk8wo",
+  "title": "Majestic Plan: Sacrifice the Rook, Bring the King",
+  "summary": "Offer the rook to unpin the bishop, then use king support to make the final bishop capture mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/8/8/1pB2p2/pr6/kbRK4 w - - 0 1",
+      "question": "How can White renew the mating threat with the king on d1?",
+      "explanation": "Rc2 offers the rook to either the b3 pawn or Bb1. After the source’s ...bxc2+, Kc1 blocks the new passer and supports b2, leaving Black only ...f2 before Bxb2 mate. The bishop capture is a separate checked defense.",
+      "evidence": {
+        "timestamp_s": 58
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/8/8/8/8/1pB2p2/pr6/kbRK4 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "plan_accept_rook",
+      "start": "start",
+      "title": "Source finish: the b-pawn accepts the rook",
+      "san": [
+        "Rc2",
+        "bxc2+",
+        "Kc1",
+        "f2",
+        "Bxb2#"
+      ],
+      "commentary": [
+        "Begin after ...f3 in the complete saved 58-second nine-piece diagram. The earlier rook pin and long king approach are outside this proof.",
+        "Rc2 offers the rook and releases the first-rank pin on Bb1. Black has three legal replies: ...bxc2+, ...Bxc2+ and ...f2. Every reply is checked in the certificate.",
+        "bxc2+ captures the rook with the pawn from b3 and gives check on d1. Native image 27 confirms the pawn on c2 and the bishop still on b1.",
+        "Kc1 blocks the new c2 passer and protects b2. The bishop on b1 is trapped by its own a2/c2 pawns, and the rook is pinned against Ka1 by Bc3. Only ...f2 remains legal.",
+        "f2 is the illustrated pawn advance. It does not stop Bxb2 or give check to Kc1.",
+        "Bxb2# captures the pinned rook and checks Ka1. Kc1 protects the bishop on b2 and covers b1; the black a2 pawn blocks a2. The resulting seven-piece diagram is actual mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxb2# captures the pinned rook and checks Ka1. Kc1 protects the bishop on b2 and covers b1; the black a2 pawn blocks a2. The resulting seven-piece diagram is actual mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/8/pBp2p2/kbK5 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "plan_decline_rook",
+      "start": "start",
+      "title": "Source alternative: push the pawn instead",
+      "san": [
+        "Rc2",
+        "f2",
+        "Bxb2#"
+      ],
+      "commentary": [
+        "The source also explains why Black cannot save the game by declining the rook offer.",
+        "Rc2 offers the rook while leaving it ready to support b2 along the second rank.",
+        "f2 declines the sacrifice but leaves Black’s rook on b2 available to capture.",
+        "Bxb2# mates with the bishop protected by Rc2. Black’s own bishop on b1 blocks that flight, and a2 is occupied by its pawn. This is an actual eight-piece mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxb2# mates with the bishop protected by Rc2. Black’s own bishop on b1 blocks that flight, and a2 is occupied by its pawn. This is an actual eight-piece mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/1p6/pBR2p2/kb1K4 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "plan_bishop_defense",
+      "start": "start",
+      "title": "Independent defense: move the bishop instead of the pawn",
+      "san": [
+        "Rc2",
+        "Bxc2+",
+        "Kc1",
+        "Bd3",
+        "Bxb2#"
+      ],
+      "commentary": [
+        "Check an omitted bishop defense after the rook capture and king approach.",
+        "Rc2 starts the proved sacrifice without removing any pawn.",
+        "Bxc2+ captures the rook with check and frees b1.",
+        "Kc1 closes b1 and supports the intended bishop capture on b2.",
+        "Bd3 is a legal bishop move in this independent bishop-capture branch. Unlike the source’s pawn capture, it leaves the bishop mobile, but it does not stop the mate.",
+        "Bxb2# still mates. The black bishop on d3 cannot capture b2 or block the adjacent diagonal check to a1."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Bxb2# still mates. The black bishop on d3 cannot capture b2 or block the adjacent diagonal check to a1.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/1p1b1p2/pB6/k1K5 b - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What does Kc1 achieve after the source’s ...bxc2+?",
+      "answer": "It blocks the new c2 passer from promoting and protects b2 for the final bishop capture. Black’s bishop stays locked on b1, so only ...f2 remains."
+    },
+    {
+      "node": "start",
+      "prompt": "Is ...f2 the only legal reply to Kc1?",
+      "answer": "After the source’s pawn capture, yes. After the independent bishop capture, seven bishop moves are also legal. The proof checks both cases; every reply permits Bxb2 mate."
+    }
+  ],
+  "defaultBranch": "plan_accept_rook",
+  "practiceBranch": "plan_accept_rook",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...f3 at 58 seconds with all nine pieces preserved: White Kd1/Rc1/Bc3 versus Black Ka1/Rb2/Bb1/a2/b3/f3. A finite strategy checks all three initial defenses, the sole ...f2 after ...bxc2+/Kc1, and all eight legal defenses after ...Bxc2+/Kc1. Mate leaves are verified by legal move generation, with supported seven-piece mates also tablebase checked. The earlier larger king walk is outside this proof.",
+  "verification_scope": "Complete 58-second nine-piece source diagram and native pawn-capture frame manually reviewed. A finite strategy checks all three Black replies to Rc2, the sole pawn push after the source b-pawn capture/Kc1, and all eight replies after the independent bishop capture/Kc1. Leaves are actual mates; supported seven-piece leaves have tablebase evidence. Earlier king-walk decisions remain unverified.",
+  "sourceCorrections": [
+    {
+      "claim": "The source accepts the rook on c2.",
+      "correction": "Native image 27 shows the pawn capture ...bxc2+, with Bb1 still in place. The earlier review’s Bxc2 transcription is corrected. ...Bxc2+ is a separate legal defense analyzed independently here; after Kc1 it leaves seven bishop moves as well as ...f2, all losing to Bxb2 mate."
+    }
+  ],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 5,
+    "moves": {
+      "8/8/8/8/8/1pB2p2/pr6/kbRK4 w - - 0 1": "Rc2",
+      "8/8/8/8/8/1pB2p2/prb5/k2K4 w - - 0 2": "Kc1",
+      "8/7b/8/8/8/1pB2p2/pr6/k1K5 w - - 2 3": "Bxb2#",
+      "8/8/6b1/8/8/1pB2p2/pr6/k1K5 w - - 2 3": "Bxb2#",
+      "8/8/8/5b2/8/1pB2p2/pr6/k1K5 w - - 2 3": "Bxb2#",
+      "8/8/8/8/4b3/1pB2p2/pr6/k1K5 w - - 2 3": "Bxb2#",
+      "8/8/8/8/8/1pBb1p2/pr6/k1K5 w - - 2 3": "Bxb2#",
+      "8/8/8/8/8/1pB2p2/pr6/k1Kb4 w - - 2 3": "Bxb2#",
+      "8/8/8/8/8/1pB2p2/pr6/kbK5 w - - 2 3": "Bxb2#",
+      "8/8/8/8/8/1pB5/prb2p2/k1K5 w - - 0 3": "Bxb2#",
+      "8/8/8/8/8/2B2p2/prp5/kb1K4 w - - 0 2": "Kc1",
+      "8/8/8/8/8/2B5/prp2p2/kbK5 w - - 0 3": "Bxb2#",
+      "8/8/8/8/8/1pB5/prR2p2/kb1K4 w - - 0 2": "Bxb2#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

@@ -1,0 +1,151 @@
+{
+  "video_id": "Qk9_7oF8Ywc",
+  "title": "Beautiful Move Alert: Finish the Promotion Plan",
+  "summary": "After diverting the bishop, promote and keep calculating: checks and captures convert the queen advantage into exact winning checkpoints.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/4P3/2p3p1/3p3p/1b6/3k4/8/7K w - - 0 1",
+      "question": "What remains to verify once the pawn can promote?",
+      "explanation": "e8=Q is available, but Black still has a bishop and four pawns. The complete eight-piece diagram requires a finite proof before reducing to exact seven-piece positions.",
+      "evidence": {
+        "timestamp_s": 121
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/4P3/2p3p1/3p3p/1b6/3k4/8/7K w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "beautiful_collect_c_pawn",
+      "start": "start",
+      "title": "Independent king reply: collect a pawn with check",
+      "san": [
+        "e8=Q",
+        "Kc4",
+        "Qxc6+"
+      ],
+      "commentary": [
+        "Begin at the final promotion opportunity; the earlier knight and a-pawn sacrifices have already happened and are outside this selected proof.",
+        "e8=Q promotes without check. All four black pawns and the bishop remain, so this is still an eight-piece position.",
+        "Kc4 is an independently supplied king reply. It leaves c6 available to the new queen.",
+        "Qxc6+ captures c6 and checks c4 along the c-file. The complete seven-piece ending retains Bb4/d5/g6/h5 and is an exact White win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxc6+ captures c6 and checks c4 along the c-file. The complete seven-piece ending retains Bb4/d5/g6/h5 and is an exact White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/2Q3p1/3p3p/1bk5/8/8/7K b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "beautiful_bishop_blocks",
+      "start": "start",
+      "title": "Independent bishop reply: capture with check",
+      "san": [
+        "e8=Q",
+        "Bd6",
+        "Qxg6+"
+      ],
+      "commentary": [
+        "Compare the bishop’s retreat after the same source promotion, retaining every pawn.",
+        "e8=Q creates the queen while Black still has eighteen legal replies. The proof enumerates all of them.",
+        "Bd6 moves the bishop onto the sixth rank, where it can interpose on some queen checks but cannot protect every pawn.",
+        "Qxg6+ removes the g6 pawn and checks Kd3 along g6–f5–e4–d3. The resulting seven-piece position is an exact White win; the bishop on d6 remains."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxg6+ removes the g6 pawn and checks Kd3 along g6–f5–e4–d3. The resulting seven-piece position is an exact White win; the bishop on d6 remains.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/2pb2Q1/3p3p/8/3k4/8/7K b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "beautiful_bishop_offer",
+      "start": "start",
+      "title": "Independent bishop reply: take the offered bishop",
+      "san": [
+        "e8=Q",
+        "Be1",
+        "Qxe1"
+      ],
+      "commentary": [
+        "Compare a bishop move onto the queen’s file. This legal representative reply is independent analysis.",
+        "e8=Q begins the verified later conversion rather than certifying the earlier larger composition.",
+        "Be1 leaves the bishop on the e-file, which is clear between the new queen and e1.",
+        "Qxe1 removes the bishop. White Kh1/Qe1 faces Kd3/c6/d5/g6/h5: seven pieces and an exact White win, without silently deleting any pawn."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxe1 removes the bishop. White Kh1/Qe1 faces Kd3/c6/d5/g6/h5: seven pieces and an exact White win, without silently deleting any pawn.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/2p3p1/3p3p/8/3k4/8/4Q2K b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is promotion not itself a seven-piece tablebase position?",
+      "answer": "Replacing the pawn with a queen does not change the number of pieces. Kh1/Qe8 and Kd3/Bb4/c6/d5/g6/h5 total eight."
+    },
+    {
+      "node": "start",
+      "prompt": "What does the proof add beyond the narrated promotion?",
+      "answer": "It checks every Black reply and supplies a legal White continuation into exact supported wins. The earlier knight interference and sacrifices still require their own larger-position proof."
+    }
+  ],
+  "defaultBranch": "beautiful_collect_c_pawn",
+  "practiceBranch": "beautiful_collect_c_pawn",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin immediately before e8=Q at121 seconds in the complete eight-piece later diagram: White Kh1/e7 against Kd3/Bb4/c6/d5/g6/h5. Native25 confirms e7 and all four black pawns; native26 confirms promotion. The earlier knight interference, a-pawn sacrifice and both bishop-capture branches remain source context outside this proof. Promotion leaves eight pieces, not seven. A complete finite White strategy checks all eighteen Black replies through captures into exact supported White-winning endings, preserving every uncaptured pawn. The three guided continuations after the source promotion are independent representative replies, not a recovered source game score.",
+  "verification_scope": "Begin immediately before e8=Q at121 seconds in the complete eight-piece later diagram: White Kh1/e7 against Kd3/Bb4/c6/d5/g6/h5. Native25 confirms e7 and all four black pawns; native26 confirms promotion. The earlier knight interference, a-pawn sacrifice and both bishop-capture branches remain source context outside this proof. Promotion leaves eight pieces, not seven. A complete finite White strategy checks all eighteen Black replies through captures into exact supported White-winning endings, preserving every uncaptured pawn. The three guided continuations after the source promotion are independent representative replies, not a recovered source game score.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 12,
+    "moves": {
+      "4Qb2/8/2p3p1/3p3p/8/3k4/8/7K w - - 1 2": "Qxf8",
+      "4Q3/4b3/2p3p1/3p3p/8/3k4/8/7K w - - 1 2": "Qxe7",
+      "4Q3/8/2pb2p1/3p3p/8/3k4/8/7K w - - 1 2": "Qxg6+",
+      "4Q3/8/2p3p1/2bp3p/8/3k4/8/7K w - - 1 2": "Qxc6",
+      "4Q3/8/2p3p1/b2p3p/8/3k4/8/7K w - - 1 2": "Qxc6",
+      "4Q3/8/2p3p1/3p3p/8/2bk4/8/7K w - - 1 2": "Qxc6",
+      "4Q3/8/2p3p1/3p3p/8/b2k4/8/7K w - - 1 2": "Qxc6",
+      "4Q3/8/2p3p1/3p3p/8/3k4/3b4/7K w - - 1 2": "Qxc6",
+      "4Q3/8/2p3p1/3p3p/8/3k4/8/4b2K w - - 1 2": "Qxe1",
+      "4Q3/8/2p3p1/3p3p/1b1k4/8/8/7K w - - 1 2": "Qxc6",
+      "4Q3/8/2p3p1/3p3p/1bk5/8/8/7K w - - 1 2": "Qxc6+",
+      "4Q3/8/2p3p1/3p3p/1b6/2k5/8/7K w - - 1 2": "Qxc6+",
+      "4Q3/8/2p3p1/3p3p/1b6/8/3k4/7K w - - 1 2": "Qxg6",
+      "4Q3/8/2p3p1/3p3p/1b6/8/2k5/7K w - - 1 2": "Qxc6+",
+      "8/8/2p3Q1/3p2pp/1b1k4/8/8/7K w - - 2 3": "Qxc6",
+      "8/8/2p3Q1/3p2pp/1bk5/8/8/7K w - - 2 3": "Qxc6+",
+      "8/8/2p3Q1/3p2pp/1b6/4k3/8/7K w - - 2 3": "Qxg5+",
+      "8/8/2p3Q1/3p2pp/1b6/2k5/8/7K w - - 2 3": "Qxc6+",
+      "8/8/2p3Q1/3p2pp/1b6/8/4k3/7K w - - 2 3": "Qxc6",
+      "8/8/2p3Q1/3p2pp/1b6/8/3k4/7K w - - 2 3": "Qxg5+",
+      "4Q3/8/2p5/3p2pp/1b6/3k4/8/7K w - - 0 2": "Qg6+",
+      "4Q3/8/6p1/2pp3p/1b6/3k4/8/7K w - - 0 2": "Qxg6+",
+      "4Q3/8/2p3p1/3p4/1b5p/3k4/8/7K w - - 0 2": "Qxg6+",
+      "4Q3/8/2p3p1/7p/1b1p4/3k4/8/7K w - - 0 2": "Qxg6+",
+      "8/4P3/2p3p1/3p3p/1b6/3k4/8/7K w - - 0 1": "e8=Q"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

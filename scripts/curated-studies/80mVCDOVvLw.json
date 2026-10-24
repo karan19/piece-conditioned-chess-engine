@@ -1,0 +1,214 @@
+{
+  "video_id": "80mVCDOVvLw",
+  "title": "Majestic Opposition",
+  "summary": "Retreat to the right square so the pawn race avoids a skewer and a pawn sacrifice gains opposition.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/5p2/8/8/8/1K1k4/1P6/8 w - - 0 1",
+      "question": "Which retreat keeps the draw?",
+      "explanation": "White has Kb3 and b2 against Kd3 and f7. The black king shoulders White away from the pawn; the saving move is Ka2 in the saved board, not captioned Ka1.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "opposition_pawn_sacrifice",
+      "start": "start",
+      "title": "Retreat and sacrifice the b-pawn",
+      "san": [
+        "Ka2",
+        "f5",
+        "b4",
+        "Kc4",
+        "b5",
+        "Kxb5",
+        "Kb3",
+        "f4",
+        "Kc3",
+        "f3",
+        "Kd2",
+        "f2",
+        "Ke2"
+      ],
+      "commentary": [
+        "Begin from the complete four-piece source board. The saving retreat is reconstructed as Ka2; Ka1 is not a legal move from b3.",
+        "Ka2 makes space for b2 while keeping the king ready to return toward b3.",
+        "f5 is the illustrated two-square pawn advance.",
+        "b4 uses White’s initial two-square advance to start the counter-race.",
+        "Kc4 approaches the white pawn instead of simply racing.",
+        "b5 offers the pawn to draw the black king away from the f-pawn.",
+        "Kxb5 accepts the pawn and leaves the kings on the b-file.",
+        "Kb3 gains opposition and enters the pawn’s square, preserving an exact draw.",
+        "f4 tries to run while White’s king is still distant.",
+        "Kc3 moves diagonally toward the promotion path.",
+        "f3 advances again.",
+        "Kd2 stays inside the square and approaches f1.",
+        "f2 gets one step from promotion, but White is in time.",
+        "Ke2 reaches the checked drawing king-and-pawn ending. Promotion would be capturable; this selected line stops before assuming Black’s next king move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Ke2 reaches the checked drawing king-and-pawn ending. Promotion would be capturable; this selected line stops before assuming Black’s next king move.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/1k6/8/8/4Kp2/8 b - - 1 7",
+      "outcome": "draw"
+    },
+    {
+      "id": "opposition_equal_promotion",
+      "start": "start",
+      "title": "Both sides race after Ka2",
+      "san": [
+        "Ka2",
+        "f5",
+        "b4",
+        "f4",
+        "b5",
+        "f3",
+        "b6",
+        "f2",
+        "b7",
+        "f1=Q",
+        "b8=Q"
+      ],
+      "commentary": [
+        "Compare the source’s simultaneous promotion idea after the saving retreat, using a representative direct pawn race.",
+        "Ka2 moves to the square that avoids the later queen skewer.",
+        "f5 begins Black’s race.",
+        "b4 uses White’s double pawn move.",
+        "f4 keeps running rather than approaching with the king.",
+        "b5 advances toward promotion.",
+        "f3 brings Black closer to f1.",
+        "b6 keeps pace toward its promotion square.",
+        "f2 prepares Black’s promotion.",
+        "b7 prepares White’s promotion.",
+        "f1=Q promotes first, but does not check Ka2.",
+        "b8=Q promotes in reply. The exact queen ending is drawn; the losing skewer from the Ka3 route is absent."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "b8=Q promotes in reply. The exact queen ending is drawn; the losing skewer from the Ka3 route is absent.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "1Q6/8/8/8/8/3k4/K7/5q2 b - - 0 6",
+      "outcome": "draw"
+    },
+    {
+      "id": "opposition_wrong_retreat",
+      "start": "start",
+      "title": "Retreat to a3 and allow the skewer",
+      "san": [
+        "Ka3",
+        "f5",
+        "b4",
+        "f4",
+        "b5",
+        "f3",
+        "b6",
+        "f2",
+        "b7",
+        "f1=Q",
+        "b8=Q",
+        "Qa1+",
+        "Kb3",
+        "Qb1+",
+        "Ka3",
+        "Qxb8"
+      ],
+      "commentary": [
+        "Compare the source’s losing Ka3 route and illustrated checking skewer after both pawns promote.",
+        "Ka3 gives up the exact draw by placing the king on the queen’s future checking route.",
+        "f5 starts Black’s pawn race.",
+        "b4 starts White’s counter-race.",
+        "f4 continues toward promotion.",
+        "b5 advances toward its promotion square.",
+        "f3 brings Black one step closer.",
+        "b6 keeps White’s promotion plan alive, but does not fix the king placement.",
+        "f2 prepares promotion.",
+        "b7 gets ready to promote too.",
+        "f1=Q promotes first.",
+        "b8=Q gives White a queen, but material equality does not save this exact position.",
+        "Qa1+ checks the exposed king on a3.",
+        "Kb3 is the illustrated king response.",
+        "Qb1+ checks along the b-file and skewers the white queen on b8.",
+        "Ka3 moves away from the check.",
+        "Qxb8 captures White’s queen, reaching an exact Black win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxb8 captures White’s queen, reaching an exact Black win.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "1q6/8/8/8/8/K2k4/8/8 w - - 0 9",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does the apparently passive retreat help?",
+      "answer": "Ka2 makes room for the b-pawn and avoids the queen skewer that occurs with the king on a3. It also permits Kb3 opposition after the pawn sacrifice."
+    },
+    {
+      "node": "start",
+      "prompt": "Why sacrifice b5 instead of protecting it?",
+      "answer": "After ...Kxb5 Kb3, White gains opposition and can reach the f-pawn’s promotion path in time to draw."
+    }
+  ],
+  "defaultBranch": "opposition_pawn_sacrifice",
+  "practiceBranch": "opposition_pawn_sacrifice",
+  "practiceType": "pawn",
+  "practiceGoal": "draw",
+  "startContext": "The complete four-piece source root is visually reconstructed. Saved boards correct captioned Ka1 to Ka2 and show ...Kc4 before the pawn sacrifice. The opposition and losing Ka3 skewer lines are source-based; the direct drawn promotion race is an independently supplied representative connection. Every encoded position is checked exactly.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "The automatic captions name Ka1 as the saving retreat.",
+      "correction": "The initial saved board has White Kb3. Stable later images show Ka2; Ka1 is not a legal single king move from b3."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

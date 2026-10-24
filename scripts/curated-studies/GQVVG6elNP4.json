@@ -1,0 +1,173 @@
+{
+  "video_id": "GQVVG6elNP4",
+  "title": "The Forbidden Win",
+  "summary": "Move the knight by alternately opening and blocking the rook’s line, giving the trapped king a move until the final mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "7K/4k2P/7P/7r/8/8/8/4n3 b - - 0 1",
+      "question": "How can Black improve without stalemating White?",
+      "explanation": "White’s pawns are blocked by its own king and each other. Each quiet move must leave the king a legal reply.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "forbidden_staircase",
+      "start": "start",
+      "title": "Build a knight staircase",
+      "san": [
+        "Rh1",
+        "Kg8",
+        "Rg1+",
+        "Kh8",
+        "Ng2",
+        "Kg8",
+        "Nf4+",
+        "Kh8",
+        "Ng6+",
+        "Kg8",
+        "Ne5+",
+        "Kh8",
+        "Nf7#"
+      ],
+      "commentary": [
+        "Black has enough material, but careless restriction can end the game in stalemate. Plan how the knight will enter without freezing White.",
+        "Rh1 keeps the rook active and prepares a check from g1 after White’s king leaves h8.",
+        "Kg8 is one of White’s legal king exits. The h-pawns cannot advance while the king and the other pawn block them.",
+        "Rg1+ checks along the g-file. Black is setting up a controlled route back to the corner.",
+        "Kh8 is forced: the rook and black king cover the other exits.",
+        "Ng2 blocks the rook’s g-file. That deliberately gives the white king a move and prevents stalemate.",
+        "Kg8 is now available because Black’s own knight interrupts the rook’s line.",
+        "Nf4+ opens the g-file again, giving a discovered rook check while improving the knight.",
+        "Kh8 is forced again. The knight has advanced without letting the king escape.",
+        "Ng6 blocks the g-file higher up the board, once again giving White a legal move.",
+        "Kg8 uses the opening in the rook’s control.",
+        "Ne5+ clears the g-file for another discovered rook check. The knight now has a direct route to f7.",
+        "Kh8 returns to the corner, but this time Black can give a checking finish rather than a quiet move.",
+        "Nf7# attacks h8. The rook seals g7 and g8, and White’s own pawn occupies h7: there is no legal escape or answer to the knight check."
+      ],
+      "classification": "independent alternative illustrating a source idea with representative legal replies",
+      "explanation": "Nf7# attacks h8. The rook seals g7 and g8, and White’s own pawn occupies h7: there is no legal escape or answer to the knight check.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "7K/4kn1P/7P/8/8/8/8/6r1 w - - 13 8",
+      "outcome": "loss"
+    },
+    {
+      "id": "forbidden_premature_barrier",
+      "start": "start",
+      "title": "Close the g-file immediately",
+      "san": [
+        "Rg5"
+      ],
+      "commentary": [
+        "A stronger barrier is not useful if it leaves the defender with no legal move before checkmate.",
+        "Rg5 is stalemate. The rook controls g7 and g8, h7 is occupied by White’s pawn, and neither white pawn can advance. Kh8 is not in check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rg5 is stalemate. The rook controls g7 and g8, h7 is occupied by White’s pawn, and neither white pawn can advance. Kh8 is not in check.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "7K/4k2P/7P/6r1/8/8/8/4n3 w - - 1 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "forbidden_take_pawn",
+      "start": "start",
+      "title": "Collect a pawn instead",
+      "san": [
+        "Rxh6",
+        "Kg7",
+        "Rh1",
+        "h8=Q",
+        "Rxh8",
+        "Kxh8"
+      ],
+      "commentary": [
+        "Capturing a pawn can free the other pawn at exactly the wrong time.",
+        "Rxh6 removes the front pawn, but gives up the forced win. The h7 pawn can now promote once its king moves.",
+        "Kg7 attacks the rook and clears h8 for promotion.",
+        "Rh1 is a representative rook retreat that remains on the promotion file.",
+        "h8=Q promotes. The rook can remove the queen, but only by allowing its own capture.",
+        "Rxh8 captures the promoted queen.",
+        "Kxh8 leaves king against king and knight. That material cannot force checkmate, and the exact result is a draw."
+      ],
+      "classification": "independent alternative illustrating a source idea with representative legal replies",
+      "explanation": "Kxh8 leaves king against king and knight. That material cannot force checkmate, and the exact result is a draw.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "7K/4k3/8/8/8/8/8/4n3 b - - 0 4",
+      "outcome": "draw"
+    },
+    {
+      "id": "forbidden_other_win",
+      "start": "start",
+      "title": "Check the source’s uniqueness claim",
+      "san": [
+        "Nf3"
+      ],
+      "commentary": [
+        "The source calls Rh1 the only winning move. Check that claim separately from the rook-and-knight teaching pattern.",
+        "Nf3 also retains a forced Black win in this exact position. Rh1 is an instructive plan, but its success does not prove every other move fails."
+      ],
+      "classification": "independent alternative illustrating a source idea with representative legal replies",
+      "explanation": "Nf3 also retains a forced Black win in this exact position. Rh1 is an instructive plan, but its success does not prove every other move fails.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "7K/4k2P/7P/7r/8/5n2/8/8 w - - 1 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does Black deliberately block its own rook?",
+      "answer": "With the white king on h8 and both pawns blocked, a quiet move that keeps g7 and g8 closed is stalemate. Placing the knight on the g-file temporarily permits Kg8."
+    },
+    {
+      "node": "start",
+      "prompt": "What distinguishes the final Nf7 from the earlier knight moves?",
+      "answer": "Nf7 gives check directly to h8. Black no longer needs to provide a waiting move because the rook and white pawn complete a mating net."
+    }
+  ],
+  "defaultBranch": "forbidden_staircase",
+  "practiceBranch": "forbidden_staircase",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "",
+  "verification_scope": "Starting positions reconstructed from saved source images. Every encoded intermediate position and endpoint is checked against the tablebase. These are selected instructive variations, not an exhaustive tree of every legal defense.",
+  "sourceCorrections": [
+    {
+      "claim": "The narration calls Rh1 the only winning move.",
+      "correction": "The saved starting position also has other winning moves, including Nf3. The selected staircase explains how Rh1 works without claiming uniqueness."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

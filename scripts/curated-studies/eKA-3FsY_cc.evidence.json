@@ -1,0 +1,687 @@
+{
+  "node:start": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/1R6/P1rk1b2/2p5/1pPp3q/3P3B/R3K3 w Q - 0 1",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rd6+": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/3R4/P1rk1b2/2p5/1pPp3q/3P3B/R3K3 b Q - 1 1",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Ke4": {
+            "method": "finite_strategy",
+            "fen": "8/r2p4/3R4/P1r2b2/2p1k3/1pPp3q/3P3B/R3K3 w Q - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rd4+": {
+                "method": "finite_strategy",
+                "fen": "8/r2p4/8/P1r2b2/2pRk3/1pPp3q/3P3B/R3K3 b Q - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Kf3": {
+                    "method": "finite_strategy",
+                    "fen": "8/r2p4/8/P1r2b2/2pR4/1pPp1k1q/3P3B/R3K3 w Q - 4 3",
+                    "winner": "white",
+                    "category_for_side_to_move": "win",
+                    "rule": "winning_choice",
+                    "children": {
+                      "Rf4+": {
+                        "method": "finite_strategy",
+                        "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp1k1q/3P3B/R3K3 b Q - 5 3",
+                        "winner": "white",
+                        "category_for_side_to_move": "loss",
+                        "rule": "all_legal_defenses",
+                        "children": {
+                          "Kg2": {
+                            "method": "finite_strategy",
+                            "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp3q/3P2kB/R3K3 w Q - 6 4",
+                            "winner": "white",
+                            "category_for_side_to_move": "win",
+                            "rule": "winning_choice",
+                            "children": {
+                              "Rf2+": {
+                                "method": "finite_strategy",
+                                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1RkB/R3K3 b Q - 7 4",
+                                "winner": "white",
+                                "category_for_side_to_move": "loss",
+                                "rule": "all_legal_defenses",
+                                "children": {
+                                  "Kh1": {
+                                    "method": "finite_strategy",
+                                    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/R3K2k w Q - 8 5",
+                                    "winner": "white",
+                                    "category_for_side_to_move": "win",
+                                    "rule": "winning_choice",
+                                    "children": {
+                                      "O-O-O+": {
+                                        "method": "finite_strategy",
+                                        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/2KR3k b - - 9 5",
+                                        "winner": "white",
+                                        "category_for_side_to_move": "loss",
+                                        "rule": "all_legal_defenses",
+                                        "children": {
+                                          "Qf1": {
+                                            "method": "finite_strategy",
+                                            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+                                            "winner": "white",
+                                            "category_for_side_to_move": "win",
+                                            "rule": "winning_choice",
+                                            "children": {
+                                              "Rdxf1#": {
+                                                "method": "finite_strategy",
+                                                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+                                                "winner": "white",
+                                                "category_for_side_to_move": "loss",
+                                                "rule": "checkmate"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:fwr_castling_staircase:1": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/3R4/P1rk1b2/2p5/1pPp3q/3P3B/R3K3 b Q - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Ke4": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/3R4/P1r2b2/2p1k3/1pPp3q/3P3B/R3K3 w Q - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rd4+": {
+            "method": "finite_strategy",
+            "fen": "8/r2p4/8/P1r2b2/2pRk3/1pPp3q/3P3B/R3K3 b Q - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Kf3": {
+                "method": "finite_strategy",
+                "fen": "8/r2p4/8/P1r2b2/2pR4/1pPp1k1q/3P3B/R3K3 w Q - 4 3",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Rf4+": {
+                    "method": "finite_strategy",
+                    "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp1k1q/3P3B/R3K3 b Q - 5 3",
+                    "winner": "white",
+                    "category_for_side_to_move": "loss",
+                    "rule": "all_legal_defenses",
+                    "children": {
+                      "Kg2": {
+                        "method": "finite_strategy",
+                        "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp3q/3P2kB/R3K3 w Q - 6 4",
+                        "winner": "white",
+                        "category_for_side_to_move": "win",
+                        "rule": "winning_choice",
+                        "children": {
+                          "Rf2+": {
+                            "method": "finite_strategy",
+                            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1RkB/R3K3 b Q - 7 4",
+                            "winner": "white",
+                            "category_for_side_to_move": "loss",
+                            "rule": "all_legal_defenses",
+                            "children": {
+                              "Kh1": {
+                                "method": "finite_strategy",
+                                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/R3K2k w Q - 8 5",
+                                "winner": "white",
+                                "category_for_side_to_move": "win",
+                                "rule": "winning_choice",
+                                "children": {
+                                  "O-O-O+": {
+                                    "method": "finite_strategy",
+                                    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/2KR3k b - - 9 5",
+                                    "winner": "white",
+                                    "category_for_side_to_move": "loss",
+                                    "rule": "all_legal_defenses",
+                                    "children": {
+                                      "Qf1": {
+                                        "method": "finite_strategy",
+                                        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+                                        "winner": "white",
+                                        "category_for_side_to_move": "win",
+                                        "rule": "winning_choice",
+                                        "children": {
+                                          "Rdxf1#": {
+                                            "method": "finite_strategy",
+                                            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+                                            "winner": "white",
+                                            "category_for_side_to_move": "loss",
+                                            "rule": "checkmate"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:fwr_castling_staircase:2": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/3R4/P1r2b2/2p1k3/1pPp3q/3P3B/R3K3 w Q - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rd4+": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/8/P1r2b2/2pRk3/1pPp3q/3P3B/R3K3 b Q - 3 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Kf3": {
+            "method": "finite_strategy",
+            "fen": "8/r2p4/8/P1r2b2/2pR4/1pPp1k1q/3P3B/R3K3 w Q - 4 3",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rf4+": {
+                "method": "finite_strategy",
+                "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp1k1q/3P3B/R3K3 b Q - 5 3",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Kg2": {
+                    "method": "finite_strategy",
+                    "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp3q/3P2kB/R3K3 w Q - 6 4",
+                    "winner": "white",
+                    "category_for_side_to_move": "win",
+                    "rule": "winning_choice",
+                    "children": {
+                      "Rf2+": {
+                        "method": "finite_strategy",
+                        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1RkB/R3K3 b Q - 7 4",
+                        "winner": "white",
+                        "category_for_side_to_move": "loss",
+                        "rule": "all_legal_defenses",
+                        "children": {
+                          "Kh1": {
+                            "method": "finite_strategy",
+                            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/R3K2k w Q - 8 5",
+                            "winner": "white",
+                            "category_for_side_to_move": "win",
+                            "rule": "winning_choice",
+                            "children": {
+                              "O-O-O+": {
+                                "method": "finite_strategy",
+                                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/2KR3k b - - 9 5",
+                                "winner": "white",
+                                "category_for_side_to_move": "loss",
+                                "rule": "all_legal_defenses",
+                                "children": {
+                                  "Qf1": {
+                                    "method": "finite_strategy",
+                                    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+                                    "winner": "white",
+                                    "category_for_side_to_move": "win",
+                                    "rule": "winning_choice",
+                                    "children": {
+                                      "Rdxf1#": {
+                                        "method": "finite_strategy",
+                                        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+                                        "winner": "white",
+                                        "category_for_side_to_move": "loss",
+                                        "rule": "checkmate"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:fwr_castling_staircase:3": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/8/P1r2b2/2pRk3/1pPp3q/3P3B/R3K3 b Q - 3 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Kf3": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/8/P1r2b2/2pR4/1pPp1k1q/3P3B/R3K3 w Q - 4 3",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rf4+": {
+            "method": "finite_strategy",
+            "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp1k1q/3P3B/R3K3 b Q - 5 3",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Kg2": {
+                "method": "finite_strategy",
+                "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp3q/3P2kB/R3K3 w Q - 6 4",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Rf2+": {
+                    "method": "finite_strategy",
+                    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1RkB/R3K3 b Q - 7 4",
+                    "winner": "white",
+                    "category_for_side_to_move": "loss",
+                    "rule": "all_legal_defenses",
+                    "children": {
+                      "Kh1": {
+                        "method": "finite_strategy",
+                        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/R3K2k w Q - 8 5",
+                        "winner": "white",
+                        "category_for_side_to_move": "win",
+                        "rule": "winning_choice",
+                        "children": {
+                          "O-O-O+": {
+                            "method": "finite_strategy",
+                            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/2KR3k b - - 9 5",
+                            "winner": "white",
+                            "category_for_side_to_move": "loss",
+                            "rule": "all_legal_defenses",
+                            "children": {
+                              "Qf1": {
+                                "method": "finite_strategy",
+                                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+                                "winner": "white",
+                                "category_for_side_to_move": "win",
+                                "rule": "winning_choice",
+                                "children": {
+                                  "Rdxf1#": {
+                                    "method": "finite_strategy",
+                                    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+                                    "winner": "white",
+                                    "category_for_side_to_move": "loss",
+                                    "rule": "checkmate"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:fwr_castling_staircase:4": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/8/P1r2b2/2pR4/1pPp1k1q/3P3B/R3K3 w Q - 4 3",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rf4+": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp1k1q/3P3B/R3K3 b Q - 5 3",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Kg2": {
+            "method": "finite_strategy",
+            "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp3q/3P2kB/R3K3 w Q - 6 4",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rf2+": {
+                "method": "finite_strategy",
+                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1RkB/R3K3 b Q - 7 4",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Kh1": {
+                    "method": "finite_strategy",
+                    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/R3K2k w Q - 8 5",
+                    "winner": "white",
+                    "category_for_side_to_move": "win",
+                    "rule": "winning_choice",
+                    "children": {
+                      "O-O-O+": {
+                        "method": "finite_strategy",
+                        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/2KR3k b - - 9 5",
+                        "winner": "white",
+                        "category_for_side_to_move": "loss",
+                        "rule": "all_legal_defenses",
+                        "children": {
+                          "Qf1": {
+                            "method": "finite_strategy",
+                            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+                            "winner": "white",
+                            "category_for_side_to_move": "win",
+                            "rule": "winning_choice",
+                            "children": {
+                              "Rdxf1#": {
+                                "method": "finite_strategy",
+                                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+                                "winner": "white",
+                                "category_for_side_to_move": "loss",
+                                "rule": "checkmate"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:fwr_castling_staircase:5": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp1k1q/3P3B/R3K3 b Q - 5 3",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Kg2": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp3q/3P2kB/R3K3 w Q - 6 4",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rf2+": {
+            "method": "finite_strategy",
+            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1RkB/R3K3 b Q - 7 4",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Kh1": {
+                "method": "finite_strategy",
+                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/R3K2k w Q - 8 5",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "O-O-O+": {
+                    "method": "finite_strategy",
+                    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/2KR3k b - - 9 5",
+                    "winner": "white",
+                    "category_for_side_to_move": "loss",
+                    "rule": "all_legal_defenses",
+                    "children": {
+                      "Qf1": {
+                        "method": "finite_strategy",
+                        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+                        "winner": "white",
+                        "category_for_side_to_move": "win",
+                        "rule": "winning_choice",
+                        "children": {
+                          "Rdxf1#": {
+                            "method": "finite_strategy",
+                            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+                            "winner": "white",
+                            "category_for_side_to_move": "loss",
+                            "rule": "checkmate"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:fwr_castling_staircase:6": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/8/P1r2b2/2p2R2/1pPp3q/3P2kB/R3K3 w Q - 6 4",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rf2+": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1RkB/R3K3 b Q - 7 4",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Kh1": {
+            "method": "finite_strategy",
+            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/R3K2k w Q - 8 5",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "O-O-O+": {
+                "method": "finite_strategy",
+                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/2KR3k b - - 9 5",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Qf1": {
+                    "method": "finite_strategy",
+                    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+                    "winner": "white",
+                    "category_for_side_to_move": "win",
+                    "rule": "winning_choice",
+                    "children": {
+                      "Rdxf1#": {
+                        "method": "finite_strategy",
+                        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+                        "winner": "white",
+                        "category_for_side_to_move": "loss",
+                        "rule": "checkmate"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:fwr_castling_staircase:7": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1RkB/R3K3 b Q - 7 4",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Kh1": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/R3K2k w Q - 8 5",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "O-O-O+": {
+            "method": "finite_strategy",
+            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/2KR3k b - - 9 5",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qf1": {
+                "method": "finite_strategy",
+                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Rdxf1#": {
+                    "method": "finite_strategy",
+                    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+                    "winner": "white",
+                    "category_for_side_to_move": "loss",
+                    "rule": "checkmate"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:fwr_castling_staircase:8": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/R3K2k w Q - 8 5",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "O-O-O+": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/2KR3k b - - 9 5",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Qf1": {
+            "method": "finite_strategy",
+            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rdxf1#": {
+                "method": "finite_strategy",
+                "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:fwr_castling_staircase:9": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp3q/3P1R1B/2KR3k b - - 9 5",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Qf1": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rdxf1#": {
+            "method": "finite_strategy",
+            "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      }
+    }
+  },
+  "step:fwr_castling_staircase:10": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2KR1q1k w - - 10 6",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rdxf1#": {
+        "method": "finite_strategy",
+        "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:fwr_castling_staircase:11": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:fwr_castling_staircase": {
+    "method": "finite_strategy",
+    "fen": "8/r2p4/8/P1r2b2/2p5/1pPp4/3P1R1B/2K2R1k b - - 0 6",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  }
+}

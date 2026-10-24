@@ -1,0 +1,137 @@
+{
+  "video_id": "Ml6F1l_2AZU",
+  "title": "Majestic Precision",
+  "summary": "Check before capturing the pawn, then return the rook to reach a winning race between widely separated pawns.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/8/P7/6pp/6R1/5K1k w - - 0 1",
+      "question": "Why check before taking the g-pawn?",
+      "explanation": "Black’s king is on h1 with pawns on g3 and h3. Taking g3 too soon allows ...h2 and a stalemate construction.",
+      "evidence": {
+        "timestamp_s": 124
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "pawn_race",
+      "fen": "8/8/8/8/P7/6kp/8/5K2 w - - 0 3",
+      "question": "Can White hold the promotion square in time?",
+      "explanation": "White has returned the rook and kept the distant a-pawn. The king must reach g1 to block the h-pawn.",
+      "evidence": {
+        "timestamp_s": 162
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "precision_rook_sacrifice",
+      "start": "start",
+      "title": "Check, sacrifice, then block the passer",
+      "san": [
+        "Rg1+",
+        "Kh2",
+        "Rxg3",
+        "Kxg3",
+        "Kg1",
+        "h2+",
+        "Kh1"
+      ],
+      "commentary": [
+        "Begin after ...h3 in the six-piece final phase. Earlier checking maneuvers and the a2-pawn capture remain source context.",
+        "Rg1+ checks the king before collecting g3, changing where the black king stands when it recaptures.",
+        "Kh2 is forced. The white king on f1 and rook on g1 deny the other king moves, while neither pawn can answer the check.",
+        "Rxg3 captures the pawn and offers the rook. The important gain is access to g1 after the recapture.",
+        "Kxg3 accepts the rook, leaving one pawn on each wing and the two kings.",
+        "Kg1 reaches the blockade square in time. White’s king prevents the h-pawn from promoting safely.",
+        "h2+ advances with check, but the pawn’s promotion square can be occupied.",
+        "Kh1 physically blocks h1. White’s distant a4 pawn gives the exact position a winning race; the selected line ends at this checked blockade rather than inventing a full king chase."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kh1 physically blocks h1. White’s distant a4 pawn gives the exact position a winning race; the selected line ends at this checked blockade rather than inventing a full king chase.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/P7/6k1/7p/7K b - - 1 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "precision_stalemate",
+      "start": "start",
+      "title": "Capture first and make a quiet pawn move",
+      "san": [
+        "Rxg3",
+        "h2",
+        "a5"
+      ],
+      "commentary": [
+        "Compare the capture while Black’s king still occupies h1.",
+        "Rxg3 gives away the forced win because Black can lock its own pawn in front of its king.",
+        "h2 creates the source’s stalemate trap: Kh1 has no available square while the rook and king keep their current coverage.",
+        "a5 is an independently selected quiet move demonstrating actual stalemate. Kh1 is not checked, h2 is occupied by its own blocked pawn, g1 is covered by Kf1, and g2 is covered by both the rook and king."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "a5 is an independently selected quiet move demonstrating actual stalemate. Kh1 is not checked, h2 is occupied by its own blocked pawn, g1 is covered by Kf1, and g2 is covered by both the rook and king.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/P7/8/6R1/7p/5K1k b - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "precision_wrong_king",
+      "start": "pawn_race",
+      "title": "Let the h-pawn run instead",
+      "san": [
+        "Ke2",
+        "h2"
+      ],
+      "commentary": [
+        "This independent comparison starts after the rook sacrifice and ...Kxg3.",
+        "Ke2 loses by abandoning the promotion square. White’s distant a-pawn is not fast enough to justify leaving the h-file open.",
+        "h2 threatens ...h1=Q. The white king cannot reach the required blockade in one move; the exact position is winning for Black."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "h2 threatens ...h1=Q. The white king cannot reach the required blockade in one move; the exact position is winning for Black.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/8/P7/6k1/4K2p/8 w - - 0 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why move the black king before sacrificing the rook?",
+      "answer": "After ...Kh2 and ...Kxg3, g1 becomes available to White’s king. Capturing immediately leaves Black’s king on h1 and permits the stalemate trap."
+    },
+    {
+      "node": "pawn_race",
+      "prompt": "Why does having one pawn each not imply a draw?",
+      "answer": "The king placements matter. Kg1 and Kh1 stop the h-pawn, while the distant a-pawn remains a winning promotion threat."
+    }
+  ],
+  "defaultBranch": "precision_rook_sacrifice",
+  "practiceBranch": "precision_rook_sacrifice",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...h3 at 124 seconds. The selected six-piece final phase compares checking before capture, a demonstrated stalemate trap and an independently labeled losing king move after the rook sacrifice. The earlier seven-piece setup remains source context.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

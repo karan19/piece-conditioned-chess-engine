@@ -1,0 +1,184 @@
+{
+  "video_id": "qKgBXwR83Wg",
+  "title": "The Knight’s Return",
+  "summary": "Choose a knight instead of a queen, then trade a material advantage for a winning king-and-pawn position.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "kNK5/8/1P6/1p6/1P6/3q4/8/8 w - - 0 1",
+      "question": "How can a knight and pawns overcome a queen?",
+      "explanation": "Keep checking while preparing promotion. Black is looking for stalemate, not just material.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "promotion",
+      "fen": "2K5/1P6/k1N5/1p6/1P6/3q4/8/8 w - - 3 3",
+      "question": "Which piece should the pawn become?",
+      "explanation": "Promotion changes the defender’s legal moves. Compare a queen with a checking knight.",
+      "evidence": {
+        "timestamp_s": 44
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "ending",
+      "fen": "2K5/8/8/1p6/1Pk5/3N4/8/8 w - - 1 7",
+      "question": "Should White save the remaining knight?",
+      "explanation": "The king can win the pawn ending even if the knight is captured.",
+      "evidence": {
+        "timestamp_s": 116
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "return_complete",
+      "start": "start",
+      "title": "Follow the underpromotion and king plan",
+      "san": [
+        "b7+",
+        "Ka7",
+        "Nc6+",
+        "Ka6",
+        "b8=N+",
+        "Kb6",
+        "Nd7+",
+        "Kxc6",
+        "Ne5+",
+        "Kd5",
+        "Nxd3",
+        "Kc4",
+        "Kc7",
+        "Kxd3",
+        "Kb6",
+        "Kc4",
+        "Ka5",
+        "Kd5",
+        "Kxb5"
+      ],
+      "commentary": [
+        "White must create forcing threats before Black can use the queen. Count the defender’s legal replies, not just the material.",
+        "b7+ uses the pawn to check the cornered king and prepares promotion.",
+        "Ka7 is forced: the knight and white king cover Black’s other escape squares.",
+        "Nc6+ checks again, moving the original knight away from b8.",
+        "Ka6 sets the stalemate trap. A queen promotion is no longer the right choice.",
+        "b8=N+ promotes with check. The knight attacks a6, so Black cannot immediately spring a queen-sacrifice stalemate.",
+        "Kb6 is the only legal answer to the knight check.",
+        "Nd7+ brings the promoted knight into play. It checks b6 while the original knight on c6 is offered to the king.",
+        "Kxc6 captures the original knight, not the checking knight on d7. This king capture creates the next fork.",
+        "Ne5+ checks the king on c6 and attacks the queen on d3.",
+        "Kd5 is a legal illustrated reply. The king moves, but the queen remains under attack.",
+        "Nxd3 wins the queen. Keep calculating: the extra knight alone does not settle the pawn race.",
+        "Kc4 attacks the knight on d3 and the pawn on b4. Saving the knight carelessly can lose the last white pawn.",
+        "Kc7 activates the king while leaving the knight to be taken. The pawn ending, rather than the knight, is the winning asset.",
+        "Kxd3 takes the knight. White has calculated the resulting king route before giving it up.",
+        "Kb6 attacks b5. Black must keep the pawn guarded.",
+        "Kc4 guards b5 from its only accessible defending square.",
+        "Ka5 keeps the threat against b5 and hands Black the move. The king cannot stay on c4.",
+        "Kd5 is one representative retreat; Black has to abandon the pawn’s defense.",
+        "Kxb5 wins the pawn and leaves a verified winning king-and-pawn ending. The earlier knight sacrifice enabled this king route."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxb5 wins the pawn and leaves a verified winning king-and-pawn ending. The earlier knight sacrifice enabled this king route.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/1K1k4/1P6/8/8/8 b - - 0 10",
+      "outcome": "loss"
+    },
+    {
+      "id": "return_queen_trap",
+      "start": "promotion",
+      "title": "Try the natural queen promotion",
+      "san": [
+        "b8=Q",
+        "Qd7+",
+        "Kxd7"
+      ],
+      "commentary": [
+        "The natural promotion gives the queen maximum power, but it can also remove every black king move.",
+        "b8=Q controls the b-file. That restriction will become a problem after Black’s next check.",
+        "Qd7+ offers the queen with check. In this position White’s only legal answer is to take it with the king.",
+        "Kxd7 leaves Black without a legal move and without being in check: stalemate. The white queen controls b6 and b7, the knight controls a5 and a7, and the b-pawn is blocked."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxd7 leaves Black without a legal move and without being in check: stalemate. The white queen controls b6 and b7, the knight controls a5 and a7, and the b-pawn is blocked.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "1Q6/3K4/k1N5/1p6/1P6/8/8/8 b - - 0 4",
+      "outcome": "draw"
+    },
+    {
+      "id": "return_save_knight",
+      "start": "ending",
+      "title": "Try saving the knight first",
+      "san": [
+        "Ne5+",
+        "Kxb4"
+      ],
+      "commentary": [
+        "Black attacks the knight and pawn. Compare saving material with activating the king.",
+        "Ne5+ saves the knight with check, but abandons the pawn on b4. This already gives up White’s forced win.",
+        "Kxb4 removes White’s last pawn. The tablebase result is a draw; the extra knight does not provide a forced win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxb4 removes White’s last pawn. The tablebase result is a draw; the extra knight does not provide a forced win.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "2K5/8/8/1p2N3/1k6/8/8/8 w - - 0 8",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "promotion",
+      "prompt": "Why is a knight promotion stronger than a queen here?",
+      "answer": "The knight promotes with check. The queen permits ...Qd7+ and the forced king capture leaves Black stalemated."
+    },
+    {
+      "node": "ending",
+      "prompt": "What do you need to calculate before Kc7?",
+      "answer": "Check the king-and-pawn ending after ...Kxd3: Kb6 attacks b5, ...Kc4 guards it, and Ka5 leaves Black unable to keep defending the pawn."
+    }
+  ],
+  "defaultBranch": "return_complete",
+  "practiceBranch": "return_complete",
+  "practiceType": "knight",
+  "startContext": "",
+  "verification_scope": "Selected positions reconstructed from saved source images. Every encoded move and intermediate outcome is checked; representative replies illustrate the idea without enumerating every legal defense.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

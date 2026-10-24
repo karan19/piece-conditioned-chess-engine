@@ -1,0 +1,255 @@
+{
+  "batch_id": "2026-10-23-15",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three studies and seven selected branches: queen cage, zigzag promotion and post-castling rook coordination. Original v3 sources preserved.",
+  "reviews": {
+    "cT_6TvXP5kY": {
+      "result": "verified_selected_lines",
+      "notes": "Two branches, 18 exact positions from the complete seven-piece board. Nhf1, h4 and Kf7 build the queen cage; both illustrated queen-promotion choices lead to Nxf1, Nd2 and a winning h-pawn race. Qxf1 is the selected sacrifice, not the queen\u2019s only legal move.",
+      "source_images": [
+        {
+          "file": "cT_6TvXP5kY/montage_accepted.jpg",
+          "sha256": "7e1671305a6c266fe0205c93c0ca6cf99ee476fd9a16b53155f84f92c00f47fb"
+        },
+        {
+          "file": "cT_6TvXP5kY/images/image_00001.jpg",
+          "sha256": "a365de6fa2f4e043f5d8c82c88e81f85e59560f5f3eff8446218e6e1903a7c16"
+        },
+        {
+          "file": "cT_6TvXP5kY/images/image_00004.jpg",
+          "sha256": "5bc8b0fe21ec086577fc7330613a832c057224cb6e2036dae871e3e4b521e694"
+        },
+        {
+          "file": "cT_6TvXP5kY/images/image_00009.jpg",
+          "sha256": "457b717e8fe8ef4c8190c2b078f5d681519e21d304800e9bb56d4ccdc76e7cc8"
+        },
+        {
+          "file": "cT_6TvXP5kY/images/image_00010.jpg",
+          "sha256": "8e7882b98818c63a09f03b87924b452852c6ee63d5190dc2147975909e036ce0"
+        },
+        {
+          "file": "cT_6TvXP5kY/images/image_00011.jpg",
+          "sha256": "4e6f816c6ab23effa4567c19cbc6a20d1cfe8dffebfb012e33a2bee6103888f8"
+        },
+        {
+          "file": "cT_6TvXP5kY/images/image_00012.jpg",
+          "sha256": "0a55953cdcc1dea47fe4501ba9fa21ea4ba8fe3d66a5e7fd434f6573b38a0c86"
+        },
+        {
+          "file": "cT_6TvXP5kY/images/image_00017.jpg",
+          "sha256": "68a6e0cb29fe52248142fce5861d54f8fe2ba31d1a3521debb03062051ad9c73"
+        },
+        {
+          "file": "cT_6TvXP5kY/images/image_00018.jpg",
+          "sha256": "ad08b1132cdd22a4950f7addcfa786d189502ebfb3b63755df923929725acc5b"
+        },
+        {
+          "file": "cT_6TvXP5kY/images/image_00021.jpg",
+          "sha256": "580cceffaebb29383debe8c817b8b3bce7780d42377e5a64f20e874a7c47f98e"
+        },
+        {
+          "file": "cT_6TvXP5kY/images/image_00026.jpg",
+          "sha256": "aaf7bc028d23005c9db244ce70b2f42e8d402e30779a5a05b90a72f824d851ae"
+        }
+      ]
+    },
+    "-qJyQM0nQKE": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 26 exact positions from the complete five-piece board. The source zigzag reaches Kb8 behind Kb6; after a8=Q Rxf7, Qa3 prevents ...Rf8 mate. Immediate f8=Q draws after the skewer. Qd5 reverses the outcome to a Black win; that selected source error stops at ...Rf8+ without inventing a full mating route.",
+      "source_images": [
+        {
+          "file": "-qJyQM0nQKE/montage_accepted.jpg",
+          "sha256": "3a83fbecb8352e55e416324fec66495ef9b79fc3959649eb3752f2e246b1c3a6"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00001.jpg",
+          "sha256": "4ea570fe051e40511da0344f13b9a59eaa9e3ef998d1d501c48ae78d143b0114"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00019.jpg",
+          "sha256": "59d93412d90bc4994264a72e484abf746314e8dc0c877f8474ab0eef75488877"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00020.jpg",
+          "sha256": "d127c82a2c144527e282aaf02ff09f6efce839808753fa32476be9da86aad5f3"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00021.jpg",
+          "sha256": "2a9423d611480a2d45010ad9812d7cd8f90a5932963a0a198e39942fc7fe28bb"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00022.jpg",
+          "sha256": "8880695367274309c9ae05ae24663d00fbad4408481e9f03018cb16bfb1ecc1d"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00023.jpg",
+          "sha256": "9a0a3a68ab25ef4f0c2693f403676d9001cf158e326b0ac6995aac9f75ecfeac"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00024.jpg",
+          "sha256": "6b0100277333c1a45cc080c90a98be20891cbbee8ba19176e94cecf706631d77"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00025.jpg",
+          "sha256": "25982f52e7e723c17f62fed6d1ae1fac30e4908c098edbb9ba417945dc83df4b"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00027.jpg",
+          "sha256": "b106fe63aa32bd09d4ca781fccc3e2e8a0188d8807cbe9b15f683bd6a0c4478a"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00028.jpg",
+          "sha256": "f8d315bf1540cbc040846ffc9b32984cffe4121ff27b61699ddda98675764f76"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00029.jpg",
+          "sha256": "31c2ca8d4d14d01246ae63cbf1b06d4f883a768e2c724ba7cbc215f4e423e2bd"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00030.jpg",
+          "sha256": "c6e7f9a435f9658285bd1112a30ba1bb6056a74cb41a3b1365b1a5ee6a56036e"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00031.jpg",
+          "sha256": "04ca0cc4a905285690b4205c81e4b4ff12696570a82067b8edf28c5d2591aff3"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00032.jpg",
+          "sha256": "f627a5371ce99044b7d58bd2f1e2d525f9c71613d8a267df97d6a87b97337d3e"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00033.jpg",
+          "sha256": "c89605210dca5fffb08dd433198c1f211b6e3a1a853fc8064dfd9ea99e088d45"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00034.jpg",
+          "sha256": "79ea96486a5a6525de6b8eec0d3628676fe52dec65535dad76f5f5ea5f3f3a5d"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00035.jpg",
+          "sha256": "860035b1220735476b9afa7eff87085f3de2d1d25e77e9f6a39a5076b0503c53"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00036.jpg",
+          "sha256": "e0b646b4fb9824b4cf90158cd23ac248340a95be12ca72ea8d798a1852583513"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00037.jpg",
+          "sha256": "3c03056772cdac66d3953cf350a66a5e151797ed629c4ebaab047fdd11703712"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00038.jpg",
+          "sha256": "0e37ed3e8aa3085b2e3a051d4207dfe63f7e3463e01ed25946e99bce57845591"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00039.jpg",
+          "sha256": "0b7a7e45effec98a4d90fe3b12578369cdb31a568a0e944e30257d8e72808785"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00042.jpg",
+          "sha256": "568006baae24084c24d1eecd37c052f63162deb12f0651e5b637aa019533ae51"
+        },
+        {
+          "file": "-qJyQM0nQKE/images/image_00045.jpg",
+          "sha256": "4716862787f0800195a6064a3d1ffd479279f5c1c04c20eac7e7b8f36571549e"
+        }
+      ]
+    },
+    "Ye4Nfj-v4T8": {
+      "result": "verified_selected_lines",
+      "notes": "Two branches, 13 exact positions from the six-piece post-castling position after ...Rf8 at 77 seconds. Kb1/Ka1 clears b1 for the rook swing and actual Rb8 mate. Immediate Rd6 allows checking activity and draws. Castling rights are a source stipulation and the castling move is outside exact tablebase scope; earlier skewer illustrations remain context.",
+      "source_images": [
+        {
+          "file": "Ye4Nfj-v4T8/montage_accepted.jpg",
+          "sha256": "9e85c0f4092240a06b6414ba279dd67feb4076aa30088bb24fe597a21a123e15"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00001.jpg",
+          "sha256": "06142d9262d0a3065f72acd40c269122d797ff4b3a676d3fb679932e8a23f136"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00012.jpg",
+          "sha256": "9b1db761e803d19c4cdfc1646bb26765bb1f2df8b492405841c8ba1d9f9f8f7b"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00022.jpg",
+          "sha256": "fa8838cfc7712cc35a999eebb9b70a0acc88a974d843e88c451b7b0b97f3c1b7"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00024.jpg",
+          "sha256": "daad6902dfb45cab304ba0f5733c2993701427583a76c4d87bb04cf759be6bf1"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00032.jpg",
+          "sha256": "23782909565c74ada8327c8ed1f0cc7464eca9cef7563069cc534d3f8d52736f"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00033.jpg",
+          "sha256": "0c9c0f31704740493a764f1bfb73e55934172e11989b8b522392e554c2d77302"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00034.jpg",
+          "sha256": "0c982456227018cb9c255fb2dcf707399792637a51e42706ca2ade8cccb154f0"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00035.jpg",
+          "sha256": "25fc4692b02e7423c8b5c5e45bf4b80fd9a0c177fbe970e4379f9d32e6b668d2"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00038.jpg",
+          "sha256": "bf722ca32c8eff58757f984c735064357f5e7c7f0f672af1635fd3523fa5556b"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00040.jpg",
+          "sha256": "d3d5383beebe113d29c213a2973b85b52084db6228b379a9f30ea406dcaa55c0"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00041.jpg",
+          "sha256": "4045cf2d65a12e3f468c96e18564bf69ed279fcbdff00317017d02242ffa243a"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00043.jpg",
+          "sha256": "870384619011f862a7cfd1d34691f5e08724447f8ba7b715002719dc721c6ac1"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00047.jpg",
+          "sha256": "32640878be877f86698382ef1d110f3a75c79d301b5076fd737b395ff93671f6"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00048.jpg",
+          "sha256": "5aace9c6bd29be98466c4cc389eb5523918b3e036b816c1d68ea2652651901b6"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00049.jpg",
+          "sha256": "03ba8c277c683a1ddf8166bc86f50612b83163aaba16212d9166e3b795046e12"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00050.jpg",
+          "sha256": "f888a2c4560d5e9581ada10083739a372afb2704d1cc83cea5deab61a004dd6f"
+        },
+        {
+          "file": "Ye4Nfj-v4T8/images/image_00052.jpg",
+          "sha256": "89b2cb71dae8f5fae422c646287828da3f02cc7916e9b24d5f9f32ececfe34a9"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 57,
+    "selected_branches": 7,
+    "tests": "103 tests passed across 16 files; includes queen escape capture coverage, actual unguarded mating threat, Qa3 capture defense and the post-castling rook mate.",
+    "production_build": "Passed TypeScript and Vite production build; existing bundle size advisory remains.",
+    "ui_review": "CUA confirmed Qa3 defense, Kf7 queen cage, disclosed post-castling scope and actual Rb8 mate.",
+    "screenshots": [
+      "docs/screenshots/endgame-stories-batch-15.png",
+      "docs/screenshots/endgame-stories-batch-15-mate.png"
+    ],
+    "queue_counts": {
+      "verified_selected_lines": 46,
+      "awaiting_reconstruction": 177,
+      "needs_information": 23,
+      "not_applicable": 2
+    },
+    "local_only": true
+  }
+}

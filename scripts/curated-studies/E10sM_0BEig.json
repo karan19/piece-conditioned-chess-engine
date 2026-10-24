@@ -1,0 +1,85 @@
+{
+  "video_id": "E10sM_0BEig",
+  "title": "2 Queens Lose??: A Rook and Pawn King Hunt",
+  "summary": "Play the Black side: use a rook check to drive the king into two pawn checks before the extra queens can help.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1Q1Q4/6pk/5p1p/p7/P1P4R/6PK/5r2/4r3 b - - 0 1",
+      "question": "How can Black keep checking despite White’s two queens?",
+      "explanation": "Rh1+ forces Kg4. Then f5+ forces Kh5, where g6 delivers mate. White’s queens on b8 and d8 cannot answer these adjacent rook and pawn checks.",
+      "evidence": {
+        "timestamp_s": 99
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "1Q1Q4/6pk/5p1p/p7/P1P4R/6PK/5r2/4r3 b - - 0 1",
+        "winner": "black",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "two_queens_pawn_hunt",
+      "start": "start",
+      "title": "Source finish: rook check, then two pawn checks",
+      "san": [
+        "Rh1+",
+        "Kg4",
+        "f5+",
+        "Kh5",
+        "g6#"
+      ],
+      "commentary": [
+        "Black moves after Kxh3. White has two queens, but the exposed king must answer the immediate checks before using them.",
+        "Rh1+ brings the rook from e1 onto the king’s h-file. Rf2 controls g2/h2 and the second rank, while White’s own rook occupies h4.",
+        "Kg4 is White’s sole legal reply. The king steps off the h-file but enters a square attacked by an advancing f-pawn.",
+        "f5+ checks with the pawn from f6. Rf2 supports the pawn up the f-file, so the king cannot capture it.",
+        "Kh5 is White’s sole legal reply. The h6 pawn controls g5; Rf2 controls the f-file; Rh1 controls h3; and the white rook occupies h4.",
+        "g6# checks Kh5 with the pawn. Kh7 protects both g6 and h6, f5 controls g4, h6 controls g5, and White’s own rook blocks h4. The extra queens cannot interpose against a pawn’s adjacent check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "g6# checks Kh5 with the pawn. Kh7 protects both g6 and h6, f5 controls g4, h6 controls g5, and White’s own rook blocks h4. The extra queens cannot interpose against a pawn’s adjacent check.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "1Q1Q4/7k/6pp/p4p1K/P1P4R/6P1/5r2/7r w - - 0 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Which side are you trying to win with here?",
+      "answer": "Black. The practice position begins with Black to move and a checked forced mating sequence."
+    },
+    {
+      "node": "start",
+      "prompt": "Why can’t the white king capture the pawn on g6 at the end?",
+      "answer": "Black’s king on h7 protects g6. The other king flights are blocked by White’s rook or covered by Black’s pawns."
+    }
+  ],
+  "defaultBranch": "two_queens_pawn_hunt",
+  "practiceBranch": "two_queens_pawn_hunt",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after White Kxh3 at 99 seconds in the complete fourteen-piece diagram. The Black-to-move Rh1+/Kg4/f5+/Kh5/g6 mate is proved against every legal White response; both replies are forced. White’s two queens, rook and all surviving pawns are preserved. The earlier Qxf2 sacrifice and other king/rook defenses remain outside this later mating proof.",
+  "verification_scope": "Begin after White Kxh3 at 99 seconds in the complete fourteen-piece diagram. The Black-to-move Rh1+/Kg4/f5+/Kh5/g6 mate is proved against every legal White response; both replies are forced. White’s two queens, rook and all surviving pawns are preserved. The earlier Qxf2 sacrifice and other king/rook defenses remain outside this later mating proof.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "black",
+    "max_plies": 5,
+    "moves": {
+      "1Q1Q4/6pk/5p1p/p7/P1P4R/6PK/5r2/4r3 b - - 0 1": "Rh1+",
+      "1Q1Q4/6pk/5p1p/p7/P1P3KR/6P1/5r2/7r b - - 2 2": "f5+",
+      "1Q1Q4/6pk/7p/p4p1K/P1P4R/6P1/5r2/7r b - - 1 3": "g6#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

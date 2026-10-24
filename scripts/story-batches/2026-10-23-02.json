@@ -1,0 +1,141 @@
+{
+  "batch_id": "2026-10-23-02",
+  "reviewed_on": "2026-10-23",
+  "scope": "Second guided-study batch; source availability audit covers every candidate.",
+  "reviews": {
+    "qKgBXwR83Wg": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the knight underpromotion, queen-promotion stalemate, and king activation after winning the queen. The checking knight is offered indirectly: ...Kxc6 captures the original knight.",
+      "source_images": [
+        {
+          "file": "qKgBXwR83Wg/images/image_00001.jpg",
+          "sha256": "9f6e1bd80729776e67ff131263a27881bd407d7bb2ea8da38be4051484cfa119"
+        },
+        {
+          "file": "qKgBXwR83Wg/images/image_00029.jpg",
+          "sha256": "4ed0461bb1381ae392c4dfd81a8fedd33c4d3ac98b1bccb88feed00e92eafb1b"
+        },
+        {
+          "file": "qKgBXwR83Wg/images/image_00036.jpg",
+          "sha256": "62bc143f250d301382b1ab9fcc8545107b145cdc09e87c827533123c0445a6a0"
+        },
+        {
+          "file": "qKgBXwR83Wg/images/image_00039.jpg",
+          "sha256": "42875f9854e99a787e3dd3636c9d4f5415b47ba92d43ccaf8776c04260daff0b"
+        },
+        {
+          "file": "qKgBXwR83Wg/images/image_00048.jpg",
+          "sha256": "58cb3ab85801452601651674283440536a966f74726fe1c140399d673bb6908e"
+        },
+        {
+          "file": "qKgBXwR83Wg/images/image_00052.jpg",
+          "sha256": "55d91581367c234aed5eed0a6f2a6da09e8cc6f9072ebddb10719cee79440c21"
+        },
+        {
+          "file": "qKgBXwR83Wg/images/image_00053.jpg",
+          "sha256": "a25c32abfc2a9a796eb385b783ea47d16e5ca81265789e0eb0a4fcf44ca00098"
+        }
+      ]
+    },
+    "u8a68-7Wtp8": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the king walk and rook underpromotion. Explicitly compared the queen stalemate with the legal ...Ka2 escape after rook promotion.",
+      "source_images": [
+        {
+          "file": "u8a68-7Wtp8/images/image_00001.jpg",
+          "sha256": "574c918a5d283cd766949e51403a3f35afdc7d864009412385668d0c42700202"
+        },
+        {
+          "file": "u8a68-7Wtp8/images/image_00023.jpg",
+          "sha256": "f8f658bc45f28165acffff0564c6f0cb5d40b4de904d06c26b58cdbb94263295"
+        },
+        {
+          "file": "u8a68-7Wtp8/images/image_00034.jpg",
+          "sha256": "98a5083471149b931af11cc6790c442a0b4f176ccc75876ea259dddc93951496"
+        },
+        {
+          "file": "u8a68-7Wtp8/images/image_00036.jpg",
+          "sha256": "13b4da78892c595081984f75c047d0250e9e8b3f4e823fcad340ee7627cd5cda"
+        },
+        {
+          "file": "u8a68-7Wtp8/images/image_00037.jpg",
+          "sha256": "9ae27ae0a27577c58fbe63404865b0b92498b0de59f75754ff37c77af1e007a6"
+        },
+        {
+          "file": "u8a68-7Wtp8/images/image_00039.jpg",
+          "sha256": "f8b65e0b9c16494fa0e3d991b5f37028b9984ca80e2dedddafc0ddcec742dd6b"
+        }
+      ]
+    },
+    "enr20Gxq8OA": {
+      "result": "verified_selected_lines",
+      "notes": "Verified the final maneuver after ...Re8, plus an independent king-retreat alternative and immediate-promotion draw. The earlier rook-check sequence remains source context.",
+      "source_images": [
+        {
+          "file": "enr20Gxq8OA/images/image_00001.jpg",
+          "sha256": "8ba0308dd4fe796b099b48e3c53d80c7763110b4a1dd46187b7cdecb18ff1532"
+        },
+        {
+          "file": "enr20Gxq8OA/images/image_00029.jpg",
+          "sha256": "53633ad31342c1728be302405d03df146e4fe3f82009cdfa64af59c3120a8088"
+        },
+        {
+          "file": "enr20Gxq8OA/images/image_00033.jpg",
+          "sha256": "b6c8b51422dcf9fbeda8f3375c7402ccda13437dea2e5134ec739b15fe4a26a4"
+        },
+        {
+          "file": "enr20Gxq8OA/images/image_00034.jpg",
+          "sha256": "02d204a87c65a4841fc6a0a9615979467be40148a1d4dce0b567a89b6a9a49fe"
+        },
+        {
+          "file": "enr20Gxq8OA/images/image_00035.jpg",
+          "sha256": "624ad3ebb92dcd0f42d573b63674451f15c5d2ced2735cd6468c167345c25e03"
+        },
+        {
+          "file": "enr20Gxq8OA/images/image_00036.jpg",
+          "sha256": "89b75d5d7654808566cc77ac7b584dc52cdc60f5cf26f52d6e5732ff783e10ed"
+        }
+      ]
+    },
+    "nocjHIXt8NY": {
+      "result": "not_applicable",
+      "notes": "Manually inspected every frame in the flagged montage. This is a meme/variety clip with pawn and queen overlays, with no chessboard position to reconstruct. Retain in the full channel archive; omit from the endgame-study queue."
+    },
+    "QN9w36YcKik": {
+      "result": "needs_information",
+      "notes": "Physical-board game recap with changing camera views, missing board areas, and hand occlusion. Captions summarize the game rather than specifying every move.",
+      "information_needed": [
+        "A PGN or complete FEN with side to move and board orientation, or clear full-board frames covering the relevant endgame."
+      ]
+    },
+    "BLZ8vQ7HzwM": {
+      "result": "needs_information",
+      "notes": "Angled physical demonstration board, with hands covering pieces and no reliable square-coordinate orientation in the saved crops. Captions are available; reconstructing a safe root position needs clearer board evidence.",
+      "information_needed": [
+        "A PGN or complete FEN with side to move and board orientation, or clear full-board frames covering the relevant endgame."
+      ]
+    },
+    "DswvLK9gm1s": {
+      "result": "needs_information",
+      "notes": "Physical-board game recap; many saved views show people, clocks or only part of the board. Narration does not specify a complete legal move sequence.",
+      "information_needed": [
+        "A PGN or complete FEN with side to move and board orientation, or clear full-board frames covering the relevant endgame."
+      ]
+    },
+    "9QzLUJWkvh4": {
+      "result": "needs_information",
+      "notes": "Physical-board game recap with endgame material, but board visibility and camera angle change. Narration alone does not identify all squares or moves.",
+      "information_needed": [
+        "A PGN or complete FEN with side to move and board orientation, or clear full-board frames covering the relevant endgame."
+      ]
+    },
+    "Lpo7vks28fs": {
+      "result": "needs_information",
+      "notes": "Physical-board clip with partial close-ups and no saved captions. The saved images are insufficient to establish a complete position and creator explanation.",
+      "information_needed": [
+        "A PGN or complete FEN with side to move and board orientation, or clear full-board frames covering the relevant endgame.",
+        "Captions or an audio transcription to preserve the source explanation."
+      ]
+    }
+  }
+}

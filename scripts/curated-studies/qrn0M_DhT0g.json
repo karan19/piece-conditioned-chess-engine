@@ -1,0 +1,148 @@
+{
+  "video_id": "qrn0M_DhT0g",
+  "title": "A Chess Loop",
+  "summary": "Keep the pawn on the board until the king and knight can build a bridge across the rook’s line.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3r4/1P2pK1p/8/8/3N2k1/8/8/8 w - - 0 1",
+      "question": "How can the knight dislodge the back-rank rook?",
+      "explanation": "After ...Kxg4, White has a knight and b7 pawn against a rook and two pawns. Nc6 attacks Rd8 while guarding b8.",
+      "evidence": {
+        "timestamp_s": 115
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "last_pawn",
+      "fen": "7r/1P2pK1p/2N5/8/6k1/8/8/8 w - - 2 2",
+      "question": "Why not promote immediately while the knight guards b8?",
+      "explanation": "A rook sacrifice on b8 would remove White’s last pawn. The stronger plan is to improve the king and knight first.",
+      "evidence": {
+        "timestamp_s": 132
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "chess_loop_knight_bridge",
+      "start": "start",
+      "title": "Clear e7 and bridge the eighth rank",
+      "san": [
+        "Nc6",
+        "Rh8",
+        "Kxe7",
+        "h5",
+        "Nd8",
+        "Rh7+",
+        "Nf7",
+        "h4",
+        "b8=Q"
+      ],
+      "commentary": [
+        "Begin after ...Kxg4 in the stable seven-piece source position. The earlier eight-piece pawn-and-knight loop remains context.",
+        "Nc6 attacks Rd8 and guards the promotion square b8.",
+        "Rh8 stays on the eighth rank, continuing to stop b8=Q.",
+        "Kxe7 removes the e-pawn and clears e7 for the king’s support of Nd8 and Nf7. The caption’s Kxc7 is corrected from the saved board.",
+        "h5 is the illustrated pawn move, leaving the rook’s back-rank blockade intact.",
+        "Nd8 blocks the rook’s eighth-rank view of b8. White has built a knight bridge protected by Ke7.",
+        "Rh7+ tries to chase the supporting king away instead of allowing promotion quietly.",
+        "Nf7 interposes against the check and is protected by Ke7, so the rook cannot simply capture it.",
+        "h4 is the illustrated final pawn move; Black still cannot stop the b-pawn.",
+        "b8=Q promotes. The exact queen-and-knight versus rook-and-pawn endpoint is a White win; further conversion is outside this selected line."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "b8=Q promotes. The exact queen-and-knight versus rook-and-pawn endpoint is a White win; further conversion is outside this selected line.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1Q6/4KN1r/8/8/6kp/8/8/8 b - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "chess_loop_trade_last_pawn",
+      "start": "last_pawn",
+      "title": "Trade the last pawn for the rook too soon",
+      "san": [
+        "b8=Q",
+        "Rxb8",
+        "Nxb8"
+      ],
+      "commentary": [
+        "Compare the source’s warning against immediate promotion before the king captures e7.",
+        "b8=Q loses White’s exact win by allowing a liquidation of its only pawn.",
+        "Rxb8 sacrifices the rook for the new queen.",
+        "Nxb8 recaptures, but leaves only king and knight against the two black pawns. This exact endpoint is a Black win, strengthening the source’s warning that only Black can play to win after the liquidation."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxb8 recaptures, but leaves only king and knight against the two black pawns. This exact endpoint is a Black win, strengthening the source’s warning that only Black can play to win after the liquidation.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "1N6/4pK1p/8/8/6k1/8/8/8 b - - 0 3",
+      "outcome": "win"
+    },
+    {
+      "id": "chess_loop_unguarded_promotion",
+      "start": "start",
+      "title": "Promote before the knight guards b8",
+      "san": [
+        "b8=Q",
+        "Rxb8"
+      ],
+      "commentary": [
+        "This independent comparison promotes before Nc6 has protected b8.",
+        "b8=Q loses White’s exact winning position: the new queen can be taken without a knight recapture.",
+        "Rxb8 captures the queen. Black retains the exact win; the lesson stops before inventing a long rook conversion."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxb8 captures the queen. Black retains the exact win; the lesson stops before inventing a long rook conversion.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "1r6/4pK1p/8/8/3N2k1/8/8/8 w - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "last_pawn",
+      "prompt": "Why capture e7 instead of trading pawn for rook?",
+      "answer": "Kxe7 leaves the b-pawn available and protects both Nd8 and Nf7. White can block the rook’s line without giving up its only promotion threat."
+    },
+    {
+      "node": "last_pawn",
+      "prompt": "How does the knight bridge work?",
+      "answer": "Nd8 blocks the eighth rank. After ...Rh7+, Nf7 blocks the checking rank while Ke7 protects the knight, leaving b8 free for promotion."
+    }
+  ],
+  "defaultBranch": "chess_loop_knight_bridge",
+  "practiceBranch": "chess_loop_knight_bridge",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kxg4 at 115 seconds in the seven-piece phase, reconstructed from stable saved images. The preceding eight-piece loop is context. The source rook is on h8 rather than captioned h1, and the king captures e7 rather than captioned c7. The selected Nd8/Nf7 bridge and premature promotion comparison are checked move by move; the unguarded-promotion comparison is independent.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "The captions name the defending rook square h1 and the king capture Kxc7.",
+      "correction": "Saved boards show ...Rh8 and Kxe7. The legal bridge sequence is reconstructed from those squares."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

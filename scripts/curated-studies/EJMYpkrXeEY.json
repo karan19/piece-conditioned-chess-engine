@@ -1,0 +1,196 @@
+{
+  "video_id": "EJMYpkrXeEY",
+  "title": "Majestic Bishop",
+  "summary": "Choose the promotion that keeps Black moving, then coordinate bishop and knight for mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "k7/b7/K1P5/2N5/8/8/8/8 w - - 0 1",
+      "question": "Which promotion avoids the stalemate defense?",
+      "explanation": "White has Ka6, Nc5 and c6 against Ka8 and Ba7. The knight controls b7, while the king controls a7 and b7. Black can use ...Bb8 to make major-piece promotion stalemate.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "majestic_bishop_underpromote",
+      "start": "start",
+      "title": "Promote to a bishop and close the cage",
+      "san": [
+        "c7",
+        "Bb8",
+        "c8=B",
+        "Bf4",
+        "Nd7",
+        "Be3",
+        "Bb7#"
+      ],
+      "commentary": [
+        "Begin from the complete five-piece source board. The defender’s dark-square bishop is essential to the promotion choices.",
+        "c7 advances toward promotion without changing the knight’s control of b7.",
+        "Bb8 offers the bishop while setting a stalemate trap against queen or rook promotion.",
+        "c8=B promotes to a light-square bishop, leaving the black bishop free to move.",
+        "Bf4 is the illustrated retreat. The dark-square bishop cannot capture White’s pieces on light squares.",
+        "Nd7 controls b8 and leaves the black king without a safe king move, preparing Bb7 mate.",
+        "Be3 is the source’s selected bishop move; it cannot stop the light-square mating attack.",
+        "Bb7# is actual mate. Ka6 protects b7 and covers a7, while Nd7 covers b8."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bb7# is actual mate. Ka6 protects b7 and covers a7, while Nd7 covers b8.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "k7/1B1N4/K7/8/8/4b3/8/8 b - - 4 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_bishop_queen",
+      "start": "start",
+      "title": "Promote to a queen",
+      "san": [
+        "c7",
+        "Bb8",
+        "c8=Q"
+      ],
+      "commentary": [
+        "Compare the source’s natural queen promotion against ...Bb8.",
+        "c7 keeps White’s exact win until the promotion choice.",
+        "Bb8 sets the pin-and-stalemate defense.",
+        "c8=Q is actual stalemate: Bb8 is pinned to Ka8, b7 is controlled by Nc5 and Ka6, and a7 is covered by Ka6."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "c8=Q is actual stalemate: Bb8 is pinned to Ka8, b7 is controlled by Nc5 and Ka6, and a7 is covered by Ka6.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw"
+      ],
+      "end_fen": "kbQ5/8/K7/2N5/8/8/8/8 b - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "majestic_bishop_rook",
+      "start": "start",
+      "title": "Promote to a rook",
+      "san": [
+        "c7",
+        "Bb8",
+        "c8=R"
+      ],
+      "commentary": [
+        "The rook has the same stalemating horizontal pin as the queen.",
+        "c7 advances the pawn while retaining the win.",
+        "Bb8 prepares to be pinned across the eighth rank.",
+        "c8=R is actual stalemate. The pinned bishop cannot move and Ka8 has no legal flight square."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "c8=R is actual stalemate. The pinned bishop cannot move and Ka8 has no legal flight square.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw"
+      ],
+      "end_fen": "kbR5/8/K7/2N5/8/8/8/8 b - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "majestic_bishop_capture",
+      "start": "start",
+      "title": "Capture the offered bishop",
+      "san": [
+        "c7",
+        "Bb8",
+        "cxb8=Q+",
+        "Kxb8"
+      ],
+      "commentary": [
+        "Compare capturing the bishop instead of promoting straight ahead.",
+        "c7 advances the pawn toward promotion.",
+        "Bb8 offers the bishop beside its king.",
+        "cxb8=Q+ exchanges the pawn for the bishop, but the new queen is not protected.",
+        "Kxb8 captures the queen. White has only king and knight against king, an exact draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxb8 captures the queen. White has only king and knight against king, an exact draw.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "1k6/8/K7/2N5/8/8/8/8 w - - 0 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "majestic_bishop_knight",
+      "start": "start",
+      "title": "Try a second knight",
+      "san": [
+        "c7",
+        "Bb8",
+        "c8=N",
+        "Bf4",
+        "Nb6+",
+        "Kb8",
+        "Ncd7+",
+        "Kc7"
+      ],
+      "commentary": [
+        "Compare the source’s knight promotion and the illustrated king escape.",
+        "c7 prepares promotion.",
+        "Bb8 offers the same defensive setup.",
+        "c8=N avoids immediate stalemate, but does not preserve a forced win.",
+        "Bf4 is the illustrated retreat, leaving White without the bishop mating diagonal.",
+        "Nb6+ gives check with the newly promoted knight.",
+        "Kb8 escapes along the eighth rank.",
+        "Ncd7+ checks with the original c5 knight, but does not form the bishop-and-knight mating cage.",
+        "Kc7 is the illustrated escape. The exact position remains drawn despite White’s extra knight."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kc7 is the illustrated escape. The exact position remains drawn despite White’s extra knight.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/2kN4/KN6/8/5b2/8/8/8 w - - 5 5",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does promotion to a weaker piece help?",
+      "answer": "A queen or rook pins Bb8 and leaves Black no legal move. A bishop leaves the dark-square bishop mobile while supplying the light-square Bb7 mating diagonal."
+    },
+    {
+      "node": "start",
+      "prompt": "What changes after Nd7?",
+      "answer": "The knight controls b8 and the king controls a7/b7. Black must move its bishop, which cannot stop Bb7 on a light square."
+    }
+  ],
+  "defaultBranch": "majestic_bishop_underpromote",
+  "practiceBranch": "majestic_bishop_underpromote",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "The complete five-piece source root is visually reconstructed. Selected source comparisons cover all four straight promotion choices and capturing the offered bishop. The successful light-square bishop promotion reaches actual mate, while queen/rook promotion stalemate and knight promotion draws. Every encoded position is checked exactly.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

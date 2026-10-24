@@ -1,0 +1,78 @@
+{
+  "video_id": "1p51uyWSnY4",
+  "title": "Skewers: Turn a Queen Retreat into Pawn Mate",
+  "summary": "A checking bishop move can protect the rook and force the king onto a pawn’s checking square. Count every flight before trusting the sacrifice.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "6q1/3p4/3R4/4k2p/2P3pP/5PK1/4P3/2B5 w - - 0 1",
+      "question": "The queen has retreated to g8. How does White force mate?",
+      "explanation": "Bf4+ protects Rd6 through e5 while checking the black king. The rook and pawns restrict every king reply except Kf5; e4 then completes the mating net.",
+      "evidence": {
+        "timestamp_s": 97
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "6q1/3p4/3R4/4k2p/2P3pP/5PK1/4P3/2B5 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "skewers_conditional_pawn_mate",
+      "start": "start",
+      "title": "Selected source mate after Qg8",
+      "san": [
+        "Bf4+",
+        "Kf5",
+        "e4#"
+      ],
+      "commentary": [
+        "Begin only after the illustrated queen retreat to g8. This is a complete twelve-piece board; it does not establish that Black had to choose this retreat.",
+        "Bf4+ checks Ke5 and protects Rd6 along f4–e5–d6. Black cannot capture the rook or bishop to answer the adjacent diagonal check. The rook, c4 pawn and f3 pawn close the other king flights.",
+        "Kf5 is Black’s only legal response. Qg8 cannot block an adjacent bishop check; the bishop on f4 is protected by Kg3, and the rook covers the sixth rank.",
+        "e4# advances the pawn with check on f5. Bf4 covers e5/g5, Rd6 covers e6/f6/g6, f3 protects e4, Kg3 protects f4, and Black’s own g4 pawn occupies g4. The queen cannot capture e4 or interpose against a pawn check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "e4# advances the pawn with check on f5. Bf4 covers e5/g5, Rd6 covers e6/f6/g6, f3 protects e4, Kg3 protects f4, and Black’s own g4 pawn occupies g4. The queen cannot capture e4 or interpose against a pawn check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6q1/3p4/3R4/5k1p/2P1PBpP/5PK1/8/8 b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can Black not simply take the rook on d6?",
+      "answer": "After Bf4+ Black must answer the bishop check. The rook is also protected by Bf4 along f4–e5–d6. Kf5 is the only legal response."
+    },
+    {
+      "node": "start",
+      "prompt": "Does this verify every defense to the rook offer?",
+      "answer": "No. This selected proof starts after Qg8. The main Qf8 defense and the eventual bishop-and-pawn ending still require their own outcome analysis."
+    }
+  ],
+  "defaultBranch": "skewers_conditional_pawn_mate",
+  "practiceBranch": "skewers_conditional_pawn_mate",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Selected twelve-piece mating variation only, after the queen retreats to g8 near 97 seconds: White Kg3/Rd6/Bc1/c4/e2/f3/h4 against Ke5/Qg8/d7/g4/h5. Native29–31 confirm Bf4+/Kf5/e4 mate with the queen on g8, and native32 confirms the complete earlier piece arrangement with the queen on b8 before the source resets to Qf8. Bf4+ forces Kf5; e4# is actual mate. This does not prove every queen defense to the earlier rook sacrifice loses or certify the larger bishop ending after the main Qf8/Bb2+/Kxd6/Ba3+/Ke6/Bxf8 skewer. The previous full legal reconstruction remains preserved.",
+  "verification_scope": "Selected twelve-piece mating variation only, after the queen retreats to g8 near 97 seconds: White Kg3/Rd6/Bc1/c4/e2/f3/h4 against Ke5/Qg8/d7/g4/h5. Native29–31 confirm Bf4+/Kf5/e4 mate with the queen on g8, and native32 confirms the complete earlier piece arrangement with the queen on b8 before the source resets to Qf8. Bf4+ forces Kf5; e4# is actual mate. This does not prove every queen defense to the earlier rook sacrifice loses or certify the larger bishop ending after the main Qf8/Bb2+/Kxd6/Ba3+/Ke6/Bxf8 skewer. The previous full legal reconstruction remains preserved.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 3,
+    "moves": {
+      "6q1/3p4/3R4/4k2p/2P3pP/5PK1/4P3/2B5 w - - 0 1": "Bf4+",
+      "6q1/3p4/3R4/5k1p/2P2BpP/5PK1/4P3/8 w - - 2 2": "e4#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

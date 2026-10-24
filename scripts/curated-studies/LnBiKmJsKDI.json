@@ -1,0 +1,158 @@
+{
+  "video_id": "LnBiKmJsKDI",
+  "title": "Sacrifices of Glory",
+  "summary": "Give up the bishop to divert the rook, then improve the knight before promoting to avoid a stalemate defense.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "6K1/3P4/8/7k/8/2r4b/4N3/6B1 w - - 0 1",
+      "question": "How can White remove the bishop that controls d7?",
+      "explanation": "The black bishop on h3 attacks d7 along the diagonal. The knight can check while attacking that bishop.",
+      "evidence": {
+        "timestamp_s": 55
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "last_tempo",
+      "fen": "6K1/3P4/7k/8/8/4r2N/8/8 w - - 0 4",
+      "question": "Is promotion already safe?",
+      "explanation": "The rook has left the d-file, but ...Re8+ creates a stalemate resource if White promotes immediately.",
+      "evidence": {
+        "timestamp_s": 105
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "glory_knight_preparation",
+      "start": "start",
+      "title": "Divert the rook, then improve the knight",
+      "san": [
+        "Nf4+",
+        "Kh6",
+        "Nxh3",
+        "Rd3",
+        "Be3+",
+        "Rxe3",
+        "Nf2",
+        "Rg3+",
+        "Kh8"
+      ],
+      "commentary": [
+        "Begin after ...Bh3. Earlier Ne2, the promotion on g1 and White’s bishop recapture are source context.",
+        "Nf4+ checks h5 and attacks the bishop on h3 at the same time.",
+        "Kh6 escapes upward, avoiding the illustrated promotion-with-check idea after a lower king retreat.",
+        "Nxh3 collects the bishop. White removes the diagonal blockader but must still displace the rook.",
+        "Rd3 returns behind the pawn. With the king on h6, the earlier bishop fork on b6 is no longer available.",
+        "Be3+ offers the bishop with check and places it in the rook’s path.",
+        "Rxe3 accepts the sacrifice, drawing the rook off the d-file. Immediate promotion still needs care.",
+        "Nf2 controls d3 and e4. It prevents the rook returning to d3 and threatens a knight fork on g4 against Re3 and Kh6.",
+        "Rg3+ is the illustrated desperate check along the g-file. Unlike the premature-promotion line, White has not created the queen that enables stalemate.",
+        "Kh8 moves behind the opposing king’s shelter on the h-file. White retains a checked win and the d-pawn remains ready to promote; the branch stops before assuming a particular further rook defense."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kh8 moves behind the opposing king’s shelter on the h-file. White retains a checked win and the d-pawn remains ready to promote; the branch stops before assuming a particular further rook defense.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7K/3P4/7k/8/8/6r1/5N2/8 b - - 3 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "glory_premature_queen",
+      "start": "last_tempo",
+      "title": "Promote before improving the knight",
+      "san": [
+        "d8=Q",
+        "Re8+",
+        "Qxe8"
+      ],
+      "commentary": [
+        "Compare the immediate promotion while the knight still stands on h3.",
+        "d8=Q gives up the forced win. Black can exploit the new queen’s control of the king’s flight squares.",
+        "Re8+ offers the rook with check, inviting the queen to capture it.",
+        "Qxe8 is stalemate. White’s king covers g7 and h7, Qe8 covers g6 and h5, and Nh3 covers g5. Black’s lone king on h6 is not in check and has no legal move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxe8 is stalemate. White’s king covers g7 and h7, Qe8 covers g6 and h5, and Nh3 covers g5. Black’s lone king on h6 is not in check and has no legal move.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "4Q1K1/8/7k/8/8/7N/8/8 b - - 0 5",
+      "outcome": "draw"
+    },
+    {
+      "id": "glory_decline_bishop",
+      "start": "start",
+      "title": "Decline the bishop sacrifice",
+      "san": [
+        "Nf4+",
+        "Kh6",
+        "Nxh3",
+        "Rd3",
+        "Be3+",
+        "Kg6",
+        "Nf4+"
+      ],
+      "commentary": [
+        "Follow the same setup, then compare the source’s king retreat instead of ...Rxe3.",
+        "Nf4+ forks the king and bishop.",
+        "Kh6 avoids promotion with check along the lower rank.",
+        "Nxh3 removes the bishop blockader.",
+        "Rd3 stops d8=Q along the d-file for the moment.",
+        "Be3+ forces a response while offering the bishop to the rook.",
+        "Kg6 declines that sacrifice but steps onto the knight’s fork square.",
+        "Nf4+ checks g6 and attacks Rd3. White keeps a checked win; this selected variation stops at the fork rather than inventing a further king reply."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nf4+ checks g6 and attacks Rd3. White keeps a checked win; this selected variation stops at the fork rather than inventing a further king reply.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6K1/3P4/6k1/8/5N2/3rB3/8/8 b - - 4 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "last_tempo",
+      "prompt": "Why does Nf2 help more than immediate promotion?",
+      "answer": "It controls d3, denying the rook its direct blocking square, and creates a fork threat. White avoids placing a queen where it would help stalemate the black king."
+    },
+    {
+      "node": "last_tempo",
+      "prompt": "Why does taking the rook fail after ...Re8+?",
+      "answer": "After Qxe8 the queen, knight and white king cover every flight of Kh6 without checking it. That is stalemate, even with overwhelming extra material."
+    }
+  ],
+  "defaultBranch": "glory_knight_preparation",
+  "practiceBranch": "glory_knight_preparation",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Bh3 at 55 seconds, a visually reconstructed seven-piece position. The preceding eight-piece sequence remains source context. The bishop sacrifice, knight preparation, stalemate error and selected king alternative are checked here.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

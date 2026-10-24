@@ -1,0 +1,226 @@
+{
+  "video_id": "gOQ3onEYVIA",
+  "title": "Majestic Pawn: Remove Every Restraint",
+  "summary": "Offer both queens and the bishop to release a pinned pawn, while checking the blocks that can decline each sacrifice.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5Q2/4p1qp/2Q3bk/8/1B1r2PK/7n/8/6r1 w - - 0 1",
+      "question": "Why is the g-pawn unable to move, and how can White free it?",
+      "explanation": "Rg1 pins g4 against Kh4, while Rd4 attacks along the fourth rank. Qc1+ lures one rook away, Bd2+ lures the other, and Qf4+ draws the knight onto f4 before g5 mate.",
+      "evidence": {
+        "timestamp_s": 69
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "5Q2/4p1qp/2Q3bk/8/1B1r2PK/7n/8/6r1 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "pawn_three_offers",
+      "start": "start",
+      "title": "Source plan: two queens and a bishop",
+      "san": [
+        "Qc1+",
+        "Rxc1",
+        "Bd2+",
+        "Rxd2",
+        "Qf4+",
+        "Nxf4",
+        "g5#"
+      ],
+      "commentary": [
+        "Begin after ...Bg6. White has two queens, but the g4 pawn is pinned on the g-file and cannot yet check the king.",
+        "Qc1+ checks along c1–d2–e3–f4–g5–h6. The queen is offered to the rook on g1, with the aim of breaking the pawn’s pin.",
+        "Rxc1 accepts that queen. The rook leaves the g-file, so g4 is no longer pinned against Kh4, but Rd4 still controls the fourth rank.",
+        "Bd2+ checks along d2–e3–f4–g5–h6. This second offer places the bishop where Rd4 can capture it.",
+        "Rxd2 accepts the bishop and clears the fourth rank. The pawn can move without uncovering a rook attack on White’s king.",
+        "Qf4+ checks along f4–g5–h6 and offers the remaining queen to Nh3. White is preparing the pawn’s final advance.",
+        "Nxf4 accepts the queen. Black’s knight now occupies f4, while g5 is free for White’s pawn.",
+        "g5# checks Kh6. Kh4 protects g5 and h5; the pawn checks h6, Bg6 blocks g6, Qg7 blocks g7, h7 blocks h7, and the king cannot capture the protected pawn or interpose against its adjacent check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "g5# checks Kh6. Kh4 protects g5 and h5; the pawn checks h6, Bg6 blocks g6, Qg7 blocks g7, h7 blocks h7, and the king cannot capture the protected pawn or interpose against its adjacent check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4p1qp/6bk/6P1/5n1K/8/3r4/2r5 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "pawn_knight_block",
+      "start": "start",
+      "title": "Independent defense: block immediately on g5",
+      "san": [
+        "Qc1+",
+        "Ng5",
+        "Qxg5#"
+      ],
+      "commentary": [
+        "Black can decline the queen capture by blocking the checking diagonal with the knight.",
+        "Qc1+ starts the same diagonal check and keeps White’s mating strategy.",
+        "Ng5 interposes the knight on the diagonal from c1 to h6. It is legal, but the knight lands on a square protected by Kh4.",
+        "Qxg5# captures that blocker with Qc1. Kh4 protects the queen on g5; the queen controls g6 and h5, and Black’s own pieces and pawn occupy the upper flights."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxg5# captures that blocker with Qc1. Kh4 protects the queen on g5; the queen controls g6 and h5, and Black’s own pieces and pawn occupy the upper flights.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "5Q2/4p1qp/6bk/6Q1/1B1r2PK/8/8/6r1 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "pawn_rook_block",
+      "start": "start",
+      "title": "Independent defense: block with the rook on d2",
+      "san": [
+        "Qc1+",
+        "Rd2",
+        "Bxd2+",
+        "Nf4",
+        "Qxf4#"
+      ],
+      "commentary": [
+        "The rook on d4 may block the first diagonal check instead of waiting for the bishop offer.",
+        "Qc1+ checks along the long diagonal toward h6.",
+        "Rd2 interposes the rook on d2, leaving the rook on g1 in place. White must answer the actual block rather than replay the source capture order.",
+        "Bxd2+ removes the block with check. The bishop from b4 now joins the attack along the same diagonal.",
+        "Nf4 interposes the knight. Ng5 is the other legal defense here and also loses, as saved in the complete proof.",
+        "Qxf4# captures the knight with Qc1. The queen checks h6 along the diagonal and closes the remaining flights. Black cannot restore the captured block."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxf4# captures the knight with Qc1. The queen checks h6 along the diagonal and closes the remaining flights. Black cannot restore the captured block.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4p1qp/6bk/8/5QPK/8/3B4/2Q3r1 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "pawn_knight_lower_block",
+      "start": "start",
+      "title": "Independent defense: block on f4 first",
+      "san": [
+        "Qc1+",
+        "Nf4",
+        "Qfxf4+",
+        "Rxf4",
+        "Qxf4#"
+      ],
+      "commentary": [
+        "The other initial knight block goes to f4 rather than g5. Both queens have access to that square.",
+        "Qc1+ checks h6 along the diagonal.",
+        "Nf4 interposes on the checking diagonal, while also occupying the fourth rank.",
+        "Qfxf4+ uses the queen from f8 to capture the knight. The file letter distinguishes it from the queen on c1, which can also capture f4.",
+        "Rxf4 takes that queen with Rd4. It is the only legal response to the renewed check.",
+        "Qxf4# captures the rook with the queen from c1. The bishop still on b4 and White’s king/pawn support the mating net."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxf4# captures the rook with the queen from c1. The bishop still on b4 and White’s king/pawn support the mating net.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4p1qp/6bk/8/1B3QPK/8/8/6r1 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "pawn_rook_lower_block",
+      "start": "start",
+      "title": "Independent defense: block with the rook on f4",
+      "san": [
+        "Qc1+",
+        "Rf4",
+        "Qfxf4+",
+        "Nxf4",
+        "Qxf4#"
+      ],
+      "commentary": [
+        "Black’s fifth initial reply uses the rook to interpose directly on f4.",
+        "Qc1+ is the proved first check.",
+        "Rf4 blocks the c1–h6 diagonal and offers the rook instead of taking the queen on c1.",
+        "Qfxf4+ captures that rook with the queen from f8. White chooses which queen to offer so the other remains ready to recapture.",
+        "Nxf4 accepts the queen with Nh3. Ng5 is also legal and is included in the complete proof; White can capture it with mate.",
+        "Qxf4# uses the queen on c1 to capture the knight and finish the diagonal mate. The preserved black bishop, queen and h-pawn help confine their own king."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxf4# uses the queen on c1 to capture the knight and finish the diagonal mate. The preserved black bishop, queen and h-pawn help confine their own king.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4p1qp/6bk/8/1B3QPK/8/8/6r1 b - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can’t White just push g5 in the starting diagram?",
+      "answer": "Rg1 pins the g4 pawn to Kh4. Moving it would expose White’s king to check."
+    },
+    {
+      "node": "start",
+      "prompt": "Does the proof assume Black takes every sacrifice?",
+      "answer": "No. It enumerates all five replies to Qc1+, all four replies to Bd2+ after Rxc1, and both knight replies to the final queen offer."
+    }
+  ],
+  "defaultBranch": "pawn_three_offers",
+  "practiceBranch": "pawn_three_offers",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Bg6 in the complete thirteen-piece diagram at 69 seconds. The three checking offers are proved against every legal defense, reaching actual mates with all surviving pieces retained. Earlier promotion/trade alternatives and claims about drawing or unique moves remain outside this proof. Independent branches are illustrative choices within the complete saved certificate.",
+  "verification_scope": "Begin after ...Bg6 in the complete thirteen-piece diagram at 69 seconds. The three checking offers are proved against every legal defense, reaching actual mates with all surviving pieces retained. Earlier promotion/trade alternatives and claims about drawing or unique moves remain outside this proof. Independent branches are illustrative choices within the complete saved certificate.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 7,
+    "moves": {
+      "5Q2/4p1qp/2Q3bk/8/1B1r2PK/7n/8/6r1 w - - 0 1": "Qc1+",
+      "5Q2/4p1qp/6bk/8/1B1r1nPK/8/8/2Q3r1 w - - 2 2": "Qfxf4+",
+      "8/4p1qp/6bk/8/1B3rPK/8/8/2Q3r1 w - - 0 3": "Qxf4#",
+      "5Q2/4p1qp/6bk/6n1/1B1r2PK/8/8/2Q3r1 w - - 2 2": "Qxg5#",
+      "5Q2/4p1qp/6bk/8/1B4PK/7n/3r4/2Q3r1 w - - 2 2": "Bxd2+",
+      "5Q2/4p1qp/6bk/8/5nPK/8/3B4/2Q3r1 w - - 1 3": "Qxf4#",
+      "5Q2/4p1qp/6bk/6n1/6PK/8/3B4/2Q3r1 w - - 1 3": "Bxg5#",
+      "5Q2/4p1qp/6bk/8/1B3rPK/7n/8/2Q3r1 w - - 2 2": "Qfxf4+",
+      "8/4p1qp/6bk/6n1/1B3QPK/8/8/2Q3r1 w - - 1 3": "Qxg5#",
+      "8/4p1qp/6bk/8/1B3nPK/8/8/2Q3r1 w - - 0 3": "Qxf4#",
+      "5Q2/4p1qp/6bk/8/1B1r2PK/7n/8/2r5 w - - 0 2": "Bd2+",
+      "5Q2/4p1qp/6bk/8/3r1nPK/8/3B4/2r5 w - - 2 3": "Qxf4+",
+      "8/4p1qp/6bk/8/5rPK/8/3B4/2r5 w - - 0 4": "Bxf4#",
+      "5Q2/4p1qp/6bk/6n1/3r2PK/8/3B4/2r5 w - - 2 3": "Bxg5#",
+      "5Q2/4p1qp/6bk/8/5rPK/7n/3B4/2r5 w - - 2 3": "Qxf4+",
+      "8/4p1qp/6bk/6n1/5QPK/8/3B4/2r5 w - - 1 4": "Qxg5#",
+      "8/4p1qp/6bk/8/5nPK/8/3B4/2r5 w - - 0 4": "Bxf4#",
+      "5Q2/4p1qp/6bk/8/6PK/7n/3r4/2r5 w - - 0 3": "Qf4+",
+      "8/4p1qp/6bk/6n1/5QPK/8/3r4/2r5 w - - 2 4": "Qxg5#",
+      "8/4p1qp/6bk/8/5nPK/8/3r4/2r5 w - - 0 4": "g5#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

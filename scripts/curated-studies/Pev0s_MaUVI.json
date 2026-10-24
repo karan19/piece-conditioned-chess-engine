@@ -1,0 +1,201 @@
+{
+  "video_id": "Pev0s_MaUVI",
+  "title": "KNIGHTMARE",
+  "summary": "Keep the enemy king caged, use its pawns as waiting moves, and change the mating pattern when it underpromotes.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1p6/8/8/5N1K/p7/p2N4/k7 w - - 0 1",
+      "question": "Why keep the enemy pawns alive?",
+      "explanation": "After the rook sacrifice, two knights can cage Black’s king. The black pawns provide moves that prevent stalemate while White’s king approaches.",
+      "evidence": {
+        "timestamp_s": 40
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "promotion",
+      "fen": "8/8/8/8/8/pN1N4/pp6/1k1K4 b - - 3 6",
+      "question": "How does the promoted piece change the finish?",
+      "explanation": "Black can promote a2 to a queen or a knight. White must respond to the actual attacks of that piece.",
+      "evidence": {
+        "timestamp_s": 82
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "nightmare_walk",
+      "start": "start",
+      "title": "Bring the king before the pawn promotes",
+      "san": [
+        "Nd3",
+        "b5",
+        "Kg4",
+        "b4",
+        "Kf3",
+        "b3",
+        "Ke2",
+        "b2",
+        "Nb3+",
+        "Kb1",
+        "Kd1",
+        "a1=Q",
+        "Nb4",
+        "Qa2",
+        "Nd2+",
+        "Ka1",
+        "Nc2#"
+      ],
+      "commentary": [
+        "Begin after ...Kxa1. The earlier eight-piece rook sacrifice is context; this seven-piece position is the checked starting point.",
+        "Nd3 controls b2. Together with Nd2 controlling b1, it leaves Black’s king no legal move.",
+        "b5 uses the available double pawn step. The blocked a-pawns cannot move while the king remains on a1.",
+        "Kg4 starts the king’s approach without disturbing the knight cage.",
+        "b4 spends another pawn step. Black’s king still has no escape.",
+        "Kf3 continues toward the corner, leaving both knights at their blocking posts.",
+        "b3 approaches the second rank, giving White one more useful move.",
+        "Ke2 brings the king within reach of d1, where it will control c1 and c2.",
+        "b2 is the last b-pawn step before promotion. White must now reshape the cage.",
+        "Nb3+ checks a1 and releases b1 while the other knight still covers b2.",
+        "Kb1 is forced. The king’s departure from a1 frees the a2 pawn to promote.",
+        "Kd1 controls c1 and c2. White completes the cage while deliberately allowing promotion.",
+        "a1=Q creates a queen, but Black’s king remains boxed in by its own pieces.",
+        "Nb4 controls a2 and c2. The queen cannot move along the first rank through its own king or along the diagonal through its own b2 pawn.",
+        "Qa2 is one of only two legal moves. It occupies the king’s a2 escape square.",
+        "Nd2+ checks b1. The queen now obstructs the square that could otherwise let the king escape.",
+        "Ka1 is forced into the corner vacated by the queen.",
+        "Nc2# checks a1. Nd2 covers b1 and b3; White’s king covers c2, and Black’s own queen and pawn occupy a2 and b2."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nc2# checks a1. Nd2 covers b1 and b3; White’s king covers c2, and Black’s own queen and pawn occupy a2 and b2.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/p7/qpNN4/k2K4 b - - 5 9",
+      "outcome": "loss"
+    },
+    {
+      "id": "nightmare_pawn_mate",
+      "start": "promotion",
+      "title": "The queen stays home and the pawn moves",
+      "san": [
+        "a1=Q",
+        "Nb4",
+        "a2",
+        "Nd2#"
+      ],
+      "commentary": [
+        "Compare Black’s other legal move after the queen promotion and knight repositioning.",
+        "a1=Q promotes, but the new queen has very little space.",
+        "Nb4 cages the king and restricts the queen, leaving only ...Qa2 or ...a2.",
+        "a2 blocks the queen’s only exit and occupies the king’s last escape square.",
+        "Nd2# checks b1. Nb4 covers a2 and c2, Kd1 covers c1, and Black’s own pieces occupy a1 and b2."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nd2# checks b1. Nb4 covers a2 and c2, Kd1 covers c1, and Black’s own pieces occupy a1 and b2.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/1N6/8/pp1N4/qk1K4 b - - 1 8",
+      "outcome": "loss"
+    },
+    {
+      "id": "nightmare_underpromotion",
+      "start": "promotion",
+      "title": "Meet a knight promotion with a different mate",
+      "san": [
+        "a1=N",
+        "Nd2+",
+        "Ka2",
+        "Nb4#"
+      ],
+      "commentary": [
+        "A knight on a1 attacks different squares from a queen. White must change the move order.",
+        "a1=N attacks b3, so the quiet Nb4 plan would leave White’s other knight exposed.",
+        "Nd2+ immediately moves the attacked b3 knight with check and keeps the d3 knight ready for the final jump.",
+        "Ka2 is forced. Unlike a queen on a1, the promoted knight gives no check along the first rank.",
+        "Nb4# checks a2. Nd2 covers b1 and b3, while Black’s own knight and pawns occupy a1, a3 and b2."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nb4# checks a2. Nd2 covers b1 and b3, while Black’s own knight and pawns occupy a1, a3 and b2.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/1N6/p7/kp1N4/n2K4 b - - 3 8",
+      "outcome": "loss"
+    },
+    {
+      "id": "nightmare_wrong_order",
+      "start": "promotion",
+      "title": "Repeat the queen plan against a knight",
+      "san": [
+        "a1=N",
+        "Nb4",
+        "Nxb3"
+      ],
+      "commentary": [
+        "Use the same quiet move against a knight and observe the different tactical result.",
+        "a1=N attacks the white knight on b3.",
+        "Nb4 ignores that attack and loses the forced win. The piece on a1 is a knight, not a boxed-in queen.",
+        "Nxb3 captures the exposed knight. The tablebase records the exact result after this source-illustrated mistake."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxb3 captures the exposed knight. The tablebase records the exact result after this source-illustrated mistake.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/8/1N6/pn6/1p6/1k1K4 w - - 0 8",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why do Black’s remaining pawns help White?",
+      "answer": "They give Black legal moves while its king is caged, allowing White’s king to approach without stalemate. This does not mean two knights can force mate against a bare king."
+    },
+    {
+      "node": "promotion",
+      "prompt": "Why must White react differently to ...a1=N?",
+      "answer": "The knight attacks b3. Nd2+ moves that attacked knight with tempo; repeating Nb4 allows ...Nxb3."
+    }
+  ],
+  "defaultBranch": "nightmare_walk",
+  "practiceBranch": "nightmare_walk",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kxa1 at 40 seconds. The earlier eight-piece rook sacrifice is source context. The king approach, two queen-promotion mates and the knight-promotion reply are checked; other pawn tempos and promotion choices are not exhaustively displayed.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

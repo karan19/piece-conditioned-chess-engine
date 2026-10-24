@@ -1,0 +1,119 @@
+{
+  "video_id": "96UmAkk8h2w",
+  "title": "Knowledge: Castle to Check and Attack the Rook",
+  "summary": "Use the stipulated castling right to activate king and rook together. Compare moving the rook without castling.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3k4/8/8/8/8/8/1r6/R3K3 w Q - 0 1",
+      "question": "Can White still castle in this ending?",
+      "explanation": "The source stipulates that Ke1 and Ra1 have never moved. Queenside castling is legal: e1, d1 and c1 are safe even though b1 is attacked by Rb2.",
+      "evidence": {
+        "timestamp_s": 116
+      },
+      "winningMoveWitness": "O-O-O+",
+      "proof": {
+        "method": "legal_winning_move",
+        "fen": "3k4/8/8/8/8/8/1r6/R3K3 w Q - 0 1",
+        "category_for_side_to_move": "win",
+        "san": "O-O-O+",
+        "successor_fen": "3k4/8/8/8/8/8/1r6/2KR4 b - - 1 1",
+        "successor_evidence_key": "witness:start"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "knowledge_castle_fork",
+      "start": "start",
+      "title": "Source idea: castle with check and take the rook",
+      "san": [
+        "O-O-O+",
+        "Kc7",
+        "Kxb2"
+      ],
+      "commentary": [
+        "Begin after ...Kxd8 at 116 seconds. The preceding pawn promotion sacrifice remains context; the source’s explicit queenside-castling stipulation is retained in this FEN.",
+        "O-O-O+ moves the king to c1 and rook to d1. The rook checks Kd8, while Kc1 attacks Rb2. This legal move reaches an exact tablebase loss for Black, proving White can win from the rights-bearing starting position.",
+        "Kc7 leaves the check, as illustrated in the source. Black can choose other replies; the interposing-rook alternative is checked separately.",
+        "Kxb2 collects the rook and reaches a winning rook-versus-king ending. The source ends here; the full conversion is left to practice."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxb2 collects the rook and reaches a winning rook-versus-king ending. The source ends here; the full conversion is left to practice.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/2k5/8/8/8/8/1K6/3R4 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "knowledge_block_rook",
+      "start": "start",
+      "title": "Independent defense: interpose the rook instead",
+      "san": [
+        "O-O-O+",
+        "Rd2",
+        "Rxd2+"
+      ],
+      "commentary": [
+        "Independently compare the rook interposition after the same legal castle. This defense is not attributed to the video.",
+        "O-O-O+ activates both pieces with a check and an attack.",
+        "Rd2 blocks the d-file check instead of moving the king. It still loses with exact play.",
+        "Rxd2+ removes the interposing rook with check. White has a checked winning rook-versus-king ending, just as after the king-retreat branch."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxd2+ removes the interposing rook with check. White has a checked winning rook-versus-king ending, just as after the king-retreat branch.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3k4/8/8/8/8/8/3R4/2K5 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "knowledge_move_rook_first",
+      "start": "start",
+      "title": "Independent comparison: a rook check only draws",
+      "san": [
+        "Rd1+",
+        "Kc7"
+      ],
+      "commentary": [
+        "Independently compare checking with the rook alone. Moving Ra1 forfeits the queenside-castling right.",
+        "Rd1+ leaves Ke1 behind and changes a forced win into an exact draw. The king no longer gains c1 in the same move, so Rb2 is not attacked by it.",
+        "Kc7 is a representative drawing reply. Both rooks remain, White’s king is still on e1 and castling rights are gone."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kc7 is a representative drawing reply. Both rooks remain, White’s king is still on e1 and castling rights are gone.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/2k5/8/8/8/8/1r6/3RK3 w - - 2 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does an attack on b1 not prohibit queenside castling?",
+      "answer": "The king crosses d1 and finishes on c1; neither square may be attacked, and the king cannot start in check. The rook may cross an attacked b1 square."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does Rd1+ fail to reproduce castling?",
+      "answer": "It checks with the rook but leaves the king on e1 and forfeits castling. Castling brings the king to c1 in the same move, attacking Rb2."
+    }
+  ],
+  "defaultBranch": "knowledge_castle_fork",
+  "practiceBranch": "knowledge_castle_fork",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kxd8 at 116 seconds, with White Ke1/Ra1 against Black Kd8/Rb2. The source explicitly supplies the otherwise invisible history that permits queenside castling. This starting position is proved winning by a legal O-O-O+ witness leading to an exact tablebase loss for Black; the rights-bearing root itself is not a tablebase query. Every encoded position after the first move has ordinary tablebase evidence. The earlier d7/Kc7/d8=Q sacrifice and its alternatives remain outside this scope.",
+  "verification_scope": "The complete four-piece starting board is visually reconstructed and retains the source-stipulated Q castling right. Its win is proved by a legal castling witness reaching a tablebase loss for the opponent. No rights are removed before that legal move. Every encoded successor has exact tablebase evidence; earlier pawn-sacrifice choices are not certified.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

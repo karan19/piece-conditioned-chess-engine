@@ -1,0 +1,135 @@
+{
+  "video_id": "C4QxiMxyvu4",
+  "title": "Reverse Win",
+  "summary": "Work backward from the mating square to force the rook through the wrong defensive line.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/4Br2/8/8/8/8/p1P5/k1Kb4 w - - 0 1",
+      "question": "How can the bishop reach a3 without allowing ...Rb7?",
+      "explanation": "White has Kc1, Be7 and c2 against Ka1, Rf7, Bd1 and a2. Be7 must draw the rook off the seventh rank before choosing the a3 diagonal.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "reverse_rook_maneuver",
+      "start": "start",
+      "title": "Force the rook away from the seventh rank",
+      "san": [
+        "Bd6",
+        "Rf5",
+        "Bb4",
+        "Rf3",
+        "Bc5",
+        "Rf4",
+        "Ba3",
+        "Bxc2",
+        "Bb2#"
+      ],
+      "commentary": [
+        "Begin from the complete seven-piece source root. Each bishop move creates a different mating threat and forces the rook to change its defensive geometry.",
+        "Bd6 threatens Be5 mate along the e5–a1 diagonal.",
+        "Rf5 blocks that threat along the fifth rank, preparing to meet Be5 with ...Rxe5.",
+        "Bb4 switches the threat to Bc3 mate.",
+        "Rf3 guards c3 from the third rank.",
+        "Bc5 switches to Bd4 mate.",
+        "Rf4 guards d4 from the fourth rank, finally leaving the rook unable to return to b7 in one move.",
+        "Ba3 now threatens Bb2 mate. From f4 the rook cannot block the b-file with ...Rb7.",
+        "Bxc2 captures White’s last pawn in the illustrated source reply, but it does not stop the mate.",
+        "Bb2# is actual mate. Kc1 protects b2 and covers b1, while Black’s own a2 pawn closes a2."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bb2# is actual mate. Kc1 protects b2 and covers b1, while Black’s own a2 pawn closes a2.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/5r2/8/pBb5/k1K5 b - - 1 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "reverse_a3_too_soon",
+      "start": "start",
+      "title": "Try the final diagonal immediately",
+      "san": [
+        "Ba3",
+        "Rb7",
+        "Bb2+",
+        "Rxb2"
+      ],
+      "commentary": [
+        "Compare the source’s initial attempt to use the desired a3 diagonal before diverting the rook.",
+        "Ba3 threatens Bb2 mate but leaves the rook able to use the seventh rank.",
+        "Rb7 gets behind b2 along the b-file.",
+        "Bb2+ checks, but the bishop can now be captured.",
+        "Rxb2 removes the bishop and stops the mating plan. This exact comparison’s outcome is checked rather than inferred from material. The exact remaining position is winning for Black."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxb2 removes the bishop and stops the mating plan. This exact comparison’s outcome is checked rather than inferred from material. The exact remaining position is winning for Black.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/8/8/8/prP5/k1Kb4 w - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "reverse_b4_too_soon",
+      "start": "start",
+      "title": "Skip the first forcing bishop move",
+      "san": [
+        "Bb4",
+        "Rc7",
+        "Bc5",
+        "Rxc5"
+      ],
+      "commentary": [
+        "Compare moving to b4 before forcing the rook down the f-file.",
+        "Bb4 threatens Bc3 mate, but the rook is still free to defend from the seventh rank.",
+        "Rc7 prepares to meet Bc3 down the c-file.",
+        "Bc5 offers the bishop on the rook’s file without the intended f3 geometry.",
+        "Rxc5 removes the bishop. This independently supplied capture tests the concrete consequence of the premature move order. The exact remaining position is winning for Black."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxc5 removes the bishop. This independently supplied capture tests the concrete consequence of the premature move order. The exact remaining position is winning for Black.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/2r5/8/8/p1P5/k1Kb4 w - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why start with Bd6 instead of Ba3?",
+      "answer": "Bd6 forces ...Rf5; Bb4 then draws the rook to f3, and Bc5 to f4. Only then does Ba3 leave the rook unable to reach b7 in one move."
+    }
+  ],
+  "defaultBranch": "reverse_rook_maneuver",
+  "practiceBranch": "reverse_rook_maneuver",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin from the complete seven-piece source root at zero seconds. The full Bd6–Bb4–Bc5–Ba3 maneuver and selected premature attempts are checked. The premature b4 capture completion is independently supplied.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,211 @@
+{
+  "video_id": "y6oEobRp30U",
+  "title": "It’s a Draw… Right? A Bishop Check Before the Fork",
+  "summary": "Answer the rook check with a bishop sacrifice, then use king restriction and knight forks to reach exact winning endings.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1r6/3N4/8/p5p1/k5P1/P7/1K2B3/8 w - - 0 1",
+      "question": "Can White answer the rook check while keeping both winning ideas?",
+      "explanation": "Bb5+ blocks the b-file check and checks Ka4. Either capture lets White remove the rook or force it into a capture or fork after Ka2.",
+      "evidence": {
+        "timestamp_s": 128
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "1r6/3N4/8/p5p1/k5P1/P7/1K2B3/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "drawright_king_capture",
+      "start": "start",
+      "title": "Source defense: the king takes the bishop",
+      "san": [
+        "Bb5+",
+        "Kxb5",
+        "Nxb8"
+      ],
+      "commentary": [
+        "Begin after ...Rb8+ with White Kb2/Be2/Nd7/a3/g4 against Ka4/Rb8/a5/g5. Both pairs of pawns remain in the complete later board.",
+        "Bb5+ interposes on the b-file and counterchecks the black king along b5–a4. Black has exactly two legal captures.",
+        "Kxb5 accepts the bishop with the king. The rook remains on b8, where Nd7 can capture it.",
+        "Nxb8 captures the rook and reaches an exact seven-piece White win. Removing the bishop means this ending is not the earlier two-bishop stalemate trap."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxb8 captures the rook and reaches an exact seven-piece White win. Removing the bishop means this ending is not the earlier two-bishop stalemate trap.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1N6/8/8/pk4p1/6P1/P7/1K6/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "drawright_rook_sacrifice",
+      "start": "start",
+      "title": "Source defense: rook capture and pawn recapture",
+      "san": [
+        "Bb5+",
+        "Rxb5+",
+        "Ka2",
+        "Rf5",
+        "gxf5"
+      ],
+      "commentary": [
+        "Compare the rook capture instead of the king capture, preserving the full a- and g-pawn structure.",
+        "Bb5+ blocks the rook check and checks Ka4 with the offered bishop.",
+        "Rxb5+ removes the bishop and renews the b-file check against Kb2.",
+        "Ka2 is the source king move. It controls b3 while the a3 pawn controls b4; the knight and blocked pawns leave Black only rook moves.",
+        "Rf5 is the source rook sacrifice, moving from b5 along the fifth rank. The white g4 pawn can capture it.",
+        "gxf5 removes the rook and reaches an exact seven-piece White win. Black’s g5 pawn remains on the board; the branch does not erase it or assume a later promotion race."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "gxf5 removes the rook and reaches an exact seven-piece White win. Black’s g5 pawn remains on the board; the branch does not erase it or assume a later promotion race.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3N4/8/p4Pp1/k7/P7/K7/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "drawright_rank_fork",
+      "start": "start",
+      "title": "Independent defense: move the rook to d5",
+      "san": [
+        "Bb5+",
+        "Rxb5+",
+        "Ka2",
+        "Rd5",
+        "Nb6+",
+        "Kb5",
+        "Nxd5"
+      ],
+      "commentary": [
+        "Test a legal rook move along the fifth rank. This completion is an independent representative defense.",
+        "Bb5+ offers the bishop with an interposing check.",
+        "Rxb5+ takes the bishop and checks Kb2.",
+        "Ka2 restricts the black king and leaves the rook to move.",
+        "Rd5 avoids the immediate pawn capture on f5, but steps onto a knight-fork square.",
+        "Nb6+ checks Ka4 and attacks Rd5 at the same time.",
+        "Kb5 is forced. The a5 pawn occupies a5, White’s a3 pawn controls b4, and Ka2 controls b3.",
+        "Nxd5 captures the rook. The exact seven-piece ending is a White win with all four pawns retained."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nxd5 captures the rook. The exact seven-piece ending is a White win with all four pawns retained.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/pk1N2p1/6P1/P7/K7/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "drawright_file_fork",
+      "start": "start",
+      "title": "Independent defense: move the rook to b7",
+      "san": [
+        "Bb5+",
+        "Rxb5+",
+        "Ka2",
+        "Rb7",
+        "Nc5+",
+        "Kb5",
+        "Nxb7"
+      ],
+      "commentary": [
+        "Test a rook retreat along the b-file instead of the source’s rook sacrifice.",
+        "Bb5+ first answers the rook check and forces a capture.",
+        "Rxb5+ accepts the bishop and checks Kb2.",
+        "Ka2 creates the same restricted king position.",
+        "Rb7 retreats but lies on a square attacked by a knight arriving on c5.",
+        "Nc5+ checks Ka4 and attacks Rb7.",
+        "Kb5 is the only legal king reply, leaving the rook available to capture.",
+        "Nxb7 removes the rook and reaches an exact seven-piece White win. These added king/rook choices are not attributed to an unseen original game score."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nxb7 removes the rook and reaches an exact seven-piece White win. These added king/rook choices are not attributed to an unseen original game score.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1N6/8/pk4p1/6P1/P7/K7/8 b - - 0 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why play Bb5 before Ka2?",
+      "answer": "White is in check from Rb8. Bb5 interposes with a countercheck and forces one of two captures."
+    },
+    {
+      "node": "start",
+      "prompt": "What changes after Ka2?",
+      "answer": "Ka2 controls b3 and a3 controls b4. Black’s king and pawns cannot move, while each rook move allows a capture or checking knight fork."
+    }
+  ],
+  "defaultBranch": "drawright_king_capture",
+  "practiceBranch": "drawright_king_capture",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rb8+ at 128 seconds in the complete nine-piece later source variation. Bb5+ is proved against both captures: Kxb5 permits Nxb8 and an exact seven-piece win; Rxb5+ permits Ka2, after which every legal rook move reaches an exact seven-piece win through a capture or a checking knight fork. All a- and g-pawns are retained. The source Rf5/gxf5 finish is included; two representative rook-fork completions are explicitly independent. The earlier rook sacrifice, bishop interference and claimed drawn alternatives remain outside this selected proof.",
+  "verification_scope": "Begin after ...Rb8+ at 128 seconds in the complete nine-piece later source variation. Bb5+ is proved against both captures: Kxb5 permits Nxb8 and an exact seven-piece win; Rxb5+ permits Ka2, after which every legal rook move reaches an exact seven-piece win through a capture or a checking knight fork. All a- and g-pawns are retained. The source Rf5/gxf5 finish is included; two representative rook-fork completions are explicitly independent. The earlier rook sacrifice, bishop interference and claimed drawn alternatives remain outside this selected proof.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 9,
+    "moves": {
+      "7r/3N4/8/p5p1/k5P1/P7/K3B3/8 w - - 2 2": "Nb6#",
+      "6r1/3N4/8/p5p1/k5P1/P7/K3B3/8 w - - 2 2": "Nb6#",
+      "5r2/3N4/8/p5p1/k5P1/P7/K3B3/8 w - - 2 2": "Nb6#",
+      "4r3/3N4/8/p5p1/k5P1/P7/K3B3/8 w - - 2 2": "Nb6#",
+      "3r4/3N4/8/p5p1/k5P1/P7/K3B3/8 w - - 2 2": "Nb6#",
+      "2r5/3N4/8/p5p1/k5P1/P7/K3B3/8 w - - 2 2": "Nb6#",
+      "r7/3N4/8/p5p1/k5P1/P7/K3B3/8 w - - 2 2": "Nb6#",
+      "8/1r1N4/8/p5p1/k5P1/P7/K3B3/8 w - - 2 2": "Nc5#",
+      "8/3N4/1r6/p5p1/k5P1/P7/K3B3/8 w - - 2 2": "Nxb6#",
+      "8/3N4/8/pr4p1/k5P1/P7/K3B3/8 w - - 2 2": "Bxb5+",
+      "8/3N4/8/p5p1/kr4P1/P7/K3B3/8 w - - 2 2": "axb4",
+      "8/3N4/8/p5p1/k5P1/Pr6/K3B3/8 w - - 2 2": "Nc5#",
+      "1r6/3N4/8/pk4p1/6P1/P7/1K6/8 w - - 0 2": "Nxb8",
+      "1r6/3N4/8/p5p1/k5P1/P7/K7/8 w - - 2 3": "Nxb8",
+      "8/1r6/8/pkN3p1/6P1/P7/K7/8 w - - 4 4": "Nxb7",
+      "8/1r1N4/8/p5p1/k5P1/P7/K7/8 w - - 2 3": "Nc5+",
+      "8/3N4/1r6/p5p1/k5P1/P7/K7/8 w - - 2 3": "Nxb6+",
+      "8/3N4/8/p4rp1/k5P1/P7/K7/8 w - - 2 3": "gxf5",
+      "8/3N4/8/p3r1p1/k5P1/P7/K7/8 w - - 2 3": "Nxe5",
+      "8/8/1N6/pk1r2p1/6P1/P7/K7/8 w - - 4 4": "Nxd5",
+      "8/3N4/8/p2r2p1/k5P1/P7/K7/8 w - - 2 3": "Nb6+",
+      "8/3N4/8/p1r3p1/k5P1/P7/K7/8 w - - 2 3": "Nxc5+",
+      "8/3N4/8/p5p1/kr4P1/P7/K7/8 w - - 2 3": "axb4",
+      "8/8/1N6/pk4p1/6P1/Pr6/K7/8 w - - 4 4": "Kxb3",
+      "8/8/8/pkN3p1/6P1/Pr6/K7/8 w - - 4 4": "Nxb3",
+      "8/3N4/8/p5p1/k5P1/Pr6/K7/8 w - - 2 3": "Nc5+",
+      "8/3N4/8/p5p1/k5P1/P7/Kr6/8 w - - 2 3": "Kxb2",
+      "8/3N4/8/p5p1/k5P1/P7/K7/1r6 w - - 2 3": "Kxb1",
+      "8/3N4/8/pr4p1/k5P1/P7/1K6/8 w - - 0 2": "Ka2",
+      "1r6/3N4/8/p5p1/k5P1/P7/1K2B3/8 w - - 0 1": "Bb5+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

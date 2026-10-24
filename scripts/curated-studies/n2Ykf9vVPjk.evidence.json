@@ -1,0 +1,329 @@
+{
+  "node:start": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p7/1pb1rbk1/2Ppp3/7P/P4QK1/P2P4/8 w - - 0 1",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Qf5+": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p7/1pb1rbk1/2PppQ2/7P/P5K1/P2P4/8 b - - 1 1",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Kg7": {
+            "method": "finite_strategy",
+            "fen": "3q1rB1/p5k1/1pb1rb2/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Qh7#": {
+                "method": "finite_strategy",
+                "fen": "3q1rB1/p5kQ/1pb1rb2/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Kh6": {
+            "method": "finite_strategy",
+            "fen": "3q1rB1/p7/1pb1rb1k/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Qh7#": {
+                "method": "finite_strategy",
+                "fen": "3q1rB1/p6Q/1pb1rb1k/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Kxf5": {
+            "method": "finite_strategy",
+            "fen": "3q1rB1/p7/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 w - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bh7#": {
+                "method": "finite_strategy",
+                "fen": "3q1r2/p6B/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 b - - 1 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:run_king_queen_offer:1": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p7/1pb1rbk1/2PppQ2/7P/P5K1/P2P4/8 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Kg7": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p5k1/1pb1rb2/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Qh7#": {
+            "method": "finite_strategy",
+            "fen": "3q1rB1/p5kQ/1pb1rb2/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Kh6": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p7/1pb1rb1k/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Qh7#": {
+            "method": "finite_strategy",
+            "fen": "3q1rB1/p6Q/1pb1rb1k/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Kxf5": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p7/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 w - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bh7#": {
+            "method": "finite_strategy",
+            "fen": "3q1r2/p6B/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 b - - 1 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      }
+    }
+  },
+  "step:run_king_queen_offer:2": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p7/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 w - - 0 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Bh7#": {
+        "method": "finite_strategy",
+        "fen": "3q1r2/p6B/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 b - - 1 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:run_king_queen_offer:3": {
+    "method": "finite_strategy",
+    "fen": "3q1r2/p6B/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 b - - 1 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:run_king_queen_offer": {
+    "method": "finite_strategy",
+    "fen": "3q1r2/p6B/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 b - - 1 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "step:run_king_upper_retreat:1": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p7/1pb1rbk1/2PppQ2/7P/P5K1/P2P4/8 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Kg7": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p5k1/1pb1rb2/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Qh7#": {
+            "method": "finite_strategy",
+            "fen": "3q1rB1/p5kQ/1pb1rb2/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Kh6": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p7/1pb1rb1k/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Qh7#": {
+            "method": "finite_strategy",
+            "fen": "3q1rB1/p6Q/1pb1rb1k/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Kxf5": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p7/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 w - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bh7#": {
+            "method": "finite_strategy",
+            "fen": "3q1r2/p6B/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 b - - 1 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      }
+    }
+  },
+  "step:run_king_upper_retreat:2": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p5k1/1pb1rb2/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Qh7#": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p5kQ/1pb1rb2/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:run_king_upper_retreat:3": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p5kQ/1pb1rb2/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:run_king_upper_retreat": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p5kQ/1pb1rb2/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "step:run_king_edge_retreat:1": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p7/1pb1rbk1/2PppQ2/7P/P5K1/P2P4/8 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Kg7": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p5k1/1pb1rb2/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Qh7#": {
+            "method": "finite_strategy",
+            "fen": "3q1rB1/p5kQ/1pb1rb2/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Kh6": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p7/1pb1rb1k/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Qh7#": {
+            "method": "finite_strategy",
+            "fen": "3q1rB1/p6Q/1pb1rb1k/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Kxf5": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p7/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 w - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bh7#": {
+            "method": "finite_strategy",
+            "fen": "3q1r2/p6B/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 b - - 1 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      }
+    }
+  },
+  "step:run_king_edge_retreat:2": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p7/1pb1rb1k/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Qh7#": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p6Q/1pb1rb1k/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:run_king_edge_retreat:3": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p6Q/1pb1rb1k/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:run_king_edge_retreat": {
+    "method": "finite_strategy",
+    "fen": "3q1rB1/p6Q/1pb1rb1k/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  }
+}

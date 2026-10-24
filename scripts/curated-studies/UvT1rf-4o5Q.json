@@ -1,0 +1,93 @@
+{
+  "video_id": "UvT1rf-4o5Q",
+  "title": "Mega Staircase: The Unpinned Knight Finish",
+  "summary": "Recognize the final mating pattern once the queen leaves the knight’s pin: the opponent’s own pieces close the king’s exits.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "6nk/4b3/6K1/5pN1/8/8/7q/8 w - - 0 1",
+      "question": "What changes after the queen leaves g1?",
+      "explanation": "Begin after ...Qxh2 in the final seven-piece diagram. White has Kg6 and Ng5 against Kh8, Ng8, Be7, Qh2 and f5. The queen has left the g-file.",
+      "evidence": {
+        "timestamp_s": 146
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "staircase_final_mate",
+      "start": "start",
+      "title": "Use the freed knight immediately",
+      "san": [
+        "Nf7#"
+      ],
+      "commentary": [
+        "Begin after ...Qxh2 in the final seven-piece diagram. White has Kg6 and Ng5 against Kh8, Ng8, Be7, Qh2 and f5. The queen has left the g-file.",
+        "Nf7# is mate and the only move preserving a win in this exact diagram. The knight checks h8; Kg6 covers g7/h7; Black’s own knight occupies g8. Queen h2 cannot capture or block a knight check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nf7# is mate and the only move preserving a win in this exact diagram. The knight checks h8; Kg6 covers g7/h7; Black’s own knight occupies g8. Queen h2 cannot capture or block a knight check.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "6nk/4bN2/6K1/5p2/8/8/7q/8 b - - 1 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "staircase_wrong_knight",
+      "start": "start",
+      "title": "Independent knight retreat misses mate",
+      "san": [
+        "Nf3"
+      ],
+      "commentary": [
+        "Begin after ...Qxh2 in the final seven-piece diagram. White has Kg6 and Ng5 against Kh8, Ng8, Be7, Qh2 and f5. The queen has left the g-file.",
+        "Nf3 misses the mating opportunity. The exact resulting position is winning for Black. This comparison starts only after the final queen capture, not before the larger staircase maneuver."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nf3 misses the mating opportunity. The exact resulting position is winning for Black. This comparison starts only after the final queen capture, not before the larger staircase maneuver.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "6nk/4b3/6K1/5p2/8/5N2/7q/8 b - - 1 1",
+      "outcome": "win"
+    },
+    {
+      "id": "staircase_material_error",
+      "start": "start",
+      "title": "Independent pawn capture misses mate",
+      "san": [
+        "Kxf5"
+      ],
+      "commentary": [
+        "Begin after ...Qxh2 in the final seven-piece diagram. White has Kg6 and Ng5 against Kh8, Ng8, Be7, Qh2 and f5. The queen has left the g-file.",
+        "Kxf5 captures material but abandons the mating net around Kh8. The exact remaining position is winning for Black; the immediate Nf7 mate was the critical opportunity."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxf5 captures material but abandons the mating net around Kh8. The exact remaining position is winning for Black; the immediate Nf7 mate was the critical opportunity.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "6nk/4b3/8/5KN1/8/8/7q/8 b - - 0 1",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can the knight finally move from g5?",
+      "answer": "The black queen has left g1 for h2. It no longer pins Ng5 against Kg6, so Nf7 can deliver a knight check that no interposition can stop."
+    }
+  ],
+  "defaultBranch": "staircase_final_mate",
+  "practiceBranch": "staircase_final_mate",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Only the final seven-piece diagram after ...Qxh2 at 146s is verified in this short pattern lesson. The earlier eight/nine-piece queen staircase, promotion choices and queen sacrifice remain source context and still require larger-position analysis. This is a final-move comparison, not an exact proof of the full staircase.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

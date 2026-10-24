@@ -1,0 +1,122 @@
+{
+  "video_id": "8Dw6c0nghMA",
+  "title": "Revolutionary",
+  "summary": "Move the rook far enough sideways to keep promotion supported and skewer the king if the pawn is captured.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1R6/1P3k2/8/8/8/8/5K2/1r6 w - - 0 1",
+      "question": "Can the rook leave the promotion square safely?",
+      "explanation": "Black’s rook sits behind b7. White needs a rook move that both supports b8 and exploits the king on f7.",
+      "evidence": {
+        "timestamp_s": 137
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "revolution_skewer",
+      "start": "start",
+      "title": "Keep the pawn defended from h8",
+      "san": [
+        "Rh8",
+        "Rxb7",
+        "Rh7+",
+        "Ke6",
+        "Rxb7"
+      ],
+      "commentary": [
+        "Begin after ...Rb1. The earlier eight-piece double-rook battle and rook sacrifice remain source context.",
+        "Rh8 is the only winning move in this exact five-piece position. It supports b8 across the eighth rank and prepares a skewer if the pawn disappears.",
+        "Rxb7 accepts the pawn, placing the rook behind its own king on the seventh rank.",
+        "Rh7+ checks Kf7, with Rb7 farther along the same rank. The king cannot capture the checking rook on h7 from f7.",
+        "Ke6 is the illustrated king retreat, exposing the rook on b7.",
+        "Rxb7 captures that rook. White reaches a checked king-and-rook win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxb7 captures that rook. White reaches a checked king-and-rook win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1R6/4k3/8/8/8/5K2/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "revolution_too_close",
+      "start": "start",
+      "title": "Choose a nearby rook square instead",
+      "san": [
+        "Ra8",
+        "Rxb7"
+      ],
+      "commentary": [
+        "This independent comparison tests why a generic sideways rook move is insufficient.",
+        "Ra8 gives away the win. The rook is now too close to the pawn’s file for the same seventh-rank skewer.",
+        "Rxb7 wins the pawn. Ra7 would attack the rook first, so that rook blocks the check against Kf7 and can move away. The exact remaining rook ending is drawn."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxb7 wins the pawn. Ra7 would attack the rook first, so that rook blocks the check against Kf7 and can move away. The exact remaining rook ending is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "R7/1r3k2/8/8/8/8/5K2/8 w - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "revolution_rook_offer",
+      "start": "start",
+      "title": "Sacrifice the rook with an unprepared check",
+      "san": [
+        "Rf8+",
+        "Kxf8",
+        "b8=Q+",
+        "Rxb8"
+      ],
+      "commentary": [
+        "Another independent attempt tries to clear b8 with check, but must calculate the capture on the promotion file.",
+        "Rf8+ loses. Black’s king can capture the unprotected checking rook.",
+        "Kxf8 accepts that sacrifice. The pawn still cannot promote safely against Rb1.",
+        "b8=Q+ promotes with check, but the new queen is directly above the black rook.",
+        "Rxb8 captures the queen and removes the check. Black has a rook against the bare king and a checked win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxb8 captures the queen and removes the check. Black has a rook against the bare king and a checked win.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "1r3k2/8/8/8/8/8/5K2/8 w - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does h8 work where a8 fails?",
+      "answer": "After ...Rxb7, Rh7+ attacks the king first and the rook behind it. From a7, Black’s rook is the first piece hit and can move without exposing a check."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does the promotion with check still fail after Rf8+?",
+      "answer": "A check can be answered by capture. The rook on b1 still has a clear path to b8 and can take the new queen."
+    }
+  ],
+  "defaultBranch": "revolution_skewer",
+  "practiceBranch": "revolution_skewer",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin at the saved five-piece position after ...Rb1 at 137 seconds, following the earlier exchanges and capture of Black’s f-pawn. Only this final skewer and explicitly labeled independent errors are verified here.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

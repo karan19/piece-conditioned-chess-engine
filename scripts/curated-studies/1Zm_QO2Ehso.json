@@ -1,0 +1,188 @@
+{
+  "video_id": "1Zm_QO2Ehso",
+  "title": "Bishops VS Rook",
+  "summary": "Place the bishops on the right diagonals so the king can turn a rook raid into a trap.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1r6/8/8/8/B4P2/B7/k1K5 w - - 0 1",
+      "question": "Which retreat gives the bishops a useful barricade?",
+      "explanation": "Black’s king on a1 attacks the bishop on a2. White must choose its retreat with a later rook trap in mind.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "rook_trap",
+      "fen": "8/8/3BB3/8/8/5r2/4K3/k7 b - - 1 4",
+      "question": "Does the rook really have a safe flight square?",
+      "explanation": "The bishops on d6 and e6 cover complementary diagonals. Ke2 attacks Rf3 and leaves only tactical-looking escapes.",
+      "evidence": {
+        "timestamp_s": 137
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "bishops_rook_fork",
+      "start": "start",
+      "title": "Build the barricade and fork the escaping rook",
+      "san": [
+        "Be6",
+        "Rb3",
+        "Bd6",
+        "Rc3+",
+        "Kd2",
+        "Rxf3",
+        "Ke2",
+        "Rf6",
+        "Be5+",
+        "Kb1",
+        "Bxf6"
+      ],
+      "commentary": [
+        "Begin from the complete six-piece saved diagram. Moving the attacked bishop to the correct diagonal is the key preparation.",
+        "Be6 retreats the bishop from a2 to e6. This is the move shown on the board; the automatic captions incorrectly say d6 here.",
+        "Rb3 offers a stalemate sacrifice while attacking Ba3 and f3 along the third rank.",
+        "Bd6 moves the other bishop, from a3 to d6, building the complementary diagonal coverage.",
+        "Rc3+ checks first, moving the white king before taking the pawn. Taking f3 immediately would permit a mating bishop move.",
+        "Kd2 answers the check and stays ready to approach the rook.",
+        "Rxf3 collects the pawn. Material counting alone suggests a normal two-bishops-versus-rook ending, but the rook’s routes are constrained.",
+        "Ke2 attacks Rf3. The bishops and king now cover its ordinary flight squares; the selected escapes lead to a fork or pin.",
+        "Rf6 escapes the king’s attack but moves onto one diagonal from e5, while Ka1 lies on the other. White can exploit that intersection.",
+        "Be5+ checks Ka1 along e5–d4–c3–b2–a1 and attacks Rf6 on the other diagonal.",
+        "Kb1 is an independently selected legal response to the check. The source demonstrates the fork without needing this exact king move.",
+        "Bxf6 collects the rook. White has a checked winning two-bishop ending; this is not an immediate checkmate."
+      ],
+      "classification": "selected illustrated source variation with independent representative fork completion",
+      "explanation": "Bxf6 collects the rook. White has a checked winning two-bishop ending; this is not an immediate checkmate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/4BB2/8/8/8/4K3/1k6 b - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "bishops_rook_pin",
+      "start": "rook_trap",
+      "title": "The rook chooses c3 instead",
+      "san": [
+        "Rc3",
+        "Be5"
+      ],
+      "commentary": [
+        "Compare the source’s second rook escape after Ke2.",
+        "Rc3 avoids the white king’s direct attack but steps onto the diagonal leading to Ka1.",
+        "Be5 pins Rc3 to Ka1 along e5–d4–c3–b2–a1. White retains a checked win. The rook cannot simply abandon that diagonal while its king remains on a1."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Be5 pins Rc3 to Ka1 along e5–d4–c3–b2–a1. White retains a checked win. The rook cannot simply abandon that diagonal while its king remains on a1.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/4B3/4B3/8/2r5/4K3/k7 b - - 3 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "bishops_stalemate_capture",
+      "start": "start",
+      "title": "Accept the tempting rook sacrifice",
+      "san": [
+        "Be6",
+        "Rb3",
+        "Bxb3"
+      ],
+      "commentary": [
+        "Compare taking the offered rook instead of arranging the bishop pair.",
+        "Be6 preserves the winning geometry for the moment.",
+        "Rb3 invites a capture that would leave Black without a legal move.",
+        "Bxb3 is actual stalemate. Ka1 is not checked; Bb3 covers a2, while Kc1 covers b1 and b2. Black has no remaining piece or pawn move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxb3 is actual stalemate. Ka1 is not checked; Bb3 covers a2, while Kc1 covers b1 and b2. Black has no remaining piece or pawn move.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/8/BB3P2/8/k1K5 b - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "bishops_wrong_diagonal",
+      "start": "start",
+      "title": "Retreat the bishop to g8 instead",
+      "san": [
+        "Bg8",
+        "Rb3",
+        "Bd6",
+        "Rc3+",
+        "Kd2",
+        "Rxf3"
+      ],
+      "commentary": [
+        "Compare the source’s alternative bishop retreat to g8.",
+        "Bg8 gives away the win. The bishop is safe but no longer controls the same useful rook escape squares.",
+        "Rb3 attacks bishop and pawn while offering the same stalemate trap.",
+        "Bd6 builds one useful diagonal, but the other bishop remains on g8.",
+        "Rc3+ checks before collecting f3, avoiding the immediate mate threat.",
+        "Kd2 answers the check.",
+        "Rxf3 reaches an exactly drawn position. The bishop on g8 does not supply the e6 bishop’s barricade, so the later rook trap is absent."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxf3 reaches an exactly drawn position. The bishop on g8 does not supply the e6 bishop’s barricade, so the later rook trap is absent.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "6B1/8/3B4/8/8/5r2/3K4/k7 w - - 0 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does Be6 differ from Bg8 if both save the bishop?",
+      "answer": "Be6 controls c4, d5, f5 and g4, coordinating with Bd6 and Ke2 to restrict the rook. Bg8 lacks that barricade."
+    },
+    {
+      "node": "rook_trap",
+      "prompt": "How do the rook’s two illustrated escapes fail?",
+      "answer": "Rf6 permits Be5+ forking rook and king; Rc3 permits Be5 pinning the rook along the king’s diagonal."
+    }
+  ],
+  "defaultBranch": "bishops_rook_fork",
+  "practiceBranch": "bishops_rook_fork",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin from the complete six-piece source board. Saved diagrams correct the first bishop retreat to Be6, followed by Bd6 with the other bishop. Every encoded position is checked. The ...Kb1 and Bxf6 fork completion is independently supplied; the source’s pin and stalemate are illustrated separately.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "Automatic captions name the first bishop move as bishop to d6.",
+      "correction": "The saved board shows the a2 bishop moving to e6 first, then the a3 bishop moves to d6. Encoding Bd6 as the first move would be a different position."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

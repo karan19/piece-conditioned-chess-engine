@@ -1,0 +1,172 @@
+{
+  "video_id": "6wmsqLbzL5Q",
+  "title": "Underpromotion: What Survives the Exchange",
+  "summary": "Compare the knight fork, queen stalemate and minor-piece conversion after the video\u2019s promotion choices have already occurred.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5N2/3q1bk1/8/7P/8/8/8/1K1R4 w - - 0 1",
+      "question": "Which piece should capture the queen?",
+      "explanation": "Begin after knight promotion and ...Kg7, immediately before Nxd7. White has Kb1/Rd1/Nf8/h5 against Kg7/Qd7/Bf7.",
+      "evidence": {
+        "timestamp_s": 68
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "queen_trap",
+      "fen": "5Q2/3q1b1k/8/7P/8/8/8/1K1R4 w - - 0 1",
+      "question": "Does winning the queen guarantee a win?",
+      "explanation": "With Qf8 and Black Kh7, Rxd7 removes the queen but pins the last black bishop and closes every king exit.",
+      "evidence": {
+        "timestamp_s": 87
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    },
+    {
+      "id": "bishop_finish",
+      "fen": "5k2/3q1b1B/8/7P/8/8/8/1K1R4 w - - 0 1",
+      "question": "What changes when Black captures the promoted bishop?",
+      "explanation": "After ...Kxf8, White\u2019s original bishop survives on h7. The queen on d7 is still available for capture.",
+      "evidence": {
+        "timestamp_s": 137
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "rook_finish",
+      "fen": "5R2/3R1bkB/8/7P/8/8/8/1K6 b - - 0 1",
+      "question": "Why did the rook version avoid the queen\u2019s stalemate?",
+      "explanation": "After Rxd7 in the rook version, Black Kg7 can capture Rf8. The bishop on h7 and rook on d7 remain.",
+      "evidence": {
+        "timestamp_s": 106
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "genie_knight_fork",
+      "start": "start",
+      "title": "Take the forked queen with the knight",
+      "san": [
+        "Nxd7"
+      ],
+      "commentary": [
+        "Begin after knight promotion and ...Kg7, immediately before Nxd7. White has Kb1/Rd1/Nf8/h5 against Kg7/Qd7/Bf7.",
+        "Nxd7 wins the queen while retaining Rd1. White is left with rook, knight and pawn against bishop, and the exact resulting position is winning."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxd7 wins the queen while retaining Rd1. White is left with rook, knight and pawn against bishop, and the exact resulting position is winning.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "8/3N1bk1/8/7P/8/8/8/1K1R4 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "genie_wrong_capture",
+      "start": "start",
+      "title": "Independent rook capture wastes the fork",
+      "san": [
+        "Rxd7"
+      ],
+      "commentary": [
+        "Begin after knight promotion and ...Kg7, immediately before Nxd7. White has Kb1/Rd1/Nf8/h5 against Kg7/Qd7/Bf7.",
+        "Rxd7 is legal but gives up the win. White leaves the knight on f8 instead of improving it through the queen capture; the exact resulting position is drawn with best play."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxd7 is legal but gives up the win. White leaves the knight on f8 instead of improving it through the queen capture; the exact resulting position is drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "5N2/3R1bk1/8/7P/8/8/8/1K6 b - - 0 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "genie_queen_stalemate",
+      "start": "queen_trap",
+      "title": "The queen version stalemates",
+      "san": [
+        "Rxd7"
+      ],
+      "commentary": [
+        "Compare the source\u2019s queen-promotion result with Black\u2019s king on h7.",
+        "Rxd7 is stalemate. Rd7 pins Bf7 to Kh7. Qf8 covers g8, h8, g7 and h6; h5 covers g6. Black\u2019s king is not in check and neither it nor the pinned bishop can make a legal move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxd7 is stalemate. Rd7 pins Bf7 to Kh7. Qf8 covers g8, h8, g7 and h6; h5 covers g6. Black\u2019s king is not in check and neither it nor the pinned bishop can make a legal move.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "5Q2/3R1b1k/8/7P/8/8/8/1K6 b - - 0 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "genie_bishop_conversion",
+      "start": "bishop_finish",
+      "title": "The surviving bishop avoids stalemate",
+      "san": [
+        "Rxd7"
+      ],
+      "commentary": [
+        "Begin after ...Kxf8 captured the promoted bishop. White\u2019s original Bh7 remains.",
+        "Rxd7 wins the queen. Black is not stalemated and the exact rook/bishop/pawn versus bishop ending is winning for White. This branch checks the resulting conversion, not the earlier larger-position promotion choice."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxd7 wins the queen. Black is not stalemated and the exact rook/bishop/pawn versus bishop ending is winning for White. This branch checks the resulting conversion, not the earlier larger-position promotion choice.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "5k2/3R1b1B/8/7P/8/8/8/1K6 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "genie_rook_conversion",
+      "start": "rook_finish",
+      "title": "Black captures the promoted rook",
+      "san": [
+        "Kxf8"
+      ],
+      "commentary": [
+        "Begin after White has already captured the queen in the rook-promotion version. This node is Black to move.",
+        "Kxf8 removes the promoted rook, but White retains Rd7, Bh7 and h5 against Kf8/Bf7. This exact six-piece ending is winning for White."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxf8 removes the promoted rook, but White retains Rd7, Bh7 and h5 against Kf8/Bf7. This exact six-piece ending is winning for White.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "5k2/3R1b1B/8/7P/8/8/8/1K6 w - - 0 2",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why use the knight instead of the rook to take d7?",
+      "answer": "Nxd7 keeps both active pieces and preserves the exact win. Rxd7 gives a drawn position; capturing the same queen with a different piece can change the result."
+    },
+    {
+      "node": "queen_trap",
+      "prompt": "Why does extra queen material fail?",
+      "answer": "After Rxd7 the bishop cannot move because it is pinned to the king. Every king flight is covered without the king being in check, so the game ends immediately in stalemate."
+    }
+  ],
+  "defaultBranch": "genie_knight_fork",
+  "practiceBranch": "genie_knight_fork",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "This is a comparison of supported later seven-piece and six-piece results, not an exact solution of the original nine-piece three-underpromotion puzzle. The knight-fork root is reconstructed between the adjacent saved ...Kg7 and Nxd7 diagrams at 67\u201368s; the queen-stalemate diagram is at 87s, rook conversion at 106s and bishop conversion after ...Kxf8 at 137s. The earlier Bh7 sacrifice and choice among knight/rook/bishop promotions remain larger-position source context.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

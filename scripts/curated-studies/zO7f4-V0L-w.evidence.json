@@ -1,0 +1,146 @@
+{
+  "node:start": {
+    "method": "finite_draw",
+    "fen": "1K6/1R6/1kb5/1p6/1P1p4/3P2p1/6p1/6qr b - - 0 1",
+    "category_for_side_to_move": "draw",
+    "strategies": {
+      "white": {
+        "method": "non_losing_strategy",
+        "fen": "1K6/1R6/1kb5/1p6/1P1p4/3P2p1/6p1/6qr b - - 0 1",
+        "side": "white",
+        "rule": "all_legal_replies",
+        "children": {
+          "Bxb7": {
+            "method": "non_losing_strategy",
+            "fen": "1K6/1b6/1k6/1p6/1P1p4/3P2p1/6p1/6qr w - - 0 2",
+            "side": "white",
+            "rule": "stalemate"
+          },
+          "Ka6": {
+            "method": "non_losing_strategy",
+            "fen": "1K6/1R6/k1b5/1p6/1P1p4/3P2p1/6p1/6qr w - - 1 2",
+            "side": "white",
+            "rule": "safe_choice",
+            "children": {
+              "Ra7+": {
+                "method": "non_losing_strategy",
+                "fen": "1K6/R7/k1b5/1p6/1P1p4/3P2p1/6p1/6qr b - - 2 2",
+                "side": "white",
+                "rule": "all_legal_replies",
+                "children": {
+                  "Kb6": {
+                    "method": "non_losing_strategy",
+                    "fen": "1K6/R7/1kb5/1p6/1P1p4/3P2p1/6p1/6qr w - - 3 3",
+                    "side": "white",
+                    "rule": "safe_choice",
+                    "children": {
+                      "Rb7+": {
+                        "method": "non_losing_strategy",
+                        "fen": "1K6/1R6/1kb5/1p6/1P1p4/3P2p1/6p1/6qr b - - 4 3",
+                        "side": "white",
+                        "rule": "all_legal_replies",
+                        "children": {
+                          "Bxb7": {
+                            "method": "non_losing_strategy",
+                            "fen": "1K6/1b6/1k6/1p6/1P1p4/3P2p1/6p1/6qr w - - 0 4",
+                            "side": "white",
+                            "rule": "stalemate"
+                          },
+                          "Ka6": {
+                            "method": "non_losing_strategy",
+                            "fen": "1K6/1R6/k1b5/1p6/1P1p4/3P2p1/6p1/6qr w - - 5 4",
+                            "side": "white",
+                            "rule": "safe_choice",
+                            "children": {
+                              "Ra7+": {
+                                "method": "non_losing_strategy",
+                                "fen": "1K6/R7/k1b5/1p6/1P1p4/3P2p1/6p1/6qr b - - 6 4",
+                                "side": "white",
+                                "rule": "all_legal_replies",
+                                "children": {
+                                  "Kb6": {
+                                    "method": "non_losing_strategy",
+                                    "fen": "1K6/R7/1kb5/1p6/1P1p4/3P2p1/6p1/6qr w - - 7 5",
+                                    "side": "white",
+                                    "rule": "threefold_claim",
+                                    "history_root_fen": "1K6/1R6/1kb5/1p6/1P1p4/3P2p1/6p1/6qr b - - 0 1",
+                                    "history_uci": [
+                                      "b6a6",
+                                      "b7a7",
+                                      "a6b6",
+                                      "a7b7",
+                                      "b6a6",
+                                      "b7a7",
+                                      "a6b6"
+                                    ],
+                                    "claim_move_uci": "a7b7"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "black": {
+        "method": "non_losing_strategy",
+        "fen": "1K6/1R6/1kb5/1p6/1P1p4/3P2p1/6p1/6qr b - - 0 1",
+        "side": "black",
+        "rule": "safe_choice",
+        "children": {
+          "Bxb7": {
+            "method": "non_losing_strategy",
+            "fen": "1K6/1b6/1k6/1p6/1P1p4/3P2p1/6p1/6qr w - - 0 2",
+            "side": "black",
+            "rule": "stalemate"
+          }
+        }
+      }
+    }
+  },
+  "step:remember_accept_stalemate:1": {
+    "method": "finite_draw",
+    "fen": "1K6/1b6/1k6/1p6/1P1p4/3P2p1/6p1/6qr w - - 0 2",
+    "category_for_side_to_move": "draw",
+    "strategies": {
+      "white": {
+        "method": "non_losing_strategy",
+        "fen": "1K6/1b6/1k6/1p6/1P1p4/3P2p1/6p1/6qr w - - 0 2",
+        "side": "white",
+        "rule": "stalemate"
+      },
+      "black": {
+        "method": "non_losing_strategy",
+        "fen": "1K6/1b6/1k6/1p6/1P1p4/3P2p1/6p1/6qr w - - 0 2",
+        "side": "black",
+        "rule": "stalemate"
+      }
+    }
+  },
+  "branch:remember_accept_stalemate": {
+    "method": "finite_draw",
+    "fen": "1K6/1b6/1k6/1p6/1P1p4/3P2p1/6p1/6qr w - - 0 2",
+    "category_for_side_to_move": "draw",
+    "strategies": {
+      "white": {
+        "method": "non_losing_strategy",
+        "fen": "1K6/1b6/1k6/1p6/1P1p4/3P2p1/6p1/6qr w - - 0 2",
+        "side": "white",
+        "rule": "stalemate"
+      },
+      "black": {
+        "method": "non_losing_strategy",
+        "fen": "1K6/1b6/1k6/1p6/1P1p4/3P2p1/6p1/6qr w - - 0 2",
+        "side": "black",
+        "rule": "stalemate"
+      }
+    }
+  }
+}

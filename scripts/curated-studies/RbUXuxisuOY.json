@@ -1,0 +1,162 @@
+{
+  "video_id": "RbUXuxisuOY",
+  "title": "Majestic Geometry",
+  "summary": "Attack the bishop before taking the rook, then use checking rook sacrifices to make promotion decisive.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "6r1/k6P/7K/3b4/7R/8/8/8 w - - 0 1",
+      "question": "Why is taking the rook not enough?",
+      "explanation": "The bishop on d5 can recapture a promoted piece on g8. White first needs to disrupt that diagonal.",
+      "evidence": {
+        "timestamp_s": 77
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "geometry_back_rank",
+      "start": "start",
+      "title": "Drive the king onto the bishop’s rank",
+      "san": [
+        "Rd4",
+        "Be6",
+        "Rd7+",
+        "Ka8",
+        "hxg8=Q+",
+        "Bxg8",
+        "Rd8+"
+      ],
+      "commentary": [
+        "Begin after ...Rg8. Taking that rook immediately would leave only a drawn rook-versus-bishop ending.",
+        "Rd4 attacks the bishop and keeps the threat hxg8=Q. In this exact position it is the only winning move.",
+        "Be6 stays on the diagonal to g8, preparing to capture a promoted queen.",
+        "Rd7+ sacrifices the rook with check, forcing Black to address its king before saving the diagonal arrangement.",
+        "Ka8 is the illustrated back-rank retreat. The king now shares the eighth rank with the bishop’s future square.",
+        "hxg8=Q captures the rook and promotes. This time the location of Black’s king changes the liquidation.",
+        "Bxg8 removes the new queen but places the bishop on the king’s rank.",
+        "Rd8+ checks Ka8 and attacks Bg8 along the same rank. White wins the bishop after the king moves; the exact endpoint is winning."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rd8+ checks Ka8 and attacks Bg8 along the same rank. White wins the bishop after the king moves; the exact endpoint is winning.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "k2R2b1/8/7K/8/8/8/8/8 b - - 1 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "geometry_bishop_b3",
+      "start": "start",
+      "title": "Use a checking sacrifice against ...Bb3",
+      "san": [
+        "Rd4",
+        "Bb3",
+        "Ra4+",
+        "Kb7",
+        "Rb4+"
+      ],
+      "commentary": [
+        "Compare the other illustrated bishop retreat that keeps control of g8.",
+        "Rd4 attacks the bishop before committing the pawn.",
+        "Bb3 continues to defend g8 along b3-c4-d5-e6-f7-g8.",
+        "Ra4+ offers the rook with check. Taking it would abandon the promotion diagonal; moving the king permits a different fork.",
+        "Kb7 is the source’s selected king response.",
+        "Rb4+ checks Kb7 up the b-file while attacking Bb3 below the rook. White keeps a checked win; other king replies are not enumerated here."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rb4+ checks Kb7 up the b-file while attacking Bb3 below the rook. White keeps a checked win; other king replies are not enumerated here.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6r1/1k5P/7K/8/1R6/1b6/8/8 b - - 5 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "geometry_accept_rook",
+      "start": "start",
+      "title": "The bishop accepts the checking rook offer",
+      "san": [
+        "Rd4",
+        "Bb3",
+        "Ra4+",
+        "Bxa4",
+        "hxg8=Q"
+      ],
+      "commentary": [
+        "The checking sacrifice also works if Black accepts it.",
+        "Rd4 attacks the bishop and prepares the rook maneuver.",
+        "Bb3 stays on the diagonal guarding g8.",
+        "Ra4+ offers the rook while checking the king on a7.",
+        "Bxa4 captures that rook but leaves the diagonal to g8.",
+        "hxg8=Q captures the black rook and promotes. White’s queen against the remaining bishop is a checked win in this exact position."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "hxg8=Q captures the black rook and promotes. White’s queen against the remaining bishop is a checked win in this exact position.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6Q1/k7/7K/8/b7/8/8/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "geometry_hasty_capture",
+      "start": "start",
+      "title": "Take the offered rook immediately",
+      "san": [
+        "hxg8=Q",
+        "Bxg8"
+      ],
+      "commentary": [
+        "Compare the natural capture before moving the bishop off its useful diagonal.",
+        "hxg8=Q captures the rook and creates a queen, but gives away the forced win.",
+        "Bxg8 eliminates that queen. White has only Rh4 against Bg8 and the kings; the exact position is drawn with best play."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxg8 eliminates that queen. White has only Rh4 against Bg8 and the kings; the exact position is drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "6b1/k7/7K/8/7R/8/8/8 w - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does Rd4 matter before promotion?",
+      "answer": "It attacks the bishop that would recapture on g8. White can then force the king and bishop onto a line where the rook forks them."
+    },
+    {
+      "node": "start",
+      "prompt": "Why is the same bishop recapture harmless after ...Ka8?",
+      "answer": "The king on a8 and bishop on g8 can be forked by Rd8+. Before the king is displaced, that tactic is absent."
+    }
+  ],
+  "defaultBranch": "geometry_back_rank",
+  "practiceBranch": "geometry_back_rank",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rg8 at 77 seconds. Earlier rook checks and king placement remain source context. The selected bishop retreats, checking sacrifices, back-rank fork and drawing immediate capture are independently checked.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

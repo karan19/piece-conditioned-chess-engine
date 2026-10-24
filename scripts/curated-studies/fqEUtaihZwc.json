@@ -1,0 +1,134 @@
+{
+  "video_id": "fqEUtaihZwc",
+  "title": "Last Title Left: The Bishop’s Absence Matters",
+  "summary": "Take the queen without stalemate after the bishop has disappeared, then coordinate rook and king.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/6p1/6Pp/4q2K/8/7k/4R3 w - - 0 1",
+      "question": "Does taking the queen still stalemate Black?",
+      "explanation": "Qe4 checks Kh4. White must capture it with Rxe4. Unlike the earlier larger diagram, the white bishop is gone, so Black has legal king moves afterward.",
+      "evidence": {
+        "timestamp_s": 166
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "last_title_take_queen",
+      "start": "start",
+      "title": "Source finish: capture after the bishop has gone",
+      "san": [
+        "Rxe4"
+      ],
+      "commentary": [
+        "Begin after ...Qxe4+ at 166 seconds, the complete seven-piece later position. The preceding eight-piece Be4 interference choice is not certified here.",
+        "Rxe4 is the only legal move, removes the checking queen and preserves a forced win. It is not stalemate: Black can play Kg2, Kg1 or Kh1. The earlier stalemate trap depended on the bishop still being present."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxe4 is the only legal move, removes the checking queen and preserves a forced win. It is not stalemate: Black can play Kg2, Kg1 or Kh1. The earlier stalemate trap depended on the bishop still being present.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "8/8/6p1/6Pp/4R2K/8/7k/8 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "last_title_king_coordination",
+      "start": "start",
+      "title": "Independent continuation: use the king to close the second rank",
+      "san": [
+        "Rxe4",
+        "Kh1",
+        "Kg3",
+        "Kg1",
+        "Re1#"
+      ],
+      "commentary": [
+        "An independently selected representative continuation beyond the source’s final rook capture. These king moves are not attributed to the clip.",
+        "Rxe4 removes the queen. Black still has three legal king moves, so play continues.",
+        "Kh1 chooses the corner. This is one representative losing reply, not a forced choice.",
+        "Kg3 controls f2, g2 and h2, setting a mating net along the first rank. Black can still choose ...h4+ instead of the king move followed here.",
+        "Kg1 steps onto the first rank while White’s king seals the second-rank escapes.",
+        "Re1# is actual mate: the rook covers f1 and h1, while Kg3 covers f2, g2 and h2. The g6 and h5 pawns cannot answer the rook’s check."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Re1# is actual mate: the rook covers f1 and h1, while Kg3 covers f2, g2 and h2. The g6 and h5 pawns cannot answer the rook’s check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/6p1/6Pp/8/6K1/8/4R1k1 b - - 4 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "last_title_pawn_check",
+      "start": "start",
+      "title": "Independent defense: the h-pawn can give check",
+      "san": [
+        "Rxe4",
+        "Kh1",
+        "Kg3",
+        "h4+",
+        "Rxh4+",
+        "Kg1",
+        "Re4",
+        "Kh1",
+        "Re1#"
+      ],
+      "commentary": [
+        "Independently answer the pawn check available in the same rook-and-pawn conversion. The pawns are retained throughout the reconstruction.",
+        "Rxe4 captures the queen without stalemate.",
+        "Kh1 is the representative king retreat used to compare the two defenses.",
+        "Kg3 builds the second-rank cage, but also lets the h-pawn advance with check.",
+        "h4+ is legal and checks Kg3. The pawn is not permanently frozen once White’s king has moved away from h4.",
+        "Rxh4+ takes the checking pawn and gives rook check down the h-file.",
+        "Kg1 is now Black’s only legal move. White’s king controls g2 and h2, and the rook controls h1.",
+        "Re4 returns the rook to a safe distance, preparing a first-rank check. Rh1+ would put the rook next to Kg1 without protection, so it is not mate.",
+        "Kh1 is a representative retreat; Black could instead choose Kf1. This selected line illustrates the corner mating net rather than a forced king move.",
+        "Re1# now gives actual mate from a safe distance. The rook covers g1, while Kg3 covers g2 and h2. Black cannot capture the rook on e1 from h1."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Re1# now gives actual mate from a safe distance. The rook covers g1, while Kg3 covers g2 and h2. Black cannot capture the rook on e1 from h1.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/6p1/6P1/8/6K1/8/4R2k b - - 4 5",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is this capture not the earlier stalemate trap?",
+      "answer": "The bishop has been captured. Black now has legal king moves after Rxe4, including Kh1; material alone does not determine stalemate."
+    },
+    {
+      "node": "start",
+      "prompt": "Why include the h-pawn in the conversion?",
+      "answer": "After Kg3, ...h4+ becomes legal. White must answer the check rather than pretend the pawn cage stays unchanged."
+    }
+  ],
+  "defaultBranch": "last_title_take_queen",
+  "practiceBranch": "last_title_take_queen",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after the source’s ...Qxe4+ at 166 seconds, once the bishop sacrifice reduces the board to seven pieces. This scope verifies the final capture and explicitly independent rook conversions. It does not prove the earlier larger promotion choices, Be4 sacrifice, queen retreats or general draw claims.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

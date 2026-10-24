@@ -1,0 +1,86 @@
+{
+  "video_id": "SDnEvwUw_2I",
+  "title": "Majestic Knishop",
+  "summary": "Use a knight check to win the queen after the bishop’s diversion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/3q4/8/2P1p3/kPN5/2K5/8/8 w - - 0 1",
+      "question": "Where can the knight check and attack the queen?",
+      "explanation": "Begin after ...Qxd7, with White Kc3/Nc4/b4/c5 against Ka4/Qd7/e5. The earlier nine-piece knight checks and bishop sacrifice are source context; this exact seven-piece finish is reconstructed separately.",
+      "evidence": {
+        "timestamp_s": 121
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "knishop_source_fork",
+      "start": "start",
+      "title": "Fork and collect the diverted queen",
+      "san": [
+        "Nb6+",
+        "Ka3",
+        "Nxd7"
+      ],
+      "commentary": [
+        "Begin after Black’s queen has accepted the bishop sacrifice on d7. Only this supported later phase is checked here.",
+        "Nb6+ checks Ka4 and attacks Qd7. The bishop’s earlier diversion has put the queen on a knight-fork square.",
+        "Ka3 is the illustrated king escape. Black’s king must answer the check before its queen can move.",
+        "Nxd7 wins the queen. White retains a checked win with knight and connected pawns; this is not immediate mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxd7 wins the queen. White retains a checked win with knight and connected pawns; this is not immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3N4/8/2P1p3/1P6/k1K5/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "knishop_other_king",
+      "start": "start",
+      "title": "Compare another king escape from the fork",
+      "san": [
+        "Nb6+",
+        "Kb5",
+        "Nxd7"
+      ],
+      "commentary": [
+        "Compare an independently supplied legal king reply to the same fork.",
+        "Nb6+ attacks king and queen simultaneously.",
+        "Kb5 escapes the knight check but still leaves Qd7 attacked.",
+        "Nxd7 wins the queen. This exact knight-and-pawn ending is winning, though further conversion is not encoded."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Nxd7 wins the queen. This exact knight-and-pawn ending is winning, though further conversion is not encoded.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3N4/8/1kP1p3/1P6/2K5/8/8 b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What makes the bishop sacrifice useful to the final knight?",
+      "answer": "It draws the queen to d7. From c4, Nb6+ then checks the king and attacks that queen in one move."
+    }
+  ],
+  "defaultBranch": "knishop_source_fork",
+  "practiceBranch": "knishop_source_fork",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin at 121 seconds after ...Qxd7, in the complete seven-piece finishing diagram. Earlier nine-/eight-piece setup and bishop sacrifice are disclosed source context, outside this exact tree. The source king reply and an independent alternative are checked.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

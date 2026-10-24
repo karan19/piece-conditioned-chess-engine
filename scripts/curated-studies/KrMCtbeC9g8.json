@@ -1,0 +1,168 @@
+{
+  "video_id": "KrMCtbeC9g8",
+  "title": "Precious Endgame: The Promotion Finish",
+  "summary": "A pawn capture gains the tempo needed to promote, then the opponent’s own queen and pawn help form a mating cage.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/K7/2q5/k2P4/pp6/8/3P4/8 w - - 0 1",
+      "question": "Can the promotion race end with something stronger than a queen trade?",
+      "explanation": "Begin after ...Qxc6. White has Ka7 and pawns d5/d2 against Ka5, Qc6 and pawns a4/b4. Capturing the queen with the pawn creates a passer on c6.",
+      "evidence": {
+        "timestamp_s": 76
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "precious_dovetail",
+      "start": "start",
+      "title": "Race to promotion, then use the mating cage",
+      "san": [
+        "dxc6",
+        "b3",
+        "c7",
+        "b2",
+        "c8=Q",
+        "b1=Q",
+        "Qc5+",
+        "Qb5",
+        "Qc7+",
+        "Kb4",
+        "Qc3#"
+      ],
+      "commentary": [
+        "Begin after ...Qxc6. White has Ka7 and pawns d5/d2 against Ka5, Qc6 and pawns a4/b4. Capturing the queen with the pawn creates a passer on c6.",
+        "dxc6 captures the queen and creates a passed pawn already on the sixth rank.",
+        "b3 starts the opposing promotion race. This is the selected source continuation.",
+        "c7 advances one square from promotion while Ka7 supports its route.",
+        "b2 keeps pace with White’s passer.",
+        "c8=Q creates the queen needed for the coming checking sequence.",
+        "b1=Q promotes too. Count concrete checks rather than concluding that equal queens must draw.",
+        "Qc5+ checks Ka5 along the fifth rank and forces Black to address the check.",
+        "Qb5 interposes the new queen, using the king to protect it.",
+        "Qc7+ changes the checking angle. The black king must choose a new response.",
+        "Kb4 steps toward the center, but Black’s own a4 pawn and Qb5 block two important flights.",
+        "Qc3# checks diagonally. The d2 pawn protects the queen on c3, so the king cannot capture it. The queen controls a3, b3, c4, c5 and a5; Black’s own pawn and queen occupy a4 and b5."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qc3# checks diagonally. The d2 pawn protects the queen on c3, so the king cannot capture it. The queen controls a3, b3, c4, c5 and a5; Black’s own pawn and queen occupy a4 and b5.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/K7/8/1q6/pk6/2Q5/3P4/8 b - - 5 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "precious_queen_block",
+      "start": "start",
+      "title": "Independent final queen interposition",
+      "san": [
+        "dxc6",
+        "b3",
+        "c7",
+        "b2",
+        "c8=Q",
+        "b1=Q",
+        "Qc5+",
+        "Qb5",
+        "Qc7+",
+        "Qb6+",
+        "Qxb6#"
+      ],
+      "commentary": [
+        "Begin after ...Qxc6. White has Ka7 and pawns d5/d2 against Ka5, Qc6 and pawns a4/b4. Capturing the queen with the pawn creates a passer on c6.",
+        "dxc6 captures the queen and creates a passed pawn already on the sixth rank.",
+        "b3 starts the opposing promotion race. This is the selected source continuation.",
+        "c7 advances one square from promotion while Ka7 supports its route.",
+        "b2 keeps pace with White’s passer.",
+        "c8=Q creates the queen needed for the coming checking sequence.",
+        "b1=Q promotes too. Count concrete checks rather than concluding that equal queens must draw.",
+        "Qc5+ checks Ka5 along the fifth rank and forces Black to address the check.",
+        "Qb5 interposes the new queen, using the king to protect it.",
+        "Qc7+ changes the checking angle. The black king must choose a new response.",
+        "Qb6+ interposes with check. Although Ka5 protects b6, White can capture there because Ka7 protects the capturing queen.",
+        "Qxb6# removes the interposing queen with mate. Ka7 protects b6 and a6, while Qb6 controls b5 and b4 and Black’s pawn occupies a4."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxb6# removes the interposing queen with mate. Ka7 protects b6 and a6, while Qb6 controls b5 and b4 and Black’s pawn occupies a4.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/K7/1Q6/k7/p7/8/3P4/8 b - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "precious_wrong_promotion",
+      "start": "start",
+      "title": "Independent knight promotion misses the queen attack",
+      "san": [
+        "dxc6",
+        "b3",
+        "c7",
+        "b2",
+        "c8=N",
+        "b1=Q"
+      ],
+      "commentary": [
+        "Begin after ...Qxc6. White has Ka7 and pawns d5/d2 against Ka5, Qc6 and pawns a4/b4. Capturing the queen with the pawn creates a passer on c6.",
+        "dxc6 reaches the supported pawn race.",
+        "b3 advances the black passer.",
+        "c7 brings White one step from promotion.",
+        "b2 brings Black one step from promotion.",
+        "c8=N gives up the queen-based checking plan. The exact resulting position is losing for White.",
+        "b1=Q completes Black’s promotion. White’s knight cannot reproduce the queen’s mating attack, and this exact ending is winning for Black."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "b1=Q completes Black’s promotion. White’s knight cannot reproduce the queen’s mating attack, and this exact ending is winning for Black.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "2N5/K7/8/k7/p7/8/3P4/1q6 w - - 0 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does getting a queen at nearly the same time not settle the result?",
+      "answer": "White moves next and has checks that use Black’s king location and its own blocking pieces. The final result is a concrete mate rather than an automatic queen-ending draw."
+    }
+  ],
+  "defaultBranch": "precious_dovetail",
+  "practiceBranch": "precious_dovetail",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Qxc6 at 76s in the saved seven-piece position. The preceding ten-piece rook and knight maneuvers and the larger queen-winning mistake remain source context. The promotion and dovetail finish are illustrated; the alternative queen block and wrong underpromotion are independently checked comparisons.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

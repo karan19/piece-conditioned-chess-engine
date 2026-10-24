@@ -1,0 +1,186 @@
+{
+  "node:start": {
+    "method": "finite_strategy",
+    "fen": "1K6/2P3P1/k7/pp6/1pb5/8/8/2r5 w - - 0 1",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "c8=Q+": {
+        "method": "finite_strategy",
+        "fen": "1KQ5/6P1/k7/pp6/1pb5/8/8/2r5 b - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Kb6": {
+            "method": "finite_strategy",
+            "fen": "1KQ5/6P1/1k6/pp6/1pb5/8/8/2r5 w - - 1 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Qc7+": {
+                "method": "finite_strategy",
+                "fen": "1K6/2Q3P1/1k6/pp6/1pb5/8/8/2r5 b - - 2 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Ka6": {
+                    "method": "finite_strategy",
+                    "fen": "1K6/2Q3P1/k7/pp6/1pb5/8/8/2r5 w - - 3 3",
+                    "winner": "white",
+                    "category_for_side_to_move": "win",
+                    "rule": "winning_choice",
+                    "children": {
+                      "Qa7#": {
+                        "method": "finite_strategy",
+                        "fen": "1K6/Q5P1/k7/pp6/1pb5/8/8/2r5 b - - 4 3",
+                        "winner": "white",
+                        "category_for_side_to_move": "loss",
+                        "rule": "checkmate"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:six_majestics_bishop_block:1": {
+    "method": "finite_strategy",
+    "fen": "1KQ5/6P1/k7/pp6/1pb5/8/8/2r5 b - - 0 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Kb6": {
+        "method": "finite_strategy",
+        "fen": "1KQ5/6P1/1k6/pp6/1pb5/8/8/2r5 w - - 1 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Qc7+": {
+            "method": "finite_strategy",
+            "fen": "1K6/2Q3P1/1k6/pp6/1pb5/8/8/2r5 b - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Ka6": {
+                "method": "finite_strategy",
+                "fen": "1K6/2Q3P1/k7/pp6/1pb5/8/8/2r5 w - - 3 3",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Qa7#": {
+                    "method": "finite_strategy",
+                    "fen": "1K6/Q5P1/k7/pp6/1pb5/8/8/2r5 b - - 4 3",
+                    "winner": "white",
+                    "category_for_side_to_move": "loss",
+                    "rule": "checkmate"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:six_majestics_bishop_block:2": {
+    "method": "finite_strategy",
+    "fen": "1KQ5/6P1/1k6/pp6/1pb5/8/8/2r5 w - - 1 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Qc7+": {
+        "method": "finite_strategy",
+        "fen": "1K6/2Q3P1/1k6/pp6/1pb5/8/8/2r5 b - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Ka6": {
+            "method": "finite_strategy",
+            "fen": "1K6/2Q3P1/k7/pp6/1pb5/8/8/2r5 w - - 3 3",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Qa7#": {
+                "method": "finite_strategy",
+                "fen": "1K6/Q5P1/k7/pp6/1pb5/8/8/2r5 b - - 4 3",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:six_majestics_bishop_block:3": {
+    "method": "finite_strategy",
+    "fen": "1K6/2Q3P1/1k6/pp6/1pb5/8/8/2r5 b - - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Ka6": {
+        "method": "finite_strategy",
+        "fen": "1K6/2Q3P1/k7/pp6/1pb5/8/8/2r5 w - - 3 3",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Qa7#": {
+            "method": "finite_strategy",
+            "fen": "1K6/Q5P1/k7/pp6/1pb5/8/8/2r5 b - - 4 3",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      }
+    }
+  },
+  "step:six_majestics_bishop_block:4": {
+    "method": "finite_strategy",
+    "fen": "1K6/2Q3P1/k7/pp6/1pb5/8/8/2r5 w - - 3 3",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Qa7#": {
+        "method": "finite_strategy",
+        "fen": "1K6/Q5P1/k7/pp6/1pb5/8/8/2r5 b - - 4 3",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:six_majestics_bishop_block:5": {
+    "method": "finite_strategy",
+    "fen": "1K6/Q5P1/k7/pp6/1pb5/8/8/2r5 b - - 4 3",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:six_majestics_bishop_block": {
+    "method": "finite_strategy",
+    "fen": "1K6/Q5P1/k7/pp6/1pb5/8/8/2r5 b - - 4 3",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  }
+}

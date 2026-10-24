@@ -1,0 +1,101 @@
+{
+  "batch_id": "2026-10-23-04",
+  "reviewed_on": "2026-10-23",
+  "scope": "Four complete exact-outcome studies, including a defensive draw; retain precise pending-analysis notes for larger and castling-dependent studies.",
+  "reviews": {
+    "GQVVG6elNP4": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the rook/knight staircase from the initial six-piece position; checked actual knight mate, immediate stalemate and a drawing pawn capture. Corrected the source’s uniqueness claim: Rh1 is not the only win.",
+      "source_images": [
+        {
+          "file": "GQVVG6elNP4/montage_accepted.jpg",
+          "sha256": "401437f4be4a9727ed61c019be3271cbceb16cd642460731c5dd3827effedf1a"
+        },
+        {
+          "file": "GQVVG6elNP4/images/image_00001.jpg",
+          "sha256": "5834cdfa3f968fe6a26585fe9c5b01026b7e0823b9fad01024a2f72c82b09081"
+        },
+        {
+          "file": "GQVVG6elNP4/images/image_00023.jpg",
+          "sha256": "1251f46d08c3e662c55c5f68fe2eb4b3ccaf85cc84a5f4896fc9998daa9b6e0a"
+        },
+        {
+          "file": "GQVVG6elNP4/images/image_00027.jpg",
+          "sha256": "0bf9f7f932799317875a6d5d55be65bc4b9bd4f58f34473aa2a85c6b2052d9d2"
+        },
+        {
+          "file": "GQVVG6elNP4/images/image_00030.jpg",
+          "sha256": "7c41624127e5166fbecad316e66302ebfdcb0bdef46a7ab22741445d882cc51f"
+        },
+        {
+          "file": "GQVVG6elNP4/images/image_00035.jpg",
+          "sha256": "f3cbfd45babd1e69ef3bd342bccfe7d11d6e4ebe993dc0064f95eb3f71aabdca"
+        }
+      ]
+    },
+    "nDzMs3B_Nw8": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the initial pawn sacrifices and opposition timing. This is a verified drawing study, with deliberately losing Kb2 compared against the drawing Kb1. Practice goal is hold the draw.",
+      "source_images": [
+        {
+          "file": "nDzMs3B_Nw8/montage_accepted.jpg",
+          "sha256": "844230ade9c28a089f4868ef9903cc6f1d9bd2af9e70bac6f2535633dc90ca32"
+        },
+        {
+          "file": "nDzMs3B_Nw8/images/image_00001.jpg",
+          "sha256": "4a20adb76ca385af7a49a56c09916ae799903327372834a3719c36024a8d5aad"
+        },
+        {
+          "file": "nDzMs3B_Nw8/images/image_00023.jpg",
+          "sha256": "21d8905409835a80aa070161e88c6c233ec73216472217f63d415fe9e26fadc1"
+        }
+      ]
+    },
+    "TwsMYfF9lVE": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed Rxa4+ to distract the king, the premature pawn push, and queen-versus-rook promotion contrast. Checked actual queen stalemate and the legal Ka3 escape after rook promotion.",
+      "source_images": [
+        {
+          "file": "TwsMYfF9lVE/montage_accepted.jpg",
+          "sha256": "cedabde6ff445c2c62d45ffd3c032562857362de216658684edeb74dfb984314"
+        },
+        {
+          "file": "TwsMYfF9lVE/images/image_00001.jpg",
+          "sha256": "dae96149e16d14dbbd8519517d7d148dcde61f45cf2fd73015c8c3d7c8462a1c"
+        },
+        {
+          "file": "TwsMYfF9lVE/images/image_00023.jpg",
+          "sha256": "0a57f5a2159ca4a502892b9b20d4e2ba4dacb1f1f39d394b97bbfb8d40a376c7"
+        },
+        {
+          "file": "TwsMYfF9lVE/images/image_00035.jpg",
+          "sha256": "5f3b314aa03deff14734cace8478268e0ea1ed5b2c2d4959140897a62a261cd1"
+        }
+      ]
+    },
+    "LkIP90tWgZI": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the seven-piece position after ...Kxb1. Checked the full bishop/king staircase to Bc2 mate, a waiting-move stalemate, and a losing pawn capture. The preceding rook sacrifice remains source context.",
+      "source_images": [
+        {
+          "file": "LkIP90tWgZI/montage_accepted.jpg",
+          "sha256": "b8081b57b1976c6db4043d26ddbd952949ad5e4a69c9c718ceb888dd3281b443"
+        },
+        {
+          "file": "LkIP90tWgZI/images/image_00003.jpg",
+          "sha256": "e64fe267afdc54241c00b0e387127528ce7dd0e4adccdfae0398ff36d6fa61c1"
+        }
+      ]
+    },
+    "XGrko3A8kjs": {
+      "result": "awaiting_reconstruction",
+      "notes": "Reviewed the source montage and transcript: the opening has nine pieces and the illustrated final mating setup still has eight. It needs reconstruction with a separately disclosed engine/forced-tree analysis, not an ordinary seven-piece tablebase label. Saved source material is available; no extra user information requested.",
+      "analysis_required": "Larger-than-tablebase starting position and mating sequence."
+    },
+    "96UmAkk8h2w": {
+      "result": "awaiting_reconstruction",
+      "notes": "Reviewed the source board and narration. The solution depends on the stipulated history that permits White to castle queenside. Preserve Q castling rights in the FEN and use a castling-aware proof/checker; probing the same diagram after dropping those rights would verify a different position.",
+      "analysis_required": "Castling-aware verification; standard Syzygy probing does not support castling rights."
+    }
+  }
+}

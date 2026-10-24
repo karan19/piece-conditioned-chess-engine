@@ -1,0 +1,173 @@
+{
+  "video_id": "O_sMtBAcXIU",
+  "title": "Majestic King",
+  "summary": "Save the bishop rather than the knight, then use a king detour to turn a pawn race into mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2N5/3k1K2/8/B6p/n7/8/1P6/8 w - - 0 1",
+      "question": "Which minor piece does White need to keep?",
+      "explanation": "The knight is attacked by Kd7 and Black’s knight threatens b2. The forcing Nb6 check reveals a choice between keeping a knight and keeping a bishop.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "king_detour",
+      "fen": "8/5K2/8/7p/k7/2B5/1P6/8 w - - 0 4",
+      "question": "Can the king help while moving away from the pawn?",
+      "explanation": "White has sacrificed the knight and kept the dark-squared bishop. Ke6 creates a route toward c4, where the king and bishop can build a mating net around Ka4.",
+      "evidence": {
+        "timestamp_s": 103
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "majestic_king_mating_race",
+      "start": "start",
+      "title": "Save the bishop and build a mating net",
+      "san": [
+        "Nb6+",
+        "Kc6",
+        "Nxa4",
+        "Kb5",
+        "Bc3",
+        "Kxa4",
+        "Ke6",
+        "h4",
+        "Kd5",
+        "h3",
+        "Kc4",
+        "h2",
+        "Bb4",
+        "h1=Q",
+        "b3#"
+      ],
+      "commentary": [
+        "Begin from the complete seven-piece source board and follow the selected king-retreat defense.",
+        "Nb6+ checks Kd7 and attacks the knight on a4, forcing Black to respond before taking b2.",
+        "Kc6 avoids capturing the knight and sets up a counterfork after White takes a4.",
+        "Nxa4 removes Black’s knight but brings the white knight close to the bishop.",
+        "Kb5 attacks both Na4 and Ba5. White must choose which minor piece to save.",
+        "Bc3 saves the bishop and allows the knight to fall. The bishop’s long diagonal will matter more than the knight.",
+        "Kxa4 captures the knight and places the black king in the cage that White will exploit.",
+        "Ke6 moves toward the c4 mating construction rather than chasing h5 directly.",
+        "h4 races toward promotion. This is the source’s selected pawn-running defense.",
+        "Kd5 approaches c4 while keeping the bishop on its useful diagonal.",
+        "h3 continues the race, apparently outpacing the white king.",
+        "Kc4 reaches the crucial square and confines Ka4 with help from b2 and the bishop.",
+        "h2 leaves Black one step from obtaining a queen.",
+        "Bb4 controls a5 and sets up b3 mate. Promotion will not provide a useful defense.",
+        "h1=Q promotes far from the mating cage; the queen cannot stop b3.",
+        "b3# is actual mate. Kc4 protects b3 and b4, Bb4 checks Ka4 and covers a5, while the new queen has no legal way to answer."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "b3# is actual mate. Kc4 protects b3 and b4, Bb4 checks Ka4 and covers a5, while the new queen has no legal way to answer.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/kBK5/1P6/8/7q b - - 0 8",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_king_knight_capture",
+      "start": "start",
+      "title": "Black captures the checking knight",
+      "san": [
+        "Nb6+",
+        "Nxb6",
+        "Bxb6"
+      ],
+      "commentary": [
+        "Compare the source’s direct knight exchange rather than the king counterfork.",
+        "Nb6+ forks the king and Na4, making Black respond.",
+        "Nxb6 removes the checking knight but leaves a bishop recapture.",
+        "Bxb6 wins Black’s knight. The exact bishop-and-pawn versus pawn ending is winning for White; the source’s further king race is not encoded here."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxb6 wins Black’s knight. The exact bishop-and-pawn versus pawn ending is winning for White; the source’s further king race is not encoded here.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3k1K2/1B6/7p/8/8/1P6/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_king_wrong_piece",
+      "start": "start",
+      "title": "Save the knight instead of the bishop",
+      "san": [
+        "Nb6+",
+        "Kc6",
+        "Nxa4",
+        "Kb5",
+        "Nc3+",
+        "Kxa5"
+      ],
+      "commentary": [
+        "Compare keeping the knight when Black forks the two white pieces.",
+        "Nb6+ starts the same forcing sequence.",
+        "Kc6 prepares the king counterfork.",
+        "Nxa4 wins Black’s knight but places both white minors within the king’s reach.",
+        "Kb5 attacks the knight and bishop together.",
+        "Nc3+ saves the knight with check but gives up the forced win.",
+        "Kxa5 removes the bishop. The exact remaining knight-and-pawn ending is drawn with best play; no invented pawn-race completion is required."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxa5 removes the bishop. The exact remaining knight-and-pawn ending is drawn with best play; no invented pawn-race completion is required.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/5K2/8/k6p/8/2N5/1P6/8 w - - 0 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "king_detour",
+      "prompt": "Why does the king move toward e6 instead of chasing h5?",
+      "answer": "The useful destination is c4. With the bishop and b-pawn, that king position builds mate around Ka4 even if the distant pawn promotes."
+    },
+    {
+      "node": "start",
+      "prompt": "Why save the bishop after ...Kb5?",
+      "answer": "The bishop can help create the mating cage. Saving the knight instead permits ...Kxa5 and leaves an exactly drawn ending."
+    }
+  ],
+  "defaultBranch": "majestic_king_mating_race",
+  "practiceBranch": "majestic_king_mating_race",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "The complete seven-piece source board is visually reconstructed. The selected ...Kc6/...Kb5 counterfork, bishop-preserving king detour, direct knight exchange and wrong-piece comparison are checked move by move. The mating race is one illustrated defense; the lesson does not claim to enumerate every king and pawn alternative.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

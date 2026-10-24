@@ -1,0 +1,177 @@
+{
+  "video_id": "TwsMYfF9lVE",
+  "title": "Majestic Glory",
+  "summary": "Distract the king from a rook’s checking square, then choose a rook promotion to avoid a queen-sacrifice stalemate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/2P5/8/pk6/3rP3/1K6/R7 w - - 0 1",
+      "question": "Why sacrifice a rook before pushing the pawn?",
+      "explanation": "Black’s king supports the rook’s checking route. Capturing a pawn with check can move that king away.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "promotion",
+      "fen": "8/2P5/8/1r6/k7/4P3/2K5/8 w - - 3 4",
+      "question": "Should the pawn become the strongest piece?",
+      "explanation": "The king has been distracted, but Black still has a rook sacrifice that can stalemate a queen.",
+      "evidence": {
+        "timestamp_s": 93
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "glory_complete",
+      "start": "start",
+      "title": "Distract the king and underpromote",
+      "san": [
+        "Rxa4+",
+        "Kxa4",
+        "c7",
+        "Rb3+",
+        "Kc2",
+        "Rb5",
+        "c8=R"
+      ],
+      "commentary": [
+        "White can win, but immediate c7 allows a defended rook-checking sequence. Change the black king’s square first.",
+        "Rxa4+ gives up the rook with check, forcing a decision about the king’s location.",
+        "Kxa4 accepts the sacrifice. From a4 the king no longer protects c3.",
+        "c7 threatens promotion. The pawn controls d8, and Black cannot safely plant the rook on c3 with king support.",
+        "Rb3+ checks the white king. Black tries to recreate the earlier defensive pattern.",
+        "Kc2 approaches the rook. A further ...Rc3+ would now allow Kxc3 because the black king is too far away to defend it.",
+        "Rb5 sets up a different resource: ...Rc5+ after a queen promotion.",
+        "c8=R preserves White’s forced win. A queen would give Black a stalemate trick; the rook leaves the needed king escape available."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "c8=R preserves White’s forced win. A queen would give Black a stalemate trick; the rook leaves the needed king escape available.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2R5/8/8/1r6/k7/4P3/2K5/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "glory_queen_trap",
+      "start": "promotion",
+      "title": "Test the queen promotion",
+      "san": [
+        "c8=Q",
+        "Rc5+",
+        "Qxc5"
+      ],
+      "commentary": [
+        "A queen looks natural, but its extra diagonal control can remove Black’s last king move.",
+        "c8=Q gives up the forced win because Black can sacrifice the rook with check.",
+        "Rc5+ checks the king on c2 and attacks the queen along the c-file.",
+        "Qxc5 is stalemate. The queen controls a3 and a5, the king on c2 covers b3, and Black’s king on a4 has no legal move without being in check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxc5 is stalemate. The queen controls a3 and a5, the king on c2 covers b3, and Black’s king on a4 has no legal move without being in check.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/2Q5/k7/4P3/2K5/8 b - - 0 5",
+      "outcome": "draw"
+    },
+    {
+      "id": "glory_rook_contrast",
+      "start": "promotion",
+      "title": "Compare the same defense against a rook",
+      "san": [
+        "c8=R",
+        "Rc5+",
+        "Rxc5",
+        "Ka3"
+      ],
+      "commentary": [
+        "Repeat the defensive idea against a rook to see exactly which escape square changes.",
+        "c8=R keeps White’s winning result.",
+        "Rc5+ is still legal, but it no longer forces the stalemate geometry.",
+        "Rxc5 captures the rook while leaving a3 outside the rook’s control.",
+        "Ka3 is legal, so this is not stalemate. White has a verified winning rook-and-pawn ending against a bare king."
+      ],
+      "classification": "independent alternative illustrating a source idea with representative legal replies",
+      "explanation": "Ka3 is legal, so this is not stalemate. White has a verified winning rook-and-pawn ending against a bare king.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/2R5/8/k3P3/2K5/8 w - - 1 6",
+      "outcome": "win"
+    },
+    {
+      "id": "glory_push_too_soon",
+      "start": "start",
+      "title": "Push the pawn without distracting the king",
+      "san": [
+        "c7",
+        "Rb3+",
+        "Kc2",
+        "Rc3+",
+        "Kd2",
+        "Rxc7"
+      ],
+      "commentary": [
+        "Compare the same pawn advance while the black king still protects c3.",
+        "c7 gives up the forced win by allowing the supported checking route.",
+        "Rb3+ starts the checking maneuver with the black king still on b4.",
+        "Kc2 approaches the rook, but the king on b4 supports the next check.",
+        "Rc3+ cannot be captured because Kb4 protects c3. White must move its king again.",
+        "Kd2 is one legal illustrative retreat.",
+        "Rxc7 wins the advanced pawn. The remaining rook-and-pawn ending is drawn with best play."
+      ],
+      "classification": "independent alternative illustrating a source idea with representative legal replies",
+      "explanation": "Rxc7 wins the advanced pawn. The remaining rook-and-pawn ending is drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/2r5/8/8/pk6/4P3/3K4/R7 w - - 0 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What did Rxa4+ change?",
+      "answer": "After ...Kxa4 the black king no longer protects c3. That makes Kc2 safe against the rook’s checking attempt."
+    },
+    {
+      "node": "promotion",
+      "prompt": "Why does Rxc5 avoid the stalemate after Qxc5?",
+      "answer": "A queen on c5 controls a3 diagonally. A rook on c5 does not, so ...Ka3 remains legal and the game continues."
+    }
+  ],
+  "defaultBranch": "glory_complete",
+  "practiceBranch": "glory_complete",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "",
+  "verification_scope": "Starting positions reconstructed from saved source images. Every encoded intermediate position and endpoint is checked against the tablebase. These are selected instructive variations, not an exhaustive tree of every legal defense.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

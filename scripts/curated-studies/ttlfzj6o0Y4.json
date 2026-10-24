@@ -1,0 +1,139 @@
+{
+  "video_id": "ttlfzj6o0Y4",
+  "title": "You Have Five Seconds",
+  "summary": "Compare what the two pawn captures remove: taking the rook allows promotion, while taking the pawn leaves a rook mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "7k/1p5r/Pp5P/8/8/8/6K1/8 w - - 0 1",
+      "question": "What did the earlier rook sacrifice make possible?",
+      "explanation": "Begin after ...axb6. Black has captured the rook, vacating a7; White’s pawn on a6 now has an open route to promotion.",
+      "evidence": {
+        "timestamp_s": 46
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "pawn_capture",
+      "fen": "7k/p6r/pR5P/8/8/8/6K1/8 w - - 0 1",
+      "question": "What if Black captures White’s a-pawn instead?",
+      "explanation": "After ...bxa6 the rook remains on b6. Black’s king on h8 obstructs its own rook’s retreat to h8.",
+      "evidence": {
+        "timestamp_s": 60
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "rook_defense",
+      "fen": "7k/pP3r2/1R5P/8/8/8/6K1/8 b - - 0 1",
+      "question": "What if Black moved the rook to f7?",
+      "explanation": "After ...Rf7 and axb7, White’s pawn on b7 threatens promotion and the rook on b6 remains offered. The earlier eight-piece setup is context.",
+      "evidence": {
+        "timestamp_s": 67
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "seconds_rook_taken",
+      "start": "start",
+      "title": "The rook capture clears promotion",
+      "san": [
+        "a7",
+        "Rxh6",
+        "a8=Q+",
+        "Kh7",
+        "Qxb7+"
+      ],
+      "commentary": [
+        "The verified seven-piece starting diagram follows the earlier Rb6 sacrifice. The sacrifice itself belongs to an eight-piece setup and is not encoded here.",
+        "a7 uses the open file created when Black’s a7 pawn captured the rook on b6.",
+        "Rxh6 takes the other white pawn. The black king on h8 prevents ...Rh8 from blocking promotion.",
+        "a8=Q+ promotes with check along the eighth rank.",
+        "Kh7 escapes the checking queen and keeps the rook on h6.",
+        "Qxb7+ removes the b7 pawn with check. White’s queen against rook and b6 pawn is checked as winning, with further conversion still required."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxb7+ removes the b7 pawn with check. White’s queen against rook and b6 pawn is checked as winning, with further conversion still required.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1Q5k/1p5r/8/8/8/6K1/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "seconds_pawn_taken",
+      "start": "pawn_capture",
+      "title": "Taking the pawn leaves a mating rook",
+      "san": [
+        "Rb8#"
+      ],
+      "commentary": [
+        "This separate seven-piece source diagram follows ...bxa6, which removes the pawn on a6 instead of the offered rook.",
+        "Rb8# checks across the eighth rank. Kh8 obstructs ...Rh8, the rook cannot interpose in one move, and the h6 pawn controls g7."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rb8# checks across the eighth rank. Kh8 obstructs ...Rh8, the rook cannot interpose in one move, and the h6 pawn controls g7.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "1R5k/p6r/p6P/8/8/8/6K1/8 b - - 1 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "seconds_rook_defense",
+      "start": "rook_defense",
+      "title": "Capture the rook after ...Rf7",
+      "san": [
+        "axb6",
+        "b8=Q+"
+      ],
+      "commentary": [
+        "This seven-piece diagram begins after White’s axb7 in the ...Rf7 variation. It is Black to move; the selected source reply is a capture of the rook.",
+        "axb6 captures Rb6 with Black’s a7 pawn. White keeps the pawn on b7.",
+        "b8=Q promotes. White’s queen and h6 pawn against rook and b6 pawn is checked as a White win; a quick blitz conversion is not guaranteed."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "b8=Q promotes. White’s queen and h6 pawn against rook and b6 pawn is checked as a White win; a quick blitz conversion is not guaranteed.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win"
+      ],
+      "end_fen": "1Q5k/5r2/1p5P/8/8/8/6K1/8 b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can the rook not simply block on h8?",
+      "answer": "The black king already occupies h8. That self-obstruction gives White time to promote with check."
+    },
+    {
+      "node": "pawn_capture",
+      "prompt": "Why do the two pawn captures lead to different wins?",
+      "answer": "Capturing the rook frees the a-pawn’s file; capturing the a-pawn leaves the rook available for Rb8 mate."
+    }
+  ],
+  "defaultBranch": "seconds_rook_taken",
+  "practiceBranch": "seconds_rook_taken",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...axb6 at 46 seconds, a supported seven-piece later position. Separate seven-piece diagrams after ...bxa6 at 60s and axb7 at 67s compare the other source branches. The earlier eight-piece Rg6 and Rb6 sacrifices remain context and the exact move tree between these nodes is not asserted.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    "The caption says the final promoted position is winning for Black. The encoded resulting positions are checked as White wins. Claims about premoving a blitz conversion are not treated as a clock guarantee."
+  ],
+  "verificationDate": "2026-10-23"
+}

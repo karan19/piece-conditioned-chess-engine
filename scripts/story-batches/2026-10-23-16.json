@@ -1,0 +1,409 @@
+{
+  "batch_id": "2026-10-23-16",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three studies and nine selected branches; two larger tactical sources retain precise pending-analysis notes.",
+  "reviews": {
+    "Y8IfsumRNz0": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 39 exact positions from the complete seven-piece board. Full selected king ladder alternates temporary bishop interference with discovered checks, bringing the king from f7 to c2 without stalemate. Bf8 reorganizes the bishops to remove a3; selected continuations end in independently completed Bxb2 mate. The independent Ke8 comparison is actual stalemate.",
+      "source_images": [
+        {
+          "file": "Y8IfsumRNz0/montage_accepted.jpg",
+          "sha256": "8d59aa9fd126497b68a2ba08d611a6cb47c4ce7997d2ca7f153594abf7a94914"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00001.jpg",
+          "sha256": "f3b619596e5549e6c3b918cdb214aa9b48ffe2961ff3f75499c823924f687702"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00009.jpg",
+          "sha256": "27f41d191f1e4b43a63a48c80de9c1f3032e9980670607fd6044aa7ddbb81b57"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00013.jpg",
+          "sha256": "3e7e7aa2d7c07cae335d2e0e925d96ea7c768db511343ca087f0c958ac3466dd"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00021.jpg",
+          "sha256": "7ec332ec496622e164d8cf8528f041b100897ae4dad237f825234d9c109072ae"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00022.jpg",
+          "sha256": "6338bdc2618131f638b2e9f2fe82eef1d199c55aab4b04151e310f27b3a2574a"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00025.jpg",
+          "sha256": "6d4757f4e70eab454cddbf4a407f421737de07ccc296a6d983d6970e073fe828"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00026.jpg",
+          "sha256": "524b5f20d485322ebc5abedade46ef0160861ee8e49b975c26660897a01ea2ab"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00027.jpg",
+          "sha256": "a7ca400d129ab90f0736f46609efeb9d111497098f8b0358dc0a2916e099feab"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00028.jpg",
+          "sha256": "5459439be2ea9e6879343aad9c935955e111dea840f10bdc89d95bb1f6856c0a"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00029.jpg",
+          "sha256": "c3514232da216d9aa5f3b651185b43b6e459abba0f12a21efca943c02339abbb"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00030.jpg",
+          "sha256": "9f4cc11afb1b79f9c4612b169ae1151bb025d90ead756905a6d6dc4558e7e852"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00031.jpg",
+          "sha256": "84fedeb1d50d3a62107d3ffeae547f0664a1b60e2a13efa304ec74bf82ed9de1"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00032.jpg",
+          "sha256": "d2f1c4b41b05ffbb96983f2e96dbb440202dcdb9b0f52a9add103e993346b112"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00033.jpg",
+          "sha256": "0e85a0afb18a79284fe575382311106d5ca3f01dcb9e75abffdef114467bf6cd"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00034.jpg",
+          "sha256": "54604769e4fab3e2c484e98bd3db08492a80e9047b807a0d780c6e493bef32ff"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00035.jpg",
+          "sha256": "bedb0a4843044300dfed0139e3c991a204b69f462892b4adfb89da254465fbdd"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00036.jpg",
+          "sha256": "af8397b326e21ded2a1e683b73c29b7e2ab77d5120e63ac5a67fce3df20662d5"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00037.jpg",
+          "sha256": "cfb4f1e02ef3b28e40d21104ef686988838755ce19e5034289862790fbc2a880"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00041.jpg",
+          "sha256": "f353f5b55a523c373bfac51f06fb71b6f78f63e25310b2fd022e0594cef41a77"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00042.jpg",
+          "sha256": "8978e189a2c8570e35b587247647f2b587f041bc375520fe484ff166ab2d31e9"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00043.jpg",
+          "sha256": "f896e3c137aebfd78cffb57c0502fc73a06c1ff33422406fa17091d12e07e090"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00044.jpg",
+          "sha256": "84d55c67addfe809ff1b42daa2691d45292c190215f6e98ca22af09ca72b08bd"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00049.jpg",
+          "sha256": "959ca780874e94538558cec104d0b7d70e51c8cffc2d167921720108bcc89e04"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00050.jpg",
+          "sha256": "9a4387d9d98a51d8d5a0161cc9848fb5b7cc6fde4773bdf2bef25a144ea89cf5"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00051.jpg",
+          "sha256": "dda1d5c984638d823b88d021b2d408fc365398ed8c427c96931a4c9dc93488b0"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00052.jpg",
+          "sha256": "bae8ec2ec470ff5f54a8ee5bac253b38ee4b166932f7007f4077bcb0a94ee241"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00053.jpg",
+          "sha256": "f6cd652affa254d04e822382c1ca1fee47de505a31f0f3672163097db08a3a7f"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00054.jpg",
+          "sha256": "2c59d1e920f7d2171b510e406153ead94f4fc87c69d706fd12acb8546c252744"
+        },
+        {
+          "file": "Y8IfsumRNz0/images/image_00055.jpg",
+          "sha256": "9654598701d040a69c63bb4c2f337f8648d8a5c314b8d65adcb95fec3af306c4"
+        }
+      ]
+    },
+    "KI966tikVxk": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 30 exact positions beginning after ...Rxf2 at 102 seconds. Rg2 offers a rook fork between f2/h2. Captures release promotion and Qe8+/Qf5+ queen forks. Declining with ...Rxf7 reaches the supported king approach to g7 against ...Rh8. Earlier nine-piece setup and eight-piece bishop interference remain context; discontinuous final promotion display is excluded.",
+      "source_images": [
+        {
+          "file": "KI966tikVxk/montage_accepted.jpg",
+          "sha256": "960cb41fa2c14e8bcd4eda1b0a85ebfd78f996c57a473c08c8e8352322bf1409"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00001.jpg",
+          "sha256": "6ef315c400487b48f48d5ce39bee37736b19e52e07119d229c405143ae144f1a"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00025.jpg",
+          "sha256": "d430dba999dd05b4b4afadf45be8121f6097185f723f0bb9ba0e08f14cae9caa"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00026.jpg",
+          "sha256": "2d636ad3eca60848a4d2914c6b8b623f049d341c0a222b2eeb48592e570c0c94"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00027.jpg",
+          "sha256": "4767cd31d29e830f654cd8deca958fb59a71d401f82f9f20946179107b7975c2"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00028.jpg",
+          "sha256": "2259a14d05a69216fe63645c5a339caec072b9733cd909320640e36b0805d6c4"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00029.jpg",
+          "sha256": "9acf9c022d6e26d0d567e168b716f6e16448331d79b98f29634ca892c8093b3c"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00030.jpg",
+          "sha256": "672086027c225c1dfe186d70763762ace6dfae3d0a4d6211ed1f59b6f2bfc57f"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00033.jpg",
+          "sha256": "ea476eeb8accd5bc191b2af1c3bc07e51bf06311b0607f0ee5eafb360a8027d7"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00034.jpg",
+          "sha256": "1a729b80fddd10774b10a4d0ab0f15de1b79bf706d36adc8b1fd8520efa59cf6"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00035.jpg",
+          "sha256": "9172e49433d2613e25f919db5be34c349b9374bf284772637f2b8a7d21405cc8"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00036.jpg",
+          "sha256": "ca8365e3e9b80057e76e7a1ee71ffacacc70173a13976f061f590000642ff4d7"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00037.jpg",
+          "sha256": "6859e7e1be45ebbf3d4bb72f08724bf6eb1a1eeed4f518fd552874ae3fd3855b"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00038.jpg",
+          "sha256": "c0a58989fa526c8819e33506f4da928c463d892c3fc10436523ae40814d7711a"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00039.jpg",
+          "sha256": "0be81bcc55a536e5c403d6abbb01db1784a848a8c41674fbc1e7dadc5e0a0020"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00040.jpg",
+          "sha256": "332c2d203167f5acead8db662695a299aaacacd2c10ea11c2af31e2d3522f87a"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00041.jpg",
+          "sha256": "be2af6f2609dd605455dd01bb21d5250ef5b883884ed58db58c7e13548e23c70"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00042.jpg",
+          "sha256": "f939958d5c11abb7338893b61a28688995a98b1473b66ce23e7d8a3439f45904"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00043.jpg",
+          "sha256": "76bc591573a8ac45ff27017893e0e4b31fbdf9d61da5c898c9b0d4e9bc2ca3b8"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00044.jpg",
+          "sha256": "a0fc5c2c8ed26893c6fbadb8d1beec5d92a05559ec3d040540402bb58088623b"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00045.jpg",
+          "sha256": "b522c913d3404a70f107949e27b5ae8b27a8aee31042c15f2bf2aebb5cb38565"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00046.jpg",
+          "sha256": "150b97af6ab78237ba3478673c0edb5d7dab84d9b1b7f4ce8119ea34ea600a96"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00047.jpg",
+          "sha256": "ea2e52bcf98a7e5182897be9882cbd13ea4670fe02f201741c2e8fc53ea9e8c9"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00048.jpg",
+          "sha256": "558047184b368bb1b10da63d29b07c9f49d523b3299e5c064dc4abc1aeb568c1"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00049.jpg",
+          "sha256": "4074c500f452ad8345c822223a42282cfed514611535e4cf651643ce4680fe0e"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00050.jpg",
+          "sha256": "11bacf52050a3a1862009ad734f4967c264b4273d4ee43ce4961165101151615"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00051.jpg",
+          "sha256": "52f8ba266d1a846025f5141085fce9551a21e2c995288382006f0adfe32e112c"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00052.jpg",
+          "sha256": "90c1f25ce25ff57e4532cf9ecf176bd9403ecfa6c4236331a1b28070b90ba617"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00053.jpg",
+          "sha256": "9bc453f5d5e5269fb8428fc582cb54cf04ebbc46dff2e1eb240e5cdd1fb4c4ef"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00054.jpg",
+          "sha256": "85841daa3017d5d82bd8aa73f4eb187ce4b0efbfea436bc6fab12ee65b16becd"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00055.jpg",
+          "sha256": "d7d302feba871a1303f03996ac8afa9febc9b87ab6a57bb1dd6167555f0b8d2a"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00056.jpg",
+          "sha256": "453c644741f69d2ab1be9f21fe863fb9473ab381ce0b7b1bae4a5aa943f4ff83"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00057.jpg",
+          "sha256": "732ccb8b7b549eeac2d00d88e1e4045d9dfdf5d10d2f4b788f9883009aeb7804"
+        },
+        {
+          "file": "KI966tikVxk/images/image_00058.jpg",
+          "sha256": "fc1ab2e4ecb24e4e8174fc1ea9fc4ca955d55109eca7599eb8832515775946ce"
+        }
+      ]
+    },
+    "O_sMtBAcXIU": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 20 exact positions from the complete seven-piece board. Nb6+ draws out the ...Kc6/...Kb5 counterfork; Bc3 preserves the bishop, and Ke6\u2013d5\u2013c4 builds actual b3 mate despite ...h1=Q. The direct ...Nxb6 Bxb6 ending wins; saving the knight with Nc3+ changes the exact outcome to a draw.",
+      "source_images": [
+        {
+          "file": "O_sMtBAcXIU/images/image_00001.jpg",
+          "sha256": "8a4a010b85924e69bc1331e48d27e4000322e0055d87e110039ab842cf0b758b"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00002.jpg",
+          "sha256": "566b978210816f45bf66b582bc3c14f39d4364b020622337fed98fcd7d4baba1"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00003.jpg",
+          "sha256": "390a66028125b67f95436339c6e82c96c0087a6dfb6f713f1f6ecd406fb9ae1e"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00004.jpg",
+          "sha256": "89c5940c7f70d7dcd6faa9ee211a0b7e72527dc57af648357014244e5cf5794d"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00014.jpg",
+          "sha256": "e53bbb50cd8c0671902246aeb5319048869746df0bffc9f9a20a2412554ff65f"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00015.jpg",
+          "sha256": "effd2716374c99671ec19f9dc32e07394674c5850858efa7a96dc9388502fd82"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00016.jpg",
+          "sha256": "292f0a63aa9e58c5945312604863ac63f4b3fabdbe0fda0a5f12f7c06f97ab7e"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00017.jpg",
+          "sha256": "24b4531cf343b01efa32486b489fbaef5b27582ae3946672b639101ac08bf9cb"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00018.jpg",
+          "sha256": "ad995edbdea0b0d7cb1db50bbcf809a0e8b29dba0c7928786eca27312989f848"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00019.jpg",
+          "sha256": "134a4d90902d0dd2a4ad5393a28f6f9d86ae209a7386c932b0cd5158654b4618"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00029.jpg",
+          "sha256": "53cf3ee023a8ab084b8456dddee4ec5069e44a858b80808a7e48c65af1cb6994"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00030.jpg",
+          "sha256": "00e55ea4b842c229ecaadfaa0f786ad08f183cacf2014fa16a632f0fe0abcce5"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00034.jpg",
+          "sha256": "a84bb6e556c57a90a8130eb3581002c5432fadec4d2d56c1158a21f36fa35f81"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00035.jpg",
+          "sha256": "947233449569f5b3d6c14f68e28a121cabda23cbd7d2966e817e0b6df4179af8"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00036.jpg",
+          "sha256": "df75054beafb8840432c0149da113ff3c0ff6fc9bd195bad216e6bccfd1ed698"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00037.jpg",
+          "sha256": "8356375ea3c2f9783e08965f919f4be4b82285e69ec0c6635624599acab85c68"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00049.jpg",
+          "sha256": "def1bba86c091f38748f680f18208ab182e9847c772501950e88eef9a925f41c"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00050.jpg",
+          "sha256": "cb2ff404282f8255b551ed0886b1e376d3e7b150249be6c2298c89f621c38c95"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00051.jpg",
+          "sha256": "1e6f0eeaafa0bd9ace73abd7e0731bd9d87012c944f5ac54b56233916e04ed32"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00052.jpg",
+          "sha256": "4fb0fd08e3bd5087db2e92b8ea42a6f54e6c7c63c9d5dd105af97330938348d2"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00053.jpg",
+          "sha256": "fbdb9e190a7fde956da1b3730ff929c80302fdf3b312aac1d1cf1ad12e1b697a"
+        },
+        {
+          "file": "O_sMtBAcXIU/images/image_00054.jpg",
+          "sha256": "bd38ee06c7ca4f059798f07daef6d6fd1935735bb2d5ca876d0e56605764ba3a"
+        }
+      ]
+    },
+    "4Quo3b0e3sY": {
+      "result": "awaiting_reconstruction",
+      "notes": "Source board and narration present. This is a larger real-game tactical position (White Kh2 Qf7 Rg2 Bf2 Nd4 a2 b3 e3; Black Kh7 Qb1 Rb6 Nh5 a7 d5 f5 g5 g7), exceeding seven pieces. The ...Nf4/...Rh6 attack needs full legal reconstruction and supported larger-position analysis or a substantive later small phase. It is not an information gap.",
+      "source_images": [
+        {
+          "file": "4Quo3b0e3sY/images/image_00001.jpg",
+          "sha256": "7b6f36be9e368b7fdb5c126533828589311965d029cc5c88ff8b2834031e9c01"
+        }
+      ],
+      "analysis_required": "Source board and narration present. This is a larger real-game tactical position (White Kh2 Qf7 Rg2 Bf2 Nd4 a2 b3 e3; Black Kh7 Qb1 Rb6 Nh5 a7 d5 f5 g5 g7), exceeding seven pieces. The ...Nf4/...Rh6 attack needs full legal reconstruction and supported larger-position analysis or a substantive later small phase. It is not an information gap."
+    },
+    "sBWGEWzYc3A": {
+      "result": "awaiting_reconstruction",
+      "notes": "Source board and narration present. Initial nine-piece diagram: White Kd1 Qe1 Re4 h3; Black Kb5 Qh7 Rc3 a7 b7. After ...Qxh3, the central Qf3 double sacrifice still has eight pieces. Reconstruct and verify that larger tactical tree, or clearly scope a substantive supported later seven-piece conversion; terminal mate alone cannot certify the earlier sacrifice.",
+      "source_images": [
+        {
+          "file": "sBWGEWzYc3A/images/image_00001.jpg",
+          "sha256": "c2061e82fc1e3f9e8626348bc0cdfb88468b7ffac2ab55c779f9adfb01348d09"
+        }
+      ],
+      "analysis_required": "Source board and narration present. Initial nine-piece diagram: White Kd1 Qe1 Re4 h3; Black Kb5 Qh7 Rc3 a7 b7. After ...Qxh3, the central Qf3 double sacrifice still has eight pieces. Reconstruct and verify that larger tactical tree, or clearly scope a substantive supported later seven-piece conversion; terminal mate alone cannot certify the earlier sacrifice."
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 89,
+    "selected_branches": 9,
+    "tests": "104 tests passed across 16 files; regression checks cover the released knight versus stalemate, both queen captures of forked rooks, and actual pawn mate after Black promotes.",
+    "production_build": "Passed TypeScript and Vite build; bundle-size advisory remains.",
+    "ui_review": "CUA confirmed actual b3 mate with Black queen on h1, the independent Ke8 stalemate comparison, and Qf5 checking fork with later-root scope disclosure.",
+    "screenshots": [
+      "docs/screenshots/endgame-stories-batch-16.png",
+      "docs/screenshots/endgame-stories-batch-16-fork.png"
+    ],
+    "queue_counts": {
+      "verified_selected_lines": 49,
+      "awaiting_reconstruction": 174,
+      "needs_information": 23,
+      "not_applicable": 2
+    },
+    "local_only": true
+  }
+}

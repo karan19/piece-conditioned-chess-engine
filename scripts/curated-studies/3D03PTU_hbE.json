@@ -1,0 +1,119 @@
+{
+  "video_id": "3D03PTU_hbE",
+  "title": "Crazy Endgame: Stop the Connected Pawns",
+  "summary": "Keep the queen close enough to stop promotion, and recognize when a distant queen move gives away the win.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/5q2/5P1P/6P1/1k4K1/8/8/8 b - - 0 1",
+      "question": "Can the queen stop three connected passed pawns?",
+      "explanation": "Black can force a win in this exact six-piece position. Qg6 keeps the queen able to capture either f7 or h7, rather than allowing an unchecked promotion race.",
+      "evidence": {
+        "timestamp_s": 61
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "crazy_h_pawn_capture",
+      "start": "start",
+      "title": "Independent reply: advance the h-pawn",
+      "san": [
+        "Qg6",
+        "h7",
+        "Qxh7"
+      ],
+      "commentary": [
+        "Begin after Kg4 with White f6/g5/h6 all retained and Black Kb4/Qf7. The source is rapid play, so earlier omitted moves are not filled in as a game score.",
+        "Qg6 is the source’s final visible move. The queen sits between the advanced pawns and can meet either pawn push.",
+        "h7 is an independently supplied representative attempt to promote next move. White still cannot force a draw from this exact position.",
+        "Qxh7 removes the closest h-pawn. The remaining five-piece position is an exact Black win with f6 and g5 retained."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxh7 removes the closest h-pawn. The remaining five-piece position is an exact Black win with f6 and g5 retained.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/7q/5P2/6P1/1k4K1/8/8/8 w - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "crazy_f_pawn_capture",
+      "start": "start",
+      "title": "Independent reply: advance the f-pawn",
+      "san": [
+        "Qg6",
+        "f7",
+        "Qxf7"
+      ],
+      "commentary": [
+        "Test the other advanced pawn rather than assuming White must push h6.",
+        "Qg6 is the observed queen placement. It can return to f7 if the f-pawn advances.",
+        "f7 is a legal independent attempt to promote. It does not evade the queen’s capture.",
+        "Qxf7 removes that pawn and reaches an exact Black win, with White g5/h6 and both actual king squares preserved."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxf7 removes that pawn and reaches an exact Black win, with White g5/h6 and both actual king squares preserved.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/5q2/7P/6P1/1k4K1/8/8/8 w - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "crazy_queen_wanders",
+      "start": "start",
+      "title": "Independent error: let the h-pawn promote",
+      "san": [
+        "Qg6",
+        "h7",
+        "Qb1",
+        "h8=Q"
+      ],
+      "commentary": [
+        "Compare a legal Black mistake after the same source Qg6 move and independent h7 reply.",
+        "Qg6 still preserves Black’s exact win.",
+        "h7 threatens promotion. Black can win by capturing it immediately, as in the first line.",
+        "Qb1 throws away the win. The distant queen no longer prevents h8=Q, and the exact position becomes drawn.",
+        "h8=Q reaches a checked six-piece queen ending that is drawn with best play. The promotion is a representative independent continuation, not a recovered final move from the video."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "h8=Q reaches a checked six-piece queen ending that is drawn with best play. The promotion is a representative independent continuation, not a recovered final move from the video.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "7Q/8/5P2/6P1/1k4K1/8/8/1q6 b - - 0 3",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why respond to h7 with Qxh7 rather than simply move the queen away?",
+      "answer": "White is about to promote. Qxh7 retains an exact win, while the illustrated Qb1 mistake allows a drawn queen ending."
+    },
+    {
+      "node": "start",
+      "prompt": "Does the video’s clock result prove the position winning?",
+      "answer": "No. The board result here comes from exact six-piece outcome checks. Time-pressure commentary and the recorded result are kept separate."
+    }
+  ],
+  "defaultBranch": "crazy_h_pawn_capture",
+  "practiceBranch": "crazy_h_pawn_capture",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin at 61 seconds after the visible Kg4, in the complete six-piece later diagram: White Kg4/f6/g5/h6 against Kb4/Qf7, Black to move. The source next plays Qg6. Every encoded position is exactly tablebase checked. White pawn pushes and Black captures, and the Qb1 error comparison, are explicitly independent representative continuations beyond that last source move. The video’s time-pressure remarks and clock result are not used as board-outcome evidence. Earlier rook, bishop, pawn race and queen-promotion chronology remain outside this selected proof.",
+  "verification_scope": "Begin at 61 seconds after the visible Kg4, in the complete six-piece later diagram: White Kg4/f6/g5/h6 against Kb4/Qf7, Black to move. The source next plays Qg6. Every encoded position is exactly tablebase checked. White pawn pushes and Black captures, and the Qb1 error comparison, are explicitly independent representative continuations beyond that last source move. The video’s time-pressure remarks and clock result are not used as board-outcome evidence. Earlier rook, bishop, pawn race and queen-promotion chronology remain outside this selected proof.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

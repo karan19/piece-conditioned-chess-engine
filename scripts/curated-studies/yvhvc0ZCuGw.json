@@ -1,0 +1,125 @@
+{
+  "video_id": "yvhvc0ZCuGw",
+  "title": "A Knight and Bishop: Check the Queen Capture",
+  "summary": "Compare both king captures and the corner retreat before declaring the queen exchange won.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2q5/1kpB2K1/p1N5/P7/3P4/8/8/8 w - - 0 1",
+      "question": "Must Black recapture the bishop on c8?",
+      "explanation": "No. After Bxc8+ the king can capture on c8, capture the knight on c6, or retreat to a8. Each requires a separate checked continuation.",
+      "evidence": {
+        "timestamp_s": 108
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "2q5/1kpB2K1/p1N5/P7/3P4/8/8/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "exclamation_source_bishop_trade",
+      "start": "start",
+      "title": "Source finish: the king takes the bishop",
+      "san": [
+        "Bxc8+",
+        "Kxc8"
+      ],
+      "commentary": [
+        "Begin after ...Qc8. White’s bishop is on d7, the knight on c6 and king on g7. Both sides’ two pawns remain on the board.",
+        "Bxc8+ captures the queen and checks Kb7 along the bishop’s diagonal. Black still has three legal king replies.",
+        "Kxc8 is the source recapture. White keeps Nc6/a5/d4 against Kc8/a6/c7, with Kg7 retained. This complete seven-piece knight ending is an exact White win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxc8 is the source recapture. White keeps Nc6/a5/d4 against Kc8/a6/c7, with Kg7 retained. This complete seven-piece knight ending is an exact White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win"
+      ],
+      "end_fen": "2k5/2p3K1/p1N5/P7/3P4/8/8/8 w - - 0 2",
+      "outcome": "win"
+    },
+    {
+      "id": "exclamation_king_takes_knight",
+      "start": "start",
+      "title": "Independent defense: capture the knight instead",
+      "san": [
+        "Bxc8+",
+        "Kxc6"
+      ],
+      "commentary": [
+        "Compare a different legal king capture. The source does not illustrate this representative alternative.",
+        "Bxc8+ captures the queen with check, but does not protect Nc6.",
+        "Kxc6 captures the knight and escapes the bishop’s checking diagonal. White instead keeps Bc8/a5/d4 against Kc6/a6/c7. This distinct seven-piece bishop ending is also an exact White win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxc6 captures the knight and escapes the bishop’s checking diagonal. White instead keeps Bc8/a5/d4 against Kc6/a6/c7. This distinct seven-piece bishop ending is also an exact White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win"
+      ],
+      "end_fen": "2B5/2p3K1/p1k5/P7/3P4/8/8/8 w - - 0 2",
+      "outcome": "win"
+    },
+    {
+      "id": "exclamation_corner_bishop_offer",
+      "start": "start",
+      "title": "Independent defense: retreat to the corner",
+      "san": [
+        "Bxc8+",
+        "Ka8",
+        "Bb7+",
+        "Kxb7"
+      ],
+      "commentary": [
+        "Test the legal corner retreat and complete the conversion independently of the source.",
+        "Bxc8+ removes the queen and checks Kb7.",
+        "Ka8 declines both captures. The blocked a- and c-pawns and the knight’s control of a7/b8 leave Black without a waiting move if White simply makes an irrelevant king move.",
+        "Bb7+ offers the bishop again with check. The knight still covers a7 and b8, so Black must capture the bishop.",
+        "Kxb7 is forced and reaches an exact seven-piece White win with Kg7/Nc6/a5/d4 against Kb7/a6/c7. The second sacrifice is checked as a pawn-and-knight ending rather than justified by a material count."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxb7 is forced and reaches an exact seven-piece White win with Kg7/Nc6/a5/d4 against Kb7/a6/c7. The second sacrifice is checked as a pawn-and-knight ending rather than justified by a material count.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1kp3K1/p1N5/P7/3P4/8/8/8 w - - 0 3",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What are Black’s three replies to Bxc8+?",
+      "answer": "Kxc8, Kxc6 and Ka8. The source shows the first; the other two are independently checked here."
+    },
+    {
+      "node": "start",
+      "prompt": "Why use Bb7+ after Ka8?",
+      "answer": "It forces Kxb7 instead of making an irrelevant waiting move that would leave Black stalemated. The resulting full seven-piece knight ending is a verified White win."
+    }
+  ],
+  "defaultBranch": "exclamation_source_bishop_trade",
+  "practiceBranch": "exclamation_source_bishop_trade",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Qc8 at 108 seconds in the complete nine-piece later diagram: White Kg7/Bd7/Nc6/a5/d4 against Kb7/Qc8/a6/c7. Bxc8+ is certified against all three king replies: Kxc8, Kxc6 and Ka8. Both king captures reach exact seven-piece wins. After Ka8, the independent Bb7+/Kxb7 continuation reaches an exact winning knight ending. The source shows Kxc8; the other replies and the second bishop offer are independent additions. The earlier a5+/Nc6/queen restrictions and the full Kg7 zugzwang claim remain outside this selected proof. Capturing a queen alone is not treated as proof of every resulting ending.",
+  "verification_scope": "Begin after ...Qc8 at 108 seconds in the complete nine-piece later diagram: White Kg7/Bd7/Nc6/a5/d4 against Kb7/Qc8/a6/c7. Bxc8+ is certified against all three king replies: Kxc8, Kxc6 and Ka8. Both king captures reach exact seven-piece wins. After Ka8, the independent Bb7+/Kxb7 continuation reaches an exact winning knight ending. The source shows Kxc8; the other replies and the second bishop offer are independent additions. The earlier a5+/Nc6/queen restrictions and the full Kg7 zugzwang claim remain outside this selected proof. Capturing a queen alone is not treated as proof of every resulting ending.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 7,
+    "moves": {
+      "k1B5/2p3K1/p1N5/P7/3P4/8/8/8 w - - 1 2": "Bb7+",
+      "2q5/1kpB2K1/p1N5/P7/3P4/8/8/8 w - - 0 1": "Bxc8+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

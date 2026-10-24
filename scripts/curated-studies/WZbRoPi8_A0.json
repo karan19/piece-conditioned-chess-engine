@@ -1,0 +1,138 @@
+{
+  "video_id": "WZbRoPi8_A0",
+  "title": "Stalemate: Promote to a Bishop",
+  "summary": "Choose the piece that leaves the defending king a legal move after the queen is captured. More power can spoil the win.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "B7/1P6/8/7K/5q2/8/8/7k w - - 0 1",
+      "question": "Which promotion wins without stalemating Black?",
+      "explanation": "The b7 pawn blocks Ba8’s diagonal toward Kh1. Promoting opens a discovered check; the promoted piece must then be able to capture Qf4 without freezing Black’s king.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "stalemate_bishop_promotion",
+      "start": "start",
+      "title": "Make a bishop and leave a flight square",
+      "san": [
+        "b8=B+",
+        "Kg1",
+        "Bxf4",
+        "Kf1"
+      ],
+      "commentary": [
+        "The full five-piece physical-board setup is White Kh5/Ba8/b7 against Black Kh1/Qf4. Compare the resulting king moves after each promotion.",
+        "b8=B+ opens Ba8’s diagonal through b7 toward h1. The new dark-squared bishop on b8 can later capture f4, while avoiding the queen’s extra control of the f-file.",
+        "Kg1 leaves the discovered check. This is the source’s illustrated king retreat; it still leaves Qf4 available to capture.",
+        "Bxf4 removes the queen with the bishop that was just promoted on b8, not the original bishop on a8. Black is not in check, but can still move to f1 or f2, so this is not stalemate. White has two bishops of opposite colors and an exact checked win.",
+        "Kf1 uses the source’s illustrated flight square. White must now coordinate the king and bishops to mate; that conversion is a practice task, not a claimed forced mate in the next move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kf1 uses the source’s illustrated flight square. White must now coordinate the king and bishops to mate; that conversion is a practice task, not a claimed forced mate in the next move.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "B7/8/8/7K/5B2/8/8/5k2 w - - 1 3",
+      "outcome": "win"
+    },
+    {
+      "id": "stalemate_queen_promotion",
+      "start": "start",
+      "title": "A queen takes away too many squares",
+      "san": [
+        "b8=Q+",
+        "Kg1",
+        "Qxf4"
+      ],
+      "commentary": [
+        "Repeat the same check and capture with a queen instead of a bishop.",
+        "b8=Q+ opens Ba8’s check, but the exact position is now drawn with best defense. A stronger promoted piece changes the escape squares after the capture.",
+        "Kg1 finds the drawing defense. Black offers Qf4 while preparing to run out of legal moves.",
+        "Qxf4 is actual stalemate. Qf4 covers f1, f2 and h2; Ba8 covers g2 and h1. Black’s king on g1 is not checked, and every adjacent square is attacked. The white king on h5 does not give check either."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxf4 is actual stalemate. Qf4 covers f1, f2 and h2; Ba8 covers g2 and h1. Black’s king on g1 is not checked, and every adjacent square is attacked. The white king on h5 does not give check either.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "B7/8/8/7K/5Q2/8/8/6k1 b - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "stalemate_rook_promotion",
+      "start": "start",
+      "title": "A rook cannot win the queen on the diagonal",
+      "san": [
+        "b8=R+",
+        "Kg1"
+      ],
+      "commentary": [
+        "This independently selected comparison tests a third promotion rather than assuming all underpromotions work.",
+        "b8=R+ still opens the original bishop’s check. The rook has no diagonal capture on f4, and the exact tablebase result is drawn.",
+        "Kg1 is a representative drawing reply, independently checked. The rook cannot copy Bxf4 or Qxf4; promotion choice has to solve the capture and the stalemate together."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kg1 is a representative drawing reply, independently checked. The rook cannot copy Bxf4 or Qxf4; promotion choice has to solve the capture and the stalemate together.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "BR6/8/8/7K/5q2/8/8/6k1 w - - 1 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "stalemate_knight_promotion",
+      "start": "start",
+      "title": "A knight also misses the queen",
+      "san": [
+        "b8=N+",
+        "Kg1"
+      ],
+      "commentary": [
+        "This independent comparison completes the four promotion choices at the saved root.",
+        "b8=N+ opens Ba8’s discovered check, but the knight cannot capture f4. The tablebase checks this as a loss for White with best play.",
+        "Kg1 is an independently selected winning reply for Black. The knight cannot remove Qf4, and Black retains an exact win. The lesson is the specific geometry of bishop promotion, not a general rule to choose any weaker piece whenever stalemate is mentioned."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kg1 is an independently selected winning reply for Black. The knight cannot remove Qf4, and Black retains an exact win. The lesson is the specific geometry of bishop promotion, not a general rule to choose any weaker piece whenever stalemate is mentioned.",
+      "end_fen": "BN6/8/8/7K/5q2/8/8/6k1 w - - 1 2",
+      "outcome": "loss",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Which bishop captures the black queen?",
+      "answer": "The promoted bishop travels from b8 through c7, d6 and e5 to f4. The original bishop remains on a8 and opens the discovered check."
+    },
+    {
+      "node": "start",
+      "prompt": "Why can a bishop win where a queen draws?",
+      "answer": "After the capture on f4, the queen would cover f1 and cause stalemate. The bishop leaves f1 and f2 available; Black must move and White can continue with two opposite-colored bishops."
+    }
+  ],
+  "defaultBranch": "stalemate_bishop_promotion",
+  "practiceBranch": "stalemate_bishop_promotion",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin at the complete five-piece physical-board diagram. The source illustrates queen promotion, Kg1 and Qxf4 stalemate, then bishop promotion and the legal Kf1 escape after Bxf4. Rook and knight promotion comparisons are independently added. All selected intermediate positions are checked; the later two-bishop mate is left for practice.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

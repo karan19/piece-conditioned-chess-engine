@@ -1,0 +1,160 @@
+{
+  "video_id": "4d-RDOFwYxE",
+  "title": "A Pretty Sacrifice",
+  "summary": "Bring the king closer, then sacrifice the rook to make the opposing queen run out of useful checks.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "q5r1/8/8/8/8/8/Q7/1R2K2k w - - 0 1",
+      "question": "How can White coordinate pieces that are far apart?",
+      "explanation": "White has Ke1, Qa2 and Rb1 against Kh1, Qa8 and Rg8. Moving the king uncovers a first-rank rook check.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "pretty_queen_capture",
+      "start": "start",
+      "title": "The queen accepts the rook",
+      "san": [
+        "Kf2+",
+        "Kh2",
+        "Rh1+",
+        "Qxh1",
+        "Qxg8",
+        "Qb1",
+        "Qg2#"
+      ],
+      "commentary": [
+        "Begin at the complete six-piece source root. The two captures of the checking rook lead to different mating nets.",
+        "Kf2+ uncovers Rb1’s first-rank check while bringing the king toward the enemy king.",
+        "Kh2 is the only legal king escape from that discovered check.",
+        "Rh1+ offers the rook to either the king or queen. Both captures change the geometry.",
+        "Qxh1 removes the rook but draws the black queen to h1.",
+        "Qxg8 removes Black’s rook. The queen on h1 has no safe checking move against Kf2.",
+        "Qb1 is the source’s illustrated waiting move. This is one selected defense, not a claim that the queen has only one legal move.",
+        "Qg2# mates: Kf2 protects the queen and closes g1/g3 while the queen covers the remaining flights."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qg2# mates: Kf2 protects the queen and closes g1/g3 while the queen covers the remaining flights.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/8/5KQk/1q6 b - - 2 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "pretty_king_capture",
+      "start": "start",
+      "title": "The king accepts the rook",
+      "san": [
+        "Kf2+",
+        "Kh2",
+        "Rh1+",
+        "Kxh1",
+        "Qb1+",
+        "Kh2",
+        "Qh7#"
+      ],
+      "commentary": [
+        "Compare the other capture of the offered rook in the saved source variation.",
+        "Kf2+ discovers the rook check and improves the king.",
+        "Kh2 steps off the first rank.",
+        "Rh1+ brings the rook next to the king with check.",
+        "Kxh1 accepts the rook and returns the king to the corner.",
+        "Qb1+ checks along the first rank and prepares the h-file finish.",
+        "Kh2 is the illustrated king escape. Other legal resources are outside this selected branch.",
+        "Qh7# mates down the h-file. Kf2 covers g1, g2 and g3, denying the black king an exit."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qh7# mates down the h-file. Kf2 covers g1, g2 and g3, denying the black king an exit.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "q5r1/7Q/8/8/8/8/5K1k/8 b - - 3 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "pretty_queen_exchange",
+      "start": "start",
+      "title": "Exchange queens immediately",
+      "san": [
+        "Qxa8+",
+        "Rxa8"
+      ],
+      "commentary": [
+        "Compare the tempting direct queen capture before improving the king.",
+        "Qxa8+ trades away the queen with check and gives up the win.",
+        "Rxa8 recaptures. The remaining rook-versus-rook ending is exactly drawn with best play."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxa8 recaptures. The remaining rook-versus-rook ending is exactly drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "r7/8/8/8/8/8/8/1R2K2k w - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "pretty_king_too_far",
+      "start": "start",
+      "title": "Advance the king again",
+      "san": [
+        "Kf2+",
+        "Kh2",
+        "Ke3+",
+        "Qxa2"
+      ],
+      "commentary": [
+        "Compare another discovered check instead of the rook sacrifice.",
+        "Kf2+ starts the winning plan.",
+        "Kh2 reaches the critical choice.",
+        "Ke3+ gives away the win: it uncovers Qa2’s second-rank check while leaving Qa2 exposed to Black’s queen on a8.",
+        "Qxa2 answers the rook check by blocking the second rank and captures White’s queen. The exact remaining position is a Black win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxa2 answers the rook check by blocking the second rank and captures White’s queen. The exact remaining position is a Black win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "6r1/8/8/8/8/4K3/q6k/1R6 w - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does bringing the king to f2 matter?",
+      "answer": "It uncovers a rook check and covers g1, g2 and g3. Those controlled squares later make the queen mates work."
+    }
+  ],
+  "defaultBranch": "pretty_queen_capture",
+  "practiceBranch": "pretty_queen_capture",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin from the complete six-piece board at zero seconds. The rook sacrifice, both captures and two errors are checked. Only selected source variations are encoded.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

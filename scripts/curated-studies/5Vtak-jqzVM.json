@@ -1,0 +1,110 @@
+{
+  "video_id": "5Vtak-jqzVM",
+  "title": "Triple Trouble: The Final Capture Choice",
+  "summary": "Compare the resulting bishop and queen diagrams: taking the same checking queen can either preserve a win or cause stalemate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "7B/4p3/1K2B3/8/p2q4/k7/8/8 w - - 0 1",
+      "question": "Which answer to the queen check keeps the win?",
+      "explanation": "Begin after ...Qxd4+ in the bishop-promotion variation. White has Kb6, Be6 and Bh8 against Ka3, Qd4 and pawns a4/e7. White must answer the queen check.",
+      "evidence": {
+        "timestamp_s": 118
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "queen_version",
+      "fen": "7Q/4p3/1K2B3/8/p2q4/k7/8/8 w - - 0 1",
+      "question": "Would a queen on h8 give the same result?",
+      "explanation": "This separately pictured seven-piece diagram has Qh8 instead of Bh8. The extra queen’s control changes whether Black has a legal reply after capture.",
+      "evidence": {
+        "timestamp_s": 76
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "triple_bishop_capture",
+      "start": "start",
+      "title": "The promoted bishop captures",
+      "san": [
+        "Bxd4"
+      ],
+      "commentary": [
+        "Begin after ...Qxd4+ in the bishop-promotion variation. White has Kb6, Be6 and Bh8 against Ka3, Qd4 and pawns a4/e7. White must answer the queen check.",
+        "Bxd4 answers the check and removes the queen. Black can still play ...Kb4, so this is not stalemate. White has two bishops against two pawns and retains an exact win; the longer conversion is outside this short branch."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxd4 answers the check and removes the queen. Black can still play ...Kb4, so this is not stalemate. White has two bishops against two pawns and retains an exact win; the longer conversion is outside this short branch.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "8/4p3/1K2B3/8/p2B4/k7/8/8 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "triple_queen_capture",
+      "start": "queen_version",
+      "title": "The queen capture stalemates",
+      "san": [
+        "Qxd4"
+      ],
+      "commentary": [
+        "Compare the queen-promotion version of the same checking sacrifice.",
+        "Qxd4 is stalemate. Qd4 controls a4 and b4; Be6 controls a2 and b3; Kb6 controls a5 and b5. Ka3 is not checked, a4 is blocked by the king on a3 and e7 is blocked by Be6 on e6. Black has no legal move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxd4 is stalemate. Qd4 controls a4 and b4; Be6 controls a2 and b3; Kb6 controls a5 and b5. Ka3 is not checked, a4 is blocked by the king on a3 and e7 is blocked by Be6 on e6. Black has no legal move.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/4p3/1K2B3/8/p2Q4/k7/8/8 b - - 0 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "triple_wrong_king",
+      "start": "start",
+      "title": "Independent king escape loses the win",
+      "san": [
+        "Ka5"
+      ],
+      "commentary": [
+        "Begin after ...Qxd4+ in the bishop-promotion variation. White has Kb6, Be6 and Bh8 against Ka3, Qd4 and pawns a4/e7. White must answer the queen check.",
+        "Ka5 evades check without removing the queen, but this exact position is losing for White. Bxd4 is the only legal move preserving the win in the supported diagram."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ka5 evades check without removing the queen, but this exact position is losing for White. Bxd4 is the only legal move preserving the win in the supported diagram.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "7B/4p3/4B3/K7/p2q4/k7/8/8 b - - 1 1",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is the queen capture safe with a bishop on h8?",
+      "answer": "After Bxd4, the black king still has b4. A queen on d4 would control that square and finish the stalemate cage."
+    },
+    {
+      "node": "queen_version",
+      "prompt": "Why can Black not simply advance e7?",
+      "answer": "Black’s e7 pawn cannot move forward because White’s bishop occupies e6. A pawn cannot capture the piece directly in front of it."
+    }
+  ],
+  "defaultBranch": "triple_bishop_capture",
+  "practiceBranch": "triple_bishop_capture",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Only the seven-piece endings after ...Qxd4+ are checked here: the bishop variation at 118s and queen variation at 76s. The earlier nine/eight-piece promotion decision and triple-bishop mating variations remain source context. This lesson verifies the final capture and stalemate contrast rather than claiming an exact proof of the larger underpromotion setup.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

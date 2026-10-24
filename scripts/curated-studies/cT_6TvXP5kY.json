@@ -1,0 +1,145 @@
+{
+  "video_id": "cT_6TvXP5kY",
+  "title": "Majestic Zugzwang",
+  "summary": "Let Black promote, then use the king to close the queen’s last safe squares.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/4K3/8/8/4N1pP/5p1N/7k w - - 0 1",
+      "question": "Can White afford to let Black promote?",
+      "explanation": "White has two knights and an h-pawn against two advanced pawns. Moving the h2 knight to f1 attacks g3 and leaves the e3 knight ready to recapture on f1.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "queen_cage",
+      "fen": "8/8/4K3/8/7P/4N3/5p2/5Nqk w - - 0 3",
+      "question": "Where should the king go after the queen appears?",
+      "explanation": "The queen on g1 looks powerful, but both knights and the h4 pawn already cover most of its exits. White must complete that cage without disturbing the knights.",
+      "evidence": {
+        "timestamp_s": 73
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "zugzwang_queen_cage",
+      "start": "start",
+      "title": "Allow a queen, then close the cage",
+      "san": [
+        "Nhf1",
+        "g2",
+        "h4",
+        "g1=Q",
+        "Kf7",
+        "Qxf1",
+        "Nxf1",
+        "Kg2",
+        "Nd2",
+        "Kg3",
+        "h5"
+      ],
+      "commentary": [
+        "Begin from the complete seven-piece source diagram. Selected promotion branches are encoded; this is not a claim to enumerate all Black defenses.",
+        "Nhf1 moves the attacked h2 knight to f1 and attacks g3. The other knight stays on e3 to protect f1.",
+        "g2 advances the attacked pawn toward promotion. This is the source’s selected response.",
+        "h4 starts the distant passer and controls g5. White deliberately leaves both promotion squares available.",
+        "g1=Q avoids the immediate capture on f1 and creates the source’s queen-cage challenge.",
+        "Kf7 covers g6, g7 and g8. Together with the knights and h-pawn, it leaves the queen without a safe escape; the king and f2 pawn are also blocked.",
+        "Qxf1 removes one knight but gives up the queen. This is the illustrated capture, not the queen’s only legal move.",
+        "Nxf1 recaptures with the knight from e3. The queen is gone and White can blockade f2 with the surviving knight.",
+        "Kg2 frees the corner and attacks the knight on f1, forcing White to reposition it.",
+        "Nd2 moves the knight to a square controlling f1. Black cannot safely promote the pawn there.",
+        "Kg3 heads toward the h-pawn but cannot catch it in this exact position.",
+        "h5 advances the protected winning plan. The exact tablebase still gives White a win; the remaining race is not invented here."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "h5 advances the protected winning plan. The exact tablebase still gives White a win; the remaining race is not invented here.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/5K2/8/7P/8/6k1/3N1p2/8 b - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "zugzwang_capture_promotion",
+      "start": "start",
+      "title": "Promote by capturing the knight",
+      "san": [
+        "Nhf1",
+        "g2",
+        "h4",
+        "gxf1=Q",
+        "Nxf1",
+        "Kg2",
+        "Nd2",
+        "Kg3",
+        "h5"
+      ],
+      "commentary": [
+        "Compare Black’s illustrated promotion with capture instead of creating a queen on g1.",
+        "Nhf1 attacks the g3 pawn and is protected by Ne3.",
+        "g2 brings that pawn one step from promotion.",
+        "h4 creates the distant passer while keeping both knights in place.",
+        "gxf1=Q captures the knight and promotes, but the new queen lands on a square guarded by Ne3.",
+        "Nxf1 removes the new queen immediately. White retains the distant pawn and a knight able to stop f2.",
+        "Kg2 attacks that knight, trying to release the f-pawn.",
+        "Nd2 retreats while controlling f1, maintaining the blockade.",
+        "Kg3 approaches the h-file too late to stop the checked winning race.",
+        "h5 advances toward promotion. White’s exact win is checked at this endpoint rather than inferred from material alone."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "h5 advances toward promotion. White’s exact win is checked at this endpoint rather than inferred from material alone.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/4K3/7P/8/6k1/3N1p2/8 b - - 0 5",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "queen_cage",
+      "prompt": "Why move the king away from the pawns?",
+      "answer": "Kf7 closes g6, g7 and g8, the queen’s upper exits. The knights and h-pawn cover the lower exits, forcing Black to give something up."
+    },
+    {
+      "node": "queen_cage",
+      "prompt": "Why can the remaining knight stop f2?",
+      "answer": "After ...Qxf1 Nxf1 ...Kg2, Nd2 controls f1. The knight changes blockade square while the h-pawn races."
+    }
+  ],
+  "defaultBranch": "zugzwang_queen_cage",
+  "practiceBranch": "zugzwang_queen_cage",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "The complete seven-piece opening board is reconstructed from the saved images. The two illustrated queen-promotion choices and selected king/knight replies are checked move by move. Safe-square coverage explains Kf7; no exhaustive defense tree is claimed.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

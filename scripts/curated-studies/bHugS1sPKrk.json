@@ -1,0 +1,250 @@
+{
+  "video_id": "bHugS1sPKrk",
+  "title": "I Made a Big Mistake: Keep the Pawn in Reserve",
+  "summary": "Coordinate king and knight, use d3 with check, then hold the pawn back to trap an underpromoted knight.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/1N6/2k1K3/8/6p1/8/3P4/8 w - - 0 1",
+      "question": "How can White stop g-promotion without letting the king capture d2?",
+      "explanation": "White Ke6/Nb7/d2 faces Black Kc6/g4. Stopping the g-pawn is not enough: the knight must also keep the black king away from d2.",
+      "evidence": {
+        "timestamp_s": 0.0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "capture_choice",
+      "fen": "8/8/8/4K3/2k2N2/8/3P2p1/8 w - - 0 5",
+      "question": "Should White take the g2 pawn immediately?",
+      "explanation": "The knight controls g2 and d3. Moving it to g2 releases d3 to Black’s king.",
+      "evidence": {
+        "timestamp_s": 84.0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "reserve_tempo",
+      "fen": "8/8/8/8/4KN2/2kP4/8/6n1 w - - 0 7",
+      "question": "Which piece should move after Black’s knight underpromotion?",
+      "explanation": "The black knight on g1 has few safe squares. White can use a king move to complete the cage while preserving d3-d4 as a reserve tempo.",
+      "evidence": {
+        "timestamp_s": 140.0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "mistake_reserve_tempo",
+      "start": "start",
+      "title": "Coordinate first, then preserve the pawn tempo",
+      "san": [
+        "Nd8+",
+        "Kc5",
+        "Ke5",
+        "g3",
+        "Ne6+",
+        "Kc4",
+        "Nf4",
+        "g2",
+        "d3+",
+        "Kc3",
+        "Ke4",
+        "g1=N",
+        "Ke3",
+        "Kb2",
+        "d4",
+        "Kc3",
+        "d5"
+      ],
+      "commentary": [
+        "White Ke6/Nb7/d2 faces Black Kc6/g4. Stopping the g-pawn is not enough: the knight must also keep the black king away from d2.",
+        "Nd8+ checks the king while choosing a route through e6 and f4. The direct Nd6 blockade gives up the win.",
+        "Kc5 stays near the d-pawn’s path. Black aims to overload the knight with two tasks.",
+        "Ke5 takes the opposition and vacates e6 for the knight. White coordinates the king and knight instead of merely chasing the pawn.",
+        "g3 makes the promotion threat urgent. White must control g2 without surrendering the d-pawn.",
+        "Ne6+ checks c5 and steers the knight toward f4. This forcing route gains time.",
+        "Kc4 brings the king toward d3, threatening to blockade or collect White’s pawn.",
+        "Nf4 controls both g2 and d3. This necessary intermediate knight move is visible in the saved board sequence.",
+        "g2 attacks neither knight nor king, but threatens promotion and tempts a premature capture.",
+        "d3+ uses the pawn before capturing on g2. The pawn check forces the black king to choose a less convenient square.",
+        "Kc3 keeps contact with the d-pawn and makes a future knight underpromotion a drawing resource if White rushes.",
+        "Ke4 keeps d3 defended and controls f3, helping to cage a black knight born on g1.",
+        "g1=N avoids the knight fork that a queen promotion would allow. Black hopes to trade this knight for White’s final pawn.",
+        "Ke3 is the precise waiting move. The king controls f2 and f3, and Nf4 controls e2 and h3, so every escape of Ng1 loses the knight. White keeps the d-pawn in reserve.",
+        "Kb2 steps away from the pawn. This is the source’s illustrated lower king route.",
+        "d4 now advances with the white king positioned to restrict the trapped knight.",
+        "Kc3 approaches the pawn again but cannot recover the earlier drawing blockade in time.",
+        "d5 keeps the exact White win. The line stops here rather than assuming a particular further black king or knight reply."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d5 keeps the exact White win. The line stops here rather than assuming a particular further black king or knight reply.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/3P4/5N2/2k1K3/8/6n1 b - - 0 9",
+      "outcome": "loss"
+    },
+    {
+      "id": "mistake_direct_blockade",
+      "start": "start",
+      "title": "Direct blockade only draws",
+      "san": [
+        "Nd6",
+        "g3",
+        "Nc4",
+        "g2",
+        "Ne5+",
+        "Kc5",
+        "Nf3",
+        "Kc4",
+        "d4",
+        "g1=Q",
+        "Nxg1",
+        "Kxd4"
+      ],
+      "commentary": [
+        "White Ke6/Nb7/d2 faces Black Kc6/g4. Stopping the g-pawn is not enough: the knight must also keep the black king away from d2.",
+        "Nd6 gives up the exact win. The knight can approach the g-pawn, but the black king gains access to the d-pawn.",
+        "g3 keeps the knight occupied with promotion.",
+        "Nc4 follows the illustrated route toward the kingside.",
+        "g2 forces White to continue stopping promotion.",
+        "Ne5 prepares Nf3 and controls key central squares for now.",
+        "Kc5 advances toward the d-pawn while White spends knight tempi.",
+        "Nf3 blockades g1 but no longer denies the black king access to c4.",
+        "Kc4 gets close enough to overload the knight.",
+        "d4 tries to save the pawn by advancing it.",
+        "g1=Q offers the promoted queen to pull the knight away from d4.",
+        "Nxg1 removes the queen, but Black has achieved the diversion.",
+        "Kxd4 removes White’s last pawn. King and knight versus king is drawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxd4 removes White’s last pawn. King and knight versus king is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/4K3/8/3k4/8/8/6N1 w - - 0 7",
+      "outcome": "draw"
+    },
+    {
+      "id": "mistake_premature_capture",
+      "start": "capture_choice",
+      "title": "Capturing g2 releases the king",
+      "san": [
+        "Nxg2",
+        "Kd3"
+      ],
+      "commentary": [
+        "Begin after the forcing route has put Nf4 against Kc4/g2.",
+        "Nxg2 removes the passer but releases d3. White throws away the win by abandoning the knight’s second task.",
+        "Kd3 blockades the remaining pawn. The exact ending is drawn; winning the g-pawn alone did not solve White’s problem."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kd3 blockades the remaining pawn. The exact ending is drawn; winning the g-pawn alone did not solve White’s problem.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/4K3/8/3k4/3P2N1/8 w - - 1 6",
+      "outcome": "draw"
+    },
+    {
+      "id": "mistake_rush_after_underpromotion",
+      "start": "reserve_tempo",
+      "title": "Advance the pawn before improving the king",
+      "san": [
+        "d4"
+      ],
+      "commentary": [
+        "Begin after d3+ Kc3 Ke4 g1=N, with White to move.",
+        "d4 spends the reserve pawn tempo too early. The exact knight ending is drawn with best play; White needed Ke3 to finish the cage first."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d4 spends the reserve pawn tempo too early. The exact knight ending is drawn with best play; White needed Ke3 to finish the cage first.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/3PKN2/2k5/8/6n1 b - - 0 7",
+      "outcome": "draw"
+    },
+    {
+      "id": "mistake_king_away",
+      "start": "reserve_tempo",
+      "title": "The king retreats and the knight falls",
+      "san": [
+        "Ke3",
+        "Kb4",
+        "Kf2"
+      ],
+      "commentary": [
+        "Compare the illustrated upper king retreat after the same knight underpromotion.",
+        "Ke3 traps Ng1 while retaining the pawn on d3.",
+        "Kb4 moves away from the trapped knight. This is the source’s alternative to ...Kb2.",
+        "Kf2 approaches the trapped Ng1. The king on f2 covers e2, f3 and h3, so the black knight has no safe escape; White keeps a checked win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kf2 approaches the trapped Ng1. The king on f2 covers e2, f3 and h3, so the black knight has no safe escape; White keeps a checked win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/1k3N2/3P4/5K2/6n1 b - - 3 8",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "capture_choice",
+      "prompt": "Why is Nxg2 too early?",
+      "answer": "The knight on f4 controls both g2 and d3. Capturing g2 gives the black king d3, where it can stop the last white pawn."
+    },
+    {
+      "node": "reserve_tempo",
+      "prompt": "Why move the king rather than push d4?",
+      "answer": "Ke3 completes the cage around Ng1 without spending the pawn’s spare move. Advancing d4 first allows Black to draw with best play."
+    }
+  ],
+  "defaultBranch": "mistake_reserve_tempo",
+  "practiceBranch": "mistake_reserve_tempo",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "The complete five-piece setup is reconstructed from the saved boards. Selected source branches compare the drawing Nd6 route, Nd8+/Ke5/Ne6+/Nf4 coordination, the premature capture on g2, and the final reserve-tempo choice against ...g1=N. These selected lines are exact outcome checks, not a tree of every legal defense. The saved images supply the Nf4 move omitted in the rolling narration.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

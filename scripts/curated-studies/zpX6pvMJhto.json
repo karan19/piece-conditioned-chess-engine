@@ -1,0 +1,205 @@
+{
+  "video_id": "zpX6pvMJhto",
+  "title": "Most Majestic Game",
+  "summary": "Prepare a checking pawn break, test en passant, and build a mating net that makes the opponent\u2019s promotion irrelevant.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/K1k5/8/3p3B/p7/2PP4/8 w - - 0 1",
+      "question": "Can the bishop stop both black pawns?",
+      "explanation": "The study starts after the illustrated Nc6 Kxc6 sacrifice. White must create threats that do more than stop one pawn.",
+      "evidence": {
+        "timestamp_s": 15
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "pawn_break",
+      "fen": "8/8/K4B2/3k4/3p4/p7/2PP4/8 w - - 2 2",
+      "question": "Why advance d3 instead of chasing the a-pawn?",
+      "explanation": "d3 prepares c4 with check. This forces Black to resolve the pawn structure while keeping the bishop ready to control a1.",
+      "evidence": {
+        "timestamp_s": 37
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "mate_choice",
+      "fen": "8/8/K4B2/2k5/2Pp4/3P4/p7/8 w - - 1 4",
+      "question": "Must White stop promotion?",
+      "explanation": "Kb7 builds a mating net against the black king. The apparent race is really about king restriction.",
+      "evidence": {
+        "timestamp_s": 80
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "complete_plan",
+      "start": "start",
+      "san": [
+        "Bf6",
+        "Kd5",
+        "d3",
+        "a2",
+        "c4+",
+        "Kc5",
+        "Kb7",
+        "a1=Q",
+        "Be7#"
+      ],
+      "classification": "selected verified variation",
+      "explanation": "Prepare the bishop, force a pawn decision, then allow promotion and mate.",
+      "end_fen": "8/1K2B3/8/2k5/2Pp4/3P4/8/q7 b - - 1 5",
+      "title": "Follow the complete winning idea",
+      "outcome": "loss"
+    },
+    {
+      "id": "bishop_dual_role",
+      "start": "start",
+      "san": [
+        "Bf6",
+        "Kd5"
+      ],
+      "classification": "selected verified variation",
+      "explanation": "Prepare the bishop before changing the pawn structure.",
+      "end_fen": "8/8/K4B2/3k4/3p4/p7/2PP4/8 w - - 2 2",
+      "title": "A bishop with two jobs",
+      "outcome": "win"
+    },
+    {
+      "id": "rush_promotion",
+      "start": "start",
+      "san": [
+        "Bf6",
+        "a2",
+        "Bxd4",
+        "a1=Q+",
+        "Bxa1"
+      ],
+      "classification": "selected verified variation",
+      "explanation": "The bishop captures d4 and reaches the a1 diagonal in time.",
+      "end_fen": "8/8/K1k5/8/8/8/2PP4/B7 b - - 0 3",
+      "title": "If Black rushes promotion",
+      "outcome": "loss"
+    },
+    {
+      "id": "wrong_king_square",
+      "start": "start",
+      "san": [
+        "Bf6",
+        "Kc5",
+        "Be7+",
+        "Kd5",
+        "Bxa3"
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Be7+ attacks the king and exposes the pawn behind it. Kd5 is the illustrated explanatory continuation, not asserted as forced.",
+      "end_fen": "8/8/K7/3k4/3p4/B7/2PP4/8 b - - 0 3",
+      "title": "A skewer on the dark squares",
+      "outcome": "loss"
+    },
+    {
+      "id": "prepare_break",
+      "start": "pawn_break",
+      "san": [
+        "d3",
+        "a2",
+        "c4+",
+        "Kc5",
+        "Kb7",
+        "a1=Q",
+        "Be7#"
+      ],
+      "classification": "selected verified variation",
+      "explanation": "White uses a checking pawn break and king restriction to make promotion irrelevant.",
+      "end_fen": "8/1K2B3/8/2k5/2Pp4/3P4/8/q7 b - - 1 5",
+      "title": "The main mating idea",
+      "outcome": "loss"
+    },
+    {
+      "id": "en_passant_defense",
+      "start": "pawn_break",
+      "san": [
+        "d3",
+        "a2",
+        "c4+",
+        "dxc3",
+        "Bxc3",
+        "a1=Q+",
+        "Bxa1"
+      ],
+      "classification": "selected verified variation",
+      "explanation": "En passant opens the bishop diagonal and concedes the promotion square.",
+      "end_fen": "8/8/K7/3k4/8/3P4/8/B7 b - - 0 5",
+      "title": "Test en passant",
+      "outcome": "loss"
+    },
+    {
+      "id": "king_steps_away",
+      "start": "pawn_break",
+      "san": [
+        "d3",
+        "a2",
+        "c4+",
+        "Kd6",
+        "Bxd4"
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "A representative king retreat allows Bxd4, controlling the promotion diagonal.",
+      "end_fen": "8/8/K2k4/8/2PB4/3P4/p7/8 b - - 0 4",
+      "title": "If the king abandons d4",
+      "outcome": "loss"
+    },
+    {
+      "id": "allow_queen",
+      "start": "mate_choice",
+      "san": [
+        "Kb7",
+        "a1=Q",
+        "Be7#"
+      ],
+      "classification": "selected verified variation",
+      "explanation": "The queen is created too far away to stop Be7 mate.",
+      "end_fen": "8/1K2B3/8/2k5/2Pp4/3P4/8/q7 b - - 1 5",
+      "title": "Allow the queen and deliver mate",
+      "outcome": "loss"
+    }
+  ],
+  "defaultBranch": "complete_plan",
+  "practiceBranch": "complete_plan",
+  "practiceType": "bishop",
+  "startContext": "Begin after the knight sacrifice Nc6 Kxc6. From here, White must coordinate the bishop and pawns against two promotion threats. The selected continuations below are independently checked.",
+  "verification_scope": "Three selected positions and every intermediate position in eight variations tablebase-checked; all encoded moves legal. Winning branches illustrate responses and do not enumerate every legal defense. The preceding eight-piece setup and the claim that its knight sacrifice is best are outside this tablebase check.",
+  "exercises": [
+    {
+      "node": "pawn_break",
+      "prompt": "Why does White need d3 before c4?",
+      "answer": "d3 supports c4 and covers e4. The later c4 check forces the king or pawn to respond while the bishop remains ready to control a1."
+    },
+    {
+      "node": "mate_choice",
+      "prompt": "Why does a new queen fail to save Black?",
+      "answer": "Kb7 controls b6 and c6. Be7 then checks along e7-d6-c5; the bishop, king and pawns cover every escape, while the queen on a1 cannot block or capture the checker."
+    },
+    {
+      "node": "pawn_break",
+      "prompt": "What changes after Black captures en passant?",
+      "answer": "The pawn leaves d4 and lands on c3. Bxc3 captures it and opens a diagonal to a1, stopping promotion."
+    }
+  ],
+  "sourceCorrections": [
+    {
+      "claim": "Opening transcript says knight to c7.",
+      "correction": "The board shows the legal knight move b8-c6. The study starts after ...Kxc6."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

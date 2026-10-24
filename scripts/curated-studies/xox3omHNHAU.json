@@ -1,0 +1,163 @@
+{
+  "video_id": "xox3omHNHAU",
+  "title": "Majestic Deception",
+  "summary": "Refuse the tempting queen promotion: a checking bishop sacrifice sets up a knight promotion with mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "4nq2/3P1P1K/5k2/8/5B2/8/8/8 w - - 0 1",
+      "question": "What must White do about ...Qg7 mate?",
+      "explanation": "Begin after ...Nxe8. The rook has already been sacrificed; promoting a queen immediately ignores Black’s mating threat.",
+      "evidence": {
+        "timestamp_s": 82
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "deception_knight_mate",
+      "start": "start",
+      "title": "Offer the bishop, then promote with mate",
+      "san": [
+        "Bg5+",
+        "Kxf7",
+        "d8=N#"
+      ],
+      "commentary": [
+        "This seven-piece diagram begins after the earlier eight-piece rook interference sequence. That earlier sequence remains source context.",
+        "Bg5+ gives a forcing check and offers the bishop. White must use the reply to decide which promotion is safe.",
+        "Kxf7 removes the f-pawn and keeps control of g7, preserving the threat of ...Qg7 mate.",
+        "d8=N# promotes with check. The knight attacks f7, the bishop covers e7 and f6, Kh7 covers g6/g7/g8, and Black’s own queen and knight occupy f8/e8."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d8=N# promotes with check. The knight attacks f7, the bishop covers e7 and f6, Kh7 covers g6/g7/g8, and Black’s own queen and knight occupy f8/e8.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3Nnq2/5k1K/8/6B1/8/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "deception_bishop_taken",
+      "start": "start",
+      "title": "Capture the offered bishop",
+      "san": [
+        "Bg5+",
+        "Kxg5",
+        "fxe8=Q"
+      ],
+      "commentary": [
+        "Compare Black’s capture of the checking bishop rather than the pawn.",
+        "Bg5+ offers material with check, forcing the king to choose between captures or a retreat.",
+        "Kxg5 accepts the bishop but abandons the king’s support of g7. Black can no longer deliver the same protected queen mate.",
+        "fxe8=Q captures the knight with the f-pawn, keeping the d7 pawn alive. The exact resulting queen ending is winning; choosing the d-pawn for this capture instead would draw."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "fxe8=Q captures the knight with the f-pawn, keeping the d7 pawn alive. The exact resulting queen ending is winning; choosing the d-pawn for this capture instead would draw.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "4Qq2/3P3K/8/6k1/8/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "deception_early_queen",
+      "start": "start",
+      "title": "Promote before addressing the threat",
+      "san": [
+        "dxe8=Q",
+        "Qg7#"
+      ],
+      "commentary": [
+        "Test the natural capture-promotion immediately after ...Nxe8.",
+        "dxe8=Q gains a queen but gives Black a forced mate. White’s material gain does not address king safety.",
+        "Qg7# is protected by Kf6. White’s Kh7 cannot capture the queen, and its queen and bishop cannot interpose against adjacent check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qg7# is protected by Kf6. White’s Kh7 cannot capture the queen, and its queen and bishop cannot interpose against adjacent check.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "4Q3/5PqK/5k2/8/5B2/8/8/8 w - - 1 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "deception_wrong_promotion",
+      "start": "start",
+      "title": "Choose a queen after ...Kxf7",
+      "san": [
+        "Bg5+",
+        "Kxf7",
+        "d8=Q",
+        "Qg7#"
+      ],
+      "commentary": [
+        "Even after the bishop check, the promotion choice matters.",
+        "Bg5+ forces Black to respond to check.",
+        "Kxf7 keeps g7 protected while removing the other passer.",
+        "d8=Q loses because it fails to check the king on f7. The knight promotion would have ended the game immediately.",
+        "Qg7# punishes the lost tempo. The black king protects the queen and White has no legal defense."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qg7# punishes the lost tempo. The black king protects the queen and White has no legal defense.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "3Qn3/5kqK/8/6B1/8/8/8/8 w - - 1 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "deception_wrong_capture",
+      "start": "start",
+      "title": "Use the wrong pawn to capture the knight",
+      "san": [
+        "Bg5+",
+        "Kxg5",
+        "dxe8=Q"
+      ],
+      "commentary": [
+        "Compare the two pawns that can capture e8 after the bishop is taken.",
+        "Bg5+ forces the king to answer check while offering the bishop.",
+        "Kxg5 removes the bishop and leaves both white pawns able to capture Ne8.",
+        "dxe8=Q preserves f7 rather than d7. This exact queen-and-pawn ending is drawn with best play; fxe8=Q is the winning capture."
+      ],
+      "classification": "independent comparison of the two legal capture-promotions",
+      "explanation": "dxe8=Q preserves f7 rather than d7. This exact queen-and-pawn ending is drawn with best play; fxe8=Q is the winning capture.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw"
+      ],
+      "end_fen": "4Qq2/5P1K/8/6k1/8/8/8/8 b - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is the knight stronger than a queen after ...Kxf7?",
+      "answer": "Only the knight promotion checks f7. With the bishop and king controlling the remaining flights, that check is mate; a queen promotion permits ...Qg7#."
+    }
+  ],
+  "defaultBranch": "deception_knight_mate",
+  "practiceBranch": "deception_knight_mate",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Nxe8 at 82 seconds, the visually reconstructed seven-piece position. The earlier d7, ...Qf8 and Re8 sacrifice belong to an eight-piece setup and remain unverified source context here. Selected later alternatives are checked exactly.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    "Capture-promotion is made explicit from the visual sequence: after ...Kxg5, fxe8=Q wins and preserves d7; the independently tested dxe8=Q comparison draws."
+  ],
+  "verificationDate": "2026-10-23"
+}

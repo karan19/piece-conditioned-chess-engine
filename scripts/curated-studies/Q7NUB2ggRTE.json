@@ -1,0 +1,161 @@
+{
+  "video_id": "Q7NUB2ggRTE",
+  "title": "Majestic Victory: The Last Rank",
+  "summary": "Walk away from the rook checks, then underpromote so capturing the rook does not stalemate the king.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
+      "question": "Can the king escape the rook’s checks?",
+      "explanation": "White has Kb6 and c6 against Ka1 and Rd5. The pawn can advance, but the king must choose a route that eventually escapes the rook’s skewers.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "promotion_choice",
+      "fen": "8/2P5/8/8/3r4/8/2K5/k7 w - - 9 6",
+      "question": "Which promotion avoids the last stalemate trap?",
+      "explanation": "White has reached Kc2 and c7 against Ka1 and Rd4. After a queen promotion, ...Rc4+ Qxc4 would stalemate; a rook leaves a2 available.",
+      "evidence": {
+        "timestamp_s": 92
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "last_rank_rook_promotion",
+      "start": "start",
+      "title": "Walk down the board, then underpromote",
+      "san": [
+        "c7",
+        "Rd6+",
+        "Kb5",
+        "Rd5+",
+        "Kb4",
+        "Rd4+",
+        "Kb3",
+        "Rd3+",
+        "Kc2",
+        "Rd4",
+        "c8=R",
+        "Ra4",
+        "Kb3"
+      ],
+      "commentary": [
+        "Begin from the complete four-piece source board and follow the selected checking route.",
+        "c7 gets one step from promotion while controlling d8.",
+        "Rd6+ checks the king across the sixth rank.",
+        "Kb5 moves away from the rook rather than stepping onto its next skewer line.",
+        "Rd5+ follows with another rank check.",
+        "Kb4 continues down the board.",
+        "Rd4+ maintains the checking pursuit.",
+        "Kb3 heads toward the lower edge of the board.",
+        "Rd3+ is the next illustrated rook check.",
+        "Kc2 finally steps away from the checking ranks. The rook cannot use a lower rank to create the same skewer.",
+        "Rd4 is the source’s last stalemate trap before promotion.",
+        "c8=R avoids the queen’s diagonal control of a2 and prepares a mating threat on a8.",
+        "Ra4 stops that immediate a-file mating threat.",
+        "Kb3 attacks Ra4 and creates the Rc1 mating threat. The exact position is won; the source’s eventual rook surrender is not assumed to be the only legal reply."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kb3 attacks Ra4 and creates the Rc1 mating threat. The exact position is won; the source’s eventual rook surrender is not assumed to be the only legal reply.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2R5/8/8/8/r7/1K6/8/k7 b - - 2 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "last_rank_queen_stalemate",
+      "start": "promotion_choice",
+      "title": "Promote to a queen and take the rook",
+      "san": [
+        "c8=Q",
+        "Rc4+",
+        "Qxc4"
+      ],
+      "commentary": [
+        "Compare the source’s natural queen promotion from the exact late diagram.",
+        "c8=Q gives up the forced win by allowing a checking stalemate sacrifice.",
+        "Rc4+ checks Kc2 and offers the rook along the queen’s file.",
+        "Qxc4 is actual stalemate. Qc4 controls a2, Kc2 controls b1/b2, and Ka1 is not in check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxc4 is actual stalemate. Qc4 controls a2, Kc2 controls b1/b2, and Ka1 is not in check.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/2Q5/8/2K5/k7 b - - 0 7",
+      "outcome": "draw"
+    },
+    {
+      "id": "last_rank_rook_capture",
+      "start": "promotion_choice",
+      "title": "Test the sacrifice against a rook",
+      "san": [
+        "c8=R",
+        "Rc4+",
+        "Rxc4",
+        "Ka2"
+      ],
+      "commentary": [
+        "This independent representative continuation tests the same checking sacrifice after rook promotion.",
+        "c8=R retains White’s exact win without adding the queen’s diagonal control of a2.",
+        "Rc4+ offers the rook with check, as in the queen comparison.",
+        "Rxc4 captures the rook. Unlike Qxc4, the rook does not control a2 diagonally.",
+        "Ka2 is legal, so there is no stalemate. The exact rook-versus-king position is winning."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ka2 is legal, so there is no stalemate. The exact rook-versus-king position is winning.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/2R5/8/k1K5/8 w - - 1 8",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "promotion_choice",
+      "prompt": "Why is a rook better than a queen?",
+      "answer": "After ...Rc4+ Qxc4 the queen covers a2 and stalemates Ka1. A rook on c4 leaves a2 available, so the capture does not end the game in a draw."
+    },
+    {
+      "node": "start",
+      "prompt": "What does the king walk accomplish?",
+      "answer": "It reaches c2 after the repeated rank checks, where Black cannot create the same lower-rank skewer. White still has to solve the promotion stalemate trap afterward."
+    }
+  ],
+  "defaultBranch": "last_rank_rook_promotion",
+  "practiceBranch": "last_rank_rook_promotion",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "The complete four-piece source root and late promotion diagram are visually reconstructed. The selected king walk and rook promotion remain source-based; the parallel ...Rc4+ Rxc4 ...Ka2 comparison is independently supplied. Every encoded position is checked exactly, and a won endpoint is distinguished from actual mate.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

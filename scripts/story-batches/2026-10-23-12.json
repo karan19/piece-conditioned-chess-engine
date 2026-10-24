@@ -1,0 +1,239 @@
+{
+  "batch_id": "2026-10-23-12",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three studies, ten selected branches and 57 exact positions. One eight-piece interference remains pending analysis with complete source material.",
+  "reviews": {
+    "rLE0oYWeGWY": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 20 exact positions from the seven-piece phase after ...Rd2 at 40 seconds. Kf4 and Bd3 double interference compared through both rook captures and a king escape. The d-rook line reaches source Qg5 mate; the c-rook and king-escape lines include independently supplied forced ...Rh2 Rxh2# completions. Source Rh1 mate claim corrected: it is check before the remaining rook block. Earlier eight-piece opening remains source context.",
+      "source_images": [
+        {
+          "file": "rLE0oYWeGWY/montage_accepted.jpg",
+          "sha256": "d1ebd6416485463d3291bc18a06a07fa81aed9d3b66949c491e71a3a714a8f90"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00001.jpg",
+          "sha256": "122c95ab53c954aaf16b2e36adbf6f1786e1e677de215105cc1161d4a45054cb"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00003.jpg",
+          "sha256": "5028c744d0e8da3fe36e82a229b7ff119a013c089d73fd5f66d59a49f99d8182"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00006.jpg",
+          "sha256": "e9636a2b5712df8e36abd94c1c855df856e81d72fe8a979e050b77b9609520fd"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00007.jpg",
+          "sha256": "4b4b3fec12799194aaa295547b3b5bb94bd6e77f460e771151ffb0b9c9aa3679"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00008.jpg",
+          "sha256": "6284cc2b9454c8ddb52812d79eeef3dd27aee5e7bee137899b21bf751fa1d8e9"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00009.jpg",
+          "sha256": "e8bfeff60ecd849be983a54e93dc47edd16d59a66f6f1abb7b4f0c838f84be8d"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00010.jpg",
+          "sha256": "b5d7ad38aa454105f2a49a2241cc147d845dbf9394fd41ad31502e92c1879a1a"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00011.jpg",
+          "sha256": "99e9404126ac21946c3c66c5c53984d36e094141e421b0a2cde937bef258bb2c"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00013.jpg",
+          "sha256": "50e94b23c4b505ef1ec222b9c2eea259bd9c335723d813d18ead6d28bfdbafa7"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00019.jpg",
+          "sha256": "793e38f8195f3298f0fc4e1ffa07ada0564c6e29bb7abe78fa854717729ff1fb"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00021.jpg",
+          "sha256": "bbbd5b43f8d1184ac4620d6f6564ed5a0fcf1999e11bbacdd08d62146351c681"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00022.jpg",
+          "sha256": "88209377c1bf449208b6da5e21902d832312a8921268f158ccf039a061681548"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00025.jpg",
+          "sha256": "41c6698dbe9a841350a12cc4343c262e6da80c3624209a6027ba3b02475ef306"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00026.jpg",
+          "sha256": "208667230e9fb9c406b6e6b61599e7b73827c2dcaef25e9bfb157e5d857a1eb3"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00028.jpg",
+          "sha256": "b5a1e11b9ed23a5c1f6a20644a543b178a8feee1d2c1f7f12abb73584fef6030"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00033.jpg",
+          "sha256": "0a44bb1727057e6b96d2170d62c52540f7f83c71fe1ff913166d16674d6b3754"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00035.jpg",
+          "sha256": "775082146ce5b30ce835da85a9495e3db4c2cf025c58d9f4ac4babdf89c752aa"
+        },
+        {
+          "file": "rLE0oYWeGWY/images/image_00037.jpg",
+          "sha256": "6e576c6a5a092f263b29f0398e2dbc5a386c2cc9cdd9bc6c5b5fbffbeded21ed"
+        }
+      ]
+    },
+    "Lf3fQRT0SIc": {
+      "result": "verified_selected_lines",
+      "notes": "Four branches, 17 exact positions from full five-piece board. Ne2, Kc4 and Nd4 prepare the rook sacrifice Nxc6+ ...Kb6. Three actual stalemates contrasted with c8=R; exact winning underpromotion endpoint is not called immediate mate.",
+      "source_images": [
+        {
+          "file": "Lf3fQRT0SIc/montage_accepted.jpg",
+          "sha256": "a27fc32e641476dacd8c1ba0039c0c61e74163822ac9bb9a967d1cb07da47104"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00001.jpg",
+          "sha256": "ca049750ba674460e5ececdec368590a0f0af38a96c4596503da00fd5ed98c9c"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00008.jpg",
+          "sha256": "665bb81e285310f676ad2b7e2a5fa8a91863ab84b7a2d11a8015eaad7e5a5d9e"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00015.jpg",
+          "sha256": "f1cc9f92a3d9f765be6d7bbd9adc11f2b7158a0dcf5f79f9957d82776549c4fe"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00018.jpg",
+          "sha256": "0cd275afd2c12d4197fa7f6b45ffdc1d455b8f6de82a6c6f85edbf65d12721db"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00022.jpg",
+          "sha256": "9a92b32ae66481aedda95964dfc87a51be42c702a36f8ad6ee8251ce82b831c2"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00026.jpg",
+          "sha256": "424fd18c0c40f71da2caf1c2f32022fb3e1c2421fba393f22c95048c2021f8f2"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00028.jpg",
+          "sha256": "3949c595196c5de4729f11f43d77d688516745099111bd1116fea4359f1a8a82"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00029.jpg",
+          "sha256": "566abff19b01e710ad92ebb7305d1c0e49569c0bb21b23cd48c03b37cb14282c"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00030.jpg",
+          "sha256": "4b76531d07e7b0d2f135b6543185361c490933ae5aaa76c5db488983399ca31f"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00032.jpg",
+          "sha256": "d098d9619151d59c33d20cb07c3c3a3589b49a76e29e2b06276766d599223f38"
+        },
+        {
+          "file": "Lf3fQRT0SIc/images/image_00033.jpg",
+          "sha256": "2821ad9332cd4a6944fe1de331b1e04d4afd9a84b3568532323778322db4ab06"
+        }
+      ]
+    },
+    "i5FEn9PMcAg": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 20 exact positions from stable six-piece board after ...c3 at 17 seconds. Bg2 supports Qf3 after both promotions; compare Kxg2 a8=Q+ and drawing Bd5. Qh3+ ...Kg5 connects saved Qf3 and Qh6 diagrams as explicitly independent legal reconstruction; ...Kf5 Qxc1 representative completion independently labeled. Advertisement segment omitted.",
+      "source_images": [
+        {
+          "file": "i5FEn9PMcAg/montage_accepted.jpg",
+          "sha256": "9a883512098a9ef25557856aa06ce850c7f2f5dacaf95c0514912616fb79a87b"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00001.jpg",
+          "sha256": "618d5f466e47cc7300d7e4d2a1882d8fe64e033a60f38e3fdb38d179347b8925"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00006.jpg",
+          "sha256": "75fac49f3595c2c8572c7b8627b508de712efcc3b118142dbdf59ac8edad95e2"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00007.jpg",
+          "sha256": "a4e1249a231cd7538bd53d53dcca2a00fe9df5e0d6ed60c702b3558c86745273"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00011.jpg",
+          "sha256": "8b1486abe53278d98db621432d21832a87a0c7788654eaab074f525de57791d9"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00012.jpg",
+          "sha256": "4eb97c65ac1e358a4c38058abb2f526de0db8c98b2c4271ca7aabb120b3f72ec"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00014.jpg",
+          "sha256": "ee38a7b3303aac93c2838698e150955024c27d9997df414742507aef9d5c0ff4"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00015.jpg",
+          "sha256": "4ec01cbb9b263bc4770cf31a0e2d078344d547a1abf89a933a8aacf74e6d5a08"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00017.jpg",
+          "sha256": "3700f20e7e80ee950c33cdab25a7a356af586750c8072567d8d3f40334b955eb"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00019.jpg",
+          "sha256": "048624b53b802be67650c62c4f9c9655ffddbe324e81c0ef2bba7a05fbfa61b0"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00021.jpg",
+          "sha256": "04b58618d5ad7c4ef0996f4ddb7ae27547c3515c17f8d016401c6bdb87e1cb95"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00023.jpg",
+          "sha256": "8ddcefc58c39d9e50ef49bc85bfb143a24b59ef2d25ba5bad4c2b715676bf415"
+        },
+        {
+          "file": "i5FEn9PMcAg/images/image_00024.jpg",
+          "sha256": "c53660c9b2b554462536feeacdb371773ab930115cced7c8650a79e1c764c36a"
+        }
+      ]
+    },
+    "q_gpX86BWIY": {
+      "result": "awaiting_reconstruction",
+      "notes": "Saved stable frame after ...Bf3 at 21 seconds contains eight pieces: White Kh8 Rh1 a7 d7; Black Kc5 Rd2 Bf3 h7. FEN 7K/P2P3p/8/2k5/8/5b2/3r4/7R w - - 0 1. Central Rh5+ and Rd5 interference retain eight pieces before capture. Source images and narration are present; this is an analysis requirement, not an information gap.",
+      "analysis_required": "Verify the eight-piece central interference and competing defenses with supported larger-position analysis, or reconstruct and disclose a substantive later conversion from a seven-piece capture. Do not certify the eight-piece sacrifice from caption claims or a winning terminal diagram alone.",
+      "source_images": [
+        {
+          "file": "q_gpX86BWIY/montage_accepted.jpg",
+          "sha256": "2f3da0d8da53f99d6b3e1f9ad49615e9bafe62d3982443dd5f9bb7b8547e44f3"
+        },
+        {
+          "file": "q_gpX86BWIY/images/image_00001.jpg",
+          "sha256": "afa5332e74327638f9cd7385a177a697e05e9ed54ff6aec0735b7ea6b40db246"
+        },
+        {
+          "file": "q_gpX86BWIY/images/image_00002.jpg",
+          "sha256": "3efc4f498cda4d85f246c61582829556c8ef4a6406ce68873af7896801b91bf0"
+        },
+        {
+          "file": "q_gpX86BWIY/images/image_00006.jpg",
+          "sha256": "0bc8cc287098745064e551f27a52be4fbf23d53eb9e29d4b24e4a058d48865fb"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 57,
+    "selected_branches": 10,
+    "tests": "100 tests passed across 16 files. Every encoded position evidence/replay checked; focused coverage for sole rook interposition, actual mate, all three stalemates, legal a6 flight after rook promotion, and bishop-supported Qf3.",
+    "production_build": "passed",
+    "ui_review": "CUA inspected final queen stalemate, complete rook-underpromotion board, Air queen skewer, and Double Trouble Rh1+ correction.",
+    "screenshot": "docs/screenshots/endgame-stories-batch-12.png",
+    "queue_counts": {
+      "verified_selected_lines": 37,
+      "awaiting_reconstruction": 186,
+      "needs_information": 23,
+      "not_applicable": 2
+    },
+    "local_only": true
+  }
+}

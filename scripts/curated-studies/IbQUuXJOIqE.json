@@ -1,0 +1,154 @@
+{
+  "video_id": "IbQUuXJOIqE",
+  "title": "Knights of Doom!",
+  "summary": "Sacrifice the rook to draw a knight into the mating net, then use a king waiting move against a second underpromotion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/3N4/3N4/8/1p1R4/n1k3K1 w - - 0 1",
+      "question": "Should White defend the rook or offer it with check?",
+      "explanation": "Black’s king has reached c1. The pawn on b2 threatens promotion, while Na1 can fork a rook on c2.",
+      "evidence": {
+        "timestamp_s": 107
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "second_promotion",
+      "fen": "8/8/8/3N4/8/1N6/1pn5/3k1K2 b - - 3 3",
+      "question": "Does another knight promotion stop the win?",
+      "explanation": "The rook has been sacrificed. The white knights on b3 and d5 cover the king’s escapes, and Kf1 prepares a mating net around Kd1.",
+      "evidence": {
+        "timestamp_s": 132
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "doom_second_underpromotion",
+      "start": "start",
+      "title": "Sacrifice, close the net, then wait",
+      "san": [
+        "Rc2+",
+        "Nxc2",
+        "Nb3+",
+        "Kd1",
+        "Kf1",
+        "b1=N",
+        "Kf2",
+        "Nca3",
+        "Ne3#"
+      ],
+      "commentary": [
+        "Begin after ...Kc1 in the seven-piece phase. The earlier eight-piece setup and first underpromotion remain source context.",
+        "Rc2+ offers the rook with check. White forces Black to address the king attack instead of simply promoting.",
+        "Nxc2 accepts with the knight from a1, drawing it into the final mating arrangement.",
+        "Nb3+ checks from d4 and covers a1, c1 and d2. The other white knight stays on d5.",
+        "Kd1 is the illustrated escape. Returning to b1 would allow Nc3 mate.",
+        "Kf1 closes e1 and e2. White threatens Nc3 mate against the confined king.",
+        "b1=N underpromotes again. The new knight controls c3, so the immediate mating jump can be captured.",
+        "Kf2 is the waiting move. It covers e1 and e2 from a different square, putting Black to move while its knights must preserve the defense.",
+        "Nca3 moves the c2 knight to the square shown in the saved frame. The automatic captions say c3 here, but that is not a legal knight move from c2. The b1 knight stays in place to guard c3.",
+        "Ne3# switches the mating square. The black king on d1 is checked by Ne3; Nb3 covers c1 and d2, Kf2 covers e1 and e2, and neither black knight can remove the check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Ne3# switches the mating square. The black king on d1 is checked by Ne3; Nb3 covers c1 and d2, Kf2 covers e1 and e2, and neither black knight can remove the check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/nN2N3/5K2/1n1k4 b - - 3 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "doom_king_corner",
+      "start": "start",
+      "title": "The black king returns to b1",
+      "san": [
+        "Rc2+",
+        "Nxc2",
+        "Nb3+",
+        "Kb1",
+        "Nc3#"
+      ],
+      "commentary": [
+        "Compare the source’s king retreat toward b1 after the rook sacrifice.",
+        "Rc2+ sacrifices the rook with tempo.",
+        "Nxc2 removes the rook but places the black knight where it does not prevent White’s mating jump.",
+        "Nb3+ forces the king to choose its next square.",
+        "Kb1 steps back into the corner arrangement covered by the two white knights.",
+        "Nc3# gives actual mate. Nc3 checks b1 and covers a2 and c2; Nb3 covers a1 and c1. Black’s b2 pawn blocks another flight square."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nc3# gives actual mate. Nc3 checks b1 and covers a2 and c2; Nb3 covers a1 and c1. Black’s b2 pawn blocks another flight square.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/1NN5/1pn5/1k4K1 b - - 3 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "doom_queen_promotion",
+      "start": "second_promotion",
+      "title": "Promote to a queen instead",
+      "san": [
+        "b1=Q",
+        "Nc3#"
+      ],
+      "commentary": [
+        "Compare a queen promotion after White has played Kf1.",
+        "b1=Q gains maximum material but does not guard c3 or give check against Kf1.",
+        "Nc3# is actual mate against Kd1. The knight on b3 covers c1 and d2; Kf1 covers e1 and e2. The new queen cannot capture the checking knight or interpose against a knight check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nc3# is actual mate against Kd1. The knight on b3 covers c1 and d2; Kf1 covers e1 and e2. The new queen cannot capture the checking knight or interpose against a knight check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/1NN5/2n5/1q1k1K2 b - - 1 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why give the rook away instead of preserving it?",
+      "answer": "Rc2+ draws Na1 to c2 with tempo, allowing Nb3+ and Kf1 to form the mating net before Black can use a queen."
+    },
+    {
+      "node": "second_promotion",
+      "prompt": "Why does Kf2 help after ...b1=N?",
+      "answer": "The new knight guards c3, so White changes the move order. Kf2 keeps the king’s escape squares covered and leaves Black to move; the illustrated ...Na3 then permits Ne3 mate."
+    }
+  ],
+  "defaultBranch": "doom_second_underpromotion",
+  "practiceBranch": "doom_second_underpromotion",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kc1 at 107 seconds in the seven-piece phase. The original eight-piece setup, pawn chase and first knight underpromotion are source context. The rook sacrifice, king retreat comparison, second underpromotion and actual mates are checked here.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "Automatic captions call the final Black knight move c3.",
+      "correction": "The stable image at 167 seconds shows the c2 knight on a3. The encoded move is ...Na3; c2–c3 is not a legal knight move."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

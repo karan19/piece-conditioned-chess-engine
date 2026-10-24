@@ -7,8 +7,9 @@ import { positionGuidance } from "./coaching";
 import { EngineBusyError, gameResult } from "./fullGame";
 import { chooseEndgameMove, endgamePlans, explainEndgameMove, probeTablebase, puzzleHint, replayEndgame, tablebaseEligible, tablebaseLabel, type EndgamePosition, type TablebasePosition } from "./endgames";
 
-export function EndgameSession({ position, initialMoves, onSave, onExit }: {
+export function EndgameSession({ position, initialMoves, onSave, onExit, backLabel = 'Back to endgames', plan, objectiveText }: {
   position: EndgamePosition; initialMoves: string[]; onSave: (moves: string[]) => void; onExit: () => void;
+  backLabel?: string; plan?: string; objectiveText?: string;
 }) {
   const [moves, setMoves] = useState(initialMoves);
   const [selected, setSelected] = useState<Square | null>(null);
@@ -32,7 +33,7 @@ export function EndgameSession({ position, initialMoves, onSave, onExit }: {
     const before = replayEndgame(position, moves.slice(0, -1));
     return explainEndgameMove(before, game, last!);
   }, [game, position, moves]);
-  const guidance = positionGuidance(game, position.side, endgamePlans[position.type]);
+  const guidance = positionGuidance(game, position.side, plan ?? endgamePlans[position.type]);
   const watch = guidance.watch.filter(item => !item.includes("starting square") && !item.includes("back rank"))
     .map(item => item.replace("A recorded continuation is one route, not the only legal response.", "You can play any legal move in this position."));
   if (!watch.length) watch.push("Inspect the opponent’s checks, captures, and pawn advances. Coordinate your king and pieces before committing to a pawn race or an exchange.");
@@ -124,7 +125,7 @@ export function EndgameSession({ position, initialMoves, onSave, onExit }: {
     const a = document.createElement("a"); a.href = url; a.download = `endgame-${position.id}.pgn`; a.click(); URL.revokeObjectURL(url);
   };
   return <div className="os-training">
-    <div className="os-session-top"><button className="os-link" onClick={onExit}><ArrowLeft size={17} /> Back to endgames</button><span>You play {position.side === "w" ? "White" : "Black"}</span></div>
+    <div className="os-session-top"><button className="os-link" onClick={onExit}><ArrowLeft size={17} /> {backLabel}</button><span>You play {position.side === "w" ? "White" : "Black"}</span></div>
     <div className="os-training-layout">
       <section className="os-board-zone">
         <div className="os-board-heading"><span className="os-label">{result ? result.title : yourTurn ? "YOUR MOVE" : "OPPONENT THINKING"}</span><span>{moves.length} plies played</span></div>
@@ -139,7 +140,7 @@ export function EndgameSession({ position, initialMoves, onSave, onExit }: {
       <aside className="os-session-panel os-learn-panel" aria-label="Endgame Learn panel">
         <div className="os-learn-heading"><strong>Endgame Practice</strong><span>{position.goal === "draw" ? "Hold the draw" : "Win this"}</span></div>
         <h1>{position.title}</h1><p className="os-session-variation">{position.type} ending · {position.difficulty} · {position.rating ? `Puzzle rating ${position.rating}` : "Unrated technical exercise"}</p>
-        <section className="os-why-panel os-coach-card"><span className="os-label">YOUR OBJECTIVE</span><h2>{position.goal === "draw" ? "Hold the draw" : "Convert the advantage"}</h2><p>{position.goal === "draw" ? "This starting position is tablebase-verified as drawn with optimal play. Defend it without letting the opponent force a win." : "Find the puzzle's tactical opportunity, then play the position out to a win. The puzzle rating measures the tactic, rather than the difficulty or length of the entire endgame."}</p><h3>What to aim for</h3><p>{endgamePlans[position.type]}</p><h3>Before you move</h3><ul>{watch.map(item => <li key={item}>{item}</li>)}</ul></section>
+        <section className="os-why-panel os-coach-card"><span className="os-label">YOUR OBJECTIVE</span><h2>{position.goal === "draw" ? "Hold the draw" : "Convert the advantage"}</h2><p>{objectiveText ?? (position.goal === "draw" ? "This starting position is tablebase-verified as drawn with optimal play. Defend it without letting the opponent force a win." : "Find the puzzle's tactical opportunity, then play the position out to a win. The puzzle rating measures the tactic, rather than the difficulty or length of the entire endgame.")}</p><h3>What to aim for</h3><p>{plan ?? endgamePlans[position.type]}</p><h3>Before you move</h3><ul>{watch.map(item => <li key={item}>{item}</li>)}</ul></section>
         {table && <div className="os-lesson-idea"><p><strong>Exact tablebase result:</strong> {tablebaseLabel(game, table)} This is an outcome with optimal play, not a reason to stop practicing.</p></div>}
         {tableStatus && <p className="os-training-note" role="status">{tableStatus}</p>}
         {hint && <section className="os-why-panel os-coach-card"><span className="os-label">OPTIONAL HINT · {hint.source}</span><h2>{hint.move.san}</h2><p>Move from {hint.move.from} to {hint.move.to}{hint.move.promotion ? ` and promote to ${hint.move.promotion}` : ""}.</p><p>{hint.why}</p></section>}

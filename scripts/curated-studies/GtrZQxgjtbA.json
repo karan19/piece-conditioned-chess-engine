@@ -1,0 +1,125 @@
+{
+  "video_id": "GtrZQxgjtbA",
+  "title": "Majestic: Win the Race with a Pawn Mate",
+  "summary": "Let Black promote first: the trapped rook and king leave a mating square for White’s c-pawn.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "rk6/p2K4/P7/8/2P5/1p6/8/8 w - - 0 1",
+      "question": "Does Black’s faster promotion decide the race?",
+      "explanation": "Black’s king on b8 and rook on a8 are boxed in by a7 and White’s a6 pawn. Kd7 protects c7 and controls c8. This seven-piece position is reconstructed after the forced ...b3 between the saved 132- and 133-second diagrams.",
+      "evidence": {
+        "timestamp_s": 133
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "majestic_pawn_mate_race",
+      "start": "start",
+      "title": "Source idea: ignore the promotion race and deliver pawn mate",
+      "san": [
+        "c5",
+        "b2",
+        "c6",
+        "b1=Q",
+        "c7#"
+      ],
+      "commentary": [
+        "Begin after the forced ...b3 in the later seven-piece phase. The preceding rook offer, king walk and capture sequence remain source context outside this verification.",
+        "c5 advances toward the mating square c7. It is the only winning move in this exact position. White must spend this tempo advancing the pawn while keeping Kd7 in place.",
+        "b2 is Black’s only legal move. Ra8 is blocked by its own king and a7 pawn; Ka8, Ka7, Kb7, Kc7 and Kc8 are occupied or controlled, and a7 is blocked by a6.",
+        "c6 keeps the mating plan. White does not need to promote first because c7 itself will check the black king.",
+        "b1=Q promotes before White, as shown in the clip. The new queen on b1 does not control c7 and cannot answer the coming adjacent pawn check.",
+        "c7# is actual checkmate. Kd7 protects c7 and controls c8, a6 controls b7, and Black’s own rook and pawn occupy a8 and a7. No queen interposition can block a pawn’s adjacent attack on b8."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "c7# is actual checkmate. Kd7 protects c7 and controls c8, a6 controls b7, and Black’s own rook and pawn occupy a8 and a7. No queen interposition can block a pawn’s adjacent attack on b8.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "rk6/p1PK4/P7/8/8/8/8/1q6 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_underpromotion_cage",
+      "start": "start",
+      "title": "Independent defense: underpromote instead",
+      "san": [
+        "c5",
+        "b2",
+        "c6",
+        "b1=N",
+        "c7#"
+      ],
+      "commentary": [
+        "Independently replace the source’s queen promotion with a knight promotion. The earlier moves follow the same selected race.",
+        "c5 keeps the king and rook sealed in their cage.",
+        "b2 remains the only legal Black move in this exact diagram.",
+        "c6 threatens c7 mate, regardless of the promotion-piece choice.",
+        "b1=N tries a different new piece. The knight on b1 cannot capture c7, shield b8 from a pawn attack, or give check to Kd7.",
+        "c7# is still actual mate. Underpromotion does not change the cage or remove the mating pawn."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "c7# is still actual mate. Underpromotion does not change the cage or remove the mating pawn.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "rk6/p1PK4/P7/8/8/8/8/1n6 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_release_cage",
+      "start": "start",
+      "title": "Independent error: move the king instead of the pawn",
+      "san": [
+        "Kd6",
+        "b2"
+      ],
+      "commentary": [
+        "Independently compare a king move that looks active but abandons the essential mating geometry.",
+        "Kd6 changes a forced win into a forced loss. The king no longer controls c8 or protects the eventual c7 pawn, releasing the black king.",
+        "b2 is a representative winning reply. Black can promote without facing the original c7 mate, while Kb8 also gains legal escapes. This stops at a checked losing position for White rather than claiming that promotion itself is immediate mate."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "b2 is a representative winning reply. Black can promote without facing the original c7 mate, while Kb8 also gains legal escapes. This stops at a checked losing position for White rather than claiming that promotion itself is immediate mate.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "rk6/p7/P2K4/8/2P5/8/1p6/8 w - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is it safe to let Black get a queen first?",
+      "answer": "The winning threat is c7 mate, not promotion. A new queen on b1 cannot capture the adjacent checking pawn or create an escape square for its king."
+    },
+    {
+      "node": "start",
+      "prompt": "What is White’s king contributing from d7?",
+      "answer": "It protects c7 and controls c8. The illustrated Kd6 error releases c8; other king moves can also waste the tempo needed for the pawn race. Every king move from this root gives up the forced win."
+    }
+  ],
+  "defaultBranch": "majestic_pawn_mate_race",
+  "practiceBranch": "majestic_pawn_mate_race",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin at the seven-piece position after ...b3, reconstructed across the saved 132–133 second transition. At 132 seconds White has Kd7/a6/c4 versus Black Kb8/Ra8/a7/b4 with Black to move after bxc4. Black has exactly one legal move, ...b3; the next saved frame shows the resulting c5/b3 structure. The bridge is explicitly reconstructed rather than claimed as a separately captured frame. The earlier eleven-piece rook/knight sacrifices and king walk remain unverified source context.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

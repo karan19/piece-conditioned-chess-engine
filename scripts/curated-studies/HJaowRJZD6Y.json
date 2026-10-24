@@ -1,0 +1,106 @@
+{
+  "video_id": "HJaowRJZD6Y",
+  "title": "Knight Cube",
+  "summary": "Use the opponent’s knights as barriers and coordinate two knights with the king to force a compact mating net.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3nk3/3n2K1/1N6/3N4/1p6/8/8/8 w - - 0 1",
+      "question": "Can two knights mate against this exact setup?",
+      "explanation": "The black knights block escape squares that a bare king would normally use. Look at Nc7 before collecting material.",
+      "evidence": {
+        "timestamp_s": 89
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "cube_forcing_finish",
+      "start": "start",
+      "title": "Build the knight cube",
+      "san": [
+        "Nc7+",
+        "Ke7",
+        "Nc8#"
+      ],
+      "commentary": [
+        "Begin after the bishop sacrifice and ...Nxd7. Black’s knights on d8 and d7 occupy two important king escape squares.",
+        "Nc7+ checks the king on e8. It also covers e6, an escape that will matter on the next move.",
+        "Ke7 is forced: d8 and d7 hold Black’s own knights, while the white king controls f8 and f7.",
+        "Nc8# is checkmate. The b6 knight jumps to c8 and covers d6; the c7 knight covers e6 and e8, and White’s king seals the f-file escapes. Black’s own knights occupy the remaining squares."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nc8# is checkmate. The b6 knight jumps to c8 and covers d6; the c7 knight covers e6 and e8, and White’s king seals the f-file escapes. Black’s own knights occupy the remaining squares.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2Nn4/2Nnk1K1/8/8/1p6/8/8/8 b - - 3 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "cube_collect_pawn",
+      "start": "start",
+      "title": "Collect the pawn instead",
+      "san": [
+        "Nxb4"
+      ],
+      "commentary": [
+        "The b4 pawn looks available. Ask whether removing it matters more than the immediate checking net.",
+        "Nxb4 gives up the forced mate and reaches a tablebase draw with best play. Capturing material has removed the timing of the knight coordination."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxb4 gives up the forced mate and reaches a tablebase draw with best play. Capturing material has removed the timing of the knight coordination.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "3nk3/3n2K1/1N6/8/1N6/8/8/8 b - - 0 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "cube_repeat_check",
+      "start": "start",
+      "title": "Choose the wrong knight check",
+      "san": [
+        "Nf6+",
+        "Ke7"
+      ],
+      "commentary": [
+        "Both knights have tempting routes, but the checking square determines which escapes remain covered.",
+        "Nf6+ checks e8, but gives up the forced win. It does not build the same c7-c8 mating net.",
+        "Ke7 answers the check in a position the tablebase evaluates as drawn. A check is useful only when it improves the next position."
+      ],
+      "classification": "independent alternative illustrating a source idea with representative legal replies",
+      "explanation": "Ke7 answers the check in a position the tablebase evaluates as drawn. A check is useful only when it improves the next position.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "3n4/3nk1K1/1N3N2/8/1p6/8/8/8 w - - 2 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can these two knights force mate when two knights usually cannot against a bare king?",
+      "answer": "This is not a bare-king ending. Black’s own knights occupy d8 and d7, taking away the escape squares the king would otherwise need."
+    },
+    {
+      "node": "start",
+      "prompt": "What does each white piece contribute to the final mate?",
+      "answer": "The king on g7 controls f6, f7 and f8. Nc7 controls e6 and e8; Nc8 controls d6. Black’s knights on d7 and d8 block the remaining destinations."
+    }
+  ],
+  "defaultBranch": "cube_forcing_finish",
+  "practiceBranch": "cube_forcing_finish",
+  "practiceType": "knight",
+  "startContext": "The playable study starts after ...Nxd7. The preceding eight-piece setup and bishop sacrifice are source context, outside this seven-piece tablebase check.",
+  "verification_scope": "The playable starting position and every intermediate position in the selected variations are tablebase-checked. These variations illustrate the key ideas; they do not enumerate all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

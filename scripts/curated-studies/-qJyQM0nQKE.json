@@ -1,0 +1,176 @@
+{
+  "video_id": "-qJyQM0nQKE",
+  "title": "The ZigZag",
+  "summary": "Avoid the rook’s skewers, walk behind the opposing king, and defend against mate after promotion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/5P2/P4K2/k7/8/8/8/r7 w - - 0 1",
+      "question": "How can two separated pawns defeat a rook?",
+      "explanation": "Immediate f8=Q permits a skewer. Advancing a6 first creates two promotion threats, but White still needs a careful king route.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "last_trick",
+      "fen": "QK6/5r2/1k6/8/8/8/8/8 w - - 0 9",
+      "question": "What must the new queen defend?",
+      "explanation": "The rook has captured f7 and threatens ...Rf8 mate. White must keep both its king and queen safe instead of assuming that promotion finishes the game.",
+      "evidence": {
+        "timestamp_s": 106
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "zigzag_shelter",
+      "start": "start",
+      "title": "Zigzag into shelter, then prevent mate",
+      "san": [
+        "a7",
+        "Kb6",
+        "Ke5",
+        "Re1+",
+        "Kd6",
+        "Rd1+",
+        "Ke7",
+        "Re1+",
+        "Kd8",
+        "Rd1+",
+        "Kc8",
+        "Rc1+",
+        "Kb8",
+        "Rf1",
+        "a8=Q",
+        "Rxf7",
+        "Qa3"
+      ],
+      "commentary": [
+        "Begin from the complete five-piece source board. The encoded checking route follows the saved diagrams.",
+        "a7 creates a second immediate promotion threat, so the rook cannot simply focus on the f-pawn.",
+        "Kb6 approaches a7 and keeps contact with the queenside passer.",
+        "Ke5 moves away from f7 to deny Black the shoulder-and-skewer idea. If the king goes to c5 now, f8=Q comes with check.",
+        "Re1+ starts the illustrated checking defense along the e-file.",
+        "Kd6 steps diagonally toward the queenside shelter while leaving both pawns on the seventh rank.",
+        "Rd1+ shifts the checking file to follow the white king.",
+        "Ke7 zigzags back toward the eighth rank, avoiding being driven directly in front of a new queen.",
+        "Re1+ renews the file check in the source’s selected sequence.",
+        "Kd8 crosses onto the eighth rank. The rook must change files to keep checking.",
+        "Rd1+ follows the king once more.",
+        "Kc8 continues across the eighth rank toward the shelter created by Kb6.",
+        "Rc1+ is the last illustrated file check before White reaches b8.",
+        "Kb8 shelters on the b-file: Black’s king on b6 blocks a rook check from below.",
+        "Rf1 turns to the f-pawn and sets up one last tactical trap after the other pawn promotes.",
+        "a8=Q promotes the queenside pawn. White has achieved a queen, but its king remains boxed near the corner.",
+        "Rxf7 captures the remaining pawn and threatens ...Rf8 mate, using Kb6 to cover a7, b7 and c7.",
+        "Qa3 guards f8 along the a3–f8 diagonal, meeting ...Rf8+ with Qxf8. The exact queen-versus-rook ending is winning for White; further conversion is outside this selected line."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qa3 guards f8 along the a3–f8 diagonal, meeting ...Rf8+ with Qxf8. The exact queen-versus-rook ending is winning for White; further conversion is outside this selected line.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1K6/5r2/1k6/8/8/Q7/8/8 b - - 1 9",
+      "outcome": "loss"
+    },
+    {
+      "id": "zigzag_early_promotion",
+      "start": "start",
+      "title": "Promote before creating the second threat",
+      "san": [
+        "f8=Q",
+        "Rf1+",
+        "Ke7",
+        "Rxf8",
+        "Kxf8",
+        "Kb6"
+      ],
+      "commentary": [
+        "Compare the source’s immediate f-pawn promotion.",
+        "f8=Q gives up White’s forced win by allowing the rook to check along the f-file.",
+        "Rf1+ skewers the king and new queen, forcing the king off that file.",
+        "Ke7 is the illustrated retreat; the queen is left on f8.",
+        "Rxf8 captures the queen, reducing White’s attack to the distant a-pawn.",
+        "Kxf8 takes the rook, reaching a king-and-pawn ending.",
+        "Kb6 approaches the a6 pawn. The tablebase confirms a draw with correct play; White cannot force that remaining pawn through."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kb6 approaches the a6 pawn. The tablebase confirms a draw with correct play; White cannot force that remaining pawn through.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "5K2/8/Pk6/8/8/8/8/8 w - - 1 4",
+      "outcome": "draw"
+    },
+    {
+      "id": "zigzag_forget_mate",
+      "start": "last_trick",
+      "title": "Ignore the rook’s mating threat",
+      "san": [
+        "Qd5",
+        "Rf8+"
+      ],
+      "commentary": [
+        "Compare the illustrated queen centralization instead of defending f8.",
+        "Qd5 abandons the necessary defense against the back-rank attack. The exact outcome reverses to a Black win.",
+        "Rf8+ checks along the eighth rank. Black retains a checked forced win; this branch stops here rather than inventing an unillustrated mating sequence."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rf8+ checks along the eighth rank. Black retains a checked forced win; this branch stops here rather than inventing an unillustrated mating sequence.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "1K3r2/8/1k6/3Q4/8/8/8/8 w - - 2 10",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "last_trick",
+      "prompt": "Why is a new queen not enough?",
+      "answer": "The king on b8 has no useful flight against ...Rf8: Kb6 controls the seventh-rank escapes and Qa8 occupies the corner. Qa3 must defend the checking square."
+    },
+    {
+      "node": "start",
+      "prompt": "What does Ke5 gain by abandoning f7?",
+      "answer": "It avoids the opposing king’s shoulder tactic and puts Kc5 in line with f8=Q+, giving White time to promote with check."
+    }
+  ],
+  "defaultBranch": "zigzag_shelter",
+  "practiceBranch": "zigzag_shelter",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "The complete five-piece starting board, selected zigzag checking route and final Qa3 defense are reconstructed from the saved source images. The encoded failed queen move stops at the illustrated ...Rf8+; the lesson does not claim that every other legal queen move loses.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,106 @@
+{
+  "video_id": "tS_sUqk8dBQ",
+  "title": "Majestic Collab: Bring the Knight Back",
+  "summary": "Capture both rooks and the queen with checking knight moves, then return the knight to control the escape square before pawn mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "6q1/4rp2/4nk1K/3rp3/8/4NPP1/8/8 w - - 0 1",
+      "question": "What must the knight do after it wins all the major pieces?",
+      "explanation": "Nxd5+, Nxe7+ and Nxg8+ remove both rooks and the queen with check. White must then return through e7 to d5, controlling f4 when g3 advances to g4 mate.",
+      "evidence": {
+        "timestamp_s": 85
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "6q1/4rp2/4nk1K/3rp3/8/4NPP1/8/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "collab_knight_sweep",
+      "start": "start",
+      "title": "Source finish: capture, return, then pawn mate",
+      "san": [
+        "Nxd5+",
+        "Kf5",
+        "Nxe7+",
+        "Kf6",
+        "Nxg8+",
+        "Kf5",
+        "Ne7+",
+        "Kf6",
+        "Nd5+",
+        "Kf5",
+        "g4#"
+      ],
+      "commentary": [
+        "Begin after ...Kf6 with all eleven pieces present. The earlier sacrifices are context; this lesson verifies the final checking sweep and return route.",
+        "Nxd5+ captures the rook on d5 while checking f6. White keeps the king under attack rather than giving the queen time to act.",
+        "Kf5 is the sole legal reply. Black’s own e5 pawn and e6 knight, together with Kh6 and White’s pawns, restrict the king.",
+        "Nxe7+ captures the second rook with check. The knight on e7 attacks f5 while the queen on g8 remains available for the next fork.",
+        "Kf6 is the sole legal reply. The king steps onto a square attacked when the knight captures on g8.",
+        "Nxg8+ takes the queen with check against f6. White has removed all three major pieces, but the mating plan still needs the knight in the right place.",
+        "Kf5 is the sole legal reply. Pushing g4 now would vacate f4, allowing the king to escape there.",
+        "Ne7+ starts the return route with another check. The knight does not stay on the square where it won the queen.",
+        "Kf6 is again forced. The king continues to oscillate between the squares dictated by the knight checks.",
+        "Nd5+ returns to the central square, checking f6 and controlling f4. This restores the coverage that g3 will stop providing when it advances.",
+        "Kf5 is the sole legal reply. Every Black reply in the saved tree has been checked; none of the apparent king flights is available.",
+        "g4# checks f5. Nd5 covers f4 and f6, f3 controls e4 and protects g4, Kh6 controls g5/g6, and Black’s own Ne6 and e5 pawn block e6/e5. The knight’s return makes the pawn advance mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "g4# checks f5. Nd5 covers f4 and f6, f3 controls e4 and protects g4, Kh6 controls g5/g6, and Black’s own Ne6 and e5 pawn block e6/e5. The knight’s return makes the pawn advance mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/5p2/4n2K/3Npk2/6P1/5P2/8/8 b - - 0 6",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why not push g4 immediately after taking the queen?",
+      "answer": "Moving the g3 pawn gives up its control of f4. The knight on g8 does not cover f4, so Kf4 is legal after an early g4+."
+    },
+    {
+      "node": "start",
+      "prompt": "Why return to d5 after winning the queen?",
+      "answer": "Nd5 controls f4 as well as f6. It replaces the g3 pawn’s guard of f4 before the pawn advances with mate."
+    }
+  ],
+  "defaultBranch": "collab_knight_sweep",
+  "practiceBranch": "collab_knight_sweep",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kf6 at 85 seconds in the complete eleven-piece later diagram: White Kh6/Ne3/f3/g3 against Kf6/Qg8/Re7/Rd5/Ne6/e5/f7. The eleven-ply knight sweep and final g4 mate are proved against every legal defense, with all king replies forced. Native diagrams retain Ne6, e5 and f7 throughout. Earlier rook/queen offers, the rook capture on e7 and alternative king choices remain outside this selected proof.",
+  "verification_scope": "Begin after ...Kf6 at 85 seconds in the complete eleven-piece later diagram: White Kh6/Ne3/f3/g3 against Kf6/Qg8/Re7/Rd5/Ne6/e5/f7. The eleven-ply knight sweep and final g4 mate are proved against every legal defense, with all king replies forced. Native diagrams retain Ne6, e5 and f7 throughout. Earlier rook/queen offers, the rook capture on e7 and alternative king choices remain outside this selected proof.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 11,
+    "moves": {
+      "6q1/4rp2/4nk1K/3rp3/8/4NPP1/8/8 w - - 0 1": "Nxd5+",
+      "6q1/4rp2/4n2K/3Npk2/8/5PP1/8/8 w - - 1 2": "Nxe7+",
+      "6q1/4Np2/4nk1K/4p3/8/5PP1/8/8 w - - 1 3": "Nxg8+",
+      "6N1/5p2/4n2K/4pk2/8/5PP1/8/8 w - - 1 4": "Ne7+",
+      "8/4Np2/4nk1K/4p3/8/5PP1/8/8 w - - 3 5": "Nd5+",
+      "8/5p2/4n2K/3Npk2/8/5PP1/8/8 w - - 5 6": "g4#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

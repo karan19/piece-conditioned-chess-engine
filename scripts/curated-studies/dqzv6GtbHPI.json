@@ -1,0 +1,218 @@
+{
+  "video_id": "dqzv6GtbHPI",
+  "title": "Tricky Endgame: Keep the Pawn on h6",
+  "summary": "Choose a one-square pawn move so the king can support a knight sacrifice and stop the opponent\u2019s promotion.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "4n3/7p/6P1/2k1K3/8/8/8/8 b - - 0 1",
+      "question": "Which pawn move preserves Black\u2019s win?",
+      "explanation": "Black has Kc5/Ne8/h7 against White Ke5/g6. Black is to move. Keeping the extra knight is less important than stopping White\u2019s advanced pawn.",
+      "evidence": {
+        "timestamp_s": 1.0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "tricky_king_interception",
+      "start": "start",
+      "title": "Advance one square, then offer the knight",
+      "san": [
+        "h6",
+        "Ke6",
+        "Kd4",
+        "Kf7",
+        "Ke5",
+        "Kxe8",
+        "Kf6"
+      ],
+      "commentary": [
+        "Black has Kc5/Ne8/h7 against White Ke5/g6. Black is to move. Keeping the extra knight is less important than stopping White\u2019s advanced pawn.",
+        "h6 is the only winning move in this exact diagram. It preserves the king-and-knight coordination that the immediate h5 advance loses.",
+        "Ke6 ignores the h-pawn and approaches Ne8. This is the source\u2019s critical alternative.",
+        "Kd4 centralizes the king before the knight is attacked.",
+        "Kf7 attacks Ne8 and supports the g-pawn\u2019s promotion square.",
+        "Ke5 offers the knight: Black is preparing to reach f6 rather than spending a tempo saving the piece.",
+        "Kxe8 takes the knight, but White\u2019s king has been drawn away from g6.",
+        "Kf6 stops the g-pawn\u2019s effective promotion route. The exact king-and-pawn ending is winning for Black despite the lost knight; later pawn conversion remains outside this branch."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kf6 stops the g-pawn\u2019s effective promotion route. The exact king-and-pawn ending is winning for Black despite the lost knight; later pawn conversion remains outside this branch.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "4K3/8/5kPp/8/8/8/8/8 w - - 1 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "tricky_king_chase",
+      "start": "start",
+      "title": "Independent legal continuation of the king chase",
+      "san": [
+        "h6",
+        "Kf5",
+        "Kd4",
+        "Kg4",
+        "Ng7",
+        "Kh4",
+        "Ke5",
+        "Kg4",
+        "Kf6",
+        "Kh4",
+        "Kxg6"
+      ],
+      "commentary": [
+        "Black has Kc5/Ne8/h7 against White Ke5/g6. Black is to move. Keeping the extra knight is less important than stopping White\u2019s advanced pawn.",
+        "h6 preserves the win while controlling g5.",
+        "Kf5 approaches the h-pawn.",
+        "Kd4 brings Black\u2019s king closer to the action.",
+        "Kg4 continues toward the pawn.",
+        "Ng7 controls f5 and h5; together with h6\u2019s control of g5 it blocks the approach. This move is not check in this diagram.",
+        "Kh4 stays near the pawn. From this point the king route is an independently selected representative continuation.",
+        "Ke5 improves Black\u2019s king while the knight and pawn hold the barrier.",
+        "Kg4 waits near the kingside without gaining access to h6.",
+        "Kf6 approaches White\u2019s g6 pawn.",
+        "Kh4 maintains the same waiting route.",
+        "Kxg6 removes White\u2019s last pawn. Black retains an exact win with king, knight and h-pawn; the full conversion is not assumed from material alone."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxg6 removes White\u2019s last pawn. Black retains an exact win with king, knight and h-pawn; the full conversion is not assumed from material alone.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/6n1/6kp/8/7K/8/8/8 w - - 0 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "tricky_capture_error",
+      "start": "start",
+      "title": "Capturing the pawn gives away the win",
+      "san": [
+        "hxg6",
+        "Kf4",
+        "g5+",
+        "Kxg5"
+      ],
+      "commentary": [
+        "Black has Kc5/Ne8/h7 against White Ke5/g6. Black is to move. Keeping the extra knight is less important than stopping White\u2019s advanced pawn.",
+        "hxg6 removes White\u2019s pawn but gives up the forced win. Black\u2019s surviving g-pawn can be caught.",
+        "Kf4 approaches the pawn\u2019s stopping squares. The captions say Kf5, but that square is attacked by the black pawn on g6 and is illegal here.",
+        "g5+ is an independently selected representative pawn push, giving check to the king on f4.",
+        "Kxg5 removes the last pawn. King and knight cannot force mate against the lone king; this exact position is drawn."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxg5 removes the last pawn. King and knight cannot force mate against the lone king; this exact position is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "4n3/8/8/2k3K1/8/8/8/8 b - - 0 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "tricky_two_step_error",
+      "start": "start",
+      "title": "The fast h-pawn lets both sides promote",
+      "san": [
+        "h5",
+        "Kf5",
+        "Ng7+",
+        "Kg5",
+        "Kd4",
+        "Kh6",
+        "h4",
+        "Kxg7",
+        "h3",
+        "Kf7",
+        "h2",
+        "g7",
+        "h1=Q",
+        "g8=Q"
+      ],
+      "commentary": [
+        "Black has Kc5/Ne8/h7 against White Ke5/g6. Black is to move. Keeping the extra knight is less important than stopping White\u2019s advanced pawn.",
+        "h5 advances too far and gives up the exact win.",
+        "Kf5 heads toward the advanced pawn.",
+        "Ng7+ defends h5 and checks the king on f5.",
+        "Kg5 approaches the pawn again.",
+        "Kd4 brings the king closer, but the knight and pawn can no longer form the h6 barrier.",
+        "Kh6 attacks the knight on g7.",
+        "h4 runs the pawn and abandons the knight.",
+        "Kxg7 captures the knight, freeing White\u2019s own promotion race.",
+        "h3 continues toward h1.",
+        "Kf7 supports the g-pawn\u2019s promotion route.",
+        "h2 is one step from promotion.",
+        "g7 starts White\u2019s final push.",
+        "h1=Q promotes first, but the queen gives no immediate check.",
+        "g8=Q gives White a queen too. The exact queen ending is drawn with best play; racing first did not preserve Black\u2019s win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "g8=Q gives White a queen too. The exact queen ending is drawn with best play; racing first did not preserve Black\u2019s win.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "6Q1/5K2/8/8/3k4/8/8/7q b - - 0 8",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is h6 stronger than h5?",
+      "answer": "The pawn on h6 controls g5 while Ng7 controls f5/h5, keeping the defending king away. If White instead attacks the knight, Black has time to centralize and stop g6."
+    },
+    {
+      "node": "start",
+      "prompt": "Why can Black give up Ne8?",
+      "answer": "Kxe8 pulls White\u2019s king away. Black reaches f6 and blocks the advanced g-pawn, leaving a winning pawn ending."
+    }
+  ],
+  "defaultBranch": "tricky_king_interception",
+  "practiceBranch": "tricky_king_interception",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "The complete five-piece position is reconstructed from the saved physical-board diagrams: Black Kc5/Ne8/h7 and White Ke5/g6, Black to move. The h6/Ke6 knight-sacrifice line and h5 promotion race are illustrated. The longer king-waiting route and the g-pawn capture replies are independently selected legal representatives. Every encoded position is checked; only h6 preserves the exact win at the root.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "The captions name Kf5 after ...hxg6.",
+      "correction": "The physical board shows the legal Kf4. Kf5 would move into the g6 pawn\u2019s attack, so the encoded comparison uses Kf4."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

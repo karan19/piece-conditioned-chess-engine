@@ -1,0 +1,146 @@
+{
+  "video_id": "USn1Z8GHBQ8",
+  "title": "A Dark Forest: Catch the Pawn, Then Convert",
+  "summary": "Bring the king within reach of both pawn squares, then use the queenside majority without dropping any of the locked pawns.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/k1p5/2P5/Pp6/1P3p1K/8/8 w - - 0 1",
+      "question": "How can White stop the pawn now that the bishop is gone?",
+      "explanation": "Kg3 attacks f3 and controls f2. Black can move its king or push the pawn, but the king can capture the pawn on either square and reach an exact won ending.",
+      "evidence": {
+        "timestamp_s": 166
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/8/k1p5/2P5/Pp6/1P3p1K/8/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    },
+    {
+      "id": "pawn_majority",
+      "fen": "8/8/k1p5/2P5/PK6/1P6/8/8 b - - 0 1",
+      "question": "How can White prepare a queenside pawn break?",
+      "explanation": "This separate six-piece source diagram has White Kb4/a4/b3/c5 against Black Ka6/c6. The independent Ka7/Ka5/Kb7/b4 line positions the king to support a future b5 break.",
+      "evidence": {
+        "timestamp_s": 175
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "forest_catch_source_plan",
+      "start": "start",
+      "title": "Source plan with independently supplied capture",
+      "san": [
+        "Kg3",
+        "Ka5",
+        "Kxf3"
+      ],
+      "commentary": [
+        "Begin after ...Kxa6 with both locked black queenside pawns and the f3 passer retained. The earlier bishop sacrifice is outside this proof.",
+        "Kg3 is the source move. It attacks f3 and also controls f2, so advancing the pawn will not take it out of reach.",
+        "Ka5 is the source’s illustrated king move. It leaves the f-pawn on f3; Ka7 and Kb7 are also legal and included in the certificate.",
+        "Kxf3 supplies the legal capture described by the narration. The exact seven-piece pawn ending is a White win. The clip later skips ahead; no missing king moves are joined into a game score."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxf3 supplies the legal capture described by the narration. The exact seven-piece pawn ending is a White win. The clip later skips ahead; no missing king moves are joined into a game score.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/2p5/k1P5/Pp6/1P3K2/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "forest_catch_advanced_pawn",
+      "start": "start",
+      "title": "Independent defense: advance before being captured",
+      "san": [
+        "Kg3",
+        "f2",
+        "Kxf2"
+      ],
+      "commentary": [
+        "Test the remaining legal Black reply: advance the passed pawn instead of moving the king.",
+        "Kg3 approaches so that one king move can reach either f3 or f2.",
+        "f2 advances toward promotion, but the pawn lands on a square already controlled by the white king.",
+        "Kxf2 removes the pawn and reaches an exact White win with a4/b3/c5 and b4/c6 all still present."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxf2 removes the pawn and reaches an exact White win with a4/b3/c5 and b4/c6 all still present.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/k1p5/2P5/Pp6/1P6/5K2/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "forest_pawn_break",
+      "start": "pawn_majority",
+      "title": "Independent practice: prepare the b-pawn break",
+      "san": [
+        "Ka7",
+        "Ka5",
+        "Kb7",
+        "b4"
+      ],
+      "commentary": [
+        "Begin separately from the final six-piece source diagram. These are representative legal moves, not a continuation recovered from the sampled clip.",
+        "Ka7 is an independent Black retreat. The exact position remains losing for Black.",
+        "Ka5 improves the white king before advancing the b-pawn. The king will support b5, while c5 restricts the black king’s approach through b6.",
+        "Kb7 is a representative Black reply. Black still has the c6 pawn, which must be accounted for rather than erased from the board.",
+        "b4 prepares the b5 break with king support. The complete six-piece position remains an exact White win; this branch stops before choosing Black’s next defense."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "b4 prepares the b5 break with king support. The complete six-piece position remains an exact White win; this branch stops before choosing Black’s next defense.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1k6/2p5/K1P5/PP6/8/8/8 b - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can’t ...f2 outrun Kg3?",
+      "answer": "Kg3 controls f2 as well as attacking f3. White can capture the pawn on whichever square it occupies."
+    },
+    {
+      "node": "pawn_majority",
+      "prompt": "Why improve the king before b4 and b5?",
+      "answer": "The king on a5 supports b5, while the c5 pawn limits the opposing king. The pawn break depends on that coordination."
+    }
+  ],
+  "defaultBranch": "forest_catch_source_plan",
+  "practiceBranch": "forest_catch_source_plan",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kxa6 at 166 seconds in the complete eight-piece later diagram. Kg3 is proved against all four legal Black replies by exact seven-piece outcomes after the f-pawn is captured. The source shows Kg3 and ...Ka5; the supplied captures and alternate pawn push are explicit independent continuations. A separate six-piece source diagram at 175 seconds supports independent pawn-ending practice. The earlier ten-piece king-path, bishop-sacrifice timing and stalemate comparisons remain outside this selected proof.",
+  "verification_scope": "Begin after ...Kxa6 at 166 seconds in the complete eight-piece later diagram. Kg3 is proved against all four legal Black replies by exact seven-piece outcomes after the f-pawn is captured. The source shows Kg3 and ...Ka5; the supplied captures and alternate pawn push are explicit independent continuations. A separate six-piece source diagram at 175 seconds supports independent pawn-ending practice. The earlier ten-piece king-path, bishop-sacrifice timing and stalemate comparisons remain outside this selected proof.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 3,
+    "moves": {
+      "8/8/k1p5/2P5/Pp6/1P3p1K/8/8 w - - 0 1": "Kg3",
+      "8/8/2p5/k1P5/Pp6/1P3pK1/8/8 w - - 2 2": "Kxf3",
+      "8/k7/2p5/2P5/Pp6/1P3pK1/8/8 w - - 2 2": "Kxf3",
+      "8/1k6/2p5/2P5/Pp6/1P3pK1/8/8 w - - 2 2": "Kxf3",
+      "8/8/k1p5/2P5/Pp6/1P4K1/5p2/8 w - - 0 2": "Kxf2"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

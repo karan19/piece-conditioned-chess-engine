@@ -1,0 +1,166 @@
+{
+  "video_id": "m3eCJVfF2HY",
+  "title": "The Chosen Bishop: Two Mating Threats",
+  "summary": "Place the bishop where a pawn advance and a bishop check create different mating threats; check queen sacrifices as well as quiet defenses.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/2B5/8/6pp/7k/7P/5qPK/8 w - - 0 1",
+      "question": "Can a bishop overcome the queen’s pin on g2?",
+      "explanation": "Bd6 keeps control of g3 and prepares Be7+ after g4. Black cannot preserve the position by keeping the g-pawn pinned; a full finite proof also checks the queen-sacrifice defense.",
+      "evidence": {
+        "timestamp_s": 152
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/2B5/8/6pp/7k/7P/5qPK/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "chosen_bishop_pawn_release",
+      "start": "start",
+      "title": "Meet the pawn release with a bishop check",
+      "san": [
+        "Bd6",
+        "g4",
+        "Be7+",
+        "Qf6",
+        "Bxf6#"
+      ],
+      "commentary": [
+        "Begin with all eight pieces preserved. Qf2 pins g2 to Kh2 and guards g3; the bishop must change the threats.",
+        "Bd6 is the illustrated waiting move. White keeps the bishop’s diagonal to g3 while preparing Be7 if the g5 pawn advances.",
+        "g4 unpins White’s g-pawn, but it also clears the bishop’s route from e7 to h4. This is the source’s illustrated pawn release.",
+        "Be7+ checks along e7–f6–g5–h4. Despite the source’s immediate-mate language, Black can legally interpose the queen.",
+        "Qf6 is an independently supplied legal interposition. It blocks the checking diagonal, delaying rather than avoiding mate.",
+        "Bxf6# removes that interposition. The bishop checks down the diagonal while White’s pawns and king cover the king’s flights; legal move generation confirms actual mate."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Bxf6# removes that interposition. The bishop checks down the diagonal while White’s pawns and king cover the king’s flights; legal move generation confirms actual mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/5B2/7p/6pk/7P/6PK/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "chosen_bishop_pin_break",
+      "start": "start",
+      "title": "Move the queen and allow the pawn breakthrough",
+      "san": [
+        "Bd6",
+        "Qe3",
+        "g3+",
+        "Qxg3+",
+        "Bxg3#"
+      ],
+      "commentary": [
+        "The bishop’s d6 square also supports g3; compare the illustrated queen move rather than assuming Black must push a pawn.",
+        "Bd6 creates the same dual threat while leaving g2 pinned for this move.",
+        "Qe3 keeps pressure on g3 but leaves the second rank. The g2 pawn is now free to move without exposing Kh2 to Qf2.",
+        "g3+ checks the king on h4. The pawn on h3 guards g4, and the bishop controls g3.",
+        "Qxg3+ removes the checking pawn and itself checks Kh2. This is the illustrated defense, not a reason to stop calculation.",
+        "Bxg3# answers that check by taking the queen, giving a protected bishop mate. The source’s capture sequence is legally replayed with every remaining pawn retained."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bxg3# answers that check by taking the queen, giving a protected bishop mate. The source’s capture sequence is legally replayed with every remaining pawn retained.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/6pp/7k/6BP/7K/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "chosen_bishop_queen_sacrifice",
+      "start": "start",
+      "title": "Independent defense: sacrifice the queen with check",
+      "san": [
+        "Bd6",
+        "Qg1+",
+        "Kxg1"
+      ],
+      "commentary": [
+        "Check a legal queen-sacrifice defense as well as the source’s mating examples.",
+        "Bd6 still forces a win, but winning does not require every Black choice to end in immediate mate.",
+        "Qg1+ checks Kh2 and deliberately offers the queen. This independent defense is included in the exhaustive finite proof.",
+        "Kxg1 removes the queen and reaches an exact seven-piece White win. White retains Bd6/g2/h3 against Kh4/g5/h5; conversion is established by the saved tablebase result rather than assumed from material."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxg1 removes the queen and reaches an exact seven-piece White win. White retains Bd6/g2/h3 against Kh4/g5/h5; conversion is established by the saved tablebase result rather than assumed from material.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/3B4/6pp/7k/7P/6P1/6K1 b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why must we look beyond the source’s immediate-mate claim after g4?",
+      "answer": "Be7+ allows queen interpositions such as Qf6. Bxf6# finishes that defense; legal replay distinguishes check from actual mate."
+    },
+    {
+      "node": "start",
+      "prompt": "Does a forced win mean every defense is mated immediately?",
+      "answer": "No. Qg1+ gives up the queen with check. Kxg1 reaches an exactly winning seven-piece ending, which needs a conversion rather than an immediate mate."
+    }
+  ],
+  "defaultBranch": "chosen_bishop_pawn_release",
+  "practiceBranch": "chosen_bishop_pawn_release",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after Qf2 at 152 seconds in the complete eight-piece later diagram: White Kh2/Bc7/g2/h3 against Kh4/Qf2/g5/h5, White to move. Native images40–50 establish this phase. Bd6 and the g4/Be7+ and Qe3/g3+/Qxg3+/Bxg3# ideas are illustrated by the source. The Qf6 interposition and queen-sacrifice defense are explicitly independent completions. Every encoded larger position has an exact finite winning strategy through all opposing replies into actual mate or supported exact seven-piece leaves; every encoded supported position is tablebase checked. This proves the selected later position, not the earlier Rc2 sacrifice or every queen defense in that earlier setup. It does not mean Black must be mated immediately: Qg1+ can sacrifice the queen into a losing ending.",
+  "verification_scope": "Begin after Qf2 at 152 seconds in the complete eight-piece later diagram: White Kh2/Bc7/g2/h3 against Kh4/Qf2/g5/h5, White to move. Native images40–50 establish this phase. Bd6 and the g4/Be7+ and Qe3/g3+/Qxg3+/Bxg3# ideas are illustrated by the source. The Qf6 interposition and queen-sacrifice defense are explicitly independent completions. Every encoded larger position has an exact finite winning strategy through all opposing replies into actual mate or supported exact seven-piece leaves; every encoded supported position is tablebase checked. This proves the selected later position, not the earlier Rc2 sacrifice or every queen defense in that earlier setup. It does not mean Black must be mated immediately: Qg1+ can sacrifice the queen into a losing ending.",
+  "sourceCorrections": [
+    {
+      "claim": "After g4, Be7 is another checkmate.",
+      "correction": "Be7+ is check, with legal queen interpositions including Qf6 and Qe2. The selected Qf6 defense is answered by Bxf6#; the complete finite proof checks every legal response."
+    }
+  ],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 12,
+    "moves": {
+      "5q2/8/3B4/6pp/7k/7P/6PK/8 w - - 2 2": "g3#",
+      "8/5q2/3B4/6pp/7k/7P/6PK/8 w - - 2 2": "g3#",
+      "8/q7/3B4/6pp/7k/7P/6PK/8 w - - 2 2": "g3#",
+      "8/8/3B1q2/6pp/7k/7P/6PK/8 w - - 2 2": "g3#",
+      "8/8/1q1B4/6pp/7k/7P/6PK/8 w - - 2 2": "g3#",
+      "8/8/3B4/5qpp/7k/7P/6PK/8 w - - 2 2": "g3#",
+      "8/8/3B4/2q3pp/7k/7P/6PK/8 w - - 2 2": "g3#",
+      "8/8/3B4/6pp/5q1k/7P/6PK/8 w - - 2 2": "g3+",
+      "8/8/3B4/6pp/3q3k/7P/6PK/8 w - - 2 2": "g3#",
+      "8/8/3B4/6pp/7k/6qP/6PK/8 w - - 2 2": "Bxg3#",
+      "8/8/3B4/6pp/7k/5q1P/6PK/8 w - - 2 2": "g3+",
+      "8/8/3B4/6pp/7k/4q2P/6PK/8 w - - 2 2": "g3+",
+      "8/8/3B4/6pp/7k/7P/4q1PK/8 w - - 2 2": "Bg3#",
+      "8/8/3B4/6pp/7k/7P/3q2PK/8 w - - 2 2": "Bg3#",
+      "8/8/3B4/6pp/7k/7P/2q3PK/8 w - - 2 2": "Bg3#",
+      "8/8/3B4/6pp/7k/7P/1q4PK/8 w - - 2 2": "Bg3#",
+      "8/8/3B4/6pp/7k/7P/q5PK/8 w - - 2 2": "Bg3#",
+      "8/8/3B4/6pp/7k/7P/6PK/6q1 w - - 2 2": "Kxg1",
+      "8/8/3B4/6pp/7k/7P/6PK/5q2 w - - 2 2": "g3#",
+      "8/8/3B4/6pp/7k/7P/6PK/4q3 w - - 2 2": "g3+",
+      "8/4B3/5q2/7p/6pk/7P/6PK/8 w - - 2 3": "Bxf6#",
+      "8/8/3B4/7p/6pk/7P/5qPK/8 w - - 0 2": "Be7+",
+      "8/2B5/8/6pp/7k/7P/5qPK/8 w - - 0 1": "Bd6"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

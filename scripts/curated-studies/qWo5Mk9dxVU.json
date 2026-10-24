@@ -1,0 +1,82 @@
+{
+  "video_id": "qWo5Mk9dxVU",
+  "title": "Not a Fool: Complete the Underpromotion Fork",
+  "summary": "After the checking knight promotion, collect the queen before giving Black another chance.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2N5/1k2q3/8/8/8/6bP/6P1/7K w - - 0 1",
+      "question": "Black has moved the king to b7. What was the underpromotion for?",
+      "explanation": "The knight on c8 attacks e7. The earlier rook offer, queen sacrifice and capture-promotion have already happened; this complete seven-piece diagram is the checked starting point.",
+      "evidence": {
+        "timestamp_s": 52
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "not_fool_collect",
+      "start": "start",
+      "title": "Source finish: take the queen",
+      "san": [
+        "Nxe7"
+      ],
+      "commentary": [
+        "Begin after ...Kb7 at 52 seconds. White has Kh1, Nc8, g2 and h3 versus Kb7, Qe7 and Bg3.",
+        "Nxe7 completes the knight fork by taking the queen. White has a checked winning knight-and-two-pawn ending against a bishop. Black still has legal king and bishop moves, so the source’s final material gain is not described as a complete conversion."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxe7 completes the knight fork by taking the queen. White has a checked winning knight-and-two-pawn ending against a bishop. Black still has legal king and bishop moves, so the source’s final material gain is not described as a complete conversion.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "8/1k2N3/8/8/8/6bP/6P1/7K b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "not_fool_extra_check",
+      "start": "start",
+      "title": "Independent error: check instead of collecting",
+      "san": [
+        "Nd6+",
+        "Qxd6"
+      ],
+      "commentary": [
+        "An independently selected comparison tests giving one more knight check before taking the queen.",
+        "Nd6+ checks Kb7 but gives up the winning capture on e7. White changes a forced win into a forced loss.",
+        "Qxd6 removes the checking knight. The queen survives, and Black retains a checked win against White’s king and two pawns. Completing the fork mattered more than extending the sequence of checks."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxd6 removes the checking knight. The queen survives, and Black retains a checked win against White’s king and two pawns. Completing the fork mattered more than extending the sequence of checks.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/1k6/3q4/8/8/6bP/6P1/7K w - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does the knight promotion matter to this final position?",
+      "answer": "A knight on c8 attacks e7 and checked Ka7 before the king moved. Its next task is Nxe7; this lesson verifies the later fork, without claiming to have solved the larger starting setup."
+    },
+    {
+      "node": "start",
+      "prompt": "Why is Nd6+ a mistake even though it checks?",
+      "answer": "The queen on e7 can capture the knight on d6. White must take that queen while the opportunity exists."
+    }
+  ],
+  "defaultBranch": "not_fool_collect",
+  "practiceBranch": "not_fool_collect",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kb7 at 52 seconds in the complete seven-piece position following the knight capture-promotion on c8. The larger rook sacrifice and Qxa7+/Kxa7 sequence remain source context outside exact verification. Nxe7 is the source finish; the extra-check error is an independently selected representative alternative.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

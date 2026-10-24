@@ -1,0 +1,133 @@
+{
+  "video_id": "P51ckne8WhY",
+  "title": "Two Pawns Against a Rook",
+  "summary": "Improve the king before pushing: shoulder the defender away so the connected passers keep their winning timing.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2r1k3/7K/5PP1/8/8/8/8/8 w - - 0 1",
+      "question": "Push the pawn, or improve the king first?",
+      "explanation": "Black’s king on e8 and rook on c8 threaten to coordinate against f6 and g6. The white king must deny the defender access to f7.",
+      "evidence": {
+        "timestamp_s": 141
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "pawns_shoulder",
+      "start": "start",
+      "title": "Use the king before advancing the passer",
+      "san": [
+        "Kg8",
+        "Kd7+",
+        "Kf7",
+        "Kd6",
+        "g7",
+        "Ke5",
+        "Kg6"
+      ],
+      "commentary": [
+        "Begin in the source’s five-piece position after ...Ke8. The earlier rook sacrifice and pawn advance remain source context.",
+        "Kg8 preserves the win by preparing to meet a discovered rook check with Kf7.",
+        "Kd7+ leaves the eighth rank, uncovering Rc8’s check against the king on g8.",
+        "Kf7 shoulders the black king away from the f-pawn and keeps the g-pawn supported.",
+        "Kd6 is the illustrated attempt to approach the pawns from below.",
+        "g7 advances the passer only after the king has reached its useful square.",
+        "Ke5 continues Black’s approach. Rook sacrifices against the connected pawns still require care.",
+        "Kg6 protects g7 and f6 from the side, preserving the exact winning position. The branch stops at this checked setup rather than assuming a particular further rook move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kg6 protects g7 and f6 from the side, preserving the exact winning position. The branch stops at this checked setup rather than assuming a particular further rook move.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2r5/6P1/5PK1/4k3/8/8/8/8 b - - 2 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "pawns_push_early",
+      "start": "start",
+      "title": "Push before shouldering the king",
+      "san": [
+        "g7",
+        "Kf7",
+        "g8=Q+",
+        "Rxg8"
+      ],
+      "commentary": [
+        "Compare the immediate pawn push while the king is still on h7. The source calls the resulting defense a draw, but the exact position is lost for White.",
+        "g7 loses the forced win and allows Black to force a win instead.",
+        "Kf7 blocks f6 and protects g8. That second role prevents White’s king from recapturing a rook on g8.",
+        "g8=Q+ is an independently replayed representative attempt to promote despite the blockade.",
+        "Rxg8 captures the queen and answers check. Kf7 protects the rook, so Kxg8 is illegal; Black retains a checked win."
+      ],
+      "classification": "source setup with independent alternative representative promotion and capture",
+      "explanation": "Rxg8 captures the queen and answers check. Kf7 protects the rook, so Kxg8 is illegal; Black retains a checked win.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "6r1/5k1K/5P2/8/8/8/8/8 w - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "pawns_corner_error",
+      "start": "start",
+      "title": "Step into the corner instead",
+      "san": [
+        "Kh8",
+        "Kd7+"
+      ],
+      "commentary": [
+        "The h8 corner also changes how White must meet the discovered rook check.",
+        "Kh8 gives away the win. From h8, the king cannot reach f7 in one move after the checking retreat.",
+        "Kd7+ uncovers the rook’s eighth-rank check. White has lost the favorable king route and the exact position is drawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kd7+ uncovers the rook’s eighth-rank check. White has lost the favorable king route and the exact position is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "2r4K/3k4/5PP1/8/8/8/8/8 w - - 2 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is Kg8 stronger than g7?",
+      "answer": "Kg8 lets White answer ...Kd7+ with Kf7, denying Black the king square needed to coordinate its rook against the pawns."
+    },
+    {
+      "node": "start",
+      "prompt": "Why finish the selected line with Kg6?",
+      "answer": "It protects both advanced pawns from the side and preserves the checked win while avoiding a careless pawn race."
+    }
+  ],
+  "defaultBranch": "pawns_shoulder",
+  "practiceBranch": "pawns_shoulder",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Ke8 at 141 seconds in the clip titled “…” in the source archive. This five-piece phase is reconstructed from the saved images; the earlier rook sacrifice and other variations remain source context.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "After pushing g7 and ...Kf7, the resulting position is a draw.",
+      "correction": "The exact saved position is lost for White. Kf7 blocks f6 and defends g8, so g8=Q+ Rxg8 cannot be met by Kxg8. The correct Kg8 plan still preserves White’s win."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

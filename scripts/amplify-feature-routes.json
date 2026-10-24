@@ -70,7 +70,22 @@
     "status": "200"
   },
   {
-    "source": "</^[^.]+$|\\.(?!(css|gif|glb|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json)$)([^.]+$)/>",
+    "source": "/endgame-stories",
+    "target": "/endgame-stories/index.html",
+    "status": "200"
+  },
+  {
+    "source": "/endgame-stories/",
+    "target": "/endgame-stories/index.html",
+    "status": "200"
+  },
+  {
+    "source": "</^\\/endgame-stories\\/[^/.]+\\/?$/>",
+    "target": "/endgame-stories/index.html",
+    "status": "200"
+  },
+  {
+    "source": "</^[^.]+$|\\.(?!(css|gif|glb|ico|jpg|webp|js|png|txt|svg|woff|woff2|ttf|map|json)$)([^.]+$)/>",
     "target": "/index.html",
     "status": "200"
   }

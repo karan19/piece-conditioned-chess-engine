@@ -1,0 +1,105 @@
+{
+  "video_id": "oFOyScHk_Ro",
+  "title": "Majestic: Mate Before the Queen Can Help",
+  "summary": "A new queen cannot rescue a trapped king when the other side can deliver an immediate pawn mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "6kr/4K2p/7P/5P2/8/8/6p1/8 w - - 0 1",
+      "question": "Should White race the pawn or move the king?",
+      "explanation": "After ...g2, White has Ke7/f5/h6 against Kg8/Rh8/g2/h7. Black’s own king and pawn block the rook; White must use the remaining tempo.",
+      "evidence": {
+        "timestamp_s": 147
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "majestic_pawn_mate",
+      "start": "start",
+      "title": "Promote the threat, not the pawn",
+      "san": [
+        "f6",
+        "g1=Q",
+        "f7#"
+      ],
+      "commentary": [
+        "After ...g2, White has Ke7/f5/h6 against Kg8/Rh8/g2/h7. Black’s own king and pawn block the rook; White must use the remaining tempo.",
+        "f6 threatens f7 mate. White’s h6 pawn and king cover the exits around Kg8.",
+        "g1=Q promotes, but the queen cannot interrupt the immediate mate or free Rh8 in time.",
+        "f7# is mate. The pawn checks g8; Ke7 covers f8/f7, h6 covers g7, and Black’s own Rh8/h7 occupy the other escape squares."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "f7# is mate. The pawn checks g8; Ke7 covers f8/f7, h6 covers g7, and Black’s own Rh8/h7 occupy the other escape squares.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6kr/4KP1p/7P/8/8/8/8/6q1 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_knight_promotion",
+      "start": "start",
+      "title": "Independent knight underpromotion cannot save Black",
+      "san": [
+        "f6",
+        "g1=N",
+        "f7#"
+      ],
+      "commentary": [
+        "After ...g2, White has Ke7/f5/h6 against Kg8/Rh8/g2/h7. Black’s own king and pawn block the rook; White must use the remaining tempo.",
+        "f6 creates the mating threat.",
+        "g1=N is an independently checked underpromotion defense. The knight on g1 cannot stop f7.",
+        "f7# is still actual mate. Underpromotion does not change the trapped king’s flight squares."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "f7# is still actual mate. Underpromotion does not change the trapped king’s flight squares.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6kr/4KP1p/7P/8/8/8/8/6n1 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "majestic_king_delay",
+      "start": "start",
+      "title": "Independent king retreat wastes the tempo",
+      "san": [
+        "Kd6"
+      ],
+      "commentary": [
+        "After ...g2, White has Ke7/f5/h6 against Kg8/Rh8/g2/h7. Black’s own king and pawn block the rook; White must use the remaining tempo.",
+        "Kd6 spends the essential tempo away from the f-pawn and gives up the forced win. The resulting exact outcome is checked rather than inferred from Black’s material advantage."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kd6 spends the essential tempo away from the f-pawn and gives up the forced win. The resulting exact outcome is checked rather than inferred from Black’s material advantage.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "6kr/7p/3K3P/5P2/8/8/6p1/8 b - - 1 1",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does Black’s extra queen fail to matter?",
+      "answer": "White does not need to promote. The next pawn move is mate, and Black’s own pieces occupy its king’s remaining escape squares."
+    }
+  ],
+  "defaultBranch": "majestic_pawn_mate",
+  "practiceBranch": "majestic_pawn_mate",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Only the final seven-piece pawn-race diagram after ...g2 at 147s is verified here. The earlier larger rook-skewer, h6 restraint and Ke7 rook sacrifice remain source context. Queen promotion and f7 mate are illustrated; knight underpromotion and the king retreat are independent comparisons.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

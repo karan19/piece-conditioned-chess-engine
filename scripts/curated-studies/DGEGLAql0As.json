@@ -1,0 +1,158 @@
+{
+  "video_id": "DGEGLAql0As",
+  "title": "Check Around and Find Out: Permit the Promotion",
+  "summary": "Finish the rook check, then use the king to protect a mating bishop square even while White promotes.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "B1K5/1P1P1P1P/1b6/1k6/8/8/8/4r3 b - - 0 1",
+      "question": "When should Black stop checking and let White promote?",
+      "explanation": "Rc1+ forces Kb8, after which Ka6 protects a7. White can promote a pawn, but cannot stop the protected adjacent bishop check.",
+      "evidence": {
+        "timestamp_s": 86
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "B1K5/1P1P1P1P/1b6/1k6/8/8/8/4r3 b - - 0 1",
+        "winner": "black",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "checkaround_source_promotion",
+      "start": "start",
+      "title": "Source finish: allow a queen",
+      "san": [
+        "Rc1+",
+        "Kb8",
+        "Ka6",
+        "d8=Q",
+        "Ba7#"
+      ],
+      "commentary": [
+        "Begin from the saved later Kc8 diagram. White still has Ba8 and pawns on b7, d7, f7 and h7; none is removed to reduce the piece count.",
+        "Rc1+ checks along the c-file. The bishop on b6 covers d8, so White cannot step back to that square.",
+        "Kb8 is the only legal reply. The b7 pawn and bishop on a8 occupy the other nearby squares, while the rook controls the c-file.",
+        "Ka6 is the quiet source move. It protects a7, so the next bishop check cannot be answered by Kxa7. Black can finally allow a promotion.",
+        "d8=Q follows the source and creates a queen, but the new queen has no way to capture the bishop on a7 or block its adjacent diagonal check.",
+        "Ba7# checks Kb8. Ka6 protects a7 and b7, Rc1 covers c8/c7, and White’s own bishop fills a8. Promotion has not opened an escape."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Ba7# checks Kb8. Ka6 protects a7 and b7, Rc1 covers c8/c7, and White’s own bishop fills a8. Promotion has not opened an escape.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "BK1Q4/bP3P1P/k7/8/8/8/8/2r5 w - - 1 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "checkaround_knight_promotion",
+      "start": "start",
+      "title": "Independent defense: promote to a knight",
+      "san": [
+        "Rc1+",
+        "Kb8",
+        "Ka6",
+        "f8=N",
+        "Ba7#"
+      ],
+      "commentary": [
+        "Test a different promotion type with the complete board retained. This is an independent alternative to the source queen promotion.",
+        "Rc1+ forces the white king away from c8.",
+        "Kb8 enters the same cage formed by the rook, bishop and White’s own pieces.",
+        "Ka6 protects a7 before bringing the bishop there.",
+        "f8=N is legal and gives no check. The knight on f8 cannot capture a7 or answer a bishop check against the adjacent king.",
+        "Ba7# is actual mate. The finite certificate also checks queen, rook, bishop and knight promotions on d8, f8 and h8."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ba7# is actual mate. The finite certificate also checks queen, rook, bishop and knight promotions on d8, f8 and h8.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "BK3N2/bP1P3P/k7/8/8/8/8/2r5 w - - 1 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "checkaround_far_queen",
+      "start": "start",
+      "title": "Independent defense: promote the h-pawn",
+      "san": [
+        "Rc1+",
+        "Kb8",
+        "Ka6",
+        "h8=Q",
+        "Ba7#"
+      ],
+      "commentary": [
+        "Test the most distant new queen instead of assuming all promotion squares are equivalent.",
+        "Rc1+ keeps White from spending this move on promotion.",
+        "Kb8 is forced by the complete legal-move list.",
+        "Ka6 supplies the king support that makes the next bishop check decisive.",
+        "h8=Q creates a queen along the eighth rank, but Ba8 blocks its line to a8 and no queen move can interrupt an adjacent bishop check.",
+        "Ba7# leaves no legal king move, capture or interposition. The full nine-piece mating position is preserved."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Ba7# leaves no legal king move, capture or interposition. The full nine-piece mating position is preserved.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "BK5Q/bP1P1P2/k7/8/8/8/8/2r5 w - - 1 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is Ka6 necessary before Ba7?",
+      "answer": "Ka6 protects a7. After the bishop checks from a7, the white king cannot capture it."
+    },
+    {
+      "node": "start",
+      "prompt": "How many promotion replies are checked after Ka6?",
+      "answer": "Twelve: queen, rook, bishop and knight promotions on d8, f8 and h8. The b7 pawn is blocked by its own king, and Ba8 is blocked by b7."
+    }
+  ],
+  "defaultBranch": "checkaround_source_promotion",
+  "practiceBranch": "checkaround_source_promotion",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after Kc8 at 86 seconds in the complete nine-piece later diagram. Rc1+/Kb8/Ka6 is proved against all twelve White promotions, each met by actual Ba7 mate; the white bishop and all four seventh-rank pawns are preserved. d8=Q is illustrated by the source; f8=N and h8=Q are explicitly independent comparison defenses. This finite legal mate proof does not certify the earlier long bishop-and-rook shepherd, premature promotion interpositions or claims of a forced route from the original board.",
+  "verification_scope": "Begin after Kc8 at 86 seconds in the complete nine-piece later diagram. Rc1+/Kb8/Ka6 is proved against all twelve White promotions, each met by actual Ba7 mate; the white bishop and all four seventh-rank pawns are preserved. d8=Q is illustrated by the source; f8=N and h8=Q are explicitly independent comparison defenses. This finite legal mate proof does not certify the earlier long bishop-and-rook shepherd, premature promotion interpositions or claims of a forced route from the original board.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "black",
+    "max_plies": 5,
+    "moves": {
+      "BK5Q/1P1P1P2/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK5R/1P1P1P2/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK5B/1P1P1P2/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK5N/1P1P1P2/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK3Q2/1P1P3P/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK3R2/1P1P3P/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK3B2/1P1P3P/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK3N2/1P1P3P/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK1Q4/1P3P1P/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK1R4/1P3P1P/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK1B4/1P3P1P/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK1N4/1P3P1P/kb6/8/8/8/8/2r5 b - - 0 3": "Ba7#",
+      "BK6/1P1P1P1P/1b6/1k6/8/8/8/2r5 b - - 2 2": "Ka6",
+      "B1K5/1P1P1P1P/1b6/1k6/8/8/8/4r3 b - - 0 1": "Rc1+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

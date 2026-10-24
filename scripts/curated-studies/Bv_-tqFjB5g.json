@@ -1,0 +1,82 @@
+{
+  "video_id": "Bv_-tqFjB5g",
+  "title": "Majestic King Cage: Use the Opponent’s Blockers",
+  "summary": "Recognize a smothered mate before taking a valuable piece that opens the cage.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "b7/kn2K3/qp6/8/1N6/8/8/8 w - - 0 1",
+      "question": "White has only a knight. Why is the black king still in danger?",
+      "explanation": "Begin after ...Qxa6 at 101 seconds. White has Ke7 and Nb4; Black has Ka7, Qa6, Ba8, Nb7 and b6. Four adjacent squares are occupied by black pieces; the checking knight can cover the remaining b8 flight.",
+      "evidence": {
+        "timestamp_s": 101
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "king_cage_smother",
+      "start": "start",
+      "title": "Source finish: check the caged king",
+      "san": [
+        "Nc6#"
+      ],
+      "commentary": [
+        "The source’s earlier bishop, pawn and queen sacrifices have produced this complete seven-piece diagram. Only the final decision and comparison are checked here.",
+        "Nc6# checks Ka7 with the knight. Black’s own Qa6, Ba8, Nb7 and b6 pawn occupy a6, a8, b7 and b6, and Nc6 itself controls the remaining b8 flight. A knight check cannot be interposed against, and none of the black pieces can capture Nc6. The boxed-in king is checkmated."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nc6# checks Ka7 with the knight. Black’s own Qa6, Ba8, Nb7 and b6 pawn occupy a6, a8, b7 and b6, and Nc6 itself controls the remaining b8 flight. A knight check cannot be interposed against, and none of the black pieces can capture Nc6. The boxed-in king is checkmated.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "b7/kn2K3/qpN5/8/8/8/8/8 b - - 1 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "king_cage_take_queen",
+      "start": "start",
+      "title": "Independent error: take the queen and open the cage",
+      "san": [
+        "Nxa6",
+        "Kxa6"
+      ],
+      "commentary": [
+        "An independently selected comparison tests the tempting material capture instead of giving mate.",
+        "Nxa6 removes the queen but gives up the forced win. The knight has left b4 without checking Ka7 and is now adjacent to the king.",
+        "Kxa6 captures the knight and opens the cage by removing the white attacker. Black has a checked win with bishop, knight and pawn against the lone white king. The higher-value capture lost the mating opportunity."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxa6 captures the knight and opens the cage by removing the white attacker. Black has a checked win with bishop, knight and pawn against the lone white king. The higher-value capture lost the mating opportunity.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "b7/1n2K3/kp6/8/8/8/8/8 w - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does a queen help trap its own king here?",
+      "answer": "Qa6 occupies a flight square without being able to capture the checking knight on c6. Ba8, Nb7 and b6 fill three more exits; the knight on c6 controls the remaining b8 square."
+    },
+    {
+      "node": "start",
+      "prompt": "Why is taking the queen worse than making the knight check?",
+      "answer": "Nxa6 lets the king take White’s last piece. Nc6 instead gives an unblockable knight check while Black’s own pieces block four exits and the checking knight covers b8."
+    }
+  ],
+  "defaultBranch": "king_cage_smother",
+  "practiceBranch": "king_cage_smother",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Qxa6 at 101 seconds in the complete seven-piece final cage. The larger bishop offer, pawn deflection and queen sacrifice are source context outside exact verification. Nc6 mate is the source finish; Nxa6/Kxa6 is an independently selected legal comparison checked at every position.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

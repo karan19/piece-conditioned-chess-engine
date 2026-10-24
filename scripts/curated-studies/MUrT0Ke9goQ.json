@@ -1,0 +1,85 @@
+{
+  "video_id": "MUrT0Ke9goQ",
+  "title": "Kasparov’s Immortal: Mate After the Bishop Is Taken",
+  "summary": "An exposed king can let the queen and rook force mate even while the opponent has two rooks and a queen.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3r3r/1R3p1p/6p1/1p6/8/5PP1/1Q5P/1K1k1q2 w - - 0 1",
+      "question": "Black has accepted the bishop. How does White force mate?",
+      "explanation": "Qc2+ forces the king to e1. Re7+ then checks along the e-file; Black’s only block is Qe2, which the white queen can capture with mate.",
+      "evidence": {
+        "timestamp_s": 147
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "3r3r/1R3p1p/6p1/1p6/8/5PP1/1Q5P/1K1k1q2 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "kasparov_conditional_queen_rook_mate",
+      "start": "start",
+      "title": "Conditional source mating net after Qxf1",
+      "san": [
+        "Qc2+",
+        "Ke1",
+        "Re7+",
+        "Qe2",
+        "Qxe2#"
+      ],
+      "commentary": [
+        "Begin after the illustrated Qxf1 accepts the bishop on f1. This proves the mating variation after acceptance, not the earlier sacrifice against every defense.",
+        "Qc2+ checks Kd1 along c2–d1 and covers c1/c2/d2/e2. Black cannot capture the queen or block an adjacent diagonal check. Ke1 is the only legal reply.",
+        "Ke1 is forced. Black’s queen on f1 occupies f1, and the white queen controls the other nearby escape squares.",
+        "Re7+ brings the rook onto the e-file with check. Qc2 controls d1/d2/e2; Black can only interpose its queen on e2. Neither rook can answer this check.",
+        "Qe2 is the only legal response. The queen sacrifices itself to block Re7’s file, giving White the final capture.",
+        "Qxe2# removes the blocking queen and checks Ke1 from the adjacent square. Re7 protects Qe2, the queen covers d1/d2/f1/f2, and Black cannot capture it or block the adjacent file check. This final move completes the source’s illustrated net independently and is actual mate."
+      ],
+      "classification": "selected illustrated source variation with independently completed final mate",
+      "explanation": "Qxe2# removes the blocking queen and checks Ke1 from the adjacent square. Re7 protects Qe2, the queen covers d1/d2/f1/f2, and Black cannot capture it or block the adjacent file check. This final move completes the source’s illustrated net independently and is actual mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3r3r/4Rp1p/6p1/1p6/8/5PP1/4Q2P/1K2k3 b - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why must Black sacrifice the queen after Re7+?",
+      "answer": "The king has no legal flight, neither rook can stop the check and Qe2 is the only legal interposition."
+    },
+    {
+      "node": "start",
+      "prompt": "Was this the actual continuation of the game?",
+      "answer": "The source presents Qxf1 as a conditional variation. The actual game continues with Rd2; that defense and the larger conversion remain outside this selected proof."
+    }
+  ],
+  "defaultBranch": "kasparov_conditional_queen_rook_mate",
+  "practiceBranch": "kasparov_conditional_queen_rook_mate",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Conditional fourteen-piece mating variation only, after Black accepts Bf1 with Qxf1 at147 seconds: White Kb1/Qb2/Rb7/f3/g3/h2 against Kd1/Qf1/Rd8/Rh8/b5/f7/g6/h7. Native53 shows the complete board before the queen capture, native54 is queen animation and native55 confirms Qxf1. Native56–58 show Qc2+/Ke1/Re7+/Qe2; the final Qxe2# is a legally verified completion of the illustrated mating net. Every Black reply to the checks is enumerated: Ke1 and Qe2 are forced. This does not prove Qxf1 was forced, certify all alternatives to Bf1, or establish the actual Rd2/Rd7 game continuation and final larger queen-versus-rook conversion. Earlier full legal reconstruction and review history remain preserved.",
+  "verification_scope": "Conditional fourteen-piece mating variation only, after Black accepts Bf1 with Qxf1 at147 seconds: White Kb1/Qb2/Rb7/f3/g3/h2 against Kd1/Qf1/Rd8/Rh8/b5/f7/g6/h7. Native53 shows the complete board before the queen capture, native54 is queen animation and native55 confirms Qxf1. Native56–58 show Qc2+/Ke1/Re7+/Qe2; the final Qxe2# is a legally verified completion of the illustrated mating net. Every Black reply to the checks is enumerated: Ke1 and Qe2 are forced. This does not prove Qxf1 was forced, certify all alternatives to Bf1, or establish the actual Rd2/Rd7 game continuation and final larger queen-versus-rook conversion. Earlier full legal reconstruction and review history remain preserved.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 5,
+    "moves": {
+      "3r3r/1R3p1p/6p1/1p6/8/5PP1/1Q5P/1K1k1q2 w - - 0 1": "Qc2+",
+      "3r3r/1R3p1p/6p1/1p6/8/5PP1/2Q4P/1K2kq2 w - - 2 2": "Re7+",
+      "3r3r/4Rp1p/6p1/1p6/8/5PP1/2Q1q2P/1K2k3 w - - 4 3": "Qxe2#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

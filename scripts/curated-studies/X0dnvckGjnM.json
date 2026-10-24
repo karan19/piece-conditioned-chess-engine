@@ -1,0 +1,185 @@
+{
+  "video_id": "X0dnvckGjnM",
+  "title": "Dancing Queens: The Pawn Endings",
+  "summary": "After the queens are exchanged, combine a king march toward the outside pawn with timely advances of your own passer.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/3K3p/2p5/2P5/8/8/1k6 w - - 0 1",
+      "question": "Which task should the king handle first?",
+      "explanation": "Begin in the five-piece pawn ending with White Kd6 and c4 against Kb1, c5 and h6. White can remove c5 immediately, then use both the king and passed pawn.",
+      "evidence": {
+        "timestamp_s": 157
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "earlier_exchange",
+      "fen": "8/4K3/7p/2p5/2P5/8/8/1k6 w - - 0 1",
+      "question": "What changes if the king is still on e7?",
+      "explanation": "This separate five-piece source ending has White Ke7 instead of Kd6. The exact position is losing for White; the larger queen sequences leading to these endings are not encoded.",
+      "evidence": {
+        "timestamp_s": 33
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "dance_pawn_race",
+      "start": "start",
+      "title": "Capture c5, stop the outside pawn, then promote",
+      "san": [
+        "Kxc5",
+        "h5",
+        "Kd4",
+        "h4",
+        "Ke3",
+        "Kc2",
+        "c5",
+        "Kc3",
+        "c6",
+        "h3",
+        "Kf3",
+        "h2",
+        "Kg2",
+        "h1=Q+",
+        "Kxh1",
+        "Kd4",
+        "c7",
+        "Kd5",
+        "c8=Q"
+      ],
+      "commentary": [
+        "Begin in the five-piece pawn ending with White Kd6 and c4 against Kb1, c5 and h6. White can remove c5 immediately, then use both the king and passed pawn.",
+        "Kxc5 removes the central pawn and turns c4 into a passed pawn. This capture is essential.",
+        "h5 starts the outside-pawn race, trying to divert the white king.",
+        "Kd4 heads toward the kingside while keeping the c-pawn available to advance.",
+        "h4 continues the distraction. White must use the king and pawn together.",
+        "Ke3 approaches the h-file via f3 and g2.",
+        "Kc2 chases the c-pawn. This is an independently selected representative reply within the source’s pawn-race idea.",
+        "c5 advances before the black king can arrive in time to stop it.",
+        "Kc3 continues the chase from behind.",
+        "c6 keeps the passer ahead of the king while White’s king handles h3/h2.",
+        "h3 threatens to create a second queen quickly.",
+        "Kf3 gets within reach of the promotion route.",
+        "h2 moves one square from promotion.",
+        "Kg2 controls h1. Promotion can now be met by capture.",
+        "h1=Q+ promotes with check in this independent representative continuation. The new queen is not safe.",
+        "Kxh1 removes the outside pawn’s promotion. White’s c6 pawn remains far enough ahead of the black king.",
+        "Kd4 continues toward c6, but the pawn can move again.",
+        "c7 leaves only one move to promotion.",
+        "Kd5 is a representative legal chase that still arrives too late.",
+        "c8=Q promotes. The exact queen-versus-king position is a White win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "c8=Q promotes. The exact queen-versus-king position is a White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2Q5/8/8/3k4/8/8/8/7K b - - 0 10",
+      "outcome": "loss"
+    },
+    {
+      "id": "dance_earlier_king",
+      "start": "earlier_exchange",
+      "title": "The earlier exchange leaves the king too far away",
+      "san": [
+        "Kf6",
+        "h5",
+        "Kg5",
+        "Ka2",
+        "Kxh5",
+        "Kb3",
+        "Kg4",
+        "Kxc4"
+      ],
+      "commentary": [
+        "This comparison starts from the separately pictured ending with Ke7, not from an assumed continuous move list between the queen sequences. The replies are independently selected.",
+        "Kf6 heads toward the outside pawn, but White has not removed c5.",
+        "h5 creates the distraction while the black king approaches c4.",
+        "Kg5 continues toward the h-pawn.",
+        "Ka2 brings Black’s king closer to the c-pawn.",
+        "Kxh5 removes the distraction, but the white king is now far from the queenside.",
+        "Kb3 attacks c4 and threatens to leave Black with the only passed pawn.",
+        "Kg4 starts back across the board too late in this selected continuation.",
+        "Kxc4 removes White’s pawn. The exact king-and-c-pawn ending is winning for Black."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxc4 removes White’s pawn. The exact king-and-c-pawn ending is winning for Black.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/8/2p5/2k3K1/8/8/8 w - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "dance_miss_capture",
+      "start": "start",
+      "title": "March away before taking c5",
+      "san": [
+        "Kd5"
+      ],
+      "commentary": [
+        "Begin in the five-piece pawn ending with White Kd6 and c4 against Kb1, c5 and h6. White can remove c5 immediately, then use both the king and passed pawn.",
+        "Kd5 abandons the immediate capture on c5 and throws away the win. The exact resulting position is losing for White with best play; capturing c5 was the urgent first task."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kd5 abandons the immediate capture on c5 and throws away the win. The exact resulting position is losing for White with best play; capturing c5 was the urgent first task.",
+      "expectedWhiteOutcomes": [
+        "loss"
+      ],
+      "end_fen": "8/8/7p/2pK4/2P5/8/8/1k6 b - - 1 1",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why combine king movement with pawn advances?",
+      "answer": "The king must stop the h-pawn while c5/c6 keep the other passer beyond the black king’s reach. Capturing c5 first creates that opportunity."
+    },
+    {
+      "node": "earlier_exchange",
+      "prompt": "Why is capturing the outside pawn alone insufficient?",
+      "answer": "If White’s king spends its time on the h-file while c5 remains, Black can collect c4 and retain the only passed pawn."
+    }
+  ],
+  "defaultBranch": "dance_pawn_race",
+  "practiceBranch": "dance_pawn_race",
+  "practiceType": "king",
+  "practiceGoal": "win",
+  "startContext": "This study checks the two five-piece pawn endings shown at 157 seconds (Kd6, winning) and 33 seconds (Ke7, losing). The earlier nine-piece queen dances and the source’s Kd6 tempo claim remain source context, outside this exact reconstruction. Encoded pawn-race continuations use explicitly independent representative replies from those pictured endings.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

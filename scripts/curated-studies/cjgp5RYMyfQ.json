@@ -1,0 +1,152 @@
+{
+  "video_id": "cjgp5RYMyfQ",
+  "title": "It Rains Brilliants: Uncover the New Queen",
+  "summary": "Move the king out of its own queen’s line, then use checking moves to finish the pawn ending.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "1k1K4/1Pp3P1/PpP5/8/8/8/8/8 w - - 0 1",
+      "question": "Does g8=Q immediately give check?",
+      "explanation": "No. Kd8 blocks the queen’s eighth-rank line to Kb8. After the source b5 reply, Ke7+ uncovers that line and forces the king toward a checked conversion.",
+      "evidence": {
+        "timestamp_s": 175
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "1k1K4/1Pp3P1/PpP5/8/8/8/8/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "rains_discovered_queen_check",
+      "start": "start",
+      "title": "Independent completion: uncover check, then collect c7",
+      "san": [
+        "g8=Q",
+        "b5",
+        "Ke7+",
+        "Ka7",
+        "Qb8+",
+        "Kb6",
+        "Qxc7+"
+      ],
+      "commentary": [
+        "Begin after the forced ...axb6 in the later source sequence. The full board retains a6/b7/c6 and Black b6/c7, with g7 ready to promote.",
+        "g8=Q is the source promotion. It does not check: White’s own king on d8 blocks the queen’s route toward b8.",
+        "b5 is the source reply. Black advances its mobile b-pawn; the c7 pawn remains blocked by c6.",
+        "Ke7+ is an independently supplied discovered check. Moving Kd8 opens the queen’s eighth rank toward Kb8.",
+        "Ka7 is forced. The white b7 pawn controls a8/c8 and the queen controls the eighth rank.",
+        "Qb8+ checks diagonally on a7 while keeping the queen beside the advanced pawns.",
+        "Kb6 is one legal retreat. Black’s other legal reply here captures a6, which is shown separately.",
+        "Qxc7+ captures c7 and reaches an exact seven-piece White win. White keeps a6/b7/c6 and Black keeps b5; no spare pawn is dropped to fit the tablebase."
+      ],
+      "classification": "source g8=Q/b5; subsequent moves independently supplied representative completion",
+      "explanation": "Qxc7+ captures c7 and reaches an exact seven-piece White win. White keeps a6/b7/c6 and Black keeps b5; no spare pawn is dropped to fit the tablebase.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1PQ1K3/PkP5/1p6/8/8/8/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "rains_king_takes_a6",
+      "start": "start",
+      "title": "Independent defense: capture the a6 pawn",
+      "san": [
+        "g8=Q",
+        "b5",
+        "Ke7+",
+        "Ka7",
+        "Qb8+",
+        "Kxa6"
+      ],
+      "commentary": [
+        "Compare the other king response to the checking queen move. Only the opening promotion and b5 are taken from the source.",
+        "g8=Q promotes without check because Kd8 interrupts the eighth rank.",
+        "b5 moves the black pawn forward and leaves White a discovered check.",
+        "Ke7+ clears d8 so Qg8 checks the king on b8.",
+        "Ka7 is the sole legal response to that discovered check.",
+        "Qb8+ checks Ka7 and forces a king move.",
+        "Kxa6 captures the white a-pawn and reaches seven pieces. Exact tablebase evidence still gives White a win; the result is checked after the actual capture rather than inferred from having a queen."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxa6 captures the white a-pawn and reaches seven pieces. Exact tablebase evidence still gives White a win; the result is checked after the actual capture rather than inferred from having a queen.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "1Q6/1Pp1K3/k1P5/1p6/8/8/8/8 w - - 0 4",
+      "outcome": "win"
+    },
+    {
+      "id": "rains_early_king_retreat",
+      "start": "start",
+      "title": "Independent defense: move the king before the pawn",
+      "san": [
+        "g8=Q",
+        "Ka7",
+        "Kxc7"
+      ],
+      "commentary": [
+        "Test the other legal reply to g8=Q instead of assuming ...b5 is forced.",
+        "g8=Q promotes. The queen’s line toward b8 is still blocked by Kd8.",
+        "Ka7 is a legal independent alternative to b5. It leaves c7 available to the white king.",
+        "Kxc7 captures the blocked c-pawn, reaching an exact seven-piece White win with a6/b7/c6 and Black b6 retained."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxc7 captures the blocked c-pawn, reaching an exact seven-piece White win with a6/b7/c6 and Black b6 retained.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6Q1/kPK5/PpP5/8/8/8/8/8 b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is Ke7 written with a check sign?",
+      "answer": "It uncovers Qg8’s line across the eighth rank to Kb8. The king is not itself checking the opposing king."
+    },
+    {
+      "node": "start",
+      "prompt": "Which original black pawn ends up on b6?",
+      "answer": "The a7 pawn captures the white b6 pawn. The complete later board therefore contains a black b6 pawn and no black a7 pawn."
+    }
+  ],
+  "defaultBranch": "rains_discovered_queen_check",
+  "practiceBranch": "rains_discovered_queen_check",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...axb6, immediately before g8=Q at 175 seconds, with the complete eight-piece later diagram: White Kd8/a6/b7/c6/g7 against Kb8/b6/c7. The source promotion and b5 reply are visible; subsequent king routes and captures are explicitly independent representative completions. A finite legal strategy covers every Black defense after g8=Q and ends in exact seven-piece wins. Earlier queen sacrifice, knight route, rook blockade, king march and pawn diversion remain outside this proof. The b6 pawn is the black a7 pawn after axb6, not a missing spare pawn.",
+  "verification_scope": "Begin after ...axb6, immediately before g8=Q at 175 seconds, with the complete eight-piece later diagram: White Kd8/a6/b7/c6/g7 against Kb8/b6/c7. The source promotion and b5 reply are visible; subsequent king routes and captures are explicitly independent representative completions. A finite legal strategy covers every Black defense after g8=Q and ends in exact seven-piece wins. Earlier queen sacrifice, knight route, rook blockade, king march and pawn diversion remain outside this proof. The b6 pawn is the black a7 pawn after axb6, not a missing spare pawn.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 9,
+    "moves": {
+      "3K2Q1/kPp5/PpP5/8/8/8/8/8 w - - 1 2": "Kxc7",
+      "1Q6/1Pp1K3/PkP5/1p6/8/8/8/8 w - - 4 4": "Qxc7+",
+      "6Q1/kPp1K3/P1P5/1p6/8/8/8/8 w - - 2 3": "Qb8+",
+      "1k1K2Q1/1Pp5/P1P5/1p6/8/8/8/8 w - - 0 2": "Ke7+",
+      "1k1K4/1Pp3P1/PpP5/8/8/8/8/8 w - - 0 1": "g8=Q"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

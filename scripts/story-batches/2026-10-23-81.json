@@ -1,0 +1,740 @@
+{
+  "batch_id": "2026-10-23-81",
+  "reviewed_on": "2026-10-24",
+  "scope": "A conditional back-rank mate and two separately preserved later move-order/fork reconstructions needing larger outcome analysis.",
+  "reviews": {
+    "RIVmNObFz7k": {
+      "result": "verified_selected_lines",
+      "supersedes_batch": "2026-10-23-67",
+      "notes": "Montages, captions and native complete diagrams reviewed. Conditional final back-rank mate only, after Black takes the offered queen with a6xb5 at151 seconds. Native56 establishes the complete fifteen-piece diagram: White Kg1/Rd8/Nf1/e7/e3/f2/g2/h2 against Kh8/Qc1/Re8/b5/f6/g7/h7; native57/58 confirm Rxe8 mate. The captured piece on b5 is White\u2019s queen, and the capturing pawn came from a6. Rxe8# has an exact finite certificate ending in actual mate with every remaining pawn retained. This does not prove that accepting the queen was forced, certify all defenses to Qxb5, or establish the earlier seventeen-piece Qd5/Kh8/queen-offer plan. The legal Qxf1+/Kxf1 refusal and its larger conversion remain explicitly outside this proof, with the earlier full legal draft preserved. The narrated resignation is not itself outcome evidence.",
+      "source_images": [
+        {
+          "file": "RIVmNObFz7k/images/image_00001.jpg",
+          "sha256": "eafc9b7c91cfa351bc662d91088d4340def2571bf1a79a38fc831d6e9ae87875"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00002.jpg",
+          "sha256": "7b38ae922b79503d4a0e6e615f66f5fed9922b33908e29b782219f7d93d740f7"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00003.jpg",
+          "sha256": "a43dfffaf165d4cef6d993d928c3b621c623e869ba22dd984f08c02d22fe1cbd"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00004.jpg",
+          "sha256": "417af2b0e4eb446be73f1f105ca48ce9ea5e72089a34faf22c0eebbee6fd88f9"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00005.jpg",
+          "sha256": "c208255e82909f9143b1e0bbb8e79ae12780e7534e34817234a3876001a1b369"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00006.jpg",
+          "sha256": "8f936b458cac2af5b239262f3973842bc3959bf2b797f818aa8bdf30bb979a73"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00007.jpg",
+          "sha256": "6d0fa2691602f62ca6f0ece28574a3ab69e7b3478ea737772d3bc3bf80a7de3f"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00008.jpg",
+          "sha256": "1b77efbf3adf9940979b38392b9770ee3bb0cd4076becdb859d289a41a7d2258"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00009.jpg",
+          "sha256": "1ad155bc7c26e5aacd9123342859528c6ebfe1ca3985821e075636b578255995"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00010.jpg",
+          "sha256": "8a21d8aba5426b5c34dc6fd2ff9173d95f131e10066f9e24400e26be576f32bb"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00011.jpg",
+          "sha256": "36045d64b702aa2db3e5d70c36c91071a7dd6094ad661ba08cb5031a22269804"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00012.jpg",
+          "sha256": "c61d46a99f1e3d7ae701d13c4fd0a52d4921a26939ee70d1a97875baee3114a2"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00013.jpg",
+          "sha256": "dd9baf387bc59b24bf54bc9c4f1264a4a4c550c14eef832509a5f434d78d443f"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00014.jpg",
+          "sha256": "9d2604506b5b0dd1c0a88256ae7f6c05ed3f597012afa7bb95e54b80f523735c"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00015.jpg",
+          "sha256": "ea5a6f6ba47d0fab797b60cce3d7f7a63ff708667c29e167c551e730b96dfb89"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00016.jpg",
+          "sha256": "286913cbb8c6e181ed503cbd31a0d07480c99304d2c97fba9bc963f63ac46131"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00017.jpg",
+          "sha256": "0fc6765f4d74455a1486c89091f5c60c0f8b7fc1b1aaa41bf5d36c32f377db2e"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00018.jpg",
+          "sha256": "1b471fae451f4b5c103dd640808c531d1cd43c2de9b0e7bf321ada64d6bfb32a"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00019.jpg",
+          "sha256": "47dded11c741a8f3c1b1ac8b6c8cc1cda6fd03f6f17c1bdd587fea82b945cee7"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00020.jpg",
+          "sha256": "4a21adcdfa04cc24c2c84e3dc9b56387adfc730371577349914b89a6a047af9f"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00021.jpg",
+          "sha256": "c4ae8b54eecf6cb95a2c5e3d8ca52f49d57a937250087de71e28f54c5aa5378f"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00022.jpg",
+          "sha256": "0e5758c20a5a49883b17a663bd20d130be336dc211f01b656b3a1ba0e98a4a0a"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00023.jpg",
+          "sha256": "a16a75fb0f3f9d7a054cecb533a2a1a1a5cc662fd7cc9d4de203b9a74799a525"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00024.jpg",
+          "sha256": "7ed6748c459ccaa3ea4467bd725215211dd90e562a70c6ec0414d34fb35fca4a"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00025.jpg",
+          "sha256": "87d31baeeab5f3d441fcc2bc5397556920d02b6a6e8f5f2f9a38980ceb6fff02"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00026.jpg",
+          "sha256": "8b04019a0117ab5a8c22cc2bc6de33a2984b66cbaf61819d99d389489d22bd80"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00027.jpg",
+          "sha256": "3138ff992620956f3e06bdb7813d9dc29b70394a0118482e6be57bad3977396a"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00028.jpg",
+          "sha256": "22d5eafb784b6d8150b3b858ef16493cc6039a64ee53032b12a03f6fc26ce2cb"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00029.jpg",
+          "sha256": "ffd46b7c8fffcd5855f1fdfe00973abc99985532dd8c2a91b2f9b80efdf6b9d3"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00030.jpg",
+          "sha256": "e3c7536d838134047f7cb448ab1fc97b231544d8731ab05455ff2a4bdb21260f"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00031.jpg",
+          "sha256": "028fc3ae90dd65c994c8d8b1f1ad0d27b305134c632bf9924a7e279b9692e92f"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00032.jpg",
+          "sha256": "ea5438b3fa6f860435445e0c5da3b06d92673e2bb009f9a17e30dd3ac2ae36a2"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00033.jpg",
+          "sha256": "da68e558f98fd6da13bfa9c82f9bb22726f4161e641397443bbe65c170b0f9e4"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00034.jpg",
+          "sha256": "2875222b1a0acde494d76cef7c0a3c976c0302be223e7fe2d8b0d29b7ff93e72"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00035.jpg",
+          "sha256": "488c902734f7de3dc76fd1e3d66eecde2e16a7d84c860a616b94fd716a6b7df5"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00036.jpg",
+          "sha256": "85df0887cfa535e48d6ec0d071f181d64b78e71bf401bb7f180bb86ff1e325ca"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00037.jpg",
+          "sha256": "f0614e6fdde879c5dd4c06b91de73da7de66489e5f1d419613e93076e2841488"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00038.jpg",
+          "sha256": "07e1f2bbb62020fc7f8b3862427f5922561a66e65a736bb1d779017d09a5ee29"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00039.jpg",
+          "sha256": "02840e97e93414dab7f490f78f5f8af1f02fa30e3143c382ba4bb28022eacab2"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00040.jpg",
+          "sha256": "1d55ea3ca8515908915144ea6b569d06db3239192f5de4458a8f9f81d7777dcc"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00041.jpg",
+          "sha256": "975c5e47ea5c0858b88670f14db34adac3722b62739b1e26c72ff4846deabd48"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00042.jpg",
+          "sha256": "f46695fa8e6e6cd0a6b1aecfa74961ef017d8211178776eee748fad8f8cb2d3b"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00043.jpg",
+          "sha256": "f7bc55243aea05ed27603b1ae41c7b075d1aa7201d0edc00252af9dccff454ae"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00044.jpg",
+          "sha256": "383b9734dbebb12c76495dcb8fac8d361162143c68c1af8b80ddeb02b63bf2f9"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00045.jpg",
+          "sha256": "35f440d11d2b8c40f6705d1f0a765d348ab7a2e7e3a4ac4da37b565084bc97dc"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00046.jpg",
+          "sha256": "8357f6ad9a6683b42b4206a44da05b83e6e2655eb7093a0a825a8ed863ee2e47"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00047.jpg",
+          "sha256": "673b0958466dcd407459b70928ac6b956da74dbbf829ebf0011ff2fd55cd8e69"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00048.jpg",
+          "sha256": "32421aff21ad1fdb241e02f21c8b5f4cbe9571359abc618b36d39693ad9e8cb7"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00049.jpg",
+          "sha256": "6f1919bed44c2bc8011ada83a1961eba380f38827152823e6da5c3d1501136ee"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00050.jpg",
+          "sha256": "e3ce1fafd726e1c5253ad5729be874991d99a8837e73eef9cc84a590cb3f2166"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00051.jpg",
+          "sha256": "7c94674990ca67258c17222670c1e2cf0efb79ae44fb231d50025a2534e39114"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00052.jpg",
+          "sha256": "5389f815607c34e7678061dec26689e1d37e161b8d7288b7578fb056b79606e7"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00053.jpg",
+          "sha256": "70775597b6fe6b392da4f5384ba31a12cdfcd753eebdda3d27315a06e16cb75a"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00054.jpg",
+          "sha256": "464db8c4d09527660e2a8fb0872b39dbafb82be9b587ad5a52084395c2741109"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00055.jpg",
+          "sha256": "a0419c643f2332e690c281c5f49bfc5ed4473d5f40e53583ce0d43c99e60efd2"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00056.jpg",
+          "sha256": "2e5ddb39fd9259919b5f7fc9ab618a056f5af56866340281220a3bf3f172d5f0"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00057.jpg",
+          "sha256": "996fba881ea67de3b8b7f2b580953c6f88e95187f58b8387256ce7a3ef037392"
+        },
+        {
+          "file": "RIVmNObFz7k/images/image_00058.jpg",
+          "sha256": "8e4c08f3ce8caf023b3c6accbccef8bb0b5f4585c2440636c8cd26764b17378f"
+        }
+      ],
+      "reconstruction": {
+        "file": "scripts/curated-studies/RIVmNObFz7k.json",
+        "sha256": "5fe18865ecac0c4564f4633f1e1f123be9fa50d921911b72a2c05234da123e1c"
+      },
+      "verification_evidence": {
+        "file": "scripts/curated-studies/RIVmNObFz7k.evidence.json",
+        "sha256": "8f468f5441fcf5159192623c674d9669e65b44dbb002921136d1d4ec1477a670"
+      }
+    },
+    "bqYLA-tmQP0": {
+      "result": "awaiting_reconstruction",
+      "supersedes_batch": "2026-10-23-68",
+      "notes": "Montages, captions and native complete diagrams reviewed. Native44/46/47 establish the complete twelve-piece correct-order diagram after e8=Q/Nf4+: White Kg2/Qe8/Be4/a2/b2/f2 against Kg4/Re1/Nb4/Nf4/a5/c7, White to move in check. Kh2 is the only legal reply. The independent Re2 continuation is not check because the actual f2 pawn blocks the second rank. Independent Rxe4/Qxe4 illustrates a legal omitted rook defense and leaves eleven pieces requiring outcome analysis. Native23\u201330 separately show the premature-f3 variation with Black Kh4 and White f3; the supplementary draft preserves that different board, the Re2+ comparison, and a selected legal queen-loss continuation. Do not splice the two king/pawn setups or call the shield alone an exact winning proof. A bounded twelve-ply search from the correct-order later diagram visited 275 nodes without a complete exact strategy certificate; the positive local engine estimate is not exact evidence. Verify all rook/knight defenses, promotion choices and the claimed full perpetual comparison. Source images and captions remain available; old draft/history preserved.",
+      "source_images": [
+        {
+          "file": "bqYLA-tmQP0/images/image_00001.jpg",
+          "sha256": "fee114d31c81b3e8d9e53c6ae0c76f98332e1e7625f47013f33cc769f5606414"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00002.jpg",
+          "sha256": "305da731ef9e64bf62bbe8b570fa1f9fafccf1953a69075c273101f2d1a08014"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00003.jpg",
+          "sha256": "1a59c195686e526241ed60f11e55e17d7c3a7c02f64256a69d477c3fb154e768"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00004.jpg",
+          "sha256": "b21805cb52252323e8bcffe349fe48e2fab301cda5291a345bd0078f1755e1c5"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00005.jpg",
+          "sha256": "270425320c127b0708f86734e2a45cfd3bfb9feeba74594f64b31d7aae53acdb"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00006.jpg",
+          "sha256": "429e1bf4f5f99622c86d7a3fb6c0ee8f5373bcfbc88000433e7538425e098c2b"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00007.jpg",
+          "sha256": "fae33990dce5d68f8b90249a0ab1bb510771cef0a692c86157c48162e24ab4df"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00008.jpg",
+          "sha256": "ac4c6c7246c40b4f8fcd5cc81fe37ba01e20e18eebcabbbda76f34985f490595"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00009.jpg",
+          "sha256": "dd2056caceedda917610f6a49d17b1d2f05021846a34cfa208afd15a84612cbb"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00010.jpg",
+          "sha256": "8d245e909ee1645f78933cb8effa787230f2021741e4e9559f6ffb8309f7c81e"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00011.jpg",
+          "sha256": "898fde7aacebe526a0e3dadbe973025b3c9de97a9b88e328e3260703b431fa2e"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00012.jpg",
+          "sha256": "0af1730e8830b06d3fe00c7d724e7b2a0fe4dcafe5abb2e100000e0b6610a3b1"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00013.jpg",
+          "sha256": "066fe65500aa901c3c790e95d5f730c35bdfe0e2672d3cc43108b3767741dff7"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00014.jpg",
+          "sha256": "2991af51816c2be9d879335bc664fdc3cd8667a402622658da83b80fe181a9fb"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00015.jpg",
+          "sha256": "606f26d5caa527d97b314233ad0fc9c1b2ad64235e5bae285890fb6e2b4b4b48"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00016.jpg",
+          "sha256": "4c712f62a4fe2d6f49c4634b67e46fd7e1aac6c8ef061489c9e1de47261a91bc"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00017.jpg",
+          "sha256": "6bcfc3590f45d044e4f2df43651ad95d68d29e43a4ddab71f45eda1ebe887c4f"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00018.jpg",
+          "sha256": "971af8775fc713ce8fee97c2ba3a11507bfa660a0902150a5b712ea4ee755bb2"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00019.jpg",
+          "sha256": "4f52f764929ea5b54110b1bcb78617f33c38842be6a3c2247660957b057c5c1f"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00020.jpg",
+          "sha256": "149a9e7f5ea585135bfd85bad8d38aac9b3a29c094eaa68c228e5a52d1703ab1"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00021.jpg",
+          "sha256": "bf7b3543e4f68a421c32025bd11ed7cd5a160e40926e7f3bad9498c2b3d411d4"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00022.jpg",
+          "sha256": "740b86ab4edf4f6e6b69740e8459e12029b93afa195ae56e33bb725a988635fb"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00023.jpg",
+          "sha256": "dd300dd38526f4cb450b6407c8a2ad258029543cbdef6e7159870d749eef0723"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00024.jpg",
+          "sha256": "28428bf649209815dcfb9a4e8c8da5525bb81f6515e2a0b8d381bf53d2f7dd1d"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00025.jpg",
+          "sha256": "090f79f857fd71b9029647177e63072b32a5793508a3991ebe2b57de079fbeed"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00026.jpg",
+          "sha256": "85acd15c576cdcb9081b2d843979d20c9f90d377e92067e9b90f7941ed491dcd"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00027.jpg",
+          "sha256": "271b9b997cee7cbaae11023e3fe8297e4920e37a8305dd8170fc9c8b50959c7d"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00028.jpg",
+          "sha256": "97786ac7eebe373fccb5b7faff9999067df08deb288cbfa1b0f40003c11cb327"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00029.jpg",
+          "sha256": "a2ccd29d3840204634a7880c36cdc36838ed25cf9538e7665a68123591e9f753"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00030.jpg",
+          "sha256": "44a58012a6a217e00d08be899d8b269df207a83679b55a3a86d5c2a6538cff26"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00031.jpg",
+          "sha256": "0169ccb351af9978b242f77b5db00696878b105f35c33c8d4c813ce674176f62"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00032.jpg",
+          "sha256": "d1e4ba9cea918e1aee6946ed516b75fbb3c2ed0c9956f3f2b89187a3d9ccc407"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00033.jpg",
+          "sha256": "37a339b0a993ee5f31e86f4166491521ab9da9c50e08ff31b8a1f7361f137c6d"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00034.jpg",
+          "sha256": "3e177bd0cad60818985c7562e5b2bea7ef4c0522e5e5f605048d138c82d4083c"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00035.jpg",
+          "sha256": "abca747ac7be46865d23c1882d96befbaecebc0b002299d23aa5152e760957fd"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00036.jpg",
+          "sha256": "988dfaa3e0d73ecdd583147b299a8b6bed69f37940cef374c2ae7702bed4dc07"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00037.jpg",
+          "sha256": "f34d2afcb26aca6e785f0ccd64f6f01c1d7489c8113fb3f8ac35b470ad83c1e7"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00038.jpg",
+          "sha256": "43b1174ee0aa4e2f1823d24b38a62bb868c1ce6da622cc2272681d16c650a720"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00039.jpg",
+          "sha256": "2a8d73b345db29ee14d9eef85e9ebab25535b6943ec179b1979e3f35d63e9fc6"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00040.jpg",
+          "sha256": "12f195915ff14f9aebefb98a4ac5d1d4466df0f7f21f4cd45f2b4490dc9c2296"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00041.jpg",
+          "sha256": "6106152157794ee6ba7ea980a14bc0de069bb028121fd207e861b9044cbb8411"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00042.jpg",
+          "sha256": "28b1ba1f6304a4e97e1a5773fe7931c534f3fc11b5dde2474ff099ff14d38962"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00043.jpg",
+          "sha256": "559b6b54538ec9b166cce5dd889bbd4d92677066db0ae549db6d3f4942098ac1"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00044.jpg",
+          "sha256": "37bee80534b5be7c69abf332662feb3cfdbc8278485c5132abc05c71ea93dda9"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00045.jpg",
+          "sha256": "5cc62f6de4cc8ba542d724d6783c1217d46c595eca2f40fd060d6adfb2917941"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00046.jpg",
+          "sha256": "c40569288f5f0c578930bfda0d739bdc5ec064e41113b61f1f0834c05185af91"
+        },
+        {
+          "file": "bqYLA-tmQP0/images/image_00047.jpg",
+          "sha256": "9750bdf164d735902dbb0a686cc5bd90b8260f8029a70c705e6fba9ad5a87335"
+        }
+      ],
+      "reconstruction": {
+        "file": "scripts/story-drafts/bqYLA-tmQP0.batch81.reconstruction.json",
+        "sha256": "6083addb4006bff0964118b3231b9d07b10f45a004b8a28f45bf922e8dd92e5e"
+      },
+      "analysis_required": "Native44/46/47 establish the complete twelve-piece correct-order diagram after e8=Q/Nf4+: White Kg2/Qe8/Be4/a2/b2/f2 against Kg4/Re1/Nb4/Nf4/a5/c7, White to move in check. Kh2 is the only legal reply. The independent Re2 continuation is not check because the actual f2 pawn blocks the second rank. Independent Rxe4/Qxe4 illustrates a legal omitted rook defense and leaves eleven pieces requiring outcome analysis. Native23\u201330 separately show the premature-f3 variation with Black Kh4 and White f3; the supplementary draft preserves that different board, the Re2+ comparison, and a selected legal queen-loss continuation. Do not splice the two king/pawn setups or call the shield alone an exact winning proof. A bounded twelve-ply search from the correct-order later diagram visited 275 nodes without a complete exact strategy certificate; the positive local engine estimate is not exact evidence. Verify all rook/knight defenses, promotion choices and the claimed full perpetual comparison. Source images and captions remain available; old draft/history preserved.",
+      "move_order_comparison": {
+        "file": "scripts/story-drafts/bqYLA-tmQP0.batch81.premature.json",
+        "sha256": "56c592f15c3e2aa00d9d8f706ff3548701e74e8e89aceb474849e834281e1dca"
+      }
+    },
+    "NGgEOuT6ZMI": {
+      "result": "awaiting_reconstruction",
+      "supersedes_batch": "2026-10-23-69",
+      "notes": "Montages, captions and native complete diagrams reviewed. Native50\u201355 establish the final complete thirteen-piece rook-offer diagram after Qb7: White Kg1/Rh8/Ne5/a2/b2/d5/e4/f2 against Ke7/Qb7/a6/c7/f6. Black\u2019s knight has actually been captured in the earlier Rxh4 variation. The final Rb8/Qxb8/Nc6+/Kd7/Nxb8+ capture line replays legally to eleven pieces, with White Kg1/Nb8/a2/b2/d5/e4/f2 against Kd7/a6/c7/f6, confirmed by native55. Native53 catches the knight moving toward c6 and is not a stable Nd5 piece. The queen gain is not an exact win certificate for the complete knight-and-eight-pawns ending. Verify every queen destination and the resulting endings, or a supported independently analyzed later scope. All eight pawns remain; no forced repetition or win is inferred from the narrator\u2019s rating metaphor or queen-trap promise. The earlier fourteen-piece rook chase and original legal draft remain preserved; source images and captions are available.",
+      "source_images": [
+        {
+          "file": "NGgEOuT6ZMI/images/image_00001.jpg",
+          "sha256": "c19a6ece2bb6d435cbf7db3aeae36803c7bbc12495c6f6c48ab3fd398bc1e5cc"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00002.jpg",
+          "sha256": "09f1016f29f5a959e1432b36affba9d3a1028b7159b19e6881f25a2dd5f4c787"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00003.jpg",
+          "sha256": "f8581d72ee355cef79f792ac7f732e0c3d48cde4bb99196860f7083aa5964206"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00004.jpg",
+          "sha256": "e3a67598157b1cc3dc2be38fff99eed529adfc94da39e67d4b05e8e6575c8fb6"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00005.jpg",
+          "sha256": "2b5046bc454f3d29cf7252c2a128b3931117247fb88fb066451b6c8958f0a5f9"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00006.jpg",
+          "sha256": "1fb6bbfd32b0a4868c9159b9db825662bbc07c5ead9bb0c0ee87fd040feeab3b"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00007.jpg",
+          "sha256": "990ace07d6f26c62d9393dae3e59a1405e952de0df1816c2a453d012416e13b6"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00008.jpg",
+          "sha256": "0ee251def215860d8e9ee8ec46773acfbaad2ceb27e42d8954ba10d33f6bfa93"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00009.jpg",
+          "sha256": "16c3084ae01d0d21d944a69a088d53fde2928d2be228751c199731e84ced043c"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00010.jpg",
+          "sha256": "495ee078690461fff817a41809f990fb5a2524b69629b7a32f0f4af87dfa45a3"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00011.jpg",
+          "sha256": "1cc59d9dcb4393b6bae7bc1c39db1c17401aa1c6e154459dfbac744a1de4b5b3"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00012.jpg",
+          "sha256": "972309e36d2923d4e69e5ef308364ed1939a0be7d660560ff6ff64646b8fecd3"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00013.jpg",
+          "sha256": "5c89b399824383162391afaf9e12e82218f7f16d47076effae59ba1c57b87805"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00014.jpg",
+          "sha256": "faf9d4d3bb2af8d45493c762acf6068ad1be113197d3f2e9d65e6dc3818affff"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00015.jpg",
+          "sha256": "94e9fb3310628db8416f4b8e09524daf2ed28033a8081d74ab070401fe5c38ae"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00016.jpg",
+          "sha256": "4e7af0899e9b0c15b89255775642dd48f1f28d6225843500886fb0bab8b258f5"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00017.jpg",
+          "sha256": "e72003895bd61873275569c774d30531b277e2ce65744d16c7a982ac1849e59d"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00018.jpg",
+          "sha256": "f9a4ae6bab504b6559da73942261e03566c1c8b2fedaa6bb8ab4c37a7705a3e6"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00019.jpg",
+          "sha256": "80a16138849ed7a4ee487a5e644155086e55945fd60cbff24648eab5ab3a4676"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00020.jpg",
+          "sha256": "97deca3302257a419d14bb3d74c5f73935344507ba7980fdc55fb2cc315b06f6"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00021.jpg",
+          "sha256": "dfcc6266bcba86aca95d3e370e1fe256fb6f3c15a0210b6e1ad907b2cf5b9357"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00022.jpg",
+          "sha256": "4116453c68c91b5a2080f6e3ac6a4d3488ad32f6e02e450a737d18b45b68f411"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00023.jpg",
+          "sha256": "f97610e87712fd13bbe016e061fac347b6b64eee8a471408f09dafb6558eb2f4"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00024.jpg",
+          "sha256": "0dc321186aaff2aa0f85e5c3247075ae90b398126b7ef9a5b5951249f316218d"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00025.jpg",
+          "sha256": "122e8d691f08535ac3cbc176a3f80cd9887fc6eaa8e9f60d0aced0ff905f8117"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00026.jpg",
+          "sha256": "fbb4379ede9e870d52399dcb77e28c75b88688cd1842070c1dd951f689dbb1c0"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00027.jpg",
+          "sha256": "b29110d09877190ccad78905cead05c5160732826136825b01933017f5426d01"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00028.jpg",
+          "sha256": "2a9e1487ee4004c3660de6ba72c273e6b3baa376733020e70ebe945ffe3c8802"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00029.jpg",
+          "sha256": "666eb4b97cfac07b5bd9613f164b1e4e045465b6321dda048198c509157ec0c0"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00030.jpg",
+          "sha256": "f84ce3d4cb83300471ffad61e9fb12594b9e7d2aba6df21f1982b343c4dfdb53"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00031.jpg",
+          "sha256": "8e5ec02dd8fa3105ab562709e47675e5e5a75b9228738892cbd15bed0886d505"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00032.jpg",
+          "sha256": "3ecf6e1cf28b6fcb84de1024d4473220666c2671329ea59d96f1c55c7df007fd"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00033.jpg",
+          "sha256": "587e147e06ce269a44d29eddab5ee15e36b332eb3bca628edf740695674e67e7"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00034.jpg",
+          "sha256": "8d7f8e859cb722d82de9ded3718d5b6db2cf8ecf23fff94bb513f04c4e80dc2b"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00035.jpg",
+          "sha256": "a807e79c455abf3a178a8b3d63a9fed8f43117e9f2aa2a37280d55ca81a34d1c"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00036.jpg",
+          "sha256": "163bb0d27fda9cbff49a74f94222ae6d9ed89df4e973a5fa5622130accc5d33d"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00037.jpg",
+          "sha256": "e816ed0ce258978bdeb6e056f7037ef3efd716374d7e2a4851d4ea82463028a2"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00038.jpg",
+          "sha256": "c40004ecea36afceeac102e230024410e5628aa2b17cbb5d3089feaff8d867fc"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00039.jpg",
+          "sha256": "e609b1bd5466b936122f375b643ac6fd292c16e364f44d47998e4b129781ccd9"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00040.jpg",
+          "sha256": "06d572350929ad98c5f2fa9da8c528e2ae8a1b47322b2b6355e80b2606ed8644"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00041.jpg",
+          "sha256": "4a4073388227cdd6b0cee0e43911e837f98c27f9a0da94c07271f32ff241321d"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00042.jpg",
+          "sha256": "16c377b25bc6c938915b0c5d9a7c46bf90aa10b0de30bfbbeb036c6f60f0da8d"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00043.jpg",
+          "sha256": "6f171af8f4ec043fbecae7c72bf45697d4201e25445d861be17bfda8bb9c283b"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00044.jpg",
+          "sha256": "b53b0a79ec81149c3d78f9143cd969730aaaa174608f344c094184dedb9250ce"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00045.jpg",
+          "sha256": "a932368efe59a7d02420e9911f9ee34f77396525832231f525feabf15900799a"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00046.jpg",
+          "sha256": "eba04dd2eabc893f91d3a26b46c9b5776fefb1ece01e6d052338c582a4d569e2"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00047.jpg",
+          "sha256": "ba9fac201b1f92d0cf0e781c165bc7d39488c2ad9feb126fc8b1e9b83d56fc2c"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00048.jpg",
+          "sha256": "9581d0b7834195888a7a18f55652875008d5dbb5a701c3b9050a795f093c0d3e"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00049.jpg",
+          "sha256": "436f429fd9d4e4785878a3dc9e8b400dfe666b87f41bfdfaeb4b1793ad10e7bf"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00050.jpg",
+          "sha256": "8b87dc3a75ee6286279b6212e02bc19ebf07ae07906dbea494254acc6c7f6ac8"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00051.jpg",
+          "sha256": "120f02ad8a7cb5c8d0459a416217fb00f5815ecb0a5f1f6b609af009c2b892cd"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00052.jpg",
+          "sha256": "ddd8d6a365560ca7e46e16b797c0ee91d20bf72055282792e5cc9dd3690b5d9c"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00053.jpg",
+          "sha256": "ea7eee2d788af077124a0bd6f7e3bf039b61d054a15153c7e52d5c5e0cdbec0f"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00054.jpg",
+          "sha256": "6c569127b784641687eccc9fce7d1a3538c590b33f781ebe50bd08ebd55c7ff8"
+        },
+        {
+          "file": "NGgEOuT6ZMI/images/image_00055.jpg",
+          "sha256": "a6103099e7f50ebc35cd66b45add87539c1afe863d38d58ef09431f8767bf696"
+        }
+      ],
+      "reconstruction": {
+        "file": "scripts/story-drafts/NGgEOuT6ZMI.batch81.reconstruction.json",
+        "sha256": "2120d8be37f3f77a66b4bbc9582428a53b297cd4a19bf7d1e71de36936d63278"
+      },
+      "analysis_required": "Native50\u201355 establish the final complete thirteen-piece rook-offer diagram after Qb7: White Kg1/Rh8/Ne5/a2/b2/d5/e4/f2 against Ke7/Qb7/a6/c7/f6. Black\u2019s knight has actually been captured in the earlier Rxh4 variation. The final Rb8/Qxb8/Nc6+/Kd7/Nxb8+ capture line replays legally to eleven pieces, with White Kg1/Nb8/a2/b2/d5/e4/f2 against Kd7/a6/c7/f6, confirmed by native55. Native53 catches the knight moving toward c6 and is not a stable Nd5 piece. The queen gain is not an exact win certificate for the complete knight-and-eight-pawns ending. Verify every queen destination and the resulting endings, or a supported independently analyzed later scope. All eight pawns remain; no forced repetition or win is inferred from the narrator\u2019s rating metaphor or queen-trap promise. The earlier fourteen-piece rook chase and original legal draft remain preserved; source images and captions are available."
+    }
+  },
+  "validation": {
+    "local_only": true,
+    "verified_studies_added": 1,
+    "selected_branches": 1,
+    "encoded_intermediate_steps": 1,
+    "source_image_hashes_checked": 160,
+    "proof_audit": {
+      "RIVmNObFz7k": {
+        "larger_proof_positions": 2,
+        "mate_leaves": 1,
+        "tablebase_leaves": 0,
+        "branches": 1,
+        "steps": 1
+      },
+      "bqYLA-tmQP0": {
+        "legal_only": true,
+        "root_pieces": 12,
+        "steps": 5
+      },
+      "NGgEOuT6ZMI": {
+        "legal_only": true,
+        "root_pieces": 13,
+        "steps": 5
+      }
+    },
+    "queue_counts": {
+      "verified_selected_lines": 192,
+      "not_applicable": 13,
+      "needs_information": 27,
+      "awaiting_reconstruction": 16
+    },
+    "collection_branches": 599,
+    "ui_screenshots": [
+      "docs/screenshots/endgame-stories-batch-81-back-rank-mate.png"
+    ],
+    "app_tests": 195,
+    "app_test_files": 16,
+    "production_build": "passed",
+    "build_runtime": "Node 24.19.0",
+    "vite_build_seconds": 5.39,
+    "tests_log": "/tmp/b81-tests.log",
+    "build_log": "/tmp/b81-build.log",
+    "scope_limit": "Conditional final mate only in Majestic Queen. Both other entries remain pending larger-position outcome analysis.",
+    "tiny_bounded_search": {
+      "nodes": 275,
+      "max_plies": 12,
+      "complete_certificate": false
+    },
+    "supplementary_move_order_checks": "Both complete twelve-piece boards replay legally. Re2 is not check with f2 occupied; Re2+ is check with the pawn on f3. Nbd3+ disambiguates the two knights."
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "video_id": "BtD4AL1cYJ8",
+  "title": "Cheeky Knight",
+  "summary": "Let the pawn promote while rerouting the knight into a supported perpetual check.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3N4/k7/ppK5/8/3p4/8/8/8 w - - 0 1",
+      "question": "Can White save the game without catching d4 directly?",
+      "explanation": "The white king must support checks near the black king. The drawing plan changes the knight’s checking circuit rather than stopping the d-pawn.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    },
+    {
+      "id": "reroute",
+      "fen": "k7/2K5/ppN5/8/8/3p4/8/8 w - - 2 3",
+      "question": "How can Ne5 help while moving away from the king?",
+      "explanation": "From e5 the knight attacks d3 and can reach c4. That route will let it capture b6 with check after promotion.",
+      "evidence": {
+        "timestamp_s": 38
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "cheeky_knight_perpetual",
+      "start": "start",
+      "title": "Reroute into a perpetual-check circuit",
+      "san": [
+        "Kc7",
+        "d3",
+        "Nc6+",
+        "Ka8",
+        "Ne5",
+        "d2",
+        "Nc4",
+        "d1=Q",
+        "Nxb6+",
+        "Ka7",
+        "Nc8+",
+        "Ka8",
+        "Nb6+",
+        "Ka7",
+        "Nc8+",
+        "Ka8",
+        "Nb6+",
+        "Ka7",
+        "Nc8+",
+        "Ka8"
+      ],
+      "commentary": [
+        "Begin from the complete six-piece source board. The objective is to draw, not to win material.",
+        "Kc7 supports the corner checking circuit and restricts the opposing king’s escape squares.",
+        "d3 advances toward promotion, too far for a direct king chase.",
+        "Nc6+ checks Ka7 and forces the source’s corner retreat.",
+        "Ka8 leaves the knight without an immediate repeat of the same check, so White must reroute.",
+        "Ne5 attacks d3 and heads toward c4, preparing a different checking circuit.",
+        "d2 advances the attacked pawn instead of giving White time to capture it.",
+        "Nc4 attacks d2 and prepares Nxb6+, using Black’s own b-pawn as the entry to the corner.",
+        "d1=Q promotes. The new queen is far from the king and cannot break the forthcoming checks.",
+        "Nxb6+ captures the b6 pawn with check, reaching a square supported by Kc7.",
+        "Ka7 is the sole legal reply to this check: a6 is occupied and Kc7 controls b7 and b8.",
+        "Nc8+ checks Ka7 from the other supported square.",
+        "Ka8 is forced. Kc7 covers b8 and b7, while the a6 pawn blocks a6.",
+        "Nb6+ starts the same checking pattern again; this time b6 is empty.",
+        "Ka7 is again the only legal response.",
+        "Nc8+ returns to the second checking square without allowing the queen a useful turn.",
+        "Ka8 restores the same position for a second occurrence.",
+        "Nb6+ continues the independently extended repetition demonstration.",
+        "Ka7 is forced again; the king still has no second legal reply.",
+        "Nc8+ gives the final check in the encoded repetition cycle.",
+        "Ka8 produces a third occurrence of the same position with White to move. This is a claimable threefold repetition in the replay, in addition to the checked drawn tablebase result."
+      ],
+      "classification": "selected source perpetual with independent alternative extension to threefold repetition",
+      "explanation": "Ka8 produces a third occurrence of the same position with White to move. This is an actual threefold repetition in the replay, in addition to the checked drawn tablebase result.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "k1N5/2K5/p7/8/8/8/8/3q4 w - - 11 11",
+      "outcome": "draw"
+    },
+    {
+      "id": "cheeky_knight_king_chase",
+      "start": "start",
+      "title": "Chase the pawn with the king",
+      "san": [
+        "Kd5",
+        "d3"
+      ],
+      "commentary": [
+        "Compare the source’s direct king approach instead of supporting the checking circuit.",
+        "Kd5 gives up the draw. The king is not close enough to the promotion square and has abandoned the necessary corner support.",
+        "d3 keeps Black’s exact win. The branch stops here rather than inventing a long queen conversion."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d3 keeps Black’s exact win. The branch stops here rather than inventing a long queen conversion.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "3N4/k7/pp6/3K4/8/3p4/8/8 w - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "cheeky_knight_wrong_reroute",
+      "start": "reroute",
+      "title": "Choose a knight square without the circuit",
+      "san": [
+        "Nd4",
+        "d2"
+      ],
+      "commentary": [
+        "Compare an independent knight retreat after the first corner check.",
+        "Nd4 misses the c4–b6 checking route and changes the exact result to a Black win.",
+        "d2 keeps the passer moving. Black retains a checked forced win; promotion conversion is outside this comparison."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "d2 keeps the passer moving. Black retains a checked forced win; promotion conversion is outside this comparison.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "k7/2K5/pp6/8/3N4/8/3p4/8 w - - 0 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "reroute",
+      "prompt": "Why does Ne5 save more than another immediate check?",
+      "answer": "It attacks d3, then reaches c4, where the knight can capture b6 with check after promotion. Kc7 supports the resulting perpetual."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does the extra queen not win here?",
+      "answer": "Black must answer a check on every turn, and its queen cannot interpose against a knight check or capture the protected knight."
+    }
+  ],
+  "defaultBranch": "cheeky_knight_perpetual",
+  "practiceBranch": "cheeky_knight_perpetual",
+  "practiceType": "knight",
+  "practiceGoal": "draw",
+  "startContext": "The complete six-piece board is reconstructed from saved images. The source’s Nc6 check, Ne5/Nc4 reroute and Nxb6/Nc8 perpetual are checked exactly. Extra repetitions of the same forced checking cycle are independently extended to make threefold repetition explicit. The Nd4 comparison is independent.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,32 @@
+{
+  "node:start": {
+    "method": "finite_strategy",
+    "fen": "8/pP3p2/2p5/4b3/2K1kp1p/8/3PB1P1/8 w - - 0 1",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Bd3#": {
+        "method": "finite_strategy",
+        "fen": "8/pP3p2/2p5/4b3/2K1kp1p/3B4/3P2P1/8 b - - 1 1",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:bishops_final_net:1": {
+    "method": "finite_strategy",
+    "fen": "8/pP3p2/2p5/4b3/2K1kp1p/3B4/3P2P1/8 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:bishops_final_net": {
+    "method": "finite_strategy",
+    "fen": "8/pP3p2/2p5/4b3/2K1kp1p/3B4/3P2P1/8 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  }
+}

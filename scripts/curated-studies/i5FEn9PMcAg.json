@@ -1,0 +1,149 @@
+{
+  "video_id": "i5FEn9PMcAg",
+  "title": "Majestic Air!",
+  "summary": "Place the bishop where it supports the checking route after both sides promote.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "B7/P5K1/8/8/8/2pb2k1/8/8 w - - 0 1",
+      "question": "Where should the bishop clear the promotion square?",
+      "explanation": "Ba8 blocks its own a7 pawn. Moving the bishop also changes whether Black can interpose a new queen against the later checking sequence.",
+      "evidence": {
+        "timestamp_s": 17
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "air_bishop_geometry",
+      "start": "start",
+      "title": "Sacrifice the bishop and win the queen",
+      "san": [
+        "Bg2",
+        "c2",
+        "a8=Q",
+        "c1=Q",
+        "Qf3+",
+        "Kh4",
+        "Qh3+",
+        "Kg5",
+        "Qh6+",
+        "Kf5",
+        "Qxc1"
+      ],
+      "commentary": [
+        "Begin after ...c3 in the complete six-piece study position. The promotional advertisement inserted in the source is outside this lesson.",
+        "Bg2 clears a8 while offering the bishop to Kg3. Crucially, the bishop now supports f3 on the later checking route.",
+        "c2 races the pawn instead of accepting the bishop.",
+        "a8=Q promotes, leaving the bishop on g2 to support the coming queen checks.",
+        "c1=Q gives Black a queen as well. Material is level, but the king placement and bishop support decide the tactics.",
+        "Qf3+ checks Kg3 horizontally, supported by Bg2. White starts the checking route toward the queen on c1.",
+        "Kh4 is the source’s illustrated king escape.",
+        "Qh3+ continues the king chase. This connecting check is independently supplied as a representative legal completion between the source’s saved Qf3 and Qh6 diagrams.",
+        "Kg5 is the illustrated king square in the final saved diagram, reached here through the independently supplied checking route.",
+        "Qh6+ skewers Kg5 and Qc1 along h6–g5–f4–e3–d2–c1.",
+        "Kf5 is an independently selected legal king retreat. It leaves the queen behind the king on that diagonal.",
+        "Qxc1 collects the queen. White has a checked winning queen-and-bishop ending; this is not an immediate mate."
+      ],
+      "classification": "selected illustrated source idea with independent representative connecting checks and conversion",
+      "explanation": "Qxc1 collects the queen. White has a checked winning queen-and-bishop ending; this is not an immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/6K1/8/5k2/8/3b4/6B1/2Q5 b - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "air_accept_bishop",
+      "start": "start",
+      "title": "Accept the offered bishop",
+      "san": [
+        "Bg2",
+        "Kxg2",
+        "a8=Q+"
+      ],
+      "commentary": [
+        "Compare the source’s alternative of taking the bishop on g2.",
+        "Bg2 offers the bishop while clearing the promotion square.",
+        "Kxg2 accepts, but steps onto the new queen’s promotion diagonal.",
+        "a8=Q+ promotes with check along a8–b7–c6–d5–e4–f3–g2. White gains the tempo needed to handle Black’s c-pawn; the exact position is a White win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "a8=Q+ promotes with check along a8–b7–c6–d5–e4–f3–g2. White gains the tempo needed to handle Black’s c-pawn; the exact position is a White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "Q7/6K1/8/8/8/2pb4/6k1/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "air_wrong_bishop_square",
+      "start": "start",
+      "title": "Clear the pawn with Bd5 instead",
+      "san": [
+        "Bd5",
+        "c2",
+        "a8=Q",
+        "c1=Q",
+        "Qb8+",
+        "Qf4"
+      ],
+      "commentary": [
+        "Compare the source’s initial failed attempt, with the bishop on d5 rather than g2.",
+        "Bd5 clears a8 but gives away the win. The bishop does not support the same checking route.",
+        "c2 continues Black’s promotion race.",
+        "a8=Q promotes first but does not check Kg3.",
+        "c1=Q restores the material balance and supplies defensive interpositions.",
+        "Qb8+ checks along b8–c7–d6–e5–f4–g3.",
+        "Qf4 interposes the new queen on that diagonal. The exact position is drawn: checking alone does not force the skewer found after Bg2."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qf4 interposes the new queen on that diagonal. The exact position is drawn: checking alone does not force the skewer found after Bg2.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "1Q6/6K1/8/3B4/5q2/3b2k1/8/8 w - - 2 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does the bishop’s destination matter if either move clears a8?",
+      "answer": "Bg2 supports f3, so the queen can approach the king along a useful checking route. Bd5 permits the defensive ...Qf4 interposition after Qb8+."
+    },
+    {
+      "node": "start",
+      "prompt": "Why can White offer the bishop to the king?",
+      "answer": "Kxg2 places the king on a8’s promotion diagonal, allowing a8=Q with check. That tempo keeps the race winning for White."
+    }
+  ],
+  "defaultBranch": "air_bishop_geometry",
+  "practiceBranch": "air_bishop_geometry",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...c3 at 17 seconds, a stable complete six-piece board. The source’s advertisement is omitted. Bg2, both promotion choices and the final skewer are retained; connecting checks Qh3+ ...Kg5 and the ...Kf5 Qxc1 completion are explicitly independent representative moves.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

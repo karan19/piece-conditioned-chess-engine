@@ -1,0 +1,151 @@
+{
+  "video_id": "lzsnCbzVHBA",
+  "title": "Majestic Shield",
+  "summary": "Let the opponent promote, avoid the stalemate prize, and use a checking queen transfer to finish.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/5N2/1K1P2q1/2Q5/k7/6p1/8 w - - 0 1",
+      "question": "Can White attack instead of stopping promotion?",
+      "explanation": "The pawn on g2 is ready to promote, but Ne4 attacks the existing queen on g5. The resulting queen ending is a concrete tactical position.",
+      "evidence": {
+        "timestamp_s": 23
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "stalemate_trap",
+      "fen": "8/8/8/1K1Q4/2N5/8/k7/3q4 w - - 4 5",
+      "question": "Should White take the queen on d1?",
+      "explanation": "The king on a2 has no legal move if its queen disappears. Material gain must be checked against stalemate.",
+      "evidence": {
+        "timestamp_s": 94
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "shield_queen_transfer",
+      "start": "start",
+      "title": "Decline the prize and transfer with check",
+      "san": [
+        "Ne4",
+        "Qxd5+",
+        "Qxd5",
+        "g1=Q",
+        "Nd2",
+        "Qd1",
+        "Nc4+",
+        "Ka2",
+        "Qg2+",
+        "Kb1",
+        "Qb2#"
+      ],
+      "commentary": [
+        "Begin after ...g2. White cannot stop promotion directly, so look for a threat against the queen already on the board.",
+        "Ne4 attacks Qg5 and keeps a winning position. The saved board shows e4; the transcript’s Na4 is an automatic-caption error.",
+        "Qxd5 gives up the queen to remove White’s passer and prepare a replacement queen.",
+        "Qxd5 captures that queen. White retains queen and knight, but must still solve the new queen’s defensive resources.",
+        "g1=Q promotes. Queen and knight versus queen is not automatically won; the exact arrangement matters.",
+        "Nd2 threatens Nb3 mate against the king on a3.",
+        "Qd1 defends b3 along the diagonal, while inviting an apparently decisive discovered attack.",
+        "Nc4+ checks a3 and uncovers White’s queen attack down the d-file.",
+        "Ka2 is the illustrated king reply. Taking the queen now would stalemate this king.",
+        "Qg2+ keeps Black’s queen on the board and transfers with check along the second rank.",
+        "Kb1 steps onto the first rank. White’s king and knight help restrict the other flights.",
+        "Qb2# is a protected queen mate. Nc4 protects b2, the queen controls the nearby first-rank flights, and White’s king supports the cage."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qb2# is a protected queen mate. Nc4 protects b2, the queen controls the nearby first-rank flights, and White’s king supports the cage.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/1K6/2N5/8/1Q6/1k1q4 b - - 7 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "shield_stalemate_prize",
+      "start": "stalemate_trap",
+      "title": "Take the undefended queen",
+      "san": [
+        "Qxd1"
+      ],
+      "commentary": [
+        "The queen on d1 looks free, but first count Black’s legal moves after the capture.",
+        "Qxd1 removes Black’s last movable piece without giving check. Nc4 covers a3, b2 and a5, Kb5 covers a4 and b4, and Qd1 covers a1 and b3: Black’s king has no legal move. Stalemate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxd1 removes Black’s last movable piece without giving check. Nc4 covers a3, b2 and a5, Kb5 covers a4 and b4, and Qd1 covers a1 and b3: Black’s king has no legal move. Stalemate.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "8/8/8/1K6/2N5/8/k7/3Q4 b - - 0 5",
+      "outcome": "draw"
+    },
+    {
+      "id": "shield_other_king",
+      "start": "stalemate_trap",
+      "title": "If the king chooses the other corner",
+      "san": [
+        "Qg2+",
+        "Ka1",
+        "Qb2#"
+      ],
+      "commentary": [
+        "The queen transfer also handles the other illustrated king retreat.",
+        "Qg2+ checks along the second rank and preserves Black’s queen, preventing the stalemate trick.",
+        "Ka1 chooses the a-file corner rather than b1.",
+        "Qb2# checks the corner diagonally. Nc4 protects the queen, which covers a2 and b1 as well as checking a1."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qb2# checks the corner diagonally. Nc4 protects the queen, which covers a2 and b1 as well as checking a1.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/1K6/2N5/8/1Q6/k2q4 b - - 7 6",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "stalemate_trap",
+      "prompt": "Why is the free queen a trap?",
+      "answer": "Capturing it gives no check and leaves the lone black king without a legal move. Keeping the queen on the board avoids that stalemate."
+    },
+    {
+      "node": "stalemate_trap",
+      "prompt": "What does Qg2+ accomplish?",
+      "answer": "It transfers the queen to the second rank with tempo. After the illustrated king retreats to a1 or b1, Qb2 is protected by Nc4 and mates."
+    }
+  ],
+  "defaultBranch": "shield_queen_transfer",
+  "practiceBranch": "shield_queen_transfer",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...g2 at 23 seconds. Earlier Nf6 and the variation accepting the knight sacrifice remain source context. The promotion, stalemate resource and checking queen transfer are checked in the selected lines.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "The transcript calls the counterattack Na4.",
+      "correction": "The saved full-board image at 39 seconds shows Ne4 from f6, attacking the queen on g5. Na4 is neither the displayed move nor legal from f6."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

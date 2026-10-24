@@ -1,0 +1,164 @@
+{
+  "video_id": "uGuB8QFS2DM",
+  "title": "Skewer Party!",
+  "summary": "Draw the rook onto e6 so forcing queen checks can line up the king and undefended queen.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/6q1/2k2r2/8/1K6/8/4R3/5Q2 w - - 0 1",
+      "question": "How can White answer the attack on Qf1?",
+      "explanation": "After ...Rxf6, White has Kb4, Re2 and Qf1 against Kc6, Rf6 and Qg7. Re6+ diverts the rook before the queen begins its checking route.",
+      "evidence": {
+        "timestamp_s": 3
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "skewer_party_upper_route",
+      "start": "start",
+      "title": "Skewer along the seventh rank",
+      "san": [
+        "Re6+",
+        "Rxe6",
+        "Qa6+",
+        "Kd7",
+        "Qb7+",
+        "Kd6",
+        "Qxg7"
+      ],
+      "commentary": [
+        "Begin after ...Rxf6 at three seconds in the complete six-piece position. The preceding rook capture is source context.",
+        "Re6+ checks Kc6 while offering the rook and attacking Rf6. Black must answer the check instead of simply taking Qf1.",
+        "Rxe6 accepts the rook, placing it one square farther from White\u2019s queen-checking route.",
+        "Qa6+ begins the precise checking sequence.",
+        "Kd7 is the illustrated upper king retreat.",
+        "Qb7+ checks along the seventh rank, skewering the king against the undefended Qg7.",
+        "Kd6 steps away from the checking rank.",
+        "Qxg7 wins the queen. The exact queen-versus-rook endpoint is won; further conversion is outside this selected line."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxg7 wins the queen. The exact queen-versus-rook endpoint is won; further conversion is outside this selected line.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/6Q1/3kr3/8/1K6/8/8/8 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "skewer_party_diagonal",
+      "start": "start",
+      "title": "Skewer along the long diagonal",
+      "san": [
+        "Re6+",
+        "Rxe6",
+        "Qa6+",
+        "Kd5",
+        "Qc4+",
+        "Ke5",
+        "Qc3+",
+        "Kf5",
+        "Qxg7"
+      ],
+      "commentary": [
+        "Compare the source\u2019s lower king route after the same rook deflection.",
+        "Re6+ checks the king and offers the last rook to move the defender away from f6.",
+        "Rxe6 accepts the sacrifice.",
+        "Qa6+ starts the queen pursuit.",
+        "Kd5 avoids the immediate seventh-rank skewer.",
+        "Qc4+ checks and forces a further king decision.",
+        "Ke5 is the illustrated retreat onto the c3\u2013g7 diagonal.",
+        "Qc3+ checks along that diagonal and skewers the king against Qg7. Moving Rf6 to e6 cleared this line.",
+        "Kf5 leaves the diagonal, as shown in the saved board.",
+        "Qxg7 captures the queen and reaches an exactly checked queen-versus-rook win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxg7 captures the queen and reaches an exactly checked queen-versus-rook win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/6Q1/4r3/5k2/1K6/8/8/8 b - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "skewer_party_backtrack",
+      "start": "start",
+      "title": "The king backtracks toward d6",
+      "san": [
+        "Re6+",
+        "Rxe6",
+        "Qa6+",
+        "Kd5",
+        "Qc4+",
+        "Kd6",
+        "Qc5+",
+        "Kd7",
+        "Qa7+"
+      ],
+      "commentary": [
+        "Compare the source\u2019s backtracking king route rather than ...Ke5.",
+        "Re6+ offers the rook with check to deflect the defender.",
+        "Rxe6 accepts the sacrifice.",
+        "Qa6+ checks from the sixth rank.",
+        "Kd5 avoids the upper skewer for now.",
+        "Qc4+ checks and forces the king to choose again.",
+        "Kd6 backtracks instead of entering the diagonal skewer.",
+        "Qc5+ drives the king upward while keeping the black queen undefended.",
+        "Kd7 reaches the source\u2019s next checking alignment.",
+        "Qa7+ skewers Kd7 against Qg7 along the seventh rank. The checked position is winning; the line stops at the skewer without inventing another king reply."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qa7+ skewers Kd7 against Qg7 along the seventh rank. The checked position is winning; the line stops at the skewer without inventing another king reply.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/Q2k2q1/4r3/8/1K6/8/8/8 b - - 7 5",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why sacrifice the rook on e6?",
+      "answer": "The capture moves Black\u2019s rook off f6. In the ...Ke5 branch, that clears the diagonal from c3 through e5 and f6 to Qg7, enabling the skewer."
+    },
+    {
+      "node": "start",
+      "prompt": "What do the forcing checks accomplish?",
+      "answer": "They make the king choose between routes that align it with the undefended queen. The lesson compares selected source defenses rather than claiming to enumerate every legal move."
+    }
+  ],
+  "defaultBranch": "skewer_party_upper_route",
+  "practiceBranch": "skewer_party_upper_route",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rxf6 at three seconds, in a visually reconstructed six-piece board. The preceding seven-piece capture is source context. Three selected source routes after Re6 ...Rxe6 compare the upper, diagonal and backtracking skewers. Every encoded position is checked exactly; a queen-versus-rook win is distinguished from an immediate mate.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

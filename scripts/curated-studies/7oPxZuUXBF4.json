@@ -1,0 +1,122 @@
+{
+  "video_id": "7oPxZuUXBF4",
+  "title": "Magical Staircase: Convert the Final Fork",
+  "summary": "After the checks create a fork, collect the rook and stop the most urgent passed pawn before assuming the game is finished.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/Q7/1r4k1/1p6/5PP1/1K3p2/8/8 w - - 0 1",
+      "question": "What should White collect after the final queen fork?",
+      "explanation": "Qa7 has checked the king and attacked the rook on b6. After Kg6, Qxb6+ takes that rook and reaches a fully reconstructed seven-piece White win; the f3 passer still deserves attention.",
+      "evidence": {
+        "timestamp_s": 120
+      },
+      "winningMoveWitness": "Qxb6+",
+      "proof": {
+        "method": "legal_winning_move",
+        "fen": "8/Q7/1r4k1/1p6/5PP1/1K3p2/8/8 w - - 0 1",
+        "category_for_side_to_move": "win",
+        "san": "Qxb6+",
+        "successor_fen": "8/8/1Q4k1/1p6/5PP1/1K3p2/8/8 b - - 0 1",
+        "successor_evidence_key": "witness:start"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "staircase_stop_f_pawn",
+      "start": "start",
+      "title": "Independent reply: blockade the dangerous passer",
+      "san": [
+        "Qxb6+",
+        "Kf7",
+        "Qf2"
+      ],
+      "commentary": [
+        "Begin with Qa7 and Kg6 immediately before the source rook capture. The knight on h7 already captured Black’s queen and was then taken by the king.",
+        "Qxb6+ removes the rook with check along the sixth rank. White has Kb3/Qb6/f4/g4 against Kg6/b5/f3: exactly seven pieces and an exact White win.",
+        "Kf7 is an independently supplied legal reply to the check. Black cannot play f2 immediately while its king is checked.",
+        "Qf2 places the queen directly in front of the f3 passer, stopping its advance. This exact seven-piece position remains a White win; the branch is a representative continuation rather than a recovered game score."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qf2 places the queen directly in front of the f3 passer, stopping its advance. This exact seven-piece position remains a White win; the branch is a representative continuation rather than a recovered game score.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/5k2/8/1p6/5PP1/1K3p2/5Q2/8 b - - 2 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "staircase_collect_b_pawn",
+      "start": "start",
+      "title": "Independent reply: collect the other passer",
+      "san": [
+        "Qxb6+",
+        "Kg7",
+        "Qxb5"
+      ],
+      "commentary": [
+        "Compare another legal king escape after the same source rook capture with check.",
+        "Qxb6+ removes the rook and reaches the full seven-piece winning ending.",
+        "Kg7 steps off the checked sixth rank. Both b5 and f3 remain, so White still has a conversion to complete.",
+        "Qxb5 collects the b-pawn while retaining White f4/g4 and Black f3. The exact six-piece result confirms a White win; the passer is not silently removed or assumed harmless."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxb5 collects the b-pawn while retaining White f4/g4 and Black f3. The exact six-piece result confirms a White win; the passer is not silently removed or assumed harmless.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/6k1/8/1Q6/5PP1/1K3p2/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "staircase_king_retreat",
+      "start": "start",
+      "title": "Independent reply: keep the king under checks",
+      "san": [
+        "Qxb6+",
+        "Kh7",
+        "Qb7+"
+      ],
+      "commentary": [
+        "Compare the third legal king reply rather than inventing a pawn move while Black is checked.",
+        "Qxb6+ is the source’s final rook capture and checks along the sixth rank.",
+        "Kh7 retreats while both black pawns remain. The exact seven-piece position is still a White win.",
+        "Qb7+ checks along the seventh rank and attacks b5 along the b-file. This branch stops at a verified winning checkpoint instead of inventing a full queen conversion."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qb7+ checks along the seventh rank and attacks b5 along the b-file. This branch stops at a verified winning checkpoint instead of inventing a full queen conversion.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/1Q5k/8/1p6/5PP1/1K3p2/8/8 b - - 2 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is taking the rook not the end of the thinking?",
+      "answer": "Black still has b5 and f3. In the representative Kf7 line White uses Qf2 to stop the f3 passer; the exact outcome is checked after each step."
+    },
+    {
+      "node": "start",
+      "prompt": "Why are there seven pieces after Qxb6+?",
+      "answer": "White has king, queen and two pawns; Black has king and two pawns. The earlier Nxh7 captured Black’s queen, Kxh7 removed White’s knight, and Qxb6+ removes the rook."
+    }
+  ],
+  "defaultBranch": "staircase_stop_f_pawn",
+  "practiceBranch": "staircase_stop_f_pawn",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin immediately before the illustrated Qxb6+ at 120 seconds, after Qa7+/Kg6, in the complete eight-piece later diagram: White Kb3/Qa7/f4/g4 against Kg6/Rb6/b5/f3. Native48–50 confirm the queen on a7, king route from h7 to g6, and final Qb6 capture from a7. Qxb6+ captures the rook into an exact seven-piece White win, with all b5/f3/f4/g4 pawns retained. The earlier review counted eight pieces after that capture; the actual full final board has seven. Each subsequent Black reply and White response here is an independently supplied representative continuation, with every encoded seven-piece position exactly tablebase checked. The initial eleven-piece zigzag, queen interpositions and all king alternatives before the final fork remain outside this selected conversion proof.",
+  "verification_scope": "Begin immediately before the illustrated Qxb6+ at 120 seconds, after Qa7+/Kg6, in the complete eight-piece later diagram: White Kb3/Qa7/f4/g4 against Kg6/Rb6/b5/f3. Native48–50 confirm the queen on a7, king route from h7 to g6, and final Qb6 capture from a7. Qxb6+ captures the rook into an exact seven-piece White win, with all b5/f3/f4/g4 pawns retained. The earlier review counted eight pieces after that capture; the actual full final board has seven. Each subsequent Black reply and White response here is an independently supplied representative continuation, with every encoded seven-piece position exactly tablebase checked. The initial eleven-piece zigzag, queen interpositions and all king alternatives before the final fork remain outside this selected conversion proof.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

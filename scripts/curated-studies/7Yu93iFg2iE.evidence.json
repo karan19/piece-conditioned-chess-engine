@@ -1,0 +1,5036 @@
+{
+  "step:majestic_queen_interference:4": {
+    "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+    "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": 1,
+      "precise_dtz": 1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "win",
+      "moves": [
+        {
+          "uci": "e6b3",
+          "san": "Bxb3#",
+          "zeroing": true,
+          "conversion": true,
+          "checkmate": true,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -1,
+          "precise_dtz": -1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "a2a1",
+          "san": "Ka1",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        }
+      ]
+    }
+  },
+  "step:majestic_queen_interference:5": {
+    "fen": "8/8/8/pp6/k7/PB6/K7/8 b - - 0 3",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp6%2Fk7%2FPB6%2FK7%2F8+b+-+-+0+3",
+    "retrieved_at_utc": "2026-10-24T05:41:33.723639+00:00",
+    "response": {
+      "checkmate": true,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": []
+    }
+  },
+  "branch:majestic_queen_interference": {
+    "fen": "8/8/8/pp6/k7/PB6/K7/8 b - - 0 3",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp6%2Fk7%2FPB6%2FK7%2F8+b+-+-+0+3",
+    "retrieved_at_utc": "2026-10-24T05:41:33.723639+00:00",
+    "response": {
+      "checkmate": true,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": []
+    }
+  },
+  "step:majestic_pawn_release:5": {
+    "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+    "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+    "response": {
+      "checkmate": true,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": []
+    }
+  },
+  "branch:majestic_pawn_release": {
+    "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+    "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+    "response": {
+      "checkmate": true,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": []
+    }
+  },
+  "step:majestic_queen_check:3": {
+    "fen": "8/8/4B3/pp6/k7/P7/1P6/1K6 b - - 0 2",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2F1P6%2F1K6+b+-+-+0+2",
+    "retrieved_at_utc": "2026-10-24T05:41:33.187414+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": [
+        {
+          "uci": "b5b4",
+          "san": "b4",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        }
+      ]
+    }
+  },
+  "branch:majestic_queen_check": {
+    "fen": "8/8/4B3/pp6/k7/P7/1P6/1K6 b - - 0 2",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2F1P6%2F1K6+b+-+-+0+2",
+    "retrieved_at_utc": "2026-10-24T05:41:33.187414+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": [
+        {
+          "uci": "b5b4",
+          "san": "b4",
+          "zeroing": true,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        }
+      ]
+    }
+  },
+  "step:majestic_queen_d3:4": {
+    "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+    "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+    "response": {
+      "checkmate": false,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": 1,
+      "precise_dtz": 1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "win",
+      "moves": [
+        {
+          "uci": "e6b3",
+          "san": "Bxb3#",
+          "zeroing": true,
+          "conversion": true,
+          "checkmate": true,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -1,
+          "precise_dtz": -1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss"
+        },
+        {
+          "uci": "a2a1",
+          "san": "Ka1",
+          "zeroing": false,
+          "conversion": false,
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win"
+        }
+      ]
+    }
+  },
+  "step:majestic_queen_d3:5": {
+    "fen": "8/8/8/pp6/k7/PB6/K7/8 b - - 0 3",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp6%2Fk7%2FPB6%2FK7%2F8+b+-+-+0+3",
+    "retrieved_at_utc": "2026-10-24T05:41:33.723639+00:00",
+    "response": {
+      "checkmate": true,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": []
+    }
+  },
+  "branch:majestic_queen_d3": {
+    "fen": "8/8/8/pp6/k7/PB6/K7/8 b - - 0 3",
+    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp6%2Fk7%2FPB6%2FK7%2F8+b+-+-+0+3",
+    "retrieved_at_utc": "2026-10-24T05:41:33.723639+00:00",
+    "response": {
+      "checkmate": true,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": []
+    }
+  },
+  "node:start": {
+    "method": "finite_strategy",
+    "fen": "8/5B2/8/pp6/k7/P7/KPq5/8 w - - 0 1",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Be6": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KPq5/8 b - - 1 1",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Qb1+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/P7/KP6/1q6 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Kxb1": {
+                "fen": "8/8/4B3/pp6/k7/P7/1P6/1K6 b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2F1P6%2F1K6+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T05:41:33.187414+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": [
+                    {
+                      "uci": "b5b4",
+                      "san": "b4",
+                      "zeroing": true,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "Qb3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/Pq6/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bxb3#": {
+                "fen": "8/8/8/pp6/k7/PB6/KP6/8 b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp6%2Fk7%2FPB6%2FKP6%2F8+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T05:41:34.438446+00:00",
+                "response": {
+                  "checkmate": true,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": []
+                }
+              }
+            }
+          },
+          "Qc1": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/P7/KP6/2q5 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/8/8/pp6/k7/PB6/KP6/2q5 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qc3": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/P1q5/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "bxc3": {
+                "fen": "8/8/4B3/pp6/k7/P1P5/K7/8 b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP1P5%2FK7%2F8+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T05:41:34.966015+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": [
+                    {
+                      "uci": "b5b4",
+                      "san": "b4",
+                      "zeroing": true,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "Qc4+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k1q5/P7/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "b3+": {
+                "method": "finite_strategy",
+                "fen": "8/8/4B3/pp6/k1q5/PP6/K7/8 b - - 0 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Qxb3+": {
+                    "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                    "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                    "response": {
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win",
+                      "moves": [
+                        {
+                          "uci": "e6b3",
+                          "san": "Bxb3#",
+                          "zeroing": true,
+                          "conversion": true,
+                          "checkmate": true,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": -1,
+                          "precise_dtz": -1,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "loss"
+                        },
+                        {
+                          "uci": "a2a1",
+                          "san": "Ka1",
+                          "zeroing": false,
+                          "conversion": false,
+                          "checkmate": false,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": 1,
+                          "precise_dtz": 1,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "win"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Qc5": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/ppq5/k7/P7/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/8/8/ppq5/k7/PB6/KP6/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qc6": {
+            "method": "finite_strategy",
+            "fen": "8/8/2q1B3/pp6/k7/P7/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/8/2q5/pp6/k7/PB6/KP6/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qc7": {
+            "method": "finite_strategy",
+            "fen": "8/2q5/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/2q5/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qc8": {
+            "method": "finite_strategy",
+            "fen": "2q5/8/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bxc8": {
+                "fen": "2B5/8/8/pp6/k7/P7/KP6/8 b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=2B5%2F8%2F8%2Fpp6%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T05:41:35.498426+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": [
+                    {
+                      "uci": "b5b4",
+                      "san": "b4",
+                      "zeroing": true,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "Qd1": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/P7/KP6/3q4 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "b3+": {
+                "method": "finite_strategy",
+                "fen": "8/8/4B3/pp6/k7/PP6/K7/3q4 b - - 0 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Qxb3+": {
+                    "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                    "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                    "response": {
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win",
+                      "moves": [
+                        {
+                          "uci": "e6b3",
+                          "san": "Bxb3#",
+                          "zeroing": true,
+                          "conversion": true,
+                          "checkmate": true,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": -1,
+                          "precise_dtz": -1,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "loss"
+                        },
+                        {
+                          "uci": "a2a1",
+                          "san": "Ka1",
+                          "zeroing": false,
+                          "conversion": false,
+                          "checkmate": false,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": 1,
+                          "precise_dtz": 1,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "win"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Qd2": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/P7/KP1q4/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/8/8/pp6/k7/PB6/KP1q4/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qd3": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/P2q4/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "b3+": {
+                "method": "finite_strategy",
+                "fen": "8/8/4B3/pp6/k7/PP1q4/K7/8 b - - 0 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Qxb3+": {
+                    "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                    "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                    "response": {
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win",
+                      "moves": [
+                        {
+                          "uci": "e6b3",
+                          "san": "Bxb3#",
+                          "zeroing": true,
+                          "conversion": true,
+                          "checkmate": true,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": -1,
+                          "precise_dtz": -1,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "loss"
+                        },
+                        {
+                          "uci": "a2a1",
+                          "san": "Ka1",
+                          "zeroing": false,
+                          "conversion": false,
+                          "checkmate": false,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": 1,
+                          "precise_dtz": 1,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "win"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Qe2": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/P7/KP2q3/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/8/8/pp6/k7/PB6/KP2q3/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qe4": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k3q3/P7/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/8/8/pp6/k3q3/PB6/KP6/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qf2": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/P7/KP3q2/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/8/8/pp6/k7/PB6/KP3q2/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qf5": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp3q2/k7/P7/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bxf5": {
+                "fen": "8/8/8/pp3B2/k7/P7/KP6/8 b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp3B2%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T05:41:36.016212+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": [
+                    {
+                      "uci": "b5b4",
+                      "san": "b4",
+                      "zeroing": true,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "Qg2": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/P7/KP4q1/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/8/8/pp6/k7/PB6/KP4q1/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qg6": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B1q1/pp6/k7/P7/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/8/6q1/pp6/k7/PB6/KP6/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qh2": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/P7/KP5q/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/8/8/pp6/k7/PB6/KP5q/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qh7": {
+            "method": "finite_strategy",
+            "fen": "8/7q/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bb3#": {
+                "method": "finite_strategy",
+                "fen": "8/7q/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          },
+          "Qxb2+": {
+            "fen": "8/8/4B3/pp6/k7/P7/Kq6/8 w - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2FKq6%2F8+w+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:36.541517+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": 1,
+              "precise_dtz": 1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "win",
+              "moves": [
+                {
+                  "uci": "a2b2",
+                  "san": "Kxb2",
+                  "zeroing": true,
+                  "conversion": true,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": -2,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss"
+                }
+              ]
+            }
+          },
+          "b4": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/p7/kp6/P7/KPq5/8 w - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bd7+": {
+                "method": "finite_strategy",
+                "fen": "8/3B4/8/p7/kp6/P7/KPq5/8 b - - 1 2",
+                "winner": "white",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Qc6": {
+                    "method": "finite_strategy",
+                    "fen": "8/3B4/2q5/p7/kp6/P7/KP6/8 w - - 2 3",
+                    "winner": "white",
+                    "category_for_side_to_move": "win",
+                    "rule": "winning_choice",
+                    "children": {
+                      "Bxc6#": {
+                        "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+                        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+                        "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+                        "response": {
+                          "checkmate": true,
+                          "stalemate": false,
+                          "variant_win": false,
+                          "variant_loss": false,
+                          "insufficient_material": false,
+                          "dtz": -1,
+                          "precise_dtz": -1,
+                          "dtm": null,
+                          "dtw": null,
+                          "dtc": null,
+                          "category": "loss",
+                          "moves": []
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:majestic_queen_interference:1": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/pp6/k7/P7/KPq5/8 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Qb1+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/1q6 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Kxb1": {
+            "fen": "8/8/4B3/pp6/k7/P7/1P6/1K6 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2F1P6%2F1K6+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:33.187414+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qb3+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/Pq6/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxb3#": {
+            "fen": "8/8/8/pp6/k7/PB6/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp6%2Fk7%2FPB6%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:34.438446+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Qc1": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/2q5 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP6/2q5 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc3": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P1q5/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "bxc3": {
+            "fen": "8/8/4B3/pp6/k7/P1P5/K7/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP1P5%2FK7%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:34.966015+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qc4+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k1q5/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k1q5/PP6/K7/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qc5": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/ppq5/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/ppq5/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc6": {
+        "method": "finite_strategy",
+        "fen": "8/8/2q1B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/2q5/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc7": {
+        "method": "finite_strategy",
+        "fen": "8/2q5/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/2q5/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc8": {
+        "method": "finite_strategy",
+        "fen": "2q5/8/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxc8": {
+            "fen": "2B5/8/8/pp6/k7/P7/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=2B5%2F8%2F8%2Fpp6%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:35.498426+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qd1": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/3q4 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/PP6/K7/3q4 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qd2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP1q4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP1q4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qd3": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P2q4/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/PP1q4/K7/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qe2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP2q3/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP2q3/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qe4": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k3q3/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k3q3/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qf2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP3q2/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP3q2/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qf5": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp3q2/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxf5": {
+            "fen": "8/8/8/pp3B2/k7/P7/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp3B2%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:36.016212+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qg2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP4q1/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP4q1/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qg6": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B1q1/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/6q1/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qh2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP5q/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP5q/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qh7": {
+        "method": "finite_strategy",
+        "fen": "8/7q/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/7q/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qxb2+": {
+        "fen": "8/8/4B3/pp6/k7/P7/Kq6/8 w - - 0 2",
+        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2FKq6%2F8+w+-+-+0+2",
+        "retrieved_at_utc": "2026-10-24T05:41:36.541517+00:00",
+        "response": {
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win",
+          "moves": [
+            {
+              "uci": "a2b2",
+              "san": "Kxb2",
+              "zeroing": true,
+              "conversion": true,
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": -2,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss"
+            }
+          ]
+        }
+      },
+      "b4": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/p7/kp6/P7/KPq5/8 w - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bd7+": {
+            "method": "finite_strategy",
+            "fen": "8/3B4/8/p7/kp6/P7/KPq5/8 b - - 1 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qc6": {
+                "method": "finite_strategy",
+                "fen": "8/3B4/2q5/p7/kp6/P7/KP6/8 w - - 2 3",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Bxc6#": {
+                    "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+                    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+                    "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+                    "response": {
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss",
+                      "moves": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:majestic_queen_interference:2": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/pp6/k1q5/P7/KP6/8 w - - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "b3+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k1q5/PP6/K7/8 b - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Qxb3+": {
+            "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+            "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": 1,
+              "precise_dtz": 1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "win",
+              "moves": [
+                {
+                  "uci": "e6b3",
+                  "san": "Bxb3#",
+                  "zeroing": true,
+                  "conversion": true,
+                  "checkmate": true,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss"
+                },
+                {
+                  "uci": "a2a1",
+                  "san": "Ka1",
+                  "zeroing": false,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:majestic_queen_interference:3": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/pp6/k1q5/PP6/K7/8 b - - 0 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Qxb3+": {
+        "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+        "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+        "response": {
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win",
+          "moves": [
+            {
+              "uci": "e6b3",
+              "san": "Bxb3#",
+              "zeroing": true,
+              "conversion": true,
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss"
+            },
+            {
+              "uci": "a2a1",
+              "san": "Ka1",
+              "zeroing": false,
+              "conversion": false,
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": 1,
+              "precise_dtz": 1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "win"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "step:majestic_pawn_release:1": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/pp6/k7/P7/KPq5/8 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Qb1+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/1q6 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Kxb1": {
+            "fen": "8/8/4B3/pp6/k7/P7/1P6/1K6 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2F1P6%2F1K6+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:33.187414+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qb3+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/Pq6/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxb3#": {
+            "fen": "8/8/8/pp6/k7/PB6/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp6%2Fk7%2FPB6%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:34.438446+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Qc1": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/2q5 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP6/2q5 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc3": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P1q5/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "bxc3": {
+            "fen": "8/8/4B3/pp6/k7/P1P5/K7/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP1P5%2FK7%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:34.966015+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qc4+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k1q5/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k1q5/PP6/K7/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qc5": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/ppq5/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/ppq5/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc6": {
+        "method": "finite_strategy",
+        "fen": "8/8/2q1B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/2q5/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc7": {
+        "method": "finite_strategy",
+        "fen": "8/2q5/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/2q5/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc8": {
+        "method": "finite_strategy",
+        "fen": "2q5/8/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxc8": {
+            "fen": "2B5/8/8/pp6/k7/P7/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=2B5%2F8%2F8%2Fpp6%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:35.498426+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qd1": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/3q4 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/PP6/K7/3q4 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qd2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP1q4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP1q4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qd3": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P2q4/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/PP1q4/K7/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qe2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP2q3/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP2q3/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qe4": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k3q3/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k3q3/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qf2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP3q2/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP3q2/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qf5": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp3q2/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxf5": {
+            "fen": "8/8/8/pp3B2/k7/P7/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp3B2%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:36.016212+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qg2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP4q1/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP4q1/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qg6": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B1q1/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/6q1/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qh2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP5q/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP5q/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qh7": {
+        "method": "finite_strategy",
+        "fen": "8/7q/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/7q/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qxb2+": {
+        "fen": "8/8/4B3/pp6/k7/P7/Kq6/8 w - - 0 2",
+        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2FKq6%2F8+w+-+-+0+2",
+        "retrieved_at_utc": "2026-10-24T05:41:36.541517+00:00",
+        "response": {
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win",
+          "moves": [
+            {
+              "uci": "a2b2",
+              "san": "Kxb2",
+              "zeroing": true,
+              "conversion": true,
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": -2,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss"
+            }
+          ]
+        }
+      },
+      "b4": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/p7/kp6/P7/KPq5/8 w - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bd7+": {
+            "method": "finite_strategy",
+            "fen": "8/3B4/8/p7/kp6/P7/KPq5/8 b - - 1 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qc6": {
+                "method": "finite_strategy",
+                "fen": "8/3B4/2q5/p7/kp6/P7/KP6/8 w - - 2 3",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Bxc6#": {
+                    "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+                    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+                    "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+                    "response": {
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss",
+                      "moves": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:majestic_pawn_release:2": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/p7/kp6/P7/KPq5/8 w - - 0 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Bd7+": {
+        "method": "finite_strategy",
+        "fen": "8/3B4/8/p7/kp6/P7/KPq5/8 b - - 1 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Qc6": {
+            "method": "finite_strategy",
+            "fen": "8/3B4/2q5/p7/kp6/P7/KP6/8 w - - 2 3",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Bxc6#": {
+                "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+                "response": {
+                  "checkmate": true,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": []
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:majestic_pawn_release:3": {
+    "method": "finite_strategy",
+    "fen": "8/3B4/8/p7/kp6/P7/KPq5/8 b - - 1 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Qc6": {
+        "method": "finite_strategy",
+        "fen": "8/3B4/2q5/p7/kp6/P7/KP6/8 w - - 2 3",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxc6#": {
+            "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+            "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:majestic_pawn_release:4": {
+    "method": "finite_strategy",
+    "fen": "8/3B4/2q5/p7/kp6/P7/KP6/8 w - - 2 3",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Bxc6#": {
+        "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+        "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+        "response": {
+          "checkmate": true,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -1,
+          "precise_dtz": -1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss",
+          "moves": []
+        }
+      }
+    }
+  },
+  "step:majestic_queen_check:1": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/pp6/k7/P7/KPq5/8 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Qb1+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/1q6 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Kxb1": {
+            "fen": "8/8/4B3/pp6/k7/P7/1P6/1K6 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2F1P6%2F1K6+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:33.187414+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qb3+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/Pq6/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxb3#": {
+            "fen": "8/8/8/pp6/k7/PB6/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp6%2Fk7%2FPB6%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:34.438446+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Qc1": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/2q5 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP6/2q5 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc3": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P1q5/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "bxc3": {
+            "fen": "8/8/4B3/pp6/k7/P1P5/K7/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP1P5%2FK7%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:34.966015+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qc4+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k1q5/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k1q5/PP6/K7/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qc5": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/ppq5/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/ppq5/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc6": {
+        "method": "finite_strategy",
+        "fen": "8/8/2q1B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/2q5/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc7": {
+        "method": "finite_strategy",
+        "fen": "8/2q5/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/2q5/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc8": {
+        "method": "finite_strategy",
+        "fen": "2q5/8/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxc8": {
+            "fen": "2B5/8/8/pp6/k7/P7/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=2B5%2F8%2F8%2Fpp6%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:35.498426+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qd1": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/3q4 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/PP6/K7/3q4 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qd2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP1q4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP1q4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qd3": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P2q4/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/PP1q4/K7/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qe2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP2q3/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP2q3/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qe4": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k3q3/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k3q3/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qf2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP3q2/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP3q2/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qf5": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp3q2/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxf5": {
+            "fen": "8/8/8/pp3B2/k7/P7/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp3B2%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:36.016212+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qg2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP4q1/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP4q1/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qg6": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B1q1/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/6q1/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qh2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP5q/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP5q/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qh7": {
+        "method": "finite_strategy",
+        "fen": "8/7q/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/7q/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qxb2+": {
+        "fen": "8/8/4B3/pp6/k7/P7/Kq6/8 w - - 0 2",
+        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2FKq6%2F8+w+-+-+0+2",
+        "retrieved_at_utc": "2026-10-24T05:41:36.541517+00:00",
+        "response": {
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win",
+          "moves": [
+            {
+              "uci": "a2b2",
+              "san": "Kxb2",
+              "zeroing": true,
+              "conversion": true,
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": -2,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss"
+            }
+          ]
+        }
+      },
+      "b4": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/p7/kp6/P7/KPq5/8 w - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bd7+": {
+            "method": "finite_strategy",
+            "fen": "8/3B4/8/p7/kp6/P7/KPq5/8 b - - 1 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qc6": {
+                "method": "finite_strategy",
+                "fen": "8/3B4/2q5/p7/kp6/P7/KP6/8 w - - 2 3",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Bxc6#": {
+                    "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+                    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+                    "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+                    "response": {
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss",
+                      "moves": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:majestic_queen_check:2": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/pp6/k7/P7/KP6/1q6 w - - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Kxb1": {
+        "fen": "8/8/4B3/pp6/k7/P7/1P6/1K6 b - - 0 2",
+        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2F1P6%2F1K6+b+-+-+0+2",
+        "retrieved_at_utc": "2026-10-24T05:41:33.187414+00:00",
+        "response": {
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -1,
+          "precise_dtz": -1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss",
+          "moves": [
+            {
+              "uci": "b5b4",
+              "san": "b4",
+              "zeroing": true,
+              "conversion": false,
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": 1,
+              "precise_dtz": 1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "win"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "step:majestic_queen_d3:1": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/pp6/k7/P7/KPq5/8 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Qb1+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/1q6 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Kxb1": {
+            "fen": "8/8/4B3/pp6/k7/P7/1P6/1K6 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2F1P6%2F1K6+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:33.187414+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qb3+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/Pq6/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxb3#": {
+            "fen": "8/8/8/pp6/k7/PB6/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp6%2Fk7%2FPB6%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:34.438446+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Qc1": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/2q5 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP6/2q5 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc3": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P1q5/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "bxc3": {
+            "fen": "8/8/4B3/pp6/k7/P1P5/K7/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP1P5%2FK7%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:34.966015+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qc4+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k1q5/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k1q5/PP6/K7/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qc5": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/ppq5/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/ppq5/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc6": {
+        "method": "finite_strategy",
+        "fen": "8/8/2q1B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/2q5/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc7": {
+        "method": "finite_strategy",
+        "fen": "8/2q5/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/2q5/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc8": {
+        "method": "finite_strategy",
+        "fen": "2q5/8/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxc8": {
+            "fen": "2B5/8/8/pp6/k7/P7/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=2B5%2F8%2F8%2Fpp6%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:35.498426+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qd1": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/3q4 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/PP6/K7/3q4 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qd2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP1q4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP1q4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qd3": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P2q4/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/PP1q4/K7/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qe2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP2q3/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP2q3/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qe4": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k3q3/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k3q3/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qf2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP3q2/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP3q2/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qf5": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp3q2/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxf5": {
+            "fen": "8/8/8/pp3B2/k7/P7/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp3B2%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:36.016212+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qg2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP4q1/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP4q1/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qg6": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B1q1/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/6q1/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qh2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP5q/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP5q/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qh7": {
+        "method": "finite_strategy",
+        "fen": "8/7q/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/7q/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qxb2+": {
+        "fen": "8/8/4B3/pp6/k7/P7/Kq6/8 w - - 0 2",
+        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2FKq6%2F8+w+-+-+0+2",
+        "retrieved_at_utc": "2026-10-24T05:41:36.541517+00:00",
+        "response": {
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win",
+          "moves": [
+            {
+              "uci": "a2b2",
+              "san": "Kxb2",
+              "zeroing": true,
+              "conversion": true,
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": -2,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss"
+            }
+          ]
+        }
+      },
+      "b4": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/p7/kp6/P7/KPq5/8 w - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bd7+": {
+            "method": "finite_strategy",
+            "fen": "8/3B4/8/p7/kp6/P7/KPq5/8 b - - 1 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qc6": {
+                "method": "finite_strategy",
+                "fen": "8/3B4/2q5/p7/kp6/P7/KP6/8 w - - 2 3",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Bxc6#": {
+                    "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+                    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+                    "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+                    "response": {
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss",
+                      "moves": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:majestic_queen_d3:2": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/pp6/k7/P2q4/KP6/8 w - - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "b3+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/PP1q4/K7/8 b - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Qxb3+": {
+            "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+            "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": 1,
+              "precise_dtz": 1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "win",
+              "moves": [
+                {
+                  "uci": "e6b3",
+                  "san": "Bxb3#",
+                  "zeroing": true,
+                  "conversion": true,
+                  "checkmate": true,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss"
+                },
+                {
+                  "uci": "a2a1",
+                  "san": "Ka1",
+                  "zeroing": false,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:majestic_queen_d3:3": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/pp6/k7/PP1q4/K7/8 b - - 0 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Qxb3+": {
+        "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+        "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+        "response": {
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win",
+          "moves": [
+            {
+              "uci": "e6b3",
+              "san": "Bxb3#",
+              "zeroing": true,
+              "conversion": true,
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss"
+            },
+            {
+              "uci": "a2a1",
+              "san": "Ka1",
+              "zeroing": false,
+              "conversion": false,
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": 1,
+              "precise_dtz": 1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "win"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "step:majestic_queen_abandons_guard:1": {
+    "method": "finite_strategy",
+    "fen": "8/8/4B3/pp6/k7/P7/KPq5/8 b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Qb1+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/1q6 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Kxb1": {
+            "fen": "8/8/4B3/pp6/k7/P7/1P6/1K6 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2F1P6%2F1K6+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:33.187414+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qb3+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/Pq6/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxb3#": {
+            "fen": "8/8/8/pp6/k7/PB6/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp6%2Fk7%2FPB6%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:34.438446+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Qc1": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/2q5 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP6/2q5 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc3": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P1q5/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "bxc3": {
+            "fen": "8/8/4B3/pp6/k7/P1P5/K7/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP1P5%2FK7%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:34.966015+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qc4+": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k1q5/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k1q5/PP6/K7/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qc5": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/ppq5/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/ppq5/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc6": {
+        "method": "finite_strategy",
+        "fen": "8/8/2q1B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/2q5/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc7": {
+        "method": "finite_strategy",
+        "fen": "8/2q5/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/2q5/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qc8": {
+        "method": "finite_strategy",
+        "fen": "2q5/8/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxc8": {
+            "fen": "2B5/8/8/pp6/k7/P7/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=2B5%2F8%2F8%2Fpp6%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:35.498426+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qd1": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP6/3q4 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/PP6/K7/3q4 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qd2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP1q4/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP1q4/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qd3": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P2q4/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "b3+": {
+            "method": "finite_strategy",
+            "fen": "8/8/4B3/pp6/k7/PP1q4/K7/8 b - - 0 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qxb3+": {
+                "fen": "8/8/4B3/pp6/k7/Pq6/K7/8 w - - 0 3",
+                "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FPq6%2FK7%2F8+w+-+-+0+3",
+                "retrieved_at_utc": "2026-10-24T05:41:33.689416+00:00",
+                "response": {
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win",
+                  "moves": [
+                    {
+                      "uci": "e6b3",
+                      "san": "Bxb3#",
+                      "zeroing": true,
+                      "conversion": true,
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss"
+                    },
+                    {
+                      "uci": "a2a1",
+                      "san": "Ka1",
+                      "zeroing": false,
+                      "conversion": false,
+                      "checkmate": false,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": 1,
+                      "precise_dtz": 1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "win"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "Qe2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP2q3/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP2q3/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qe4": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k3q3/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k3q3/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qf2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP3q2/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP3q2/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qf5": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp3q2/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bxf5": {
+            "fen": "8/8/8/pp3B2/k7/P7/KP6/8 b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F8%2Fpp3B2%2Fk7%2FP7%2FKP6%2F8+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T05:41:36.016212+00:00",
+            "response": {
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": [
+                {
+                  "uci": "b5b4",
+                  "san": "b4",
+                  "zeroing": true,
+                  "conversion": false,
+                  "checkmate": false,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": 1,
+                  "precise_dtz": 1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "win"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Qg2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP4q1/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP4q1/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qg6": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B1q1/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/6q1/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qh2": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/pp6/k7/P7/KP5q/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/8/8/pp6/k7/PB6/KP5q/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qh7": {
+        "method": "finite_strategy",
+        "fen": "8/7q/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bb3#": {
+            "method": "finite_strategy",
+            "fen": "8/7q/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      },
+      "Qxb2+": {
+        "fen": "8/8/4B3/pp6/k7/P7/Kq6/8 w - - 0 2",
+        "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F4B3%2Fpp6%2Fk7%2FP7%2FKq6%2F8+w+-+-+0+2",
+        "retrieved_at_utc": "2026-10-24T05:41:36.541517+00:00",
+        "response": {
+          "checkmate": false,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": 1,
+          "precise_dtz": 1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "win",
+          "moves": [
+            {
+              "uci": "a2b2",
+              "san": "Kxb2",
+              "zeroing": true,
+              "conversion": true,
+              "checkmate": false,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": -2,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss"
+            }
+          ]
+        }
+      },
+      "b4": {
+        "method": "finite_strategy",
+        "fen": "8/8/4B3/p7/kp6/P7/KPq5/8 w - - 0 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Bd7+": {
+            "method": "finite_strategy",
+            "fen": "8/3B4/8/p7/kp6/P7/KPq5/8 b - - 1 2",
+            "winner": "white",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Qc6": {
+                "method": "finite_strategy",
+                "fen": "8/3B4/2q5/p7/kp6/P7/KP6/8 w - - 2 3",
+                "winner": "white",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "Bxc6#": {
+                    "fen": "8/8/2B5/p7/kp6/P7/KP6/8 b - - 0 3",
+                    "url": "https://tablebase.lichess.ovh/standard?fen=8%2F8%2F2B5%2Fp7%2Fkp6%2FP7%2FKP6%2F8+b+-+-+0+3",
+                    "retrieved_at_utc": "2026-10-24T05:41:33.211111+00:00",
+                    "response": {
+                      "checkmate": true,
+                      "stalemate": false,
+                      "variant_win": false,
+                      "variant_loss": false,
+                      "insufficient_material": false,
+                      "dtz": -1,
+                      "precise_dtz": -1,
+                      "dtm": null,
+                      "dtw": null,
+                      "dtc": null,
+                      "category": "loss",
+                      "moves": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:majestic_queen_abandons_guard:2": {
+    "method": "finite_strategy",
+    "fen": "8/7q/4B3/pp6/k7/P7/KP6/8 w - - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Bb3#": {
+        "method": "finite_strategy",
+        "fen": "8/7q/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:majestic_queen_abandons_guard:3": {
+    "method": "finite_strategy",
+    "fen": "8/7q/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:majestic_queen_abandons_guard": {
+    "method": "finite_strategy",
+    "fen": "8/7q/8/pp6/k7/PB6/KP6/8 b - - 3 2",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  }
+}

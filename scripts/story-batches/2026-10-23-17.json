@@ -1,0 +1,327 @@
+{
+  "batch_id": "2026-10-23-17",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three studies, nine selected branches, two larger tactical sources pending analysis and one opening-advice source outside study scope.",
+  "reviews": {
+    "eW42fqN6gxU": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 18 exact positions from complete six-piece board. Bc5+ preserves the knight via Nb7/Nd6+, then Bd4 attacks b2 and threatens actual Bf6 mate after either ...b1=Q or ...a3. The premature Bd4 blockade loses the knight and draws. Selected source defenses only.",
+      "source_images": [
+        {
+          "file": "eW42fqN6gxU/montage_accepted.jpg",
+          "sha256": "2537796cb04a2eccf7e36d2f665277a0c74347f3b62e0522f09d9a5ab9925f74"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00001.jpg",
+          "sha256": "d2a3621c654696918a975989aed02073bad2243ae4bb2a8fadc9a7eec30ac35f"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00004.jpg",
+          "sha256": "60b31aee7c6d65cd6f04b85ad5693cc2e72e95f9dc93c5601cb5c0db1ee7ac1e"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00005.jpg",
+          "sha256": "b0bcb59048ff9953dca794f80f5df8fc894763eeca0398a55c65c38ceb95e465"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00006.jpg",
+          "sha256": "d95e4b0414d20d5d37ffebb6c6f297fada840ee190b47579779af547692457b4"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00007.jpg",
+          "sha256": "04fecb13ef68dc6ae0a177eccb9de203eaa066e98fc976f674b49cc1cc973e16"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00008.jpg",
+          "sha256": "ecb3a22f3c1dbe2c4af54847cb914611e2d4476736dc09250a6a00cc8d73afd5"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00015.jpg",
+          "sha256": "7601aba7ee0a7a5b970e60b486e252194ce92b3cf1fb44633700217b43690995"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00019.jpg",
+          "sha256": "552da3a508c981122ab3161ae5d86ab123b4e580a838c085192af253a9f9e244"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00020.jpg",
+          "sha256": "922b6538ced03a01ebfd4cfb5d23257741accfa6a66fefeb3e7d555862666e42"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00025.jpg",
+          "sha256": "bbb9438c045362c398026367640a741f2cc5d9328dfcd353ca9443ab6da893d0"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00026.jpg",
+          "sha256": "cffdd83cf874608221a15a237b72ac6be515a48117c666e82ebbe3bddccef861"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00027.jpg",
+          "sha256": "5ea351e480fbdae2c97dd20a6085ae7977e056b056bd03898c71ab5c59e829dd"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00029.jpg",
+          "sha256": "c7030290830fa37ef14affa1e28c419752cc6857efc6241657ff08522d1c2a17"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00032.jpg",
+          "sha256": "d020044104e48597d53bd7b6fc6ad990925a71e58cea161c493420ccc907e624"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00033.jpg",
+          "sha256": "2fb9aedc9eb68087c6030510bf0cdfe812eb4b6a089a2d503e1f0dc915546d6f"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00034.jpg",
+          "sha256": "2cb0b95218b106d6a749f8d934e25d25fe6729a3c661a51963e09960d6564798"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00035.jpg",
+          "sha256": "a9f2a167ce6868f7c6bf58d276b27a42c93418358620a3df743dc59cbdf150ea"
+        },
+        {
+          "file": "eW42fqN6gxU/images/image_00036.jpg",
+          "sha256": "3c812e83860598bd3db45efe2d3d0840edf74603c645505e34e6cd5fea6658dc"
+        }
+      ]
+    },
+    "BtD4AL1cYJ8": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 25 exact positions from complete six-piece board; practice objective draw. Kc7, Nc6+, Ne5 and Nc4 reroute to Nxb6+/Nc8+ despite ...d1=Q. Independently extended forced repetitions produce claimable threefold repetition. Kd5 and an independent Nd4 reroute lose; source and independent comparisons distinguished.",
+      "source_images": [
+        {
+          "file": "BtD4AL1cYJ8/montage_accepted.jpg",
+          "sha256": "53184fdf25343993559473ba99fb7e81a85e2eb50908323ea6cc0f8b08d6fbdb"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00001.jpg",
+          "sha256": "5a327d5e62949182a65eb4daad3b614834556aa02939a91201fcc850de9cbc87"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00002.jpg",
+          "sha256": "a8349c04664c8efcc507060cbccc37018ea8b8f106638ec4880a5a6c2889562d"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00003.jpg",
+          "sha256": "2bf482f8eb4ef36a3562b6b25841b45c11a642676906e43a4b95b3b636b2b4b7"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00010.jpg",
+          "sha256": "99b4da5b41b7d68f1d10a4522e5969598aa11c9cbd00761e918df0f515877ea8"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00011.jpg",
+          "sha256": "33548903ff3e824ef2b60d816d4ec09feadc9b1a6225ad0aa8a8d5669a5d031d"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00012.jpg",
+          "sha256": "d6c8789b20c84cdef7f396bca867c9a7c55efcf37efff081ac6c469635a553e3"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00013.jpg",
+          "sha256": "ab15330ee532456106a7918f52c65eac0567d6fe4aa6a1b896457a6617f1460f"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00014.jpg",
+          "sha256": "8232b9e6c5d8f4c6a2ec374094e295428021ef52b5edc668562956f748d4ac74"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00015.jpg",
+          "sha256": "d0a2075523b93aab35086278b82672ad71bde0f478cb20dabe6ff73fe5eea9cd"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00016.jpg",
+          "sha256": "f87e8200df7cf42aa886399b43ec28d4d31a12dd49940edd8a2dcb06f984df52"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00017.jpg",
+          "sha256": "93bff0404cb404f54cdc78d9d54d97e2a10eda689eddd7385aebe2bb8ecbab30"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00019.jpg",
+          "sha256": "d90c9df8b86d7478381f2acaef31bc26914feefdab8cd29cbb7cce620b4cd306"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00020.jpg",
+          "sha256": "9cdd70701f459058cc9de4c352697116aaeba84f09e34e7a712470189f16c587"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00021.jpg",
+          "sha256": "a25def1a37d2c7856a714c0e42b204a2a6f53b37cfc3ebe6eda8e92903a5670e"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00022.jpg",
+          "sha256": "37b3e74552219bbd7c898786f77da4e692e7b965027828892c703f39be3135dd"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00023.jpg",
+          "sha256": "ae6de298247e479740d4c6c09b4943d495f842c5f2f2ccac1dba96b0727cbaab"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00024.jpg",
+          "sha256": "6e3ce776edee599f0fdc3838d67a416c4fd73ca470a358038c99765b3f0b2c4a"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00025.jpg",
+          "sha256": "9da76d152f56d7b7f967153f5a939956ad8d2818a3cc9425d51d5c4d0abdeb1f"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00026.jpg",
+          "sha256": "0830e8b1529b1265a690800c36a9ce5e073bd6ea321e7948117830f971842d72"
+        },
+        {
+          "file": "BtD4AL1cYJ8/images/image_00027.jpg",
+          "sha256": "6c0ef9b6e95a9e41d454a2a8350885ad98bd6d9b3e60146046d8da247cced31e"
+        }
+      ]
+    },
+    "WDUlvMgXGjA": {
+      "result": "verified_selected_lines",
+      "notes": "Three branches, 20 exact positions beginning in stable five-piece Lucena diagram after ...Rc1 at 85 seconds. Fourth-rank preparation, king separation and king zigzag reach Rc4 bridge. Independent rook trade allows promotion; independent Kb5 instead of interposition loses the pawn and draws. Earlier six-piece game sequence remains context.",
+      "source_images": [
+        {
+          "file": "WDUlvMgXGjA/montage_accepted.jpg",
+          "sha256": "279d0f33534e010294947ad33064770e3e68f15e9c5bbf9236513bf87ec725fb"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00001.jpg",
+          "sha256": "76a588a306b0efa8eb3c98d84e3167835901313b4c99ec0c67dc9e13ebdcaf02"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00014.jpg",
+          "sha256": "95762750bbfb2875fafc4267f5d78dc3ad5b7b3f7f894efbb003ef58e24ab96a"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00024.jpg",
+          "sha256": "68452639c53734e6701e9fa22e389241978681765d318826766a426a335a792d"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00025.jpg",
+          "sha256": "7140d054bcfe828ae2f136a1f7640988b955b519ae6812a8bb88ed84ed25c49a"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00026.jpg",
+          "sha256": "84870af10921b10c309390c5eafed0fadeb7e4956d7eb227cdd0251c03233e3e"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00037.jpg",
+          "sha256": "6d1d191b0501a9cbe66f459e2bf22cfe36dee34d6e169bf1609ee9f2e9643db6"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00038.jpg",
+          "sha256": "a72f16c5a90694fb954a8dd957d6ed57759d62c567450ec80856f15fa384195d"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00040.jpg",
+          "sha256": "c6ed93527f6deba70a5fa448be9b3635f6f4c0a4655d9c1ae92eeed4cbf3abec"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00041.jpg",
+          "sha256": "7105058706d56a38cd21dd2e843ff030ac59a0c6dd1045145db653027090406c"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00042.jpg",
+          "sha256": "dd2d5e2710fd95b0929f4c38773d234852e36ffa99984a2e40185c05b8e8b3c1"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00043.jpg",
+          "sha256": "ed045f7e7f1ce578493a977eb3aa75c1cb4863357cfd56ddc90f9c6fbb952a05"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00044.jpg",
+          "sha256": "29c819d6e4fc82ab8bde8ca0a08d146c67dcab6c50a6565fbdeda83f6b40767b"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00045.jpg",
+          "sha256": "9ffe677b69f70d3ad1a89bf3b83bfafbab0075bc48905402922255072e63d9da"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00046.jpg",
+          "sha256": "18e55ce2c8eb715beffc30e8429b5fb5b33c930b18784b75508ef0d347e4301f"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00047.jpg",
+          "sha256": "6b83f7f12dd92826c2854bbff96e7f75965042e67d2d75475e0168daee9e897b"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00048.jpg",
+          "sha256": "dd771da731c5be1c9b35a52184ff7d3c8c82dd6ea7a78fc669978e9d25e30305"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00049.jpg",
+          "sha256": "e05d4cfcbc4cf0ead63ca6d5a48801c071f5b19012ad9930230b39b2e7250fdd"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00050.jpg",
+          "sha256": "edc51d9b8b4d139a7b6b204aafb5b193c328a2695eda31287a8d0b11f90786d8"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00051.jpg",
+          "sha256": "7f4cfa54469df1488a413ed86d11f5c43da567108b642597b192389a400b34a2"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00052.jpg",
+          "sha256": "1cb16d85acc3049048819c166ea98a179bb9667f6b16927b660982832322e511"
+        },
+        {
+          "file": "WDUlvMgXGjA/images/image_00053.jpg",
+          "sha256": "657d2d55038f0c3236f178e01505e94ea3f8c9c653b94fcb8d8ee663341c9b66"
+        }
+      ]
+    },
+    "F8P3eB5TGc4": {
+      "result": "not_applicable",
+      "notes": "Reviewed narration and montage: follower-game opening advice, one-move blunders and a Chess Line product demonstration, with no endgame study to reconstruct. Preserve searchable source record; this is outside the Endgame Stories study scope, not missing information.",
+      "source_images": [
+        {
+          "file": "F8P3eB5TGc4/montage_accepted.jpg",
+          "sha256": "fe879b2fb86d24b7bb6fe8ff6b1469ff7f1a0e486395c74b4646379f64721d9e"
+        },
+        {
+          "file": "F8P3eB5TGc4/images/image_00001.jpg",
+          "sha256": "7474385f154719a190dd464f4f60f9327a20b7e7d5ddc673dc5469351787134a"
+        }
+      ]
+    },
+    "kQQHi57wUpk": {
+      "result": "awaiting_reconstruction",
+      "notes": "Source board and narration present. Larger real-game attacking position (initial board includes both black rooks, Nb6, six black pawns and White queen/rook/bishop plus five pawns). The Rxe6+/Qd6+/Rc8+/Bxb7+ combination and pawn mate require legal full-board reconstruction and supported larger-position analysis. Do not certify it from a terminal reduced mating image.",
+      "source_images": [
+        {
+          "file": "kQQHi57wUpk/images/image_00001.jpg",
+          "sha256": "6267f729245ea8a83a991c4c07b0cb9b30e6adef74abadc3de20d47d0a50391f"
+        }
+      ],
+      "analysis_required": "Source board and narration present. Larger real-game attacking position (initial board includes both black rooks, Nb6, six black pawns and White queen/rook/bishop plus five pawns). The Rxe6+/Qd6+/Rc8+/Bxb7+ combination and pawn mate require legal full-board reconstruction and supported larger-position analysis. Do not certify it from a terminal reduced mating image."
+    },
+    "Pfjq0YMm3pM": {
+      "result": "awaiting_reconstruction",
+      "notes": "Source board and narration present. Initial eleven pieces: White Kh5 Qh3 Nb8 Nc2 a7; Black Ke5 Qa5 Rc7 Bf4 e4 f6. The central Nc6+, Qf5+, Nd4+ sequence remains above seven pieces through the rook fork. Needs supported larger-position analysis, or a substantive explicitly scoped later conversion after Nxa5; the late small position alone cannot certify the earlier sacrifices.",
+      "source_images": [
+        {
+          "file": "Pfjq0YMm3pM/images/image_00001.jpg",
+          "sha256": "66fbd38b7cd28dacda03132daaa51114598d083056a6b1f7d910cc614384f3b7"
+        }
+      ],
+      "analysis_required": "Source board and narration present. Initial eleven pieces: White Kh5 Qh3 Nb8 Nc2 a7; Black Ke5 Qa5 Rc7 Bf4 e4 f6. The central Nc6+, Qf5+, Nd4+ sequence remains above seven pieces through the rook fork. Needs supported larger-position analysis, or a substantive explicitly scoped later conversion after Nxa5; the late small position alone cannot certify the earlier sacrifices."
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 63,
+    "selected_branches": 9,
+    "tests": "105 tests passed across 16 files; checks both bishop mates, the draw practice goal and threefold repetition, and the Lucena check-blocking bridge and promotion after the rook trade.",
+    "production_build": "Passed TypeScript and Vite build; existing bundle-size advisory remains.",
+    "ui_review": "CUA confirmed Bf6 mate with Black queen on b1, the repeated knight draw with its queen still on d1, and Rc4 bridge with the disclosed five-piece later root.",
+    "screenshots": [
+      "docs/screenshots/endgame-stories-batch-17.png",
+      "docs/screenshots/endgame-stories-batch-17-draw.png"
+    ],
+    "queue_counts": {
+      "verified_selected_lines": 52,
+      "awaiting_reconstruction": 170,
+      "needs_information": 23,
+      "not_applicable": 3
+    },
+    "local_only": true
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "video_id": "VKVv9EymXug",
+  "title": "Best Bishop Ever: Release the Diagonal",
+  "summary": "When the knight leaves its barricade, move the king to uncover the bishop’s check before promoting.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "7k/5P1p/5K2/1nq5/8/8/8/B7 w - - 0 1",
+      "question": "The knight has moved from c7 to b5. What has changed?",
+      "explanation": "White has Kf6, Ba1 and f7 against Kh8, Qc5, Nb5 and h7. With the knight off c7, e6 is available to the king. Moving there opens Ba1’s long diagonal to h8.",
+      "evidence": {
+        "timestamp_s": 160
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "best_bishop_release",
+      "start": "start",
+      "title": "Uncover the bishop and clear the promotion rank",
+      "san": [
+        "Ke6+",
+        "Nd4+",
+        "Bxd4+",
+        "Qxd4",
+        "f8=Q#"
+      ],
+      "commentary": [
+        "Begin after ...Nb5 at 160 seconds, once the a-pawn has promoted and been captured. The earlier larger queen sacrifice and waiting game remain source context.",
+        "Ke6+ moves the king away from the a1-h8 diagonal, uncovering the bishop’s check. The exact tablebase confirms that this is the only winning move in this later position.",
+        "Nd4+ interposes the knight on the bishop’s diagonal and checks Ke6 at the same time. White must answer the knight check before promoting.",
+        "Bxd4+ removes the checking knight and renews the bishop’s check. This capture is a legally reconstructed transition between the saved ...Nd4+ and final mate diagrams, rather than a separately retained image.",
+        "Qxd4 interposes by taking the bishop, putting the queen off the eighth-rank defense. This reply is the legal bridge consistent with the saved final queen on d4; it is not evidence that every Black defense was played.",
+        "f8=Q# promotes with check along the eighth rank. The king on h8 cannot escape to g8 or g7, h7 is occupied by its own pawn, and Qd4 cannot interpose on the eighth rank."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "f8=Q# promotes with check along the eighth rank. The king on h8 cannot escape to g8 or g7, h7 is occupied by its own pawn, and Qd4 cannot interpose on the eighth rank.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "5Q1k/7p/4K3/8/3q4/8/8/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "best_bishop_early_queen",
+      "start": "start",
+      "title": "Independent error: promote while the queen still defends f8",
+      "san": [
+        "f8=Q+",
+        "Qxf8+"
+      ],
+      "commentary": [
+        "An independently selected comparison tests immediate promotion from the same seven-piece root.",
+        "f8=Q+ gives check, but throws away the forced win. Black’s queen on c5 still has a clear diagonal through d6 and e7 to f8.",
+        "Qxf8+ removes the new queen with check along the f-file. Black now has a checked win. White should first have moved the king and used the bishop’s discovered check to change the defenders."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxf8+ removes the new queen with check along the f-file. Black now has a checked win. White should first have moved the king and used the bishop’s discovered check to change the defenders.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "5q1k/7p/5K2/1n6/8/8/8/B7 w - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why can White not simply promote while the king remains on f6?",
+      "answer": "Qc5 still defends f8 along c5-d6-e7-f8. Ke6 first uncovers a bishop check and makes Black respond to that diagonal."
+    },
+    {
+      "node": "start",
+      "prompt": "Why must White take the knight before promoting after ...Nd4+?",
+      "answer": "The interposing knight checks Ke6. White must answer that check; Bxd4+ does so while keeping the attack on Kh8 alive."
+    }
+  ],
+  "defaultBranch": "best_bishop_release",
+  "practiceBranch": "best_bishop_release",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Nb5 at 160 seconds in the complete seven-piece final release. The preceding ten-piece queen sacrifice, eight-piece barricade and a-pawn waiting maneuver are source context outside exact verification. The Nd4+/Bxd4+/Qxd4 bridge is reconstructed legally from the saved before-and-after diagrams; the early-promotion comparison is independently selected.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

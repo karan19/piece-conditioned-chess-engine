@@ -1,0 +1,207 @@
+{
+  "video_id": "d1XnlGta7RQ",
+  "title": "Chess Surgery",
+  "summary": "Retreat with the king and preserve a pawn tempo so the king can lead its passer.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "5k2/6p1/8/8/7P/8/8/2K5 b - - 0 1",
+      "question": "Which approach lets Black\u2019s king lead its pawn?",
+      "explanation": "Black has Kf8 and g7 against Kc1 and h4. The closer black king has a win, but the h-pawn can divert it or force a drawn rook-pawn ending.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "surgery_single_step",
+      "start": "start",
+      "title": "Retreat and advance the pawn only one square",
+      "san": [
+        "Kf7",
+        "h5",
+        "Kg8",
+        "h6",
+        "g6",
+        "Kd2",
+        "Kh7",
+        "Ke3",
+        "Kxh6",
+        "Kf4",
+        "Kh5"
+      ],
+      "commentary": [
+        "Begin with Black to move in the complete four-piece source root. The winning route preserves room in front of the g-pawn.",
+        "Kf7 approaches while keeping a retreat to g8 available.",
+        "h5 controls g6 and prevents the direct king approach through that square.",
+        "Kg8 retreats to approach h6 through h7, keeping g6 free for the pawn.",
+        "h6 offers the last white pawn as a distraction.",
+        "g6 advances just one square. Black reserves g5 for its king rather than occupying it with the pawn.",
+        "Kd2 starts the white king\u2019s march toward the promotion path.",
+        "Kh7 approaches h6 from above.",
+        "Ke3 continues White\u2019s fastest illustrated central approach.",
+        "Kxh6 removes the white pawn and leaves a g-pawn, avoiding the rook-pawn trap.",
+        "Kf4 tries to get in front of the remaining pawn.",
+        "Kh5 reaches a square ahead of g6. Black retains an exact win; this selected line ends before normal pawn conversion."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kh5 reaches a square ahead of g6. Black retains an exact win; this selected line ends before normal pawn conversion.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/6p1/7k/5K2/8/8/8 w - - 2 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "surgery_rook_pawn_draw",
+      "start": "start",
+      "title": "Approach directly and accept the sacrifice",
+      "san": [
+        "Kf7",
+        "h5",
+        "Kf6",
+        "h6",
+        "gxh6",
+        "Kd2",
+        "Kg5",
+        "Ke3",
+        "Kg4",
+        "Kf2",
+        "h5",
+        "Kg1",
+        "h4",
+        "Kh1",
+        "Kg3",
+        "Kg1",
+        "h3",
+        "Kh1",
+        "h2"
+      ],
+      "commentary": [
+        "Compare the source\u2019s direct approach and rook-pawn warning, with independently supplied representative king moves to show the actual stalemate.",
+        "Kf7 approaches the pawns.",
+        "h5 bars g6 and prepares the pawn sacrifice.",
+        "Kf6 gives up the forced win by allowing White to divert the g-pawn.",
+        "h6 offers the pawn to turn g7 into a rook pawn.",
+        "gxh6 accepts the offer. With accurate play, White reaches the promotion corner in time.",
+        "Kd2 begins an independent representative route toward h1.",
+        "Kg5 approaches with the king.",
+        "Ke3 continues toward the corner.",
+        "Kg4 moves closer but cannot keep White from h1.",
+        "Kf2 heads toward g1.",
+        "h5 advances the rook pawn.",
+        "Kg1 reaches the corner\u2019s entry square.",
+        "h4 advances again.",
+        "Kh1 occupies the promotion corner.",
+        "Kg3 supports the pawn but cannot evict the white king.",
+        "Kg1 uses the available neighboring square.",
+        "h3 pushes toward promotion.",
+        "Kh1 returns to the corner.",
+        "h2 is actual stalemate in this representative continuation: g1 is attacked by the pawn, while g2 and h2 are controlled by the king."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "h2 is actual stalemate in this representative continuation: g1 is attacked by the pawn, while g2 and h2 are controlled by the king.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/8/6k1/7p/7K w - - 0 11",
+      "outcome": "draw"
+    },
+    {
+      "id": "surgery_double_step_draw",
+      "start": "start",
+      "title": "Spend both pawn tempi at once",
+      "san": [
+        "Kf7",
+        "h5",
+        "Kg8",
+        "h6",
+        "g5",
+        "Kd2",
+        "Kh7",
+        "Ke3",
+        "Kxh6",
+        "Kf3",
+        "Kh5"
+      ],
+      "commentary": [
+        "Compare the source\u2019s two-square pawn advance with the winning one-square move.",
+        "Kf7 starts the approach.",
+        "h5 blocks g6 for the king.",
+        "Kg8 sets up the retreating route.",
+        "h6 offers the pawn.",
+        "g5 gives away the win: the pawn occupies the square its king needs to lead from.",
+        "Kd2 starts White\u2019s central march.",
+        "Kh7 goes toward the offered pawn.",
+        "Ke3 closes the distance.",
+        "Kxh6 removes h6, but now Black\u2019s g-pawn is already on g5.",
+        "Kf3 approaches the blocking squares.",
+        "Kh5 reaches alongside its pawn rather than ahead of it. The exact king-and-pawn ending is drawn with best play."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kh5 reaches alongside its pawn rather than ahead of it. The exact king-and-pawn ending is drawn with best play.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/6pk/8/5K2/8/8 w - - 2 7",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is ...g6 better than ...g5?",
+      "answer": "The king needs h5 ahead of a pawn still on g6. After ...g5 the same king route reaches alongside its pawn and White can block it."
+    }
+  ],
+  "defaultBranch": "surgery_single_step",
+  "practiceBranch": "surgery_single_step",
+  "practiceType": "king",
+  "practiceGoal": "win",
+  "startContext": "Begin with Black to move in the complete four-piece source root at zero seconds. Compare the one-square pawn advance, premature double advance and rook-pawn draw. The stalemate finish uses explicitly independent representative replies.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

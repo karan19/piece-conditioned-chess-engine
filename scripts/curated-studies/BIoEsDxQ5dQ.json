@@ -1,0 +1,97 @@
+{
+  "video_id": "BIoEsDxQ5dQ",
+  "title": "Majestic… Draw?!: Collect the Pawn Before Racing",
+  "summary": "Use the king’s capture tempo on the queenside before releasing the distant passed pawn.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/PPk5/8/5p2/5K1p/5P2/8 b - - 0 1",
+      "question": "White has pushed a6. Which pawn can Black collect immediately?",
+      "explanation": "Kc6 attacks b6. Capturing it leaves the a-pawn vulnerable on its next advance. Meanwhile f4 restrains White’s king, and h3 is ready to run once the queenside threats are removed.",
+      "evidence": {
+        "timestamp_s": 106
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "patience_collect_then_race",
+      "start": "start",
+      "title": "Independent continuation: collect both pawns, then queen",
+      "san": [
+        "Kxb6",
+        "a7",
+        "Kxa7",
+        "Kxf4",
+        "h2",
+        "Kg3",
+        "h1=Q"
+      ],
+      "commentary": [
+        "Begin in the complete seven-piece diagram after a6 at 106 seconds. The source discusses collecting the pawns, but the exact replies below are independently selected to make the conversion concrete.",
+        "Kxb6 removes the nearer passer. It is the only winning move in this exact diagram; racing the h-pawn immediately gives away the win.",
+        "a7 advances White’s remaining queenside pawn, but it enters a square attacked by Kb6. This is a representative legal reply, not a forced move.",
+        "Kxa7 removes the second passer. Black has eliminated White’s queenside promotion threats before starting the kingside race.",
+        "Kxf4 captures Black’s restraining pawn. White has collected material, but moving the king leaves h3 free to advance.",
+        "h2 puts the pawn one step from queening. White’s king on f4 cannot reach h1 in a single move.",
+        "Kg3 approaches h2 but cannot stop the immediate promotion. This representative defense keeps the exact Black win.",
+        "h1=Q promotes. Black’s queen and king win against White’s king and f2 pawn in this exact position; further queen conversion remains to be played."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "h1=Q promotes. Black’s queen and king win against White’s king and f2 pawn in this exact position; further queen conversion remains to be played.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/k7/8/8/8/6K1/5P2/7q w - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "patience_race_too_early",
+      "start": "start",
+      "title": "Independent mistake: run before taking b6",
+      "san": [
+        "h2"
+      ],
+      "commentary": [
+        "Compare the tempting immediate pawn race while White still has a6 and b6.",
+        "h2 changes the exact result to a White win. Black has skipped the essential capture of b6 and left both queenside passers alive. A pawn one step from promotion is not enough to justify ignoring the other wing."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "h2 changes the exact result to a White win. Black has skipped the essential capture of b6 and left both queenside passers alive. A pawn one step from promotion is not enough to justify ignoring the other wing.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "8/8/PPk5/8/5p2/5K2/5P1p/8 w - - 0 2",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why take b6 before pushing h2?",
+      "answer": "Kxb6 is the only winning move in this later position. It removes one passer and puts the king next to the other; the immediate pawn push leaves White a winning queenside race."
+    },
+    {
+      "node": "start",
+      "prompt": "What does ...Kxa7 change before White takes f4?",
+      "answer": "White no longer has either queenside passer. Black can let White spend a king move on f4, then use h2 and h1=Q."
+    }
+  ],
+  "defaultBranch": "patience_collect_then_race",
+  "practiceBranch": "patience_collect_then_race",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after a6 at 106 seconds, following the earlier ...Kxc6 capture. All seven pieces are retained: White Kf3/a6/b6/f2 versus Black Kc6/f4/h3. Black is the learner. Both continuations are explicitly independent representative analysis from the source diagram. The earlier eight-piece ...Kb8 triangulation, its uniqueness claim and the alternative initial pawn pushes remain outside this proof.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

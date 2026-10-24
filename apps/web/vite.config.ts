@@ -9,7 +9,7 @@ const featureRoutes: Plugin = {
 };
 function rewriteFeatureEntry(req: { url?: string }, _res: unknown, next: () => void) {
   const url = new URL(req.url ?? "/", "http://localhost");
-  const feature = ["guided-play", "opening-studio", "board-recall"].find(name => url.pathname.startsWith(`/${name}/`) && !url.pathname.includes("."));
+  const feature = ["guided-play", "opening-studio", "board-recall", "endgame-stories"].find(name => (url.pathname === `/${name}` || url.pathname.startsWith(`/${name}/`)) && !url.pathname.includes("."));
   if (feature) req.url = `/${feature}/index.html${url.search}`;
   next();
 }
@@ -17,7 +17,7 @@ export default defineConfig({
   plugins: [featureRoutes, react()],
   build: {
     rollupOptions: {
-      input: { home: "index.html", app: "guided-play/index.html", studio: "opening-studio/index.html", recall: "board-recall/index.html", legacyStudio: "v2/index.html" },
+      input: { home: "index.html", app: "guided-play/index.html", studio: "opening-studio/index.html", recall: "board-recall/index.html", stories: "endgame-stories/index.html", legacyStudio: "v2/index.html" },
     },
   },
   server: {

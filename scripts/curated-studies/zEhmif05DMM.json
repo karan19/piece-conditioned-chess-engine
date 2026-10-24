@@ -1,0 +1,148 @@
+{
+  "video_id": "zEhmif05DMM",
+  "title": "The Bishop Can Wait",
+  "summary": "Keep the bishop offered while improving the king, then exchange into a pawn ending where the defender has no useful move.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/5K2/5pp1/5Bk1/6P1/8/8 w - - 0 1",
+      "question": "Must White rescue the attacked bishop?",
+      "explanation": "Begin after ...g5. Black attacks Bf4, but the bishop is also shielding White’s last pawn on g3 from Kg4.",
+      "evidence": {
+        "timestamp_s": 94
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "wait_pawn_zugzwang",
+      "start": "start",
+      "title": "Offer the bishop and reach pawn zugzwang",
+      "san": [
+        "Ke5",
+        "gxf4",
+        "gxf4",
+        "Kg3",
+        "Kxf5"
+      ],
+      "commentary": [
+        "Begin after ...g5. Black attacks Bf4, but the bishop is also shielding White’s last pawn on g3 from Kg4.",
+        "Ke5 offers the bishop and approaches f5. Moving the king preserves the chance to recapture on f4 with the pawn.",
+        "gxf4 captures the bishop. Black expects to retain its f5 pawn in an apparently balanced pawn ending.",
+        "gxf4 recaptures. White’s Ke5 and f4 face Kg4 and f5, with Black to move. The f-pawn cannot advance onto the occupied f4 square.",
+        "Kg3 is an independently selected representative king retreat. Black cannot keep f5 protected: g5 is controlled by White’s pawn and f4 by White’s king.",
+        "Kxf5 takes the last black pawn. The resulting king-and-pawn ending is checked as a White win."
+      ],
+      "classification": "source sacrifice and pawn ending with an independent representative king retreat",
+      "explanation": "Kxf5 takes the last black pawn. The resulting king-and-pawn ending is checked as a White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/5K2/5P2/6k1/8/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "wait_king_moves",
+      "start": "start",
+      "title": "Move the king instead of taking the bishop",
+      "san": [
+        "Ke5",
+        "Kh5",
+        "Kxf5",
+        "gxf4",
+        "gxf4"
+      ],
+      "commentary": [
+        "Begin after ...g5. Black attacks Bf4, but the bishop is also shielding White’s last pawn on g3 from Kg4.",
+        "Ke5 waits with purpose, threatening to collect f5 when the black king leaves g4.",
+        "Kh5 declines the bishop capture and abandons protection of f5.",
+        "Kxf5 takes that pawn. White keeps the bishop offered and the g3 pawn available to recapture.",
+        "gxf4 captures the bishop only after White has improved the king and removed f5.",
+        "gxf4 leaves White with Kf5 and f4 against Kh5. The exact pawn ending is winning with best play."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "gxf4 leaves White with Kf5 and f4 against Kh5. The exact pawn ending is winning with best play.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/5K1k/5P2/8/8/8 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "wait_capture_too_soon",
+      "start": "start",
+      "title": "Take the attacking pawn immediately",
+      "san": [
+        "Bxg5",
+        "Kxg3"
+      ],
+      "commentary": [
+        "Begin after ...g5. Black attacks Bf4, but the bishop is also shielding White’s last pawn on g3 from Kg4.",
+        "Bxg5 removes the attacker but pulls the bishop off the f4-g3 defensive diagonal. The win becomes a draw.",
+        "Kxg3 takes White’s last pawn. The exact bishop-versus-pawn ending is drawn; winning a pawn was less useful than preserving a promotable pawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxg3 takes White’s last pawn. The exact bishop-versus-pawn ending is drawn; winning a pawn was less useful than preserving a promotable pawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/5K2/5pB1/8/6k1/8/8 w - - 0 2",
+      "outcome": "draw"
+    },
+    {
+      "id": "wait_retreat",
+      "start": "start",
+      "title": "Retreat the bishop",
+      "san": [
+        "Be5",
+        "f4",
+        "gxf4",
+        "gxf4"
+      ],
+      "commentary": [
+        "Begin after ...g5. Black attacks Bf4, but the bishop is also shielding White’s last pawn on g3 from Kg4.",
+        "Be5 saves the bishop but gives up the forced win. Black can advance f4 now that the bishop has vacated it.",
+        "f4 attacks the g3 pawn and forces a change in the pawn structure.",
+        "gxf4 captures the advancing pawn in this representative line.",
+        "gxf4 removes White’s final pawn. The exact remaining bishop-versus-pawn ending is drawn."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "gxf4 removes White’s final pawn. The exact remaining bishop-versus-pawn ending is drawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/5K2/4B3/5pk1/8/8/8 w - - 0 3",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why is the apparently symmetric pawn ending winning?",
+      "answer": "After Ke5 gxf4 gxf4 it is Black to move. The pawn cannot push, the white pawn controls g5, and the white king controls f4. Any legal king move loses protection of f5."
+    }
+  ],
+  "defaultBranch": "wait_pawn_zugzwang",
+  "practiceBranch": "wait_pawn_zugzwang",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin at the visually reconstructed six-piece diagram after ...g5 at 94 seconds. The earlier ten-piece choice of bishops and the intervening larger setup remain source context. Selected later plans are checked exactly; the king retreat after the final pawn exchange and the bishop-retreat comparison use independent representative replies.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

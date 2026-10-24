@@ -1,0 +1,119 @@
+{
+  "video_id": "IqBGvTKaeBs",
+  "title": "Bishop Vs Queen: Win the Promotion Race",
+  "summary": "After the king accepts the bishop sacrifice, push immediately: the new queen controls the opponent’s promotion square.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/3K4/4p2P/2p3p1/4k3/p7/8/8 w - - 0 1",
+      "question": "The bishop is gone. What matters more than capturing another pawn?",
+      "explanation": "White’s h6 pawn needs two moves to promote. Black’s a3 pawn also needs two moves, but White moves first and Qh8 will control a1. Every king move gives up the win; h7 is the only winning move in this exact position.",
+      "evidence": {
+        "timestamp_s": 96
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "bishop_race_source",
+      "start": "start",
+      "title": "Source reply to the bishop capture: promote first",
+      "san": [
+        "h7",
+        "a2",
+        "h8=Q"
+      ],
+      "commentary": [
+        "Begin after ...Kxe4 at 96 seconds. The bishop has been removed, leaving seven pieces. The earlier eight-piece bishop offer and the other source branches remain outside this proof.",
+        "h7 uses the first tempo to approach promotion. White’s king stays on d7; capturing a central pawn instead would lose the race with best defense.",
+        "a2 advances Black’s fastest passer. It threatens promotion next move, but White is already ready to queen.",
+        "h8=Q promotes first. The diagonal h8–g7–f6–e5–d4–c3–b2–a1 is clear, so the queen controls Black’s promotion square. This complete queen-versus-four-pawns position is an exact White win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "h8=Q promotes first. The diagonal h8–g7–f6–e5–d4–c3–b2–a1 is clear, so the queen controls Black’s promotion square. This complete queen-versus-four-pawns position is an exact White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7Q/3K4/4p3/2p3p1/4k3/8/p7/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "bishop_race_capture_promotion",
+      "start": "start",
+      "title": "Independent continuation: answer a queen promotion",
+      "san": [
+        "h7",
+        "a2",
+        "h8=Q",
+        "a1=Q",
+        "Qxa1"
+      ],
+      "commentary": [
+        "The first three moves follow the source’s pawn race. The subsequent black promotion and queen capture are an independently added illustration of the open diagonal.",
+        "h7 preserves White’s forced win by using the next tempo for promotion.",
+        "a2 threatens to queen but leaves the long diagonal unobstructed.",
+        "h8=Q creates the queen before Black can promote. It already attacks a1 from the opposite corner.",
+        "a1=Q is legal and creates a queen, but it arrives on a square attacked by Qh8. This is a representative losing defense, not a move claimed to be shown in the video.",
+        "Qxa1 captures the new queen along the open diagonal. White wins the resulting queen-versus-three-pawns ending; the lesson stops before inventing a complete conversion."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxa1 captures the new queen along the open diagonal. White wins the resulting queen-versus-three-pawns ending; the lesson stops before inventing a complete conversion.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3K4/4p3/2p3p1/4k3/8/8/Q7 b - - 0 3",
+      "outcome": "loss"
+    },
+    {
+      "id": "bishop_race_lost_tempo",
+      "start": "start",
+      "title": "Independent mistake: collect a pawn instead",
+      "san": [
+        "Kxe6",
+        "a2"
+      ],
+      "commentary": [
+        "Compare a tempting pawn capture before pushing. This is independent analysis of the visually reconstructed seven-piece position.",
+        "Kxe6 takes a central pawn but gives Black the first advance in the promotion race. The exact outcome changes to a Black win; material gain has cost the essential tempo.",
+        "a2 brings Black’s pawn one step from queening while White’s h-pawn is still on h6. White can no longer achieve the source’s promote-first diagonal control with best defense."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "a2 brings Black’s pawn one step from queening while White’s h-pawn is still on h6. White can no longer achieve the source’s promote-first diagonal control with best defense.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "8/8/4K2P/2p3p1/4k3/8/p7/8 w - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does the new queen stop a faraway pawn?",
+      "answer": "Qh8 controls a1 along an unobstructed diagonal. If Black promotes to a queen there, Qxa1 captures it."
+    },
+    {
+      "node": "start",
+      "prompt": "Why not take e6 before pushing?",
+      "answer": "The pawn capture spends the move White needs to reach h8 first. The exact comparison loses with best play, whereas h7 preserves the win."
+    }
+  ],
+  "defaultBranch": "bishop_race_source",
+  "practiceBranch": "bishop_race_source",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Kxe4 in the complete saved 96-second diagram. White has Kd7 and h6; Black has Ke4 and a3, c5, e6, g5. This selected seven-piece response to the bishop sacrifice is verified exactly. The earlier eight-piece Be4 choice, its uniqueness claim, ...Kf6 king maneuver and later mating sequence are not certified by this lesson.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

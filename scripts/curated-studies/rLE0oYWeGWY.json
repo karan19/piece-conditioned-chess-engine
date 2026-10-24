@@ -1,0 +1,166 @@
+{
+  "video_id": "rLE0oYWeGWY",
+  "title": "Double Trouble",
+  "summary": "Interrupt two rook lines at once: one guards promotion and the other guards the king.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/3P4/8/2r5/4B2k/5K2/3r4/5R2 w - - 0 1",
+      "question": "How can White combine promotion with a king attack?",
+      "explanation": "The rook on d2 stops d8=Q. Kf4 can restrict Kh4 while Be4 supports a mating net.",
+      "evidence": {
+        "timestamp_s": 40
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "interference",
+      "fen": "8/3P4/8/8/5K1k/2rB4/3r4/5R2 b - - 3 2",
+      "question": "Which defensive line can Black keep open?",
+      "explanation": "Bd3 interrupts the d-file and the third rank simultaneously. Either rook capture releases another White threat.",
+      "evidence": {
+        "timestamp_s": 112
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "double_c_rook",
+      "start": "start",
+      "title": "Capture with the c-rook: promotion releases the attack",
+      "san": [
+        "Kf4",
+        "Rc3",
+        "Bd3",
+        "Rcxd3",
+        "d8=Q+",
+        "Rxd8",
+        "Rh1+",
+        "Rh2",
+        "Rxh2#"
+      ],
+      "commentary": [
+        "Begin after ...Rd2 in the seven-piece phase. Earlier ...g2+ and Kxg2 belong to source context.",
+        "Kf4 controls g3, g4 and g5. White prepares an h-file attack against Kh4.",
+        "Rc3 guards the third rank, preparing to meet an h-file check by interposing a rook.",
+        "Bd3 sacrifices the bishop on the intersection of both defensive lines. It blocks Rd2’s promotion defense and Rc3’s horizontal defense.",
+        "Rcxd3 accepts with the c-rook, leaving c3 and moving that rook onto the d-file.",
+        "d8=Q+ promotes with check along d8–e7–f6–g5–h4. White uses the cleared third rank in the coming attack.",
+        "Rxd8 removes the queen with the rook from d3. The promotion has diverted that rook away from the king’s defensive rank.",
+        "Rh1+ checks along the h-file. It wins, but is not yet mate: the remaining rook can block on h2.",
+        "Rh2 is the sole legal interposition, independently supplied to complete the source’s mating claim accurately.",
+        "Rxh2# gives actual mate. Kf4 covers the g-file flights and Rh2 controls the h-file; the distant rook cannot stop this check."
+      ],
+      "classification": "selected illustrated source variation with independent forced mating completion",
+      "explanation": "Rxh2# gives actual mate. Kf4 covers the g-file flights and Rh2 controls the h-file; the distant rook cannot stop this check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3r4/8/8/8/5K1k/8/7R/8 b - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "double_d_rook",
+      "start": "interference",
+      "title": "Capture with the d-rook: clear the promotion file",
+      "san": [
+        "Rdxd3",
+        "Rh1+",
+        "Rh3",
+        "d8=Q+",
+        "Kh5",
+        "Qg5#"
+      ],
+      "commentary": [
+        "Compare capturing the interference bishop with the rook that guarded promotion.",
+        "Rdxd3 vacates d2. Black keeps its c-rook on c3 but loses direct control of d8.",
+        "Rh1+ checks along the h-file and forces a defensive response before promotion.",
+        "Rh3 is the source’s illustrated rook block, moving the rook from d3 to h3. It prevents immediate mate but leaves the d-file open.",
+        "d8=Q+ promotes with check along the diagonal toward Kh4. The rook on h3 still blocks White’s h-file rook, but the new queen supplies a different attack.",
+        "Kh5 is the only legal king response. Kf4 covers the g-file escape squares and h3 is occupied by Black’s rook.",
+        "Qg5# is the source’s actual mating finish. Kf4 protects Qg5, the queen covers g6 and h6, and Black cannot interpose against the adjacent queen check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qg5# is the source’s actual mating finish. Kf4 protects Qg5, the queen covers g6 and h6, and Black cannot interpose against the adjacent queen check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/6Qk/5K2/2r4r/8/7R b - - 2 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "double_king_escape",
+      "start": "start",
+      "title": "Try to escape with the king",
+      "san": [
+        "Kf4",
+        "Kh5",
+        "Rh1+",
+        "Rh2",
+        "Rxh2#"
+      ],
+      "commentary": [
+        "Compare the source’s king escape instead of the rook’s ...Rc3 defense.",
+        "Kf4 restricts the black king and prepares the rook attack.",
+        "Kh5 tries to run upward, but Be4 controls g6 and h7 while the white king controls g5.",
+        "Rh1+ checks on the open h-file. A rook block is still possible, so this is not immediate mate.",
+        "Rh2 is an independently supplied forced interposition from d2.",
+        "Rxh2# is actual mate. The bishop covers g6 and the king covers g4 and g5, closing the remaining flights."
+      ],
+      "classification": "selected illustrated source king alternative with independent forced mating completion",
+      "explanation": "Rxh2# is actual mate. The bishop covers g6 and the king covers g4 and g5, closing the remaining flights.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/3P4/8/2r4k/4BK2/8/7R/8 b - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "interference",
+      "prompt": "Why does one bishop sacrifice affect two defenses?",
+      "answer": "d3 lies on the d-file rook’s path to d8 and the c3 rook’s path toward the h-file. Capturing with either rook releases the other threat."
+    },
+    {
+      "node": "interference",
+      "prompt": "Why distinguish a winning check from checkmate?",
+      "answer": "A defender can still interpose a rook on h2 in the illustrated h-file attacks. Capturing that blocker gives actual mate; the winning plan remains sound."
+    }
+  ],
+  "defaultBranch": "double_c_rook",
+  "practiceBranch": "double_c_rook",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Rd2 at 40 seconds, with seven pieces. The earlier eight-piece opening and pawn lure remain context. The double interference and both rook captures are checked. Forced ...Rh2 Rxh2# completions are independently supplied where the source calls the earlier check mate.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "After the c-rook capture and queen sacrifice, Rh1 is called checkmate.",
+      "correction": "Rh1+ still allows the sole ...Rh2 interposition, then Rxh2# gives actual mate. These independently supplied final plies preserve the source winning idea. The same block-and-capture finish is checked independently in the king-escape comparison."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

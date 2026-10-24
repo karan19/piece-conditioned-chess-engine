@@ -1,0 +1,189 @@
+{
+  "video_id": "Lf3fQRT0SIc",
+  "title": "STALEMATE! STALEMATE! STALEMATE!",
+  "summary": "Keep adjusting the king and knight, then underpromote to avoid the final stalemate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/2P5/8/2K5/k7/3r4/8/6N1 w - - 0 1",
+      "question": "Why is promotion not automatically safe?",
+      "explanation": "The rook can check on the c-file and exploit either a fork or a stalemate. White must coordinate the king and knight before choosing the promotion piece.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "first_trap",
+      "fen": "8/2P5/8/k1K5/8/3r4/4N3/8 w - - 2 2",
+      "question": "Can White promote after covering c3?",
+      "explanation": "Ne2 covers c3, but ...Ka5 has arranged a stalemate if the knight captures a sacrificed rook.",
+      "evidence": {
+        "timestamp_s": 52
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "second_trap",
+      "fen": "8/2P5/3r4/k7/2K5/8/4N3/8 w - - 4 3",
+      "question": "Does moving the king remove every stalemate?",
+      "explanation": "White has attacked the rook with Kc4. Its retreat to d6 sets another c-file sacrifice against a queen.",
+      "evidence": {
+        "timestamp_s": 68
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "last_trap",
+      "fen": "8/2P5/1kN5/8/2K5/8/8/8 w - - 1 5",
+      "question": "Which piece should the pawn become?",
+      "explanation": "Black’s king on b6 has no safe square if White adds a queen. A rook leaves a flight square and keeps the game winning.",
+      "evidence": {
+        "timestamp_s": 112
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "stalemate_rook_promotion",
+      "start": "start",
+      "title": "Coordinate first and promote to a rook",
+      "san": [
+        "Ne2",
+        "Ka5",
+        "Kc4",
+        "Rd6",
+        "Nd4",
+        "Rc6+",
+        "Nxc6+",
+        "Kb6",
+        "c8=R"
+      ],
+      "commentary": [
+        "Begin from the complete five-piece saved opening board.",
+        "Ne2 protects c3, meeting the rook’s potential checking fork after promotion.",
+        "Ka5 arranges a different defense: a capture on c3 can leave Black stalemated.",
+        "Kc4 attacks Rd3 and changes the king coverage before White promotes.",
+        "Rd6 retreats while preparing another rook sacrifice on the c-file.",
+        "Nd4 covers c6. White improves the knight before allowing the rook’s next checking move.",
+        "Rc6+ offers the rook with check, still trying to exploit the king’s restricted squares.",
+        "Nxc6+ removes the rook with check against Ka5. White now has a knight and pawn against the king.",
+        "Kb6 answers the knight check, attacks both c7 and Nc6, and sets the final stalemate trap.",
+        "c8=R underpromotes. The rook keeps Black a legal flight square while preserving the exact win. The selected branch ends at this checked rook-and-knight ending, not an immediate mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "c8=R underpromotes. The rook keeps Black a legal flight square while preserving the exact win. The selected branch ends at this checked rook-and-knight ending, not an immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2R5/8/1kN5/8/2K5/8/8/8 b - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "stalemate_first_queen",
+      "start": "first_trap",
+      "title": "Promote before moving the king",
+      "san": [
+        "c8=Q",
+        "Rc3+",
+        "Nxc3"
+      ],
+      "commentary": [
+        "Compare a queen promotion after Ne2 and ...Ka5.",
+        "c8=Q gives away the win. The extra queen helps close Black’s flight squares.",
+        "Rc3+ sacrifices the rook with check, inviting the knight to remove Black’s only movable piece.",
+        "Nxc3 is actual stalemate. Ka5 is not checked; Qc8 covers a6, Nc3 covers a4, and Kc5 covers b4, b5 and b6."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxc3 is actual stalemate. Ka5 is not checked; Qc8 covers a6, Nc3 covers a4, and Kc5 covers b4, b5 and b6.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "2Q5/8/8/k1K5/8/2N5/8/8 b - - 0 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "stalemate_second_queen",
+      "start": "second_trap",
+      "title": "Promote before improving the knight",
+      "san": [
+        "c8=Q",
+        "Rc6+",
+        "Qxc6"
+      ],
+      "commentary": [
+        "Compare immediate queen promotion after Kc4 and ...Rd6.",
+        "c8=Q gives away the win again. The queen can capture a checking rook, but that capture can freeze the enemy king.",
+        "Rc6+ checks Kc4 and attacks Qc8 along the c-file.",
+        "Qxc6 is actual stalemate. Qc6 covers a6, a4 and b6, while Kc4 covers b4 and b5. Ka5 has no move and is not checked."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxc6 is actual stalemate. Qc6 covers a6, a4 and b6, while Kc4 covers b4 and b5. Ka5 has no move and is not checked.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/2Q5/k7/2K5/8/4N3/8 b - - 0 4",
+      "outcome": "draw"
+    },
+    {
+      "id": "stalemate_final_queen",
+      "start": "last_trap",
+      "title": "Choose a queen in the final position",
+      "san": [
+        "c8=Q"
+      ],
+      "commentary": [
+        "Compare maximum material with the rook underpromotion after ...Kb6.",
+        "c8=Q is actual stalemate. Qc8 covers a6, b7, c7 and c6; Nc6 covers a5 and a7; Kc4 covers b5 and c5. Kb6 is not checked and has no legal move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "c8=Q is actual stalemate. Qc8 covers a6, b7, c7 and c6; Nc6 covers a5 and a7; Kc4 covers b5 and c5. Kb6 is not checked and has no legal move.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "2Q5/8/1kN5/8/2K5/8/8/8 b - - 0 5",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "first_trap",
+      "prompt": "Why can protecting c3 with a knight still fail?",
+      "answer": "After c8=Q Rc3+ Nxc3, the queen, knight and king cover every square around Ka5 without checking it. Removing the rook leaves Black no legal move."
+    },
+    {
+      "node": "last_trap",
+      "prompt": "What does rook promotion deliberately give up?",
+      "answer": "A rook omits the queen’s diagonal control of a6, leaving the black king a legal move. White avoids stalemate and keeps a winning rook-and-knight ending."
+    }
+  ],
+  "defaultBranch": "stalemate_rook_promotion",
+  "practiceBranch": "stalemate_rook_promotion",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin from the full five-piece source board. Three independently checked actual stalemates are contrasted with the source’s king/knight preparation and rook underpromotion. The selected branches do not claim an exhaustive tree of every rook defense.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,159 @@
+{
+  "video_id": "OZjozSzsZqI",
+  "title": "Fix Your Mistake: Check Before Taking the Queen",
+  "summary": "Use different rook checks depending on whether the king or queen captured the knight, then verify the resulting pawn endings.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "6q1/5pkp/8/8/P1P5/8/K3R3/8 w - - 0 1",
+      "question": "How can White skewer the king and queen on the g-file?",
+      "explanation": "Rg2+ checks Kg7 with Qg8 behind it. Every king reply leaves a legal queen capture and an exact winning seven-piece position.",
+      "evidence": {
+        "timestamp_s": 62
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "6q1/5pkp/8/8/P1P5/8/K3R3/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    },
+    {
+      "id": "queen_takes_knight",
+      "fen": "7k/5pqp/8/8/P1P5/8/K3R3/8 w - - 0 1",
+      "question": "What changes when the queen captures on g7 instead?",
+      "explanation": "Re8+ checks Kh8 across the eighth rank. Black can interpose Qg8 or Qf8, but either queen is captured into an exact winning ending.",
+      "evidence": {
+        "timestamp_s": 66
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "7k/5pqp/8/8/P1P5/8/K3R3/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "fix_king_capture_skewer",
+      "start": "start",
+      "title": "King capture: independent king retreat completes the source skewer",
+      "san": [
+        "Rg2+",
+        "Kh8",
+        "Rxg8+",
+        "Kxg8"
+      ],
+      "commentary": [
+        "Begin after ...Kxg7 in the source’s separate king-capture variation. The knight has been captured; both white and both black pawns remain.",
+        "Rg2+ checks along the g-file and puts Qg8 behind its king. Black cannot answer by moving the queen while Kg7 stays in check.",
+        "Kh8 is a representative legal retreat supplied independently. Kf8, Kf6 and Kh6 are also checked in the certificate.",
+        "Rxg8+ captures the queen and reaches an exact seven-piece White win, even though Black can capture the rook.",
+        "Kxg8 removes the rook and reaches an exact six-piece White win. The advanced a4 and c4 pawns matter to the race; this is not an automatic assumption that all pawn endings win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kxg8 removes the rook and reaches an exact six-piece White win. The advanced a4 and c4 pawns matter to the race; this is not an automatic assumption that all pawn endings win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6k1/5p1p/8/8/P1P5/8/K7/8 w - - 0 3",
+      "outcome": "win"
+    },
+    {
+      "id": "fix_queen_capture_block",
+      "start": "queen_takes_knight",
+      "title": "Source queen capture: interpose on g8",
+      "san": [
+        "Re8+",
+        "Qg8",
+        "Rxg8+",
+        "Kxg8"
+      ],
+      "commentary": [
+        "Begin separately after ...Qxg7, with Kh8 still in the corner. This is not joined to the earlier king-capture score.",
+        "Re8+ checks across the eighth rank. Black’s f7/h7 pawns occupy nearby king squares.",
+        "Qg8 blocks the rook check. Qf8 is also legal, so the source block is not described as forced.",
+        "Rxg8+ captures the blocking queen and reaches an exact seven-piece White win.",
+        "Kxg8 is forced and reaches the exact winning six-piece pawn ending, with a4/c4 and f7/h7 retained."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxg8 is forced and reaches the exact winning six-piece pawn ending, with a4/c4 and f7/h7 retained.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "6k1/5p1p/8/8/P1P5/8/K7/8 w - - 0 3",
+      "outcome": "win"
+    },
+    {
+      "id": "fix_other_queen_block",
+      "start": "queen_takes_knight",
+      "title": "Independent defense: interpose on f8",
+      "san": [
+        "Re8+",
+        "Qf8",
+        "Rxf8+",
+        "Kg7"
+      ],
+      "commentary": [
+        "Test the omitted legal interposition rather than assuming the queen must choose g8.",
+        "Re8+ checks Kh8 and forces a queen block.",
+        "Qf8 is legal and blocks the check one square closer to the white rook.",
+        "Rxf8+ removes the queen and reaches an exact seven-piece White win. The rook remains on f8 in this branch.",
+        "Kg7 is the sole legal king reply. White keeps a checked seven-piece win; this branch stops without inventing a later conversion."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Kg7 is the sole legal king reply. White keeps a checked seven-piece win; this branch stops without inventing a later conversion.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "5R2/5pkp/8/8/P1P5/8/K7/8 w - - 1 3",
+      "outcome": "win"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Does allowing Kxg8 refute the skewer?",
+      "answer": "No. The resulting six-piece pawn ending is checked as a White win, with the actual pawn squares retained."
+    },
+    {
+      "node": "queen_takes_knight",
+      "prompt": "Is Qg8 the only block to Re8?",
+      "answer": "No. Qf8 is legal too. Rxf8+ also reaches an exact winning seven-piece ending."
+    }
+  ],
+  "defaultBranch": "fix_king_capture_skewer",
+  "practiceBranch": "fix_king_capture_skewer",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Two separate complete eight-piece later variations begin after ...Kxg7 at 62 seconds and after ...Qxg7 at 66 seconds. Rg2+ is proved against all four king replies through exact seven-piece outcomes after Rxg8. Re8+ is proved against both Qg8 and Qf8, followed by the corresponding queen capture. Representative king retreats and the omitted Qf8 block are explicitly independent. The original Ng7 choice, Nf6/Qg1 stalemate trap and Nh5 recovery are source context outside this selected proof. All a4/c4/f7/h7 pawns are preserved.",
+  "verification_scope": "Two separate complete eight-piece later variations begin after ...Kxg7 at 62 seconds and after ...Qxg7 at 66 seconds. Rg2+ is proved against all four king replies through exact seven-piece outcomes after Rxg8. Re8+ is proved against both Qg8 and Qf8, followed by the corresponding queen capture. Representative king retreats and the omitted Qf8 block are explicitly independent. The original Ng7 choice, Nf6/Qg1 stalemate trap and Nh5 recovery are source context outside this selected proof. All a4/c4/f7/h7 pawns are preserved.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 7,
+    "moves": {
+      "6qk/5p1p/8/8/P1P5/8/K5R1/8 w - - 2 2": "Rxg8+",
+      "5kq1/5p1p/8/8/P1P5/8/K5R1/8 w - - 2 2": "Rxg8+",
+      "6q1/5p1p/7k/8/P1P5/8/K5R1/8 w - - 2 2": "Rxg8",
+      "6q1/5p1p/5k2/8/P1P5/8/K5R1/8 w - - 2 2": "Rxg8",
+      "6q1/5pkp/8/8/P1P5/8/K3R3/8 w - - 0 1": "Rg2+",
+      "7k/5pqp/8/8/P1P5/8/K3R3/8 w - - 0 1": "Re8+",
+      "4R1qk/5p1p/8/8/P1P5/8/K7/8 w - - 2 2": "Rxg8+",
+      "4Rq1k/5p1p/8/8/P1P5/8/K7/8 w - - 2 2": "Rxf8+"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

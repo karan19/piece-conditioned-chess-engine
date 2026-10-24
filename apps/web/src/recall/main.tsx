@@ -32,7 +32,7 @@ function RecallApp() {
   usePageNavigation(`${challenge ? "Memory challenge" : "Board Recall"} · Chess Learning Lab`, url.pathname);
   const complete = (attempt: Attempt) => setAttempts(old => [attempt, ...old.filter(a => a.id !== attempt.id)].slice(0, 50));
   return <div className="recall-app">
-    <header className="recall-header"><a className="recall-brand" href="/"><span aria-hidden="true">♞</span>Chess Learning Lab</a><nav aria-label="Chess features"><a href="/guided-play/">Guided Play</a><a href="/opening-studio/">Opening Studio</a><RouteLink href="/board-recall/" aria-current="page">Board Recall</RouteLink></nav></header>
+    <header className="recall-header"><a className="recall-brand" href="/"><span aria-hidden="true">♞</span>Chess Learning Lab</a><nav aria-label="Chess features"><a href="/guided-play/">Guided Play</a><a href="/opening-studio/">Opening Studio</a><RouteLink href="/board-recall/" aria-current="page">Board Recall</RouteLink><a href="/endgame-stories/">Endgame Stories</a></nav></header>
     <main className="recall-main">
       <Breadcrumbs items={[{ label: "Chess homepage", href: "/" }, { label: "Board Recall", ...(challenge ? { href: `/board-recall/?${queryFor(settings)}` } : {}) }, ...(challenge ? [{ label: "Memory challenge" }] : [])]} />
       {storageError && <p className="recall-notice" role="status">This browser couldn’t save your results. You can still play this round.</p>}

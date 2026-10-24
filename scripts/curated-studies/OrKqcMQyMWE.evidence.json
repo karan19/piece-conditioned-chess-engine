@@ -1,0 +1,674 @@
+{
+  "step:waiting_pin_pawn:3": {
+    "fen": "K7/8/8/8/8/2P2N2/5bpR/7k b - - 0 2",
+    "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F8%2F2P2N2%2F5bpR%2F7k+b+-+-+0+2",
+    "retrieved_at_utc": "2026-10-24T03:55:58.928753+00:00",
+    "response": {
+      "checkmate": true,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": []
+    }
+  },
+  "branch:waiting_pin_pawn": {
+    "fen": "K7/8/8/8/8/2P2N2/5bpR/7k b - - 0 2",
+    "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F8%2F2P2N2%2F5bpR%2F7k+b+-+-+0+2",
+    "retrieved_at_utc": "2026-10-24T03:55:58.928753+00:00",
+    "response": {
+      "checkmate": true,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": []
+    }
+  },
+  "step:waiting_long_bishop_move:3": {
+    "fen": "K7/b7/8/8/8/2P2N2/6pR/7k b - - 0 2",
+    "url": "https://tablebase.lichess.ovh/standard?fen=K7%2Fb7%2F8%2F8%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+    "retrieved_at_utc": "2026-10-24T03:55:53.937371+00:00",
+    "response": {
+      "checkmate": true,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": []
+    }
+  },
+  "branch:waiting_long_bishop_move": {
+    "fen": "K7/b7/8/8/8/2P2N2/6pR/7k b - - 0 2",
+    "url": "https://tablebase.lichess.ovh/standard?fen=K7%2Fb7%2F8%2F8%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+    "retrieved_at_utc": "2026-10-24T03:55:53.937371+00:00",
+    "response": {
+      "checkmate": true,
+      "stalemate": false,
+      "variant_win": false,
+      "variant_loss": false,
+      "insufficient_material": false,
+      "dtz": -1,
+      "precise_dtz": -1,
+      "dtm": null,
+      "dtw": null,
+      "dtc": null,
+      "category": "loss",
+      "moves": []
+    }
+  },
+  "node:start": {
+    "method": "finite_strategy",
+    "fen": "KR6/8/8/8/8/2P2N2/6pp/6bk w - - 0 1",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rh8": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/8/8/8/2P2N2/6pp/6bk b - - 1 1",
+        "winner": "white",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Ba7": {
+            "method": "finite_strategy",
+            "fen": "K6R/b7/8/8/8/2P2N2/6pp/7k w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rxh2#": {
+                "fen": "K7/b7/8/8/8/2P2N2/6pR/7k b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=K7%2Fb7%2F8%2F8%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T03:55:53.937371+00:00",
+                "response": {
+                  "checkmate": true,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": []
+                }
+              }
+            }
+          },
+          "Bb6": {
+            "method": "finite_strategy",
+            "fen": "K6R/8/1b6/8/8/2P2N2/6pp/7k w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rxh2#": {
+                "fen": "K7/8/1b6/8/8/2P2N2/6pR/7k b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F1b6%2F8%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T03:55:59.442915+00:00",
+                "response": {
+                  "checkmate": true,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": []
+                }
+              }
+            }
+          },
+          "Bc5": {
+            "method": "finite_strategy",
+            "fen": "K6R/8/8/2b5/8/2P2N2/6pp/7k w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rxh2#": {
+                "fen": "K7/8/8/2b5/8/2P2N2/6pR/7k b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F2b5%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T03:55:59.954983+00:00",
+                "response": {
+                  "checkmate": true,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": []
+                }
+              }
+            }
+          },
+          "Bd4": {
+            "method": "finite_strategy",
+            "fen": "K6R/8/8/8/3b4/2P2N2/6pp/7k w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rxh2#": {
+                "fen": "K7/8/8/8/3b4/2P2N2/6pR/7k b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F3b4%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T03:56:00.464131+00:00",
+                "response": {
+                  "checkmate": true,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": []
+                }
+              }
+            }
+          },
+          "Be3": {
+            "method": "finite_strategy",
+            "fen": "K6R/8/8/8/8/2P1bN2/6pp/7k w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rxh2#": {
+                "fen": "K7/8/8/8/8/2P1bN2/6pR/7k b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F8%2F2P1bN2%2F6pR%2F7k+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T03:56:00.973257+00:00",
+                "response": {
+                  "checkmate": true,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": []
+                }
+              }
+            }
+          },
+          "Bf2": {
+            "method": "finite_strategy",
+            "fen": "K6R/8/8/8/8/2P2N2/5bpp/7k w - - 2 2",
+            "winner": "white",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "Rxh2#": {
+                "fen": "K7/8/8/8/8/2P2N2/5bpR/7k b - - 0 2",
+                "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F8%2F2P2N2%2F5bpR%2F7k+b+-+-+0+2",
+                "retrieved_at_utc": "2026-10-24T03:55:58.928753+00:00",
+                "response": {
+                  "checkmate": true,
+                  "stalemate": false,
+                  "variant_win": false,
+                  "variant_loss": false,
+                  "insufficient_material": false,
+                  "dtz": -1,
+                  "precise_dtz": -1,
+                  "dtm": null,
+                  "dtw": null,
+                  "dtc": null,
+                  "category": "loss",
+                  "moves": []
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:waiting_pin_pawn:1": {
+    "method": "finite_strategy",
+    "fen": "K6R/8/8/8/8/2P2N2/6pp/6bk b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Ba7": {
+        "method": "finite_strategy",
+        "fen": "K6R/b7/8/8/8/2P2N2/6pp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/b7/8/8/8/2P2N2/6pR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2Fb7%2F8%2F8%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:55:53.937371+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Bb6": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/1b6/8/8/2P2N2/6pp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/8/1b6/8/8/2P2N2/6pR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F1b6%2F8%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:55:59.442915+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Bc5": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/8/2b5/8/2P2N2/6pp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/8/8/2b5/8/2P2N2/6pR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F2b5%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:55:59.954983+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Bd4": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/8/8/3b4/2P2N2/6pp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/8/8/8/3b4/2P2N2/6pR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F3b4%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:56:00.464131+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Be3": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/8/8/8/2P1bN2/6pp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/8/8/8/8/2P1bN2/6pR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F8%2F2P1bN2%2F6pR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:56:00.973257+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Bf2": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/8/8/8/2P2N2/5bpp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/8/8/8/8/2P2N2/5bpR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F8%2F2P2N2%2F5bpR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:55:58.928753+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:waiting_pin_pawn:2": {
+    "method": "finite_strategy",
+    "fen": "K6R/8/8/8/8/2P2N2/5bpp/7k w - - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rxh2#": {
+        "fen": "K7/8/8/8/8/2P2N2/5bpR/7k b - - 0 2",
+        "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F8%2F2P2N2%2F5bpR%2F7k+b+-+-+0+2",
+        "retrieved_at_utc": "2026-10-24T03:55:58.928753+00:00",
+        "response": {
+          "checkmate": true,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -1,
+          "precise_dtz": -1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss",
+          "moves": []
+        }
+      }
+    }
+  },
+  "step:waiting_long_bishop_move:1": {
+    "method": "finite_strategy",
+    "fen": "K6R/8/8/8/8/2P2N2/6pp/6bk b - - 1 1",
+    "winner": "white",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Ba7": {
+        "method": "finite_strategy",
+        "fen": "K6R/b7/8/8/8/2P2N2/6pp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/b7/8/8/8/2P2N2/6pR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2Fb7%2F8%2F8%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:55:53.937371+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Bb6": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/1b6/8/8/2P2N2/6pp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/8/1b6/8/8/2P2N2/6pR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F1b6%2F8%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:55:59.442915+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Bc5": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/8/2b5/8/2P2N2/6pp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/8/8/2b5/8/2P2N2/6pR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F2b5%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:55:59.954983+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Bd4": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/8/8/3b4/2P2N2/6pp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/8/8/8/3b4/2P2N2/6pR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F3b4%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:56:00.464131+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Be3": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/8/8/8/2P1bN2/6pp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/8/8/8/8/2P1bN2/6pR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F8%2F2P1bN2%2F6pR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:56:00.973257+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      },
+      "Bf2": {
+        "method": "finite_strategy",
+        "fen": "K6R/8/8/8/8/2P2N2/5bpp/7k w - - 2 2",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "Rxh2#": {
+            "fen": "K7/8/8/8/8/2P2N2/5bpR/7k b - - 0 2",
+            "url": "https://tablebase.lichess.ovh/standard?fen=K7%2F8%2F8%2F8%2F8%2F2P2N2%2F5bpR%2F7k+b+-+-+0+2",
+            "retrieved_at_utc": "2026-10-24T03:55:58.928753+00:00",
+            "response": {
+              "checkmate": true,
+              "stalemate": false,
+              "variant_win": false,
+              "variant_loss": false,
+              "insufficient_material": false,
+              "dtz": -1,
+              "precise_dtz": -1,
+              "dtm": null,
+              "dtw": null,
+              "dtc": null,
+              "category": "loss",
+              "moves": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:waiting_long_bishop_move:2": {
+    "method": "finite_strategy",
+    "fen": "K6R/b7/8/8/8/2P2N2/6pp/7k w - - 2 2",
+    "winner": "white",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rxh2#": {
+        "fen": "K7/b7/8/8/8/2P2N2/6pR/7k b - - 0 2",
+        "url": "https://tablebase.lichess.ovh/standard?fen=K7%2Fb7%2F8%2F8%2F8%2F2P2N2%2F6pR%2F7k+b+-+-+0+2",
+        "retrieved_at_utc": "2026-10-24T03:55:53.937371+00:00",
+        "response": {
+          "checkmate": true,
+          "stalemate": false,
+          "variant_win": false,
+          "variant_loss": false,
+          "insufficient_material": false,
+          "dtz": -1,
+          "precise_dtz": -1,
+          "dtm": null,
+          "dtw": null,
+          "dtc": null,
+          "category": "loss",
+          "moves": []
+        }
+      }
+    }
+  }
+}

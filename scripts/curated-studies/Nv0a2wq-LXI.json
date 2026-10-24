@@ -1,0 +1,136 @@
+{
+  "video_id": "Nv0a2wq-LXI",
+  "title": "Majestic Queen: Offer the Queen on a3",
+  "summary": "Use a queen sacrifice to choose between knight mate and collecting the opposing queen.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/4q3/2p5/8/pk6/1n2N3/1Q6/1K6 w - - 0 1",
+      "question": "The knight has blocked on b3. How can White break through?",
+      "explanation": "Qa3+ offers the queen with check. Black has four legal king replies: taking permits Nc2 mate, while each retreat opens Qa3’s diagonal to Qe7.",
+      "evidence": {
+        "timestamp_s": 116
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "8/4q3/2p5/8/pk6/1n2N3/1Q6/1K6 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "queen_offer_knight_mate",
+      "start": "start",
+      "title": "Source finish: accept the queen offer",
+      "san": [
+        "Qa3+",
+        "Kxa3",
+        "Nc2#"
+      ],
+      "commentary": [
+        "Begin after ...Nb3 in the complete saved 116-second diagram. Earlier eight-piece king shepherding is outside this selected proof.",
+        "Qa3+ checks Kb4 while offering the queen. The knight on b3 and pawn on a4 help confine the king, but Black is not forced to capture: three king retreats are also legal.",
+        "Kxa3 accepts the queen. The capture reduces the board to seven pieces and places the king on the knight’s mating square.",
+        "Nc2# checks a3. Kb1 covers a2 and b2; Black’s own a4 pawn and b3 knight block a4 and b3, and Nc2 covers b4. The queen sacrifice ends in actual knight mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nc2# checks a3. Kb1 covers a2 and b2; Black’s own a4 pawn and b3 knight block a4 and b3, and Nc2 covers b4. The queen sacrifice ends in actual knight mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4q3/2p5/8/p7/kn6/2N5/1K6 b - - 1 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "queen_offer_king_retreat",
+      "start": "start",
+      "title": "Independent defense: retreat to a5",
+      "san": [
+        "Qa3+",
+        "Ka5",
+        "Qxe7"
+      ],
+      "commentary": [
+        "Account independently for a king retreat instead of assuming the queen must be taken.",
+        "Qa3+ begins the proved offer. The saved certificate enumerates all four legal king replies.",
+        "Ka5 is legal because the a4 pawn blocks Qa3’s a-file. Moving the king from b4 clears the diagonal to the black queen.",
+        "Qxe7 captures the queen along a3–b4–c5–d6–e7. The complete seven-piece queen-and-knight ending is an exact White win, with both black pawns retained."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxe7 captures the queen along a3–b4–c5–d6–e7. The complete seven-piece queen-and-knight ending is an exact White win, with both black pawns retained.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4Q3/2p5/k7/p7/1n2N3/8/1K6 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "queen_offer_lower_retreat",
+      "start": "start",
+      "title": "Independent defense: escape behind the knight",
+      "san": [
+        "Qa3+",
+        "Kc3",
+        "Qxe7"
+      ],
+      "commentary": [
+        "The knight on b3 blocks Qa3’s horizontal ray, so Kc3 also needs to be checked as a legal defense.",
+        "Qa3+ offers the queen with check while retaining a winning strategy.",
+        "Kc3 escapes the immediate check because Nb3 shields c3 from Qa3. This is legal, but it also leaves the queen’s diagonal clear.",
+        "Qxe7 collects Black’s queen and reaches an exact White win. The remaining Kb5 defense is separately included in the full certificate and also permits this capture."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxe7 collects Black’s queen and reaches an exact White win. The remaining Kb5 defense is separately included in the full certificate and also permits this capture.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/4Q3/2p5/8/p7/1nk1N3/8/1K6 b - - 0 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Must Black capture the queen on a3?",
+      "answer": "No. Kb5, Ka5 and Kc3 are legal retreats. Each vacates b4 and allows Qxe7; Kxa3 instead permits Nc2 mate."
+    },
+    {
+      "node": "start",
+      "prompt": "Why does Kc3 not stay in check from Qa3?",
+      "answer": "Black’s own knight on b3 blocks the third rank. That makes Kc3 legal, but the queen on e7 is still lost along the diagonal."
+    }
+  ],
+  "defaultBranch": "queen_offer_knight_mate",
+  "practiceBranch": "queen_offer_knight_mate",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Nb3 at 116 seconds, with all eight pieces preserved. The final Qa3+ offer is proved against all four legal Black replies by exact reduced-position outcomes and actual mate. The earlier Ne3+/Qg4+/Qf4+/Qf1+ king shepherd and its claimed drawing alternatives remain outside this selected proof.",
+  "verification_scope": "Complete 116-second final-offer diagram manually reviewed. A finite legal strategy checks Qa3+ against every one of four legal Black king replies. Supported seven-piece leaves and every encoded reduced intermediate have tablebase evidence; larger nodes have separate finite-strategy certificates. Earlier king shepherding is not certified.",
+  "sourceCorrections": [
+    {
+      "claim": "The narration says the queen sacrifice has to be accepted.",
+      "correction": "Kxa3 is only one of four legal replies. Kb5, Ka5 and Kc3 are also legal, but all three allow Qxe7 and an exact White win. The capture allows actual Nc2 mate; all four replies are checked."
+    }
+  ],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 3,
+    "moves": {
+      "8/4q3/2p5/8/pk6/1n2N3/1Q6/1K6 w - - 0 1": "Qa3+",
+      "8/4q3/2p5/1k6/p7/Qn2N3/8/1K6 w - - 2 2": "Qxe7",
+      "8/4q3/2p5/k7/p7/Qn2N3/8/1K6 w - - 2 2": "Qxe7",
+      "8/4q3/2p5/8/p7/Qnk1N3/8/1K6 w - - 2 2": "Qxe7",
+      "8/4q3/2p5/8/p7/kn2N3/8/1K6 w - - 0 2": "Nc2#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

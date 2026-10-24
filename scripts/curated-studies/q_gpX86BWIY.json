@@ -1,0 +1,141 @@
+{
+  "video_id": "q_gpX86BWIY",
+  "title": "Majestic Interference: Choose the Unblocked Promotion",
+  "summary": "After either capture of the sacrificed rook, promote on the line blocked by Black’s own piece.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "7K/P2P3p/8/3r4/2k5/5b2/8/8 w - - 0 1",
+      "question": "The rook captured on d5. Which pawn can promote safely?",
+      "explanation": "Rd5 blocks Bf3’s diagonal to a8. The d-pawn is still stopped by the rook on its file, so White should promote the a-pawn.",
+      "evidence": {
+        "timestamp_s": 93
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "bishop_capture",
+      "fen": "7K/P2P3p/8/3b4/2k5/8/3r4/8 w - - 0 1",
+      "question": "The bishop captured on d5. Does the same pawn promote?",
+      "explanation": "Bd5 blocks Rd2’s file toward d8. The bishop still sees a8, so this time White should promote the d-pawn.",
+      "evidence": {
+        "timestamp_s": 97
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "interference_rook_blocks_bishop",
+      "start": "start",
+      "title": "Rook capture: promote the a-pawn",
+      "san": [
+        "a8=Q"
+      ],
+      "commentary": [
+        "This is the complete seven-piece position after the source’s ...Rxd5. The preceding eight-piece Rd5 sacrifice is context outside exact verification.",
+        "a8=Q promotes safely because Rd5 interrupts Bf3–e4–d5–c6–b7–a8. White retains an exact win with the remaining d7 and h7 pawns preserved. The queen-versus-rook-and-bishop conversion is not presented as immediate mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "a8=Q promotes safely because Rd5 interrupts Bf3–e4–d5–c6–b7–a8. White retains an exact win with the remaining d7 and h7 pawns preserved. The queen-versus-rook-and-bishop conversion is not presented as immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "Q6K/3P3p/8/3r4/2k5/5b2/8/8 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "interference_bishop_blocks_rook",
+      "start": "bishop_capture",
+      "title": "Bishop capture: promote the d-pawn",
+      "san": [
+        "d8=Q"
+      ],
+      "commentary": [
+        "Switch to the separately illustrated seven-piece position after ...Bxd5. These two capture outcomes are separate nodes, not a continuous move sequence.",
+        "d8=Q promotes safely because Bd5 blocks Rd2’s d-file. White retains an exact win against rook, bishop and h7 pawn, with a7 still present. The correct pawn changes when the blocking piece changes."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d8=Q promotes safely because Bd5 blocks Rd2’s d-file. White retains an exact win against rook, bishop and h7 pawn, with a7 still present. The correct pawn changes when the blocking piece changes.",
+      "expectedWhiteOutcomes": [
+        "win"
+      ],
+      "end_fen": "3Q3K/P6p/8/3b4/2k5/8/3r4/8 b - - 0 1",
+      "outcome": "loss"
+    },
+    {
+      "id": "interference_wrong_d_pawn",
+      "start": "start",
+      "title": "Independent error: push into the rook’s file",
+      "san": [
+        "d8=Q",
+        "Rxd8+"
+      ],
+      "commentary": [
+        "Independently compare the other promotion after ...Rxd5. This error is not shown as a source continuation.",
+        "d8=Q gives up the win and loses. Rd5 still has a clear path up the d-file; it is the bishop’s diagonal that has been obstructed.",
+        "Rxd8+ captures the new queen with check along the eighth rank. White cannot immediately answer by promoting a8 because its king is in check. The exact resulting position is a White loss."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxd8+ captures the new queen with check along the eighth rank. White cannot immediately answer by promoting a8 because its king is in check. The exact resulting position is a White loss.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss"
+      ],
+      "end_fen": "3r3K/P6p/8/8/2k5/5b2/8/8 w - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "interference_wrong_a_pawn",
+      "start": "bishop_capture",
+      "title": "Independent error: push into the bishop’s diagonal",
+      "san": [
+        "a8=Q",
+        "Bxa8",
+        "d8=Q",
+        "Rxd8+"
+      ],
+      "commentary": [
+        "Independently compare the wrong promotion after ...Bxd5. The capture sequence demonstrates how removing the blocker restores the second defender.",
+        "a8=Q loses: Bd5 still controls a8 along c6 and b7.",
+        "Bxa8 takes the queen and leaves the d-file. Rd2 is no longer obstructed by its own bishop.",
+        "d8=Q tries the remaining promotion, but the rook now has a clear file to d8.",
+        "Rxd8+ takes the second queen with check. Both pawns have disappeared, and White’s bare king faces rook, bishop and h7 pawn in an exact losing ending."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxd8+ takes the second queen with check. Both pawns have disappeared, and White’s bare king faces rook, bishop and h7 pawn in an exact losing ending.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "b2r3K/7p/8/8/2k5/8/8/8 w - - 0 3",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why does the rook on d5 help the a-pawn?",
+      "answer": "It blocks its own bishop’s diagonal from f3 to a8. The same rook still stops d8, so choose a8=Q."
+    },
+    {
+      "node": "bishop_capture",
+      "prompt": "Why do the roles reverse when the bishop takes on d5?",
+      "answer": "The bishop blocks its rook’s d-file, freeing d8. Its own diagonal to a8 remains open, so promoting a8 would let it capture."
+    }
+  ],
+  "defaultBranch": "interference_rook_blocks_bishop",
+  "practiceBranch": "interference_rook_blocks_bishop",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Two separately illustrated seven-piece positions are checked: after ...Rxd5 at 93 seconds, and after ...Bxd5 at 97 seconds. White’s preceding Rh5+/Rd5 interference belongs to the larger eight-piece source setup and is not certified here. These selected continuations teach which promotion works after each capture, with independent wrong-pawn comparisons. They do not establish the soundness or uniqueness of the earlier rook sacrifice.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-24"
+}

@@ -1,0 +1,525 @@
+{
+  "batch_id": "2026-10-23-90",
+  "reviewed_on": "2026-10-24",
+  "scope": "Final bounded proof attempt and explicit residual-work inventory before disabling recurring retries.",
+  "reviews": {
+    "Rp_bDDrFpVQ": {
+      "result": "awaiting_reconstruction",
+      "supersedes_batch": "2026-10-23-89",
+      "notes": "Captions and native complete diagrams reviewed. Native18\u201321 establish the complete nine-piece later root White Ka1/Nc4/b2/h4 against Kc5/Qe3/a6/c6/a4. Only Nxe3 is source play in the new independently supplied h-pawn/c-pawn race. Nxe3/Kd6/h5/c5/h6/c4/h7/c3/h8=Q/c2/Qa8/Kd7/Qxa6 reaches a complete seven-piece ending with White Ka1/Qa6/Ne3/b2 against Kd7/a4/c2, Black to move. Exact saved tablebase evidence says DRAW, and c1=Q+ is the sole drawing Black move; every other Black move permits a White win. The separate conditional-leaf draft verifies the root and c1=Q+ with the project CLI. This refutes an automatic conversion claim for this selected greedy capture, not the unproved nine-piece root outcome. The expanded sixteen-ply exploration still lacks a complete certificate after runs of 1,945 and 2,758 nodes; it preserves 423 exact supported query records and 852 partial legal White choices. The current verifier limit remains twelve; no limit or verified label changed. Future analysis must avoid the drawing c-pawn resource, check all Black defenses and supply a complete eligible root strategy. All prior drafts, source images/captions and review history remain preserved. Final bounded exploration removed the previously forced Qa8 transfer and widened independent engine candidate selection to five choices; this did not complete a root certificate. It visited 1,886 nodes, adding 60 exact supported responses for 483 total saved probes. The merged partial policy preserves previous choices and contains 882 legal White choices. All earlier root and conditional-leaf limitations still apply; current project verification remains capped at twelve plies. Recurring continuation is being disabled after repeated incomplete searches. Dedicated complete larger-position proof is required, not additional source material for this available source.",
+      "analysis_required": "Native18\u201321 establish the complete nine-piece later root White Ka1/Nc4/b2/h4 against Kc5/Qe3/a6/c6/a4. Only Nxe3 is source play in the new independently supplied h-pawn/c-pawn race. Nxe3/Kd6/h5/c5/h6/c4/h7/c3/h8=Q/c2/Qa8/Kd7/Qxa6 reaches a complete seven-piece ending with White Ka1/Qa6/Ne3/b2 against Kd7/a4/c2, Black to move. Exact saved tablebase evidence says DRAW, and c1=Q+ is the sole drawing Black move; every other Black move permits a White win. The separate conditional-leaf draft verifies the root and c1=Q+ with the project CLI. This refutes an automatic conversion claim for this selected greedy capture, not the unproved nine-piece root outcome. The expanded sixteen-ply exploration still lacks a complete certificate after runs of 1,945 and 2,758 nodes; it preserves 423 exact supported query records and 852 partial legal White choices. The current verifier limit remains twelve; no limit or verified label changed. Future analysis must avoid the drawing c-pawn resource, check all Black defenses and supply a complete eligible root strategy. All prior drafts, source images/captions and review history remain preserved. Final bounded exploration removed the previously forced Qa8 transfer and widened independent engine candidate selection to five choices; this did not complete a root certificate. It visited 1,886 nodes, adding 60 exact supported responses for 483 total saved probes. The merged partial policy preserves previous choices and contains 882 legal White choices. All earlier root and conditional-leaf limitations still apply; current project verification remains capped at twelve plies. Recurring continuation is being disabled after repeated incomplete searches. Dedicated complete larger-position proof is required, not additional source material for this available source.",
+      "source_images": [
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00001.jpg",
+          "sha256": "7c946cc88ab0e2e6c99280eb447fb6ba26ea6b5d552dbccfe89a2dd964d4a27c"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00002.jpg",
+          "sha256": "7bce01a576344be6dc6efd26ed93c8af673b0dbaba42e3dd757a0423622d3808"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00003.jpg",
+          "sha256": "23e9011feaa925c064815bf3f1ea83613fc100a83e233d7f6a80bbbabc27c6b6"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00004.jpg",
+          "sha256": "5bdc5f13dad3e734935631d0ad3bd5350de2b7d3b4ad9172c2164dbd91459be6"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00005.jpg",
+          "sha256": "e8eb2e78eb9087bf8bcfebc6fe27c21bb034778d06212b6ed1600cdc3f224ed8"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00006.jpg",
+          "sha256": "9bbefb9544dcd86ea5877bb0bb0a9c5cbc5b72b7f6fcd1137bb230d7dd474213"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00007.jpg",
+          "sha256": "15759d1f6377ce43de948b77bcf0efd616caf1feeb159b228031268a3c3cf8ea"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00008.jpg",
+          "sha256": "2dcc2958e619430a6029101d3c4c2ef383eec01c07b2a39d8a3d12dbcfb95e85"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00009.jpg",
+          "sha256": "dbafdfb1896efefeb4bf5c19f41472f29a1124e972a2f32d3bd3b9126db146af"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00010.jpg",
+          "sha256": "cc5fa8223af8e59a3bcd78da5e5bec64be138edf96710bed23089d035e24f1f9"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00011.jpg",
+          "sha256": "9180bee60a9892a1d0d2508f4f98208de8635bc6a3d36579de6153ca23b44338"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00012.jpg",
+          "sha256": "c0242b68ba10d1cc16a53303607dc483d74c182634a37e5b773dcd8c26b5c5af"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00013.jpg",
+          "sha256": "fb5cfa5983bbe73005192482e9e4d08c4a0f8a83849955c91b8d51e20e536a2f"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00014.jpg",
+          "sha256": "faf670efa30b76f912bb203fda7eae722a09a7394e6c052e4af4650398255b8a"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00015.jpg",
+          "sha256": "7e641182fabd57e767f654f94a3aa946e2944887a8ec88d956ed928a636d7230"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00016.jpg",
+          "sha256": "2ead70cf340492224b9dccdb9394aa6eeb0ed5238f2afeb745162069c3d12e77"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00017.jpg",
+          "sha256": "a7d94fbf387ab57564913e3e8c2ab6a66a24fd6f8ab99b072f50ae0159bd9de1"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00018.jpg",
+          "sha256": "641718b7d40481cfff8f098ef2a482c599a2acd3cc53066d9845e9cb77b8ca65"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00019.jpg",
+          "sha256": "c2343b3cd43189f36ab135d22fc6748579face0b75bbd081af095e1d74acd1ea"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00020.jpg",
+          "sha256": "e691d8f3506c9eaf9bff4f7f43e6128ef3ba83d0beffccb1a451efe10001553c"
+        },
+        {
+          "file": "Rp_bDDrFpVQ/images/image_00021.jpg",
+          "sha256": "e2401c9d2dd9703ee17f0d615e5d5b2ba9df031331eb0aa9d592e765d0560b0e"
+        }
+      ],
+      "reconstruction": {
+        "file": "scripts/story-drafts/Rp_bDDrFpVQ.batch89.reconstruction.json",
+        "sha256": "584a296bf2c3d41eb3cedeca837198d5d9dc784841c53aa92da879da81cc161b"
+      },
+      "conditional_leaf": {
+        "file": "scripts/story-drafts/Rp_bDDrFpVQ.batch89.conditional-leaf.json",
+        "sha256": "32b16e0c8670bb5e174cf69223fe03fb86b12609d4f91a30b6e1fa87c3f525cb",
+        "scope": "Exact conditional endpoint only. Does not certify original root and is not imported into guided studies."
+      },
+      "conditional_leaf_evidence": {
+        "file": "scripts/story-drafts/Rp_bDDrFpVQ.batch89.conditional-leaf.evidence.json",
+        "sha256": "b3dce2e889b99b99bd70e4805e6b3e03639570f6a51c95414e0e1781967b3eb5",
+        "scope": "Exact conditional endpoint only. Does not certify original root and is not imported into guided studies."
+      },
+      "partial_tablebase_probes": {
+        "file": "scripts/story-drafts/Rp_bDDrFpVQ.batch90.probes.json",
+        "sha256": "af3e947ed58300838eff59b995c0be052c42d8cd10a0d9c2107f453e627905b5"
+      },
+      "partial_policy": {
+        "file": "scripts/story-drafts/Rp_bDDrFpVQ.batch90.partial-policy.json",
+        "sha256": "b127c9ee4bc0cf5ee72942685b8f89905593fbdea3d44f5c8287756a2e04b5a6"
+      },
+      "exploratory_search": {
+        "file": "scripts/story-drafts/Rp_bDDrFpVQ.batch90.search.py",
+        "sha256": "47ecbfbe0021c6f094f0d0094c5d36087ca4666934f455035572625b82bafb82"
+      },
+      "exploratory_search_log": {
+        "file": "scripts/story-drafts/Rp_bDDrFpVQ.batch90.search.log",
+        "sha256": "c849d7173f968a5a638e222e6fd879208f780c78869a68a196f85e82978fdbbd"
+      }
+    }
+  },
+  "remaining_work": [
+    {
+      "video_id": "XE0iZXsKXFY",
+      "title": "Bishop VS Pawns",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "QN9w36YcKik",
+      "title": "Pietro vs David Howell",
+      "status": "needs_information",
+      "batch_id": "2026-10-23-02",
+      "analysis_required": null,
+      "information_needed": [
+        "A PGN or complete FEN with side to move and board orientation, or clear full-board frames covering the relevant endgame."
+      ]
+    },
+    {
+      "video_id": "OMnK1bs9Iks",
+      "title": "Reverse Ladder?? Get this board for sale with code PIETRO10",
+      "status": "needs_information",
+      "batch_id": "2026-10-23-43",
+      "analysis_required": null,
+      "information_needed": [
+        "Provide an uncropped image showing all eight files and ranks, or the original local video, or authoritative FEN/PGN with side to move for the reverse queen-ladder composition. The current physical-board crops omit the left-side files; include every spare pawn and both kings."
+      ]
+    },
+    {
+      "video_id": "Dx1fhDf0gxk",
+      "title": "A Perfect Game",
+      "status": "awaiting_reconstruction",
+      "batch_id": "2026-10-23-87",
+      "analysis_required": "Native89 confirms the complete ten-piece final checked board after Ra7+: White Kc5/Ra7/b6/c4/f2/h3 against Kb7/Rf7/g7/g5, Black to move. Kc8 and Kb8 are the only legal replies. Independent Kc8/b7+/Kd8 demonstrates that b7+ does not force Kb8. Independent Kb8/Ra8+/Kxa8/b7+/Kb8 is legal but leaves a nine-piece position with the pawn blocked on b7 by Black Kb8: b8=Q is illegal while b8 is occupied. This is a comparison, not a recommended line or a recovered source score. Preserve both rooks until actual capture and all six pawns. The winner badge is not an exact conversion certificate. Verify every rook/king defense, pawn race and complete larger ending; previous eleven- and ten-piece drafts and review history remain preserved. Full board images/captions are available.",
+      "information_needed": []
+    },
+    {
+      "video_id": "F2zH_DukCBg",
+      "title": "Is This Brilliant chat?",
+      "status": "awaiting_reconstruction",
+      "batch_id": "2026-10-23-89",
+      "analysis_required": "Native38 confirms the complete seventeen-piece final board after Ne5: White Kg2/Ra1/Nb1/Bf2/a2/b2/c3/g3/h2 against Kg8/Rd1/Ne5/a7/b7/e2/g7/h7, White to move. Independent h3 allows all four legal e1 promotions. Only e1=N+ gives check against Kg2; Q/R/B promotion does not. In every selected comparison Bxe1/Rxe1 legally exchanges the promoted piece and bishop into the SAME complete fifteen-piece ending. These are independently supplied alternatives, not recovered source moves or a certified forced sequence. The knight check does not prevent the bishop from capturing on e1. The full outcomes for other White moves, every promotion alternative and the larger rook/knight/pawn conversion remain pending. The original friendly-game ending was unrecorded/unremembered; no continuation is invented as actual play. All prior drafts, source images/captions and review history remain preserved.",
+      "information_needed": []
+    },
+    {
+      "video_id": "84y6Oe86hqc",
+      "title": "Majestic Victory",
+      "status": "needs_information",
+      "batch_id": "2026-10-23-36",
+      "analysis_required": null,
+      "information_needed": [
+        "A full-board image or FEN/PGN for the starting position and the later c8 rook/queen-promotion comparison. The current crop omits the upper ranks; include both kings and every piece."
+      ]
+    },
+    {
+      "video_id": "UMnEmZouY3Q",
+      "title": "Queen Gift!",
+      "status": "awaiting_reconstruction",
+      "batch_id": "2026-10-23-88",
+      "analysis_required": "Native74 confirms the complete thirteen-piece final checked board: White Kh1/Qd2/Rc1/e5/f4/g3/h4 against Kh8/Bc5/Rh2/b6/g7/h6. Qxh2 and Kxh2 are the only legal answers to the rook check. Independent Qxh2/Be3/Rc8+/Kh7 demonstrates that the back-rank rook check is not mate: Kh7 is its only legal answer. Independent Kxh2/Bg1+/Kh3 is another legal check/escape comparison. These source-unplayed continuations retain twelve pieces after the rook capture and do not certify either root outcome. Black\u2019s clock win must not be confused with a forced Black board win. Analyze every bishop/king/pawn defense and the complete queen/rook conversion, keeping b6/g7/h6 and e5/f4/g3/h4 accounted for. Prior root, bishop-capture comparisons and all review history remain preserved; source images and captions are available.",
+      "information_needed": []
+    },
+    {
+      "video_id": "_pyRnT3cHCk",
+      "title": "How to Sacrifice",
+      "status": "awaiting_reconstruction",
+      "batch_id": "2026-10-23-88",
+      "analysis_required": "Native48/49 confirm the complete twelve-piece final board White Kf1/a2/b2/c2/f2/g4 against Kc6/Qe4/Bh4/a7/b7/d6, White to move. Independent f3/Qxf3+/Kg1/Qxg4+/Kh1 legally captures two White pawns into ten pieces; Kg1 is the only answer to Qxf3+. Independent Kg1/Qxg4+/Kh1 reaches eleven. These are representative supplied continuations after abandonment, not recovered original moves or certified wins. Native47 is a different earlier thirteen-piece diagram with White Kc1, Black Bf6 and h3 pawn, and no queen; do not splice it directly into the final board or silently invent the promotion/king walk. Retain the three spare black pawns and verify every White pawn/king defense, complete queen/bishop conversion and actual missing move chronology before a verified label. Original eighteen- and twelve-piece drafts and review history remain preserved. Source images/captions are available; no new information gap is asserted.",
+      "information_needed": []
+    },
+    {
+      "video_id": "Rp_bDDrFpVQ",
+      "title": "A Fork Fest",
+      "status": "awaiting_reconstruction",
+      "batch_id": "2026-10-23-89",
+      "analysis_required": "Native18\u201321 establish the complete nine-piece later root White Ka1/Nc4/b2/h4 against Kc5/Qe3/a6/c6/a4. Only Nxe3 is source play in the new independently supplied h-pawn/c-pawn race. Nxe3/Kd6/h5/c5/h6/c4/h7/c3/h8=Q/c2/Qa8/Kd7/Qxa6 reaches a complete seven-piece ending with White Ka1/Qa6/Ne3/b2 against Kd7/a4/c2, Black to move. Exact saved tablebase evidence says DRAW, and c1=Q+ is the sole drawing Black move; every other Black move permits a White win. The separate conditional-leaf draft verifies the root and c1=Q+ with the project CLI. This refutes an automatic conversion claim for this selected greedy capture, not the unproved nine-piece root outcome. The expanded sixteen-ply exploration still lacks a complete certificate after runs of 1,945 and 2,758 nodes; it preserves 423 exact supported query records and 852 partial legal White choices. The current verifier limit remains twelve; no limit or verified label changed. Future analysis must avoid the drawing c-pawn resource, check all Black defenses and supply a complete eligible root strategy. All prior drafts, source images/captions and review history remain preserved.",
+      "information_needed": []
+    },
+    {
+      "video_id": "-cGirEmKWng",
+      "title": "Quadruple Sacrifice",
+      "status": "awaiting_reconstruction",
+      "batch_id": "2026-10-23-85",
+      "analysis_required": "Native54\u201356 establish a complete seventeen-piece later rook-retreat variation: White Kg1/Rb2/Bd5/Nc5/a2/c3/f2/g2/h3 against Ke7/Ra6/Ne1/b5/e6/f7/g7/h7, Black to move. Rd6/Be4 is illustrated in native55/56; independent Nd3/Bxd3 legally removes the knight but is not a recovered source continuation. The e6 pawn remains on e6 in this variation. Native53 belongs to a different bishop-capture branch with Black d5 and White Na6; do not splice that pawn/knight setup into native54. Native57/58 reset the original nineteen-piece quadruple-sacrifice board. None of the material advantages or selected captures certify all defenses or the final conversion. Verify every rook retreat and knight response, all larger outcomes and the original Nxc4 offer before a verified label. Complete images/captions remain available, and original four-branch draft/history are preserved.",
+      "information_needed": []
+    },
+    {
+      "video_id": "BLZ8vQ7HzwM",
+      "title": "Majestic Rook",
+      "status": "needs_information",
+      "batch_id": "2026-10-23-02",
+      "analysis_required": null,
+      "information_needed": [
+        "A PGN or complete FEN with side to move and board orientation, or clear full-board frames covering the relevant endgame."
+      ]
+    },
+    {
+      "video_id": "NGgEOuT6ZMI",
+      "title": "Infinite Elo!!",
+      "status": "awaiting_reconstruction",
+      "batch_id": "2026-10-23-86",
+      "analysis_required": "Native54/55 confirm the complete eleven-piece final board after Nxb8+: White Kg1/Nb8/a2/b2/d5/e4/f2 against Kd7/a6/c7/f6, Black to move in check. Every legal answer is a king move: Ke8, Kd8, Kc8, Ke7 or Kd6. The two new Kc8/Nc6 and Kd6/Nc6 comparisons are independently supplied legal continuations, not recovered source moves or exact win claims. The final queen capture gives check but does not itself mate or promote a pawn; all eight pawns remain. Verify all five king replies and the complete larger knight-and-pawn conversion, plus the earlier queen escapes. Previous thirteen-piece rook-offer draft and review history remain preserved; the narrator\u2019s rating metaphor and queen gain are not outcome proof. Full images/captions are available.",
+      "information_needed": []
+    },
+    {
+      "video_id": "bqYLA-tmQP0",
+      "title": "A Tiny Detail",
+      "status": "awaiting_reconstruction",
+      "batch_id": "2026-10-23-87",
+      "analysis_required": "Native47 confirms the complete twelve-piece final correct-order board after Kh2: White Kh2/Qe8/Be4/a2/b2/f2 against Kg4/Re1/Nb4/Nf4/a5/c7, Black to move. Independent Rxe4/Qxe4 removes both bishop and rook, leaving TEN pieces, correcting the earlier note that said eleven; old draft/history remain preserved. Independent Re2/Qg8+/Ng6 shows a legal rook move, queen check and knight interposition. Re2 itself is not check because White f2 blocks the second rank. Neither comparison is a recovered game continuation or exact conversion proof. Verify every Black rook/knight reply and the resulting larger queen ending. The separate premature-f3/Kh4 diagram and source move-order comparisons remain preserved and must not be spliced into this f2/Kg4 board. Source images/captions are available; no new missing-information claim is made.",
+      "information_needed": []
+    },
+    {
+      "video_id": "DswvLK9gm1s",
+      "title": "1700 Shocks 2300 Master",
+      "status": "needs_information",
+      "batch_id": "2026-10-23-02",
+      "analysis_required": null,
+      "information_needed": [
+        "A PGN or complete FEN with side to move and board orientation, or clear full-board frames covering the relevant endgame."
+      ]
+    },
+    {
+      "video_id": "koGPnVaW6WI",
+      "title": "The last pawn\u2026",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "9QzLUJWkvh4",
+      "title": "1700 Beats 2300 Master!",
+      "status": "needs_information",
+      "batch_id": "2026-10-23-02",
+      "analysis_required": null,
+      "information_needed": [
+        "A PGN or complete FEN with side to move and board orientation, or clear full-board frames covering the relevant endgame."
+      ]
+    },
+    {
+      "video_id": "Lpo7vks28fs",
+      "title": "I Sometimes Win Too",
+      "status": "needs_information",
+      "batch_id": "2026-10-23-02",
+      "analysis_required": null,
+      "information_needed": [
+        "A PGN or complete FEN with side to move and board orientation, or clear full-board frames covering the relevant endgame.",
+        "Captions or an audio transcription to preserve the source explanation."
+      ]
+    },
+    {
+      "video_id": "o-mcnt3WUas",
+      "title": "The Chosen One!!",
+      "status": "awaiting_reconstruction",
+      "batch_id": "2026-10-23-89",
+      "analysis_required": "Native47 confirms the complete eight-piece final board White Kf4/a3/b3/d5/f3 against Kc8/a7/c5, White to move. The new independently supplied d6/Kd7/Ke5/Kc6/f4/Kb6/f5/Kc6/f6/Kd7/f7/Kc6/d7/Kxd7/f8=Q comparison demonstrates a conditional coordinated-passer finish. It is not a recovered source score or proof that Black must choose these moves. After Kxd7 an actual capture leaves seven pieces, White Ke5/a3/b3/f7 against Kd7/a7/c5; the separate conditional-leaf draft checks that position and f8=Q exactly. Black Ke7 would be ILLEGAL while White d6 remains, because that pawn attacks e7; the comparison uses Kc6 instead. Root and all preceding eight-piece outcomes remain unproved. Verify every omitted Black king/pawn defense, full eight-piece conversion and earlier queen-confinement claims before a verified label. Previous drafts, probes, source images/captions and review history remain preserved.",
+      "information_needed": []
+    },
+    {
+      "video_id": "IOa2wpQ-Sto",
+      "title": "A Forking Knightmare",
+      "status": "awaiting_reconstruction",
+      "batch_id": "2026-10-23-86",
+      "analysis_required": "Native61 confirms the complete eleven-piece final board after exd4: White Kd1/Nf8/d3/d4/h3/h5 against Kf5/d5/f6/g5/h6, Black to move. Black has exactly two legal replies: Kf4 or g4. Independent Kf4/Ne6+ permits Kf5/Kg3/Kf3/Ke3, while g4/hxg4+/Kxg4 reaches nine pieces through actual pawn captures. These are independently supplied comparisons, not recovered source moves or certified outcomes. The white h5 pawn is blocked by Black h6; an immediate h6 push is illegal and must not be used to invent a promotion race. Native58\u201360 support Qe5/Nd4+/Qxd4 with Qxd4 forced to avoid knight mate, but that is not proof of the resulting ending. Retain all remaining pawns and verify both Black root choices and each complete knight/pawn conversion. Prior thirteen-piece draft and review history are preserved; source images/captions remain available.",
+      "information_needed": []
+    },
+    {
+      "video_id": "mB9kd8QCxSs",
+      "title": "Majestic King Net",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "-IBxwOFpd3I",
+      "title": "Majestic Victory!",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "-fKNISHWZO4",
+      "title": "Incredible move",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "Rfyh0jS_kjc",
+      "title": "Stunning Zugzwang",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "KmtZ_AsFvpM",
+      "title": "Majestic Attraction",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "oT8emOLvbC8",
+      "title": "Majestic Move",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "kjXq01w_MXM",
+      "title": "Brutal Checkmate",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "j2Wn6_dJhvU",
+      "title": "Stunning Zugzwang",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "zDwHzHSBlrQ",
+      "title": "Majestic Checkmate",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "pKiU_mAXDFg",
+      "title": "A Beautiful Idea",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "EV1q1adZV88",
+      "title": "Shocking move",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "oDQRrJrUtrQ",
+      "title": "The Art of Chess",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "d5SCNossuhY",
+      "title": "The path to victory!",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "pGaPtvYeXm0",
+      "title": "Majestic endgame win",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "LZYNn2zB0u0",
+      "title": "Pawn cube!",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "S-D2Yv8bAhw",
+      "title": "Pawn barricate",
+      "status": "needs_information",
+      "batch_id": null,
+      "analysis_required": null,
+      "information_needed": [
+        "Captions or a transcription of the audio are needed to preserve the creator\u2019s explanation; images alone may still allow chess reconstruction."
+      ]
+    },
+    {
+      "video_id": "dywWNMdY6JA",
+      "title": "Incredible Magnus puzzle skill",
+      "status": "needs_information",
+      "batch_id": "2026-10-23-43",
+      "analysis_required": null,
+      "information_needed": [
+        "Provide a complete eight-rank starting diagram or authoritative FEN/PGN with side to move for the Magnus rook-sacrifice puzzle. The current crops omit a board row and do not establish White\u2019s king in the initial position. An original local video with the complete board also works."
+      ]
+    },
+    {
+      "video_id": "oljmYLS2n5U",
+      "title": "Impossible chess puzzle! \ud83e\udde9",
+      "status": "needs_information",
+      "batch_id": "2026-10-23-41",
+      "analysis_required": null,
+      "information_needed": [
+        "Supply an uncropped full-board image or original local video showing all eight ranks before promotion, or a FEN/PGN with side to move for the rook-underpromotion puzzle. The missing rank eight must be visible/authoritative before checking promotion and stalemate branches."
+      ]
+    }
+  ],
+  "continuation": {
+    "action": "disable",
+    "reason": "Repeated bounded analyses have not supplied complete remaining root certificates. Additional partial legal lines or engine scores cannot satisfy the exact-outcome standard. Ten available sources still require larger-position proofs; 27 separate sources have actionable recorded information gaps.",
+    "last_verified_batch": "2026-10-23-87",
+    "status": "PAUSED"
+  },
+  "validation": {
+    "local_only": true,
+    "verified_studies_added": 0,
+    "selected_branches": 0,
+    "exploratory_search_max_plies": 16,
+    "current_verifier_max_plies": 12,
+    "complete_root_certificate": false,
+    "search_nodes": 1886,
+    "new_supported_probes": 60,
+    "queue_counts": {
+      "verified_selected_lines": 198,
+      "not_applicable": 13,
+      "needs_information": 27,
+      "awaiting_reconstruction": 10
+    },
+    "collection_branches": 606,
+    "ui_review": "No interface behavior or guided study changed. Tracker and explicit pending-work documentation only.",
+    "source_image_hashes_checked": 21,
+    "legal_audit": {
+      "Rp_bDDrFpVQ": {
+        "legal_only": true,
+        "root_pieces": 9,
+        "steps": 14,
+        "conditional_exact_positions": 2,
+        "partial_legal_policy_choices": 882,
+        "supported_probes_saved": 483
+      }
+    },
+    "remaining_work_inventory_entries": 37,
+    "app_tests": 200,
+    "app_test_files": 16,
+    "production_build": "passed",
+    "build_runtime": "Node 24.19.0",
+    "vite_build_seconds": 5.74,
+    "tests_log": "/tmp/b90-tests.log",
+    "build_log": "/tmp/b90-build.log"
+  }
+}

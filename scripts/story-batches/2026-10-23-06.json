@@ -1,0 +1,194 @@
+{
+  "batch_id": "2026-10-23-06",
+  "reviewed_on": "2026-10-23",
+  "scope": "Three verified selected-line studies, nine branches and 43 distinct positions; retain a precise eleven-piece pending-analysis note.",
+  "reviews": {
+    "Vm9PJ07HakA": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the six-piece position after g4+ and the accepted rook sacrifice. Checked the unique winning Kf4 king escort, actual e2 pawn mate, and two drawing deviations. Earlier rook maneuver remains source context.",
+      "source_images": [
+        {
+          "file": "Vm9PJ07HakA/montage_accepted.jpg",
+          "sha256": "8d5e238b79af842bb47ff0d5a3989a4382325c0a66bcee0f6a168a829556f8da"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00001.jpg",
+          "sha256": "1a48e0a9b527aa37bcca40dc6148384c36849473279202c86a9d3a849d589fd3"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00024.jpg",
+          "sha256": "0aa29a2e6c73e13bdc0c72e2b87e150b85e9f018af0b9b1ae95da1076a8b368b"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00025.jpg",
+          "sha256": "30807b2aa7955575de097dfb6d6befd0684a2b4bcad295144e63bd1ba6227d38"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00028.jpg",
+          "sha256": "9f402389a688e0d0d96a0911a008cf23ed412501e972410277d7203fdddae0ed"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00031.jpg",
+          "sha256": "3cf01b7f91d7d597344b636424c4ee42d4f9424572cda46f0953ce5e6d6503ba"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00055.jpg",
+          "sha256": "58470b34d4c47b775c086c571ef0069608de63898aa4bf3a51da0da5ac78a5b1"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00056.jpg",
+          "sha256": "91549badb293b488ae70753e5f73a98fbb342345b9b021558708f3ae508855f4"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00057.jpg",
+          "sha256": "6e6986b0f7f86f28519157016e44d86f73df99c8a102368be2d74aa1ea3998a7"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00060.jpg",
+          "sha256": "5bf0e69a271a6e83800709016bb853c18f4700be929581dd90c792c6e0de3957"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00065.jpg",
+          "sha256": "6f4f3fa3d50892679603f429798381522a43b8d7b7db695217c6c03926d37735"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00067.jpg",
+          "sha256": "2b766ee8f5214aff3f55ed217ea2e58598e9e1d1267ae2c48ad7f3fc2540d741"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00069.jpg",
+          "sha256": "1537705f73a41b5dd010256541de6e4a0af349ac21731957581bd14dbe41f2cb"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00070.jpg",
+          "sha256": "933382d053d445808b5aaada8a5687c89fd746314a1680f75373c44090aa43df"
+        },
+        {
+          "file": "Vm9PJ07HakA/images/image_00071.jpg",
+          "sha256": "e4d2b47e9f9b8558eb8b77fc4f6f59a1a8d313114a9f61dc3d931f8b8886713c"
+        }
+      ]
+    },
+    "lzsnCbzVHBA": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the seven-piece position after ...g2. Checked Ne4 queen counterattack, queen replacement, Nc4 discovered attack, actual stalemate after Qxd1, and mates after both illustrated king retreats. Corrected automatic captions Na4 to visually displayed Ne4; first retained image contains a dragged piece and was not used as a FEN.",
+      "source_images": [
+        {
+          "file": "lzsnCbzVHBA/montage_accepted.jpg",
+          "sha256": "0edcce1cd88c00f20f3fcb99bb7675c00e05f0fd88b77ce1de10467bc8fd836d"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00001.jpg",
+          "sha256": "80c63c16f003e0c3e16ae57632057993cb79cd399cf7ad2738b184a4a1dea46e"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00002.jpg",
+          "sha256": "461e6da1d3bc3e940a6f41480fd43691891ce588b120d80dd071afce4dc17f38"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00011.jpg",
+          "sha256": "68ab0ba9224fb6f7bd45b0c23c552a1d1cd06904f9e90c021e74910403199d50"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00013.jpg",
+          "sha256": "5223aa7c04ebaed6b0f4c2053dcd3c307b2e215e74de869d192e21eb2af67b9a"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00014.jpg",
+          "sha256": "3fa475cfd47543a664ef7558c6abd75878195c03eeb22a4d0c2a42183ee07870"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00017.jpg",
+          "sha256": "dc7c03637651a91b71e120451d8c645b56fba9090f15f7b135a265a950e34a76"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00022.jpg",
+          "sha256": "942220b48bb560b0d6187a5830f91675c8b55d6d7335f4c285367c2df2e635f9"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00024.jpg",
+          "sha256": "a688a8d9507e5e5778415781c2ffe67f4b487850d2e042e04f96da341645ba84"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00030.jpg",
+          "sha256": "9b9c78816c1e2f316ea28a6d0cd3f0746877e6e4f41e76e46d399257a73b33aa"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00033.jpg",
+          "sha256": "8dc6f52caf61652e0549058330fff4b40bd59ea437c6f10768e0e50c53678440"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00034.jpg",
+          "sha256": "e74ffb98dcbc0bad04154322fcc384407e0fb87826d76f74d2bfc94e69dcc466"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00038.jpg",
+          "sha256": "77fd11c77080cd2f1fe870a21fade10ae8ac5561c8f3ed265449ede37e06f28b"
+        },
+        {
+          "file": "lzsnCbzVHBA/images/image_00039.jpg",
+          "sha256": "4df403ad86ddce89cb60d02ab4bff654cb14ccfe710453fbcae02dccf900a7b6"
+        }
+      ]
+    },
+    "ADZ5271s_PY": {
+      "result": "verified_selected_lines",
+      "notes": "Reconstructed the six-piece position after ...Rxd8 and Ke7, preserving Black\u2019s pawn on d5. Checked source rook sacrifice and resulting winning pawn ending; independently added losing ...Ra8/b6 and White\u2019s losing premature promotion after ...Ra8, explicitly labeled. Earlier eight-piece setup remains context. Rxd8 in the independent line is not check.",
+      "source_images": [
+        {
+          "file": "ADZ5271s_PY/montage_accepted.jpg",
+          "sha256": "77bb87a39da2921a38022ec06c5a0b3215b7c149b7efca20fe4423c6638ddb4e"
+        },
+        {
+          "file": "ADZ5271s_PY/images/image_00001.jpg",
+          "sha256": "7ec97bd166ff5e18949a56b7d2cb31bfae6b6ff9bcd78eeb0c8a1127dcba38be"
+        },
+        {
+          "file": "ADZ5271s_PY/images/image_00035.jpg",
+          "sha256": "eb03329d4e338907c0913d88d13ca85c389cf60ca68c48e1036e7ed4669161ec"
+        },
+        {
+          "file": "ADZ5271s_PY/images/image_00036.jpg",
+          "sha256": "6758b6315b024eebfec52c037a9cc402892663b547de9177d1dd3fa285b6c32b"
+        },
+        {
+          "file": "ADZ5271s_PY/images/image_00038.jpg",
+          "sha256": "96dcd4151beb7734abc0e495e37b9a9648ac7e9d2e684c60f4c903b2aa687806"
+        },
+        {
+          "file": "ADZ5271s_PY/images/image_00041.jpg",
+          "sha256": "5ad46f0e162264728633aedf981e20f68188d832d003786ca4976fecf65f8806"
+        },
+        {
+          "file": "ADZ5271s_PY/images/image_00044.jpg",
+          "sha256": "b34c0f5db94497c41247ab9ffe1a945df6e99782108d2d249eb2203adb031095"
+        }
+      ]
+    },
+    "GtrZQxgjtbA": {
+      "result": "awaiting_reconstruction",
+      "notes": "Reviewed full initial board: White Ke7 Rb8 Rg4 pawns a5 b3; Black Kc7 Rd8 Ne8 pawns a7 b7 b4, eleven pieces. Source image exists; it needs larger-position reconstruction and analysis rather than transcript-only inference.",
+      "analysis_required": "Reconstruct stable later frames and selected rook/knight branches. Verify a supported later position if one is available, otherwise use disclosed engine/forced-tree analysis for the eleven-piece setup; do not claim an exact seven-piece tablebase proof of this root.",
+      "source_images": [
+        {
+          "file": "GtrZQxgjtbA/images/image_00001.jpg",
+          "sha256": "afe8389342b321ea667f6d4a247c99e34d38fb8ef91f049e527f32d0f2f6f1fb"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "tablebase_distinct_positions": 43,
+    "selected_branches": 9,
+    "tests": "94 tests passed across 16 files",
+    "production_build": "passed",
+    "ui_review": "Inspected Majestic Shield actual stalemate and explanation, plus Majestic Defense practice with Black orientation, in-check root and exact winning objective.",
+    "screenshot": "docs/screenshots/endgame-stories-batch-06.png",
+    "queue_counts": {
+      "verified_selected_lines": 19,
+      "awaiting_reconstruction": 205,
+      "needs_information": 23,
+      "not_applicable": 1
+    }
+  }
+}

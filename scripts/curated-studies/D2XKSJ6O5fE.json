@@ -1,0 +1,123 @@
+{
+  "video_id": "D2XKSJ6O5fE",
+  "title": "Knight VS 2 Rooks",
+  "summary": "Use queen checks to arrange the rooks as blockers, then sacrifice the queen for a knight mate.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/8/8/3N1n2/8/5r2/Q2rk1K1 w - - 0 1",
+      "question": "How can White rearrange a strong defensive shelter?",
+      "explanation": "After Qa1+ and ...Rd1, Black’s king sits behind two rooks and a knight. White can use checks to control where those defenders stand.",
+      "evidence": {
+        "timestamp_s": 27
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "last_check",
+      "fen": "8/8/8/8/3N1n2/4Q3/5r2/3rk1K1 b - - 5 3",
+      "question": "Does a checking interposition stop the attack?",
+      "explanation": "Qe3+ forces Black to block on e2. The two possible blockers lead to the same Nf3 mating idea.",
+      "evidence": {
+        "timestamp_s": 40
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "two_rooks_queen_sacrifice",
+      "start": "start",
+      "title": "Meet a checking knight block with a queen sacrifice",
+      "san": [
+        "Qc3+",
+        "Rdd2",
+        "Qc1+",
+        "Rd1",
+        "Qe3+",
+        "Ne2+",
+        "Qxe2+",
+        "Rxe2",
+        "Nf3#"
+      ],
+      "commentary": [
+        "Begin after Qa1+ ...Rd1 in the stable seven-piece board. Earlier Qa4+ and the king escape remain source context.",
+        "Qc3+ changes the checking diagonal to c3–d2–e1. The automatic captions incorrectly call this Qc4; the stable saved diagrams show c3.",
+        "Rdd2 interposes with the rook from d1, preserving the apparent shelter while blocking the diagonal check.",
+        "Qc1+ checks along the first rank, forcing Black to change the rook’s square again.",
+        "Rd1 blocks the check and leaves d2 free for the queen’s diagonal route.",
+        "Qe3+ checks along the e-file, placing Black under a new interposition problem.",
+        "Ne2+ blocks with check against Kg1. Black hopes the checking tempo will force White to abandon the attack.",
+        "Qxe2+ answers the check by capturing the blocking knight and sacrificing the queen with check.",
+        "Rxe2 accepts with the rook from f2. The black rooks now occupy d1 and e2, boxing in their own king.",
+        "Nf3# gives actual mate. Nf3 checks Ke1 and covers d2; Kg1 covers f1 and f2, while the black rooks occupy d1 and e2."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nf3# gives actual mate. Nf3 checks Ke1 and covers d2; Kg1 covers f1 and f2, while the black rooks occupy d1 and e2.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/8/5N2/4r3/3rk1K1 b - - 1 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "two_rooks_rook_block",
+      "start": "last_check",
+      "title": "Block with the rook instead",
+      "san": [
+        "Re2",
+        "Nf3#"
+      ],
+      "commentary": [
+        "Compare the source’s other legal interposition after Qe3+.",
+        "Re2 blocks the queen’s check with the rook from f2, leaving Black’s own king boxed behind Rd1 and Re2.",
+        "Nf3# gives actual mate immediately. The queen need not be sacrificed because the black knight has not arrived on e2 to force a capture."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nf3# gives actual mate immediately. The queen need not be sacrificed because the black knight has not arrived on e2 to force a capture.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/8/5n2/4QN2/4r3/3rk1K1 b - - 7 4",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why check on c1 before going to e3?",
+      "answer": "Qc1+ draws the rook back to d1, clearing d2 so the queen can travel from c1 through d2 to e3."
+    },
+    {
+      "node": "last_check",
+      "prompt": "Why does Qxe2+ work while White is in check?",
+      "answer": "It captures the checking knight, answers the check, and gives check itself. The forced rook recapture places both black rooks on the king’s escape squares before Nf3 mate."
+    }
+  ],
+  "defaultBranch": "two_rooks_queen_sacrifice",
+  "practiceBranch": "two_rooks_queen_sacrifice",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "Begin after Qa1+ ...Rd1 at 27 seconds in a stable complete seven-piece board. The queen route Qc3+, Qc1+ and Qe3+ is reconstructed from saved images; repeated source resets are not encoded as consecutive moves. Both interpositions on e2 lead to checked actual mates.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "Automatic captions describe the queen withdrawal as Qc4 and omit the repeated Qc1+ rook interposition.",
+      "correction": "Stable boards show Qc3 ...Rd2 Qc1+ ...Rd1 before Qe3+. Qa1–c4 is not a legal queen move; going directly from c1 to e3 while Rd2 remains would also be blocked. The encoded sequence follows the saved board states."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

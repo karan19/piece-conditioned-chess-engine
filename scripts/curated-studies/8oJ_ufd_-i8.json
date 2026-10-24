@@ -1,0 +1,183 @@
+{
+  "video_id": "8oJ_ufd_-i8",
+  "title": "1 Rook VS 2 Pawns",
+  "summary": "Delay the king approach so that the enemy pawn vacates a mating line at exactly the right moment.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/7k/R3K3/8/3p4/4p3/8/8 w - - 0 1",
+      "question": "Why wait with Ke7 before approaching the black king?",
+      "explanation": "White can attack the exposed king instead of trying to stop both connected passers directly. The timing of their advance changes whether the rook can deliver mate.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "last_pawn",
+      "fen": "8/5K1k/8/8/8/8/3Rp3/8 b - - 0 4",
+      "question": "Does promotion save Black?",
+      "explanation": "The d-pawn has fallen, leaving a pawn on e2. Its promotion opens the second rank for a winning rook transfer; after queen promotion, Black can interpose once before actual mate.",
+      "evidence": {
+        "timestamp_s": 140
+      },
+      "tablebase": {
+        "category_for_side_to_move": "loss"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "rook_two_pawns_timing",
+      "start": "start",
+      "title": "Wait, blockade, then use promotion to deliver mate",
+      "san": [
+        "Ke7",
+        "d3",
+        "Kf7",
+        "d2",
+        "Rd6",
+        "e2",
+        "Rxd2",
+        "e1=Q",
+        "Rh2+",
+        "Qh4",
+        "Rxh4#"
+      ],
+      "commentary": [
+        "Begin from the full five-piece saved diagram. White must combine defense against promotion with threats against Kh7.",
+        "Ke7 delays Kf7 by one move. White lets the pawns advance before setting up the mating net.",
+        "d3 advances the rear pawn and keeps e3 protected. This is the source’s selected pawn reply.",
+        "Kf7 now restricts the black king, controlling g8, g7 and g6.",
+        "d2 brings the pawn to the seventh rank, where a rook blockade becomes urgent.",
+        "Rd6 stops the d-pawn from behind while preparing to capture it if the e-pawn advances.",
+        "e2 threatens promotion but releases the protection of d2. It also places the pawn on the rook’s eventual second-rank route.",
+        "Rxd2 removes the d-pawn. White threatens to collect e2 if Black spends a tempo moving the king.",
+        "e1=Q promotes, vacating e2 and opening the entire second rank. Black gets a queen but loses the ability to block that route.",
+        "Rh2+ uses the newly cleared rank. Kf7 covers g6, g7 and g8, but this is not yet mate: the new queen can interpose on h4.",
+        "Qh4 is the only legal reply, interposing the queen on the h-file. This defensive move is independently supplied; the source declares mate one step too early.",
+        "Rxh4# removes the interposing queen and gives actual mate. Kf7 covers the g-file flight squares and the rook controls the h-file."
+      ],
+      "classification": "selected illustrated source variation with independent forced completion after Rh2+",
+      "explanation": "Rxh4# removes the interposing queen and gives actual mate. Kf7 covers the g-file flight squares and the rook controls the h-file.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/5K1k/8/8/7R/8/8/8 b - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_two_pawns_early_king",
+      "start": "start",
+      "title": "Approach the king one tempo too soon",
+      "san": [
+        "Kf7",
+        "d3",
+        "Ra4",
+        "Kh6"
+      ],
+      "commentary": [
+        "Compare the source’s premature king approach while the pawns are still on d4 and e3.",
+        "Kf7 gives away the forced win. The mating threats arrive before the pawns have advanced to the useful squares.",
+        "d3 is the source’s illustrated reply, but it gives White a winning chance again. For example, Rb6 preserves a win in this exact position; the source’s following rook move fails to exploit it.",
+        "Ra4 threatens Rh4 mate but gives back that renewed winning chance. The exact position becomes drawn again; a plausible mating threat is not enough.",
+        "Kh6 meets the threat and preserves the draw. This source sequence contains two outcome reversals, so it must not be taught as best play by both sides."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kh6 meets the threat and preserves the draw. This source sequence contains two outcome reversals, so it must not be taught as best play by both sides.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/5K2/7k/8/R7/3pp3/8/8 w - - 2 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "rook_two_pawns_no_promotion",
+      "start": "last_pawn",
+      "title": "Move the king instead of promoting",
+      "san": [
+        "Kh6",
+        "Rxe2"
+      ],
+      "commentary": [
+        "This independently selected representative continuation tests the source’s alternative: Black moves its king rather than promoting.",
+        "Kh6 avoids the immediate h-file mate but abandons the e-pawn.",
+        "Rxe2 removes Black’s final pawn. White has a checked winning rook-versus-king ending; the lesson stops before assuming a particular mating technique."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Rxe2 removes Black’s final pawn. White has a checked winning rook-versus-king ending; the lesson stops before assuming a particular mating technique.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win"
+      ],
+      "end_fen": "8/5K2/7k/8/8/8/4R3/8 b - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "rook_two_pawns_drawing_reply",
+      "start": "start",
+      "title": "Black advances the other pawn to hold the draw",
+      "san": [
+        "Kf7",
+        "e2"
+      ],
+      "commentary": [
+        "This independently selected defense compares best resistance after the premature king move.",
+        "Kf7 gives away the win, but Black must respond accurately to retain the draw.",
+        "e2 is the drawing reply. Black advances the leading pawn before committing d4, denying White the same favorable waiting-move arrangement. The branch ends at this exactly checked draw."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "After Kf7, ...e2 holds the draw; the source instead shows ...d3, which lets White win again.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/5K1k/R7/8/3p4/8/4p3/8 w - - 0 2",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why help Black get closer to promotion?",
+      "answer": "The extra tempo puts the pawns on d2 and e2. After Rxd2, promoting the e-pawn clears the second rank for Rh2 mate."
+    },
+    {
+      "node": "last_pawn",
+      "prompt": "Why does a new queen fail to help?",
+      "answer": "It is not check, and it leaves e2. Rh2+ wins, although the queen can still interpose on h4; Rxh4 then delivers actual mate."
+    }
+  ],
+  "defaultBranch": "rook_two_pawns_timing",
+  "practiceBranch": "rook_two_pawns_timing",
+  "practiceType": "rook",
+  "practiceGoal": "win",
+  "startContext": "Begin from the complete five-piece opening board. The source’s waiting move, premature king approach and promotion attack are reconstructed from saved images. The king-retreat completion, drawing defense and forced ...Qh4 Rxh4# finish are explicitly independent.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "After Kf7, the illustrated ...d3 and Ra4 demonstrate that White can achieve at best a draw.",
+      "correction": "Kf7 draws, but ...d3 gives White a win again (Rb6 is one winning move). Ra4 then throws that win away and ...Kh6 holds. The independent ...e2 defense demonstrates a draw without those reversals. The general connected-pawn rule is a heuristic; exact king placement and mating threats decide this position."
+    },
+    {
+      "claim": "After ...e1=Q, Rh2 is checkmate.",
+      "correction": "Rh2+ wins but is not mate: ...Qh4 is the sole legal reply, then Rxh4# is actual mate. The last two plies are an independently supplied forced completion."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

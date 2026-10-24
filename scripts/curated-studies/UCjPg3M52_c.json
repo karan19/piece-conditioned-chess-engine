@@ -1,0 +1,215 @@
+{
+  "video_id": "UCjPg3M52_c",
+  "title": "RUN!",
+  "summary": "Reassess the mating threat after a pawn disappears, then sacrifice a queen to gain time for connected passers.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/3P3P/5r2/2P5/2P4k/8/6K1 w - - 0 1",
+      "question": "Which pawn move changes the rook’s checking options?",
+      "explanation": "White has Kg1 and c3/c4/d6/h6 against Kh3/Rf5. Offering the forward c-pawn prepares a supported advance rather than immediately pushing a promotion pawn.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "return_to_corner",
+      "fen": "r7/7P/2PP4/8/8/6k1/8/6K1 w - - 0 1",
+      "question": "Why can White promote now but not earlier?",
+      "explanation": "This separately reviewed source diagram is after the return to Kg1/...Kg3, once Black has captured c3. With c3 gone, a queen on h8 can guard a1 along the diagonal.",
+      "evidence": {
+        "timestamp_s": 128
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "run_opening_cage",
+      "start": "start",
+      "title": "Start the pawn chain and draw the king toward c3",
+      "san": [
+        "c5",
+        "Kg3",
+        "h7",
+        "Rf8",
+        "c6",
+        "Ra8",
+        "Kf1",
+        "Kf3",
+        "Ke1",
+        "Ke3",
+        "Kd1",
+        "Kd3",
+        "Kc1",
+        "Kxc3"
+      ],
+      "commentary": [
+        "Begin in the complete seven-piece source root. The king walk follows the illustrated mating-threat mechanism.",
+        "c5 offers the forward c-pawn and changes the rook’s defensive options. The selected ...Kg3 continuation declines the offer.",
+        "Kg3 cuts off White’s king along the second rank.",
+        "h7 threatens promotion before the rook can take on c5.",
+        "Rf8 returns to the back rank and stops h8 promotion for now.",
+        "c6 prepares the connected passers by guarding d7, where the d-pawn wants to advance.",
+        "Ra8 creates a threat of ...Ra1 mate while the white king is confined.",
+        "Kf1 steps away from that immediate mating pattern.",
+        "Kf3 renews the mating threat with the king opposite White’s king.",
+        "Ke1 keeps running along the first rank.",
+        "Ke3 follows, maintaining the pressure.",
+        "Kd1 avoids the renewed mating threat.",
+        "Kd3 follows along the third rank.",
+        "Kc1 continues toward the queenside.",
+        "Kxc3 removes the rear c-pawn. That change opens the future h8–a1 queen diagonal; the reverse walk is disclosed source context before the separate later node."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxb3 removes the b-pawn. That change opens the future h8–a1 queen diagonal; the reverse walk is disclosed source context before the separate later node.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "r7/7P/2PP4/8/8/2k5/8/2K5 w - - 0 8",
+      "outcome": "win"
+    },
+    {
+      "id": "run_queen_deflection",
+      "start": "return_to_corner",
+      "title": "Promote, deflect the rook and run back",
+      "san": [
+        "h8=Q",
+        "Rxh8",
+        "c7",
+        "Ra8",
+        "Kf1",
+        "Kf3",
+        "Ke1",
+        "Ke3",
+        "Kd1",
+        "Kd3",
+        "Kc1",
+        "Kc3",
+        "Kb1",
+        "Kb3",
+        "d7"
+      ],
+      "commentary": [
+        "Begin in the separately reconstructed late source diagram after the kings return to g1/g3. The c3 pawn has disappeared.",
+        "h8=Q creates a queen that guards a1 along h8–a1, so ...Ra1 would no longer mate.",
+        "Rxh8 removes that queen but pulls the rook from the a-file.",
+        "c7 uses the gained tempo to create a pawn one step from promotion.",
+        "Ra8 returns to the a-file and renews the mating threat.",
+        "Kf1 starts the king’s second run along the first rank.",
+        "Kf3 follows to recreate the mating threat.",
+        "Ke1 steps away again.",
+        "Ke3 follows along the third rank.",
+        "Kd1 continues the escape.",
+        "Kd3 keeps the opposition and threat.",
+        "Kc1 runs toward the queenside.",
+        "Kc3 follows but cannot give a rook check from the a-file without releasing the king.",
+        "Kb1 reaches the critical safe endpoint of this route.",
+        "Kb3 is the illustrated king approach, but it cannot renew the same mating net.",
+        "d7 creates connected seventh-rank passers. The exact position is winning: each pawn guards the other’s promotion square. Further conversion is not asserted to be an immediate mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "d7 creates connected seventh-rank passers. The exact position is winning: each pawn guards the other’s promotion square. Further conversion is not asserted to be an immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "r7/2PP4/8/8/8/1k6/8/1K6 b - - 0 8",
+      "outcome": "loss"
+    },
+    {
+      "id": "run_hasty_pawn",
+      "start": "start",
+      "title": "Push the h-pawn before arranging c5",
+      "san": [
+        "h7",
+        "Rf8",
+        "d7",
+        "Kg4",
+        "c5",
+        "Kf5",
+        "c6",
+        "Ke6",
+        "c7",
+        "Kxd7"
+      ],
+      "commentary": [
+        "Compare the source’s premature pawn race without first gaining the c5 tempo.",
+        "h7 gives away the forced win, but the exact position is still drawn against best play.",
+        "Rf8 stops the h-pawn and keeps the king confined.",
+        "d7 is the losing error in this selected comparison: it leaves both promotion threats stopped while Black’s king can approach.",
+        "Kg4 begins Black’s king approach.",
+        "c5 tries to build the pawn chain too late.",
+        "Kf5 walks toward the central passers.",
+        "c6 tries to support promotion.",
+        "Ke6 reaches the d-pawn.",
+        "c7 advances again, but the d-pawn can be captured.",
+        "Kxd7 removes the advanced d-pawn. Black retains a checked win; White has not made a successful promotion race."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxd7 removes the advanced d-pawn. Black retains a checked win; White has not made a successful promotion race.",
+      "end_fen": "5r2/2Pk3P/8/8/8/2P5/8/6K1 w - - 0 6",
+      "outcome": "loss",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "node": "return_to_corner",
+      "prompt": "Why does losing the c3 pawn help White’s promotion idea?",
+      "answer": "It opens h8–g7–f6–e5–d4–c3–b2–a1. A queen on h8 can now answer ...Ra1, forcing the rook to spend a tempo capturing it."
+    }
+  ],
+  "defaultBranch": "run_opening_cage",
+  "practiceBranch": "run_opening_cage",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin at the complete seven-piece source root. The first king walk is checked through ...Kxc3. A separately reconstructed late diagram after the reverse walk checks the queen deflection and second run. The omitted return is source context, not an invented connecting line.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    "The h7 comparison is drawn after ...Rf8; the selected d7 continuation then loses. The lesson distinguishes those exact outcomes instead of calling h7 itself a forced loss."
+  ],
+  "verificationDate": "2026-10-23"
+}

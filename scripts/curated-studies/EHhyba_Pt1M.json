@@ -1,0 +1,179 @@
+{
+  "video_id": "EHhyba_Pt1M",
+  "title": "War of Brilliants",
+  "summary": "Deflect the queen, remove the pawn with check, then underpromote to escape a mating trap.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "K1B5/1P6/2q5/8/k3p3/4R3/8/8 w - - 0 1",
+      "question": "Can White unpin the promotion pawn with a sacrifice?",
+      "explanation": "Qc6 pins b7 to Ka8. Bd7 can pin that queen to Ka4 along the opposite diagonal.",
+      "evidence": {
+        "timestamp_s": 6
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "promotion_choice",
+      "fen": "K7/1P1q4/k7/4R3/8/8/8/8 w - - 3 4",
+      "question": "Which promotion changes the forcing sequence?",
+      "explanation": "After the rook’s checking maneuvers, Ka6 allows a knight promotion with check. Queen promotion lets Black start its own mating attack.",
+      "evidence": {
+        "timestamp_s": 83
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "stalemate_trap",
+      "fen": "1q6/KQ6/8/k7/4R3/8/8/8 w - - 0 1",
+      "question": "Which capture of the checking queen wins?",
+      "explanation": "This separately reconstructed source diagram shows ...Qb8+ against Ka7, Qb7 and Re4. Capturing with either king or queen removes Black’s only legal mover.",
+      "evidence": {
+        "timestamp_s": 52
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "war_knight_promotion",
+      "start": "start",
+      "title": "Deflect, check twice, then fork",
+      "san": [
+        "Bd7",
+        "Qxd7",
+        "Rxe4+",
+        "Ka5",
+        "Re5+",
+        "Ka6",
+        "b8=N+",
+        "Kb6",
+        "Nxd7+"
+      ],
+      "commentary": [
+        "Begin after ...Qc6 in the complete seven-piece source board; the initial pawn advance is source context.",
+        "Bd7 offers the bishop while pinning Qc6 to Ka4 on d7–c6–b5–a4.",
+        "Qxd7 accepts, removing the bishop and releasing the b-pawn from its pin.",
+        "Rxe4+ captures the pawn with check. The saved board shows e4, correcting the automatic caption Rxc4.",
+        "Ka5 answers the rook check while keeping promotion tactics in view.",
+        "Re5+ checks again, changing the king’s square before White chooses a promotion.",
+        "Ka6 is the illustrated escape that creates the underpromotion opportunity.",
+        "b8=N+ promotes with check and attacks Qd7. The knight gains a tempo that a queen would not give here.",
+        "Kb6 answers the knight check, leaving the queen exposed.",
+        "Nxd7+ captures the queen with check. White has a checked winning rook-and-knight ending; this is not yet mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxd7+ captures the queen with check. White has a checked winning rook-and-knight ending; this is not yet mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "K7/3N4/1k6/4R3/8/8/8/8 b - - 0 5",
+      "outcome": "loss"
+    },
+    {
+      "id": "war_queen_error",
+      "start": "promotion_choice",
+      "title": "Choose a queen despite the counterattack",
+      "san": [
+        "b8=Q",
+        "Qc6+",
+        "Qb7+",
+        "Qxb7#"
+      ],
+      "commentary": [
+        "Compare queen promotion after ...Ka6.",
+        "b8=Q loses the winning position. Unlike the knight promotion, it does not check Ka6.",
+        "Qc6+ checks Ka8 along c6–b7–a8, beginning the source’s mating counterattack.",
+        "Qb7+ interposes with check, but the new queen can be captured on that diagonal.",
+        "Qxb7# is actual mate. Ka6 protects b7 and a7, and the queen covers b8 and checks Ka8."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxb7# is actual mate. Ka6 protects b7 and a7, and the queen covers b8 and checks Ka8.",
+      "expectedWhiteOutcomes": [
+        "loss",
+        "loss",
+        "loss",
+        "loss"
+      ],
+      "end_fen": "K7/1q6/k7/4R3/8/8/8/8 w - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "war_king_stalemate",
+      "start": "stalemate_trap",
+      "title": "Capture the queen with the king",
+      "san": [
+        "Kxb8"
+      ],
+      "commentary": [
+        "This separate saved source diagram starts after ...Qb8+; the intervening queen-check sequence is not encoded as a continuous branch from the root.",
+        "Kxb8 is actual stalemate. Qb7 covers a6, b5 and b6, while Re4 covers a4 and b4. Ka5 is not checked and Black has no other piece left to move."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kxb8 is actual stalemate. Qb7 covers a6, b5 and b6, while Re4 covers a4 and b4. Ka5 is not checked and Black has no other piece left to move.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "1K6/1Q6/8/k7/4R3/8/8/8 b - - 0 1",
+      "outcome": "draw"
+    },
+    {
+      "id": "war_queen_stalemate",
+      "start": "stalemate_trap",
+      "title": "Capture the queen with the queen",
+      "san": [
+        "Qxb8"
+      ],
+      "commentary": [
+        "Compare the other capture in the same separately reconstructed ...Qb8+ diagram.",
+        "Qxb8 is actual stalemate. Ka7 covers a6 and b6, Qb8 covers b5, and Re4 covers a4 and b4. Ka5 has no legal move and is not checked."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxb8 is actual stalemate. Ka7 covers a6 and b6, Qb8 covers b5, and Re4 covers a4 and b4. Ka5 has no legal move and is not checked.",
+      "expectedWhiteOutcomes": [
+        "draw"
+      ],
+      "end_fen": "1Q6/K7/8/k7/4R3/8/8/8 b - - 0 1",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why sacrifice a bishop to a queen?",
+      "answer": "Bd7 pins the queen to its king. In the selected source line ...Qxd7 accepts the sacrifice and releases the b-pawn; the exact root and encoded replies are checked without claiming every queen defense is shown."
+    },
+    {
+      "node": "promotion_choice",
+      "prompt": "Why does knight promotion beat queen promotion?",
+      "answer": "b8=N gives check while forking Qd7. Queen promotion instead lets Black play Qc6+ and reach the illustrated mating counterattack."
+    }
+  ],
+  "defaultBranch": "war_knight_promotion",
+  "practiceBranch": "war_knight_promotion",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Begin after ...Qc6 at 6 seconds in a complete seven-piece position. The main checking sequence, knight fork and queen-promotion mate are reconstructed from saved boards. A separate source node after ...Qb8+ demonstrates two actual stalemates; its intervening queen maneuvers are outside the encoded line.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [
+    {
+      "claim": "Automatic captions call the pawn capture Rxc4.",
+      "correction": "Stable boards show the pawn on e4 and Re3 capturing it with Rxe4+. The encoded move follows the saved board, not the mistaken file name."
+    }
+  ],
+  "verificationDate": "2026-10-23"
+}

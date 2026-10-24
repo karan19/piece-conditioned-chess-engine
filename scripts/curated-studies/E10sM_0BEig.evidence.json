@@ -1,0 +1,186 @@
+{
+  "node:start": {
+    "method": "finite_strategy",
+    "fen": "1Q1Q4/6pk/5p1p/p7/P1P4R/6PK/5r2/4r3 b - - 0 1",
+    "winner": "black",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "Rh1+": {
+        "method": "finite_strategy",
+        "fen": "1Q1Q4/6pk/5p1p/p7/P1P4R/6PK/5r2/7r w - - 1 2",
+        "winner": "black",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Kg4": {
+            "method": "finite_strategy",
+            "fen": "1Q1Q4/6pk/5p1p/p7/P1P3KR/6P1/5r2/7r b - - 2 2",
+            "winner": "black",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "f5+": {
+                "method": "finite_strategy",
+                "fen": "1Q1Q4/6pk/7p/p4p2/P1P3KR/6P1/5r2/7r w - - 0 3",
+                "winner": "black",
+                "category_for_side_to_move": "loss",
+                "rule": "all_legal_defenses",
+                "children": {
+                  "Kh5": {
+                    "method": "finite_strategy",
+                    "fen": "1Q1Q4/6pk/7p/p4p1K/P1P4R/6P1/5r2/7r b - - 1 3",
+                    "winner": "black",
+                    "category_for_side_to_move": "win",
+                    "rule": "winning_choice",
+                    "children": {
+                      "g6#": {
+                        "method": "finite_strategy",
+                        "fen": "1Q1Q4/7k/6pp/p4p1K/P1P4R/6P1/5r2/7r w - - 0 4",
+                        "winner": "black",
+                        "category_for_side_to_move": "loss",
+                        "rule": "checkmate"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:two_queens_pawn_hunt:1": {
+    "method": "finite_strategy",
+    "fen": "1Q1Q4/6pk/5p1p/p7/P1P4R/6PK/5r2/7r w - - 1 2",
+    "winner": "black",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Kg4": {
+        "method": "finite_strategy",
+        "fen": "1Q1Q4/6pk/5p1p/p7/P1P3KR/6P1/5r2/7r b - - 2 2",
+        "winner": "black",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "f5+": {
+            "method": "finite_strategy",
+            "fen": "1Q1Q4/6pk/7p/p4p2/P1P3KR/6P1/5r2/7r w - - 0 3",
+            "winner": "black",
+            "category_for_side_to_move": "loss",
+            "rule": "all_legal_defenses",
+            "children": {
+              "Kh5": {
+                "method": "finite_strategy",
+                "fen": "1Q1Q4/6pk/7p/p4p1K/P1P4R/6P1/5r2/7r b - - 1 3",
+                "winner": "black",
+                "category_for_side_to_move": "win",
+                "rule": "winning_choice",
+                "children": {
+                  "g6#": {
+                    "method": "finite_strategy",
+                    "fen": "1Q1Q4/7k/6pp/p4p1K/P1P4R/6P1/5r2/7r w - - 0 4",
+                    "winner": "black",
+                    "category_for_side_to_move": "loss",
+                    "rule": "checkmate"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:two_queens_pawn_hunt:2": {
+    "method": "finite_strategy",
+    "fen": "1Q1Q4/6pk/5p1p/p7/P1P3KR/6P1/5r2/7r b - - 2 2",
+    "winner": "black",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "f5+": {
+        "method": "finite_strategy",
+        "fen": "1Q1Q4/6pk/7p/p4p2/P1P3KR/6P1/5r2/7r w - - 0 3",
+        "winner": "black",
+        "category_for_side_to_move": "loss",
+        "rule": "all_legal_defenses",
+        "children": {
+          "Kh5": {
+            "method": "finite_strategy",
+            "fen": "1Q1Q4/6pk/7p/p4p1K/P1P4R/6P1/5r2/7r b - - 1 3",
+            "winner": "black",
+            "category_for_side_to_move": "win",
+            "rule": "winning_choice",
+            "children": {
+              "g6#": {
+                "method": "finite_strategy",
+                "fen": "1Q1Q4/7k/6pp/p4p1K/P1P4R/6P1/5r2/7r w - - 0 4",
+                "winner": "black",
+                "category_for_side_to_move": "loss",
+                "rule": "checkmate"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "step:two_queens_pawn_hunt:3": {
+    "method": "finite_strategy",
+    "fen": "1Q1Q4/6pk/7p/p4p2/P1P3KR/6P1/5r2/7r w - - 0 3",
+    "winner": "black",
+    "category_for_side_to_move": "loss",
+    "rule": "all_legal_defenses",
+    "children": {
+      "Kh5": {
+        "method": "finite_strategy",
+        "fen": "1Q1Q4/6pk/7p/p4p1K/P1P4R/6P1/5r2/7r b - - 1 3",
+        "winner": "black",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice",
+        "children": {
+          "g6#": {
+            "method": "finite_strategy",
+            "fen": "1Q1Q4/7k/6pp/p4p1K/P1P4R/6P1/5r2/7r w - - 0 4",
+            "winner": "black",
+            "category_for_side_to_move": "loss",
+            "rule": "checkmate"
+          }
+        }
+      }
+    }
+  },
+  "step:two_queens_pawn_hunt:4": {
+    "method": "finite_strategy",
+    "fen": "1Q1Q4/6pk/7p/p4p1K/P1P4R/6P1/5r2/7r b - - 1 3",
+    "winner": "black",
+    "category_for_side_to_move": "win",
+    "rule": "winning_choice",
+    "children": {
+      "g6#": {
+        "method": "finite_strategy",
+        "fen": "1Q1Q4/7k/6pp/p4p1K/P1P4R/6P1/5r2/7r w - - 0 4",
+        "winner": "black",
+        "category_for_side_to_move": "loss",
+        "rule": "checkmate"
+      }
+    }
+  },
+  "step:two_queens_pawn_hunt:5": {
+    "method": "finite_strategy",
+    "fen": "1Q1Q4/7k/6pp/p4p1K/P1P4R/6P1/5r2/7r w - - 0 4",
+    "winner": "black",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  },
+  "branch:two_queens_pawn_hunt": {
+    "method": "finite_strategy",
+    "fen": "1Q1Q4/7k/6pp/p4p1K/P1P4R/6P1/5r2/7r w - - 0 4",
+    "winner": "black",
+    "category_for_side_to_move": "loss",
+    "rule": "checkmate"
+  }
+}

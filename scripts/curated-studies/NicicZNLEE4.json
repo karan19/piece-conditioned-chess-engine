@@ -1,0 +1,165 @@
+{
+  "video_id": "NicicZNLEE4",
+  "title": "Queen Windmill",
+  "summary": "Promote after offering the bishop, then circle that bishop with forcing queen checks until the opposing queen is skewered.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "2B1K3/2P5/8/4k3/8/pp6/8/8 w - - 0 1",
+      "question": "Can the bishop help after both sides promote?",
+      "explanation": "White has Ke8, Bc8 and c7 against Ke5, a3 and b3. The bishop appears to obstruct the pawn, but can become a shield around which the new queen checks.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "windmill_skewer",
+      "start": "start",
+      "title": "Circle the bishop and skewer the queen",
+      "san": [
+        "Bf5",
+        "a2",
+        "c8=Q",
+        "a1=Q",
+        "Qe6+",
+        "Kf4",
+        "Qe4+",
+        "Kg5",
+        "Qg4+",
+        "Kf6",
+        "Qg6+",
+        "Ke5",
+        "Qg7+",
+        "Kxf5",
+        "Qxa1"
+      ],
+      "commentary": [
+        "White has Ke8, Bc8 and c7 against Ke5, a3 and b3. The bishop appears to obstruct the pawn, but can become a shield around which the new queen checks.",
+        "Bf5 vacates c8 and offers itself to the black king. The bishop also covers d3/e4/g4/h3 for the upcoming checks.",
+        "a2 declines the bishop and creates an immediate promotion threat.",
+        "c8=Q promotes first. White needs the bishop to make progress after Black also promotes.",
+        "a1=Q gets Black a queen and seems to balance the material, but the exposed king becomes the tactical target.",
+        "Qe6+ checks vertically and begins the circuit around Bf5.",
+        "Kf4 hides below the bishop in the illustrated defense.",
+        "Qe4+ checks across the fourth rank and changes which king flights remain.",
+        "Kg5 moves to the bishop’s right, continuing to hide near it rather than retreating to the lower board.",
+        "Qg4+ checks up the g-file and forces another change of side.",
+        "Kf6 moves above the bishop in the selected line.",
+        "Qg6+ checks along the sixth rank, continuing the queen’s circuit.",
+        "Ke5 reaches the same diagonal as Qa1: a1-b2-c3-d4-e5-f6-g7.",
+        "Qg7+ skewers the king against the queen on a1. Black cannot save both targets in this selected line.",
+        "Kxf5 finally captures the bishop, escaping check but uncovering the diagonal.",
+        "Qxa1 takes the queen. White’s queen against Kf5 and the remaining b3 pawn is an exact tablebase win, not an assertion of immediate mate."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxa1 takes the queen. White’s queen against Kf5 and the remaining b3 pawn is an exact tablebase win, not an assertion of immediate mate.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "4K3/8/8/5k2/8/1p6/8/Q7 b - - 0 8",
+      "outcome": "loss"
+    },
+    {
+      "id": "windmill_bishop_capture",
+      "start": "start",
+      "title": "Take the bishop immediately",
+      "san": [
+        "Bf5",
+        "Kxf5",
+        "c8=Q+"
+      ],
+      "commentary": [
+        "White has Ke8, Bc8 and c7 against Ke5, a3 and b3. The bishop appears to obstruct the pawn, but can become a shield around which the new queen checks.",
+        "Bf5 clears c8 while placing the bishop where the king can capture it.",
+        "Kxf5 takes the offered bishop, but now c8 promotes with check on the c8-d7-e6-f5 diagonal.",
+        "c8=Q+ promotes with tempo. The exact queen-versus-two-pawns position is winning; White has time to address the advancing pawns."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "c8=Q+ promotes with tempo. The exact queen-versus-two-pawns position is winning; White has time to address the advancing pawns.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2Q1K3/8/8/5k2/8/pp6/8/8 b - - 0 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "windmill_diagonal_retreat",
+      "start": "start",
+      "title": "Independent diagonal retreat comparison",
+      "san": [
+        "Bf5",
+        "a2",
+        "c8=Q",
+        "a1=Q",
+        "Qe6+",
+        "Kd4",
+        "Qf6+",
+        "Kc4",
+        "Qxa1"
+      ],
+      "commentary": [
+        "An independent representative reply demonstrates why a king retreat onto the a1 diagonal exposes the black queen even sooner.",
+        "Bf5 prepares promotion while offering the bishop.",
+        "a2 advances the outside pawn instead of capturing.",
+        "c8=Q clears the promotion race on White’s side.",
+        "a1=Q creates the target on the long diagonal.",
+        "Qe6+ forces the king to choose a flight.",
+        "Kd4 steps onto the diagonal to Qa1. This is a selected independent alternative, not an exhaustive account of king replies.",
+        "Qf6+ skewers the king against Qa1 along f6-e5-d4-c3-b2-a1, while staying out of the king’s capture range.",
+        "Kc4 is a representative legal escape from the check.",
+        "Qxa1 captures the queen while preserving the bishop. The resulting position is checked as a White win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qxa1 captures the queen while preserving the bishop. The resulting position is checked as a White win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "4K3/8/8/5B2/2k5/1p6/8/Q7 b - - 0 5",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "What role does the bishop play after promotion?",
+      "answer": "It restricts the king’s flights while the queen changes checking lines around it. The selected circuit finally puts king and queen on one diagonal, enabling a skewer."
+    }
+  ],
+  "defaultBranch": "windmill_skewer",
+  "practiceBranch": "windmill_skewer",
+  "practiceType": "bishop",
+  "practiceGoal": "win",
+  "startContext": "The full six-piece physical-board diagram is reconstructed from saved board images and the Bf5/c8 promotion anchors. The illustrated checking circuit and immediate bishop capture are checked; the diagonal-retreat branch uses explicitly independent representative replies. The source’s full alternative mating tree is not claimed.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

@@ -1,0 +1,130 @@
+{
+  "video_id": "n2Ykf9vVPjk",
+  "title": "Run King! RUN!!!: Choose the Mating Piece",
+  "summary": "Offer the queen so the king must choose between queen mate on h7 and bishop mate on the same square.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "3q1rB1/p7/1pb1rbk1/2Ppp3/7P/P4QK1/P2P4/8 w - - 0 1",
+      "question": "Which piece should finish the attack on h7?",
+      "explanation": "Qf5+ checks Kg6 and offers the queen to the king. Kxf5 permits Bh7 mate; declining with Kg7 or Kh6 leaves Qh7 mate instead. Black’s bishop on f6 blocks a flight square for its own king.",
+      "evidence": {
+        "timestamp_s": 121
+      },
+      "proof": {
+        "method": "finite_strategy",
+        "fen": "3q1rB1/p7/1pb1rbk1/2Ppp3/7P/P4QK1/P2P4/8 w - - 0 1",
+        "winner": "white",
+        "category_for_side_to_move": "win",
+        "rule": "winning_choice"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "run_king_queen_offer",
+      "start": "start",
+      "title": "Source finish: the king takes the queen",
+      "san": [
+        "Qf5+",
+        "Kxf5",
+        "Bh7#"
+      ],
+      "commentary": [
+        "Begin in the later full-board diagram. The earlier knight sacrifice and king chase are context; no spare pawn, rook or bishop is removed from this reconstruction.",
+        "Qf5+ offers the queen with check along the f5–g6 diagonal. The king has three legal choices, and every one leads to mate on h7.",
+        "Kxf5 accepts the queen with the king. Black’s bishop stays on f6, occupying a square the king would otherwise need when the bishop checks.",
+        "Bh7# checks f5 along h7–g6–f5. Kg3 covers f4/g4, h4 controls g5, and Black’s e5 pawn, Re6 and Bf6 block three more flights. The bishop’s checking diagonal also covers e4 and g6."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Bh7# checks f5 along h7–g6–f5. Kg3 covers f4/g4, h4 controls g5, and Black’s e5 pawn, Re6 and Bf6 block three more flights. The bishop’s checking diagonal also covers e4 and g6.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3q1r2/p6B/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 b - - 1 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "run_king_upper_retreat",
+      "start": "start",
+      "title": "Independent defense: retreat to g7",
+      "san": [
+        "Qf5+",
+        "Kg7",
+        "Qh7#"
+      ],
+      "commentary": [
+        "The king can decline the queen. Check that retreat instead of assuming the queen must be taken.",
+        "Qf5+ starts the same offer. The saved certificate checks every legal king reply.",
+        "Kg7 retreats up the g-file. Black avoids the immediate bishop mate on f5 but leaves h7 available to the queen.",
+        "Qh7# checks along the seventh rank. Bg8 protects h7; Qh7 covers h8, h6, g6 and f7, while Rf8 occupies f8. Black cannot capture the protected queen or block the adjacent queen check."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qh7# checks along the seventh rank. Bg8 protects h7; Qh7 covers h8, h6, g6 and f7, while Rf8 occupies f8. Black cannot capture the protected queen or block the adjacent queen check.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3q1rB1/p5kQ/1pb1rb2/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+      "outcome": "loss"
+    },
+    {
+      "id": "run_king_edge_retreat",
+      "start": "start",
+      "title": "Independent defense: retreat to h6",
+      "san": [
+        "Qf5+",
+        "Kh6",
+        "Qh7#"
+      ],
+      "commentary": [
+        "The other legal refusal moves toward the board’s edge.",
+        "Qf5+ checks while keeping the queen ready to switch to h7.",
+        "Kh6 avoids the capture on f5, but the king’s edge position gives the queen a direct mating square.",
+        "Qh7# checks down the h-file. Bg8 protects the queen, Qh7 closes g7/g6/h5, and White’s h4 pawn controls g5. The king cannot capture on h7."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "Qh7# checks down the h-file. Bg8 protects the queen, Qh7 closes g7/g6/h5, and White’s h4 pawn controls g5. The king cannot capture on h7.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "3q1rB1/p6Q/1pb1rb1k/2Ppp3/7P/P5K1/P2P4/8 b - - 3 2",
+      "outcome": "loss"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Which black piece captures the queen in the source?",
+      "answer": "The king captures with Kxf5. The bishop remains on f6, occupying an escape square for its own king."
+    },
+    {
+      "node": "start",
+      "prompt": "Must Black accept the queen?",
+      "answer": "No. Kg7 and Kh6 are legal. Both allow Qh7 mate, while Kxf5 allows Bh7 mate."
+    }
+  ],
+  "defaultBranch": "run_king_queen_offer",
+  "practiceBranch": "run_king_queen_offer",
+  "practiceType": "queen",
+  "practiceGoal": "win",
+  "startContext": "Begin in the complete eighteen-piece later diagram with White Qf3/Bg8/Kg3 and Black Kg6, shown before Qf5+ at 121 seconds. The final queen offer is proved against all three legal king replies. Native frames show Kxf5, not a bishop capture; the bishop remains on f6. Earlier Nf6 capture branches, the king chase, and the source uniqueness claim are outside this proof.",
+  "verification_scope": "Begin in the complete eighteen-piece later diagram with White Qf3/Bg8/Kg3 and Black Kg6, shown before Qf5+ at 121 seconds. The final queen offer is proved against all three legal king replies. Native frames show Kxf5, not a bishop capture; the bishop remains on f6. Earlier Nf6 capture branches, the king chase, and the source uniqueness claim are outside this proof.",
+  "sourceCorrections": [],
+  "finiteStrategy": {
+    "winner": "white",
+    "max_plies": 3,
+    "moves": {
+      "3q1rB1/p7/1pb1rbk1/2Ppp3/7P/P4QK1/P2P4/8 w - - 0 1": "Qf5+",
+      "3q1rB1/p5k1/1pb1rb2/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2": "Qh7#",
+      "3q1rB1/p7/1pb1rb1k/2PppQ2/7P/P5K1/P2P4/8 w - - 2 2": "Qh7#",
+      "3q1rB1/p7/1pb1rb2/2Pppk2/7P/P5K1/P2P4/8 w - - 0 2": "Bh7#"
+    }
+  },
+  "verificationDate": "2026-10-24"
+}

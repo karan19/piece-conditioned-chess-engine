@@ -1,0 +1,182 @@
+{
+  "video_id": "7WOsgbrR4UA",
+  "title": "Stop That Pawn",
+  "summary": "Let Black promote, then use rook checks to draw the queen onto a knight-fork square.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "k1N4K/2R5/8/8/8/8/1p5P/8 w - - 0 1",
+      "question": "Must White stop b1=Q immediately?",
+      "explanation": "White has Kh8, Rc7, Nc8 and h2 against Ka8 and b2. The win depends on coordinating checks rather than simply blockading the promotion square.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "stop_pawn_b7_fork",
+      "start": "start",
+      "title": "Allow promotion and deflect the queen",
+      "san": [
+        "Nb6+",
+        "Kb8",
+        "Rc3",
+        "b1=Q",
+        "Nd7+",
+        "Kb7",
+        "Rb3+",
+        "Qxb3",
+        "Nc5+",
+        "Kc6",
+        "Nxb3"
+      ],
+      "commentary": [
+        "Begin from the complete six-piece source board. The h2 pawn is preserved through the combination.",
+        "Nb6+ checks the king and changes the knight’s route toward d7 and c5.",
+        "Kb8 is the sole legal response to the knight check, placing the king where a later rook check will matter.",
+        "Rc3 prepares checks along the third rank instead of trying to stop promotion directly.",
+        "b1=Q promotes. Black has a queen, but the king and queen can be drawn onto knight-fork squares.",
+        "Nd7+ checks from b6 and restricts the king’s choices.",
+        "Kb7 is the source’s central king response, aligning the king above the queen on the b-file.",
+        "Rb3+ offers the rook with check. Black must respond to the attack on the king.",
+        "Qxb3 captures the rook and places the queen on the knight’s next fork square.",
+        "Nc5+ checks Kb7 while attacking Qb3.",
+        "Kc6 is the illustrated king retreat, leaving the queen to the knight.",
+        "Nxb3 captures the queen. White retains an exact knight-and-pawn win; further conversion is outside this selected line."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxb3 captures the queen. White retains an exact knight-and-pawn win; further conversion is outside this selected line.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7K/8/2k5/8/8/1N6/7P/8 b - - 0 6",
+      "outcome": "loss"
+    },
+    {
+      "id": "stop_pawn_a7_fork",
+      "start": "start",
+      "title": "The king tries the a-file",
+      "san": [
+        "Nb6+",
+        "Kb8",
+        "Rc3",
+        "b1=Q",
+        "Nd7+",
+        "Ka7",
+        "Ra3+",
+        "Kb7",
+        "Rb3+",
+        "Qxb3",
+        "Nc5+",
+        "Kc6",
+        "Nxb3"
+      ],
+      "commentary": [
+        "Follow the source’s alternative a-file escape after the same promotion setup.",
+        "Nb6+ starts with a forcing knight check.",
+        "Kb8 is the sole legal king retreat.",
+        "Rc3 prepares a lateral rook check after promotion.",
+        "b1=Q creates the new queen, without removing the checking combination.",
+        "Nd7+ checks and restricts the king.",
+        "Ka7 tries to avoid the immediate b-file rook sacrifice.",
+        "Ra3+ checks along the a-file and drives the king onto b7.",
+        "Kb7 reaches the same deflection setup as the other source branch.",
+        "Rb3+ offers the rook on a square the knight can fork.",
+        "Qxb3 accepts the rook, relocating the queen to b3.",
+        "Nc5+ forks the king and queen.",
+        "Kc6 is the same illustrated representative retreat used to complete the fork.",
+        "Nxb3 wins the queen, leaving an exactly checked knight-and-pawn win."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Nxb3 wins the queen, leaving an exactly checked knight-and-pawn win.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "7K/8/2k5/8/8/1N6/7P/8 b - - 0 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "stop_pawn_rook_first",
+      "start": "start",
+      "title": "Start with the rook check instead",
+      "san": [
+        "Ra7+",
+        "Kb8",
+        "Ra6",
+        "b1=Q",
+        "Rb6+",
+        "Ka8",
+        "Rxb1"
+      ],
+      "commentary": [
+        "Compare the source’s tempting rook-first approach, which reaches a stalemate defense.",
+        "Ra7+ gives check but gives up White’s forced win.",
+        "Kb8 steps away from the rook’s a-file check.",
+        "Ra6 threatens a later rook check and capture of the pawn, but does not prevent promotion.",
+        "b1=Q promotes while preserving Black’s drawing resource.",
+        "Rb6+ checks the king and offers a rook-versus-knight liquidation if Black captures.",
+        "Ka8 instead keeps the queen available for sacrifice and heads into the corner.",
+        "Rxb1 captures the queen but is actual stalemate. Rb1 controls b8 and b7, Nc8 controls a7, and Ka8 is not in check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rxb1 captures the queen but is actual stalemate. Rb1 controls b8 and b7, Nc8 controls a7, and Ka8 is not in check.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "k1N4K/8/8/8/8/8/7P/1R6 b - - 0 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "start",
+      "prompt": "Why allow Black to get a queen?",
+      "answer": "Promotion is not the endpoint. Nd7+ and the rook sacrifice force the king and queen into a knight fork, winning the queen afterward."
+    },
+    {
+      "node": "start",
+      "prompt": "Why is winning the queen in the rook-first line insufficient?",
+      "answer": "Rxb1 removes Black’s final non-king piece while Ra7/Ra6 and Nc8 have confined Ka8. The resulting board is stalemate, so the material gain does not win."
+    }
+  ],
+  "defaultBranch": "stop_pawn_b7_fork",
+  "practiceBranch": "stop_pawn_b7_fork",
+  "practiceType": "knight",
+  "practiceGoal": "win",
+  "startContext": "The complete six-piece source position is visually reconstructed. Two selected knight-first branches let Black promote before deflecting the queen into a fork; the rook-first comparison is actual stalemate. Kc6 and the capture completion use the illustrated representative continuation, without claiming that every defense is shown.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

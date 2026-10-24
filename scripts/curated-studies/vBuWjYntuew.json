@@ -1,0 +1,161 @@
+{
+  "video_id": "vBuWjYntuew",
+  "title": "The God of Chess",
+  "summary": "Build a mating threat that makes an extra queen settle for a pin or a drawn liquidation.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/N7/8/7p/7k/5P2/3p2PK/8 w - - 0 1",
+      "question": "Can the knight help after Black promotes?",
+      "explanation": "The a7 knight cannot reach d1 directly, but it can reroute through b5 and c3 to e4. White must preserve the f3/g2 pawn cage around Kh4.",
+      "evidence": {
+        "timestamp_s": 55
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    },
+    {
+      "id": "fortress",
+      "fen": "8/8/8/7p/4N2k/5P2/6PK/4q3 b - - 3 3",
+      "question": "What stops the queen from winning normally?",
+      "explanation": "Ne4 controls g5, f2 and f6 while the pawns and king close the other routes. White threatens g3 mate. Black can hold with the pin, or liquidate the queen for the knight into a drawn pawn ending.",
+      "evidence": {
+        "timestamp_s": 95
+      },
+      "tablebase": {
+        "category_for_side_to_move": "draw"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "god_of_chess_hold_pin",
+      "start": "start",
+      "title": "Reach the cage and wait against the pin",
+      "san": [
+        "Nb5",
+        "d1=Q",
+        "Nc3",
+        "Qe1",
+        "Ne4",
+        "Qe2",
+        "Kh1",
+        "Qf1+",
+        "Kh2",
+        "Qe2",
+        "Kh1"
+      ],
+      "commentary": [
+        "Begin after ...d2 in the seven-piece phase. The preceding eight-piece Nc6 and Nxa7 bishop capture remain source context.",
+        "Nb5 heads for c3 rather than trying to catch the pawn directly.",
+        "d1=Q promotes. The exact position is still drawn with correct defense.",
+        "Nc3 attacks the queen on d1 and prepares Ne4.",
+        "Qe1 is the illustrated queen retreat from the knight attack.",
+        "Ne4 closes g5 and supports the cage around Kh4. White threatens g3 mate.",
+        "Qe2 pins g2 to Kh2 along the second rank and prevents the pawn mate for now.",
+        "Kh1 waits, moving the king off that pin line without dismantling the cage.",
+        "Qf1+ is the illustrated checking idea, selected here as a representative way to stop the pawn threat.",
+        "Kh2 returns the king and renews the g3 threat unless Black restores the pin.",
+        "Qe2 restores the second-rank pin in this independently connected repetition of the source\u2019s defensive idea.",
+        "Kh1 waits again. Every encoded position remains exactly drawn; this short loop is not presented as an exhaustive proof of all queen moves."
+      ],
+      "classification": "selected source fortress with independent alternative connecting queen checks and waiting moves",
+      "explanation": "Kh1 waits again. Every encoded position remains exactly drawn; this short loop is not presented as an exhaustive proof of all queen moves.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/7p/4N2k/5P2/4q1P1/7K b - - 9 6",
+      "outcome": "draw"
+    },
+    {
+      "id": "god_of_chess_queen_leaves",
+      "start": "start",
+      "title": "The queen neglects the mating threat",
+      "san": [
+        "Nb5",
+        "d1=Q",
+        "Nc3",
+        "Qe1",
+        "Ne4",
+        "Qc1",
+        "g3#"
+      ],
+      "commentary": [
+        "Follow the same source setup and compare the queen\u2019s illustrated careless move.",
+        "Nb5 begins the knight reroute.",
+        "d1=Q creates the queen but does not break White\u2019s drawing resource.",
+        "Nc3 attacks that queen and prepares the cage.",
+        "Qe1 steps away from the knight attack.",
+        "Ne4 controls g5 and makes the g3 mating threat decisive if Black ignores it.",
+        "Qc1 fails to answer the mating threat and changes the exact result to a White win.",
+        "g3# is actual mate. Ne4 covers g5, f3 protects g4, Kh2 protects g3 and h3, and h5 is occupied by Black\u2019s own pawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "g3# is actual mate. Ne4 covers g5, f3 protects g4, Kh2 protects g3 and h3, and h5 is occupied by Black\u2019s own pawn.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "draw",
+        "win",
+        "win"
+      ],
+      "end_fen": "8/8/8/7p/4N2k/5PP1/7K/2q5 b - - 0 4",
+      "outcome": "loss"
+    },
+    {
+      "id": "god_of_chess_capture_knight",
+      "start": "fortress",
+      "title": "Capture the knight inside the cage",
+      "san": [
+        "Qxe4",
+        "fxe4"
+      ],
+      "commentary": [
+        "This independent representative capture tests the source\u2019s observation that collecting the knight costs Black its queen.",
+        "Qxe4 takes the knight but places the queen on a square attacked by f3.",
+        "fxe4 captures the queen. The exact resulting pawn ending is drawn: White has held the game, but winning the queen here has not produced a forced win."
+      ],
+      "classification": "independent alternative with representative legal replies",
+      "explanation": "fxe4 captures the queen. The exact resulting pawn ending is drawn: White has held the game, but winning the queen here has not produced a forced win.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/7p/4P2k/8/6PK/8 b - - 0 4",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "fortress",
+      "prompt": "Why does an extra queen not guarantee progress?",
+      "answer": "Black must answer the g3 mating threat. The queen can maintain a pin or trade itself for the knight, but the checked pawn ending after fxe4 is also drawn."
+    },
+    {
+      "node": "fortress",
+      "prompt": "What should White preserve while waiting?",
+      "answer": "Keep Ne4, f3 and g2 in their coordinated cage and move the king only as needed to answer checks or release the pin."
+    }
+  ],
+  "defaultBranch": "god_of_chess_hold_pin",
+  "practiceBranch": "god_of_chess_hold_pin",
+  "practiceType": "knight",
+  "practiceGoal": "draw",
+  "startContext": "Begin after ...d2 at 55 seconds in a visually reconstructed seven-piece phase. The earlier eight-piece knight reroute and bishop capture remain context. The source\u2019s Qe1/Ne4 cage, Qe2 pin and careless Qc1 mate are retained; the Qf1/Kh2/Qe2 connection and the queen capture comparison are independently supplied representative lines. Each encoded position is checked exactly.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}

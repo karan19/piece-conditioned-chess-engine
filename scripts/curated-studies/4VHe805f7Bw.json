@@ -1,0 +1,189 @@
+{
+  "video_id": "4VHe805f7Bw",
+  "title": "Majestic Victory: The Rook Promotion",
+  "summary": "Walk down the checking rook’s file, then underpromote to avoid a stalemate defense.",
+  "nodes": [
+    {
+      "id": "start",
+      "fen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
+      "question": "How can a single pawn defeat a rook?",
+      "explanation": "The king can cover rook stopping squares while the c-pawn advances, but must avoid a skewer or a pin.",
+      "evidence": {
+        "timestamp_s": 0
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    },
+    {
+      "id": "promotion_choice",
+      "fen": "8/2P5/8/8/3r4/8/2K5/k7 w - - 9 6",
+      "question": "Which piece should the pawn become?",
+      "explanation": "A queen would allow ...Rc4+ and a forced stalemate after capture. A rook preserves the winning mating threats.",
+      "evidence": {
+        "timestamp_s": 92
+      },
+      "tablebase": {
+        "category_for_side_to_move": "win"
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "victory_rook_underpromotion",
+      "start": "start",
+      "title": "Walk the king down and promote to a rook",
+      "san": [
+        "c7",
+        "Rd6+",
+        "Kb5",
+        "Rd5+",
+        "Kb4",
+        "Rd4+",
+        "Kb3",
+        "Rd3+",
+        "Kc2",
+        "Rd4",
+        "c8=R",
+        "Ra4",
+        "Kb3"
+      ],
+      "commentary": [
+        "Begin from the complete four-piece source board. White must coordinate king and pawn against repeated checks.",
+        "c7 threatens promotion and controls d8.",
+        "Rd6+ checks from the side because the rook cannot simply occupy the protected stopping squares.",
+        "Kb5 steps down without attacking the rook. White avoids the early ...Rd1 skewer setup.",
+        "Rd5+ follows the king with another side check.",
+        "Kb4 continues down the board, keeping the pawn ready to promote.",
+        "Rd4+ checks again from the same file.",
+        "Kb3 keeps approaching the edge where the rook will lose checking room.",
+        "Rd3+ is the illustrated final check down the board.",
+        "Kc2 finally attacks the rook safely. There is no first-rank room below the king to repeat the earlier skewer.",
+        "Rd4 sets a different trap against promotion.",
+        "c8=R underpromotes. The rook avoids the queen’s stalemate problem and threatens Ra8 mate.",
+        "Ra4 blocks the a-file, preventing Ra8 from checking the king along that file.",
+        "Kb3 attacks Ra4 and threatens Rc1 mate by covering a2 and b2. The exact rook-versus-rook position is winning for White; the branch stops before assuming Black’s next sacrifice."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Kb3 attacks Ra4 and threatens Rc1 mate by covering a2 and b2. The exact rook-versus-rook position is winning for White; the branch stops before assuming Black’s next sacrifice.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win",
+        "win"
+      ],
+      "end_fen": "2R5/8/8/8/r7/1K6/8/k7 b - - 2 7",
+      "outcome": "loss"
+    },
+    {
+      "id": "victory_queen_stalemate",
+      "start": "promotion_choice",
+      "title": "Choose a queen and fall into stalemate",
+      "san": [
+        "c8=Q",
+        "Rc4+",
+        "Qxc4"
+      ],
+      "commentary": [
+        "The same promotion square produces a very different outcome if White chooses a queen.",
+        "c8=Q gives away the forced win because the queen can be drawn onto a stalemating square.",
+        "Rc4+ checks Kc2 and attacks the queen on c8, forcing the source’s capture to avoid losing the new queen.",
+        "Qxc4 is stalemate. Qc4 controls a2, Kc2 controls b1 and b2, and Black’s lone king on a1 is not in check."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Qxc4 is stalemate. Qc4 controls a2, Kc2 controls b1 and b2, and Black’s lone king on a1 is not in check.",
+      "expectedWhiteOutcomes": [
+        "draw",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/8/8/8/2Q5/8/2K5/k7 b - - 0 7",
+      "outcome": "draw"
+    },
+    {
+      "id": "victory_early_pin",
+      "start": "start",
+      "title": "Keep the king too close to the pawn",
+      "san": [
+        "c7",
+        "Rd6+",
+        "Kb7",
+        "Rd7"
+      ],
+      "commentary": [
+        "Compare an early king retreat that places king and pawn on the same rank.",
+        "c7 keeps the winning promotion threat.",
+        "Rd6+ asks White to choose the king’s route carefully.",
+        "Kb7 gives away the win by lining up behind the pawn on the seventh rank.",
+        "Rd7 pins c7 to Kb7. White cannot promote while its king would be exposed to check, and the exact position is drawn."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rd7 pins c7 to Kb7. White cannot promote while its king would be exposed to check, and the exact position is drawn.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/1KPr4/8/8/8/8/8/k7 w - - 3 3",
+      "outcome": "draw"
+    },
+    {
+      "id": "victory_early_attack",
+      "start": "start",
+      "title": "Attack the checking rook too early",
+      "san": [
+        "c7",
+        "Rd6+",
+        "Kc5",
+        "Rd1"
+      ],
+      "commentary": [
+        "The king cannot attack the rook on the sixth rank as safely as it can later on the second rank.",
+        "c7 creates the winning promotion threat.",
+        "Rd6+ checks from the side.",
+        "Kc5 gives away the win. White’s king is now on the same file as its future promoted queen.",
+        "Rd1 sets up ...Rc1+ after promotion, skewering king and queen along the c-file. The selected exact position is drawn; it is not claimed to be lost until White makes a further error."
+      ],
+      "classification": "selected illustrated source variation",
+      "explanation": "Rd1 sets up ...Rc1+ after promotion, skewering king and queen along the c-file. The selected exact position is drawn; it is not claimed to be lost until White makes a further error.",
+      "expectedWhiteOutcomes": [
+        "win",
+        "win",
+        "draw",
+        "draw"
+      ],
+      "end_fen": "8/2P5/8/2K5/8/8/8/k2r4 w - - 3 3",
+      "outcome": "draw"
+    }
+  ],
+  "exercises": [
+    {
+      "node": "promotion_choice",
+      "prompt": "Why does a rook win where a queen draws?",
+      "answer": "After ...Rc4+, the queen’s capture on c4 controls a2 and stalemates Ka1. A rook on c8 avoids that extra diagonal coverage and keeps mating threats."
+    },
+    {
+      "node": "start",
+      "prompt": "Why can Kc2 attack the rook when Kc5 cannot?",
+      "answer": "On the second rank the rook cannot get below the king to set up the earlier first-rank skewer. The edge of the board changes the geometry."
+    }
+  ],
+  "defaultBranch": "victory_rook_underpromotion",
+  "practiceBranch": "victory_rook_underpromotion",
+  "practiceType": "pawn",
+  "practiceGoal": "win",
+  "startContext": "Reconstructed from the complete initial four-piece board. The selected king walk, rook underpromotion, queen stalemate and two early drawing king choices are checked throughout.",
+  "verification_scope": "Saved board images reviewed manually. Every encoded intermediate position and endpoint is checked against the tablebase. Selected instructive variations, not an exhaustive tree of all legal defenses.",
+  "sourceCorrections": [],
+  "verificationDate": "2026-10-23"
+}
